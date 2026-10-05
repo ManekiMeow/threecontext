@@ -5,9 +5,13 @@ import sys, json, torch, numpy as np, networkx as nx
 torch.set_default_dtype(torch.float64)
 
 
+def deep_tuple(x):
+    return tuple(deep_tuple(y) for y in x) if isinstance(x, list) else x
+
+
 def load(fn):
     d = json.load(open(fn)); H = nx.Graph()
-    for a, b, _ in d["edges"]: H.add_edge(tuple(a), tuple(b))
+    for a, b, _ in d["edges"]: H.add_edge(deep_tuple(a), deep_tuple(b))
     return H
 
 

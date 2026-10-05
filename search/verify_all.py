@@ -66,7 +66,24 @@ def check_certificate(V, E, Y, c):
     return ok_tri, proper, psd, total / sum(c.values())
 
 
+def tricayley_z2z6(S):
+    els = [(a, z) for a in range(2) for z in range(6)]
+    add = lambda g, s: ((g[0] + s[0]) % 2, (g[1] + s[1]) % 6)
+    V = [(k, g) for k in range(3) for g in els]
+    E = {((k, g), ((k + 1) % 3, add(g, s))) for k in range(3) for g in els for s in S[k]}
+    return V, E
+
+
 if __name__ == "__main__":
+    # 36-vertex graph over Z2 x Z6: unweighted.  W = A/4 (each vertex has 4 neighbours in each
+    # other class), Y = A/(4*12), c = 1/12.
+    S36 = (((0, 0), (0, 3), (0, 4), (1, 4)), ((0, 0), (0, 3), (0, 4), (1, 4)),
+           ((0, 1), (1, 0), (1, 1), (1, 3)))
+    V, E = tricayley_z2z6(S36)
+    Y = {e: Fr(1, 48) for e in E}
+    c = {v: Fr(1, 12) for v in V}
+    print("36-vertex T(Z2xZ6; S0=S1={00,03,04,14}, S2={01,10,11,13}): |V|=%d |E|=%d" % (len(V), len(E)),
+          "triangle-free, proper 3-colouring, B PSD, sum(B)/tr(B) =", check_certificate(V, E, Y, c))
     # 39-vertex graph: uniform weights 1/4, 1/3, 1/3, c = 1/13
     q, S = 13, ((0, 1, 3, 9), (0, 1, 10), (1, 6, 8))
     V, E = tricayley(q, S)

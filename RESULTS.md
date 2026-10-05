@@ -2,8 +2,8 @@
 
 Follow-up to *Exploring the boundary of quantum correlations with a time-domain optical processor*
 (arXiv:2208.07794; Sci. Adv. 2025). Everything numerical is reproducible from `search/`; every
-claim marked **(exact)** is checked in rational arithmetic by `search/verify_all.py` or
-`search/minimal37.py`.
+claim marked **(exact)** is checked in rational arithmetic by `search/verify_all.py`,
+`search/minimal37.py` or `search/dualcert.py`.
 
 Notation (following Theorem 1 of the paper). `H` is the graph whose vertices are the events and
 whose edges join **non-orthogonal** pairs. In the paper's figure this is the Perkel graph. The
@@ -20,9 +20,9 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 
 | question | result |
 |---|---|
-| (1) smaller graph than Perkel (57 vertices) | **37 vertices** (exact). Also a highly symmetric 39-vertex graph with an exact certificate that uses only the weights 1/4 and 1/3. The 37-vertex graph has a real realization in dimension **25** (numerical), compared with 37 for Perkel. |
-| (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs Hilbert-space dimension at least 17 (both exact proofs below). Perkel is not minimal. The 37-vertex graph is **vertex-critical** (exact): deleting any vertex drops theta below 2.986. It is also the smallest example in all the symmetric families searched. The gap 28 ≤ n_min ≤ 37 is still open. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches (real, D ≤ 24) found nothing. Suggested routes are listed below. |
+| (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that fits in dimension **24** (numerical), and a 39-vertex graph over Z13. |
+| (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs dimension at least 17 (exact proofs, Section 2). So Perkel is not minimal, and n_min ∈ [28, 36]. The 36- and 37-vertex graphs are vertex-critical (exact). 36 is the minimum within every symmetric family searched: tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33. A full proof of minimality is still open. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. Suggested routes are listed in Section 3. |
 
 ---
 
@@ -30,59 +30,69 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 
 ### 1.1 Tri-Cayley graphs
 
-Write `T(q; S0, S1, S2)` for the graph with vertex set `Z3 x Zq`, where `(a, x) ~ (a+1, x+s)` for every `s` in `S_a`.
+For a group Γ and subsets S0, S1, S2 ⊂ Γ, let `T(Γ; S0, S1, S2)` be the graph with vertex set `Z3 × Γ`, where
+`(a, g) ~ (a+1, g·s)` for every `s ∈ S_a`.
 
-* It is automatically 3-partite, and the classes `a = 0, 1, 2` are the three contexts.
-* It is triangle-free iff `0 ∉ S0 + S1 + S2 (mod q)`.
-* The Perkel graph is `T(19; S, 7S, 49S)` with `|S| = 3`.
+* It is 3-partite, and the classes `a = 0, 1, 2` are the three contexts.
+* It is triangle-free iff `e ∉ S0·S1·S2`.
+* Γ acts by automorphisms. For abelian Γ the Lovász SDP splits into |Γ| Hermitian 3×3 blocks (`search/ftheta.py`).
+* The Perkel graph is `T(Z19; S, 7S, 49S)` with `|S| = 3`.
 
-The translations `x -> x+1` act as automorphisms. So the Lovász SDP can be symmetrized and splits into
-q Hermitian 3x3 blocks (`search/ftheta.py`), which makes the whole family cheap to scan.
+**Uniform weights.** If each `|S_a| = 3`, the optimal weights are forced to be uniform. A full scan (`search/tricayley333.py`)
+shows that **q = 19 is the smallest cyclic group that works**. So the Perkel graph is the smallest 6-regular member of
+this family, and smaller examples need larger connection sets.
 
-**Uniform weights (|S_a| = 3).** If each `|S_a| = 3`, the optimal weights must be uniform. Then `theta(Hbar) = 3`
-iff every Fourier block `M_k` (`k != 0`) has smallest eigenvalue `>= -1`. A full scan
-(`search/tricayley333.py`) shows that **q = 19 is the smallest q that works**, so the Perkel graph is the
-smallest *6-regular uniform* member of this family.
+**Complete scans** (all connection-set sizes, all S up to symmetry, exact SDP):
 
-**General weights.** With non-uniform weights, smaller q works.
+* Γ = Z_q with q ≤ 12: **nothing** (`search/fsall.log`).
+* Γ = Z3², D5, Z2×Z6, D6, A4, Dic3 (all non-cyclic groups of order 9–12): exactly **one** graph up to isomorphism (`search/groups.log`). It appears both over
+  Z2×Z6 and over Dic3, and it is H36 below.
+* Γ = Z13: two graphs (39 vertices). Γ = Z14: several (42 vertices).
 
-**The 39-vertex graph** `T(13; {0,1,3,9}, {0,1,10}, {1,6,8})`
+### 1.2 The 36-vertex graph (new record)
 
-* 130 edges, degrees 6 and 7, triangle-free, girth 4.
-* Certificate **(exact)**: let `W = 1/4 A_{01} + 1/3 A_{12} + 1/3 A_{20}`, where `A_{a,a+1}` is the bipartite adjacency
-  matrix between consecutive classes. Then:
-  * every vertex has total W-weight exactly 1 into each other class, so `W 1 = 2·1`;
-  * `W + I` is PSD (spectrum of W: `2, 0.7138^(12), 0.2438^(12), -0.9576^(12), -1^(2)`).
+Let `H36 = T(Z2×Z6; S0, S1, S2)`, where elements of Z2×Z6 are written as pairs (a, z), and
 
-  By Lovász's theorem, `theta(Hbar) >= 1 - lambda_max/lambda_min = 1 + 2/1 = 3`.
-* Quantum realization in dimension 37 (rank of `W+I`). Each of the 39 events has probability exactly 1/13,
-  so each context sums to 1 and noncontextual models predict 0 in at least one context.
+    S0 = S1 = {(0,0), (0,3), (0,4), (1,4)},   S2 = {(0,1), (1,0), (1,1), (1,3)}.
 
-**Smaller tri-Cayley graphs.** Within the Z_q family:
+* 36 vertices with contexts of size 12, 12, 12. 144 edges, 8-regular (4 neighbours in each other context).
+  Triangle-free, girth 4, diameter 3. Every vertex has a unique vertex at distance 3.
+* Adjacency spectrum: `8^1, 2^16, 0^9, −4^10`. Since `λ_min = −4 = −k/2`, Hoffman's bound gives
+  `θ(H̄) ≥ 1 − 8/(−4) = 3` **(exact; the certificate is the 0/1 adjacency matrix)**.
+* **Quantum realization.** Take the Gram matrix `I + A/4` (PSD of rank 36 − 10 = **26**). The state ψ is the normalized
+  sum of the vectors of any one context. Then every event has probability exactly 1/12, every non-orthogonal pair has
+  overlap 1/4, and each context sums to 1. Numerically, no real realization exists in dimension 24 or lower
+  (`search/lowrank.py`).
+* **(exact)** It is vertex-critical: by vertex-transitivity one deletion suffices, and a rational dual certificate gives
+  `θ(complement(H36 − v)) ≤ 2.959`.
+* Quantum–classical ratio 3/2, as for every three-context GHZ graph.
 
-* q = 13 also gives a second, non-isomorphic graph, `T(13; {0,1,3,9}, {0,1,4}, {1,2,5,7})` (143 edges).
-* q = 14 gives several more (42 vertices).
-* q ≤ 12 gives nothing for any connection-set sizes (see `search/fsall.log` once the sweep finishes).
-* For the non-cyclic groups of order 9–12 (Z3², D5, Z2×Z6, D6, A4, Dic3), see `search/groups.log`.
+### 1.3 The 37-vertex graph (smallest dimension found: 24)
 
-### 1.2 The 37-vertex graph
+Let `H37 = T(Z13; {0,1,3,9}, {0,1,4}, {1,2,5,7})` with the vertices `(0,5)` and `(2,11)` removed.
 
-Let `H37 = T(13; {0,1,3,9}, {0,1,4}, {1,2,5,7})` with the two vertices `(0,5)` and `(2,11)` removed.
-
-* 37 vertices with context sizes 12, 13, 12. 129 edges, degrees 6/7/8, triangle-free.
-* **(exact)** `theta(Hbar37) = 3`. Rational certificate: `search/shr_q13_1_0139_014_1257_cert.json`, with weights
-  `c_i > 0` and `Y_ij` on edges. Here `B = Y + diag(c)` is PSD, `B_ij = 0` on non-edges, and `sum(B)/tr(B) = 3`.
+* Contexts of size 12, 13, 12. 129 edges, degrees 6/7/8, triangle-free.
+* **(exact)** `θ = 3`, via the rational certificate `search/shr_q13_1_0139_014_1257_cert.json`. This gives weights
+  `c_i > 0` and `Y_ij` on edges with `B = Y + diag(c)` PSD, `B_ij = 0` on non-edges, and `sum(B)/tr(B) = 3`.
   The event probabilities are `c_i`.
-* **(exact)** It is vertex-critical: for every vertex v, a rational dual certificate shows
-  `theta(complement(H37 - v)) <= 2.9857 < 3` (`search/minimal37.py`).
-* For the 39-vertex graph, the edges are needed too: deleting any one of its 10 edge orbits drops theta to between 2.77 and 2.91.
-* Numerically, H37 is realizable with real vectors in **dimension 25** (`search/lowrank.py`; residual about 1e-9).
-  Dimension 22 fails, and 23/24 are under test. This is a large saving over the 37 dimensions used in the
-  experiment.
+* **(exact)** It is vertex-critical: every one-vertex deletion has `θ ≤ 2.9857` (`search/minimal37.py`).
+* Numerically it realizes with real vectors in **dimension 24** (residual about 1e-9). Dimensions 22 and 23 fail.
+  This is the lowest dimension we found, compared with 37 for Perkel.
 
-Randomized greedy vertex deletion from the 39-vertex graph and from the q = 14 graphs never went below 37.
-Annealing over edge-maximal tripartite triangle-free graphs on 36 vertices has not reached theta = 3 so far
-(best 2.989).
+### 1.4 The 39-vertex graph over Z13
+
+`T(Z13; {0,1,3,9}, {0,1,10}, {1,6,8})` has 130 edges and degrees 6/7.
+
+* Certificate **(exact)**: `W = 1/4 A_{01} + 1/3 A_{12} + 1/3 A_{20}`. Every vertex has W-weight exactly 1 into each
+  other class, so `W1 = 2·1`.
+* `W + I ⪰ 0`, with spectrum of W equal to `2, 0.714^12, 0.244^12, −0.958^12, −1^2`. Hence `θ(H̄) ≥ 1 + 2/1 = 3`.
+* All 39 events have probability 1/13. Deleting any edge orbit destroys the paradox.
+
+### 1.5 Local search
+
+* Randomized vertex deletion from all tri-Cayley hits never went below 36 or 37.
+* Annealing over edge-maximal tripartite triangle-free graphs on 36 vertices (starting near H37) reached θ = 2.989 at
+  best.
 
 ---
 
@@ -164,9 +174,9 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
 
 **Searches (negative so far).**
 
-* `search/k4opt.py` minimizes `Σ_{4-tuples} Π_{pairs} |<v_a|v_b>|²` over four real orthonormal bases.
-  The minimum stays at about 40–50% of the Haar-random value for D = 8, 12, which is consistent with D ≥ 17.
-  Larger D is still running.
+* `search/k4opt.py` minimizes `Σ_{4-tuples} Π_{pairs} |<v_a|v_b>|²` over four real orthonormal bases, for
+  D = 8, 12, 17, 20, 24 with 2 random starts each. The minimum stays at 37–50% of the Haar-random value and never
+  approaches 0. This is weak evidence only: the landscape is highly non-convex, and any solution is non-generic.
 * In the group-covariant ansatz `B_k = {U_g v_k}`, with an abelian G acting regularly, edges come from the Fourier supports of the
   unimodular functions `ū_k u_l`. Unimodular functions with small Fourier support are essentially functions on
   quotient groups. This makes that ansatz tensor-product-like, i.e. Bell-type, which the paper argues cannot work
