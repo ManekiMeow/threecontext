@@ -291,6 +291,30 @@ the best unions contain 16 internal bases but still have ≥ 162 KS colourings.
   10 events, clique cover 3, α = 2 but θ = 2.5. Its contradiction is a parity argument over 5 contexts, which the
   exclusivity graph does not capture. This is why KS sets exist far below the GHZ dimension bound.
 
+### 3.2 Reversing the Xu–Chen–Gühne reduction (arXiv:2001.07656)
+
+XCG turn a KS set into a GHZ-type proof. Take a ray ψ as the state and delete ψ and all rays orthogonal to it. The
+remnants of the bases become *equality* contexts. Their GHZ-type proofs are more general than Theorem 1: their
+minimal 10-event proof (from the 18-ray CEG set) has clique cover 4, α = 3, θ = 3.5 (`ks/xcg10.py`).
+
+**Reverse-XCG criterion (proved).** S = B_1 ∪ … ∪ B_4 is KS **iff** for every u ∈ B_4 the XCG reduction of S at u is
+classically infeasible. Proof: every KS colouring has exactly one 1 in B_4, and its restriction solves the reduction at
+that ray. Conversely, a solution at u extends by f(u) = 1 and f = 0 on rays orthogonal to u.
+* A GHZ graph (H36, H37, H39, Perkel) supplies the certificate at u = ψ.
+* Reversing the reduction means supplying d − 1 further certificates, one for each u ∈ B_4 \ ψ, inside the same three
+  bases. Route 1 gets them as symmetry images; Route 2 gets them from equality-type certificates built from
+  internal bases.
+
+**Abelian Route 1 with our graphs is blocked by cosets.** In a G-covariant construction, ψ's neighbours in B_k sit at
+positions T_k ⊂ G with |⟨ψ|·⟩|² = 1/m each (uniform for H36, H39, Perkel). This requires a unimodular phase function
+whose Fourier transform has constant modulus on T_k ("plateaued").
+* If T_k = c_k + H is a coset of a subgroup, the neighbourhood Gram matrix depends only on H. It then has rank ≤ m
+  (12, 13, 19), below the GHZ bound 17 and the rigid ranks 26 / 37 / 37. So this case is **impossible (proved)**.
+* Non-coset plateaued supports: in Z_D (D = 26–48), random 12-element supports never admit such a function (residual
+  ≥ 1; `ks/flatsupport.py`); only subgroup supports do. Non-coset plateaued functions do exist over Z₂ⁿ (Boolean
+  plateaued functions), but there the support sizes are powers of 4, not 12, 13 or 19.
+* The non-uniform example H37 (rank ≥ 32) is not covered by this argument.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
