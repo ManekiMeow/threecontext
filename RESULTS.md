@@ -315,6 +315,35 @@ whose Fourier transform has constant modulus on T_k ("plateaued").
   plateaued functions), but there the support sizes are powers of 4, not 12, 13 or 19.
 * The non-uniform example H37 (rank ≥ 32) is not covered by this argument.
 
+### 3.3 Route 1 with non-abelian symmetry, and with H37
+
+**General covariant setting.** Let a group Γ (|Γ| = D) act regularly on all four bases. Then B_4 = {δ_g} and
+B_k = {λ_g b_k} with b_k a unitary element of ℂ[Γ]. The union is KS iff the neighbourhood of δ_e is
+triangle-free. ψ = δ_e's class-k neighbours are λ_g b_k with b_k(g⁻¹) ≠ 0.
+
+**Commuting-span obstruction (proved).** In any three-context GHZ paradox the context spans S_k cannot pairwise
+commute. Otherwise F = Π₁+Π₂+Π₃ is diagonal with eigenvalues in {0,1,2,3}, and Σ f(f−1)(f−2) = 6·#{f = 3} ≥ 6 > 0,
+contradicting the trace identity.
+* **Consequence for Route 1, any group (abelian or not):** if the neighbour positions of each class are cosets of
+  subgroups (b_k supported on a coset), the spans S_k are coordinate subspaces ℂ[·] of ℂ[Γ]. These commute, so the
+  construction is **impossible**. This strengthens the abelian result of §3.2.
+* **Our four graphs:**
+  * H36, H39 and Perkel have S_k ∩ S_l = span ψ (`ks/intersections.py`).
+  * H37 has context sizes 12, 13, 12, which forces trivial subgroup intersections.
+  * Their natural placements (tri-Cayley over Z₂×Z₆, Z₁₃, Z₁₉, i.e. each class on a coset or a coset minus a point)
+    collapse every class into one ℂ[H] of dimension ≤ 19, so they are excluded.
+* Route 1 therefore needs **non-coset supports** for the b_k. Unitarity of b_k with support on a prescribed
+  12–13-element set is then a "perfect sequence" condition, Σ_x b̄(x) b(xg) = 0 for all g ≠ e. Random supports never
+  satisfy it (cf. `ks/flatsupport.py`), so targeted embeddings of H37 need structured non-coset supports. This is
+  open.
+
+**Generic non-abelian search** (`ks/nonabelian4.py`). Exact unitarity is enforced via a Newton–Schulz polar factor of
+the convolution operator, and the smooth K4 count of the whole covariant 4-partite structure is minimized. Groups:
+SL(2,3), S₄, D₁₂ (24), D₁₃ (26), Heis₂₇, S₃×S₃, A₄×Z₃ (36), Z₁₃⋊Z₃ (39, the symmetry of the Z₁₃ graphs), Z₇⋊Z₃×Z₂ (42),
+S₄×Z₂ (48), Z₁₉⋊Z₃ (57, Perkel's symmetry) and A₅ (60).
+* In every run the K4 loss drops only to ≈ 30–40 % of its start, and all supports stay full
+  (`ks/na_*.log`). There is no sign of a sparse K4-free configuration.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
