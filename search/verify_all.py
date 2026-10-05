@@ -11,7 +11,7 @@ theta(Hbar) <= chi(H) = 3 always, so only theta(Hbar) >= 3 needs a certificate:
   and B = Y + diag(c) PSD (checked by exact Gaussian elimination over Q).
 All arithmetic below is exact (fractions.Fraction).
 """
-import json, itertools
+import json, itertools, os
 from fractions import Fraction as Fr
 
 
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     print("39-vertex T(13;{0,1,3,9},{0,1,10},{1,6,8}): |V|=%d |E|=%d" % (len(V), len(E)),
           "triangle-free, proper 3-colouring, B PSD, sum(B)/tr(B) =", check_certificate(V, E, Y, c))
     # 37-vertex graph from the json certificate
-    d = json.load(open("shr_q13_1_0139_014_1257_cert.json"))
+    d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "shr_q13_1_0139_014_1257_cert.json")))
     S = tuple(tuple(s) for s in d["S"])
     V, E = tricayley(13, S, removed={(0, 5), (2, 11)})
     nodes = [tuple(v) for v in d["nodes"]]
