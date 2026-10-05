@@ -232,9 +232,49 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
    * In d = 6 the only known KS set with ≤ 24 rays is the 21-ray set above, which needs 5 contexts.
    * Lisoněk et al. exhaustively list vertex-transitive "parity" candidates up to 31 vertices: 18 (d=4), 21 (d=6), 26 (d=4), 27 (d=6), 30 (d=4). Every one other than the 21-ray set violates |V| ≤ 4d.
 
+### 3.1 Gadgets inside the four covering bases: what is possible (new)
+
+**Gadget lemma.** Take a three-context GHZ paradox (ψ; I_1, I_2, I_3) and complete each I_k to an orthonormal
+basis B_k. In any KS colouring of any set containing B_1, B_2, B_3, f(ψ) = 0. Proof: if f(ψ) = 1, every ray
+orthogonal to ψ is 0, so the 1 of B_k lies in I_k. Those three rays are pairwise non-orthogonal, which is a triangle in H.
+So each new GHZ graph (H36, H37, H39, Perkel) is a "**0-gadget for ψ that uses only 3 bases**". A four-context KS set is
+then exactly a fourth basis B_4 all of whose rays are forced to 0, using only the internal bases of the union.
+
+**Linking lemma (internal bases inside 4 bases).** Let B' ⊂ B_1 ∪ … ∪ B_4 be an orthonormal basis different from the B_k.
+Then its pieces A_k = B' ∩ B_k span mutually orthogonal subspaces. In the two-basis case, W = span(A_k) = span(B_l \ A_l)
+is spanned by subsets of **both** B_k and B_l. Each such common coordinate subspace W yields exactly two new bases,
+and the classical constraint is only "B_k has its 1 inside W iff B_l does".
+
+**Measured on the actual constructions** (`ks/ghzgeom.py`, `ks/ghz_gadget.py`, `ks/ghz_gadget2.py`):
+* For H36 (d = 26): S_k ∩ S_l = span(ψ) exactly and dim (S_k + S_l)^⊥ = 3.
+* For Perkel (d = 37): S_k ∩ S_l = span(ψ) and (S_k + S_l)^⊥ = 0.
+* So the three GHZ contexts share **no** common coordinate subspace other than through ψ, and the only available links
+  are B_4 ↔ B_k via S_k or S_k^⊥.
+* Completing H36 with every link we could create gives 90–104 rays and 4–6 internal bases. The union is
+  **KS-colourable** (SAT). A surviving colouring puts its B_4-one on a ray orthogonal to ψ; nothing forces those rays to 0.
+* Conclusion: one GHZ gadget plus links forces only ψ. Each of the other d − 1 rays of B_4 needs its own forcing
+  mechanism, and that mechanism must reuse the same three bases.
+
+**Symmetric lifting = unimodular phase problem (lemma).** Suppose an abelian group G with |G| = D permutes all four
+bases regularly, so the Gram matrix is G-invariant. Then each Fourier block of W is a 4×4 matrix with zero diagonal and
+W² = 2W + 3I. This forces it to be 4|v⟩⟨v| − I with |v_a| = 1/2. So every basis is a G-orbit of a Fourier-flat vector with
+phase function u_a, and rays (a, g), (b, h) are non-orthogonal iff h − g ∈ T_ab = supp FT(ū_a u_b).
+* **Quadratic phases (stabilizer bases) never give a K4-free set.** The supports are cosets β_b − β_a + R_ab, so
+  x_a = β_a is always a K4. This is why Pauli/Mermin-type constructions need a fifth context.
+* **Cubic phases** over Z₂ⁿ, n = 5…8 (`ks/covariant4.py`, hill climbing on the exact K4 count): best K4 counts per vertex
+  were 24, 96, 204, 214 (one search per n). None reached 0. A K4-free solution must also satisfy Σ_a |T_a4| ≥ 28 and
+  D ≥ 17 (Section 2), which rules out n ≤ 4 and most of n = 5.
+
+**Alphabet search, d = 6** (`ks/alphabet6.py`, `ks/ks4search.py`). All 1365 rays with entries in {0, 1, ω, ω²} and
+their 1609 bases. Local search over 4-tuples of bases, counting all internal bases and KS colourings exactly by SAT:
+the best unions contain 16 internal bases but still have ≥ 162 KS colourings.
+
 **Most promising routes now.**
-1. Search d = 5–8 for small KS sets with clique cover 4 and internal bases blocking every K4. For example, sets over Z[ω] or Pauli-type alphabets, or gadget-augmented sets in Cabello's style where the gadget rays are forced to lie inside the four covering bases.
-2. Symmetric lifting of the tri-Cayley GHZ paradoxes (K4-free route, needs d ≥ 17).
+1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
+   group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
+2. Cubic or higher-degree phase functions over larger or non-abelian groups (the covariant formulation above),
+   searched with the K4 count as the objective.
+3. Larger alphabets ({0, ±1, ±i, ω^k}) in d = 6–8, using the exact SAT pipeline in `ks/ks4search.py`.
 
 ## Files
 
@@ -248,4 +288,7 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
 * `search/face2.py`: optimal-face dimension and extreme-point ranks.
 * `search/rigid.c`, `search/check.py`: exhaustive small-n search (n ≤ 13).
 * `search/k4opt.py`: four-basis K4-free search.
+* `ks/ghzgeom.py`, `ks/ghz_gadget.py`, `ks/ghz_gadget2.py`: GHZ-gadget completions and SAT check.
+* `ks/covariant4.py`: covariant (phase-function) four-basis search.
+* `ks/alphabet6.py`, `ks/ks4search.py`: d = 6 alphabet search with exact internal-basis SAT check.
 * `ks/ks21.py`, `ks/ks21_cover5.py`: the 21-ray d = 6 KS set, its clique cover number 5, and the 5-context cover.
