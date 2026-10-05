@@ -20,7 +20,7 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 
 | question | result |
 |---|---|
-| (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that fits in dimension **24** (numerical), and a 39-vertex graph over Z13. |
+| (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs dimension at least 17 (exact proofs, Section 2). So Perkel is not minimal, and n_min ∈ [28, 36]. The 36- and 37-vertex graphs are vertex-critical (exact). 36 is the minimum within every symmetric family searched: tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33. A full proof of minimality is still open. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. Suggested routes are listed in Section 3. |
 
@@ -66,10 +66,9 @@ Let `H36 = T(Z2×Z6; S0, S1, S2)`, where elements of Z2×Z6 are written as pairs
   Triangle-free, girth 4, diameter 3. Every vertex has a unique vertex at distance 3.
 * Adjacency spectrum: `8^1, 2^16, 0^9, −4^10`. Since `λ_min = −4 = −k/2`, Hoffman's bound gives
   `θ(H̄) ≥ 1 − 8/(−4) = 3` **(exact; the certificate is the 0/1 adjacency matrix)**.
-* **Quantum realization.** Take the Gram matrix `I + A/4` (PSD of rank 36 − 10 = **26**). The state ψ is the normalized
+* **Quantum realization.** Take the Gram matrix `I + A/4` (PSD of rank 36 − 10 = **26**). It is the only one (Section 1.6). The state ψ is the normalized
   sum of the vectors of any one context. Then every event has probability exactly 1/12, every non-orthogonal pair has
-  overlap 1/4, and each context sums to 1. Numerically, no real realization exists in dimension 24 or lower
-  (`search/lowrank.py`).
+  overlap 1/4, and each context sums to 1.
 * **(exact)** It is vertex-critical: by vertex-transitivity one deletion suffices, and a rational dual certificate gives
   `θ(complement(H36 − v)) ≤ 2.959`.
 * Quantum–classical ratio 3/2, as for every three-context GHZ graph.
@@ -83,8 +82,9 @@ Let `H37 = T(Z13; {0,1,3,9}, {0,1,4}, {1,2,5,7})` with the vertices `(0,5)` and 
   `c_i > 0` and `Y_ij` on edges with `B = Y + diag(c)` PSD, `B_ij = 0` on non-edges, and `sum(B)/tr(B) = 3`.
   The event probabilities are `c_i`.
 * **(exact)** It is vertex-critical: every one-vertex deletion has `θ ≤ 2.9857` (`search/minimal37.py`).
-* Numerically it realizes with real vectors in **dimension 24** (residual about 1e-9). Dimensions 22 and 23 fail.
-  This is the lowest dimension we found, compared with 37 for Perkel.
+* Unlike Perkel and H36, its optimal Gram matrix is **not unique** (Section 1.6). Walking inside the optimal face
+  reaches an extreme point of rank **32** (non-edge residual 1e-10). A gradient search gives an approximate rank-**24**
+  realization (orthogonality residual 3e-6, context sums 0.99997), which is not certified.
 
 ### 1.4 The 39-vertex graph over Z13
 
@@ -100,6 +100,28 @@ Let `H37 = T(Z13; {0,1,3,9}, {0,1,4}, {1,2,5,7})` with the vertices `(0,5)` and 
 * Randomized vertex deletion from all tri-Cayley hits never went below 36 or 37.
 * Annealing over edge-maximal tripartite triangle-free graphs on 36 vertices (starting near H37) reached θ = 2.989 at
   best.
+
+### 1.6 Is the realization dimension determined by the graph?
+
+Any realization (vectors g_i, state ψ) gives an optimal point `B_ij = <ψ|g_i><g_i|g_j><g_j|ψ>/3` of the Lovász SDP.
+Here rank B = dimension. The graph fixes only the **zero pattern** of B (zeros on non-edges). The edge entries and the
+weights are free, subject to B ⪰ 0, tr B = 1, sum B = 3. So the dimension is fixed by the graph only when this optimal
+face is a single point. In general the realizations form a face whose points have different ranks. The Cholesky rank
+of the solver output is the **maximum** rank on that face, not the minimum.
+
+`search/face2.py` computes the face around the interior-point optimum B₀, i.e. the affine space of `U M Uᵀ` with
+`range U = range B₀` satisfying the constraints. It then walks to extreme points (numerical, tolerance 1e-7):
+
+| graph | max rank (solver/Cholesky) | face dimension | lowest rank found |
+|---|---|---|---|
+| Perkel (57) | 37 | **0**, so the Gram matrix is unique | 37 |
+| H36 | 26 | **0**, so it is unique: `I + A/4` | 26 |
+| H37 | 35 | 92 | 32 at an extreme point; about 24 approximately |
+
+So for Perkel the answer to the paper's open question ("we do not know if a lower-dimensional realization exists")
+is no among real realizations. **37 is forced**, because the optimal Gram matrix is unique, as expected for an
+edge-transitive graph where symmetrization loses nothing. The same holds for H36 with 26. Complex realizations were
+not analysed: a complex Gram matrix could add antisymmetric imaginary parts on edges.
 
 ---
 
@@ -210,6 +232,7 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
 * `search/groupsearch.py`: tri-Cayley search over non-cyclic groups.
 * `search/gcert.py`, `search/dualcert.py`: rational primal and dual certificate generators.
 * `search/shrink*.py`, `search/anneal.py`: vertex deletion and local search.
-* `search/lowrank.py`: low-dimensional realizations.
+* `search/lowrank.py`, `search/check24.py`: low-dimensional realizations (gradient search).
+* `search/face2.py`: optimal-face dimension and extreme-point ranks.
 * `search/rigid.c`, `search/check.py`: exhaustive small-n search (n ≤ 13).
 * `search/k4opt.py`: four-basis K4-free search.
