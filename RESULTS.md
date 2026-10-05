@@ -211,18 +211,30 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
   quotient groups. This makes that ansatz tensor-product-like, i.e. Bell-type, which the paper argues cannot work
   with fewer than four contexts. So a genuinely new structure is needed.
 
-**Most promising routes.**
+**Input from Lisoněk–Badziąg–Portillo–Cabello, PRA 89, 042101 (2014) and Cabello, arXiv:2011.13790.**
 
-1. **Clique-cover of known KS sets.** A KS set stays KS when vectors are added. So a KS set qualifies iff its
-   orthogonality graph can be covered by 4 cliques, which requires |V| ≤ 4D. Among the known minimal sets only the
-   21-ray, 7-basis set in D = 6 (Lisoněk–Badziąg–Portillo–Cabello 2014) passes the counting test (21 ≤ 24). If its orthogonality
-   graph were exactly the line graph of K7 (each ray in exactly two bases and no other orthogonalities), the best
-   4-clique cover would reach only 18 rays. So the question is whether its explicit vectors have **extra
-   orthogonalities**. I could not download the paper from this environment (arXiv is blocked here).
-2. **Symmetric "lifting" of the new tri-Cayley paradoxes.** Find a fourth basis of `C^d` all of whose vectors play
-   the role of ψ for completions of `I_1, I_2, I_3`. This needs a group of unitaries preserving the three
-   (completed) contexts that moves ψ to an orthonormal basis. In the Z13 examples the translations fix ψ, so a
-   larger group (e.g. extending by the multiplier group of Z13) is needed.
+1. *The 21-ray, 7-basis set (d = 6) needs exactly 5 contexts* (`ks/ks21.py`, exact arithmetic in Z[ω]).
+   * Its orthogonality graph has 105 edges and is exactly the line graph of K7, with no hidden orthogonalities. So its clique cover number is 5.
+   * Any 4 orthogonal groups cover at most 18 of the 21 rays.
+   * A 5-cover: B1, B2, B3 plus the two triangles {45,46,56} and {47,57,67} of the K4 on {4,5,6,7}, each completed to a basis with 3 new rays (`ks/ks21_cover5.py`).
+   * Result: a 27-ray KS set covered by **5 contexts in d = 6**. This ties the Mermin star's 5 contexts in a lower dimension (6 instead of 8).
+
+2. *Theorem 4 of the paper and the K4-free criterion assume that the four covering bases are the only bases.*
+   * Both arguments put ψ = v₀ and use only the covering contexts.
+   * A general KS set V ⊂ B1 ∪ … ∪ B4 can also contain **internal bases** that mix rays from several B_k. A KS colouring must hit each of these exactly once too.
+   * A pairwise non-orthogonal transversal (v1, …, v4) is then not a colouring if some internal basis avoids all four rays. So a K4 is allowed, as long as every K4 is "blocked" by an internal basis.
+   * This is exactly the mechanism of Cabello's true-implies-false sets (01-gadgets). It is also how the 7-context set works: its 7 bases are internal to any 5-cover.
+   * So the general four-context problem is strictly larger than the K4-free one. Theorem 4's "disjoint" conclusion, and "no parity proof", are proven only in the K4-free setting.
+
+3. *Dimension constraints in the general setting.*
+   * A 4-context KS set has |V| ≤ 4d rays.
+   * The smallest KS sets have 18 rays in d = 4 (proven minimal) and at least 22–24 rays in d = 3 (computer-assisted lower bounds). Both exceed 4d, so **d ≥ 5**.
+   * In d = 6 the only known KS set with ≤ 24 rays is the 21-ray set above, which needs 5 contexts.
+   * Lisoněk et al. exhaustively list vertex-transitive "parity" candidates up to 31 vertices: 18 (d=4), 21 (d=6), 26 (d=4), 27 (d=6), 30 (d=4). Every one other than the 21-ray set violates |V| ≤ 4d.
+
+**Most promising routes now.**
+1. Search d = 5–8 for small KS sets with clique cover 4 and internal bases blocking every K4. For example, sets over Z[ω] or Pauli-type alphabets, or gadget-augmented sets in Cabello's style where the gadget rays are forced to lie inside the four covering bases.
+2. Symmetric lifting of the tri-Cayley GHZ paradoxes (K4-free route, needs d ≥ 17).
 
 ## Files
 
@@ -236,3 +248,4 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
 * `search/face2.py`: optimal-face dimension and extreme-point ranks.
 * `search/rigid.c`, `search/check.py`: exhaustive small-n search (n ≤ 13).
 * `search/k4opt.py`: four-basis K4-free search.
+* `ks/ks21.py`, `ks/ks21_cover5.py`: the 21-ray d = 6 KS set, its clique cover number 5, and the 5-context cover.
