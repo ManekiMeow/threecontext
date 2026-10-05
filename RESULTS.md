@@ -269,12 +269,22 @@ phase function u_a, and rays (a, g), (b, h) are non-orthogonal iff h − g ∈ T
 their 1609 bases. Local search over 4-tuples of bases, counting all internal bases and KS colourings exactly by SAT:
 the best unions contain 16 internal bases but still have ≥ 162 KS colourings.
 
+**Two routes, two different dimension regimes.**
+* **Route A: four bases are the only contexts (K4-free).** Every ray's neighbourhood is a three-context GHZ paradox.
+  So d ≥ 17 and each ray is non-orthogonal to ≥ 28 others, **also over ℂ**: the trace identity uses only Hermitian
+  projectors, and every term of tr(Π₁Π₂Π₃) vanishes. Every construction built from the GHZ graphs lies here or uses
+  them as gadgets, which also needs d ≥ 17.
+* **Route B: internal bases block the K4s.** KS demands *exactly* one 1 in every basis of the set. This is stronger
+  than exclusivity, so neighbourhoods need not be GHZ paradoxes, and the bounds above do not apply. The only bound
+  known here is d ≥ 5 (|V| ≤ 4d against known minimal KS sizes). Small-dimensional attempts (d = 6–8 alphabets) belong
+  to this route and need small Cabello-type gadgets, not GHZ graphs.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
 2. Cubic or higher-degree phase functions over larger or non-abelian groups (the covariant formulation above),
    searched with the K4 count as the objective.
-3. Larger alphabets ({0, ±1, ±i, ω^k}) in d = 6–8, using the exact SAT pipeline in `ks/ks4search.py`.
+3. (Route B) Larger alphabets ({0, ±1, ±i, ω^k}) in d = 6–8, using the exact SAT pipeline in `ks/ks4search.py`.
 
 ## Files
 
