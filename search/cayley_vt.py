@@ -45,8 +45,10 @@ def search(name, maxdeg):
             for s in S: A[g, mul[g][s]] = 1
         ev = np.linalg.eigvalsh(A); k = len(S)
         if ev[0] > -k / 2 + 1e-9: return
+        if ev[0] < -k + 1e-9: return               # lambda_min = -k: bipartite component
+        if ev[-1] + ev[0] < 1e-9: return          # bipartite (symmetric spectrum): chi = 2
         H = nx.from_numpy_array(A)
-        if not nx.is_connected(H): return
+        if not nx.is_connected(H) or nx.is_bipartite(H): return
         tested += 1
         t, _ = theta_comp(H)
         best = max(best, t)

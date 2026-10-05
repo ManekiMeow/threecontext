@@ -49,6 +49,13 @@ this family, and smaller examples need larger connection sets.
   Z2×Z6 and over Dic3, and it is H36 below.
 * Γ = Z13: two graphs (39 vertices). Γ = Z14: several (42 vertices).
 
+**Vertex-transitive graphs below 36.** If H is vertex-transitive, then `θ(H̄) ≤ χ_f(H) = n/α(H)`. Also `α ≥ n/3` because H is
+3-colourable. So `α = n/3`, which forces `3 | n` and `deg ≤ α = n/3` (neighbourhoods are independent). Moreover
+`θ(H) = n/θ(H̄) = n/3` forces `λ_min(A) ≤ −k/2` (Hoffman). Combined with Theorem 2 (n ≥ 28), the only VT orders below 36
+are 30 and 33. An exhaustive scan of **all** triangle-free Cayley graphs on Z30, D15, Z3×D5, Z5×S3 and Z33
+(`search/cayley_vt.py`, `search/cayvt.log`; best θ = 2.839) finds nothing. So **H36 is the smallest Cayley-graph
+example**. Non-Cayley vertex-transitive graphs of order 30 and 33 were not checked.
+
 ### 1.2 The 36-vertex graph (new record)
 
 Let `H36 = T(Z2×Z6; S0, S1, S2)`, where elements of Z2×Z6 are written as pairs (a, z), and
