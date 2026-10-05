@@ -279,6 +279,18 @@ the best unions contain 16 internal bases but still have ≥ 162 KS colourings.
   known here is d ≥ 5 (|V| ≤ 4d against known minimal KS sizes). Small-dimensional attempts (d = 6–8 alphabets) belong
   to this route and need small Cabello-type gadgets, not GHZ graphs.
 
+**Refinement: when does a KS set contain a GHZ graph?** Let V be covered by B_1, …, B_4 and take w ∈ B_4.
+* The rays non-orthogonal to w lie in B_1, B_2, B_3, and each restricted context has probability 1 in state w.
+  So θ(G_w) = 3.
+* If those rays contain **no** pairwise non-orthogonal triple, then α(G_w) = 2. G_w is then a three-context GHZ
+  graph (Theorem 1) and **d ≥ 17**.
+* Hence a four-context KS set with d < 17 must have, for **every** ray w, such a triple among the rays non-orthogonal
+  to w. Every ray lies in a pairwise non-orthogonal 4-tuple, and all of these must be killed by internal bases
+  ("Route B everywhere").
+* Illustration (`ks/ks_neighbourhood.py`): in the 21-ray d = 6 KS set, the paradox derived from any ray w has
+  10 events, clique cover 3, α = 2 but θ = 2.5. Its contradiction is a parity argument over 5 contexts, which the
+  exclusivity graph does not capture. This is why KS sets exist far below the GHZ dimension bound.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
