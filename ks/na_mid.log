@@ -1,0 +1,3 @@
+S3xS3 |G|=36 seed 0: K4-loss 2.314e-05 -> 9.722e-06 (ratio 4.20e-01)  unitarity err 2.2e-16  |T_kl| [36, 36, 36, 36, 36, 36]
+A4xZ3 |G|=36 seed 0: K4-loss 2.462e-05 -> 9.404e-06 (ratio 3.82e-01)  unitarity err 2.2e-16  |T_kl| [36, 36, 36, 36, 36, 36]
+Z13:Z3 (H39) |G|=39 seed 0: K4-loss 1.886e-05 -> 6.962e-06 (ratio 3.69e-01)  unitarity err 2.4e-16  |T_kl| [39, 39, 39, 39, 39, 39]

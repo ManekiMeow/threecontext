@@ -341,7 +341,7 @@ contradicting the trace identity.
 the convolution operator, and the smooth K4 count of the whole covariant 4-partite structure is minimized. Groups:
 SL(2,3), S₄, D₁₂ (24), D₁₃ (26), Heis₂₇, S₃×S₃, A₄×Z₃ (36), Z₁₃⋊Z₃ (39, the symmetry of the Z₁₃ graphs), Z₇⋊Z₃×Z₂ (42),
 S₄×Z₂ (48), Z₁₉⋊Z₃ (57, Perkel's symmetry) and A₅ (60).
-* In every run the K4 loss drops only to ≈ 30–40 % of its start, and all supports stay full
+* In every run the K4 loss drops only to 21–42 % of its start, and all supports stay full
   (`ks/na_*.log`). There is no sign of a sparse K4-free configuration.
 
 **Most promising routes now.**

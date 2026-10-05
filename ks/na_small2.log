@@ -1,0 +1,4 @@
+D13 |G|=26 seed 0: K4-loss 5.692e-05 -> 2.311e-05 (ratio 4.06e-01)  unitarity err 3.5e-16  |T_kl| [26, 26, 26, 26, 26, 26]
+D13 |G|=26 seed 1: K4-loss 6.163e-05 -> 1.711e-05 (ratio 2.78e-01)  unitarity err 3.0e-16  |T_kl| [26, 26, 26, 26, 26, 26]
+Heis27 |G|=27 seed 0: K4-loss 5.337e-05 -> 1.134e-05 (ratio 2.12e-01)  unitarity err 2.7e-16  |T_kl| [27, 27, 27, 27, 27, 27]
+Heis27 |G|=27 seed 1: K4-loss 6.558e-05 -> 2.067e-05 (ratio 3.15e-01)  unitarity err 2.7e-16  |T_kl| [27, 27, 27, 27, 27, 27]
