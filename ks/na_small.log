@@ -1,0 +1,6 @@
+SL(2,3) |G|=24 seed 0: K4-loss 1.060e-04 -> 3.167e-05 (ratio 2.99e-01)  unitarity err 3.6e-16  |T_kl| [24, 24, 24, 24, 24, 24]
+SL(2,3) |G|=24 seed 1: K4-loss 9.937e-05 -> 3.109e-05 (ratio 3.13e-01)  unitarity err 2.2e-16  |T_kl| [24, 24, 24, 24, 24, 24]
+S4 |G|=24 seed 0: K4-loss 8.027e-05 -> 3.215e-05 (ratio 4.00e-01)  unitarity err 2.6e-16  |T_kl| [24, 24, 24, 24, 24, 24]
+S4 |G|=24 seed 1: K4-loss 7.846e-05 -> 3.294e-05 (ratio 4.20e-01)  unitarity err 2.7e-16  |T_kl| [24, 24, 24, 24, 24, 24]
+D12 |G|=24 seed 0: K4-loss 7.934e-05 -> 2.301e-05 (ratio 2.90e-01)  unitarity err 2.7e-16  |T_kl| [23, 24, 24, 24, 24, 24]
+D12 |G|=24 seed 1: K4-loss 7.568e-05 -> 3.013e-05 (ratio 3.98e-01)  unitarity err 3.7e-16  |T_kl| [24, 24, 24, 24, 24, 24]

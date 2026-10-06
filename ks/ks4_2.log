@@ -1,0 +1,19 @@
+it 2 internal contexts 4 colourings(cap 200) 156 rays 20
+it 5 internal contexts 4 colourings(cap 200) 138 rays 20
+it 14 internal contexts 4 colourings(cap 200) 125 rays 19
+it 17 internal contexts 4 colourings(cap 200) 110 rays 18
+it 25 internal contexts 4 colourings(cap 200) 99 rays 18
+it 91 internal contexts 4 colourings(cap 200) 81 rays 17
+it 242 internal contexts 4 colourings(cap 200) 75 rays 17
+it 320 internal contexts 5 colourings(cap 200) 128 rays 21
+it 339 internal contexts 5 colourings(cap 200) 127 rays 20
+it 341 internal contexts 6 colourings(cap 200) 117 rays 20
+it 347 internal contexts 6 colourings(cap 200) 78 rays 18
+it 354 internal contexts 6 colourings(cap 200) 66 rays 18
+it 382 internal contexts 7 colourings(cap 200) 153 rays 21
+it 393 internal contexts 8 colourings(cap 200) 90 rays 18
+it 394 internal contexts 9 colourings(cap 200) 54 rays 18
+it 405 internal contexts 10 colourings(cap 200) 180 rays 23
+it 406 internal contexts 10 colourings(cap 200) 153 rays 22
+it 415 internal contexts 12 colourings(cap 200) 108 rays 21
+best (-12, 108, 12)
