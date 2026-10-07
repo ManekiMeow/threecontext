@@ -406,10 +406,10 @@ Results for the realization dimension d, completing each I_k by an ONB of S_k^�
 | H36 | 26 | symmetric | 3410 | **none** (26/26 infeasible) |
 | H39 | 37 | random | 39408 | **none** (37/37 infeasible) |
 | Perkel | 37 | random | 27378 | none found (36 infeasible, 1 time limit) |
-| H39 | 37 | symmetric | 5088 | completion-normalised cases infeasible; I-ray cases running |
-| Perkel | 37 | symmetric | 4122 | completion-normalised cases infeasible; I-ray cases running |
+| H39 | 37 | symmetric | 5088 | undecided: r* ∈ completion rays (18) infeasible; r* ∈ I₁ undecided (30-min MILP limit) |
+| Perkel | 37 | symmetric | 4122 | undecided: r* ∈ completion rays (18) infeasible; r* ∈ I₁ undecided (30-min MILP limit) |
 
-So for these completions the largest orthogonal GHZ family is exactly 1 (ψ₀ alone), far from the d needed. This is
+So for the decided cases the largest orthogonal GHZ family is exactly 1 (ψ₀ alone), far from the d needed. Normalising on a ray of I₁ makes the big-M MILP much harder; those cases need a stronger formulation (e.g. symmetry breaking or exact support enumeration). This is
 evidence for, not a proof of, an upper bound on orthogonal GHZ families. Remaining freedom: other completions,
 and embedding in a larger space D > d.
 
