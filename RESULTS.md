@@ -413,6 +413,19 @@ So for the decided cases the largest orthogonal GHZ family is exactly 1 (ψ₀ a
 evidence for, not a proof of, an upper bound on orthogonal GHZ families. Remaining freedom: other completions,
 and embedding in a larger space D > d.
 
+### 3.6 Graph invariants alone cannot rule out four contexts
+
+Route A in graph language: the orthogonality graph G on |V| = 4d rays is four disjoint d-cliques with α(G) = 3.
+This forces ϑ(G) = 4 (cover by 4 cliques, and every state sums to 4) and ϑ(Ḡ) = d (the rays are an orthonormal
+representation of Ḡ in dimension d, and ϑ(G)ϑ(Ḡ) ≥ n). It also gives χ(G), χ_f(G) ≥ 4d/3 > d automatically.
+
+**Counterexample to a purely graph-theoretic proof.** The GHZ exclusivity graph (complement of the Shrikhande
+graph) has n = 16, four disjoint 4-cliques, α = 3, ϑ(G) = ϑ(Ḡ) = 4 and χ_f ≥ 16/3 > 4. So it meets every condition
+for d = 4. Yet no four-context KS set exists in d = 4, since every KS set has ≥ 18 rays (Xu–Chen–Gühne).
+The obstruction is the rank: the Gram matrix P must satisfy P² = 4P with identity blocks. ϑ(Ḡ) = d is only its SDP
+relaxation. Rank-sensitive arguments (the trace identity behind d ≥ 17 in Route A, the 18-ray bound in Route B)
+are needed.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
