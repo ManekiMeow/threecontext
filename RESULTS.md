@@ -344,6 +344,88 @@ S₄×Z₂ (48), Z₁₉⋊Z₃ (57, Perkel's symmetry) and A₅ (60).
 * In every run the K4 loss drops only to 21–42 % of its start, and all supports stay full
   (`ks/na_*.log`). There is no sign of a sparse K4-free configuration.
 
+### 3.4 Toward impossibility: Theorem 4 holds in general (new proof)
+
+The paper's proof of Theorem 4 reasons with α and θ of the exclusivity graph left after removing v₀. That does
+not account for internal bases, whose "exactly one" constraints the exclusivity graph cannot see (§3.1–3.2).
+Here is a proof that includes them.
+
+**Lemma (two-context colouring).** Let S be a set of rays and v₀ ∈ S. Suppose every ray non-orthogonal to v₀ lies in
+C ∪ C′, the remnants (after deleting rays ⊥ v₀) of two complete bases contained in S. Then S has a KS colouring with
+f(v₀) = 1.
+
+*Proof.*
+1. Let p(x) = |⟨x|v₀⟩|² on C and p′(y) = |⟨y|v₀⟩|² on C′. Each sums to 1, since v₀ lies in the span of each remnant.
+2. For X ⊆ C, let Y ⊆ C′ be the rays orthogonal to all of X. Then X ∪ Y is orthonormal, so Bessel gives
+   p(X) + p′(Y) ≤ 1, i.e. p(X) ≤ p′(N(X)).
+3. By Hall's / the transportation theorem there is a coupling q(x, y) with marginals p, p′ supported on
+   non-orthogonal pairs.
+4. Any other basis B′ ∌ v₀ of S has remnant A ∪ A′ (A ⊂ C, A′ ⊂ C′, A ⊥ A′) of total probability 1 in state v₀. So
+   P(x ∈ A) + P(y ∈ A′) = 1, and the two events are disjoint under q. Hence every (x, y) in the support of q hits B′
+   exactly once.
+5. f = 1 on {v₀, x, y} (pairwise non-orthogonal) and 0 elsewhere is a KS colouring. ∎
+
+**Consequences (internal bases allowed).**
+* **Theorem 4 holds in general.** If a KS set is covered by four bases, they are pairwise disjoint (a ray in two of
+  them has all its neighbours in the other two). So the union has 4D distinct rays.
+* In a KS set covered by k bases, no ray lies in k − 2 or more of them.
+* No KS set is covered by three bases. This extends the Xu–Chen–Gühne lemma, which assumed each vector lies in exactly
+  one context.
+
+**Necessary condition per ray.** Let w ∈ B₄ with neighbours in B₁, B₂, B₃ and probabilities p(w)_r = |⟨r|w⟩|².
+Suppose p(w) is a convex combination of pairwise non-orthogonal transversal triples, i.e. p(w) ∈ STAB(G_w). Then every
+internal basis is hit exactly once almost surely, so a KS colouring exists. Hence **in a four-context KS set every ray w
+gives a state-dependent contextual point p(w) ∉ STAB(G_w)** for the other three bases.
+* Route A (K4-free) satisfies this trivially, since there are no transversal triples.
+* In Route B it is a genuine constraint.
+
+**What an impossibility proof still needs.** A single ray cannot give the contradiction: the GHZ graphs are
+maximally contextual for one state. The argument has to combine all rays, e.g. show p(w) ∈ STAB(G_w) for at least one
+w, using Σ_{w∈B₄} p(w)_r = 1 for every r.
+
+### 3.5 Orthogonal GHZ states for completed GHZ contexts (exact MILP)
+
+Route A reformulated: three complete bases B₁, B₂, B₃ of ℂᵈ admit a fourth basis making a KS set iff there are
+d mutually orthogonal **GHZ states**, i.e. states whose support in B₁ ∪ B₂ ∪ B₃ is triangle-free.
+* A GHZ state is a point of ∩_k span(support in B_k); in all our examples this intersection is one-dimensional.
+* So GHZ states are isolated, and descent or greedy searches miss them. Both heuristics failed the positive
+  control (two block-diagonal copies of H36 have ≥ 2 orthogonal GHZ states), so their "1 found" results are void.
+
+**Exact test** (`ks/ghzmilp.py`): a mixed-integer program over ψ ∈ ℂᵈ and binaries z_r (z_r = 1 ⇒ ⟨r|ψ⟩ = 0).
+* Constraints: every triangle has a zero ray; ψ ⊥ ψ₀; ⟨r*|ψ⟩ = 1, enumerated over r* ∈ B₁.
+* A unit GHZ state has some B₁-overlap ≥ 1/√d, so the big-M bound √d + 1 is safe and infeasibility for every r* is a proof.
+* It passes the positive control (finds the second GHZ state of 2 × H36).
+* Status codes: 0 = feasible, 2 = infeasible, 1 = time limit.
+
+Results for the realization dimension d, completing each I_k by an ONB of S_k^⊥. Completions are random
+(Haar), or symmetry-adapted (eigenvectors of the translation symmetry inside S_k^⊥):
+
+| graph | d | completion | triangles | GHZ state ⊥ ψ₀? |
+|---|---|---|---|---|
+| H36 | 26 | random | 11816 | **none** (26/26 infeasible) |
+| H36 | 26 | symmetric | 3410 | **none** (26/26 infeasible) |
+| H39 | 37 | random | 39408 | **none** (37/37 infeasible) |
+| Perkel | 37 | random | 27378 | none found (36 infeasible, 1 time limit) |
+| H39 | 37 | symmetric | 5088 | undecided: r* ∈ completion rays (18) infeasible; r* ∈ I₁ undecided (30-min MILP limit) |
+| Perkel | 37 | symmetric | 4122 | undecided: r* ∈ completion rays (18) infeasible; r* ∈ I₁ undecided (30-min MILP limit) |
+
+So for the decided cases the largest orthogonal GHZ family is exactly 1 (ψ₀ alone), far from the d needed. Normalising on a ray of I₁ makes the big-M MILP much harder; those cases need a stronger formulation (e.g. symmetry breaking or exact support enumeration). This is
+evidence for, not a proof of, an upper bound on orthogonal GHZ families. Remaining freedom: other completions,
+and embedding in a larger space D > d.
+
+### 3.6 Graph invariants alone cannot rule out four contexts
+
+Route A in graph language: the orthogonality graph G on |V| = 4d rays is four disjoint d-cliques with α(G) = 3.
+This forces ϑ(G) = 4 (cover by 4 cliques, and every state sums to 4) and ϑ(Ḡ) = d (the rays are an orthonormal
+representation of Ḡ in dimension d, and ϑ(G)ϑ(Ḡ) ≥ n). It also gives χ(G), χ_f(G) ≥ 4d/3 > d automatically.
+
+**Counterexample to a purely graph-theoretic proof.** The GHZ exclusivity graph (complement of the Shrikhande
+graph) has n = 16, four disjoint 4-cliques, α = 3, ϑ(G) = ϑ(Ḡ) = 4 and χ_f ≥ 16/3 > 4. So it meets every condition
+for d = 4. Yet no four-context KS set exists in d = 4, since every KS set has ≥ 18 rays (Xu–Chen–Gühne).
+The obstruction is the rank: the Gram matrix P must satisfy P² = 4P with identity blocks. ϑ(Ḡ) = d is only its SDP
+relaxation. Rank-sensitive arguments (the trace identity behind d ≥ 17 in Route A, the 18-ray bound in Route B)
+are needed.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
