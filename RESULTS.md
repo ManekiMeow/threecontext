@@ -456,7 +456,8 @@ on the 4-partite non-orthogonality graph of four complete bases, all proved from
 * (TRI) each triple of bases has a triangle (Re tr U₁₂U₂₃U₃₁ = d).
 With sound symmetry breaking (double-lex on the B₁–B₂ block, column-lex on B₂–B₃ and B₃–B₄):
 * d = 4, 5: **UNSAT** (instant). d = 6: **SAT**, a perfectly regular skeleton (4 neighbours per other basis).
-* With the full requirement n ≥ 28: d = 10 **UNSAT**; d = 17 running (`ks/skel17.log`).
+* With the full requirement n ≥ 28: d = 10 **UNSAT**; d = 17 **undecided** (CaDiCaL, 14000 s, no verdict). Deciding
+  it needs a stronger encoding (e.g. lazy θ = 3 neighbourhood constraints, direction 1 below) rather than more time.
 * So the combinatorial conditions alone cannot give impossibility; since d ≥ 17 analytically, the content is in
   θ(H̄_w) = 3 for every neighbourhood. UNSAT at a given d ≥ 17 would still be a theorem for that d.
 
