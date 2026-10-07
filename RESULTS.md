@@ -383,6 +383,36 @@ gives a state-dependent contextual point p(w) ∉ STAB(G_w)** for the other thre
 maximally contextual for one state. The argument has to combine all rays, e.g. show p(w) ∈ STAB(G_w) for at least one
 w, using Σ_{w∈B₄} p(w)_r = 1 for every r.
 
+### 3.5 Orthogonal GHZ states for completed GHZ contexts (exact MILP)
+
+Route A reformulated: three complete bases B₁, B₂, B₃ of ℂᵈ admit a fourth basis making a KS set iff there are
+d mutually orthogonal **GHZ states**, i.e. states whose support in B₁ ∪ B₂ ∪ B₃ is triangle-free.
+* A GHZ state is a point of ∩_k span(support in B_k); in all our examples this intersection is one-dimensional.
+* So GHZ states are isolated, and descent or greedy searches miss them. Both heuristics failed the positive
+  control (two block-diagonal copies of H36 have ≥ 2 orthogonal GHZ states), so their "1 found" results are void.
+
+**Exact test** (`ks/ghzmilp.py`): a mixed-integer program over ψ ∈ ℂᵈ and binaries z_r (z_r = 1 ⇒ ⟨r|ψ⟩ = 0).
+* Constraints: every triangle has a zero ray; ψ ⊥ ψ₀; ⟨r*|ψ⟩ = 1, enumerated over r* ∈ B₁.
+* A unit GHZ state has some B₁-overlap ≥ 1/√d, so the big-M bound √d + 1 is safe and infeasibility for every r* is a proof.
+* It passes the positive control (finds the second GHZ state of 2 × H36).
+* Status codes: 0 = feasible, 2 = infeasible, 1 = time limit.
+
+Results for the realization dimension d, completing each I_k by an ONB of S_k^⊥. Completions are random
+(Haar), or symmetry-adapted (eigenvectors of the translation symmetry inside S_k^⊥):
+
+| graph | d | completion | triangles | GHZ state ⊥ ψ₀? |
+|---|---|---|---|---|
+| H36 | 26 | random | 11816 | **none** (26/26 infeasible) |
+| H36 | 26 | symmetric | 3410 | **none** (26/26 infeasible) |
+| H39 | 37 | random | 39408 | **none** (37/37 infeasible) |
+| Perkel | 37 | random | 27378 | none found (36 infeasible, 1 time limit) |
+| H39 | 37 | symmetric | 5088 | completion-normalised cases infeasible; I-ray cases running |
+| Perkel | 37 | symmetric | 4122 | completion-normalised cases infeasible; I-ray cases running |
+
+So for these completions the largest orthogonal GHZ family is exactly 1 (ψ₀ alone), far from the d needed. This is
+evidence for, not a proof of, an upper bound on orthogonal GHZ families. Remaining freedom: other completions,
+and embedding in a larger space D > d.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.

@@ -1,0 +1,2 @@
+H36 d=26 completion=symmetric: rays 78, triangles 3410
+H36 completion=symmetric: GHZ state orthogonal to psi0 exists: False; per-r* status counts: {'INFEASIBLE': 26} over 26 of 26
