@@ -344,6 +344,45 @@ S₄×Z₂ (48), Z₁₉⋊Z₃ (57, Perkel's symmetry) and A₅ (60).
 * In every run the K4 loss drops only to 21–42 % of its start, and all supports stay full
   (`ks/na_*.log`). There is no sign of a sparse K4-free configuration.
 
+### 3.4 Toward impossibility: Theorem 4 holds in general (new proof)
+
+The paper's proof of Theorem 4 reasons with α and θ of the exclusivity graph left after removing v₀. That does
+not account for internal bases, whose "exactly one" constraints the exclusivity graph cannot see (§3.1–3.2).
+Here is a proof that includes them.
+
+**Lemma (two-context colouring).** Let S be a set of rays and v₀ ∈ S. Suppose every ray non-orthogonal to v₀ lies in
+C ∪ C′, the remnants (after deleting rays ⊥ v₀) of two complete bases contained in S. Then S has a KS colouring with
+f(v₀) = 1.
+
+*Proof.*
+1. Let p(x) = |⟨x|v₀⟩|² on C and p′(y) = |⟨y|v₀⟩|² on C′. Each sums to 1, since v₀ lies in the span of each remnant.
+2. For X ⊆ C, let Y ⊆ C′ be the rays orthogonal to all of X. Then X ∪ Y is orthonormal, so Bessel gives
+   p(X) + p′(Y) ≤ 1, i.e. p(X) ≤ p′(N(X)).
+3. By Hall's / the transportation theorem there is a coupling q(x, y) with marginals p, p′ supported on
+   non-orthogonal pairs.
+4. Any other basis B′ ∌ v₀ of S has remnant A ∪ A′ (A ⊂ C, A′ ⊂ C′, A ⊥ A′) of total probability 1 in state v₀. So
+   P(x ∈ A) + P(y ∈ A′) = 1, and the two events are disjoint under q. Hence every (x, y) in the support of q hits B′
+   exactly once.
+5. f = 1 on {v₀, x, y} (pairwise non-orthogonal) and 0 elsewhere is a KS colouring. ∎
+
+**Consequences (internal bases allowed).**
+* **Theorem 4 holds in general.** If a KS set is covered by four bases, they are pairwise disjoint (a ray in two of
+  them has all its neighbours in the other two). So the union has 4D distinct rays.
+* In a KS set covered by k bases, no ray lies in k − 2 or more of them.
+* No KS set is covered by three bases. This extends the Xu–Chen–Gühne lemma, which assumed each vector lies in exactly
+  one context.
+
+**Necessary condition per ray.** Let w ∈ B₄ with neighbours in B₁, B₂, B₃ and probabilities p(w)_r = |⟨r|w⟩|².
+Suppose p(w) is a convex combination of pairwise non-orthogonal transversal triples, i.e. p(w) ∈ STAB(G_w). Then every
+internal basis is hit exactly once almost surely, so a KS colouring exists. Hence **in a four-context KS set every ray w
+gives a state-dependent contextual point p(w) ∉ STAB(G_w)** for the other three bases.
+* Route A (K4-free) satisfies this trivially, since there are no transversal triples.
+* In Route B it is a genuine constraint.
+
+**What an impossibility proof still needs.** A single ray cannot give the contradiction: the GHZ graphs are
+maximally contextual for one state. The argument has to combine all rays, e.g. show p(w) ∈ STAB(G_w) for at least one
+w, using Σ_{w∈B₄} p(w)_r = 1 for every r.
+
 **Most promising routes now.**
 1. Several GHZ states in the same three bases. One could look for a non-abelian symmetry (e.g. the multiplier
    group of Z13 acting on the H39 realization), mapping ψ to ψ' ⊥ ψ while permuting the completed contexts.
