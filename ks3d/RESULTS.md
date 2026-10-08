@@ -61,9 +61,9 @@ a 31-ray set and height 1 / Q(√2) reproduces Peres's 33-ray set.
 | integers in [-2, 2] | 49 | 26 | **min = 31** (exact) | <1 s |
 | integers in [-3, 3] | 97 | 50 | **min = 31** (exact) | 2 s |
 | integers in [-4, 4] | 205 | 110 | **no KS set with ≤ 30 rays** (exact) | 9 min |
-| integers in [-5, 5] | 421 | 266 | running | |
+| integers in [-5, 5] | 421 | 266 | ≤ 30: **undecided**, master did not finish 20 iterations in ~5 h | |
 | a + b√2, a, b ∈ {-1,0,1} | 201 | 88 | **min = 33** (exact; Peres's set is optimal here) | 15 min |
-| a + b√2, a ∈ [-2,2], b ∈ {-1,0,1} | 481 | 258 | ≤ 30: running | |
+| a + b√2, a ∈ [-2,2], b ∈ {-1,0,1} | 481 | 258 | ≤ 30: **undecided**, same | |
 | a + b√3, a, b ∈ {-1,0,1} | 177 | 84 | KS sets exist, **none with ≤ 33 rays** (exact) | 2 min |
 
 The 31-ray sets found (`found_sets.json`) are uncolourable and vertex-critical by `verify.py`, with
@@ -80,7 +80,9 @@ coordinates.
 
 ## 5. Next steps
 
-* Finish height 5 and Q(√2) with |a| ≤ 2; then mixed fields Q(√2, √3) and Q(√5).
+* Height 5 and Q(√2) with |a| ≤ 2 are beyond the current master: the hitting-set SAT problem
+  itself becomes hard. Needs case splitting on a fixed basis orbit plus parallel runs, or a
+  stronger master (e.g. cuts from many diverse near-colourings up front).
 * Run each universe at T = 23..30 split by a fixed basis orbit to parallelise.
 * A different route that does touch the general problem: replicate the Li–Bright–Ganesh / SMS
   orderly generation to 24 on this machine as a calibration, and estimate the cost of 25 with the
