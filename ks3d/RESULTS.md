@@ -150,7 +150,7 @@ costs ~0.015 s solver start-up, i.e. ~600 CPU-s of overhead per order.
 | 19 | 0.9 s | 590 | < 0.1 s | no KS set |
 | 20 | 56 s | 684 | 3.3 s | no KS set |
 | 21 | > 8,700 s (killed) | **2,168** | 140 s, 225 s, 267 s | no KS set (exact, all cubes UNSAT) |
-| 22 | | ≥ 20,738 (18 cubes hit the 900 s cap; re-running with 4 h cap) | > 900 s ×18 | 1 candidate graph, **not embeddable** (see below); rest pending |
+| 22 | | **≥ 39,700** (4,563 for 39,744 finished cubes; 18 cubes unfinished: 15 at > 900 s, 3 at > 7,200 s) | > 2 h | 1 candidate graph, **not embeddable**; 18 cubes undecided (stopped) |
 
 The hard cubes are the ones where both new vertices have **no** Yu–Oh neighbour: the cost lives
 in structures far from the seed, so seeding helps less and less as the order grows. For the same
@@ -164,3 +164,24 @@ required orthogonalities then fail (e.g. vertex 13 = (1,-3,-2) is adjacent to ve
 but not orthogonal to it). So the graph has no orthogonal representation extending Yu–Oh. The
 solver runs with `--unembeddable-check 0` and reports such graphs for a post-check, as in the paper
 (43 of its 44 order-33 candidates failed the same check). Checker: `check_solution.py`.
+
+### 6.2 Cost projection for "no KS set with ≤ 30 rays contains Yu–Oh"
+
+Measured growth per added ray: 20 → 21 about 30× (56 s → 2,168 s), 21 → 22 at least 18×.
+Orders ≤ 23 are already implied by the global bound 24, so the new content is orders 24–30, the
+most expensive ones. Projecting order 30 alone from order 21 (2.2·10³ s) with a constant
+per-order factor r:
+
+| r | order 30 (CPU-hours) |
+|---|---|
+| 18 (current) | ~10^11 |
+| 10 | ~6·10^8 |
+| 5 | ~10^6 |
+
+Even the optimistic r = 5 means about a million CPU-hours for order 30 alone, plus orders 24–29. A
+~20,000-core cluster would need weeks for that, and r = 10 would need decades. **Conclusion: a
+brute-force Yu–Oh-seeded proof up to 30 rays is not a realistic cluster project with this
+solver.** The cost sits in cubes whose new rays have no Yu–Oh neighbour, i.e. the effectively
+unseeded part of the problem. Forbidding the 25-ray completion does not touch that part.
+Caveat: r was measured at only two steps and may fall at higher orders. Finishing orders 22–24
+on a cluster (hours to days) would measure that before committing a large allocation.
