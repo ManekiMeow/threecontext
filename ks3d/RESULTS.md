@@ -150,10 +150,17 @@ costs ~0.015 s solver start-up, i.e. ~600 CPU-s of overhead per order.
 | 19 | 0.9 s | 590 | < 0.1 s | no KS set |
 | 20 | 56 s | 684 | 3.3 s | no KS set |
 | 21 | > 8,700 s (killed) | **2,168** | 140 s, 225 s, 267 s | no KS set (exact, all cubes UNSAT) |
-| 22 | | running | | |
+| 22 | | ≥ 20,738 (18 cubes hit the 900 s cap; re-running with 4 h cap) | > 900 s ×18 | 1 candidate graph, **not embeddable** (see below); rest pending |
 
 The hard cubes are the ones where both new vertices have **no** Yu–Oh neighbour: the cost lives
 in structures far from the seed, so seeding helps less and less as the order grows. For the same
 reason, forbidding the full 25-ray completion (`yuoh13x`) cannot change orders < 25 at all (25
 vertices are needed to contain it). From 25 on it removes only the branch the paper showed is cheap
 (25-core extensions to order 31 take 8 s).
+
+Order-22 candidate (cube 286): 22 vertices, 49 edges, 12 bases, min degree 3, not 010-colourable.
+Forcing coordinates by cross products from the fixed Yu–Oh vectors determines all 22 rays, and 7
+required orthogonalities then fail (e.g. vertex 13 = (1,-3,-2) is adjacent to vertex 15 = (1,-2,-3)
+but not orthogonal to it). So the graph has no orthogonal representation extending Yu–Oh. The
+solver runs with `--unembeddable-check 0` and reports such graphs for a post-check, as in the paper
+(43 of its 44 order-33 candidates failed the same check). Checker: `check_solution.py`.

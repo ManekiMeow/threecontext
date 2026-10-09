@@ -70,6 +70,8 @@ def main():
             r = subprocess.run([cmd[0], f] + cmd[2:], capture_output=True, text=True, timeout=tlim, cwd=wd)
             dt, done = time.time() - t0, r.returncode == 20
             sols = [l for l in r.stdout.splitlines() if l.startswith("Number of solutions")]
+            if not sols or not sols[0].rstrip().endswith(": 0"):
+                open(os.path.join(cdir, f"c{k}.log"), "w").write(r.stdout)
         except subprocess.TimeoutExpired:
             dt, done, sols = tlim, False, []
         os.remove(f)
