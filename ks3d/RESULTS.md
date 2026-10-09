@@ -21,6 +21,22 @@ roughly 100–200 CPU-years. I found no claim of 25 or more as of this date (sea
 listings via search engines; arxiv.org itself is not reachable from this environment). The
 true minimum is open, in **[24, 31]**.
 
+### 1.1 Li, Bright, Trandafir, Cabello, Ganesh, arXiv:2604.19947 (April 2026)
+
+*SAT + nauty: orderly generation of small KS sets containing the smallest SI-C set.*
+Does not move the bounds (still [24, 31]). What it adds:
+
+* Exhaustive result: up to 33 rays, Schütte's 33-ray set is the **only** KS set containing the
+  complete 25-ray SI-C set (the cross-product closure of the 13-ray Yu–Oh set); 1,641 CPU-hours,
+  13 TiB DRAT certificate. Corollary: **no KS set with ≤ 30 rays contains that 25-ray core**.
+* Recursive Canonical Labelling (RCL) on top of nauty: hereditary canonical form for orderly
+  generation at ~27 ms per check independent of order, versus minutes for the lexicographic
+  checks used by SAT+CAS and SMS at orders 23–26. This removes the isomorphism bottleneck of the
+  graph-enumeration route.
+* A geometric propagator: coordinates of new rays are derived by cross products during the search,
+  and partial graphs that cannot be embedded are cut immediately with small clauses.
+* Code: github.com/BrianLi009/SAT-nauty (reachable from this environment).
+
 ## 2. What is realistic here
 
 This container has 4 cores. The exhaustive graph-enumeration route to 25 costs ~100 CPU-years, so
