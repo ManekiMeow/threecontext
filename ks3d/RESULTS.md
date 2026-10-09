@@ -138,3 +138,22 @@ Lovász theta screen (`theta.py`). ϑ(G) < ν(G) (ν = max number of disjoint ba
 sufficient test for KS. But on the 31-ray set α = 11, ϑ = 11.71, ν = 7, and the colourable
 30-ray subsets have almost the same values, so the screen cannot separate KS from non-KS graphs.
 Cost: ϑ SDP (cvxopt) 79 ms vs SAT colouring 0.3 ms on 31 vertices.
+
+### 6.1 Cube-split timing for the Yu–Oh seed (`estimate.py`)
+
+Cubes fix the seed neighbourhoods of the first two new vertices and the edge between them
+(141 feasible neighbourhoods, 39,762 cubes). Times are CPU-seconds on this machine; each cube
+costs ~0.015 s solver start-up, i.e. ~600 CPU-s of overhead per order.
+
+| order | unsplit run | all cubes (CPU-s) | hardest cubes | result |
+|---|---|---|---|---|
+| 19 | 0.9 s | 590 | < 0.1 s | no KS set |
+| 20 | 56 s | 684 | 3.3 s | no KS set |
+| 21 | > 8,700 s (killed) | **2,168** | 140 s, 225 s, 267 s | no KS set (exact, all cubes UNSAT) |
+| 22 | | running | | |
+
+The hard cubes are the ones where both new vertices have **no** Yu–Oh neighbour: the cost lives
+in structures far from the seed, so seeding helps less and less as the order grows. For the same
+reason, forbidding the full 25-ray completion (`yuoh13x`) cannot change orders < 25 at all (25
+vertices are needed to contain it). From 25 on it removes only the branch the paper showed is cheap
+(25-core extensions to order 31 take 8 s).

@@ -2,7 +2,10 @@
 arbitrary fixed ray set, e.g. the 13-ray Yu-Oh set.
 
 usage: python3 satnauty_seed.py SATNAUTY_DIR SEED ORDER
-SEED in {yuoh13, sic25}. Writes seed files and the CNF under SATNAUTY_DIR/seed_<SEED>_<ORDER>/.
+SEED in {yuoh13, yuoh13x, sic25}. yuoh13x = Yu-Oh seed with the full 25-ray completion forbidden:
+at least one of the 12 rays u x w (u, w non-orthogonal Yu-Oh rays) must be absent, encoded as
+"no new vertex is adjacent to both u and w" behind a selector per completion ray. The clauses are
+invariant under relabelling the non-seed vertices, so orderly generation stays sound. Writes seed files and the CNF under SATNAUTY_DIR/seed_<SEED>_<ORDER>/.
 """
 import os
 import subprocess
@@ -17,15 +20,55 @@ SEEDS = {
 }
 
 
-def main():
-    root, seed, order = sys.argv[1], sys.argv[2], int(sys.argv[3])
+def canon(v):
+    from math import gcd
+    g = 0
+    for x in v:
+        g = gcd(g, abs(x))
+    v = tuple(x // g for x in v)
+    return v if next(x for x in v if x) > 0 else tuple(-x for x in v)
+
+
+def edge_var(i, j):
+    """1-based vertices i < j; edge variables are numbered column by column."""
+    return (j - 1) * (j - 2) // 2 + i
+
+
+def forbid_completion(cnf, vecs, order):
+    p = len(vecs)
+    cross = lambda u, v: (u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0])
+    seedrays = {canon(v) for v in vecs}
+    gen = {}
+    for a in range(p):
+        for b in range(a + 1, p):
+            c = cross(vecs[a], vecs[b])
+            if any(c) and canon(c) not in seedrays:
+                gen.setdefault(canon(c), (a + 1, b + 1))
+    assert len(gen) == 12, len(gen)
+    lines = open(cnf).read().splitlines()
+    _, _, nv, nc = lines[0].split()
+    nv, nc = int(nv), int(nc)
+    new = []
+    sel = []
+    for k, (c, (u, w)) in enumerate(sorted(gen.items())):
+        a = nv + 1 + k
+        sel.append(a)
+        for v in range(p + 1, order + 1):
+            new.append(f"{-a} {-edge_var(u, v)} {-edge_var(w, v)} 0")
+    new.append(" ".join(map(str, sel)) + " 0")
+    lines[0] = f"p cnf {nv + len(sel)} {nc + len(new)}"
+    open(cnf, "w").write("\n".join(lines + new) + "\n")
+
+
+def build(root, seed, order):
+    """Write seed files and the seeded CNF; return (workdir, cnf, seed vectors, solver command)."""
     root = os.path.abspath(root)
     wd = os.path.join(root, f"seed_{seed}_{order}")
     os.makedirs(wd, exist_ok=True)
     if seed == "sic25":
         vecs = [tuple(map(int, l.split())) for l in open(os.path.join(root, "sic-25-vectors.txt")) if l.strip()]
     else:
-        vecs = SEEDS[seed]
+        vecs = SEEDS[seed.rstrip("x")]
     p = len(vecs)
     dot = lambda u, v: sum(a * b for a, b in zip(u, v))
     # The solver checks every prefix, the seed itself included, for RCL canonicity, so the seed
@@ -61,9 +104,17 @@ def main():
     cnf = os.path.join(wd, "seeded.cnf")
     subprocess.run(["python3", os.path.join(root, "utils/add_vars_to_cnf.py"), base,
                     os.path.join(wd, "seed.vars"), cnf], check=True)
+    if seed.endswith("x"):
+        forbid_completion(cnf, vecs, order)
     cmd = [os.path.join(root, "cadical-rcl/build/cadical"), cnf, "--order", str(order),
            "--partition", str(p), "--vectors-file", os.path.join(wd, "seed-vectors.txt"),
            "--binary=false", "--unembeddable-check", "0", "--ortho"]
+    return wd, cnf, vecs, cmd
+
+
+def main():
+    root, seed, order = sys.argv[1], sys.argv[2], int(sys.argv[3])
+    wd, cnf, vecs, cmd = build(root, seed, order)
     t0 = time.time()
     with open(os.path.join(wd, "solver.log"), "w") as log:
         r = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT, cwd=wd)
