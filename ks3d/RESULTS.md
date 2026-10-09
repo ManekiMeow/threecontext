@@ -113,3 +113,28 @@ python3 cegar.py 4 30            # integer height 4, target <= 30
 python3 fieldks.py 2 1 1 32      # Q(sqrt2), |a|,|b| <= 1, target <= 32
 python3 verify.py found_sets.json
 ```
+
+## 6. SAT + nauty timing test (October 9, 2026)
+
+The paper's solver (github.com/BrianLi009/SAT-nauty, commit a9577f2) was built here (4 cores).
+Each run is one exact order, single-threaded. Runner for arbitrary seeds: `ks3d/satnauty_seed.py`
+(the seed must be in its own RCL canonical order, or the solver blocks it immediately and
+reports a vacuous UNSAT. The runner relabels it with `verifiers/rcl_canon`.)
+
+| seed | order | result | canonical partial graphs | wall time |
+|---|---|---|---|---|
+| 25-ray SI-C core | 26–29 | no KS graph | 0 | < 1 s |
+| 25-ray SI-C core | 30 | no KS graph | 4 | 1 s |
+| 25-ray SI-C core | 31 | no KS graph | 72 | 8 s |
+| Yu–Oh 13 rays | 20 | no KS graph (3,993 colourable candidates rejected) | 31,842 | 56 s |
+| Yu–Oh 13 rays | 21, 22, 23 | **unfinished after 2 h 20 min** | | > 8,000 s |
+
+These reproduce the paper for orders 26–31. With the Yu–Oh seed the cost grows by more than
+100× from order 20 to 21, so orders 24–30 with this seed are far beyond this machine. Even a cluster
+would need a better split, e.g. Trandafir–Cabello's suggestion to seed Yu–Oh and forbid the full
+25-ray completion.
+
+Lovász theta screen (`theta.py`). ϑ(G) < ν(G) (ν = max number of disjoint bases) is a valid
+sufficient test for KS. But on the 31-ray set α = 11, ϑ = 11.71, ν = 7, and the colourable
+30-ray subsets have almost the same values, so the screen cannot separate KS from non-KS graphs.
+Cost: ϑ SDP (cvxopt) 79 ms vs SAT colouring 0.3 ms on 31 vertices.
