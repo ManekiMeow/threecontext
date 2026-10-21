@@ -642,7 +642,9 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
        * the correctness of `ks/smalld_sat.py` and of CaDiCaL.
      * Supporting evidence: the soundness tests, the relaxed-instance checks, and d = 3, 4 reproduced from scratch.
      * Not yet done: an independently checked proof certificate (DRAT/LRAT), and the cross-check with the second
-       encoding `ks/smalld_cegar.py`, which was still running.
+       encoding `ks/smalld_cegar.py`. After 50 min that cross-check was still refining (450–850 rounds per case,
+       each round slower than the last). At d = 5, adding completion and span clauses lazily is slower than adding
+       them all at once. So for d = 6 a hybrid is the better design: completion clauses static, span clauses lazy.
    * Next: d = 6 (24 rays, the dimension of the 21-ray set), using `ks/smalld_cegar.py` and the five shapes 411, 321,
      222, 3111 and 2211. Outcome: either a 24-ray four-context KS set, or d ≥ 7.
 2. **Route A with rigid symmetry.** By Corollary 12a, in a covariant configuration KS holds iff the neighbourhood of
