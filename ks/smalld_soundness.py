@@ -9,7 +9,7 @@ MININT = int(sys.argv[3]) if len(sys.argv) > 3 else 0     # only test configurat
 here = os.path.dirname(os.path.abspath(__file__)); random.seed(3)
 w = np.exp(2j * np.pi / 3)
 alphabets = {"{0,±1}": [0, 1, -1], "{0,1,w,w²}": [0, 1, w, w * w]}
-for name, A in alphabets.items():
+for name, A in (alphabets.items() if "--designed-only" not in sys.argv else []):
     rays = {}
     for v in itertools.product(A, repeat=d):
         v = np.array(v, dtype=complex)
@@ -42,3 +42,31 @@ for name, A in alphabets.items():
         verdict = "SAT" if "\nSAT" in out else "UNSAT (UNSOUND!)"
         print(f"  config {done}: cross orthogonalities {len(orth)}, internal bases {nint}: {verdict}", flush=True)
         done += 1
+
+# Designed configurations: each contains an internal basis of a prescribed shape meeting >= 3 covering bases
+# (W_1 + ... + W_m = C^d with W_k spanned by part of B_k), which exercises the span and completion clauses.
+rng = np.random.default_rng(5)
+def haar(n):
+    Q, R = np.linalg.qr(rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))); return Q * (np.diag(R) / abs(np.diag(R)))
+def designed(shape):
+    F = haar(d); cols, start = [], 0
+    for n in shape: cols.append(F[:, start:start + n]); start += n
+    bases = []
+    for k in range(4):
+        if k < len(shape):
+            Wk = cols[k] @ haar(shape[k]); comp = np.hstack([c for j, c in enumerate(cols) if j != k])
+            bases.append(np.hstack([Wk, comp @ haar(d - shape[k])]))
+        else:
+            bases.append(haar(d))
+    return [b[:, i] for b in bases for i in range(d)]
+for shape in [(3, 1, 1), (2, 2, 1), (2, 1, 1, 1)][: 3 if d == 5 else 0]:
+    for t in range(2):
+        vecs = designed(shape); Gs = ortho_graph(vecs); Bs = all_bases(Gs, d)
+        orth = sorted((r, s) for r, s in Gs.edges() if r // d != s // d)
+        pickle.dump(orth, open("/tmp/_pattern.pkl", "wb"))
+        out = subprocess.run([sys.executable, os.path.join(here, "smalld_sat.py"), str(d), "--no-ks", "--no-k4",
+                              "--no-split", "--no-sym", "--fix", "/tmp/_pattern.pkl"],
+                             capture_output=True, text=True, cwd="/tmp").stdout
+        verdict = "SAT" if "\nSAT" in out else "UNSAT (UNSOUND!)"
+        pc = sorted(sum(1 for c in range(4) if b & set(range(c * d, (c + 1) * d))) for b in Bs)
+        print(f"  designed {shape} #{t}: cross orthogonalities {len(orth)}, pieces of bases {pc}: {verdict}", flush=True)

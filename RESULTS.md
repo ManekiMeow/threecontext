@@ -609,9 +609,20 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
      * The instance has about 19k variables and 2.06M clauses.
      * Without the unique-completion and span clauses it is satisfiable in 0.4 s, by a model that completes the same
        4-clique twice, which is geometrically impossible. So the geometry carries the difficulty.
-     * With all clauses, the full instance and the three cases obtained by fixing one K4 and the shape of a basis
-       blocking it (`--case 311 | 221 | 2111`; the only ≥ 3-piece shapes in d = 5) were not decided in this session.
-       The full instance ran for 25 min; each case ran for 10+ min with CaDiCaL, and case 311 also with Kissat.
+     * With all clauses, fix one K4 (WLOG the last ray of each basis) and an internal basis blocking it, made of the
+       first rays of the bases it meets. Its piece sizes are 3+1+1, 2+2+1 or 2+1+1+1, the only ≥ 3-piece shapes in
+       d = 5 (`--case 311 | 221 | 2111`, with lex-leader breaking of the remaining symmetry).
+       * **Case 311 is UNSAT** (CaDiCaL, 493 s).
+       * Cases 221 and 2111 were still running after 25 min (`ks/smalld_d5.log`).
+       * If both are UNSAT, no four-context KS set exists in ℂ⁵, so d ≥ 6.
+     * Checks on the case split: with the geometric clauses removed, each of the three cases is SAT, and brute force
+       confirms that the models satisfy "every ray lies in a K4" and "every K4 is blocked by a ≥ 3-piece basis".
+     * Independent second encoding (`ks/smalld_cegar.py`):
+       * the blockers are encoded with selection variables instead of one variable per d-subset;
+       * unique completion and span equalities are added lazily (CEGAR);
+       * it is about 10× smaller (228k static clauses at d = 5) and settles d = 4 in 3 s (both shapes UNSAT);
+       * it is the intended tool for d = 6, where the first encoding does not fit (the five shapes there are 411,
+         321, 222, 3111 and 2211).
      * Soundness: `ks/smalld_soundness.py` fixes the variables to the patterns of genuine configurations (disjoint
        bases from the {0, ±1} alphabet, with 3–5 internal bases, and the {0, 1, ω, ω²} alphabet). Every geometric
        clause is satisfied.
@@ -663,3 +674,5 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
 * `ks/reductions_check.py`: checks for Lemmas 7, 8 and 11 (deletion, monotonicity, sharpness) and criticality of the 21-ray set.
 * `ks/pauli4.py`: Theorem 13 check: the Mermin star and random 4-tuples of three-qubit Lagrangian eigenbases.
 * `ks/smalld_sat.py`, `ks/realize.py`: SAT relaxation of the four-context problem in small d, and numerical realizability of a pattern.
+* `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
+* `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
