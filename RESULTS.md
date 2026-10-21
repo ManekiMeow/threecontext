@@ -22,7 +22,7 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs dimension at least 17 (exact proofs, Section 2). So Perkel is not minimal, and n_min ∈ [28, 36]. The 36- and 37-vertex graphs are vertex-critical (exact). 36 is the minimum within every symmetric family searched: tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33. A full proof of minimality is still open. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. Suggested routes are listed in Section 3. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. The path forward is in Section 3.8. |
 
 ---
 
@@ -365,6 +365,11 @@ f(v₀) = 1.
    exactly once.
 5. f = 1 on {v₀, x, y} (pairwise non-orthogonal) and 0 elsewhere is a KS colouring. ∎
 
+(Shared rays. If the two bases share rays, so that C ∩ C′ ≠ ∅, put mass p(z) on (z, z) for each shared z and
+apply Hall to the rest. X ∪ Y ∪ (C ∩ C′) is still orthonormal, so step 2 goes through. In step 4,
+E|{x, y} ∩ R| = p(R ∩ C) + p(R ∩ C′) − p(R ∩ C ∩ C′) = p(R) = 1 for the remnant R of B′. So the lemma, and
+Theorem 4 below, need no disjointness assumption.)
+
 **Consequences (internal bases allowed).**
 * **Theorem 4 holds in general.** If a KS set is covered by four bases, they are pairwise disjoint (a ray in two of
   them has all its neighbours in the other two). So the union has 4D distinct rays.
@@ -433,6 +438,207 @@ are needed.
    searched with the K4 count as the objective.
 3. (Route B) Larger alphabets ({0, ±1, ±i, ω^k}) in d = 6–8, using the exact SAT pipeline in `ks/ks4search.py`.
 
+(Superseded by §3.8, which uses the reductions of §3.7.)
+
+### 3.7 Rays outside the bases, incomplete cliques, and which internal bases matter (new)
+
+Conventions: V is a finite set of rays in ℂ^d (d ≥ 3). A *clique* is a set of mutually orthogonal rays, and a
+*basis* is a clique of size d (automatically a maximal clique). A KS colouring puts exactly one 1 on every basis
+contained in V and never puts 1 on two orthogonal rays.
+
+**Question: can a KS set contain a ray that lies in no orthonormal basis of the set?** Yes, but such a ray is never
+needed. Also, the four cliques of a four-clique cover can always be taken to be complete bases.
+
+**Lemma 7 (deletion).** Let V be KS and r ∈ V. If r lies in no basis contained in V, then V \ {r} is KS. The same
+holds if r lies in exactly one basis B ⊆ V and every ray orthogonal to r lies in B.
+
+*Proof.* Let f colour V \ {r}.
+* First case: put f(r) = 0. The bases of V are those of V \ {r}, and a 0 never breaks exclusivity.
+* Second case: B \ {r} is still a clique, so it carries at most one 1. Put f(r) = 1 − f(B \ {r}). Then B has exactly
+  one 1, and if f(r) = 1, every ray orthogonal to r (all in B \ {r}) is 0.
+
+Either way f colours V. ∎
+
+* So in a critical KS set every ray lies in a basis and has at least d orthogonal neighbours. A ray in two bases has
+  at least d + 1, because two distinct bases share at most d − 2 rays. For d = 3 this is the "minimum degree 3"
+  property of Uijlen–Westerbaan (arXiv:1412.8544, Prop. 10).
+* Check (`ks/reductions_check.py`): Mermin's star plus 7 rays in no basis (5 generic, 2 orthogonal to some star
+  rays) is KS, and it stays KS after they are deleted. Peres' 33-ray set has no ray outside its 16 triads.
+
+**Lemma 8 (monotonicity).** Any finite superset of a KS set is KS. A colouring of the superset restricts to a
+colouring of the subset, because orthogonality is intrinsic and every basis of the subset is a basis of the superset.
+
+**Corollary 9 (four cliques = four disjoint bases).** Suppose the orthogonality graph of a KS set is covered by four
+cliques C₁, …, C₄ (the paper's "four context-cover"); the cliques need not be bases. Complete each C_i to an
+orthonormal basis B_i. By Lemma 8, B₁ ∪ … ∪ B₄ is KS. By Theorem 4 (§3.4) the B_i are pairwise disjoint.
+* So **a four-context KS set exists iff some ℂ^d has four pairwise disjoint orthonormal bases whose union (4d rays) is
+  KS.** Rays outside the four bases never help, and assuming complete contexts, as the paper's Theorem 4 does, loses
+  nothing.
+* The other reading, "the orthogonality graph has only four maximal cliques", is impossible:
+  1. Delete the rays that lie in no basis (Lemma 7). What remains is covered by those of the four cliques that are bases.
+  2. Three or fewer bases are never KS (§3.4).
+  3. Four bases are disjoint, so every orthogonal pair lies inside one B_i, and one ray from each B_i is a colouring.
+* Critical cores can still have incomplete covering cliques. The critical 21-ray set needs five cliques, two of them
+  triangles in d = 6 (§3, item 1); only its completion is covered by bases.
+
+**Lemma 10 (common coordinate subspaces split the problem).** Let W be a proper nonzero subspace spanned by subsets
+of all four bases. Then V is KS iff V ∩ W and V ∩ W^⊥ are both KS. Each of these is again a union of four disjoint
+bases, of W and of W^⊥ respectively.
+
+*Proof.* Every ray of V lies in W or in W^⊥. So every basis B′ ⊆ V splits into a basis of W and a basis of W^⊥, both
+inside V, and every such pair is a basis. Rays of W are orthogonal to rays of W^⊥, so a colouring has all its 1s on
+one side, where it restricts to a colouring. Conversely, a colouring of one side, extended by 0, colours V. ∎
+
+So in the smallest dimension d_min with an example, the four bases share no proper coordinate subspace. An example
+that has one satisfies d ≥ 2·d_min ≥ 10.
+
+**Lemma 11 (two-piece internal bases never block a K4).** Let T = {a₁, …, a₄} with a_k ∈ B_k be pairwise
+non-orthogonal, and let B′ ⊆ B_k ∪ B_l be an internal basis. Then T meets B′.
+
+*Proof.* Put A_k = B′ ∩ B_k, A_l = B′ ∩ B_l and W = span A_k, so that span A_l = W^⊥. If T misses B′, then a_k is
+orthogonal to A_k, so a_k ∈ W^⊥; and a_l is orthogonal to A_l, so a_l ∈ W. Then a_k ⊥ a_l, a contradiction. ∎
+
+* **Consequence.** V is KS iff every K4 misses some internal basis that meets **at least three** of the B_k. If no
+  internal basis meets three covering bases, V is KS iff it is K4-free (Route A), and then d ≥ 17. In particular the
+  two-basis links of §3.1 can never help.
+* Structure of a blocking basis B′ with pieces A_k (k ∈ S, |S| ≥ 3): the spaces W_k = span A_k are mutually
+  orthogonal with ⊕ W_k = ℂ^d, and B_k \ A_k spans ⊕_{l≠k} W_l. B′ blocks exactly the K4s with a_k ∈ B_k \ A_k for all
+  k ∈ S, and never a K4 through one of its own rays.
+* The lemma is sharp. In d = 3, let e_k ∈ B_k with B_k \ {e_k} spanning e_k^⊥ (k = 1, 2, 3). Then {e₁, e₂, e₃} is a
+  3-piece internal basis, and the K4 ((e₂+e₃)/√2, (e₁+e₃)/√2, (e₁+e₂)/√2, a₄) misses it (`ks/reductions_check.py`).
+
+**Lemma 12 (averaging).** Let μ be a probability distribution on K4s and ρ a state with μ(a_k = r) = ⟨r|ρ|r⟩ for every
+k and every r ∈ B_k. Then μ-almost every K4 is a KS colouring. In particular V is not KS.
+
+*Proof.* For any basis B′ ⊆ V, |T ∩ B′| ≤ 1 because T is pairwise non-orthogonal, and
+E_μ|T ∩ B′| = Σ_{r∈B′} ⟨r|ρ|r⟩ = tr ρ = 1. ∎
+
+* ρ = |w⟩⟨w| with w ∈ B₄ gives the per-ray condition of §3.4. The two-context lemma is the case where Hall's theorem
+  supplies μ.
+* ρ = I/d gives χ_f(G) > d, the Ramanathan–Horodecki condition for state-independent contextuality (PRL 112, 040404
+  (2014)). For four disjoint bases χ_f(G) ≥ 4d/α(G) = d always holds. So the condition says that the 4d rays cannot be
+  fractionally partitioned into K4s.
+* **Corollary 12a (symmetry kills Route B).** Suppose a group of unitaries or antiunitaries maps each B_k onto itself
+  and acts transitively on each B_k. Then **every K4 is a KS colouring**, so V is KS iff it is K4-free, and then
+  d ≥ 17. To see this, average one K4 over the group. The marginals are uniform, i.e. ρ = I/d, so every K4 in the
+  orbit, T included, meets every basis exactly once.
+  * Hence every covariant construction (§3.2–3.3: one group acting transitively on all four bases) is Route A, and
+    minimizing the K4 count there was the right objective.
+  * A Route-B example, if one exists, has no symmetry group that is transitive on all four bases.
+* **Corollary 12b (local form).** Suppose the unitaries that fix w ∈ B₄ and preserve B₁, B₂, B₃ act transitively on
+  each N_k(w). Then every triangle of N(w), together with w, is a colouring.
+
+**Theorem 13 (Pauli bases).** Four eigenbases of maximal commuting sets of n-qubit Pauli operators (or n-qudit, p
+prime) never form a KS set. Neither do any four bases that are invariant under the full Pauli group.
+
+*Proof.*
+1. The Pauli group preserves the eigenbasis of each Lagrangian L_k and acts transitively on it: a Pauli P shifts the
+   eigenvalue characters by ω(P, ·). By Corollary 12a, the union is KS only if it is K4-free.
+2. Take w in the eigenbasis of L₄. The span S_k of N_k(w) is a joint eigenspace of the abelian group L₄ ∩ L_k ⊆ L₄.
+   So the three projectors commute, and tr(Π₁Π₂Π₃) = dim(S₁ ∩ S₂ ∩ S₃) ≥ 1, because w lies in all three.
+3. Triangle-freeness gives tr(Π₁Π₂Π₃) = 0 (the commuting-span obstruction, §3.3). Contradiction.
+4. Second claim: if the Pauli group preserves B_k, the Paulis that fix a ray of B_k form a subgroup of index ≤ d. They
+   share an eigenvector, so they commute and form a Lagrangian, and B_k is its eigenbasis. ∎
+
+* Check (`ks/pauli4.py`):
+  * The Mermin star (5 bases, 40 rays, 25 bases inside) is KS, and each of its five 4-subsets is colourable.
+  * 4000 random 4-tuples of the 135 three-qubit Lagrangians (half of them chains of overlapping Lagrangians) are all
+    colourable, and their K4s always have uniform marginals.
+  * Internal bases meeting ≥ 3 covering bases occur in about 30% of these 4-tuples but never block a K4.
+* So Mermin-type constructions provably need a fifth context. This extends the abelian covariant argument of §3.2.
+* **Consequence for covariant Route A.** Suppose the stabilizer H of a ray w acts on ℂ^d without multiplicities. Then
+  the commutant of H is commutative, so all H-invariant subspaces have commuting projectors. The S_k(w) are
+  H-invariant, so the contradiction of step 3 applies. A covariant Route-A example therefore needs ray stabilizers
+  with multiplicities (as in regular actions, H = 1) and a symmetry group that does not contain the Pauli group.
+
+**Lemma 14 (pairs outside every K4 have overlap ≤ 1/3).** Let a ∈ B_k and w ∈ B_l (k ≠ l) be non-orthogonal rays that
+lie in no common K4. Then |⟨a|w⟩| ≤ 1/3.
+
+*Proof.* Let B_m, B_n be the other two bases, X = N_m(a) ∩ N_m(w) and Y = N_n(a) ∩ N_n(w). Since (a, w) lies in no K4,
+every ray of X is orthogonal to every ray of Y. So P = P_X, Q = P_Y and R = I − P − Q are orthogonal projectors.
+Expanding in B_m gives ⟨a|w⟩ = ⟨a|P|w⟩, and expanding in B_n gives ⟨a|w⟩ = ⟨a|Q|w⟩. Hence ⟨a|R|w⟩ = −⟨a|w⟩. By
+Cauchy–Schwarz, |⟨a|w⟩|² is at most each of ‖Pa‖²‖Pw‖², ‖Qa‖²‖Qw‖² and ‖Ra‖²‖Rw‖². The three ‖·a‖² sum to 1, and so do
+the three ‖·w‖². By AM–GM the smallest of the three products is at most 1/9. ∎
+
+* **Route A:** every non-orthogonal pair from different bases has |⟨a|w⟩| ≤ 1/3. So every ray is non-orthogonal to
+  at least **9 rays of each other basis** (the per-basis version of the bound of 28).
+* **Route B:** every cross pair with overlap above 1/3 lies in a K4.
+* The same argument, with ψ in place of the fourth basis, applies to any three-context GHZ paradox: every event has
+  probability ≤ 1/9, so every context has at least 9 events. The known examples comply: 1/12 (H36), 1/13 (H39), 1/19
+  (Perkel), and a maximum of 0.094 for H37.
+
+**Updated picture.**
+
+| | Route A (K4-free) | Route B (K4s exist, all blocked) |
+|---|---|---|
+| internal bases | irrelevant | blockers must meet ≥ 3 covering bases (Lemma 11) |
+| symmetry | allowed; covariant ⇒ KS iff one ray's neighbourhood is triangle-free | no group transitive on all four bases (Cor. 12a) |
+| each ray | neighbourhood is a 3-context GHZ graph with ≥ 28 rays, ≥ 9 in each other basis; all cross overlaps ≤ 1/3 (Lemma 14) | lies in a K4 if d ≤ 16; p(w) ∉ STAB(G_w); pairs with overlap > 1/3 lie in a K4 |
+| dimension | d ≥ 17 | d ≥ 5 |
+| Pauli eigenbases (Lagrangians) | impossible (Thm 13) | impossible (Thm 13) |
+
+Parity proofs are not excluded once internal bases are counted. With disjoint covering bases, each ray lies in
+1 + m(r) bases, where m(r) counts internal bases. A parity proof therefore needs every m(r) odd and an odd number M of
+internal bases. Double counting, Σ_r (1 + m(r)) = d(4 + M), then forces d even. Every ray lies in an internal basis, so
+M ≥ 4, i.e. M ≥ 5.
+
+### 3.8 Path forward
+
+The two routes now live in different regimes. Route B is asymmetric and may sit in small dimension. Route A sits in
+d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recommended order:
+
+1. **Route B in d = 5 and d = 6: exhaustive computer-assisted classification.** After §3.7 the problem in fixed d is
+   finite combinatorics plus realizability. There are four disjoint d-cliques plus cross orthogonalities, and every K4
+   must miss a d-clique that meets at least three of them.
+   * `ks/smalld_sat.py` encodes this together with necessary geometric conditions:
+     * each ray is orthogonal to ≤ d − 2 rays of another basis;
+     * expanding ⟨x|y⟩ in a third basis forces the supports to meet when x ̸⊥ y, and not in exactly one ray when x ⊥ y;
+     * no two rays are orthogonal to a common (d − 1)-clique;
+     * the span equalities forced by internal bases hold (B_k \ A_k and B′ \ A_k have the same orthogonal rays);
+     * no common coordinate subspace exists (Lemma 10);
+     * every ray lies in a K4 (d ≤ 16).
+
+     UNSAT would prove that no four-context KS set exists in ℂ^d.
+   * **Validation, d = 3 and d = 4:** the same encoding is UNSAT for d = 3 (instantly) and for d = 4 (17 s). This
+     reproduces "no four-context KS set in d ≤ 4" without the 18- and 24-ray theorems.
+   * **Pilot, d = 5.**
+     * The instance has about 19k variables and 2.06M clauses.
+     * Without the unique-completion and span clauses it is satisfiable in 0.4 s, by a model that completes the same
+       4-clique twice, which is geometrically impossible. So the geometry carries the difficulty.
+     * With all clauses, the full instance and the three cases obtained by fixing one K4 and the shape of a basis
+       blocking it (`--case 311 | 221 | 2111`; the only ≥ 3-piece shapes in d = 5) were not decided in this session's
+       runs (CaDiCaL; Kissat on case 311).
+     * Soundness: `ks/smalld_soundness.py` fixes the variables to the patterns of genuine configurations (disjoint
+       bases from the {0, ±1} alphabet, with 3–5 internal bases, and the {0, 1, ω, ω²} alphabet). Every geometric
+       clause is satisfied.
+   * Next steps:
+     * CEGAR loop: test each model with `ks/realize.py`. Only the prescribed zeros need fitting, by Lemma 8. Block
+       unrealizable patterns by minimal unrealizable sub-patterns, proved exactly with Gröbner bases, as in
+       Li–Bright–Ganesh's minimum-KS work.
+     * Add stronger geometric constraints: known zero patterns of d × d unitaries, and the support consistency of
+       U₁₃ = U₁₂U₂₃.
+     * Use the per-ray LP of Lemma 12 as a fast certificate of colourability for candidates.
+   * Outcome: either a four-context KS set with 20 or 24 rays, or a proof that every four-context KS set has d ≥ 7.
+     Either is new; the current bound is d ≥ 5.
+2. **Route A with rigid symmetry.** By Corollary 12a, in a covariant configuration KS holds iff the neighbourhood of
+   **one** ray is triangle-free. Non-regular monomial constructions are discrete and can be enumerated.
+   * Data: a finite group G, a representation ρ of degree d ≥ 17, and four inequivalent monomial structures
+     ρ ≅ Ind_{H_k}^G χ_k (H_k of index d, χ_k linear). b_k spans the χ_k-eigenline of H_k, and B_k = ρ(G)·b_k.
+   * Overlaps come from Mackey theory: ⟨b_k|ρ(g)b_l⟩ ≠ 0 only if χ_k = χ_l^g on H_k ∩ gH_lg⁻¹.
+   * Filters: ρ restricted to H₄ has multiplicities; G does not contain the Pauli group; each ray has ≥ 28
+     non-orthogonal rays.
+   * Tool: GAP (SmallGroups; irreducible characters of degree 17–64 and their monomial structures).
+   * The regular case H_k = 1 was searched in §3.3. The non-regular case is the one the Mermin star uses
+     (|G/Z| = 64, d = 8, |H_k/Z| = 8). The Pauli group itself is excluded by Theorem 13, but no other group with
+     non-regular monomial structures has been searched.
+3. **Theory.**
+   * Route B: show that internal bases blocking every K4 force a state ρ and a K4 mixture as in Lemma 12. A first
+     test is to run the LP of Lemma 12 (`mixture_with_marginals` in `ks/fourbasis.py`) on random and structured
+     configurations that have ≥ 3-piece internal bases, for ρ = I/d and ρ = |w⟩⟨w|.
+   * Route A: find a global form of the trace identity. Σ_{a∈B₁, b∈B₂, c∈B₃} ⟨a|b⟩⟨b|c⟩⟨c|a⟩ = tr I = d, while
+     K4-freeness forces Σ_{w∈B₄} |⟨w|a⟩⟨w|b⟩⟨w|c⟩|² = 0 for every pairwise non-orthogonal (a, b, c). Combining such
+     identities over all four bases might raise d ≥ 17 or exclude Route A altogether.
+
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
@@ -449,3 +655,7 @@ are needed.
 * `ks/covariant4.py`: covariant (phase-function) four-basis search.
 * `ks/alphabet6.py`, `ks/ks4search.py`: d = 6 alphabet search with exact internal-basis SAT check.
 * `ks/ks21.py`, `ks/ks21_cover5.py`: the 21-ray d = 6 KS set, its clique cover number 5, and the 5-context cover.
+* `ks/fourbasis.py`: shared helpers (orthogonality graph, all bases, SAT colouring, K4s, the averaging LP of Lemma 12).
+* `ks/reductions_check.py`: checks for Lemmas 7, 8 and 11 (deletion, monotonicity, sharpness) and criticality of the 21-ray set.
+* `ks/pauli4.py`: Theorem 13 check: the Mermin star and random 4-tuples of three-qubit Lagrangian eigenbases.
+* `ks/smalld_sat.py`, `ks/realize.py`: SAT relaxation of the four-context problem in small d, and numerical realizability of a pattern.
