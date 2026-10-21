@@ -601,13 +601,17 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
      UNSAT would prove that no four-context KS set exists in ℂ^d.
    * **Validation, d = 3 and d = 4:** the same encoding is UNSAT for d = 3 (instantly) and for d = 4 (17 s). This
      reproduces "no four-context KS set in d ≤ 4" without the 18- and 24-ray theorems.
+     * Ablation at d = 4: dropping the span, unique-completion or splitting clauses still gives UNSAT.
+     * Dropping the support clauses, or "every ray lies in a K4", gives SAT within 1 s.
+     * So at d = 4 the trace identity (through "every ray lies in a K4") together with Lemma 11 and the
+       support-intersection combinatorics already rules everything out.
    * **Pilot, d = 5.**
      * The instance has about 19k variables and 2.06M clauses.
      * Without the unique-completion and span clauses it is satisfiable in 0.4 s, by a model that completes the same
        4-clique twice, which is geometrically impossible. So the geometry carries the difficulty.
      * With all clauses, the full instance and the three cases obtained by fixing one K4 and the shape of a basis
-       blocking it (`--case 311 | 221 | 2111`; the only ≥ 3-piece shapes in d = 5) were not decided in this session's
-       runs (CaDiCaL; Kissat on case 311).
+       blocking it (`--case 311 | 221 | 2111`; the only ≥ 3-piece shapes in d = 5) were not decided in this session.
+       The full instance ran for 25 min; each case ran for 10+ min with CaDiCaL, and case 311 also with Kissat.
      * Soundness: `ks/smalld_soundness.py` fixes the variables to the patterns of genuine configurations (disjoint
        bases from the {0, ±1} alphabet, with 3–5 internal bases, and the {0, 1, ω, ω²} alphabet). Every geometric
        clause is satisfied.
