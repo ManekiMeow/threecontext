@@ -22,7 +22,7 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs dimension at least 17 (exact proofs, Section 2). So Perkel is not minimal, and n_min ∈ [28, 36]. The 36- and 37-vertex graphs are vertex-critical (exact). 36 is the minimum within every symmetric family searched: tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33. A full proof of minimality is still open. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. The path forward is in Section 3.8. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). The path forward is in Section 3.8. |
 
 ---
 
@@ -574,7 +574,7 @@ the three ‖·w‖². By AM–GM the smallest of the three products is at most 
 | internal bases | irrelevant | blockers must meet ≥ 3 covering bases (Lemma 11) |
 | symmetry | allowed; covariant ⇒ KS iff one ray's neighbourhood is triangle-free | no group transitive on all four bases (Cor. 12a) |
 | each ray | neighbourhood is a 3-context GHZ graph with ≥ 28 rays, ≥ 9 in each other basis; all cross overlaps ≤ 1/3 (Lemma 14) | lies in a K4 if d ≤ 16; p(w) ∉ STAB(G_w); pairs with overlap > 1/3 lie in a K4 |
-| dimension | d ≥ 17 | d ≥ 5 |
+| dimension | d ≥ 17 | d ≥ 6 (Theorem 15, computer-assisted) |
 | Pauli eigenbases (Lagrangians) | impossible (Thm 13) | impossible (Thm 13) |
 
 Parity proofs are not excluded once internal bases are counted. With disjoint covering bases, each ray lies in
@@ -587,7 +587,7 @@ M ≥ 4, i.e. M ≥ 5.
 The two routes now live in different regimes. Route B is asymmetric and may sit in small dimension. Route A sits in
 d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recommended order:
 
-1. **Route B in d = 5 and d = 6: exhaustive computer-assisted classification.** After §3.7 the problem in fixed d is
+1. **Route B in small d: exhaustive computer-assisted classification (d = 5 done, d = 6 next).** After §3.7 the problem in fixed d is
    finite combinatorics plus realizability. There are four disjoint d-cliques plus cross orthogonalities, and every K4
    must miss a d-clique that meets at least three of them.
    * `ks/smalld_sat.py` encodes this together with necessary geometric conditions:
@@ -605,16 +605,14 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
      * Dropping the support clauses, or "every ray lies in a K4", gives SAT within 1 s.
      * So at d = 4 the trace identity (through "every ray lies in a K4") together with Lemma 11 and the
        support-intersection combinatorics already rules everything out.
-   * **Pilot, d = 5.**
+   * **d = 5 (Theorem 15 below).**
      * The instance has about 19k variables and 2.06M clauses.
      * Without the unique-completion and span clauses it is satisfiable in 0.4 s, by a model that completes the same
        4-clique twice, which is geometrically impossible. So the geometry carries the difficulty.
      * With all clauses, fix one K4 (WLOG the last ray of each basis) and an internal basis blocking it, made of the
        first rays of the bases it meets. Its piece sizes are 3+1+1, 2+2+1 or 2+1+1+1, the only ≥ 3-piece shapes in
        d = 5 (`--case 311 | 221 | 2111`, with lex-leader breaking of the remaining symmetry).
-       * **Case 311 is UNSAT** (CaDiCaL, 493 s), and **case 221 is UNSAT** (CaDiCaL, 1287 s).
-       * Case 2111 was still running after 22 min (`ks/smalld_d5.log`).
-       * If both are UNSAT, no four-context KS set exists in ℂ⁵, so d ≥ 6.
+       * **All three cases are UNSAT** (CaDiCaL 1.5.3: 493 s, 1287 s and 2256 s; `ks/smalld_d5.log`).
      * Checks on the case split: with the geometric clauses removed, each of the three cases is SAT, and brute force
        confirms that the models satisfy "every ray lies in a K4" and "every K4 is blocked by a ≥ 3-piece basis".
      * Independent second encoding (`ks/smalld_cegar.py`):
@@ -636,8 +634,17 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
      * Add stronger geometric constraints: known zero patterns of d × d unitaries, and the support consistency of
        U₁₃ = U₁₂U₂₃.
      * Use the per-ray LP of Lemma 12 as a fast certificate of colourability for candidates.
-   * Outcome: either a four-context KS set with 20 or 24 rays, or a proof that every four-context KS set has d ≥ 7.
-     Either is new; the current bound is d ≥ 5.
+   * **Theorem 15 (computer-assisted).** No four-context KS set exists in ℂ⁵. Hence every four-context KS set has
+     d ≥ 6 (previously d ≥ 5).
+     * The proof rests on three things:
+       * the validity of each clause group (§3.7 and the list above);
+       * the WLOG case split with lex-leader symmetry breaking;
+       * the correctness of `ks/smalld_sat.py` and of CaDiCaL.
+     * Supporting evidence: the soundness tests, the relaxed-instance checks, and d = 3, 4 reproduced from scratch.
+     * Not yet done: an independently checked proof certificate (DRAT/LRAT), and the cross-check with the second
+       encoding `ks/smalld_cegar.py`, which was still running.
+   * Next: d = 6 (24 rays, the dimension of the 21-ray set), using `ks/smalld_cegar.py` and the five shapes 411, 321,
+     222, 3111 and 2211. Outcome: either a 24-ray four-context KS set, or d ≥ 7.
 2. **Route A with rigid symmetry.** By Corollary 12a, in a covariant configuration KS holds iff the neighbourhood of
    **one** ray is triangle-free. Non-regular monomial constructions are discrete and can be enumerated.
    * Data: a finite group G, a representation ρ of degree d ≥ 17, and four inequivalent monomial structures

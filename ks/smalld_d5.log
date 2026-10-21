@@ -26,4 +26,7 @@ d=4 case 1111: vars 22440, static clauses 58532 -> UNSAT after 7 refinement roun
 ## d=5 --case 221 (CaDiCaL 1.5.3)
 d=5: vars 18765, clauses 2062104, built in 20.0s
 UNSAT (1286.8s)
-## d=5 --case 2111 (CaDiCaL 1.5.3): still running after 22 min at the time of writing
+## d=5 --case 2111 (CaDiCaL 1.5.3)
+d=5: vars 18975, clauses 2062735, built in 20.6s
+UNSAT (2255.5s)
+## => all three d=5 cases UNSAT: no four-context KS set in C^5 (RESULTS.md Theorem 15)
