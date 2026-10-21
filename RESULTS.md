@@ -613,7 +613,7 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
        first rays of the bases it meets. Its piece sizes are 3+1+1, 2+2+1 or 2+1+1+1, the only ≥ 3-piece shapes in
        d = 5 (`--case 311 | 221 | 2111`, with lex-leader breaking of the remaining symmetry).
        * **Case 311 is UNSAT** (CaDiCaL, 493 s).
-       * Cases 221 and 2111 were still running after 25 min (`ks/smalld_d5.log`).
+       * Cases 221 and 2111 were still running after 20 min (`ks/smalld_d5.log`).
        * If both are UNSAT, no four-context KS set exists in ℂ⁵, so d ≥ 6.
      * Checks on the case split: with the geometric clauses removed, each of the three cases is SAT, and brute force
        confirms that the models satisfy "every ray lies in a K4" and "every K4 is blocked by a ≥ 3-piece basis".
