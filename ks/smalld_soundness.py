@@ -1,6 +1,8 @@
 # Soundness test for the geometric clauses of smalld_sat.py (deg, supp, compl, span): they must be satisfiable when
 # the o-variables are fixed to the orthogonality pattern of ANY four pairwise disjoint bases of C^d.
-# Configurations: random 4-tuples of disjoint bases drawn from ray alphabets with many orthogonalities.
+# Configurations: random 4-tuples of disjoint bases drawn from ray alphabets with many orthogonalities, hill-climbed
+# towards many internal bases (--three: internal bases meeting >= 3 covering bases), and designed configurations
+# containing a blocking basis of each d = 5 shape.  Usage: python3 smalld_soundness.py d N MININT [--three]
 import sys, itertools, pickle, random, subprocess, numpy as np, os
 from fourbasis import ortho_graph, all_bases
 
@@ -17,8 +19,11 @@ for name, A in (alphabets.items() if "--designed-only" not in sys.argv else []):
         v = v / v[np.flatnonzero(v)[0]]; v = v / np.linalg.norm(v); rays[tuple(np.round(v, 9))] = v
     rays = list(rays.values()); G = ortho_graph(rays); Bs = all_bases(G, d)
     print(name, "rays", len(rays), "bases", len(Bs), flush=True)
-    def internal(pick):
-        Gs = ortho_graph([rays[r] for b in pick for r in sorted(b)]); return Gs, len(all_bases(Gs, d)) - 4
+    def internal(pick):   # number of internal bases (with --three: only those meeting >= 3 covering bases)
+        Gs = ortho_graph([rays[r] for b in pick for r in sorted(b)]); Bi = all_bases(Gs, d)
+        if "--three" in sys.argv:
+            return Gs, sum(1 for b in Bi if sum(1 for c in range(4) if b & set(range(c * d, (c + 1) * d))) >= 3)
+        return Gs, len(Bi) - 4
     done = 0; tries = 0
     while done < N and tries < 50:
         tries += 1; pick = []

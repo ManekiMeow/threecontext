@@ -623,9 +623,12 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
        * it is about 10× smaller (228k static clauses at d = 5) and settles d = 4 in 3 s (both shapes UNSAT);
        * it is the intended tool for d = 6, where the first encoding does not fit (the five shapes there are 411,
          321, 222, 3111 and 2211).
-     * Soundness: `ks/smalld_soundness.py` fixes the variables to the patterns of genuine configurations (disjoint
-       bases from the {0, ±1} alphabet, with 3–5 internal bases, and the {0, 1, ω, ω²} alphabet). Every geometric
-       clause is satisfied.
+     * Soundness: `ks/smalld_soundness.py` fixes the variables to the patterns of genuine configurations, and every
+       geometric clause is satisfied. The configurations tested:
+       * disjoint bases from the {0, ±1} alphabet, hill-climbed to have 3–5 internal bases meeting ≥ 3 covering bases
+         (`--three`), with 47–50 cross orthogonalities;
+       * the {0, 1, ω, ω²} alphabet;
+       * designed configurations containing a blocking basis of each d = 5 shape.
    * Next steps:
      * CEGAR loop: test each model with `ks/realize.py`. Only the prescribed zeros need fitting, by Lemma 8. Block
        unrealizable patterns by minimal unrealizable sub-patterns, proved exactly with Gröbner bases, as in
