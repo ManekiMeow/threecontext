@@ -1,0 +1,2 @@
+Q(sqrt3) h=1 hb=1: 177 rays, 516 pairs, 84 bases; target <= 33
+iter 4: no KS set of size <= 33 (fix=[]), 3504 cuts, 127.4s
