@@ -16,6 +16,10 @@ exclusivity graph is `G = complement(H)`. A three-context GHZ paradox is the sam
 
 Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` needs a certificate.
 
+**Scope of this file.** §1–2: three-context GHZ graphs (smaller examples than Perkel, lower bounds). §3: KS sets
+covered by four cliques (four contexts). The separate question of the **smallest KS set in dimension 3** (bounds
+[24, 31], exact searches over coordinate universes) is in [`ks3d/RESULTS.md`](ks3d/RESULTS.md), with code in `ks3d/`.
+
 ## Summary
 
 | question | result |
@@ -228,7 +232,7 @@ also recovers the paper's Theorem 4: shared vectors between bases are impossible
 
 3. *Dimension constraints in the general setting.*
    * A 4-context KS set has |V| ≤ 4d rays.
-   * The smallest KS sets have 18 rays in d = 4 (proven minimal) and at least 22–24 rays in d = 3 (computer-assisted lower bounds). Both exceed 4d, so **d ≥ 5**.
+   * The smallest KS sets have 18 rays in d = 4 (proven minimal) and at least 24 rays in d = 3 (computer-assisted lower bound; see `ks3d/RESULTS.md`). Both exceed 4d, so **d ≥ 5**.
    * In d = 6 the only known KS set with ≤ 24 rays is the 21-ray set above, which needs 5 contexts.
    * Lisoněk et al. exhaustively list vertex-transitive "parity" candidates up to 31 vertices: 18 (d=4), 21 (d=6), 26 (d=4), 27 (d=6), 30 (d=4). Every one other than the 21-ray set violates |V| ≤ 4d.
 
@@ -668,6 +672,54 @@ d ≥ 17 and allows symmetry, under which KS reduces to a single-ray test. Recom
    * Route A: find a global form of the trace identity. Σ_{a∈B₁, b∈B₂, c∈B₃} ⟨a|b⟩⟨b|c⟩⟨c|a⟩ = tr I = d, while
      K4-freeness forces Σ_{w∈B₄} |⟨w|a⟩⟨w|b⟩⟨w|c⟩|² = 0 for every pairwise non-orthogonal (a, b, c). Combining such
      identities over all four bases might raise d ≥ 17 or exclude Route A altogether.
+
+### 3.9 Combinatorial skeleton of Route A (merged from branch `claude/ghz-contextuality-graphs-1ur6ur`)
+
+This section was written in parallel with §3.7–3.8. Overlaps: Lemma A below is Lemma 11 of §3.7. Lemma B (≥ 3 events
+per GHZ context) is superseded by Lemma 14 (≥ 9 events per context, every event probability ≤ 1/9). Open direction 2
+(Route B in d = 5, 6) is done for d = 5 by Theorem 15 (§3.8).
+
+**Lemma A (two-piece internal bases are redundant).** Let B′ = A₁ ∪ A₂ (A₁ ⊂ B₁, A₂ ⊂ B₂) be an internal basis.
+For a transversal with ⟨a|b⟩ ≠ 0 (a ∈ B₁, b ∈ B₂), "exactly one of a ∈ A₁, b ∈ A₂" holds automatically: both is
+impossible since A₁ ⊥ A₂; neither gives a ∈ span(B₁ \ A₁) = span(A₂) and b ∈ span(A₁), so a ⊥ b. Hence Route B needs
+internal bases with **≥ 3 pieces**: a coordinate subspace of one basis spanned jointly by rays of two others. This is
+why the linked completions of H36 in §3.1 stayed colourable.
+
+**Lemma B (no GHZ class of size ≤ 2).** In a three-context GHZ paradox every context has ≥ 3 events. If N₃ = {c, c′},
+rigidity (every event has neighbours in both other classes, which holds whenever the contexts are remnants of complete
+bases) splits N₁ = A ⊔ A′ with A = N(c), A′ = N(c′), and N₂ = B ⊔ B′ likewise; triangle-freeness forbids A–B and
+A′–B′ edges. Then {c, A′, B′} ∪ {c′, A, B} is a proper 2-colouring of H, so θ(H̄) ≤ χ(H) = 2 < 3. Size 3 admits odd
+cycles (c₁–a₁–b₂₃–c₃–a₁₃), so the bound is exactly 3.
+
+**Combinatorial skeleton of Route A** (`ks/skeleton_sat.py`, checker `ks/skeleton_check.py`). Necessary conditions
+on the 4-partite non-orthogonality graph of four complete bases, all proved from completeness alone:
+* (K4) no transversal 4-clique;
+* (C2) a ~ b ⇒ a, b have a common neighbour in each other basis (⟨a|b⟩ = Σ_c ⟨a|c⟩⟨c|b⟩);
+* (C4) a ⊥ b ⇒ a, b have 0 or ≥ 2 common neighbours in each other basis (the zero-pattern condition of unitaries);
+* (DEG) ≥ 3 neighbours in each other basis (Lemma B) and ≥ 28 in total (§2);
+* (TRI) each triple of bases has a triangle (Re tr U₁₂U₂₃U₃₁ = d).
+With sound symmetry breaking (double-lex on the B₁–B₂ block, column-lex on B₂–B₃ and B₃–B₄):
+* d = 4, 5: **UNSAT** (instant). d = 6: **SAT**, a perfectly regular skeleton (4 neighbours per other basis).
+* With the full requirement n ≥ 28: d = 10 **UNSAT**; d = 17 **undecided** (CaDiCaL, 14000 s, no verdict). Deciding
+  it needs a stronger encoding (e.g. lazy θ = 3 neighbourhood constraints, direction 1 below) rather than more time.
+* So the combinatorial conditions alone cannot give impossibility; since d ≥ 17 analytically, the content is in
+  θ(H̄_w) = 3 for every neighbourhood. UNSAT at a given d ≥ 17 would still be a theorem for that d.
+
+**Open directions.**
+1. *CEGAR skeleton search (finding and per-d impossibility).* SAT skeleton → SDP check θ(H̄_w) = 3 for every w → block
+   failing neighbourhoods with the sound clause "some non-edge inside N(w) becomes an edge or N(w) gains a vertex"
+   (θ(H̄) is monotone under adding edges to H) → repeat; realizability of the final zero pattern by unitaries last.
+2. *Route B in small d by case analysis.* Disjointness (§3.4), Lemma A (≥ 3-piece internal bases), XCG's bound (every
+   ray needs ≥ 10 neighbours since its reduction is a GHZ-type proof), and |V| = 4d make d = 5, 6 finite case studies.
+3. *Block-generic models for Route B.* Enumerate subspace lattices generated by 4 bases (which coordinate subspaces of
+   one basis are sums of coordinate subspaces of others); orthogonality is then decided by the lattice, generic entries
+   realize it automatically, and KS-colourability is a SAT question. Lemma A says only ≥ 3-piece lattice elements matter.
+4. *Global analytic coupling.* The per-w identity tr((I−Q₁)(I−Q₂)(I−Q₃)) = 0 with Q_k the projector onto the rays
+   of B_k orthogonal to w, summed over w ∈ B₄, ties the orthogonality counts z_k(w) to the T-masses between
+   orthogonal-to-w sets; combined with the uniform marginals Σ_w |⟨r|w⟩|² = 1 it is the only identity we have that
+   sees K4-freeness.
+5. *Sparse-unitary theory.* Route A is a zero-pattern problem for U₁₂, U₂₃, U₃₄ with U₁₂U₂₃ = U₁₃ etc.; results on
+   admissible zero patterns of unitary matrices may give conditions beyond (C4).
 
 ## Files
 
