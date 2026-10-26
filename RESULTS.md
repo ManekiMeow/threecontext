@@ -26,7 +26,7 @@ covered by four cliques (four contexts). The separate question of the **smallest
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). The path forward is in Section 3.8. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. The path forward is in Section 3.8. |
 
 ---
 
@@ -936,6 +936,88 @@ ray is non-orthogonal to D rays:
     Proposition 18, d ≥ 17, D ≥ 28 with ≥ 9 per basis, and GHZ local graphs.
   * Route B searches must leave the vertex-transitive and strongly regular worlds altogether.
 
+### 3.11 Building a four-context KS set from H33 (attempt; new)
+
+Template (§3.1): put ψ in B₄. Complete the contexts of H33 to bases: B₁ = points + A′, B₂ = B-lines + B′,
+B₃ = C-lines + C′. Then ψ is forced to 0, and every other ray of B₄ must also be forced to 0. Everything below is
+reproduced by `ks/h33_attempt.py` (log `ks/h33_attempt.log`, about 30 s).
+
+**Theorem 19 (H33 cannot be used in Route A).** Let B₁, …, B₄ be orthonormal bases of ℂ^D (any D). Suppose some ray w
+has a neighbourhood whose non-orthogonality graph is H33. Then the union contains K4s, so the K4-free route is closed.
+
+*Proof.*
+1. By Theorem 5 the realization of H33 is unique. In particular, each B-line and each distinct C-line parallel to it
+   have overlap exactly 1/2.
+2. 1/2 > 1/3, so by Lemma 14 each of these 24 pairs lies in a K4. ∎
+
+So a KS set built on H33 must use Route B: internal bases meeting ≥ 3 covering bases have to block those K4s. Among
+the known GHZ graphs, H33 is the only one whose forced realization breaks the Route-A bound:
+
+| graph | cross overlaps of its known realization |
+|---|---|
+| H36 | 1/4 |
+| H39 | at most 1/3 |
+| Perkel | exactly 1/3 (Gram matrix I + A/3, rank 37) |
+| H37 | 0.51 in the certified realization, but H37's realizations are not unique, so no obstruction follows |
+
+**Lemma 20 (state-averaging test).** Let V be the union of four orthonormal bases, with any internal bases. If the Born
+vector `(⟨r|ρ|r⟩)_r` of some state ρ is a convex combination of K4 indicators, then V is not KS.
+
+*Proof.* Each basis of V has Born weight 1. Each K4 meets each basis at most once. So every K4 in the support of the
+combination meets every basis exactly once, which makes it a KS colouring. ∎
+
+Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} λ_r ≥ 0` for every K4 T and
+`Σ_r λ_r |r⟩⟨r| ≺ 0`. This follows by separating the two convex sets, and shifting λ by a constant on one basis.
+
+* ρ = I/d is Lemma 12.
+* ρ = |y⟩⟨y| is the per-ray condition of §3.4. In the form used below, NCF(y) is the largest weight of K4 mixtures
+  through y; NCF(y) = 1 means y can carry the 1 of B₄.
+
+**Structure of the H33 realization (exact, `ks/h33model.py`).**
+* **Class subspaces.** ℂ²⁰ = V₁ ⊕ V₂ ⊕ V₃ ⊕ V₄, one 5-dimensional subspace per parallel class.
+  * V_i is spanned by the class sum u_i and the two Fourier blocks of that class.
+  * The lines of class i lie in V_i. Points and ψ spread over all four V_i with weight 1/4 each.
+* **Natural completions.** In each Fourier block the six relevant directions are 30° apart. The block-pure completions
+  B′ = {β_k} and C′ = {γ_k} make B₂ and B₃ **block-diagonal**: 5 rays in each V_i.
+* **Ten equiangular lines.** Inside V_i, the components of ψ, of the points and of everything below run over 10
+  equiangular lines with overlap 1/3. All their triple products are real (±1/27), so this is the maximal system of
+  10 equiangular lines in ℝ⁵.
+* **Duality W (exact).** There is a unitary involution W with W ψ = the point (0,0). W maps B₂ and B₃ onto themselves,
+  fixing the 4 lines through (0,0) and exchanging the other 8 with the β's (resp. γ's). Consequently:
+  * Each point a is itself a GHZ state for (B₂, B₃, B₄) whenever B₄ contains ψ and 8 specific vectors (its "dual
+    points").
+  * The neighbourhood of a is then an exact copy of H33. Its lines are the 4 lines through a plus the 8 β's (resp. γ's).
+* **Orbit.** Γ = ⟨AGL(2,3), W⟩ has an orbit of **10000 = 10⁴ rays** through ψ (`ks/h33orbit.py`).
+  * The orbit is a product of the four 10-line systems. All overlaps are multiples of 1/6.
+  * Every orbit ray carries its own copy of H33: 9 orbit rays, 12 rays of B₂ and 12 of B₃. It is a GHZ state as soon
+    as B₁ contains its 9 "points".
+  * No orbit ray is orthogonal to a full 9-context. The 72 dual points of the 9 points are distinct, and no two of the
+    dual 8-sets are mutually orthogonal.
+
+**Attempts in d = 20. All of them fail.**
+
+| design | GHZ rays | K4s | internal bases (≥ 3 pieces) | outcome |
+|---|---|---|---|---|
+| random completions, random B₄ | ψ | 80408 | – | every other ray of B₄ has NCF = 1; the uniform state on ψ⊥ is a K4 mixture |
+| symmetric completion, random B₄ | ψ | 7448 | – | uniform state on ψ⊥ is a K4 mixture |
+| block-aligned (B₄ = {e, β} in every block) | ψ | 512 | 111 (65) | all 512 K4s meet every internal basis once |
+| W-symmetric, B₄ = W(B₁) | ψ, (0,0) | 1184 | 14 (0) | all K4s are colourings; uniform state on {ψ, a₀}⊥ is a K4 mixture |
+| second copy of H33 with an orthogonal state in the same three bases (`ks/h33copies.py`) | – | – | – | not found (best penalty 2.7, 30 starts per placement) |
+
+* Contextual states orthogonal to ψ do exist: NCF ≈ 0.80 for the symmetric completion and ≈ 0.96 for random ones
+  (`ks/h33ctx.py`, smoothed search, checked on ψ itself). So the per-ray test alone does not rule out d = 20.
+* The failure is structural. With block-diagonal B₂, B₃, a K4 must take its B₂- and B₃-rays from the same V_i. The
+  only internal bases inside B₂ ∪ B₃ are the 14 "block switches", and those meet only two covering bases.
+* What a construction in d = 20 still needs:
+  * completions that couple the four class subspaces;
+  * exact coincidences that create internal bases meeting 3–4 covering bases;
+  * failure of the state-averaging test (Lemma 20) for every state.
+* This is not an impossibility proof. Completions in special position are not exhausted.
+* Next steps:
+  * a universal state ρ for Lemma 20, which would close d = 20;
+  * larger D, reusing the GHZ web of the orbit;
+  * for Route A, only graphs whose cross overlaps are at most 1/3 (H36, H39, Perkel) remain usable.
+
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
@@ -963,3 +1045,7 @@ ray is non-orthogonal to D rays:
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
 * `ks/srg_check.py`, `ks/srg_check.log`: §3.10 checks (SRG parameter families, rook/Shrikhande, regular-graph spectral bounds).
+* `ks/h33_attempt.py`, `ks/h33_attempt.log`: §3.11 driver (Theorem 19 check, structure, all attempts). Modules:
+  `ks/h33model.py` (explicit coordinates), `ks/h33ctx.py` (NCF and contextual-state search), `ks/h33design.py`
+  (block-aligned designs), `ks/h33dual.py` and `ks/h33w.py` (dual copies, the involution W), `ks/h33group.py`,
+  `ks/h33orbit.py`, `ks/h33omega.py` (the group and its 10000-ray orbit), `ks/h33copies.py` (second-copy search).
