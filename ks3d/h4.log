@@ -1,0 +1,2 @@
+height 4: 205 rays, 762 pairs, 110 bases; target <= 30
+iter 9: no KS set of size <= 30 (fix=[]), 7344 cuts, 553.9s

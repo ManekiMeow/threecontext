@@ -1,0 +1,34 @@
+# smalld_sat.py runs (4 cores shared). Command lines as in RESULTS.md 3.8.
+## d=3: python3 smalld_sat.py 3
+d=3: vars 927, clauses 8274 -> UNSAT (0.0s)
+## d=4: python3 smalld_sat.py 4
+d=4: vars 3512, clauses 121432 -> UNSAT (16.6s)
+## d=4 ablation (--no-GROUP)
+--no-span: UNSAT (18.4s)
+--no-compl: UNSAT (16.7s)
+--no-supp: SAT (0.4s)
+--no-split: UNSAT (15.1s)
+--no-k4: SAT (1.0s)
+
+[exited with code 0]
+## d=5 relaxation: smalld_sat.py 5 --no-span --no-compl --no-split
+d=5: vars 18855, clauses 153360, built in 7.7s
+SAT (0.4s)
+orthogonal cross pairs: 43
+## d=5 --case 311 (CaDiCaL 1.5.3)
+d=5: vars 18765, clauses 2062103, built in 20.0s
+UNSAT (493.2s)
+
+[exited with code 0]
+## smalld_cegar.py 4 211 / 4 1111
+d=4 case 211: vars 22084, static clauses 57463 -> UNSAT after 9 refinement rounds (1.8s)
+d=4 case 1111: vars 22440, static clauses 58532 -> UNSAT after 7 refinement rounds (1.1s)
+## d=5 --case 221 (CaDiCaL 1.5.3)
+d=5: vars 18765, clauses 2062104, built in 20.0s
+UNSAT (1286.8s)
+## d=5 --case 2111 (CaDiCaL 1.5.3)
+d=5: vars 18975, clauses 2062735, built in 20.6s
+UNSAT (2255.5s)
+## => all three d=5 cases UNSAT: no four-context KS set in C^5 (RESULTS.md Theorem 15)
+## smalld_cegar.py 5 311 / 221 / 2111 (independent cross-check): all three hit the 7000 s timeout
+## without a verdict (no model satisfying all clauses was found); last logged rounds 450 (715 s), 850 (2182 s), 850 (3955 s).

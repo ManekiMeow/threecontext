@@ -1,0 +1,19 @@
+1. Route A is impossible with H33: overlaps between parallel distinct B- and C-lines
+   |<b|c>| = [0.5] > 1/3, so by Lemma 14 every such pair lies in a K4 of any four-basis completion
+2. Structure: class subspaces V_i, block-diagonal completions, equiangular lines, duality W, orbit
+   B2 = B-lines + betas: rays per class subspace [5, 5, 5, 5] (each ray inside one V_i)
+   B3 = C-lines + gammas: rays per class subspace [5, 5, 5, 5] (each ray inside one V_i)
+   orbit of psi under <AGL(2,3), W>: 10000 rays (closed: True); 6|<u|v>| in [0, 1, 2, 3, 4, 5, 6] ; max deviation 2.0e-14
+   components in V_0: all of norm 1/2, 10 distinct lines, mutual |overlap| [0.333333]
+   W unitary involution: True ; W.psi = point (0,0): True
+   dual 8-sets of the 9 points: 72 distinct vectors; mutually orthogonal pairs of 8-sets: 0
+3. Per-ray test (NCF) and the state-averaging test
+   random completion + random B4: NCF of the 19 rays other than psi in [1.000000, 1.000000] (1 = colourable with that ray = 1)
+   symmetric completion: a state orthogonal to psi with NCF = 0.7980 exists (contextual)
+   random completion: a state orthogonal to psi with NCF = 0.9601 exists (contextual)
+   symmetric completion + random B4: 7448 K4s; uniform state on psi-perp is a K4 mixture: True
+   random completion + random B4: 80408 K4s; uniform state on psi-perp is a K4 mixture: True
+   block-aligned design: {'internal': 111, 'pieces>=3': 65, 'K4': 512, 'KS colourings': 512, 'B4 rays in a colouring': 19} ; uniform state on psi-perp is a K4 mixture: True
+4. W-symmetric designs B4 = W(B1): psi and the point (0,0) are GHZ states
+   symmetric A': {'shared rays': 0, 'internal': 14, 'internal>=3 pieces': 0, 'K4': 1184, 'rays in no K4': [1, 0, 0, 1], 'KS colourings': 1184}
+   uniform state on {psi, a0}-perp is a K4 mixture: True

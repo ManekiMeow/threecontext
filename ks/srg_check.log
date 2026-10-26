@@ -1,0 +1,11 @@
+(A) SRG parameters with a spread of four Delsarte d-cliques (d <= 3000)
+  s = -3: 9 parameter sets; d values [4, 10, 16, 19, 28, 46, 64, 100, 208]
+           lambda_H values [2]; examples G, H = [(4, 2, (16, 9, 4, 6), (16, 6, 2, 2)), (10, 6, (40, 27, 18, 18), (40, 12, 2, 4))]
+  s = -2: 3 parameter sets; d values [4, 7, 16]
+           lambda_H values [4, 6, 12]; examples G, H = [(4, 1, (16, 6, 2, 2), (16, 9, 4, 6)), (7, 2, (28, 12, 6, 4), (28, 15, 6, 10))]
+(B) theta of complements of cycles (local graphs when lambda_H = 2): {3: 3.0, 4: 2.0, 5: 2.2361, 6: 2.0, 7: 2.1099, 8: 2.0, 9: 2.0642} (m = 3 gives 3)
+  rook L2(4), bases {(i,i+k)}: H srg (16, 6, {2}, {2}), G srg (16, 9, {4}, {6}); K4s in H 8; d-cliques of G 24; |K4 ∩ d-clique| values {1}; local graph cycle lengths [(3, 3)]
+  Shrikhande, bases = cosets of <(1,2)>: H srg (16, 6, {2}, {2}), G srg (16, 9, {4}, {6}); K4s in H 0; d-cliques of G 16; |K4 ∩ d-clique| values -; local graph cycle lengths [(6,)]
+(C) regular-graph conditions on realized configurations
+  4 Mermin product bases (d=8): regular True D = 12; lambda_min(H) = -4.000 <= -D/3 = -4.000; lambda_2(H) = 4.000 >= (3d-D)/(d-1) = 1.714
+  Mermin product+GHZ bases (d=8): regular True D = 12; lambda_min(H) = -4.000 <= -D/3 = -4.000; lambda_2(H) = 4.000 >= (3d-D)/(d-1) = 1.714
