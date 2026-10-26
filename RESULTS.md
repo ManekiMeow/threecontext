@@ -24,7 +24,7 @@ covered by four cliques (four contexts). The separate question of the **smallest
 
 | question | result |
 |---|---|
-| (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
+| (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context already force ≥ 11 events in each other context, three force ≥ 12 (Theorem 21); so a smaller example has at most one such event per context, even approximately (Corollary 22). So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. The path forward is in Section 3.8. |
 
@@ -155,6 +155,75 @@ This graph came out of the equality case of Theorem 5 (Section 2), not out of a 
 * **Why the earlier searches missed it.** The contexts have unequal sizes (9, 12, 12) and the graph is not regular,
   so it lies outside the tri-Cayley and Cayley families of Section 1.1.
 * Files: `search/h33.py` (exact verification, including the uniqueness step), `search/h33.log`, `search/h33.g6`.
+
+### 1.8 A family: GHZ graphs from affine planes and nets (new)
+
+H33 is the first member of an infinite family (`search/affine_ghz.py`, log `search/affine_ghz.log`).
+
+* **Construction.** Take a net of order q with r parallel classes: q² points and rq lines, r ≤ q + 1, and r = q + 1 is
+  the affine plane. The graph H(q, r) has three contexts:
+  * A = the points; B and C = two copies of the lines;
+  * a point and a line are adjacent iff incident; a B-line and a C-line are adjacent iff they are distinct and parallel.
+* **The paradox is the parallel postulate.** A noncontextual assignment would be a point on two distinct parallel
+  lines. So H(q, r) is triangle-free.
+* **Realization.** Expanding ψ in each context forces the probabilities 1/q² (points) and 1/(rq) (lines), and the
+  overlaps 1/√(rq) (incidences) and 1/(q − 1) (parallel pairs).
+  * This Gram matrix is PSD, i.e. a GHZ realization, **iff r(q − 2) ≥ 2(q − 1)**.
+  * The dimension is r + (q − 1)(2r + q + 1), minus r(q − 1) in the equality case.
+* **Members:**
+
+  | (q, r) | n | contexts | dimension |
+  |---|---|---|---|
+  | (3, 4) | **33** | 9, 12, 12 | **20** (H33) |
+  | (4, 3) | 40 | 16, 12, 12 | 27 |
+  | (4, 4) | 48 | 16, 16, 16 | 43 |
+  | (5, 3) | 55 | 25, 15, 15 | 51 |
+  | (4, 5) | 56 | 16, 20, 20 | 50 |
+  | (5, 6) | 85 | 25, 30, 30 | 78 |
+
+* **Failures, consistent with §2.** (2, 3) fails, because its points would have probability 1/4 > 1/9 (Lemma 3). (3, 3)
+  fails too; it has 27 vertices, and Theorem 2 excludes 27.
+* **Minimality within the family.** Only the two equality cases, (3, 4) and (4, 3), drop in dimension. H33 is the
+  smallest member, since q = 3 needs all four classes and q ≥ 4 gives n ≥ 40.
+
+### 1.9 Is there a link with the 3D KS problem? (new)
+
+The two minimum problems have similar numbers: KS sets in ℝ³ need between 24 and 31 rays (`ks3d/RESULTS.md`), and
+three-context GHZ graphs between 30 and 33 events. The numbers measure different things, and there is no reduction
+either way.
+
+* **Dimension separates them.**
+  * A GHZ realization needs dimension ≥ 18 and contexts of ≥ 9 events (§2).
+  * So no ray set in ℂ³ contains a three-context GHZ paradox, and no GHZ graph is realizable in ℂ³.
+  * In particular, the Xu–Chen–Gühne reduction of a 3D KS set at a ray (§3.2) always yields all-versus-nothing proofs
+    with many contexts of 2–3 rays, never three contexts.
+* **"33 = 33" is a coincidence.** Peres's 33 rays in ℝ³ also split 9 + 12 + 12: the rays with entries in {0, ±1}, and
+  two families of 12 with √2. But the 9 rays are orthogonal to 0 or 4 rays of one family and 0 or 2 of the other. An
+  affine plane would need 4 and 4 for every point.
+
+**The genuine link is with qutrit geometry (complex dimension 3), exact; `qutrit_picture` in `search/affine_ghz.py`.**
+* **H33 inside qutrit operator space.** The 9 points of H33 span S₁, which is the operator space M₃(ℂ). The dictionary
+  is:
+  * **points:** the qutrit phase-point operators A_a/√3, where A_a = I − 2|f_a⟩⟨f_a| and the f_a form the Hesse SIC;
+  * **lines:** the S₁-parts of the lines are the 12 MUB projectors P_ℓ/2;
+  * **state:** ψ = I/√3, the maximally mixed qutrit state.
+* **Orthogonality flips.** In ℂ³ the Hesse configuration has ⟨f_a|m_ℓ⟩ = 0 iff a ∈ ℓ. This is the orthogonality
+  pattern of the 21-ray state-independent contextuality set of Bengtsson, Blanchfield and Cabello (arXiv:1109.6514).
+  In operator space it becomes tr(A_a P_ℓ) = 1 iff a ∈ ℓ: incidence turns into *non*-orthogonality.
+* **From inequality to paradox.** Those 21 rays are not a KS set: the SIC rays lie in no basis, so they can be coloured
+  0. Lifting them, plus 11 extra dimensions that make each copy of the lines orthonormal, turns the same incidence
+  structure into the smallest known all-versus-nothing paradox with three contexts.
+* **Other dimensions.** The same dictionary holds for H(q, q + 1) with the phase space of a q-level system (checked for
+  q = 3, 5, 7).
+* **Why the 3 of "three contexts" selects the qutrit.**
+  * Lemma 3's bound c ≤ 1/9 is a three-context bound. It excludes the qubit plane (points of probability 1/4).
+  * Theorem 5 forces a context of exactly 9 events to be AG(2,3), the qutrit phase space.
+  * So among phase-space constructions the qutrit is the smallest one with three contexts.
+
+Conclusion: no structural link between the two minimum problems was found, and none is forced. The real 3D KS sets
+(Conway–Kochen 31, Peres and Schütte 33) have cubic and octahedral structure, unrelated to the affine plane. The shared
+"3" is the qutrit's: it connects H33 with qutrit state-independent contextuality (Bengtsson–Blanchfield–Cabello,
+Yu–Oh type), not with the minimum KS set in ℝ³.
 
 ---
 
@@ -1086,6 +1155,8 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   3-colourings, and the uniqueness step of Theorem 5.
 * `search/vertex_identity.py`, `search/vertex_identity.log`: Lemma 3's identity and inequality on H33, H36, H37, H39.
 * `search/bounds30.py`, `search/bounds30.log`: the exact spectral table of Corollary 6 (largest n for each d).
+* `search/affine_ghz.py`, `search/affine_ghz.log`: §1.8–1.9 (the H(q, r) family, PSD criterion, dimensions;
+  qudit phase-space dictionary for q = 3, 5, 7).
 * `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
   of the remark on H36 and H37).
 * `search/minimal37.py`: exact dual certificates showing H37 is vertex-critical.

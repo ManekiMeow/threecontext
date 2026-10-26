@@ -185,3 +185,13 @@ solver.** The cost sits in cubes whose new rays have no Yu–Oh neighbour, i.e. 
 unseeded part of the problem. Forbidding the 25-ray completion does not touch that part.
 Caveat: r was measured at only two steps and may fall at higher orders. Finishing orders 22–24
 on a cluster (hours to days) would measure that before committing a large allocation.
+
+## Related: the three-context GHZ problem
+
+The minimum here, between 24 and 31 rays, resembles the three-context GHZ minimum of between 30 and 33 events in the
+main `RESULTS.md`. Section 1.9 there compares the two problems.
+* There is no reduction either way: GHZ paradoxes need dimension ≥ 18.
+* Peres's 33 rays split 9 + 12 + 12 like H33, but with a different orthogonality pattern.
+* The real link of H33 is to *complex* dimension 3. H33 is the operator lift of the qutrit Hesse configuration, the
+  same 21-ray SIC-plus-MUB structure that gives state-independent contextuality in Bengtsson–Blanchfield–Cabello
+  (arXiv:1109.6514).

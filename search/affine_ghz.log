@@ -1,0 +1,36 @@
+ q  r |   n  contexts      | triangles | min eig | dim | GHZ realization | predicted PSD | predicted dim
+ 2  3 |   16  (4, 6, 6)     | 0         |  -0.457 |   9 | False           | False         | -
+ 3  3 |   27  (9, 9, 9)     | 0         |  -0.104 |  17 | False           | False         | -
+ 3  4 |   33  (9, 12, 12)   | 0         |  -0.000 |  20 | True            | True          | 20
+ 4  2 |   32  (16, 8, 8)    | 0         |  -0.180 |  23 | False           | False         | -
+ 4  3 |   40  (16, 12, 12)  | 0         |  -0.000 |  27 | True            | True          | 27
+ 4  4 |   48  (16, 16, 16)  | 0         |  -0.000 |  43 | True            | True          | 43
+ 4  5 |   56  (16, 20, 20)  | 0         |  -0.000 |  50 | True            | True          | 50
+ 5  2 |   45  (25, 10, 10)  | 0         |  -0.133 |  34 | False           | False         | -
+ 5  3 |   55  (25, 15, 15)  | 0         |  -0.000 |  51 | True            | True          | 51
+ 5  6 |   85  (25, 30, 30)  | 0         |  -0.000 |  78 | True            | True          | 78
+ 7  3 |   91  (49, 21, 21)  | 0         |  -0.000 |  87 | True            | True          | 87
+ 7  8 |  161  (49, 56, 56)  | None      |  -0.000 | 152 | True            | True          | 152
+qudit picture, q = 3 (H33):
+   tr(A_a A_b) = q delta: True
+   sum_a A_a = q I: True
+   P_l rank-1 projectors: True
+   tr(A_a P_l) = [a in l]: True
+   Hesse SIC |<f_a|f_b>|^2 = 1/4: True
+   <f_a|m_l> = 0 iff a in l (Hesse): True
+   S1-part of H(q,q+1) = (A_a/sqrt q, s sqrt q P_l): True
+   psi -> I/sqrt q: overlaps 1/q and s: True
+qudit picture, q = 5:
+   tr(A_a A_b) = q delta: True
+   sum_a A_a = q I: True
+   P_l rank-1 projectors: True
+   tr(A_a P_l) = [a in l]: True
+   S1-part of H(q,q+1) = (A_a/sqrt q, s sqrt q P_l): True
+   psi -> I/sqrt q: overlaps 1/q and s: True
+qudit picture, q = 7:
+   tr(A_a A_b) = q delta: True
+   sum_a A_a = q I: True
+   P_l rank-1 projectors: True
+   tr(A_a P_l) = [a in l]: True
+   S1-part of H(q,q+1) = (A_a/sqrt q, s sqrt q P_l): True
+   psi -> I/sqrt q: overlaps 1/q and s: True
