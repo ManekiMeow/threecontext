@@ -25,7 +25,7 @@ covered by four cliques (four contexts). The separate question of the **smallest
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
+| (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context already force ≥ 11 events in each other context, three force ≥ 12 (Theorem 21); so a smaller example has at most one such event per context, even approximately (Corollary 22). So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. The path forward is in Section 3.8. |
 
 ---
@@ -277,14 +277,75 @@ simple for d ≤ 33.) The convex envelope of `f(f−1)(f−2)` on [0, 3] is −f
 
 So d = 17 would need n ≤ 29, contradicting n ≥ 30. ∎
 
+**Theorem 21 (rigid events).** Call an event *rigid* if its probability is exactly 1/9, i.e. E g = 0 (Lemma 3).
+If a context A contains two rigid events, each other context contains at least 11 events. If A contains three, each
+other context contains at least 12. A need not consist of rigid events; the counting in Theorem 5 is the case of nine.
+
+*Proof.* Rephase every event x so that ⟨g_x|ψ⟩ = √c_x > 0, and let B be another context.
+1. *Edges at a rigid event.* Step 3 of Theorem 5 uses only c_a = 1/9. So for every neighbour x of a rigid event a,
+   ⟨g_x|g_a⟩ = ⟨g_x|ψ⟩ = √c_x. Expanding ⟨ψ|g_a⟩ in B then gives Σ_{b∼a} c_b = 1/3.
+2. *Pairs of rigid events.* For rigid a, the vector g_a − ψ/3 is an eigenvector of T = Π₂ + Π₃ with eigenvalue 1/2.
+   * The two-projection step of Theorem 5 needs only such eigenvectors, not a whole rigid context. So for rigid
+     a ≠ a′ in A, ⟨g_a′|Π₂|g_a⟩ = 1/12.
+   * By step 1 this reads Σ_{b∼a, a′} c_b = 1/12.
+   * In particular, an event of B adjacent to two rigid events has probability at most 1/12.
+3. *Counting.* Sort the events of B by the rigid events they are adjacent to. Every event has probability at most
+   1/9 (Lemma 3).
+   * Two rigid events a, a′: the classes "both", "only a", "only a′" and "neither" carry probability 1/12, 1/4, 1/4
+     and 5/12. They need at least 1, 3, 3 and 4 events, so |B| ≥ 11.
+   * Three rigid events: let t be the probability carried by the events adjacent to all three. The classes carry t,
+     1/12 − t (each of the three pairs), 1/6 + t (each single) and 1/4 − t. Every t ∈ [0, 1/12] needs at least 12
+     events; for example t = 0 gives 3 + 3·2 + 3. More rigid events only add constraints. ∎
+
+Checks (`search/rigid_events.py`, log `search/rigid_events.log`):
+* An exact LP and a MILP over the neighbourhood sets reproduce the minima: 11 for two rigid events, 12 for three to
+  nine.
+* The bound for three is sharp. In H33 every triple of points meets exactly 12 B-lines: 3 + 6 + 3 if the points are
+  not collinear, 1 + 9 + 2 if they are.
+
+**Corollary 22 (rigid and nearly rigid events below 33).** Suppose a realization has n ≤ 32 events of positive
+probability, so every context has at least 10 events.
+* No context contains three rigid events. A context with two rigid events forces n = 32 with context sizes 10, 11, 11.
+  For n ≤ 31, every context contains at most one rigid event.
+* *Stability.* There is an ε > 0 such that the same holds with "rigid" replaced by "probability above (1 − ε)/9".
+  * For a fixed graph the realizations form a compact set, and there are finitely many graphs with at most 32
+    vertices.
+  * A sequence of counterexamples would therefore converge to a realization of the same graph in which those events
+    are exactly rigid.
+  * Theorem 21 applied to the limit gives the other contexts at least 11 (or 12) events of positive probability, and
+    these stay positive along the sequence.
+  * The ε is not explicit.
+
+So the concentrated case, a context whose deficit sits on one or two events, is excluded. What is left is the
+*spread* case: in every context, all events but at most one (two when n = 32) have probability at most (1 − ε)/9.
+An example would be ten events of probability 1/10 each.
+
+**Remark (towards the spread case).** For any events a, a′ of A, rigid or not, put w_a = g_a − ⟨ψ|g_a⟩ψ and
+J = Π₂ − Π₃. Then exactly
+
+    ⟨g_a′|Π₂|g_a⟩ = δ_aa′/4 + (3/4)⟨g_a′|ψ⟩⟨ψ|g_a⟩ + (1/2)⟨g_a′|E|g_a⟩ + (1/2)⟨w_a′|J|w_a⟩.
+
+This follows from Π₂ = (T + J)/2 and from Ew = (T − 1/2)w on S₁ ⊖ ψ.
+* |⟨g_a′|E|g_a⟩| ≤ (1/2)·min(√δ_a, √δ_a′), where δ = 1 − 9c is the deficit (Lemma 3).
+* J maps the T-eigenvalue λ to 2 − λ, so |⟨w_a′|J|w_a⟩| ≤ √δ_a + √δ_a′ + √(δ_a δ_a′).
+* Both corrections vanish for rigid pairs, which is step 2.
+* The identity holds to 3·10⁻¹⁶ on H36 and H37, whose events are not rigid.
+
+In principle this identity gives a quantitative Corollary 22, but the class probabilities in step 3 have slack of only about
+1/36, so ε stays tiny. Excluding n = 30 and 31 this way would need ε > 1/9, because every 10-event context carries
+total deficit 1. Excluding n = 32 would need ε > 1/8. The spread case needs a non-perturbative idea.
+
 **Where minimality stands.** **n_min ∈ [30, 33] and d_min ∈ [18, 20]**, and H33 attains both upper bounds.
 
 * By Theorem 5, a graph with fewer than 33 vertices has every context of size 10, 11 or 12, with n ∈ {30, 31, 32}.
 * A realization in dimension 18 or 19 has no 9-event context (that needs d ≥ 20), so every context has ≥ 10 events,
   and n ≤ 32 or n ≤ 34 respectively.
 * By Lemma 3 such contexts are "near-rigid": `Σ_{i ∈ I_k} ||E g_i||² = (|I_k| − 9)/4 ≤ 3/4`.
+* By Corollary 22 their deficits are spread: at most one (nearly) rigid event per context, two in the 10-event
+  context when n = 32.
 
-The natural next step is a quantitative version of steps 1–4 of Theorem 5 for contexts of 10–12 events. A plain
+The natural next step is the spread case: contexts of 10–12 events in which (almost) every event has
+probability bounded away from 1/9. A plain
 exhaustive search is not an option. The number of triangle-free graphs is already about 3·10^13 at 17 vertices (OEIS A006785),
 and `search/rigid.c` handles only n ≤ 13.
 
@@ -1025,6 +1086,8 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   3-colourings, and the uniqueness step of Theorem 5.
 * `search/vertex_identity.py`, `search/vertex_identity.log`: Lemma 3's identity and inequality on H33, H36, H37, H39.
 * `search/bounds30.py`, `search/bounds30.log`: the exact spectral table of Corollary 6 (largest n for each d).
+* `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
+  of the remark on H36 and H37).
 * `search/minimal37.py`: exact dual certificates showing H37 is vertex-critical.
 * `search/ftheta.py`, `search/fsearch.py`, `search/tcount.py`: the Z_q tri-Cayley search.
 * `search/groupsearch.py`: tri-Cayley search over non-cyclic groups.
