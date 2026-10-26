@@ -1,0 +1,4 @@
+H36: dim 26, context sums [1.0, 1.0, 1.0], max c_i = 0.0833 (<= 1/9 = 0.1111), max |(i) lhs - rhs| = 1.6e-15, max c(1/a+1/b+1/r) = 0.7500 (<= 1)
+H39: dim 37, context sums [1.0, 1.0, 1.0], max c_i = 0.0769 (<= 1/9 = 0.1111), max |(i) lhs - rhs| = 9.2e-16, max c(1/a+1/b+1/r) = 0.8095 (<= 1)
+H37: dim 35, context sums [1.0, 1.0, 1.0], max c_i = 0.0942 (<= 1/9 = 0.1111), max |(i) lhs - rhs| = 1.2e-15, max c(1/a+1/b+1/r) = 0.9466 (<= 1)
+H33: dim 20, context sums [1.0, 1.0, 1.0], max c_i = 0.1111 (<= 1/9 = 0.1111), max |(i) lhs - rhs| = 6.8e-16, max c(1/a+1/b+1/r) = 1.0000 (<= 1)

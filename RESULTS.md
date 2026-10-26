@@ -24,9 +24,9 @@ covered by four cliques (four contexts). The separate question of the **smallest
 
 | question | result |
 |---|---|
-| (1) smaller graph than Perkel (57 vertices) | **36 vertices** (exact): an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **Theorem: every three-context GHZ graph has at least 28 vertices**, and every realization needs dimension at least 17 (exact proofs, Section 2). So Perkel is not minimal, and n_min ∈ [28, 36]. The 36- and 37-vertex graphs are vertex-critical (exact). 36 is the minimum within every symmetric family searched: tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33. A full proof of minimality is still open. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 28 rays in the other bases, and the dimension must be at least 17. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). The path forward is in Section 3.8. |
+| (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
+| (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). The path forward is in Section 3.8. |
 
 ---
 
@@ -60,7 +60,7 @@ are 30 and 33. An exhaustive scan of **all** triangle-free Cayley graphs on Z30,
 (`search/cayley_vt.py`, `search/cayvt.log`; best θ = 2.839) finds nothing. So **H36 is the smallest Cayley-graph
 example**. Non-Cayley vertex-transitive graphs of order 30 and 33 were not checked.
 
-### 1.2 The 36-vertex graph (new record)
+### 1.2 The 36-vertex graph (previous record)
 
 Let `H36 = T(Z2×Z6; S0, S1, S2)`, where elements of Z2×Z6 are written as pairs (a, z), and
 
@@ -121,11 +121,40 @@ of the solver output is the **maximum** rank on that face, not the minimum.
 | Perkel (57) | 37 | **0**, so the Gram matrix is unique | 37 |
 | H36 | 26 | **0**, so it is unique: `I + A/4` | 26 |
 | H37 | 35 | 92 | 32 at an extreme point; about 24 approximately |
+| H33 | 20 | **0** (Theorem 5, step 6), so it is unique | 20 |
 
 So for Perkel the answer to the paper's open question ("we do not know if a lower-dimensional realization exists")
 is no among real realizations. **37 is forced**, because the optimal Gram matrix is unique, as expected for an
 edge-transitive graph where symmetrization loses nothing. The same holds for H36 with 26. Complex realizations were
-not analysed: a complex Gram matrix could add antisymmetric imaginary parts on edges.
+not analysed: a complex Gram matrix could add antisymmetric imaginary parts on edges. For H33 the uniqueness proof
+(Theorem 5) covers complex realizations as well: 20 is forced.
+
+### 1.7 The 33-vertex graph H33 from the affine plane AG(2,3) (new record)
+
+This graph came out of the equality case of Theorem 5 (Section 2), not out of a search.
+
+* **Contexts.** A = the 9 points of AG(2,3) = Z3². B and C = two copies of its 12 lines.
+* **Edges (non-orthogonal pairs).** A point and a line (in B or in C) are adjacent iff the point lies on the line. A
+  line b ∈ B and a line c ∈ C are adjacent iff they are distinct and parallel. That gives 96 edges, with degree 8 for
+  points and 5 for lines.
+* **Triangle-free.** A triangle would need a point on two parallel lines.
+* **Realization (exact).** The Gram matrix has 1/√12 on point–line edges, 1/2 on line–line edges and 0 on non-edges.
+  * Its spectrum is `3^1, 2^3, (3/2)^16, 0^13`, so it is PSD of rank **20**. The check uses the rational matrix
+    `D⁻¹GD` and the identity `K(K − 3/2)(K − 2)(K − 3) = 0`.
+  * The state is ψ = (1/3)Σ_A g_a = (1/√12)Σ_B g_b = (1/√12)Σ_C g_c.
+  * Every point has probability 1/9 and every line 1/12, so each context sums to 1 and `θ(H̄33) = 3`.
+* **Unique realization.** By Theorem 5 the realization is unique up to unitaries, so dimension 20 is forced. For
+  comparison: H36 needs 26, Perkel 37, and H37's approximate 24 is not certified.
+* **Vertex-critical and edge-critical (exact).**
+  * Deleting a vertex leaves a proper 3-colouring with a class of at most 9 vertices, out of only 32. By Lemma 3 and
+    Theorem 5 that is impossible.
+  * Deleting a point–line edge violates step 3 of Theorem 5. Deleting a line–line edge violates step 6.
+* **3-colourings.** Every proper 3-colouring has the 9 points as one class; the 16 colourings with a fixed colour for one
+  point all have this shape. Every vertex sees both other colours in each colouring, as the rigidity argument of
+  Section 2 requires.
+* **Why the earlier searches missed it.** The contexts have unequal sizes (9, 12, 12) and the graph is not regular,
+  so it lies outside the tri-Cayley and Cayley families of Section 1.1.
+* Files: `search/h33.py` (exact verification, including the uniqueness step), `search/h33.log`, `search/h33.g6`.
 
 ---
 
@@ -171,21 +200,115 @@ least `−2/(3√3)`, so at least `9√3 > 15.5` eigenvalues besides 3 are non-z
 (Equivalently, H would have to be strongly regular with parameters (27, 6, 0, 3/2). This is consistent with the
 paper's Theorem 3.)
 
-**What is still missing for a full minimality proof.** Perturbing Theorem 2 (n = 28, …) needs a quantitative
-version of the integrality argument. The identity `n − 27 = 4 Σ_i ||E g_i||²` (with `E = F − 3/2 − 3/2·ψψ†`) gives
-per-vertex bounds `||E g_i||² ≥ c_i (1/2 − 3/2·v)² / (v(1−v))`, where `v` is the weight of the neighbourhood of i
-in a single other class. These vanish when every neighbourhood weighs exactly 1/3, so they do not by themselves
-push the bound past 28. An exhaustive graph search is infeasible beyond about 14 vertices (`search/rigid.c`
-handles n ≤ 13 using a rigidity condition derived below).
+(The numbering continues from Theorem 2 and skips 4, because §3 uses "Theorem 4" for the paper's Theorem 4.)
 
-**Rigidity (used for pruning).** In a vertex-minimal example every vertex has positive weight. Hence in **every**
-proper 3-colouring of H, every vertex has neighbours of both other colours. Otherwise moving it to another colour
-class would force its weight to 0. No triangle-free graph on ≤ 11 vertices is rigid in this sense, and the rigid
-ones on 12–13 vertices have theta ≤ 2.5.
+**Lemma 3 (one identity per event, so every event has probability ≤ 1/9).** Let `E = F − 3/2 − 3/2·ψψ†` and
+`c_i = |<ψ|g_i>|²`. Then for every event i
+
+    ||E g_i||² = (1 − 9 c_i) / 4.
+
+*Proof.*
+1. Let i ∈ I_1 and put p = Π_2 g_i and q = Π_3 g_i, so that F g_i = g_i + p + q.
+2. The neighbours of i are pairwise non-adjacent (H is triangle-free), so their vectors are orthonormal and p ⊥ q.
+3. We have `<g_i|p> = ||p||²` and `<g_i|q> = ||q||²`. Because ψ ∈ S_2 ∩ S_3, `<ψ|p> = <ψ|q> = <ψ|g_i>`.
+4. Expand `||p + q − g_i/2 − (3/2)<ψ|g_i>ψ||²`. The terms in ||p||² and ||q||² cancel, and 1/4 − (9/4)c_i is left. ∎
+
+Summing over i gives back `n − 27 = 4 Σ ||E g_i||²` (Theorem 1). Three consequences:
+
+* `c_i ≤ 1/9`, so every context has at least 9 events of positive probability. This is the GHZ case of Lemma 14
+  (§3.7), with a shorter proof.
+* `c_i = 1/9` holds iff `F g_i = (3/2) g_i + (3/2)<ψ|g_i> ψ`.
+* The Cauchy–Schwarz form of Lemma 14 gives more: `c_i (1/α + 1/β + 1/ρ) ≤ 1`, where α and β are the probabilities
+  of the neighbourhood of i in the other two contexts and ρ = 1 − α − β.
+
+`search/vertex_identity.py` checks the identity and the inequality on the realizations of H33, H36, H37 and H39. The
+identity holds to within 2e-15. The maximum event probabilities are 1/9, 1/12, 0.094 and 1/13.
+
+**Theorem 5 (a context with exactly 9 events).** Suppose a context A contains exactly 9 events of positive probability.
+Then each of the other two contexts B and C contains at least 12 events of positive probability, and the realization
+has dimension at least 20. If both B and C have exactly 12, the graph is H33 (§1.7) and its realization is unique up
+to unitaries.
+
+*Proof.* Delete the events of probability 0. This keeps a realization and can only lower the dimension. By Lemma 3
+every a ∈ A has `c_a = 1/9`, so `F g_a = (3/2) g_a + (3/2)<ψ|g_a> ψ`. Rephase so that `<ψ|g_a> = 1/3`. Then
+ψ = (1/3)Σ_A g_a.
+
+1. *T = Π_2 + Π_3 on S_1.* `T g_a = F g_a − g_a = g_a/2 + ψ/2`. So S_1 is T-invariant, T = 1/2 on the 8-dimensional
+   space S_1 ⊖ ψ, and Tψ = 2ψ.
+2. *Two projections.* If Tv = λv with λ ≠ 1, then `<v|Π_2 v> = <v|Π_3 v> = λ||v||²/2`. (Expand
+   `||Π_3 v||² = ||λv − Π_2 v||²`.) With λ = 1/2 and polarization, `<g_a|Π_2 g_a'> = δ_aa'/4 + 1/12`.
+3. *Neighbours in A.* Take an edge a ~ b with b ∈ B.
+   * Triangle-freeness gives `<g_b|Π_3 g_a> = 0`, so `<g_b|F g_a> = 2<g_b|g_a>`.
+   * Comparing with `F g_a = (3/2) g_a + ψ/2` gives `<g_b|g_a> = <g_b|ψ>`.
+   * Then `<g_b|ψ> = (1/3) Σ_A <g_b|g_a> = (|N_A(b)|/3) <g_b|ψ>`, so every b ∈ B has exactly 3 neighbours in A.
+4. *Counting.* For a ≠ a', steps 2 and 3 give `Σ_{b ∈ N_B(a) ∩ N_B(a')} c_b = <g_a|Π_2 g_a'> = 1/12 > 0`.
+   * So each of the 36 pairs of A has a common neighbour in B.
+   * Each b ∈ B covers exactly 3 pairs, so |B| ≥ 12. The same holds for C.
+5. *Dimension.*
+   * Π_2 − Π_3 anticommutes with T − 1. So it maps the 1/2-eigenspace S_1 ⊖ ψ injectively into the 3/2-eigenspace of
+     T.
+   * That eigenspace is orthogonal to S_1. So Π_1 vanishes on it and F = 3/2 there, which gives 8 more dimensions.
+   * The 17-dimensional sum is invariant under Π_2, and Π_2 has rank 1 + 8·(1/4) + 8·(3/4) = 9 on it.
+   * The remaining |B| − 9 ≥ 3 dimensions of S_2 lie in its orthogonal complement. Hence d ≥ 17 + 3 = 20.
+6. *Equality.* Suppose |B| = |C| = 12.
+   * Each pair of A then has exactly one common neighbour in B. So the sets N_A(b) form a Steiner triple system on 9
+     points, i.e. the 12 lines of AG(2,3), and step 4 gives `c_b = 1/12`. The same holds for C.
+   * An edge b ~ c needs N_A(b) ∩ N_A(c) = ∅.
+   * Rephase so that all `<g_b|ψ>, <g_c|ψ>` equal 1/√12. For a ∉ N_A(c), the non-edge (a, c) gives
+     `Σ_{b ∈ N_B(a), N_A(b) ∩ N_A(c) = ∅} <g_c|g_b> = 1/2`.
+   * These equations are solvable only if N_A(c) is a line of B's plane. The solution is then 1/2 on its two parallels
+     (exact check over all 84 triples in `search/h33.py`).
+   * So C's lines are B's lines, the B–C edges join distinct parallel lines with `<g_c|g_b> = 1/2`, and the Gram
+     matrix is that of §1.7. ∎
+
+**Corollary 6 (n ≥ 30 and d ≥ 18).** Every three-context GHZ graph has at least 30 vertices, and every realization
+has dimension at least 18.
+
+*Proof.* By Lemma 3 every context has ≥ 9 events of positive probability. If one context has exactly 9, Theorem 5 gives
+n ≥ 33 and d ≥ 20. Otherwise every context has ≥ 10, so n ≥ 30.
+
+For the dimension, the d − 1 eigenvalues f ≠ 3 satisfy `Σ f = n − 3` and `Σ f(f−1)(f−2) = −6`. (The eigenvalue 3 is
+simple for d ≤ 33.) The convex envelope of `f(f−1)(f−2)` on [0, 3] is −f/4 on [0, 3/2] and `f(f−1)(f−2)` on
+[3/2, 3]. So `(d−1)·env((n−3)/(d−1)) ≤ −6`. This allows the following n (`search/bounds30.py`, exact):
+
+| d | 17 | 18 | 19 | 20 | 21 | 22 |
+|---|---|---|---|---|---|---|
+| largest n | 29 | 32 | 34 | 36 | 38 | 40 |
+
+So d = 17 would need n ≤ 29, contradicting n ≥ 30. ∎
+
+**Where minimality stands.** **n_min ∈ [30, 33] and d_min ∈ [18, 20]**, and H33 attains both upper bounds.
+
+* By Theorem 5, a graph with fewer than 33 vertices has every context of size 10, 11 or 12, with n ∈ {30, 31, 32}.
+* A realization in dimension 18 or 19 has no 9-event context (that needs d ≥ 20), so every context has ≥ 10 events,
+  and n ≤ 32 or n ≤ 34 respectively.
+* By Lemma 3 such contexts are "near-rigid": `Σ_{i ∈ I_k} ||E g_i||² = (|I_k| − 9)/4 ≤ 3/4`.
+
+The natural next step is a quantitative version of steps 1–4 of Theorem 5 for contexts of 10–12 events. A plain
+exhaustive search is not an option. The number of triangle-free graphs is already about 3·10^13 at 17 vertices (OEIS A006785),
+and `search/rigid.c` handles only n ≤ 13.
+
+**Rigidity and minimum degree (used for pruning).** In a vertex-minimal example every vertex has positive weight. By
+the θ-argument (θ(H̄) = 3), every proper 3-colouring of H is a valid choice of contexts. Hence in **every** proper
+3-colouring, every vertex has neighbours of both other colours. Otherwise moving it to another colour class would
+force its weight to 0.
+
+* In particular the minimum degree is at least 2, so vertices of degree 0 or 1 can be discarded.
+* A vertex of degree 2 must have neighbours that receive different colours in every proper 3-colouring.
+* By Lemma 3 such a vertex has small probability. With one neighbour in each other context, `c_i ≤ 7/135 ≈ 0.052`.
+  In a context of 10 events the shortfalls 1/9 − c_i add up to only 1/9.
+* No triangle-free graph on ≤ 11 vertices is rigid in this sense, and the rigid ones on 12–13 vertices have
+  theta ≤ 2.5.
 
 ---
 
 ## 3. Four-context Kochen–Specker sets
+
+**Update on the bounds.** Section 2 now gives n ≥ 30 and d ≥ 18 for three-context GHZ graphs (Corollary 6). Some
+subsections below were written earlier and still say "≥ 28 rays" or "d ≥ 17" for the K4-free route (Route A). The
+improved values ≥ 30 and d ≥ 18 apply there. The condition "d ≤ 16" (then every ray lies in a K4) becomes d ≤ 17.
+These bounds come from a three-context GHZ graph at every ray, so they cannot exceed d_min(GHZ) ≤ 20 (H33). They say
+nothing about Route B, where the best bound is d ≥ 6.
 
 **Reduction.** Take four orthonormal bases `B_1, …, B_4` of `C^D` such that no 4-tuple (one vector from each) is pairwise
 non-orthogonal. That is, their 4-partite non-orthogonality graph is K4-free. Then `B_1 ∪ … ∪ B_4` is a KS set.
@@ -199,8 +322,8 @@ and this route stays open (see below).
 orthonormal, `w ∈ span N_k(w)` (since B_k is complete), and the non-orthogonality graph on `N(w)` is triangle-free.
 So `(w, N(w))` is a **three-context GHZ paradox with state w**. By Section 2:
 
-* every ray is non-orthogonal to **at least 28** rays of the other three bases;
-* `D ≥ 17`.
+* every ray is non-orthogonal to **at least 30** rays of the other three bases (Corollary 6; 28 by Theorem 2);
+* `D ≥ 18` (Corollary 6; 17 by Theorem 1).
 
 So a K4-free four-context KS set would contain a three-context GHZ graph at every vertex. This
 also recovers the paper's Theorem 4: shared vectors between bases are impossible in this setting.
@@ -565,11 +688,13 @@ Cauchy–Schwarz, |⟨a|w⟩|² is at most each of ‖Pa‖²‖Pw‖², ‖Qa�
 the three ‖·w‖². By AM–GM the smallest of the three products is at most 1/9. ∎
 
 * **Route A:** every non-orthogonal pair from different bases has |⟨a|w⟩| ≤ 1/3. So every ray is non-orthogonal to
-  at least **9 rays of each other basis** (the per-basis version of the bound of 28).
+  at least **9 rays of each other basis** (the per-basis version of the bound of 30). By Theorem 5, if it meets
+  exactly 9 rays of one basis, it meets at least 12 of each of the other two.
 * **Route B:** every cross pair with overlap above 1/3 lies in a K4.
 * The same argument, with ψ in place of the fourth basis, applies to any three-context GHZ paradox: every event has
   probability ≤ 1/9, so every context has at least 9 events. The known examples comply: 1/12 (H36), 1/13 (H39), 1/19
-  (Perkel), and a maximum of 0.094 for H37.
+  (Perkel), and a maximum of 0.094 for H37. The 9 points of H33 attain 1/9 (§1.7). Lemma 3 of §2 gives a one-line proof
+  of the bound.
 
 **Updated picture.**
 
@@ -577,8 +702,8 @@ the three ‖·w‖². By AM–GM the smallest of the three products is at most 
 |---|---|---|
 | internal bases | irrelevant | blockers must meet ≥ 3 covering bases (Lemma 11) |
 | symmetry | allowed; covariant ⇒ KS iff one ray's neighbourhood is triangle-free | no group transitive on all four bases (Cor. 12a) |
-| each ray | neighbourhood is a 3-context GHZ graph with ≥ 28 rays, ≥ 9 in each other basis; all cross overlaps ≤ 1/3 (Lemma 14) | lies in a K4 if d ≤ 16; p(w) ∉ STAB(G_w); pairs with overlap > 1/3 lie in a K4 |
-| dimension | d ≥ 17 | d ≥ 6 (Theorem 15, computer-assisted) |
+| each ray | neighbourhood is a 3-context GHZ graph with ≥ 30 rays, ≥ 9 in each other basis (≥ 12 in the other two if one has exactly 9); all cross overlaps ≤ 1/3 (Lemma 14) | lies in a K4 if d ≤ 17; p(w) ∉ STAB(G_w); pairs with overlap > 1/3 lie in a K4 |
+| dimension | d ≥ 18 (Corollary 6; this argument cannot give more than 20) | d ≥ 6 (Theorem 15, computer-assisted) |
 | Pauli eigenbases (Lagrangians) | impossible (Thm 13) | impossible (Thm 13) |
 | orthogonality graph | may be regular or vertex-transitive; never strongly regular (Thm 16) | never strongly regular, vertex-transitive (Thm 17) or doubly Hoffman-tight regular (Prop. 18) |
 
@@ -703,8 +828,10 @@ With sound symmetry breaking (double-lex on the B₁–B₂ block, column-lex on
 * d = 4, 5: **UNSAT** (instant). d = 6: **SAT**, a perfectly regular skeleton (4 neighbours per other basis).
 * With the full requirement n ≥ 28: d = 10 **UNSAT**; d = 17 **undecided** (CaDiCaL, 14000 s, no verdict). Deciding
   it needs a stronger encoding (e.g. lazy θ = 3 neighbourhood constraints, direction 1 below) rather than more time.
-* So the combinatorial conditions alone cannot give impossibility; since d ≥ 17 analytically, the content is in
-  θ(H̄_w) = 3 for every neighbourhood. UNSAT at a given d ≥ 17 would still be a theorem for that d.
+  *Later:* d = 17 is now excluded analytically (Corollary 6 gives d ≥ 18), and (DEG) can be raised to ≥ 30 in total,
+  with ≥ 12 in the other two bases whenever one basis contributes exactly 9 (Theorem 5).
+* So the combinatorial conditions alone cannot give impossibility. Since d ≥ 18 analytically, the content is in
+  θ(H̄_w) = 3 for every neighbourhood. UNSAT at a given d ≥ 18 would still be a theorem for that d.
 
 **Open directions.**
 1. *CEGAR skeleton search (finding and per-d impossibility).* SAT skeleton → SDP check θ(H̄_w) = 3 for every w → block
@@ -812,6 +939,10 @@ ray is non-orthogonal to D rays:
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
+* `search/h33.py`, `search/h33.log`, `search/h33.g6`: H33 (AG(2,3)) with exact checks: rank-20 PSD Gram matrix, state,
+  3-colourings, and the uniqueness step of Theorem 5.
+* `search/vertex_identity.py`, `search/vertex_identity.log`: Lemma 3's identity and inequality on H33, H36, H37, H39.
+* `search/bounds30.py`, `search/bounds30.log`: the exact spectral table of Corollary 6 (largest n for each d).
 * `search/minimal37.py`: exact dual certificates showing H37 is vertex-critical.
 * `search/ftheta.py`, `search/fsearch.py`, `search/tcount.py`: the Z_q tri-Cayley search.
 * `search/groupsearch.py`: tri-Cayley search over non-cyclic groups.

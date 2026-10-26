@@ -1,0 +1,9 @@
+H33: 33 vertices, 96 edges, triangle-free, degrees [5, 8]
+exact: K(K-3/2)(K-2)(K-3) = 0; multiplicities of 0, 3/2, 2, 3: [13, 16, 3, 1] rank 20
+exact: (1/3) sum_A g_a = (1/sqrt12) sum_B g_b = (1/sqrt12) sum_C g_c =: psi, |psi| = 1
+  context A: 9 events, probabilities [0.111111111111], sum 1.000000000000
+  context B: 12 events, probabilities [0.083333333333], sum 1.000000000000
+  context C: 12 events, probabilities [0.083333333333], sum 1.000000000000
+realization in R^20: max |Gram - G| = 1.7e-15; F spectrum = [1.5, 2.0, 3.0]
+proper 3-colourings (vertex ('A', (0, 0)) fixed to colour 0): 16; class shapes (points, lines): [(0, 12), (9, 0)]; every vertex sees both other colours in each
+equality case: for all 84 point triples c the equations are solvable iff c is a line (unique solution 1/2, 1/2)
