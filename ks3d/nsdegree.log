@@ -1,0 +1,18 @@
+KS 31 (height 2): maximally mixed functional, max |L(row)| over rows of degree <= 3: 2.2e-16, degree 4: 0.089
+   over Q (exact): refutation of degree 3: False, degree 4: True
+   over GF(2): smallest refutation degree <= 4: 4
+   over GF(3): smallest refutation degree <= 4: 3
+   over GF(2147483629): smallest refutation degree <= 4: 4
+   over GF(2147483587): smallest refutation degree <= 4: 4
+KS 33 (Peres): maximally mixed functional, max |L(row)| over rows of degree <= 3: 2.2e-16, degree 4: 0.090
+   over Q (exact): refutation of degree 3: False, degree 4: True
+   over GF(2): smallest refutation degree <= 4: 3
+   over GF(3): smallest refutation degree <= 4: 4
+   over GF(2147483629): smallest refutation degree <= 4: 4
+   over GF(2147483587): smallest refutation degree <= 4: 4
+Yu-Oh closure 25: maximally mixed functional, max |L(row)| over rows of degree <= 3: 4.4e-16, degree 4: 0.079
+   over Q (exact): refutation of degree 3: False, degree 4: False
+   over GF(2): smallest refutation degree <= 4: None
+   over GF(3): smallest refutation degree <= 4: None
+   over GF(2147483629): smallest refutation degree <= 4: None
+   over GF(2147483587): smallest refutation degree <= 4: None

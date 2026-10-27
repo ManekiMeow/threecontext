@@ -19,6 +19,8 @@ Because `theta(Hbar) <= chi(H) = 3`, only the inequality `theta(Hbar) >= 3` need
 **Scope of this file.** §1–2: three-context GHZ graphs (smaller examples than Perkel, lower bounds). §3: KS sets
 covered by four cliques (four contexts). The separate question of the **smallest KS set in dimension 3** (bounds
 [24, 31], exact searches over coordinate universes) is in [`ks3d/RESULTS.md`](ks3d/RESULTS.md), with code in `ks3d/`.
+Its §7 explains why the spectral methods of §2 below cannot work there: every spectral bound is blind to the 3D KS
+property, and the contradiction first shows at algebraic degree 4.
 
 ## Summary
 
@@ -224,6 +226,10 @@ Conclusion: no structural link between the two minimum problems was found, and n
 (Conway–Kochen 31, Peres and Schütte 33) have cubic and octahedral structure, unrelated to the affine plane. The shared
 "3" is the qutrit's: it connects H33 with qutrit state-independent contextuality (Bengtsson–Blanchfield–Cabello,
 Yu–Oh type), not with the minimum KS set in ℝ³.
+
+The methods do not transfer either (`ks3d/RESULTS.md` §7). Here the classical contradiction is free (H is
+triangle-free) and the hard part is quantum realizability, which is what spectra measure. In 3D KS the roles are
+reversed: every spectral or degree-≤3 algebraic bound is satisfied by the rays themselves.
 
 ---
 
