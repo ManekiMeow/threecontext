@@ -15,3 +15,5 @@
            mult_p31_e6 (d=31, 7 orbits):    UNSAT after 58 s; models 36, bipartite blocks 0, theta blocks 144, candidates 0, best residual None
            mult_p37_e4 (d=37, 5 orbits):    UNSAT after 70 s; models 6, bipartite blocks 0, theta blocks 24, candidates 0, best residual None
            mult_p41_e2 (d=41, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p41_e4 (d=41, 5 orbits):    UNSAT after 84 s; models 12, bipartite blocks 0, theta blocks 48, candidates 0, best residual None
+           mult_p41_e5 (d=41, 6 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
