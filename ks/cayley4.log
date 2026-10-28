@@ -116,3 +116,8 @@
          mult_p113_e14 (d=113, 15 orbits):   budget after 925 s; models 11, bipartite blocks 0, theta blocks 43, candidates 0, best residual None
          mult_p113_e16 (d=113, 17 orbits):   budget after 905 s; models 17, bipartite blocks 2, theta blocks 66, candidates 0, best residual None
 # run started 2026-10-28T23:28:38Z: 204 jobs, mult primes 19-151 (900 s each), orders 18-24 and - (1800 s each), stop at 2026-10-29T01:23:33Z
+# run started 2026-10-28T23:30:35Z: 204 jobs, mult primes 19-151 (900 s each), orders 18-24 and - (1800 s each), stop at 2026-10-29T01:25:34Z
+          mult_p127_e9 (d=127, 10 orbits):   budget after 903 s; models 9, bipartite blocks 0, theta blocks 34, candidates 0, best residual None
+         mult_p113_e28 (d=113, 29 orbits):   budget after 904 s; models 19, bipartite blocks 0, theta blocks 74, candidates 0, best residual None
+          mult_p127_e7 (d=127, 8 orbits):   budget after 912 s; models 7, bipartite blocks 0, theta blocks 26, candidates 0, best residual None
+          mult_p127_e6 (d=127, 7 orbits):   budget after 959 s; models 3, bipartite blocks 0, theta blocks 11, candidates 0, best residual None
