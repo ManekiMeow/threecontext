@@ -115,3 +115,4 @@
           mult_p127_e3 (d=127, 4 orbits):    UNSAT after 1 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
          mult_p113_e14 (d=113, 15 orbits):   budget after 925 s; models 11, bipartite blocks 0, theta blocks 43, candidates 0, best residual None
          mult_p113_e16 (d=113, 17 orbits):   budget after 905 s; models 17, bipartite blocks 2, theta blocks 66, candidates 0, best residual None
+# run started 2026-10-28T23:28:38Z: 204 jobs, mult primes 19-151 (900 s each), orders 18-24 and - (1800 s each), stop at 2026-10-29T01:23:33Z
