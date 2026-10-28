@@ -435,12 +435,10 @@ def two_colouring(A):
 def theta_complement(V, A):
     """theta of the exclusivity graph of a neighbourhood: orthogonal = same basis or non-adjacent."""
     n = len(V)
+    part = np.array([v[0] for v in V])
+    zero = ((part[:, None] == part[None, :]) | ~A) & ~np.eye(n, dtype=bool)
     X = cp.Variable((n, n), symmetric=True)
-    cons = [X >> 0, cp.trace(X) == 1]
-    for i in range(n):
-        for j in range(i + 1, n):
-            if V[i][0] == V[j][0] or not A[i, j]:
-                cons.append(X[i, j] == 0)
+    cons = [X >> 0, cp.trace(X) == 1, cp.multiply(zero.astype(float), X) == 0]
     prob = cp.Problem(cp.Maximize(cp.sum(X)), cons)
     prob.solve(solver=cp.CLARABEL)
     return prob.value

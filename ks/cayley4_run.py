@@ -6,8 +6,8 @@ Two families of K4-free four-partite graphs, both searched with the same SAT + t
   * "group": all Cayley graphs over a group Γ (every group in ks/groups.py of the given orders);
              one job per group, with a time budget and resumable CEGAR state.
 
-usage: python3 cayley4_run.py --stop-at 2026-10-29T06:45:00Z [--mult-primes 19-199] [--mult-limit 600]
-                              [--orders 18-30] [--per-group 2700] [--workers 4]
+usage: python3 cayley4_run.py --stop-at 2026-10-29T06:00:00Z [--mult-primes 19-199] [--mult-limit 600]
+                              [--orders 18-24] [--orders-late 25-30] [--per-group 2700] [--workers 4]
 
 Per-job state lives in cayley4_runs/; decided jobs (UNSAT, realizable candidate, budget used up)
 are skipped on the next call. One JSON line per job-run goes to cayley4_results.jsonl and a
@@ -98,7 +98,8 @@ def main():
     ap.add_argument("--stop-at", required=True, help="UTC, e.g. 2026-10-29T06:45:00Z")
     ap.add_argument("--mult-primes", default="19-199")
     ap.add_argument("--mult-limit", type=float, default=600)
-    ap.add_argument("--orders", default="18-30")
+    ap.add_argument("--orders", default="18-24", help="group orders searched right after the mult jobs")
+    ap.add_argument("--orders-late", default="", help="group orders searched last, e.g. 25-30")
     ap.add_argument("--per-group", type=float, default=2700)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", default=HERE, help="directory for cayley4_runs/, cayley4.log, cayley4_results.jsonl")
@@ -107,17 +108,23 @@ def main():
     STATE = os.path.join(a.out, "cayley4_runs")
     stop_at = datetime.datetime.fromisoformat(a.stop_at.replace("Z", "+00:00")).timestamp()
     os.makedirs(STATE, exist_ok=True)
+    # priority order: multiplier jobs with orbits of size >= 3 (usually decided), groups of small order,
+    # multiplier jobs with orbits of size 2 (M = {+1, -1}: close to the full group family), larger orders
     plo, phi = map(int, a.mult_primes.split("-"))
-    jobs = [("mult", p, e, a.mult_limit, stop_at) for p in range(plo, phi + 1) if is_prime(p)
-            for e in range(2, p) if (p - 1) % e == 0 and (p - 1) // e >= 2]
-    lo, hi = map(int, a.orders.split("-"))
-    jobs += [("group", G.name, n, a.per_group, stop_at) for n in range(lo, hi + 1) for G in groups.groups_of_order(n)]
+    mult = [(p, e) for p in range(plo, phi + 1) if is_prime(p) for e in range(2, p)
+            if (p - 1) % e == 0 and (p - 1) // e >= 2]
+    rng = lambda s: range(int(s.split("-")[0]), int(s.split("-")[1]) + 1) if s else range(0)
+    grp = lambda s: [("group", G.name, n, a.per_group, stop_at) for n in rng(s) for G in groups.groups_of_order(n)]
+    jobs = [("mult", p, e, a.mult_limit, stop_at) for p, e in mult if (p - 1) // e >= 3]
+    jobs += grp(a.orders)
+    jobs += [("mult", p, e, a.mult_limit, stop_at) for p, e in mult if (p - 1) // e == 2]
+    jobs += grp(a.orders_late)
     with open(os.path.join(a.out, "cayley4.log"), "a") as log, \
             open(os.path.join(a.out, "cayley4_results.jsonl"), "a") as out, \
             Pool(a.workers, maxtasksperchild=1, initializer=_set_state, initargs=(STATE,)) as pool:
         log.write(f"# run started {utcnow()}Z: {len(jobs)} jobs, "
-                  f"mult primes {a.mult_primes} ({a.mult_limit:.0f} s each), orders {a.orders} "
-                  f"({a.per_group:.0f} s each), stop at {a.stop_at}\n")
+                  f"mult primes {a.mult_primes} ({a.mult_limit:.0f} s each), orders {a.orders} and "
+                  f"{a.orders_late or '-'} ({a.per_group:.0f} s each), stop at {a.stop_at}\n")
         log.flush()
         for r in pool.imap_unordered(job, jobs):
             if r is None:
