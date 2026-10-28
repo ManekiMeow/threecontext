@@ -1,0 +1,17 @@
+# run started 2026-10-28T20:15:59Z: 204 jobs, mult primes 19-151 (900 s each), orders 18-24 and - (1800 s each), stop at 2026-10-28T22:10:58Z
+           mult_p19_e3 (d=19, 4 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p19_e2 (d=19, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p23_e2 (d=23, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p29_e2 (d=29, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p29_e4 (d=29, 5 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p31_e2 (d=31, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p31_e3 (d=31, 4 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p19_e6 (d=19, 7 orbits):    UNSAT after 1 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p31_e5 (d=31, 6 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p37_e2 (d=37, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p37_e3 (d=37, 4 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+           mult_p29_e7 (d=29, 8 orbits):    UNSAT after 6 s; models 2, bipartite blocks 0, theta blocks 8, candidates 0, best residual None
+           mult_p37_e6 (d=37, 7 orbits):    UNSAT after 19 s; models 4, bipartite blocks 0, theta blocks 16, candidates 0, best residual None
+           mult_p31_e6 (d=31, 7 orbits):    UNSAT after 58 s; models 36, bipartite blocks 0, theta blocks 144, candidates 0, best residual None
+           mult_p37_e4 (d=37, 5 orbits):    UNSAT after 70 s; models 6, bipartite blocks 0, theta blocks 24, candidates 0, best residual None
+           mult_p41_e2 (d=41, 3 orbits):    UNSAT after 0 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
