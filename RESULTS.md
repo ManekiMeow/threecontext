@@ -1154,6 +1154,72 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   * larger D, reusing the GHZ web of the orbit;
   * for Route A, only graphs whose cross overlaps are at most 1/3 (H36, H39, Perkel) remain usable.
 
+### 3.12 Families of K4-free four-colourable graphs (search in progress; new)
+
+Proposal: construct families of K4-free four-colourable graphs H, 0-1 colour the complement, and look for KS sets.
+
+**The colouring step is automatic.** Take the colour classes to be the four bases. A 0-1 colouring of the
+complement (the orthogonality graph) needs one ray per basis, pairwise non-orthogonal, which is a K4 in H. So
+every K4-free H gives a non-colourable complement, and the SAT check below confirms this on every candidate.
+* Complete classes lose nothing (Corollary 9).
+* The whole question is therefore **realizability** (Route A). It needs d ≥ 18, and the neighbourhood of every
+  ray must be a three-context GHZ graph with ϑ = 3.
+
+**Families.** Four-partite Cayley graphs: Γ a group of order d, (k, g) ~ (l, h) iff g⁻¹h ∈ S_kl.
+* These are exactly the non-orthogonality graphs of four bases on which Γ acts regularly.
+* By Corollary 12a any four-context KS set with such a symmetry is K4-free. So "UNSAT for Γ" means that **no
+  four-context KS set of either route has a symmetry group acting regularly on all four bases with that Γ**.
+* Two families are searched:
+  * **multiplier family:** Γ = Z_p and every S_kl a union of orbits of the e-th powers in Z_p^*;
+  * **group family:** all Cayley graphs over each group of order 18–40 in `ks/groups.py` (every abelian
+    group, dihedral, dicyclic and metacyclic groups, a few products; complete for orders 18–23).
+
+**Method** (`ks/cayley4.py`): SAT over the connection sets with every necessary condition we have:
+* (K4) no transversal K4;
+* (DEG) ≥ 9 neighbours per basis (Lemma 14), ≥ 30 in total (Corollary 6), and the Theorem 5 refinement;
+* (C2) and (C4), including (C4) for pairs inside one basis;
+* (TRI) every three bases contain a triangle;
+* normalisation, and lex-leader symmetry breaking.
+
+New sound pruning — **quotient constraints**. A homomorphism Γ → Z_m maps every neighbourhood homomorphically into
+the neighbourhood of a residue pattern. If that pattern neighbourhood is bipartite, ϑ = 2 < 3, so such patterns are
+forbidden for m = 2, 3. These were the dominant failure: without them, every model over Z₁₈ and Z₃×Z₆ had all four
+neighbourhoods bipartite, because each S_kl avoided a whole coset mod 3.
+
+CEGAR on the local GHZ condition: an SDP computes ϑ(N̄(v)) for one vertex per basis. A failure is blocked by "N(v)
+gains a vertex or an edge"; a bipartite N(v) is blocked by "an edge inside one side". Candidates passing all four
+checks get:
+* a brute-force recheck of every condition;
+* the 0-1 colouring of the complement (SAT);
+* a Douglas–Rachford realizability test on the 4d × 4d Gram matrix, which must be 4 × a rank-d projector with the
+  prescribed zeros.
+
+**Validation.**
+* The SAT encoding agrees with an independent brute-force checker:
+  * every model passes the checker;
+  * on random assignments over D₁₈ and Z₃⋊Z₆ the solver and checker give the same verdict (40/40);
+  * the orbit version agrees on 30/30 random invariant assignments over Z₃₁;
+  * it reproduces an exhaustive enumeration of the cyclotomic family (`ks/cyclo4.py`: no survivor for e = 2 with
+    p ≤ 79, or e = 3 with p ≤ 73).
+* Realizability controls:
+  * four bases of ℂ²⁰ with a planted zero pattern (31% zeros) are recovered to residual 2·10⁻¹²;
+  * an impossible pattern stays at residual 1.18.
+
+**Daytime pilot (2 min per instance).**
+* Multiplier family: proven empty (UNSAT) for p = 19 (every e), p = 23 (e = 2), p = 29 (e ≤ 7), p = 31 (e ≤ 6),
+  p = 37 (e ≤ 6) and p = 67, 71 (e = 2, 3, 6 and e = 2).
+  * Several of these became UNSAT only after the CEGAR had rejected 2–36 graphs whose neighbourhoods have
+    ϑ ≈ 2.2–2.6 < 3.
+  * Small orbits (size 2–3, close to the full group family) need longer.
+  * No graph passed the GHZ check.
+* Group family, order 18: models exist, but every one found had a bipartite or ϑ < 3 neighbourhood. Not yet decided.
+
+**Overnight run** (requested for 02:00 CET, 29 Oct): `ks/cayley4_run.py`, which is resumable (state in
+`ks/cayley4_runs/`, log `ks/cayley4.log`, table `ks/cayley4_results.jsonl`).
+* Multiplier family for primes 19 ≤ p ≤ 113 (all e with orbit size ≥ 2), 600 s per instance.
+* Then the group family for orders 18–22, 1800 s per group.
+* Results will be added here.
+
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
@@ -1182,6 +1248,9 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
 * `ks/reductions_check.py`: checks for Lemmas 7, 8 and 11 (deletion, monotonicity, sharpness) and criticality of the 21-ray set.
 * `ks/pauli4.py`: Theorem 13 check: the Mermin star and random 4-tuples of three-qubit Lagrangian eigenbases.
 * `ks/smalld_sat.py`, `ks/realize.py`: SAT relaxation of the four-context problem in small d, and numerical realizability of a pattern.
+* `ks/cayley4.py`, `ks/cayley4_run.py`, `ks/groups.py`, `ks/cyclo4.py`: §3.12 (Cayley and multiplier families of
+  K4-free four-colourable graphs, SAT + ϑ-CEGAR, complement colouring, realizability; resumable driver; group tables;
+  brute-force cyclotomic cross-check).
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
 * `ks/srg_check.py`, `ks/srg_check.log`: §3.10 checks (SRG parameter families, rook/Shrikhande, regular-graph spectral bounds).
