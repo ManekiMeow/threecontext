@@ -1221,11 +1221,26 @@ there the normalisation is a right translation, which commutes with Γ.
   * No graph passed the GHZ check.
 * Group family, order 18: models exist, but every one found had a bipartite or ϑ < 3 neighbourhood. Not yet decided.
 
-**Overnight run** (requested for 02:00 CET, 29 Oct): `ks/cayley4_run.py`, which is resumable (state in
-`ks/cayley4_runs/`, log `ks/cayley4.log`, table `ks/cayley4_results.jsonl`).
-* Multiplier family for primes 19 ≤ p ≤ 113 (all e with orbit size ≥ 2), 600 s per instance.
-* Then the group family for orders 18–22, 1800 s per group.
-* Results will be added here.
+**Overnight run (28–29 Oct).** `ks/cayley4_run.py` on 4 cores, resumable (state in `ks/cayley4_runs/`, log
+`ks/cayley4.log`, table `ks/cayley4_results.jsonl`).
+* Job order:
+  * multiplier instances with orbit size h = (p − 1)/e ≥ 3, primes 19 ≤ p ≤ 151, 900 s each;
+  * the group family for orders 18–24, 1800 s per group;
+  * the multiplier instances with h = 2.
+* It ran 20:15–01:25 UTC (19.8 CPU-hours). Two container restarts cut it short. The first cost one chunk's in-flight
+  jobs. The second stopped the run at 01:25, the 01:30 safety check did not relaunch it, and the last 4.5 hours
+  were lost.
+* 151 of the 204 jobs ran: 3217 models examined, 11 802 ϑ-blocks and 939 bipartite blocks learned.
+* **No graph passed the local GHZ test** (ϑ = 3 at all four bases), so the colouring and realizability stages were
+  never reached.
+* Multiplier family, normalised subfamily: 77 of the 145 instances with h ≥ 3 were UNSAT and 67 were undecided at
+  900 s. The instance (151, 10) and the 29 instances with h = 2 were not reached.
+* Group family: nothing decided.
+  * Z₁₈ and Z₃×Z₆: no model at all in 1800 s each. With the quotient constraints the solver no longer finds the
+    bipartite blow-ups mod 3, and finds nothing else.
+  * D₁₈ (32 models, 1806 s), Dih(Z₃×Z₃) (149 models, 1636 s), Z₃⋊Z₆ (23 models, 395 s): in every model all four
+    neighbourhoods were bipartite (ϑ = 2), although none is forced to be by a quotient pattern (those are excluded).
+  * Z₁₉ (375 s) and Z₂₀ (334 s): no model yet. The other 23 groups of orders 20–24 were not reached.
 
 ## Files
 

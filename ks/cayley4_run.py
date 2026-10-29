@@ -78,6 +78,8 @@ def job(args):
     st["runs"] += 1
     for k in ("models", "bipartite_blocks", "theta_blocks"):
         st[k] += res[k]
+    if res["max_theta"] is not None:              # largest theta < 3 that was blocked (nearest miss)
+        st["max_theta"] = max(st.get("max_theta") or 0, res["max_theta"])
     st["candidates"] += res["candidates"]
     if res["status"] == "UNSAT":
         st["status"] = "UNSAT"
@@ -143,8 +145,8 @@ def main():
             out.flush()
             log.write(f"{s['key']:>22s} (d={s['d']}, {s['orbits']} orbits): {s['status']:>8s} after "
                       f"{s['seconds']:.0f} s; models {s['models']}, bipartite blocks {s['bipartite_blocks']}, "
-                      f"theta blocks {s['theta_blocks']}, candidates {s['candidates']}, "
-                      f"best residual {s['best_residual']}\n")
+                      f"theta blocks {s['theta_blocks']} (max theta {s.get('max_theta')}), "
+                      f"candidates {s['candidates']}, best residual {s['best_residual']}\n")
             for line in lines:
                 log.write(line + "\n")
             log.flush()

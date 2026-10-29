@@ -544,7 +544,7 @@ def search(G, time_limit, log=print, max_candidates=10, realize_restarts=3, symm
     nquo = enc.quotient_constraints() if quotients else 0
     stats = dict(group=G.name, d=G.n, vars=enc.pool.top, clauses=len(enc.cls), symmetries=nsym, quotients=nquo,
                  models=0,
-                 bipartite_blocks=0, theta_blocks=0, candidates=[], status=None)
+                 bipartite_blocks=0, theta_blocks=0, max_theta=None, candidates=[], status=None)
     blocks = [] if blocks is None else blocks
     last = t0
     with Solver(name=solver_name, bootstrap_with=enc.cls + blocks) as solver:
@@ -586,6 +586,7 @@ def search(G, time_limit, log=print, max_candidates=10, realize_restarts=3, symm
                     blocks.append(enc.block_clause(S, k, V, A))
                     solver.add_clause(blocks[-1])
                     stats["theta_blocks"] += 1
+                    stats["max_theta"] = max(stats["max_theta"] or 0, th)   # nearest miss
                     ok = False
             if not ok:
                 continue
