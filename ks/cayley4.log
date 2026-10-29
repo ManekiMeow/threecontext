@@ -150,3 +150,4 @@
          mult_p151_e15 (d=151, 16 orbits):   budget after 930 s; models 2, bipartite blocks 0, theta blocks 7, candidates 0, best residual None
          mult_p151_e25 (d=151, 26 orbits):   budget after 924 s; models 7, bipartite blocks 0, theta blocks 25, candidates 0, best residual None
          mult_p151_e30 (d=151, 31 orbits):   budget after 918 s; models 4, bipartite blocks 0, theta blocks 16, candidates 0, best residual None
+         mult_p151_e50 (d=151, 51 orbits):   budget after 918 s; models 9, bipartite blocks 0, theta blocks 36, candidates 0, best residual None
