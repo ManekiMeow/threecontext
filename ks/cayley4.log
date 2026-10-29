@@ -121,3 +121,12 @@
          mult_p113_e28 (d=113, 29 orbits):   budget after 904 s; models 19, bipartite blocks 0, theta blocks 74, candidates 0, best residual None
           mult_p127_e7 (d=127, 8 orbits):   budget after 912 s; models 7, bipartite blocks 0, theta blocks 26, candidates 0, best residual None
           mult_p127_e6 (d=127, 7 orbits):   budget after 959 s; models 3, bipartite blocks 0, theta blocks 11, candidates 0, best residual None
+         mult_p127_e18 (d=127, 19 orbits):   budget after 907 s; models 12, bipartite blocks 0, theta blocks 45, candidates 0, best residual None
+          mult_p131_e2 (d=131, 3 orbits):    UNSAT after 2 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+          mult_p131_e5 (d=131, 6 orbits):    UNSAT after 2 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+         mult_p127_e21 (d=127, 22 orbits):   budget after 912 s; models 10, bipartite blocks 0, theta blocks 37, candidates 0, best residual None
+         mult_p127_e14 (d=127, 15 orbits):   budget after 928 s; models 6, bipartite blocks 0, theta blocks 21, candidates 0, best residual None
+         mult_p127_e42 (d=127, 43 orbits):   budget after 987 s; models 3, bipartite blocks 0, theta blocks 10, candidates 0, best residual None
+          mult_p137_e2 (d=137, 3 orbits):    UNSAT after 2 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+          mult_p137_e4 (d=137, 5 orbits):    UNSAT after 2 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+          mult_p137_e8 (d=137, 9 orbits):    UNSAT after 15 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
