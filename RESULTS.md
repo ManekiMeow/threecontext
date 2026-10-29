@@ -1295,6 +1295,35 @@ passes every test we have.
     dimensions; likewise for bases 0, 1 with (2, x), (3, x).
 * So the candidate is most likely not realizable, but this is not proved.
 
+**The candidate is one member of a family.** I scanned every pattern in which each S_kl is a single class of index 4
+(4⁶ patterns, up to multiplying by a generator) for the primes p ≡ 1 mod 4 with 41 ≤ p ≤ 157, through (DEG), (K4),
+(C2), (C4), (TRI) and ϑ = 3 at all four bases. Up to basis permutations and multipliers, each prime has at most one
+survivor:
+* p = 97 (388 rays): S₀₁ = S₂₃ = C₀, S₀₂ = C₁, S₀₃ = S₁₂ = C₂, S₁₃ = C₃ (C_i = g^i H₄ for a primitive root g);
+* p = 137 (548 rays): the candidate above;
+* p = 157 (628 rays), where −1 ∉ H₄, so S_lk = −S_kl is a different class;
+* none for p = 41, 53, 61, 73, 89, 101, 109, 113, 149. Most patterns contain a K4; the rest fail ϑ = 3.
+* p = 173–241 are still running.
+
+The p = 97 member (`ks/cayley4_candidate_p97.json`) looks just like the p = 137 one:
+* the conditions are re-verified by brute force, and the complement is not 0-1 colourable;
+* every neighbourhood is a 72-vertex, 10-regular three-context GHZ graph (ϑ = 3 to 10⁻¹¹);
+* D = 72, λ_min(H) = −24 = −D/3 and λ₂(H) = 7.95, the flat signature with m = 24;
+* every non-orthogonal pair has 5 + 5 common neighbours, against the flat bound √24 = 4.90. So in a flat
+  realization five unit phases would have to sum to modulus √24, only just below 5. At p = 137 the corresponding
+  numbers are six phases summing to √34, just below 6.
+* Douglas–Rachford does not converge either: 3000 iterations plateau at residual ≈ 13.3, or ≈ 22.9 with the
+  overlaps forced flat.
+
+The p = 157 member (`ks/cayley4_candidate_p157.json`) is the same again: 117-vertex, 14-regular GHZ neighbourhoods
+(ϑ = 3), D = 117 with λ_min(H) = −39 = −D/3, and 7 + 7 common neighbours against √39 = 6.24. It has not been put
+through DR.
+
+Taken together, these graphs pass every necessary condition in this file, local and global, so those conditions do
+not characterise four-context KS sets. Either these graphs are realizable (they would be the first four-context KS
+sets, in d = 97, 137, 157), or there is an obstruction we have not yet found. The near-tightness of the flat bound
+suggests looking first at flat realizations: complex weighing matrices W(p, (p − 1)/4) with cyclotomic support.
+
 **What the runs show.**
 * Every other graph the solver produced, in both families, failed at a single ray: its neighbourhood was bipartite or
   had ϑ < 3. The local GHZ condition is what kills these symmetric families.
@@ -1345,7 +1374,7 @@ passes every test we have.
   K4-free four-colourable graphs, SAT + ϑ-CEGAR, complement colouring, realizability; resumable driver; group tables;
   brute-force cyclotomic cross-check). Overnight run: `ks/cayley4_runs/`, `ks/cayley4.log`, `ks/cayley4_results.jsonl`.
   Corrected multiplier run: `ks/cayley4_mult/` (states, log, `summary.txt`, `cyclo4_e2.log`). The p = 137 candidate
-  and its checks: `ks/cayley4_candidate_p137.json`.
+  and its checks: `ks/cayley4_candidate_p137.json`; the siblings: `ks/cayley4_candidate_p97.json`, `ks/cayley4_candidate_p157.json`.
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
 * `ks/srg_check.py`, `ks/srg_check.log`: §3.10 checks (SRG parameter families, rook/Shrikhande, regular-graph spectral bounds).
