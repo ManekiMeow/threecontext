@@ -1154,7 +1154,7 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   * larger D, reusing the GHZ web of the orbit;
   * for Route A, only graphs whose cross overlaps are at most 1/3 (H36, H39, Perkel) remain usable.
 
-### 3.12 Families of K4-free four-colourable graphs (search in progress; new)
+### 3.12 Families of K4-free four-colourable graphs (overnight search; new)
 
 Proposal: construct families of K4-free four-colourable graphs H, 0-1 colour the complement, and look for KS sets.
 
@@ -1199,8 +1199,9 @@ checks get:
   * every model passes the checker;
   * on random assignments over D₁₈ and Z₃⋊Z₆ the solver and checker give the same verdict (40/40);
   * the orbit version agrees on 30/30 random invariant assignments over Z₃₁;
-  * it reproduces an exhaustive enumeration of the cyclotomic family (`ks/cyclo4.py`: no survivor for e = 2 with
-    p ≤ 79, or e = 3 with p ≤ 73).
+  * it reproduces an exhaustive enumeration of the cyclotomic family (`ks/cyclo4.py`, without the normalisation: no
+    survivor for e = 2 and any prime 19 ≤ p ≤ 151, `ks/cayley4_mult/cyclo4_e2.log`; an earlier check with the
+    normalisation covered e = 3, p ≤ 73).
 * Realizability controls:
   * four bases of ℂ²⁰ with a planted zero pattern (31% zeros) are recovered to residual 2·10⁻¹²;
   * an impossible pattern stays at residual 1.18.
@@ -1209,7 +1210,7 @@ checks get:
 family too. There it is not without loss of generality: M fixes 0 in every basis, and a translation of one basis does
 not commute with x ↦ mx. Their multiplier-family verdicts therefore cover only the subfamily with (3, 0) ~ (k, 0) for
 k = 0, 1, 2. The encoder (and `ks/cyclo4.py`) now drop the normalisation for M ≠ 1 and use all four bases in the
-lex-leader clauses instead; the UNSAT instances are being re-run (results below). The group family is unaffected:
+lex-leader clauses instead. The 77 UNSAT instances were re-run: 56 stay UNSAT (below). The group family is unaffected:
 there the normalisation is a right translation, which commutes with Γ.
 
 **Daytime pilot (2 min per instance).**
@@ -1242,6 +1243,76 @@ there the normalisation is a right translation, which commutes with Γ.
     neighbourhoods were bipartite (ϑ = 2), although none is forced to be by a quotient pattern (those are excluded).
   * Z₁₉ (375 s) and Z₂₀ (334 s): no model yet. The other 23 groups of orders 20–24 were not reached.
 
+**Corrected multiplier run (29 Oct).** The 77 instances above without the normalisation, 600 s each (4.1 CPU-hours;
+`ks/cayley4_mult/`, per-instance table in `summary.txt`).
+* **UNSAT: 56 instances.**
+  * e = 2 and e = 3: every prime 19 ≤ p ≤ 151 (29 + 14 instances);
+  * e = 4: p = 29, 37, 41, 101, 109, 149;
+  * e = 5: p = 31, 41; e = 6: p = 19, 67, 79, 97; e = 7: p = 29.
+* Undecided at 600 s: 21 instances.
+  * e = 4: p = 53, 61, 73, 89, 97, 113, 137; e = 5: p = 61, 131, 151;
+  * e = 6: p = 31, 37, 43, 73, 109, 139, 151; e = 7: p = 43, 71; e = 8: p = 97, 137.
+* 15 of the 56 needed the ϑ-CEGAR (up to 107 rejected graphs, for p = 41, e = 4).
+* The largest blocked ϑ was 2.966 (p = 89, e = 4), and 2.922 within the UNSAT instances. The 10⁻⁶ threshold is far
+  away, so the blocks are not a solver-precision artefact.
+* Meaning of UNSAT: for these (p, e) no four-context KS set has a non-orthogonality graph on which the affine group
+  {x ↦ mx + t : m ∈ H_e, t ∈ Z_p} acts on every basis (H_e = the e-th powers in Z_p^*).
+* For e = 2 the obstruction is pure combinatorics of quadratic residues. In the brute-force check every member fails
+  (DEG) or contains a transversal K4. For 23 ≤ p ≤ 151 the counts do not depend on p: of 59 189 classes, 35 829 fail
+  (DEG) and 23 360 contain a K4.
+  * This should hold for every p. It would follow from the 3-e.c. property of Paley graphs (p ≡ 1 mod 4) and of
+    quadratic-residue tournaments (p ≡ 3 mod 4), plus a finite check. Candidate theorem, not yet written out.
+
+**A candidate: p = 137, e = 4.** The undecided instance (137, 4) produced the first graph, in either family, that
+passes every test we have.
+* Connection sets: S₀₁ = S₂₃ = H₄ (the fourth powers) and S₀₂ = S₀₃ = S₁₂ = S₁₃ = 3H₄. Each has 34 elements and is
+  symmetric (−1 ∈ H₄ since p ≡ 1 mod 8).
+* Checks (`ks/cayley4_candidate_p137.json`):
+  * (K4), (DEG), (C2), (C4) and (TRI) hold (brute-force recheck);
+  * every neighbourhood is a 102-vertex, 12-regular, triangle-free, non-bipartite three-partite graph with
+    ϑ = 3.000000000000 (Clarabel at tolerance 10⁻¹²). By the criterion in the notation section these are
+    three-context GHZ graphs (new ones, tri-Cayley over H₄ ≅ Z₃₄);
+  * the complement is not 0-1 colourable, as it must be;
+  * global invariants (§3.6, §3.10): ϑ(G) = 4 and ϑ(H) = 137 = d; the graph is vertex-transitive (D₄ permutes the
+    bases);
+  * Proposition 18: H is 102-regular with λ_min(H) = −34 = −D/3 (equality, multiplicity 3) and
+    λ₂(H) = 12.76 ≥ 2.27. This is the spectral signature of a *flat* configuration with m = 34, i.e. transition
+    matrices that are complex weighing matrices W(137, 34);
+  * every non-orthogonal pair has exactly 6 + 6 common non-orthogonal rays, just above the flat bound √34 = 5.83 per
+    basis.
+* Realizability in ℂ¹³⁷ (548 rays) is open:
+  * Douglas–Rachford on the 548 × 548 Gram matrix (`cayley4.realize` projections) does not converge. From four
+    random starts (two run to 3000 iterations, two to 900) it plateaus at residual ≈ 15.7. With the overlaps forced
+    flat (modulus 1/√34 on the pattern), two runs of 2000 iterations plateau at ≈ 27.3. A d = 137 control with a
+    known solution and this sparsity is not available, so this is evidence, not proof.
+  * A realization on which Z₁₃₇ acts by unitaries would need a function supported on a coset of H₄ with a flat
+    Fourier transform. Alternating projections from 200 starts stay at rms deviation 0.11 from flat, so numerically
+    there is no such symmetric realization.
+  * Parameter count: with basis 3 fixed, three unitaries (3p² = 56 307 real parameters) must satisfy
+    12p(p − 34) = 169 332 real zero conditions. Only special algebraic structure could beat that.
+  * A rigid feature to exploit: (0, x) and (1, x) are orthogonal but have the same 34 + 34 neighbours in bases 2
+    and 3. So for every x the spans of {(2, x + 3H₄)} and {(3, x + 3H₄)}, both 34-dimensional, meet in at least 2
+    dimensions; likewise for bases 0, 1 with (2, x), (3, x).
+* So the candidate is most likely not realizable, but this is not proved.
+
+**What the runs show.**
+* Every other graph the solver produced, in both families, failed at a single ray: its neighbourhood was bipartite or
+  had ϑ < 3. The local GHZ condition is what kills these symmetric families.
+* The decided instances are the ones with few orbits. For small orbits and for the group family the SAT search itself
+  is the bottleneck (no model in 30 min for Z₁₈ or Z₃×Z₆).
+* All of this is computer-assisted without certificates: no DRAT proofs yet, and the ϑ-blocks rest on floating-point
+  SDP values (with margin ≥ 0.03).
+
+**Next steps.**
+1. Decide the p = 137 candidate: try to prove the flat case impossible (cyclotomic weighing matrices with the
+   2-dimensional intersections above), then the general case. Its siblings are the other single-coset patterns
+   in the undecided instances, so look at those too.
+2. Write out the e = 2 statement for all p.
+3. Resume the undecided instances, the h = 2 instances and the group family. The driver resumes from
+   `ks/cayley4_runs/` or `ks/cayley4_mult/`, and `--only` selects jobs.
+4. Certificates before anything goes into a paper: DRAT/LRAT proofs for the SAT part, rational dual certificates
+   (ϑ ≤ 3 − δ) for each ϑ-block.
+
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
@@ -1272,7 +1343,9 @@ there the normalisation is a right translation, which commutes with Γ.
 * `ks/smalld_sat.py`, `ks/realize.py`: SAT relaxation of the four-context problem in small d, and numerical realizability of a pattern.
 * `ks/cayley4.py`, `ks/cayley4_run.py`, `ks/groups.py`, `ks/cyclo4.py`: §3.12 (Cayley and multiplier families of
   K4-free four-colourable graphs, SAT + ϑ-CEGAR, complement colouring, realizability; resumable driver; group tables;
-  brute-force cyclotomic cross-check).
+  brute-force cyclotomic cross-check). Overnight run: `ks/cayley4_runs/`, `ks/cayley4.log`, `ks/cayley4_results.jsonl`.
+  Corrected multiplier run: `ks/cayley4_mult/` (states, log, `summary.txt`, `cyclo4_e2.log`). The p = 137 candidate
+  and its checks: `ks/cayley4_candidate_p137.json`.
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
 * `ks/srg_check.py`, `ks/srg_check.log`: §3.10 checks (SRG parameter families, rook/Shrikhande, regular-graph spectral bounds).
