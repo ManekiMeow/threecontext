@@ -23,7 +23,9 @@ homomorphically into the neighbourhood of a "residue pattern"; patterns with a b
 neighbourhood are forbidden, since then theta = 2 (bad_quotient_patterns()).
 Orbits (optional): restrict to connection sets invariant under a group M of automorphisms of Γ
 (e.g. the multiplier family over Z_p, multiplier_orbits()); then every constraint family is
-generated from orbit representatives only.
+generated from orbit representatives only. M fixes e in every basis and a translation does not
+commute with M, so there is no normalisation then; instead all four bases are symmetric and
+the lex-leader clauses also use the transposition of bases 2 and 3.
 
 CEGAR on the local GHZ condition. The neighbourhood of every ray is a three-context GHZ paradox,
 so theta(complement of N(v)) = 3. One SDP per basis checks this; a failure is blocked by the sound
@@ -89,6 +91,7 @@ class Cayley4:
         for i, orb in enumerate(self.orbits):
             self.orbit_of[orb] = i
         self.reps = [orb[0] for orb in self.orbits]
+        self.normalised = all(len(orb) == 1 for orb in self.orbits)
         self.y = {p: [self.pool.id(("x",) + p + (i,)) for i in range(len(self.orbits))] for p in PAIRS}
         self.x = {p: [self.y[p][self.orbit_of[s]] for s in range(self.d)] for p in PAIRS}
         self.cls = []
@@ -97,14 +100,15 @@ class Cayley4:
 
     def symmetry_breaking(self, limit=40):
         """Lex-leader clauses for automorphisms of Γ (those permuting the orbits) and for
-        permutations of bases 0, 1, 2."""
+        permutations of bases 0, 1, 2 (of all four bases without the normalisation)."""
         xs = [self.y[p][i] for p in PAIRS for i in range(len(self.orbits))]
         maps = []
         orbset = {tuple(o) for o in self.orbits}
         for phi in automorphisms(self.G, limit):
             if all(tuple(sorted(int(phi[s]) for s in o)) in orbset for o in self.orbits):
                 maps.append([self.mem(k, l, int(phi[r])) for k, l in PAIRS for r in self.reps])
-        for perm in ((1, 0, 2, 3), (0, 2, 1, 3)):
+        perms = [(1, 0, 2, 3), (0, 2, 1, 3)] + ([] if self.normalised else [(0, 1, 3, 2)])
+        for perm in perms:
             # the configuration with bases relabelled k -> perm[k]: S'_{perm k, perm l} = S_kl
             inv = {perm[k]: k for k in range(4)}
             maps.append([self.mem(inv[k], inv[l], r) for k, l in PAIRS for r in self.reps])
@@ -119,7 +123,7 @@ class Cayley4:
             phis = homomorphisms_onto_cyclic(self.G, m)
             if not phis:
                 continue
-            maximal, _ = bad_quotient_patterns(m)
+            maximal, _ = bad_quotient_patterns(m, self.normalised)
             for phi in phis:
                 r = {}
                 for p in PAIRS:
@@ -154,8 +158,9 @@ class Cayley4:
 
     def encode(self):
         d, mem, q, reps = self.d, self.mem, self.q, self.reps
-        for k in range(3):                                            # normalisation
-            self.cls.append([mem(3, k, 0)])
+        if self.normalised:
+            for k in range(3):                                        # normalisation
+                self.cls.append([mem(3, k, 0)])
         k4 = set()
         for g0 in reps:                                               # (K4), up to the orbit action
             for g1, g2 in itertools.product(range(d), repeat=2):
@@ -361,16 +366,16 @@ def homomorphisms_onto_cyclic(G, m):
     return out
 
 
-def bad_quotient_patterns(m):
+def bad_quotient_patterns(m, normalised=True):
     """Maximal 'residue patterns' over Z_m whose four vertex neighbourhoods include a bipartite one.
 
     A pattern is R_kl ⊆ Z_m for the six pairs (bit (pair, a) = [a ∈ R_kl]), with 0 ∈ R_k3 for
-    k = 0, 1, 2. If a Cayley skeleton has S_kl ⊆ phi^{-1}(R_kl) for a homomorphism phi onto Z_m,
-    phi maps every neighbourhood homomorphically into the pattern's neighbourhood, so a bipartite
-    pattern neighbourhood forces a bipartite (theta = 2) neighbourhood. Badness is inherited by
-    sub-patterns, so it suffices to forbid being contained in a maximal bad pattern."""
+    k = 0, 1, 2 if `normalised`. If a Cayley skeleton has S_kl ⊆ phi^{-1}(R_kl) for a homomorphism
+    phi onto Z_m, phi maps every neighbourhood homomorphically into the pattern's neighbourhood, so a
+    bipartite pattern neighbourhood forces a bipartite (theta = 2) neighbourhood. Badness is
+    inherited by sub-patterns, so it suffices to forbid being contained in a maximal bad pattern."""
     bits = [(p, a) for p in PAIRS for a in range(m)]
-    fixed = {((k, 3), 0) for k in range(3)}
+    fixed = {((k, 3), 0) for k in range(3)} if normalised else set()
     free = [b for b in bits if b not in fixed]
 
     def R(pat, k, l):

@@ -8,6 +8,7 @@ Two families of K4-free four-partite graphs, both searched with the same SAT + t
 
 usage: python3 cayley4_run.py --stop-at 2026-10-29T06:00:00Z [--mult-primes 19-199] [--mult-limit 600]
                               [--orders 18-24] [--orders-late 25-30] [--per-group 2700] [--workers 4]
+                              [--out DIR] [--only KEY,KEY,... | --only @FILE]
 
 Per-job state lives in cayley4_runs/; decided jobs (UNSAT, realizable candidate, budget used up)
 are skipped on the next call. One JSON line per job-run goes to cayley4_results.jsonl and a
@@ -54,9 +55,13 @@ def is_prime(n):
     return n > 1 and all(n % q for q in range(2, int(n ** 0.5) + 1))
 
 
+def job_key(kind, a, b):
+    return f"mult_p{a}_e{b}" if kind == "mult" else f"group_{a}"
+
+
 def job(args):
     kind, a, b, budget, stop_at = args
-    key = f"mult_p{a}_e{b}" if kind == "mult" else f"group_{a}"
+    key = job_key(kind, a, b)
     st = load_state(key)
     if st["status"] in ("UNSAT", "realizable", "budget"):
         return None
@@ -103,6 +108,7 @@ def main():
     ap.add_argument("--per-group", type=float, default=2700)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", default=HERE, help="directory for cayley4_runs/, cayley4.log, cayley4_results.jsonl")
+    ap.add_argument("--only", default="", help="run only these job keys: comma-separated, or @FILE (one per line)")
     a = ap.parse_args()
     global STATE
     STATE = os.path.join(a.out, "cayley4_runs")
@@ -119,6 +125,9 @@ def main():
     jobs += grp(a.orders)
     jobs += [("mult", p, e, a.mult_limit, stop_at) for p, e in mult if (p - 1) // e == 2]
     jobs += grp(a.orders_late)
+    if a.only:
+        only = set((open(a.only[1:]).read().split() if a.only.startswith("@") else a.only.split(",")))
+        jobs = [j for j in jobs if job_key(*j[:3]) in only]
     with open(os.path.join(a.out, "cayley4.log"), "a") as log, \
             open(os.path.join(a.out, "cayley4_results.jsonl"), "a") as out, \
             Pool(a.workers, maxtasksperchild=1, initializer=_set_state, initargs=(STATE,)) as pool:

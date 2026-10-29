@@ -4,6 +4,7 @@ Parts are copies of Z_p; (k, g) ~ (l, h) iff h - g ∈ S_kl, where every S_kl is
 cyclotomic classes of index e (cosets of the subgroup of e-th powers in Z_p^*), possibly with 0.
 These graphs are Cayley graphs over Z_p (family A of cayley4.py) with the extra symmetry
 x -> m x, m an e-th power. They are enumerated exhaustively, up to multiplying by a generator.
+There is no normalisation 0 ∈ S_k3: a translation of one basis does not commute with x -> m x.
 Every member is tested against the necessary conditions of RESULTS.md §2–3 ((K4), (DEG), (C2),
 (C4), (TRI)), then the local GHZ test theta = 3, the 0-1 colouring of the complement, and
 realizability (cayley4.realize).
@@ -118,8 +119,6 @@ def scan(p, e, log=print, realize_restarts=3):
         # canonical up to multiplying everything by the generator (rotates the classes)
         if any(tuple(r) < tuple(masks) for r in _rotations(masks, rot, e)):
             continue
-        if not all(opts[combo[PAIRS.index((k, 3))]][0] >> e & 1 for k in range(3)):
-            continue                                      # normalisation 0 ∈ S_k3
         stats["total"] += 1
         S = {pr: opts[i][1] for pr, i in zip(PAIRS, combo)}
         why = check(p, S)

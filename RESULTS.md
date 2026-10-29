@@ -1205,9 +1205,16 @@ checks get:
   * four bases of ℂ²⁰ with a planted zero pattern (31% zeros) are recovered to residual 2·10⁻¹²;
   * an impossible pattern stays at residual 1.18.
 
+**Correction (29 Oct).** The pilot and the overnight run imposed the normalisation e ∈ S_3k on the multiplier
+family too. There it is not without loss of generality: M fixes 0 in every basis, and a translation of one basis does
+not commute with x ↦ mx. Their multiplier-family verdicts therefore cover only the subfamily with (3, 0) ~ (k, 0) for
+k = 0, 1, 2. The encoder (and `ks/cyclo4.py`) now drop the normalisation for M ≠ 1 and use all four bases in the
+lex-leader clauses instead; the UNSAT instances are being re-run (results below). The group family is unaffected:
+there the normalisation is a right translation, which commutes with Γ.
+
 **Daytime pilot (2 min per instance).**
-* Multiplier family: proven empty (UNSAT) for p = 19 (every e), p = 23 (e = 2), p = 29 (e ≤ 7), p = 31 (e ≤ 6),
-  p = 37 (e ≤ 6) and p = 67, 71 (e = 2, 3, 6 and e = 2).
+* Multiplier family (normalised subfamily only, see the correction): UNSAT for p = 19 (every e), p = 23 (e = 2),
+  p = 29 (e ≤ 7), p = 31 (e ≤ 6), p = 37 (e ≤ 6) and p = 67, 71 (e = 2, 3, 6 and e = 2).
   * Several of these became UNSAT only after the CEGAR had rejected 2–36 graphs whose neighbourhoods have
     ϑ ≈ 2.2–2.6 < 3.
   * Small orbits (size 2–3, close to the full group family) need longer.
