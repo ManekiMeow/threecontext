@@ -151,3 +151,14 @@
          mult_p151_e25 (d=151, 26 orbits):   budget after 924 s; models 7, bipartite blocks 0, theta blocks 25, candidates 0, best residual None
          mult_p151_e30 (d=151, 31 orbits):   budget after 918 s; models 4, bipartite blocks 0, theta blocks 16, candidates 0, best residual None
          mult_p151_e50 (d=151, 51 orbits):   budget after 918 s; models 9, bipartite blocks 0, theta blocks 36, candidates 0, best residual None
+             group_Z18 (d=18, 18 orbits):   budget after 1800 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+   Z18: 0 models, 0 bipartite and 0 theta blocks, 0 candidates, 905 s
+           group_Z3xZ6 (d=18, 18 orbits):   budget after 1800 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+   Z3xZ6: 0 models, 0 bipartite and 0 theta blocks, 0 candidates, 901 s
+             group_D18 (d=18, 18 orbits):   budget after 1806 s; models 32, bipartite blocks 128, theta blocks 0, candidates 0, best residual None
+   D18: 25 models, 100 bipartite and 0 theta blocks, 0 candidates, 904 s
+             group_Z19 (d=19, 19 orbits):   paused after 375 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+        group_Z3:Z6[2] (d=18, 18 orbits):   paused after 395 s; models 23, bipartite blocks 92, theta blocks 0, candidates 0, best residual None
+             group_Z20 (d=20, 20 orbits):   paused after 334 s; models 0, bipartite blocks 0, theta blocks 0, candidates 0, best residual None
+      group_Dih(Z3xZ3) (d=18, 18 orbits):   paused after 1636 s; models 149, bipartite blocks 596, theta blocks 0, candidates 0, best residual None
+   Dih(Z3xZ3): 143 models, 572 bipartite and 0 theta blocks, 0 candidates, 900 s
