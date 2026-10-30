@@ -1328,6 +1328,10 @@ four-context KS sets, the smallest in d = 97), or there is an obstruction we hav
 of the flat bound suggests looking first at flat realizations: complex weighing matrices W(p, h) with cyclotomic
 support.
 
+*Update, 30 Oct (§3.13):* the scan is now complete for every p. The all-fourth-powers pattern adds four members at
+p = 281, 337, 353 and 457. The Douglas–Rachford column says nothing: DR also stalls on a planted realizable control.
+Calibrated searches, and a proof that p = 97 has no flat realization, are in §3.13.
+
 **What the runs show.**
 * Every other graph the solver produced, in both families, failed at a single ray: its neighbourhood was bipartite or
   had ϑ < 3. The local GHZ condition is what kills these symmetric families.
@@ -1336,15 +1340,144 @@ support.
 * All of this is computer-assisted without certificates: no DRAT proofs yet, and the ϑ-blocks rest on floating-point
   SDP values (with margin ≥ 0.03).
 
-**Next steps.**
-1. Decide the p = 137 candidate: try to prove the flat case impossible (cyclotomic weighing matrices with the
-   2-dimensional intersections above), then the general case. Its siblings are the other single-coset patterns
-   in the undecided instances, so look at those too.
-2. Write out the e = 2 statement for all p.
+**Next steps.** Items 1–2 of the earlier list are done or superseded in §3.13. Still open:
 3. Resume the undecided instances, the h = 2 instances and the group family. The driver resumes from
    `ks/cayley4_runs/` or `ks/cayley4_mult/`, and `--only` selects jobs.
 4. Certificates before anything goes into a paper: DRAT/LRAT proofs for the SAT part, rational dual certificates
    (ϑ ≤ 3 − δ) for each ϑ-block.
+
+### 3.13 Multiplier families: no quadratic or cubic examples, a finite quartic list (new, 30 Oct)
+
+F(p, e) is the multiplier family of §3.12:
+* four-partite Cayley skeletons over Z_p, (k, x) ~ (l, y) iff y − x ∈ S_kl, with S_lk = −S_kl;
+* every S_kl is a union of classes C_j = g^j H_e (H_e the e-th powers in Z_p^*, j ∈ Z_e), possibly with 0.
+
+Equivalently, the affine group {x ↦ mx + t : m ∈ H_e} acts on all four bases. A four-context KS set with such a
+graph is K4-free (Corollary 12a), so Route A applies: d = p ≥ 18 and |S_kl| ≥ 9 (Lemma 14). In particular every S_kl
+contains a whole class once (p − 1)/e ≥ 9, and always for e ≤ 2.
+
+**Lemma 23 (cyclotomic extension property).** Let a_1, …, a_m ∈ F_p be distinct, m ≤ 3, and j_1, …, j_m ∈ Z_e. The
+number N of x ∉ {a_i} with x − a_i ∈ C_{j_i} for all i satisfies
+
+    N ≥ (p − 3e² − (e − 1)²(2e + 1)√p) / e³        (m = 3),
+
+and N > 0 already for smaller p when m ≤ 2. For e = 2 the sharper bound N ≥ (p − 15 − 2√p)/8 holds, positive for
+p > 25.
+
+*Proof.* Write 1_{C_j}(y) = (1/e) Σ_r ψ^r(y) ψ^{−r}(g^j), with ψ a character of order e, and expand the product.
+The trivial term gives p − m. A term with s ≥ 1 nontrivial factors is a character sum of a polynomial with s distinct
+roots, each of multiplicity < e:
+* it vanishes for s = 1;
+* it has modulus ≤ √p for s = 2;
+* it has modulus ≤ 2√p for s = 3 (Weil);
+* the excluded points x = a_i change each term by at most 1 per point.
+
+For e = 2, Σ_x χ((x − a)(x − b)) = −1 exactly, which gives the sharper bound. ∎
+
+**Theorem 24 (no quadratic-residue symmetry).** For no prime p does a four-context KS set have its
+non-orthogonality graph in F(p, 2).
+
+*Proof.* d ≥ 18 excludes p ≤ 17, so let p ≥ 19. Each S_kl contains a class, QR or QNR. A transversal K4 through
+(3, 0) is a triple
+* a ∈ S_30, b ∈ S_31, c ∈ S_32, with
+* b − a ∈ S_01, c − a ∈ S_02 and c − b ∈ S_12.
+
+Choose a in its class. Choose b with b ∈ S_31 and b − a ∈ S_01, which is Lemma 23 with m = 2. Choose c, which is
+m = 3 and needs p > 25. So for p ≥ 29 every member has a transversal K4 and is not K4-free. For p = 19 and 23 the
+exhaustive scan (`ks/multiplier_classify.py 2`) finds a K4 in every single-class pattern, hence in every member. ∎
+
+**Proposition 25 (multiplier families are finite).** For every e, a member of F(p, e) satisfying (DEG) can be K4-free
+only if p − (e − 1)²(2e + 1)√p − 3e² ≤ 0, that is, p < p₀(e):
+
+| e | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| p₀(e) | 46 | 838 | 6657 | 31126 | 105841 |
+
+Same proof as Theorem 24. Union patterns contain single-class patterns, so a single-class scan up to p₀(e) is
+complete.
+
+**Complete scans** (`ks/multiplier_classify.py`). These list the single-class patterns without a transversal K4,
+up to multiplying by a generator:
+* **e = 2:** only p ≤ 17 (excluded by d ≥ 18). This gives Theorem 24 a second time, by exhaustion.
+* **e = 3:** p = 19, 31, 37, 43, and at p = 61, 67, 79, 127 only the pattern S_kl = H₃ for all pairs. There are none
+  for 128 ≤ p ≤ 838.
+  * Every instance (p, 3) with 19 ≤ p ≤ 151 is UNSAT in the corrected multiplier run (§3.12).
+  * **Corollary 26: no four-context KS set has its graph in F(p, 3), for any p.** This is computer-assisted: it
+    relies on the uncertified SAT verdicts for p ≤ 151.
+* **e = 4:** many patterns for p ≤ 193; at p = 233, 281, 313, 337, 353, 457 exactly one, S_kl = H₄ for all pairs;
+  none for 458 ≤ p ≤ 6657.
+  * Of these, the patterns that also pass (C2), (C4), (TRI), (DEG) and ϑ = 3 at all four bases are the six of §3.12
+    and the all-H₄ pattern at p = 281, 337, 353 and 457.
+  * The all-H₄ pattern fails at p = 233 (ϑ = 2.653) and at p = 313 (ϑ = 2.918).
+  * ϑ comes from the h 3×3 blocks of `search/ftheta.py`: a neighbourhood is a tri-Cayley graph over H₄ ≅ Z_h.
+* **e = 4, unions.** A union pattern is K4-free only if every single-class choice inside it is, so its class sets
+  form a box inside the K4-free set. Enumerating all boxes, with or without 0 in each S_kl
+  (`multiplier_classify.py unions`):
+  * at p = 29, 137 and 233–457, nothing passes beyond the single-class patterns above;
+  * at the other primes up to 173, the boxes leave multi-class patterns (and a few with 0) that pass the exact
+    checks. Their orbit-reduced ϑ test (`theta_orbits`) was running at the time of writing. The first ~750 (p = 37,
+    41) all fail, as the SAT run predicted.
+
+**So F(p, 4) has exactly ten skeletons, up to isomorphism, that pass every necessary condition we have:** p = 97,
+137, 157, 173, 193 (two), 281, 337, 353 and 457 (pending the ϑ test of those multi-class patterns). The all-H₄ members are the most symmetric
+possible: all four bases are equivalent under graph automorphisms.
+
+**Realizability: calibration first** (`ks/realize_search.py`).
+* The control is four bases of (ℂ²)⁶, basis k a Hadamard on a set Q_k of qubits with |Q_k Δ Q_l| = 4. It has
+  d = 64 and density 1/4, the same density as the candidates, and is flat with h = 16. Results on it:
+  * Douglas–Rachford and RRR (β = 0.5) stall at residual 2.35 and 2.85. **So the DR failures in §3.12 carry no
+    information.**
+  * A flat-phase search solves it in one start. That search minimises ‖S² − 2√h S − 3h I‖² over the edge phases of
+    S with L-BFGS; G = I + S/√h is the Gram matrix of four bases iff S² = 2√h S + 3h I.
+  * A general search solves it in 17 of 40 starts. Here bases 0–2 are free matrices, basis 3 is the standard basis,
+    and L-BFGS minimises the orthonormality error plus the forbidden overlaps. The failed starts end at objective
+    1–3.4.
+* On the candidates:
+  * flat search, p = 97: stalls at ‖G² − 4G‖ ≈ 53.4 in all 30 starts (spread 53.39–53.57);
+  * flat search, p = 137: stalls at ≈ 64.0 (all of the first 10 starts);
+  * flat searches for p = 157, 193 and 281: running overnight;
+  * general search, p = 97: stalls at objective ≥ 59.2 in all 200+ starts so far, where the control fails only
+    at 1–3.4.
+
+**Proposition 27 (no flat realization at p = 97 or 173).** Neither member has four bases in which every nonzero
+overlap between different bases has modulus 1/√h.
+
+*Proof.* For p = 173, some non-orthogonal pairs have only t = 6 common neighbours in a basis. Flatness needs
+t/h ≥ 1/√h, i.e. t ≥ √43 ≈ 6.56. Contradiction.
+
+For p = 97 (h = 24, and t = 5 common neighbours per basis for every non-orthogonal pair), fix a ray u and rephase
+every ray in N(u) so that ⟨u|z⟩ = 1/√h > 0.
+1. **Edges inside N(u) are almost real.** Take adjacent y, c ∈ N(u), and let B be the basis of c, which is neither
+   u's nor y's. Completeness of B gives ⟨u|y⟩ = Σ_{c′ ∈ B} ⟨u|c′⟩⟨c′|y⟩. The five nonzero terms come from the
+   common neighbours c′ of u and y in B, one of which is c. They make √h⟨c′|y⟩ five unit complex numbers that sum to
+   √24 ≈ 4.899, so each has real part ≥ 0.899, i.e. phase within ±26° of 0. In particular ⟨c|y⟩ does.
+2. **The obstruction.** Now take u = (0, 0), x = (3, 2) and x′ = (3, 95). Both are in N(u) and they are orthogonal
+   (same basis). In basis 2 their only common neighbours are (2, 45) and (2, 52), both in N(u). Completeness of
+   basis 2 gives
+   0 = ⟨x|x′⟩ = Σ_{y ∈ {(2,45), (2,52)}} ⟨x|y⟩⟨y|x′⟩.
+   By step 1 each term has phase within ±52° and modulus 1/h, so its real part is ≥ cos 52°/h > 0. Two such terms
+   cannot sum to zero. ∎
+
+`ks/flat_obstruction.py` checks this count for every u, every orthogonal pair x, x′ ∈ N(u) and every third basis; at
+u = (0, 0) alone there are 12 contradictions. The same count gives no contradiction at p = 137, where the phase bound is ±34° and cos 68° is too small; for p ≥ 157 the bound
+gives no information. Flatness was the natural guess from the spectrum (Proposition 18). **A realization of the
+p = 97 member would therefore have to be non-flat, and the general search finds none.**
+
+**The rank-constrained hierarchy** (references/, `ks/rankhier.py`). Level 2 with PPT (Eq. 25 of the paper) is
+implemented in the complex case, as index permutations of one variable solved with SCS.
+* Validation on C₅ (ϑ = 2.236, true dimension 3): k = 2 and 2.2 are infeasible; k = 2.5, 3 and 4 are feasible.
+* On the Shrikhande pattern of §3.10 (16 rays, which are not four bases of ℂ⁴ because their local graphs have
+  ϑ = 2), level 2 is **feasible at k = 4**. It stays feasible when the degree-2 identities of complete bases
+  (Σ_{m∈B} Γ_im Γ_mj = Γ_ij) are added. As a sanity check, k = 3 and 3.9 (below ϑ = 4) are being tested for infeasibility.
+* So level 2 is weaker than the local ϑ test, which our candidates pass. Level 2 sees Γ ⊗ Γ, while the local test
+  uses degree-3 products ⟨v|b⟩⟨b|b′⟩⟨b′|v⟩.
+* Level 3 lives on (ℂⁿ)^{⊗3} with n = 4p ≥ 388, out of reach even with the Z_p ⋊ H₄ symmetry. The hierarchy
+  is the right framework for certificates, but not a practical one for these candidates.
+
+**Next steps.**
+1. Decide the p = 97 member in general, or find a non-flat realization. The flat case is closed.
+2. Extend Proposition 27 to p = 137, perhaps by combining several rays u, and to the all-H₄ members.
+3. e = 5, 6: run the scan up to p₀(e) = 31126 and 105841 (vectorised K4 test, feasible on a cluster).
 
 ## Files
 
