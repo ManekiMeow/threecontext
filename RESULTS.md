@@ -1414,12 +1414,14 @@ up to multiplying by a generator:
   form a box inside the K4-free set. Enumerating all boxes, with or without 0 in each S_kl
   (`multiplier_classify.py unions`):
   * at p = 29, 137 and 233–457, nothing passes beyond the single-class patterns above;
-  * at the other primes up to 173, the boxes leave multi-class patterns (and a few with 0) that pass the exact
-    checks. Their orbit-reduced ϑ test (`theta_orbits`) was running at the time of writing. The first ~750 (p = 37,
-    41) all fail, as the SAT run predicted.
+  * at the other primes up to 173, the boxes leave 1275 multi-class patterns (some with 0) that pass the exact
+    checks: 36 at p = 37, 399 at 41, 372 at 53, 186 at 61, 189 at 73, 45 at 89, 24 at 97, 18 at 113 and 6 at 173.
+  * **Every one of them fails ϑ = 3** at some basis. The test is the orbit-reduced `theta_orbits`: free H₄-orbits
+    are circulant blocks, 0 is a fixed point, and it was checked against the dense SDP. At p = 37 and 41 this agrees
+    with the SAT verdicts.
 
-**So F(p, 4) has exactly ten skeletons, up to isomorphism, that pass every necessary condition we have:** p = 97,
-137, 157, 173, 193 (two), 281, 337, 353 and 457 (pending the ϑ test of those multi-class patterns). The all-H₄ members are the most symmetric
+**Theorem 28 (computer-assisted). F(p, 4) has exactly ten skeletons, up to isomorphism, that pass every necessary condition we have:** p = 97,
+137, 157, 173, 193 (two), 281, 337, 353 and 457 (the exact conditions are decided exactly; ϑ = 3 is a numerical SDP value). The all-H₄ members are the most symmetric
 possible: all four bases are equivalent under graph automorphisms.
 
 **Realizability: calibration first** (`ks/realize_search.py`).
