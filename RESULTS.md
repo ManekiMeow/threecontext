@@ -28,7 +28,12 @@ property, and the contradiction first shows at algebraic degree 4.
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
 | (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context already force ≥ 11 events in each other context, three force ≥ 12 (Theorem 21); so a smaller example has at most one such event per context, even approximately (Corollary 22). So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. A family of skeletons at p = 97, 137, 157, 173, 193 (e = 4, each S_kl a single coset of the fourth powers; 388 to 772 rays), passes every necessary condition we have: K4-free, ϑ = 3 at every ray, ϑ(G) = 4, and the spectral signature of a flat configuration. Douglas–Rachford does not realize the p = 97 or p = 137 member. So these conditions are not sufficient. The path forward is in Section 3.8. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. **Multiplier families (Sections 3.12–3.13):**
+* e = 2 and e = 3 give no example for any p (Theorem 24, Corollary 26).
+* e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
+* e = 5 gives 19 and e = 6 at least 111.
+
+These conditions (K4-free, ϑ = 3 at every ray, ϑ(G) = 4, the flat spectral signature) are therefore far from sufficient. No realization was found numerically, and flat realizations are excluded for p = 97 by a counting proof (Proposition 27). The path forward is in Section 3.8. |
 
 ---
 
@@ -1420,9 +1425,28 @@ up to multiplying by a generator:
     are circulant blocks, 0 is a fixed point, and it was checked against the dense SDP. At p = 37 and 41 this agrees
     with the SAT verdicts.
 
-**Theorem 28 (computer-assisted). F(p, 4) has exactly ten skeletons, up to isomorphism, that pass every necessary condition we have:** p = 97,
-137, 157, 173, 193 (two), 281, 337, 353 and 457 (the exact conditions are decided exactly; ϑ = 3 is a numerical SDP value). The all-H₄ members are the most symmetric
-possible: all four bases are equivalent under graph automorphisms.
+**Theorem 28 (computer-assisted). F(p, 4) has exactly ten skeletons, up to isomorphism, that pass every necessary
+condition we have:** p = 97, 137, 157, 173, 193 (two), 281, 337, 353 and 457. The exact conditions are decided
+exactly; ϑ = 3 is a numerical SDP value. The all-H₄ members are the most symmetric possible: all four bases are
+equivalent under graph automorphisms.
+
+**Beyond e = 4: the families grow** (night of 30 Oct; logs in `ks/multiplier_runs/`). Isomorphism is basis
+permutations together with multiplying by a generator.
+* **e = 5.** The single-class scan is complete up to p₀ = 31126; K4-free patterns end at p = 941.
+  * Single-class survivors of every condition: **ten classes**, at p = 191, 211 (two), 241, 251 and 281, and the
+    all-H₅ pattern at p = 631, 701, 761 and 941.
+  * Union patterns add more. Each is a single-class pattern with one or two connection sets enlarged to two classes:
+    p = 131 (two classes), 151, 191, 211 (two), 241, 251 and 271 (one each). At p = 131, 151 and 271 no single-class
+    pattern survives.
+  * No union pattern passes at p = 61, 71, 101 or 181. At p = 31 and 41 only unions can meet (DEG), and both are
+    UNSAT in the corrected SAT run. **So the e = 5 list is complete: 10 single-class and 9 union-type skeletons,
+    19 in all.**
+* **e = 6.** The single-class scan is complete up to p₀ = 105841; K4-free patterns end at p = 3457.
+  * Single-class survivors: **76 classes** over 42 primes from 223 to 3457. For p ≥ 769 there is one per prime.
+  * Union patterns at p ≥ 283 add 35 classes over 13 primes from 307 to 661.
+  * E6_SMALL_PLACEHOLDER
+* So the multiplier families are empty for e ≤ 3, give ten skeletons for e = 4, and grow with e. All of these pass
+  every necessary condition of §2–3, which therefore are far from sufficient.
 
 **Realizability: calibration first** (`ks/realize_search.py`).
 * The control is four bases of (ℂ²)⁶, basis k a Hadamard on a set Q_k of qubits with |Q_k Δ Q_l| = 4. It has
@@ -1434,12 +1458,19 @@ possible: all four bases are equivalent under graph automorphisms.
   * A general search solves it in 17 of 40 starts. Here bases 0–2 are free matrices, basis 3 is the standard basis,
     and L-BFGS minimises the orthonormality error plus the forbidden overlaps. The failed starts end at objective
     1–3.4.
-* On the candidates:
-  * flat search, p = 97: stalls at ‖G² − 4G‖ ≈ 53.4 in all 30 starts (spread 53.39–53.57);
-  * flat search, p = 137: stalls at ≈ 64.0 (all of the first 10 starts);
-  * flat searches for p = 157, 193 and 281: running overnight;
-  * general search, p = 97: stalls at objective ≥ 59.2 in all 200+ starts so far, where the control fails only
-    at 1–3.4.
+* On the candidates, every start of every search stalls far from zero. The spread across starts is tiny, which
+  points to a genuine obstruction rather than bad luck. Logs are in `ks/realize_runs/`.
+
+| candidate | flat search: starts, ‖G² − 4G‖ best–worst | general search: starts, objective best (median) |
+|---|---|---|
+| e = 4, p = 97 | 30, 53.39–53.57 | 735, 58.98 (60.37) |
+| e = 4, p = 137 | 30, 63.95–64.26 | 150, 81.87 (84.15) |
+| e = 4, p = 157 | 10, 69.09–69.17 | 40, 96.92 (97.81) |
+| e = 4, p = 193 (matching shape) | 8, 77.06–77.20 | 30, 119.0 (120.1) |
+| e = 4, p = 193 (other) | 8, 76.48–76.64 | — |
+| e = 5, p = 191 | (no flat realization) | GEN191 |
+| e = 5, p = 211 | (no flat realization) | GEN211 |
+| control (d = 64) | 1, 0 (solved) | 40, 5.6·10⁻¹⁶ (17 of 40 solved; failures 1–3.4) |
 
 **Proposition 27 (no flat realization at p = 97 or 173).** Neither member has four bases in which every nonzero
 overlap between different bases has modulus 1/√h.
@@ -1459,6 +1490,19 @@ every ray in N(u) so that ⟨u|z⟩ = 1/√h > 0.
    0 = ⟨x|x′⟩ = Σ_{y ∈ {(2,45), (2,52)}} ⟨x|y⟩⟨y|x′⟩.
    By step 1 each term has phase within ±52° and modulus 1/h, so its real part is ≥ cos 52°/h > 0. Two such terms
    cannot sum to zero. ∎
+
+**Flat realizations across the families.** The bound t ≥ √h alone (t = common neighbours of a non-orthogonal
+pair in one basis, minimised over all pairs) rules out flat realizations for:
+* p = 173 at e = 4;
+* 4 of the 10 single-class classes at e = 5 (p = 191, 211 twice, 241);
+* 45 of the 76 at e = 6.
+
+Flat realizations remain possible only for:
+* e = 4: p = 137, 157, 193 (both), 281, 337, 353, 457;
+* e = 5: p = 251, 281, 631, 701, 761, 941;
+* e = 6: 31 classes, at p = 277, 397, 421, 457, 487, 601, 661, 673 and the single-class primes ≥ 769.
+
+(`ks/multiplier_runs/tmin_e.py`.)
 
 `ks/flat_obstruction.py` checks this count for every u, every orthogonal pair x, x′ ∈ N(u) and every third basis; at
 u = (0, 0) alone there are 12 contradictions. The same count gives no contradiction at p = 137, where the phase bound is ±34° and cos 68° is too small; for p ≥ 157 the bound

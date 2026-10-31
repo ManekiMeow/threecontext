@@ -170,7 +170,10 @@ def theta_orbits(p, e, sets, k):
     obj = h * sum(cp.sum(v) for v in var.values()) + 2 * h * sum(c.values()) + (cp.sum(xf) if r else 0)
     cons.append(tr == 1)
     prob = cp.Problem(cp.Maximize(obj), cons)
-    prob.solve(solver="CLARABEL")
+    try:
+        prob.solve(solver="CLARABEL")
+    except cp.error.SolverError:                          # rare numerical failure: fall back to SCS
+        prob.solve(solver="SCS", eps_abs=1e-9, eps_rel=1e-9, max_iters=200000)
     return prob.value
 
 
