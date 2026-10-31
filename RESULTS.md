@@ -1444,7 +1444,9 @@ permutations together with multiplying by a generator.
 * **e = 6.** The single-class scan is complete up to p₀ = 105841; K4-free patterns end at p = 3457.
   * Single-class survivors: **76 classes** over 42 primes from 223 to 3457. For p ≥ 769 there is one per prime.
   * Union patterns at p ≥ 283 add 35 classes over 13 primes from 307 to 661.
-  * E6_SMALL_PLACEHOLDER
+  * Union patterns for p < 283 were still being enumerated in the morning; the boxes at p = 277 alone run to
+    hundreds of thousands. Where only unions can meet (DEG): p = 19 is UNSAT in the SAT run; p = 31, 37 and 43
+    are undecided.
 * So the multiplier families are empty for e ≤ 3, give ten skeletons for e = 4, and grow with e. All of these pass
   every necessary condition of §2–3, which therefore are far from sufficient.
 
@@ -1468,8 +1470,8 @@ permutations together with multiplying by a generator.
 | e = 4, p = 157 | 10, 69.09–69.17 | 40, 96.92 (97.81) |
 | e = 4, p = 193 (matching shape) | 8, 77.06–77.20 | 30, 119.0 (120.1) |
 | e = 4, p = 193 (other) | 8, 76.48–76.64 | — |
-| e = 5, p = 191 | (no flat realization) | GEN191 |
-| e = 5, p = 211 | (no flat realization) | GEN211 |
+| e = 5, p = 191 | (no flat realization) | 9, 117.9 (119.7) |
+| e = 5, p = 211 | (no flat realization) | 10, 136.1 (137.5) |
 | control (d = 64) | 1, 0 (solved) | 40, 5.6·10⁻¹⁶ (17 of 40 solved; failures 1–3.4) |
 
 **Proposition 27 (no flat realization at p = 97 or 173).** Neither member has four bases in which every nonzero
