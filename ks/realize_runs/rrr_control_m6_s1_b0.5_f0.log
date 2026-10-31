@@ -1,0 +1,6 @@
+seed 1 beta 0.5 flat 0.0 it 1000: residual 2.85340 best 2.85340 (21 s)
+seed 1 beta 0.5 flat 0.0 it 2000: residual 3.40993 best 2.85340 (43 s)
+seed 1 beta 0.5 flat 0.0 it 3000: residual 3.27689 best 2.85340 (63 s)
+seed 1 beta 0.5 flat 0.0 it 4000: residual 2.87505 best 2.85340 (85 s)
+seed 1 beta 0.5 flat 0.0 it 5000: residual 3.77352 best 2.83569 (106 s)
+done: best residual 2.836e+00
