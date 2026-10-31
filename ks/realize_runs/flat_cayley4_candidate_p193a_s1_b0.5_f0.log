@@ -1,1 +1,9 @@
 seed 1 restart 0: ||G^2 - 4G|| = 76.551121 after 3012 iterations (876 s)
+seed 1 restart 1: ||G^2 - 4G|| = 76.482090 after 4000 iterations (1018 s)
+seed 1 restart 2: ||G^2 - 4G|| = 76.488335 after 3737 iterations (927 s)
+seed 1 restart 3: ||G^2 - 4G|| = 76.548904 after 3295 iterations (851 s)
+seed 1 restart 4: ||G^2 - 4G|| = 76.561672 after 3902 iterations (1016 s)
+seed 1 restart 5: ||G^2 - 4G|| = 76.485202 after 4000 iterations (896 s)
+seed 1 restart 6: ||G^2 - 4G|| = 76.511011 after 4000 iterations (822 s)
+seed 1 restart 7: ||G^2 - 4G|| = 76.638343 after 1733 iterations (354 s)
+done: best residual 7.648e+01

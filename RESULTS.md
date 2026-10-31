@@ -1470,8 +1470,9 @@ permutations together with multiplying by a generator.
 | e = 4, p = 157 | 10, 69.09–69.17 | 40, 96.92 (97.81) |
 | e = 4, p = 193 (matching shape) | 8, 77.06–77.20 | 30, 119.0 (120.1) |
 | e = 4, p = 193 (other) | 8, 76.48–76.64 | — |
-| e = 5, p = 191 | (no flat realization) | 9, 117.9 (119.7) |
-| e = 5, p = 211 | (no flat realization) | 10, 136.1 (137.5) |
+| e = 4, p = 281 (all-H₄) | 3, 90.33–90.38 | — |
+| e = 5, p = 191 | (no flat realization) | 40, 117.9 (120.0) |
+| e = 5, p = 211 | (no flat realization) | 40, 135.5 (136.9) |
 | control (d = 64) | 1, 0 (solved) | 40, 5.6·10⁻¹⁶ (17 of 40 solved; failures 1–3.4) |
 
 **Proposition 27 (no flat realization at p = 97 or 173).** Neither member has four bases in which every nonzero
@@ -1561,6 +1562,15 @@ implemented in the complex case, as index permutations of one variable solved wi
   Corrected multiplier run: `ks/cayley4_mult/` (states, log, `summary.txt`, `cyclo4_e2.log`). The p = 137 candidate
   and its checks: `ks/cayley4_candidate_p137.json`; the family members: `ks/cayley4_candidate_p{97,137,157,173,193a,193b}.json`, found by
   `ks/cayley4_mult/siblings_e4.py` (log `siblings_e4.log`).
+* `ks/realize_search.py`, `ks/realize_runs/`: §3.13 realizability searches. A planted control, flat-phase and
+  general L-BFGS searches, and RRR/Douglas–Rachford.
+* `ks/multiplier_classify.py`, `ks/multiplier_runs/`: §3.13. Weil thresholds, the K4-free scans, ϑ via
+  `search/ftheta.py` and the orbit-reduced `theta_orbits`, union patterns as boxes.
+* `ks/flat_obstruction.py`: Proposition 27, the counting obstruction to flat realizations, and the bound
+  t ≥ √h.
+* `ks/rankhier.py`: level 2 (PPT) of the rank-constrained hierarchy (`references/`), tested on C₅ and the
+  Shrikhande pattern.
+* `references/`: the rank-constrained-hierarchy paper with notes. `briefings/`: daily briefings.
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.
 * `ks/srg_check.py`, `ks/srg_check.log`: §3.10 checks (SRG parameter families, rook/Shrikhande, regular-graph spectral bounds).
