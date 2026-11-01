@@ -1,0 +1,60 @@
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+(CVXPY) Nov 01 05:57:34 PM: Your problem has 29282 variables, 309519 constraints, and 0 parameters.
+(CVXPY) Nov 01 05:57:34 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 01 05:57:34 PM: DCP verification time: 0.0012 seconds.
+(CVXPY) Nov 01 05:57:34 PM: Expression tree has 10 nodes.
+(CVXPY) Nov 01 05:57:34 PM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 01 05:57:34 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 01 05:57:34 PM: Your problem is compiled with the CPP canonicalization backend.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:57:34 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 01 05:57:34 PM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 01 05:57:34 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 01 05:57:34 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 01 05:57:34 PM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 01 05:57:34 PM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 01 05:57:34 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 01 05:57:35 PM: Applying reduction SCS
+(CVXPY) Nov 01 05:57:35 PM: Finished problem compilation (took 4.485e-01 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:57:35 PM: Invoking solver SCS  to obtain a solution.
+------------------------------------------------------------------
+	       SCS v3.3.1 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 29282, constraints m: 192875
+cones: 	  z: primal zero / dual free vars: 75263
+	  s: psd vars: 117612, ssize: 4
+settings: eps_abs: 1.0e-08, eps_rel: 1.0e-08, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 200000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+lin-sys:  sparse-direct-mkl-pardiso
+	  nnz(A): 586256, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 1.21e+02  4.79e-01  2.29e+00  1.15e+00  1.00e-01  3.08e+00 
+    50| 2.83e-13  3.09e-13  1.99e-13  9.96e-14  1.00e-01  5.41e+00 
+------------------------------------------------------------------
+status:  solved
+timings: total: 5.41e+00s = setup: 3.02e+00s + solve: 2.39e+00s
+	 lin-sys: 5.56e-01s, cones: 1.47e+00s, accel: 2.59e-01s
+------------------------------------------------------------------
+objective = 0.000000
+------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:57:40 PM: Problem status: optimal
+(CVXPY) Nov 01 05:57:40 PM: Optimal value: 0.000e+00
+(CVXPY) Nov 01 05:57:40 PM: Compilation took 4.485e-01 seconds
+(CVXPY) Nov 01 05:57:40 PM: Solver (including time spent in interface) took 5.417e+00 seconds
+RESULT fig3 k = 5.0: optimal, margin t = 0.0000e+00 (6 s)

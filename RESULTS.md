@@ -33,7 +33,7 @@ property, and the contradiction first shows at algebraic degree 4.
 * e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
 * e = 5 gives 19 and e = 6 at least 111.
 
-These conditions (K4-free, ϑ = 3 at every ray, ϑ(G) = 4, the flat spectral signature) are therefore far from sufficient. No realization was found numerically, and flat realizations are excluded for p = 97 by a counting proof (Proposition 27). The path forward is in Section 3.8. |
+Whether these conditions (K4-free, ϑ = 3 at every ray, ϑ(G) = 4, the flat spectral signature) are sufficient is exactly the open realizability question. No realization was found numerically, but the searches are only weak evidence (Section 3.14). Flat realizations are excluded for p = 97 by a counting proof (Proposition 27). **KS-uncolourable skeletons without a realization exist** (Section 3.14, exact certificates): the 16-ray Shrikhande pattern; a d = 41 skeleton satisfying every combinatorial condition; and a d = 137 skeleton in the zoo's family that passes the local GHZ test at three of its four bases. The path forward is in Sections 3.8 and 3.14. |
 
 ---
 
@@ -1299,6 +1299,9 @@ passes every test we have.
     and 3. So for every x the spans of {(2, x + 3H₄)} and {(3, x + 3H₄)}, both 34-dimensional, meet in at least 2
     dimensions; likewise for bases 0, 1 with (2, x), (3, x).
 * So the candidate is most likely not realizable, but this is not proved.
+  *Update, 1 Nov (§3.14):* "most likely" overstated the evidence. DR also stalls on a realizable control, the
+  symmetric (covariant) case is special, and the parameter count also fails for the realizable control. Realizability
+  is open.
 
 **The candidate is one member of a family.** I scanned every pattern in which each S_kl is a single class of index 4
 (4⁶ patterns, up to multiplying by a generator) for the primes p ≡ 1 mod 4 with 41 ≤ p ≤ 229, through (DEG), (K4),
@@ -1327,9 +1330,9 @@ up to basis permutations and multipliers:
   with t common neighbours in some basis needs t ≥ √h. At p = 97, 137 and 157 this holds only just: t unit phases
   must sum to modulus √h, just below t.
 
-Taken together, these graphs pass every necessary condition in this file, local and global, so those conditions do
-not characterise four-context KS sets. Either some of these graphs are realizable (they would be the first
-four-context KS sets, the smallest in d = 97), or there is an obstruction we have not yet found. The near-tightness
+Taken together, these graphs pass every necessary condition in this file, local and global. Either some of these
+graphs are realizable (they would be the first four-context KS sets, the smallest in d = 97), or there is an
+obstruction we have not yet found, and then those conditions do not characterise four-context KS sets. The near-tightness
 of the flat bound suggests looking first at flat realizations: complex weighing matrices W(p, h) with cyclotomic
 support.
 
@@ -1448,7 +1451,8 @@ permutations together with multiplying by a generator.
     hundreds of thousands. Where only unions can meet (DEG): p = 19 is UNSAT in the SAT run; p = 31, 37 and 43
     are undecided.
 * So the multiplier families are empty for e ≤ 3, give ten skeletons for e = 4, and grow with e. All of these pass
-  every necessary condition of §2–3, which therefore are far from sufficient.
+  every necessary condition of §2–3. Whether those conditions are sufficient is the open realizability question
+  (§3.14).
 
 **Realizability: calibration first** (`ks/realize_search.py`).
 * The control is four bases of (ℂ²)⁶, basis k a Hadamard on a set Q_k of qubits with |Q_k Δ Q_l| = 4. It has
@@ -1460,8 +1464,10 @@ permutations together with multiplying by a generator.
   * A general search solves it in 17 of 40 starts. Here bases 0–2 are free matrices, basis 3 is the standard basis,
     and L-BFGS minimises the orthonormality error plus the forbidden overlaps. The failed starts end at objective
     1–3.4.
-* On the candidates, every start of every search stalls far from zero. The spread across starts is tiny, which
-  points to a genuine obstruction rather than bad luck. Logs are in `ks/realize_runs/`.
+* On the candidates, every start of every search stalls far from zero, with a tiny spread across starts. Logs are
+  in `ks/realize_runs/`. (§3.14: the control is a flat product configuration, so this calibration says little
+  about non-flat realizations of 388+ rays, and a small spread is also what a symmetric landscape gives. This is weak
+  evidence, not a sign of an obstruction.)
 
 | candidate | flat search: starts, ‖G² − 4G‖ best–worst | general search: starts, objective best (median) |
 |---|---|---|
@@ -1512,21 +1518,135 @@ u = (0, 0) alone there are 12 contradictions. The same count gives no contradict
 gives no information. Flatness was the natural guess from the spectrum (Proposition 18). **A realization of the
 p = 97 member would therefore have to be non-flat, and the general search finds none.**
 
-**The rank-constrained hierarchy** (references/, `ks/rankhier.py`). Level 2 with PPT (Eq. 25 of the paper) is
-implemented in the complex case, as index permutations of one variable solved with SCS.
-* Validation on C₅ (ϑ = 2.236, true dimension 3): k = 2 and 2.2 are infeasible; k = 2.5, 3 and 4 are feasible.
-* On the Shrikhande pattern of §3.10 (16 rays, which are not four bases of ℂ⁴ because their local graphs have
-  ϑ = 2), level 2 is **feasible at k = 4**. It stays feasible when the degree-2 identities of complete bases
-  (Σ_{m∈B} Γ_im Γ_mj = Γ_ij) are added. As a sanity check, k = 3 and 3.9 (below ϑ = 4) are being tested for infeasibility.
-* So level 2 is weaker than the local ϑ test, which our candidates pass. Level 2 sees Γ ⊗ Γ, while the local test
-  uses degree-3 products ⟨v|b⟩⟨b|b′⟩⟨b′|v⟩.
-* Level 3 lives on (ℂⁿ)^{⊗3} with n = 4p ≥ 388, out of reach even with the Z_p ⋊ H₄ symmetry. The hierarchy
-  is the right framework for certificates, but not a practical one for these candidates.
+**The rank-constrained hierarchy** (references/, `ks/rankhier.py`). Level 2 with PPT is implemented in the complex
+case: Eq. (40) of the paper with SEP relaxed to PPT, reduced by the U(k) symmetry of Eq. (25). The variables are
+index permutations of one matrix, solved with SCS.
+* *Validation on C₅* (ϑ = 2.236, true dimension 3): k = 2 and 2.2 are infeasible; k = 2.5, 3 and 4 are feasible.
+* *The paper's Fig. 3 graph* (11 vertices, 26 edges; ϑ = 4 recomputed), which the paper excludes in dimension 4:
+  * SCS finds feasible points for k = 4.01, 4.02, 4.05, 4.1, 4.3 and 5 (residual ≤ 2·10⁻⁸). The iteration count
+    grows steeply as k approaches 4: 8425 at 4.01, 1950 at 4.02, 500 at 4.05.
+  * It finds none at k = 4 or 4.005. There the residual stays at 2–3·10⁻⁵ for 19 000 and 38 750 iterations, with
+    margin |t| < 10⁻⁵.
+  * So the level-2 threshold lies in [4, 4.01], within 0.01 of ϑ = 4.
+  * The paper's exclusion of dimension 4 is consistent with this, but it rests on a sliver at most 0.01 wide. We
+    could not certify it: there is no Farkas certificate from SCS, and Clarabel needs more than 15 GB here.
+* *Audit (1 Nov), prompted by the question whether our reductions hide the obstruction:*
+  * The U(k) reduction is exact, since Eq. (25) is a symmetry of Eq. (40). The constraints match Eq. (40) term by
+    term: support on the symmetric subspace (Φ_V = VΦ_I), PPT, normalisation, (Λ_A ⊗ id)(ρ) = 1_n ⊗ Tr_A(ρ)/n.
+  * One numerical weakness was found and fixed. With normalisation 1, the entries were O(1/(k²n²)), so a small
+    negative margin could hide inside the solver tolerance. The normalisation is now n².
+* *The Shrikhande pattern of §3.10* (16 rays; not four bases of ℂ⁴, because every local graph is a 6-cycle with
+  ϑ = 2):
+  * Level 2 is **feasible at k = 4**: residual < 10⁻⁸ and margin 10⁻¹² after 48 s. It stays feasible when the
+    degree-2 identities of complete bases (Σ_{m∈B} Γ_im Γ_mj = Γ_ij) are added.
+  * It is infeasible at k = 3.5 (margin −0.0127), so the code does detect level-2 infeasibility on this graph. Its
+    level-2 threshold is ϑ = 4 itself.
+* **So level 2 is genuinely weaker than the local ϑ test; this is not an artefact of the code.**
+  * The Fig. 3 graph has an obstruction of degree 2 in Γ, visible in Γ ⊗ Γ with PPT.
+  * The Shrikhande obstruction is the local test: completeness forces Σ_{c∈N(u)} |⟨u|c⟩|² = 3, and the matrix
+    ⟨u|c⟩⟨c|c′⟩⟨c′|u⟩ is cubic in Γ. Level 2 contains only quadratic moments. Level 3 contains the cubic ones.
+  * "Similar size" (11 vs 16 vertices) does not mean "similar degree of obstruction".
+  * Shrikhande's minimal orthonormal-representation dimension is ≥ 5, so level 2 is not tight on it.
+* Level 3 lives on (ℂⁿ)^{⊗3}. For Shrikhande (n = 16, k = 4) the U(k)-reduced variables are six 4096 × 4096
+  blocks, and for the candidates (n = 4p ≥ 388) it is far out of reach. The hierarchy is the right framework for
+  certificates, but not a practical one here.
 
 **Next steps.**
 1. Decide the p = 97 member in general, or find a non-flat realization. The flat case is closed.
 2. Extend Proposition 27 to p = 137, perhaps by combining several rays u, and to the all-H₄ members.
 3. e = 5, 6: run the scan up to p₀(e) = 31126 and 105841 (vectorised K4 test, feasible on a cluster).
+
+### 3.14 Realizability re-examined (1 Nov)
+
+Two questions prompted this section:
+* Why did §3.12–3.13 lean towards "the zoo is not realizable"?
+* Can we exhibit at least one KS-uncolourable skeleton that provably has no realization?
+
+**The evidence for "not realizable", weighed again.**
+
+| evidence | what it actually shows |
+|---|---|
+| Douglas–Rachford and RRR stall (§3.12) | nothing: they also stall on the realizable control (§3.13) |
+| flat-phase search stalls; Proposition 27; t < √h | no **flat** realization (proved for p = 97 by Proposition 27, and for 50 family members by t < √h: p = 173 at e = 4, 4 classes at e = 5, 45 at e = 6); nothing about non-flat ones |
+| general L-BFGS search stalls (735 starts at p = 97, best 59.0) | weak: its only calibration is a tensor product of Hadamards (d = 64, flat, product structure, 17 of 40 starts succeed); a 388-ray non-flat solution can be missed |
+| small spread across starts | weak: a highly symmetric landscape has many equivalent local minima |
+| no covariant realization (§3.12) | excludes only realizations on which Z_p acts by unitaries; a realization need not share the symmetry of its graph |
+| parameter count (12p(p − h) zero conditions against about 3p² parameters) | void: the realizable control fails the same count (an excess of about 2.5·10⁴ equations at d = 64, h = 16) |
+| "the zoo passes every condition, so the conditions are far from sufficient" (§3.13) | circular: it assumes the zoo is unrealizable |
+
+The known KS sets use uneven overlaps (unequal event probabilities), so flatness was never required. Proposition 18
+made it the natural first guess, nothing more.
+
+**Status: the realizability of every zoo member is open.** For skeletons that pass the local test, the only
+rigorous exclusions are:
+* flat realizations (Proposition 27 and t < √h);
+* d ≤ 17 (Corollary 6).
+
+**KS-uncolourable skeletons without a realization** (`ks/unrealizable_examples.py`, exact rational dual
+certificates, about 4 minutes):
+
+| skeleton | d, rays | (DEG), (C2), (C4), (TRI) | local ϑ (certified bound) | realization |
+|---|---|---|---|---|
+| Shrikhande pattern (§3.10) | 4, 16 | (DEG) and (C4) fail | ≤ 2.0001 at every ray (ϑ = 2) | none |
+| F(41, 4), best of all 113 SAT models (`ks/unrealizable_p41.json`) | 41, 164 | all hold | ≤ 2.79253 at every ray | none |
+| F(137, 4), single-class pattern (0, 3, 3, 0, 0, 2) (`ks/unrealizable_p137.json`) | 137, 548 | all hold | 3 at the rays of bases 0, 2, 3; ≤ 2.67248 at the rays of basis 1 | none |
+
+* All three are K4-free, so the union of the four bases is KS-uncolourable. The SAT colouring of the orthogonality
+  graph confirms this.
+* *Proof of non-realizability.*
+  * For a ray u, completeness of the other three bases gives Σ_{c ∈ N(u)} |⟨u|c⟩|² = 3.
+  * The matrix ⟨u|c⟩⟨c|c′⟩⟨c′|u⟩/3 is then a feasible point of the ϑ SDP of N(u) with value 3.
+  * A dual point (λ, Y) with λI − J − Y ⪰ 0, rationalised and checked by an exact LDLᵀ, bounds the SDP by λ < 3.
+* The p = 137 skeleton is the sharpest example. It has the dimension and family of a zoo member, satisfies every
+  combinatorial condition, and passes the local GHZ test at three quarters of its rays. It still has no
+  realization. The local test is decided per basis, and one basis is enough to kill it.
+
+Near misses of this kind are the rule in F(p, 4), single-class patterns (`ks/realize_runs/nov1/nearscan.py`,
+`nearscan_e4.log`). Every pattern listed
+satisfies (K4), (DEG), (C2), (C4) and (TRI), and has ϑ < 3 at some basis:
+
+| p | K4-free patterns | near misses | best near miss: bases with ϑ = 3, smallest ϑ |
+|---|---|---|---|
+| 89 | 48 | 48 | 2 bases, 2.873 |
+| 97 | 51 | 45 (the other 6 are the zoo member) | 0, 2.682 |
+| 101, 109 | 6, 6 | 6, 6 | 0, 2.715; 0, 2.853 |
+| 113 | 25 | 25 | 0, 2.849 |
+| 137 | 15 | 12 | 3 bases, 2.672 |
+| 157 | 6 | 0 (all six are the zoo member) | — |
+| 173 | 20 | 12 | 2 bases, 2.745 |
+
+**The local test cannot be pushed further at p = 97** (`ks/realize_runs/nov1/local_face.py`, `closed_relations.py`):
+* The moduli are not pinned. The optimal face of the local ϑ SDP (rank 70, dual slack of rank 2, real dimension
+  288) projects onto a 69-dimensional set of moduli vectors (|⟨u|c⟩|²)_c: every direction allowed by the three
+  basis sums. So the local test cannot force flatness, and Proposition 27 cannot be extended through it.
+* The off-diagonal entries are shared between neighbourhoods. The completeness identities
+  Σ_{c ∈ B} ⟨u|c⟩⟨c|y⟩⟨y|u⟩ = |⟨u|y⟩|² are linear in the triple products and moduli:
+  * 13 968 real moduli and 46 560 complex triple products, i.e. 107 088 real unknowns;
+  * 27 936 complex equations, i.e. 55 872 real equations;
+  * so they cannot pin them either.
+* Only 12 completeness relations close inside {u} ∪ N(u), exactly the 12 used in Proposition 27. A proof confined to
+  one neighbourhood therefore cannot exclude non-flat realizations.
+* The symmetric optimum (moduli 1/24, edge entries 1/360) satisfies the extra convex cuts from Lemma 3
+  (probabilities ≤ 1/9) and Lemma 14 (|⟨c|c′⟩| ≤ 1/3).
+
+A proof for a zoo member must combine several neighbourhoods.
+
+**Small d.** By Corollary 6, a skeleton with d ≤ 17 that passes the local test would be locally consistent yet
+unrealizable. There is none among small Cayley skeletons. Already the combinatorial encoding (K4, DEG, C2, C4, TRI,
+quotients) has no model:
+* UNSAT: Z₁₃, Z₁₄, D₁₄, Z₁₅, Z₁₆, Z₄×Z₄, Z₂×Z₂×Z₄, Z₂⁴, Dih(Z₂×Z₄);
+* no model found (600 s each): Z₂×Z₈, D₁₆, Dic₁₆, Z₈⋊Z₂ (both actions), Z₄⋊Z₄;
+* no model found (900 s): Z₁₇.
+
+(These are the 11 groups of order 16 in `ks/groups.py`, not all 14.)
+
+**Next steps (realizability).**
+1. A global argument for p = 97 that uses two or more neighbourhoods at once (4-cycle relations through orthogonal
+   pairs, with moduli free).
+2. A realizability search calibrated on a non-flat, non-product control of comparable size. Planting a sparse
+   realizable pattern without product structure is itself the hard part.
+3. Level 2 with the Z_p ⋊ H₄ symmetry for p = 97 (cluster). It cannot see the local test, but it might see a
+   global obstruction.
 
 ## Files
 
@@ -1568,8 +1688,12 @@ implemented in the complex case, as index permutations of one variable solved wi
   `search/ftheta.py` and the orbit-reduced `theta_orbits`, union patterns as boxes.
 * `ks/flat_obstruction.py`: Proposition 27, the counting obstruction to flat realizations, and the bound
   t ≥ √h.
-* `ks/rankhier.py`: level 2 (PPT) of the rank-constrained hierarchy (`references/`), tested on C₅ and the
-  Shrikhande pattern.
+* `ks/rankhier.py`: level 2 (PPT) of the rank-constrained hierarchy (`references/`), complex (and a real variant).
+  It is tested on C₅, the paper's Fig. 3 graph and the Shrikhande pattern.
+* `ks/unrealizable_examples.py`, `ks/unrealizable_p41.json`, `ks/unrealizable_p137.json`: §3.14, KS-uncolourable
+  skeletons without a realization, with exact rational ϑ certificates.
+* `ks/realize_runs/nov1/`: §3.14 scripts and logs (near misses, local optimal face, closed relations, small-d
+  Cayley runs, rank-hierarchy logs).
 * `references/`: the rank-constrained-hierarchy paper with notes. `briefings/`: daily briefings.
 * `ks/smalld_cegar.py`: second, independent encoding (selection variables, lazy completion/span clauses).
 * `ks/smalld_soundness.py`: the geometric clauses hold for patterns of real configurations; `ks/smalld_d5.log`: run log.

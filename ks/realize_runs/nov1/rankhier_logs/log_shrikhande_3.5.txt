@@ -1,0 +1,61 @@
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+(CVXPY) Nov 01 05:46:09 PM: Your problem has 131073 variables, 1392641 constraints, and 0 parameters.
+(CVXPY) Nov 01 05:46:09 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 01 05:46:09 PM: DCP verification time: 0.0035 seconds.
+(CVXPY) Nov 01 05:46:09 PM: Expression tree has 10 nodes.
+(CVXPY) Nov 01 05:46:09 PM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 01 05:46:09 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 01 05:46:09 PM: Your problem is compiled with the CPP canonicalization backend.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:46:09 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 01 05:46:09 PM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 01 05:46:09 PM: Applying reduction FlipObjective
+(CVXPY) Nov 01 05:46:09 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 01 05:46:10 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 01 05:46:10 PM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 01 05:46:10 PM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 01 05:46:10 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 01 05:46:14 PM: Applying reduction SCS
+(CVXPY) Nov 01 05:46:14 PM: Finished problem compilation (took 4.839e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:46:14 PM: Invoking solver SCS  to obtain a solution.
+------------------------------------------------------------------
+	       SCS v3.3.1 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 131073, constraints m: 869377
+cones: 	  z: primal zero / dual free vars: 344065
+	  s: psd vars: 525312, ssize: 4
+settings: eps_abs: 1.0e-08, eps_rel: 1.0e-08, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 200000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+lin-sys:  sparse-direct-mkl-pardiso
+	  nnz(A): 2687856, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 2.56e+02  2.46e+01  8.28e+00  3.97e+00  1.00e-01  1.95e+01 
+   100| 1.11e-12  1.20e-12  7.14e-13  1.27e-02  1.00e-01  5.34e+01 
+------------------------------------------------------------------
+status:  solved
+timings: total: 5.34e+01s = setup: 1.84e+01s + solve: 3.50e+01s
+	 lin-sys: 6.32e+00s, cones: 2.13e+01s, accel: 5.50e+00s
+------------------------------------------------------------------
+objective = 0.012698
+------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 01 05:47:08 PM: Problem status: optimal
+(CVXPY) Nov 01 05:47:08 PM: Optimal value: -1.270e-02
+(CVXPY) Nov 01 05:47:08 PM: Compilation took 4.839e+00 seconds
+(CVXPY) Nov 01 05:47:08 PM: Solver (including time spent in interface) took 5.344e+01 seconds
+RESULT shrikhande k = 3.5: optimal, margin t = -1.2698e-02 (59 s)

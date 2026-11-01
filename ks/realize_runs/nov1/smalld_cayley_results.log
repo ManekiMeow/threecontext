@@ -1,0 +1,16 @@
+RESULT D14 (d=14): UNSAT after 4 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT D16 (d=16): timeout after 601 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Dic16 (d=16): timeout after 601 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Dih(Z2xZ4) (d=16): UNSAT after 461 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z13 (d=13): UNSAT after 1 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z14 (d=14): UNSAT after 4 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z15 (d=15): UNSAT after 33 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z16 (d=16): UNSAT after 526 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z17 (d=17): timeout after 900 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z2xZ2xZ2xZ2 (d=16): UNSAT after 84 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z2xZ2xZ4 (d=16): UNSAT after 280 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z2xZ8 (d=16): timeout after 602 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z4:Z4[3] (d=16): timeout after 603 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z4xZ4 (d=16): UNSAT after 393 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z8:Z2[3] (d=16): timeout after 601 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
+RESULT Z8:Z2[5] (d=16): timeout after 602 s; models 0, bipartite 0, theta blocks 0 (max theta None), candidates 0
