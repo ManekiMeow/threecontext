@@ -1528,6 +1528,9 @@ index permutations of one matrix, solved with SCS.
   * It finds none at k = 4 or 4.005. There the residual stays at 2–3·10⁻⁵ for 19 000 and 38 750 iterations, with
     margin |t| < 10⁻⁵.
   * So the level-2 threshold lies in [4, 4.01], within 0.01 of ϑ = 4.
+  * The real variant behaves the same way. It adds the paper's extra constraint ρ^{T_A} = ρ and is reduced by O(k)
+    (`feasible_real`). It is feasible at k = 4.01 and 4.05. At k = 4 SCS ends "inaccurate" with margin
+    −8·10⁻⁶ after 40 000 iterations.
   * The paper's exclusion of dimension 4 is consistent with this, but it rests on a sliver at most 0.01 wide. We
     could not certify it: there is no Farkas certificate from SCS, and Clarabel needs more than 15 GB here.
 * *Audit (1 Nov), prompted by the question whether our reductions hide the obstruction:*

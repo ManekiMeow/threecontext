@@ -22,3 +22,4 @@ Run from `ks/` (the scripts add `ks/` to the path themselves).
 * `rankhier_logs/`: SCS logs of `../../rankhier.py` (level 2, PPT, complex).
   * The paper's Fig. 3 graph: k = 4, 4.005 (stall); 4.01, 4.02, 4.05, 4.1, 4.3, 5 (feasible).
   * The Shrikhande pattern: k = 4 (feasible), 3.5 (margin −0.0127).
+  * `real_fig3_*.txt`: the real variant (`feasible_real`) on the Fig. 3 graph: k = 4.01, 4.05 feasible; k = 4 margin −8e-6 (inaccurate).
