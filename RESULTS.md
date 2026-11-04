@@ -308,7 +308,7 @@ be nonadjacent vertices with identical neighbourhoods. In a primal theta Gram re
 orthogonal vectors by their sum. This preserves positivity, trace, objective and every prescribed zero, producing
 a triangle-free, three-colourable graph on 29 events with theta 3, contrary to Corollary 6.
 
-**Weak-symmetry construction campaign (4–5 Nov, in progress).** The next search allows eight C₂, C₃ and C₅
+**Weak-symmetry construction campaign (4–5 Nov, in progress).** The next search allows eleven C₂, C₃ and C₅
 actions with several orbits or fixed points, and a separate unrestricted asymmetric population search. Event
 probabilities and overlap weights are free. Exact recoloring witnesses, disconnected supports and false twins
 prune candidates; dimension-19 pair-connectivity and perfect-matching checks are recorded separately. A first

@@ -50,7 +50,9 @@ weights unless a run explicitly records a narrower ansatz:
 
 1. Weak C2, C3 and C5 actions with multiple orbits and fixed points, including
    different orbit decompositions in the three contexts. These are not the
-   previously exhausted regular tri-Cayley actions.
+   previously exhausted regular tri-Cayley actions. The initial eleven families
+   include one transposition per context (only six moved vertices), two
+   transpositions per context, and one three-cycle per context.
 2. Asymmetric tripartite triangle-free graphs: population search, neighbourhood
    replacements, multi-edge moves, crossovers and independent restarts. Start
    from the strongest existing graphs, not only the incidence constructions.
@@ -80,6 +82,26 @@ heartbeat in the run directory. The workers are:
 - `overnight30_asymmetric.py`: adaptive asymmetric construction search.
 - `overnight30_screen.py`: exact combinatorial and rational certificate checks.
 
+The initial runner uses three slots, a 60-second first batch, then 600-second
+chunks, with a 256 MiB archive ceiling. Completed JSONL pools are compressed.
+The lifecycle, orphan-process cleanup and publication-order regression checks
+are reproducible with `python search/test_overnight30_supervisor.py`.
+For recovery in the original environment (after checking that no runner is
+active), launch the following with detached process/session handling and
+network access for the authorized Git pushes:
+
+```sh
+/workspace/threecontext-venv/bin/python search/overnight30_supervisor.py \
+  --until 2026-11-05T05:00:00Z --data-repo /workspace/ghz30-overnight \
+  --code-root /workspace/threecontext --python /workspace/threecontext-venv/bin/python \
+  --workers 3 --first-chunk-seconds 60 --chunk-seconds 600 --max-archive-mb 256
+```
+
+The launch log is `/tmp/ghz30-supervisor.log`; the durable status and job history
+are `status.json` and `manifest.json` inside the run directory. Each job records
+its code commit and worker source hashes. A first-batch restart preserves
+completed pools and advances chunk IDs rather than overwriting them.
+
 Hourly scheduled continuations are research work, not merely status reports:
 
 1. Fetch the two authorized branches and inspect the latest status, candidate
@@ -94,6 +116,11 @@ Hourly scheduled continuations are research work, not merely status reports:
    and, where justified, improve search moves, filters or family allocation.
    Validate new filters against known constructions and distinguish a heuristic
    choice from a necessary condition. Push source/proof changes immediately.
+   Useful next experiments include symmetry-preserving extensions and mutations
+   of the best supports, and a separate dimension-19 mode learning pair-component
+   and Hall-deficiency cuts. Such dimension-specific cuts must not restrict the
+   general event-number search. Initial best supports already had 95–122 edges;
+   simply raising a minimum edge count did not reliably improve theta.
 4. Keep original examples and exact witnesses. Store pools compactly, archive
    finished chunks when needed, and distinguish labelled graphs from proven
    nonisomorphic classes. A graph6 string is not a canonical isomorphism label.

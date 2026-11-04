@@ -32,7 +32,7 @@ import time
 
 
 FAMILIES = ("c2_pairs", "c2_fixed", "c2_mixed", "c3_fixed", "c3_mixed",
-            "c5_double", "c5_fixed", "c5_mixed")
+            "c5_double", "c5_fixed", "c5_mixed", "c2_onepair", "c2_twopairs", "c3_onecycle")
 BRANCH = "experiments/ghz30-20261104"
 
 
