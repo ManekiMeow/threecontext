@@ -35,10 +35,11 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Proposition 46. Results
-39–46 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 48. Results
+39–48 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
-the excluded six-orbit quotient of the current C5 numerical leader.
+the excluded six-orbit quotient of the current C5 numerical leader, followed
+by two-nine-orbit and affine-plane mixed-action exclusions.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -60,6 +61,11 @@ Already excluded and not worth repeating as standalone searches:
 - The six-orbit quotient in Proposition 46, including all cyclic shifts of
   the current 95-edge C5-double leader. The averaging argument there may
   increase rank; it is an event-number exclusion in every dimension.
+- Two `(9,1)` context orbits with any fixed vertex in the third context
+  (Theorem 47). This includes all C3×C3 RRT actions.
+- C3×C3 RTT actions with three distinct kernel lines in both T contexts
+  (Theorem 48). An exact structural reduction leaves three canonical graphs,
+  all excluded by rational theta duals. Two-kernel RTT remains open.
 
 Search directions, allowing nonuniform event probabilities and unequal overlap
 weights unless a run explicitly records a narrower ansatz:
@@ -126,9 +132,10 @@ Next useful research steps, preserving the running supervisor:
   and orbit relabelings), stronger than excluding one support and its subgraphs.
 - Consider C3×C3 mixed actions with orbit types `R=(9,1)` and
   `T=(3,3,3,1)`, using affine-plane translation actions on points and three
-  parallel classes of lines. The all-R case is excluded by Theorem 42;
-  RTT with shared sets of two or three quotient-kernel lines remains a useful
-  direction. Necessary reductions are recorded in `event30_regular_blocks.py`.
+  parallel classes of lines. RRR and RRT are excluded, as is RTT with three
+  distinct kernel lines. RTT with two shared kernel lines and multiplicities
+  `(2,1)` in each T-context remains a useful direction. Necessary reductions
+  and complete proofs are in `event30_c3square.py`.
 - If changing runner configuration, skip `c5_mixed` without reassigning family
   seeds, and consider favoring C5-double after reviewing progress. Preserve
   diversity and the absolute deadline. Source commits capture dependency

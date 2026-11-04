@@ -505,6 +505,62 @@ of their cyclic shifts. It does not assert that the original, unsymmetrized prob
 The 95-edge C₅-double numerical leader has this quotient, giving a second exact exclusion independent of its
 rational SDP dual. `python search/event30_c5_quotient.py` checks the quotient arithmetic and the saved leader.
 
+**Theorem 47 (two nine-orbits and a fixed point).** A thirty-event GHZ graph has no context-preserving
+automorphism group with orbit pattern `(9,1)` in two contexts and a fixed vertex in the third context.
+The third context's other orbit sizes are unrestricted. In particular, this excludes C₃×C₃ actions with
+two regular nine-orbits, including the mixed patterns `(9,1)/(9,1)/(3,3,3,1)`.
+
+*Proof:* write a,b for the fixed vertices in the first two contexts. Proposition 39 makes every cross-context
+neighborhood nonempty and proper and makes its neighborhood map injective. The moving-to-moving block is
+therefore nonempty. If ab is an edge, any third-context fixed vertex c must see one singleton and the opposite
+nine-orbit: the other two choices create triangles. Say its masses are c_a and 1−c_b. Its positive residual
+mass gives c_b>c_a, whereas b's singleton neighborhood gives c_b<c_a, a contradiction.
+
+If ab is absent, a sees the entire opposite nine-orbit, and similarly for b. Triangle-freeness forces every
+third-context fixed vertex to see both a and b. Neither a nor b can touch a nonfixed third-context orbit:
+all its vertices would then have the same opposite-context singleton neighborhood, contradicting injectivity.
+Thus their third-context neighborhoods coincide with the fixed-point set, of mass s. At a, positive residual
+mass gives c_b>s; the pointwise bound at b gives c_b<s. Contradiction. No averaging is used. ∎
+
+**Theorem 48 (three distinct kernel lines).** No thirty-event GHZ graph admits a context-preserving C₃×C₃
+action with context orbit types `R=(9,1)`, `T=(3,3,3,1)`, `T=(3,3,3,1)` when the three moving orbits in each
+T-context have distinct kernel lines. This is an exclusion in every dimension, allowing nonuniform
+probabilities and arbitrary complex overlap weights.
+
+*Proof:* regard the regular orbit as F₃² and the three-orbits as its line quotients. The two T-contexts must
+use the same kernel lines by neighborhood injectivity. Moving edges between different kernels are impossible:
+their regular-orbit neighborhoods contain cosets of different lines, which intersect and create a triangle.
+For each common kernel, the three cyclic support sizes u,v,s are in {1,2}, with u+v+s≤4. A three-orbit
+cannot have cross-degree one: its probability mass would be below 2/9, while its seven-event complement
+forces it above 2/9.
+
+Write a,b,c for the fixed vertices. If b sees the regular nine-orbit, it sees only c in the third context,
+and c sees only a in the regular context. Every same-kernel moving B–C block is then a six-cycle. Each one
+touched by a is an entire pair component whose opposite side a misses; a bridges no B–C component, violating
+Theorem 43. Thus ab=ac=1 and bc=0. Singleton-neighborhood bounds force a to touch moving orbits in both other
+contexts. Its degree bound forces exactly one in each, of different kernels K₁,K₂; call the remaining
+kernel K₀. Their K₁,K₂ blocks have sizes (1,1,2).
+
+The B–C component containing b is group-invariant. Balanced component sizes modulo three force it to contain
+c, so both fixed edges through K₀ are present. The edges b–C_{K₁} and c–B_{K₂} are also forced: otherwise an
+isolated six-cycle contributes zero to a's state overlap, giving c_a≤c_b<c_a, or its symmetric counterpart.
+Only the K₀ size triples `(1,1,2)`, `(1,1,1)`, `(2,1,1)`, `(1,2,1)` remain.
+
+GL(2,3) identifies all ordered triples of distinct kernel lines. Independent translations of the six orbit
+coordinates normalize the regular-to-three-orbit supports; simultaneous negation identifies the two matching
+phases, and exchanging the two T-contexts identifies the wide cases. Exactly three canonical supports remain:
+
+| K₀ type | Edges | Exact upper bound on θ |
+|---|---:|---:|
+| `(1,1,2)` | 92 | 14369/5000 = 2.8738 |
+| `(1,1,1)` | 89 | 1761/625 = 2.8176 |
+| `(2,1,1)` | 98 | 28501/10000 = 2.8501 |
+
+All bounds are below three. The standard-library checker
+`python search/event30_c3square.py --verify-certificates` verifies all 48 linear coordinate changes, the 45
+local cyclic support triples, explicit global isomorphisms and the three rational dual certificates. The full
+structural reduction is recorded in that file. The two-distinct-kernel RTT family remains unresolved. ∎
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
