@@ -357,6 +357,21 @@ the contraction and configured coloring screens, and its six moved vertices indu
 components, excluding dimension 19; no θ = 3 realization is claimed. The saved pool is in
 `search/overnight30_intersection_runs/prototype_seed1/`, and the continuing SAT worker uses its best graph as a seed.
 
+**22:00 checkpoint review (4 Nov, bounded).** The completed pools contain 69,112 scored records representing
+68,486 distinct labeled supports. Reviewing the top records and family leaders selected 89 labeled graphs;
+exact graph-isomorphism checks reduced this selected set to 18 representatives. All eighteen have individual
+exact exclusions (one previously certified), with nine additional dimension-19 support obstructions. This is
+not an isomorphism census of the entire pool. The strongest new graph is a 95-edge C₅-double-orbit support with
+numerical θ ≈ **2.9134341612**, and exact upper bound **1821/625 = 2.9136**. It passes the current combinatorial
+and dimension-19 support screens, illustrating why those necessary conditions alone are insufficient.
+
+Seven leading asymmetric representatives have only eighteen B–C edges, so that pair support on twenty vertices
+is necessarily disconnected. The continued search imports six diverse family leaders as mutation seeds and
+replaces stalled two-edge switches by moves that also remove third-context triangle conflicts. The review's
+26 new exact certificates and 71 selected-set isomorphism claims are reproducible with
+`python search/overnight30_reviews/2026-11-04T2200/verify.py --isomorphism`; omit `--isomorphism` for verification
+using only standard Python. These results leave the global bounds unchanged.
+
 ---
 
 ## 2. Lower bounds (exact proofs)

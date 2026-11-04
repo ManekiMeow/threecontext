@@ -11,6 +11,8 @@ probability, regular incidence, or prescribed overlap alphabet is imposed.
 The same output directory and seed resume the RNG, current graph and population.
 Use --resume-from CHECKPOINT to continue in another output directory; a different
 --seed imports the previous population while starting new counters and RNG state.
+The shared inbox overnight30_shared_seeds.json is checked on every invocation,
+including resumed chunks; newly seen labelled graphs join the pending seed queue.
 Every successfully scored labelled support is written compactly as graph6 in a
 JSONL archive. Only new bests and numerical near-hits get full graph records.
 The bounded elite population removes exact colour-preserving isomorphs within
@@ -159,14 +161,23 @@ def fill(adj, rng, preferred=()):
     return adj
 
 
-def proposal(current, pool, rng, iteration):
+def kick_edges(current, rng):
+    trial = current[:]
+    edges = edges_of(trial)
+    for u, v in rng.sample(edges, min(len(edges), rng.choice((1, 2, 3, 4, 6, 9)))):
+        remove(trial, u, v)
+    return fill(trial, rng)
+
+
+def proposal(current, pool, rng, iteration, diagnostics=None):
+    diagnostics = diagnostics if diagnostics is not None else {}
+
+    def count(name):
+        diagnostics[name] = diagnostics.get(name, 0)+1
+
     r = rng.random()
     if r < 0.42:
-        trial = current[:]
-        edges = edges_of(trial)
-        for u, v in rng.sample(edges, min(len(edges), rng.choice((1, 2, 3, 4, 6, 9)))):
-            remove(trial, u, v)
-        return fill(trial, rng), "edge_kick"
+        return kick_edges(current, rng), "edge_kick"
     if r < 0.66:
         trial = current[:]
         vertices = rng.sample(range(N), 2 if rng.random() < 0.25 else 1)
@@ -181,18 +192,49 @@ def proposal(current, pool, rng, iteration):
         block = [(u, v) for u in PARTS[a] for v in PARTS[b] if trial[u] >> v & 1]
         if len(block) >= 2:
             for _ in range(20):
+                count("two_switch_attempts")
                 (u, v), (x, y) = rng.sample(block, 2)
                 if u == x or v == y or trial[u] >> y & 1 or trial[x] >> v & 1:
                     continue
                 candidate = trial[:]
                 remove(candidate, u, v)
                 remove(candidate, x, y)
-                if addable(candidate, u, y):
-                    add(candidate, u, y)
-                    if addable(candidate, x, v):
-                        add(candidate, x, v)
-                        return fill(candidate, rng), "two_switch"
-        return fill(trial, rng), "two_switch_stalled"
+                cleared, failed = 0, False
+                # An ordinary A--B switch leaves every third-context triangle
+                # blocker unchanged. Clear those blockers explicitly first.
+                for left, right in ((u, y), (x, v)):
+                    common = candidate[left] & candidate[right]
+                    for third in range(N):
+                        if not common >> third & 1:
+                            continue
+                        choices = [(left, third), (right, third)]
+                        rng.shuffle(choices)
+                        choices = [(s, t) for s, t in choices
+                                   if (candidate[s] & PART_MASKS[t//10]).bit_count() > 1
+                                   and (candidate[t] & PART_MASKS[s//10]).bit_count() > 1]
+                        if not choices:
+                            failed = True
+                            break
+                        remove(candidate, *choices[0])
+                        cleared += 1
+                    if failed or not addable(candidate, left, right):
+                        failed = True
+                        break
+                    add(candidate, left, right)
+                if failed:
+                    count("two_switch_conflict_failures")
+                    continue
+                candidate = fill(candidate, rng)
+                if not validate(candidate):
+                    count("two_switch_invalid_trials")
+                    continue
+                if candidate == current:
+                    count("two_switch_unchanged_trials")
+                    continue
+                count("two_switch_conflict_edges_removed_" + str(cleared))
+                return candidate, "conflict_clearing_two_switch" if cleared else "two_switch"
+        count("two_switch_fallbacks")
+        return kick_edges(current, rng), "two_switch_fallback_edge_kick"
     if r < 0.96 and pool:
         second = decode(rng.choice(pool)["g6"])
         trial = [a & b for a, b in zip(current, second)]
@@ -320,6 +362,59 @@ def seed_graphs(seed):
     return result
 
 
+def shared_seed_graph(record):
+    """Normalize explicit context labels before interpreting a shared graph."""
+    if "edges" in record and "parts" in record:
+        parts = record["parts"]
+        vertices = [v for part in parts for v in part]
+        if list(map(len, parts)) != [10, 10, 10] or len(set(vertices)) != N:
+            raise ValueError("shared seed must partition thirty vertices into three tens")
+        mapping = {v: 10*k+i for k, part in enumerate(parts) for i, v in enumerate(part)}
+        adj = from_edges([(mapping[u], mapping[v]) for u, v in record["edges"]])
+    else:
+        adj = decode(record.get("g6") or record["graph6"])
+    if not validate(adj):
+        raise ValueError("shared seed fails exact support validation")
+    return adj
+
+
+def inject_shared_seeds(state, pool, current, path=None):
+    """Append once per labelled graph without replacing resumed search state."""
+    path = path or ROOT / "overnight30_shared_seeds.json"
+    seen = set(state.get("shared_seed_injected_g6", []))
+    queued = set(state["pending_seeds"])
+    queued.update(entry["g6"] for entry in pool)
+    if current is not None:
+        queued.add(encode(current))
+    errors, added = [], 0
+    if path.exists():
+        try:
+            payload = json.loads(path.read_text())
+            rows = payload["seeds"]
+            if payload.get("format") != 1 or not isinstance(rows, list):
+                raise ValueError("unsupported shared seed inbox format")
+            # Pending seeds are popped from the end; score the strongest first.
+            rows = sorted(rows, key=lambda row: row.get("theta_numeric", row.get("theta", 0)))
+            for row in rows:
+                try:
+                    code = encode(shared_seed_graph(row))
+                    if code in seen:
+                        continue
+                    seen.add(code)
+                    if code not in queued:
+                        state["pending_seeds"].append(code)
+                        queued.add(code)
+                        added += 1
+                except (ValueError, KeyError, TypeError, nx.NetworkXError) as exc:
+                    errors.append(f"{row.get('source', 'shared seed')}: {type(exc).__name__}: {exc}")
+        except (ValueError, KeyError, TypeError, OSError) as exc:
+            errors.append(f"shared inbox: {type(exc).__name__}: {exc}")
+    state.update({"shared_seed_injected_g6": sorted(seen),
+                  "shared_seed_last_added": added, "shared_seed_last_checked_utc": utc_now(),
+                  "shared_seed_errors": errors[:10]})
+    return added
+
+
 def diversity_key(adj):
     graph = graph_of(adj)
     nx.set_node_attributes(graph, {v: v//10 for v in graph}, "part")
@@ -392,12 +487,20 @@ def run(args):
         current_value = previous.get("current_theta") if previous else None
         if previous:
             state["warm_started_from"] = str(source.resolve())
+            state["shared_seed_injected_g6"] = previous.get("shared_seed_injected_g6", [])
     for entry in pool:
         if not validate(decode(entry["g6"])) or not math.isfinite(entry["theta"]):
             raise ValueError("invalid population entry in checkpoint")
     if current is not None and (not validate(current) or current_value is None):
         raise ValueError("invalid current graph in checkpoint")
+    injected = inject_shared_seeds(state, pool, current)
+    if injected or state["shared_seed_errors"]:
+        print(json.dumps({"seed": args.seed, "shared_seeds_added": injected,
+                          "shared_seed_errors": state["shared_seed_errors"]}), flush=True)
     state["termination"] = "running"
+    state.setdefault("move_accepted", {})
+    state.setdefault("move_invalid", {})
+    state.setdefault("proposal_diagnostics", {})
     old_screen_version = state.get("screen_version", 0)
     state.update({"screen_version": 1, "fast_rejected": state.get("fast_rejected", 0),
                   "sat_excluded": state.get("sat_excluded", 0),
@@ -505,10 +608,13 @@ def run(args):
                     selected = rng.choice(pool[:max(4, len(pool)//2)])
                     current, current_value = decode(selected["g6"]), selected["theta"]
                     last_improvement = state["iterations"]
-                trial, move = proposal(current, pool, rng, state["iterations"])
+                trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
             state["moves"][move] = state["moves"].get(move, 0)+1
+            state["move_accepted"].setdefault(move, 0)
+            state["move_invalid"].setdefault(move, 0)
             if not validate(trial):
                 state["invalid"] += 1
+                state["move_invalid"][move] += 1
                 continue
             code = encode(trial)
             screening = screen_cache.get(code) or screened(trial)
@@ -592,6 +698,7 @@ def run(args):
             if current is None or adjusted >= adjusted_current or rng.random() < math.exp(min(0, (adjusted-adjusted_current)/temperature)):
                 current, current_value = trial, value
                 state["accepted"] += 1
+                state["move_accepted"][move] += 1
             if time.monotonic()-last_saved >= 10:
                 save()
                 last_saved = time.monotonic()

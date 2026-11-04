@@ -1,0 +1,129 @@
+{
+  "completed_jobs": [
+    0,
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "active_exception_job": 23,
+  "active_snapshot_sha256": "9a3fc8622d3186c4004a5a158c04dedcc466d7876bd6c9950d616e2297841ad1",
+  "scored_records_read": 69112,
+  "distinct_labeled_scored_graphs": 68486,
+  "candidate_records_considered": 89,
+  "exact_isomorphism_duplicates_within_selection": 71,
+  "nonisomorphic_selected_graphs": 18,
+  "processed": 18,
+  "status_counts": {
+    "excluded": 17,
+    "previously_certified": 1
+  },
+  "dimension19_ineligible": 9,
+  "runtime_seconds": 83.82332871099788,
+  "scope": "bounded selected-graph review, not an exhaustive family or isomorphism-class census",
+  "isomorphism_scope": "exact uncolored VF2 comparison within WL buckets for the selected records only",
+  "family_best_numeric": {
+    "c5_double": {
+      "graph_id": "c864bde04c1721bc4992",
+      "g6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "theta_numeric": 2.9134341612056254,
+      "family": "c5_double",
+      "job": 23,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/best.json"
+    },
+    "asymmetric": {
+      "graph_id": "1ffd4d5bc85a59a03ccc",
+      "g6": "]????????Y?YPK_gLO?p?IWBP?DG?@__@BOQI_`B_q?Yq@?ROOOoi?O[_a?CaD??@KH?@WcA??",
+      "theta_numeric": 2.9122784989198123,
+      "family": "asymmetric",
+      "job": 0,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00000_asymmetric/asymmetric_seed20261104.jsonl.gz"
+    },
+    "c2_onepair": {
+      "graph_id": "5dfe858c7a57c0c02af5",
+      "g6": "]???????CxjeKCJk@K?D_@S?Y?EK?F@?AbC?Wq?Fy?_?i?gp_g?KCG_@KOOF@?W?sOS??Y?H??",
+      "theta_numeric": 2.879722419199336,
+      "family": "c2_onepair",
+      "job": 12,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00012_c2_onepair/c2_onepair/seed_20261113/models.jsonl.gz"
+    },
+    "c3_fixed": {
+      "graph_id": "0aeed4650494faa1f4c1",
+      "g6": "]????????``Q@SNSReA{_BG?U??q??F??_M~_Bvq?^]SKa_ogo_WqI?[`_WF_KQ?yA`OB_ON??",
+      "theta_numeric": 2.822919983629162,
+      "family": "c3_fixed",
+      "job": 20,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00020_c3_fixed/c3_fixed/seed_20261108/models.jsonl.gz"
+    },
+    "c2_fixed": {
+      "graph_id": "dd80e94cef7271bcc18f",
+      "g6": "]???????FGZ?t_y_MgDq?K???_Fx_?W??PXDGT`QC_yOQDg@DV?AEj??NxG?EW]??nMO?B{H??",
+      "theta_numeric": 2.8060442245093604,
+      "family": "c2_fixed",
+      "job": 17,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00017_c2_fixed/c2_fixed/seed_20261106/models.jsonl.gz"
+    },
+    "c5_fixed": {
+      "graph_id": "599452daab2ecc5f7d1c",
+      "g6": "]???????B_F?e?q?[??M?@S?D_?A??D_?dB@DOWOYPAOh_GPP_O?bz_?F}OFp?s?}CD_B}oA??",
+      "theta_numeric": 2.794977510320635,
+      "family": "c5_fixed",
+      "job": 9,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00009_c5_fixed/c5_fixed/seed_20261111/models.jsonl.gz"
+    },
+    "c3_onecycle": {
+      "graph_id": "f02b565e42315743fe21",
+      "g6": "]???????BASGoO}gA??O??o?A??J??}_AOW]SDF`_c{?b~_ycG_wGNO]eB_?L|_?BNj??DPs??",
+      "theta_numeric": 2.7938248455150347,
+      "family": "c3_onecycle",
+      "job": 14,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00014_c3_onecycle/c3_onecycle/seed_20261115/models.jsonl.gz"
+    },
+    "c2_twopairs": {
+      "graph_id": "63e2c15b089c5bd6df5a",
+      "g6": "]???????BrVKG?C??W@x?NkBq_@e_?P_Bf@@to_QCm_ORY?~KG?oOuO@iW_EGFA?@BxoBKba??",
+      "theta_numeric": 2.7769475725263413,
+      "family": "c2_twopairs",
+      "job": 13,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00013_c2_twopairs/c2_twopairs/seed_20261114/models.jsonl.gz"
+    },
+    "c2_pairs": {
+      "graph_id": "f2e4ec7fadb15ed940cb",
+      "g6": "]???????@ZbuD?I?NcDw_M[?uo?__@@?BE@JqO`oANm?P^W_BzoOBvoG[YOCEfA?saOOB`EA??",
+      "theta_numeric": 2.768662512976949,
+      "family": "c2_pairs",
+      "job": 16,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00016_c2_pairs/c2_pairs/seed_20261105/models.jsonl.gz"
+    },
+    "c2_mixed": {
+      "graph_id": "f470cab2c863b3c95fa0",
+      "g6": "]????????aCOcGWCR?BG?{??{?@_?@`_AXdOXegEE?M?Fforo?o?o~oWF_o?^_S?rB?o?KNJ??",
+      "theta_numeric": 2.7274292108120566,
+      "family": "c2_mixed",
+      "job": 19,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00019_c2_mixed/c2_mixed/seed_20261107/models.jsonl.gz"
+    },
+    "c3_mixed": {
+      "graph_id": "1977c006953dc3ed1490",
+      "g6": "]???????EBKSgogCWAB?_?wB~_Fw??~?ALS?TK_@so??[MO?FaoFFa?B`}?F?_Q?FB}???]N??",
+      "theta_numeric": 2.6849395563982323,
+      "family": "c3_mixed",
+      "job": 7,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00007_c3_mixed/c3_mixed/seed_20261109/models.jsonl.gz"
+    }
+  }
+}
