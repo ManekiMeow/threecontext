@@ -3,8 +3,9 @@
 Follow-up to *Exploring the boundary of quantum correlations with a time-domain optical processor*
 (arXiv:2208.07794; Sci. Adv. 2025). Everything numerical is reproducible from `search/`; every
 graph certificate marked **(exact)** is checked in rational arithmetic by `search/verify_all.py`,
-`search/minimal37.py` or `search/dualcert.py`. Section 2.1 gives a new analytic projection bound,
-with symbolic checks in `search/projection_bound.py`; Section 2.2 analyses the remaining dimension-19 case.
+`search/minimal37.py`, `search/dualcert.py`, or the standalone certificate checkers specified below. Section 2.1 gives
+an analytic projection bound, with symbolic checks in `search/projection_bound.py`; Sections 2.2–2.3 classify and
+exclude several cases in dimension 19. Section 1.10 exhausts a balanced incidence-construction family.
 Section 3.15 has a solver-independent combinatorial certificate rejecting the historical four-context skeleton.
 
 Notation (following Theorem 1 of the paper). `H` is the graph whose vertices are the events and
@@ -29,7 +30,7 @@ property, and the contradiction first shows at algebraic degree 4.
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.2). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. Then no event has probability exactly 1/9, and the three context subspaces take one of two shapes (Section 2.2). The remaining "spread" case is open, so H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
+| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains; H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 19 (Corollary 30; the GHZ bound can never give more than 20, the dimension of H33). In dimension 19 the graph would be 76-vertex and 30-regular, with 10 neighbours per other basis (Theorem 31, §3.15). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. **Multiplier families (Sections 3.12–3.13):**
 * e = 2 and e = 3 give no example for any p (Theorem 24, Corollary 26).
 * e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
@@ -237,6 +238,60 @@ Yu–Oh type), not with the minimum KS set in ℝ³.
 The methods do not transfer either (`ks3d/RESULTS.md` §7). Here the classical contradiction is free (H is
 triangle-free) and the hard part is quantum realizability, which is what spectra measure. In 3D KS the roles are
 reversed: every spectral or degree-≤3 algebraic bound is satisfied by the rays themselves.
+
+### 1.10 Testing a balanced incidence construction on thirty events (new, 4 Nov)
+
+A natural way to seek (10,10,10) is to replace H33's affine plane by a **linear 10₃ configuration**: ten points,
+ten three-point lines, three lines through each point, and at most one line through any pair of points.
+Let A be the points and B,C two copies of its lines. Join points to incident lines and B-lines to disjoint C-lines.
+The resulting H has 30 vertices, is triangle-free and 6-regular, with three neighbours per other context.
+
+**Theorem 38 (computer-assisted, exact certificates).** Every graph in this family satisfies
+**θ(complement(H)) ≤ 11/4 < 3**. None is a three-context GHZ graph in any dimension, over ℝ or ℂ, regardless of
+probabilities or overlap weights. Here B and C must be copies of the **same** labelled line system.
+
+*Exhaustive reduction and certificate.*
+
+1. Each point is collinear with six others. Its three noncollinear points form its neighbourhood in a simple cubic
+   **leave graph** L on ten vertices. The ten lines decompose the edges of `K₁₀ − L` into triangles. Conversely every
+   such decomposition gives a linear 10₃ configuration.
+2. Enumerate all cubic L by filling the missing neighbours of one unfinished vertex at a time. Isomorphic partial
+   graphs have the same completion classes, so exact isomorphism permits safe deduplication. This gives **21** cubic
+   graphs (19 connected, two disconnected), without importing a catalogue. Graph hashes select comparison buckets;
+   they never decide isomorphism.
+3. Enumerating triangle exact covers of their complements gives **20** decompositions and **10** incidence-isomorphism
+   classes. For each resulting H, store a rational symmetric matrix D with D_ii = 1 and D_ij = 1 on edges of H.
+   Exact elimination verifies `(11/4)I − D ≻ 0`. The Lovász dual therefore gives the claimed bound.
+
+The largest numerical theta value among the ten classes is approximately 2.744732, but the theorem uses only the
+rational certificates and the finite enumeration. An independent audit used a different partial-graph completion
+order, a SAT exact-cover encoding, and integer Bareiss determinants; it reproduced all 21 leaves and 20 covers and
+verified all 300 leading principal minors across the ten certificates.
+
+```sh
+python search/construction30_configurations.py verify
+```
+
+This regenerates the complete classification, checks coverage by the saved representatives, and verifies all
+rational duals. It needs NetworkX, but no SDP solver. Data: `search/construction30_configurations_certificates.json`.
+The `generate` mode additionally needs CVXPY/Clarabel to regenerate the rational witnesses.
+
+**Scope.** This is stronger than excluding the constant-overlap Gram matrix `I+A/3`: it excludes every quantum
+realization of these ten graphs. It does not exclude choosing **different** linear configurations for B and C on the
+same point set, or arbitrary (10,10,10) graphs. Those are separate construction targets.
+
+**Different B,C line systems (bounded construction search).** `search/construction30_mixed.py` independently
+chooses the two incidence types and varies their relative point labelling, retaining every allowed disjoint-line
+edge. Twenty runs, covering all ten B-types with two seeds each, made 1400 mutations. The best numerical theta
+was **2.841082702**, with a saved exact upper bound **713/250 = 2.852** for that graph. All twenty saved best graphs
+have rational dual certificates below 3. This is not an exhaustive exclusion of the mixed-line family.
+
+```sh
+python search/construction30_mixed.py verify
+```
+
+Verification needs only standard Python and excludes the saved graphs without assumptions on their event
+probabilities or realization dimension.
 
 ---
 
@@ -552,11 +607,12 @@ The last column comes from rational dual certificates verified by `dualcert.exac
 `python search/gap_search.py --verify --output search/gap_search_results.json`. It excludes those four individual
 graphs. **Failure to find θ = 3 in these runs does not exclude any of the four size partitions.**
 
-### 2.2 Towards d_min = 20: the dimension-19 case (new, 4 Nov)
+### 2.2 Towards d_min = 20: the dimension-19 case (4 Nov)
 
 By Theorem 31, a realization in dimension 19 has n = 30 positive events in contexts (10,10,10), and Lemma 29 holds
-with slack exactly 1. This subsection pins it down further. It does not exclude it, so **H33's dimension minimality
-remains open**. Notation:
+with slack exactly 1. This subsection classifies the remaining projection shapes. Section 2.3 now excludes the
+rotated-tail shape and all pairwise-isoclinic triples in the generic shape; **H33's dimension minimality remains
+open**. Notation:
 * rigid: c_x = 1/9, as in Theorem 21;
 * the deficit is 1/9 − c_x, and it sums to 1/9 over a 10-event context;
 * f_Y(x) = Σ_{y ∈ N_Y(x)} c_y is the neighbourhood weight of x in context Y.
@@ -619,18 +675,19 @@ one of the following holds.
      formula ⟨g_x|g_y⟩ = 3√(c_xc_y) + 2⟨g_x|E|g_y⟩ with E|_L = |ℓ_1⟩⟨ℓ_1| − 1/2.
 
 **What is left for d_min = 20.**
-* Shape (i) with a rotated tail line (0 < φ < π/2).
-* Shape (ii).
+* Shape (i), including every rotated tail line, is now excluded by Theorem 35 below.
+* Shape (ii) remains, but its three pairs cannot all be isoclinic (Theorem 36). At least one pair of reduced
+  context spaces must have unequal principal angles.
 
-Both are "spread" configurations: every event has probability strictly below 1/9. Shape (ii) is not empty at the
-level of projections. In each of nine blocks take three real lines:
+Every remaining event has probability strictly below 1/9. Shape (ii) is not empty at the level of projections.
+For example, in each of nine blocks take three real lines:
 * β at angle 0 and γ at arccos(1/3), so ⟨β|γ⟩ = 1/3;
 * α ∥ β − γ, so ⟨α|β⟩ = −⟨α|γ⟩ = 1/√3.
 
 This gives ranks (9, 9, 9), tr(A_1A_2A_3) = −1, slack exactly 1, E = ±1/6, and every event probability 1/10. It is
-consistent with Lemmas 3 and 29 and with the per-event identity ⟨w_x|A_lA_m|w_x⟩ = −c_x. Excluding it needs the full
-pointwise triangle-free structure (span N_Y(x) ⊥ span N_Z(x)), not just traces. This is the non-perturbative "spread
-case" of Corollary 22, now confined to dimension 19 and to the two shapes above.
+consistent with Lemmas 3 and 29 and with the per-event identity ⟨w_x|A_lA_m|w_x⟩ = −c_x. It is nevertheless
+**not** a GHZ realization: Theorem 36 uses the pointwise triangle-free condition to show that two of its support
+degrees would have to equal 5/2. Thus this convenient projection model cannot supply the missing construction.
 
 Checks: `search/projection_d19.py` (H33's equality structure; both shapes at the projection level; adversarial test of
 Lemma 29).
@@ -644,11 +701,152 @@ small slack. n_min = 33 needs a combinatorial argument or an exhaustive search o
 containing ψ. Even in dimension 20 with sizes (9, 12, 12) it did not find H33 (14 starts, best 1.1·10⁻⁴), so its
 silence in dimension 19 carries no information.
 
+### 2.3 Pointwise support obstructions for (10,10,10) (new, 4 Nov)
+
+These results use the zeros of individual overlaps, beyond the trace constraints of Sections 2.1–2.2.
+Theorems 35–36 apply to complex realizations and allow arbitrary orthonormal event bases inside the context spans.
+They do not assume those bases respect the two-dimensional projection blocks.
+
+**Theorem 35 (the rotated-tail shape is impossible).** No dimension-19 realization has shape (i) of Lemma 33.
+
+*Proof.* Proposition 34 already excludes the tail endpoints. In the remaining case choose tail phases so that
+`ℓ_A = u ℓ_B + v ℓ_C`, with u,v > 0, u²+v² = 1 and ℓ_B ⊥ ℓ_C. Exchange B,C if necessary so u² ≥ 1/2.
+Let `p_X,i = √c_i` and `q_X,i = ⟨g_i|ℓ_X⟩` for each context X. They are orthogonal unit vectors. Moreover
+`|q_X,i|² = 1 − 9c_i > 0`, by Lemma 3 and Corollary 32. For the overlap matrix `Y_ab = ⟨g_a|g_b⟩`:
+
+    Y p_B = p_A,   Y q_B = u q_A,
+    YY† = I/4 + (3/4)p_A p_A† + (u² − 1/4)q_A q_A†.
+
+On every nonzero entry the edge identity `⟨g_a|F|g_b⟩ = 2Y_ab` gives
+
+    Y_ab = 3 p_A,a p_B,b + u q_A,a conjugate(q_B,b).
+
+1. **At most three nonzeros in each row and column.** For a row a, write N for its support,
+   `f = Σ_N c_b`, `Γ = Σ_N |q_B,b|²`, and `S = Σ_N p_B,b q_B,b`. The two row identities give
+
+       3p_A,a S + u q_A,a Γ = u q_A,a,
+       3p_A,a f + u q_A,a conjugate(S) = p_A,a.
+
+   Hence `f = 1/3 − u²|q_A,a|²(1−Γ)/(9c_a)`.
+   N cannot be all ten columns, since then this would give f = 1/3 instead of 1. All q entries are nonzero,
+   so Γ < 1 and f < 1/3. Any subset of at least four events in a size-10 context with every c < 1/9 has weight
+   greater than 1/3 (its complement has at most six events). Thus |N| ≤ 3. Apply the same argument to Y† for columns.
+2. **Disjoint row supports force a connected bipartite graph.** Form D on the ten rows, joining disjoint supports.
+   Each row meets at most three columns, each shared with at most two other rows. Therefore every vertex of D has
+   degree at least `9 − 3·2 = 3`. On a D-edge ij, the Gram identity gives, with `r_i = q_A,i/p_A,i`,
+
+       r_i conjugate(r_j) = −K,    K = 3/(4u²−1) > 1.
+
+   Every edge reverses the complex phase, so D is bipartite. Each component has at least six vertices, because its
+   minimum degree is three. There are only ten vertices, so D is connected. Along even paths the ratio r is unchanged.
+   It therefore equals `Rη` on one part and `−Sη` on the other, for R,S > 0 and |η| = 1, with RS = K.
+3. **Normalization contradicts K > 1.** Let P,Q be the two parts' probability masses. Orthogonality of p_A,q_A
+   and their unit norms imply `P+Q = 1`, `PR = QS`, and `PR²+QS² = 1`. But
+   `PR²+QS² = RS(P+Q) = RS`, so RS = 1, contradicting RS = K > 1. ∎
+
+**Theorem 36 (pairwise-isoclinic context spans are impossible).** In dimension 19, the three reduced spaces
+`S_k ∩ ψ⊥` cannot all be pairwise isoclinic, meaning that all nine principal cosines of each pair are equal.
+In particular no construction consisting of nine identical two-dimensional triples of lines can work.
+
+*Proof.* Denote the reduced rank-nine projections by P_A,P_B,P_C, with `tr(P_A P_B P_C) = −1`.
+
+1. **Odd rank forces identical blocks.** A pair cosine 0 would give trace 0; cosine 1 would identify two reduced
+   spaces and make the trace nonnegative. All pair cosines therefore lie strictly between 0 and 1. Choose frames
+
+       Q_A = [I;0],   Q_B = [uI;sI],   Q_C = [vI;tW],
+
+   with u,s,v,t > 0, u²+s² = v²+t² = 1 and W unitary. Put a = uv, b = st. Isoclinicity of B,C implies
+   `W+W† = hI`, since their overlap matrix is aI+bW. Thus W has eigenvalues e^{±iθ}. If m eigenvalues have the
+   plus sign, the imaginary part of the triple trace is `ab(2m−9)sinθ`. It must vanish. Since 9 is odd, sinθ = 0,
+   giving W = ±I. The plus sign makes the trace positive, so W = −I: the triple is nine identical line blocks.
+2. **The probabilities become uniform.** Each line block has triple product −1/9. Its three-vector Gram
+   determinant is zero, so its squared pair cosines sum to `1+2(−1/9) = 7/9`.
+   The sum of its three projections has eigenvalues 4/3 and 5/3. Hence `E² = I/36` on ψ⊥.
+   Lemma 3 now gives `(1−c_i)/36 = (1−9c_i)/4`, forcing every c_i = 1/10.
+3. **The support would be an impossible design.** Put `p = 1/√10 · 1`. Write the three cross-overlap matrices
+   as `X = pp† + x R_A†R_B`, `Y = pp† + y R_A†R_C`, `Z = pp† + z R_B†R_C`, where
+   `R_k R_k† = I_9` and `R_k†R_k = I_10−pp†`. The line triple product gives, for s₀ = |x|²,
+
+       YZ† = pp† − (X−pp†)/(9s₀).
+
+   Triangle-freeness makes `(YZ†)_ab = 0` whenever X_ab ≠ 0. Every nonzero X_ab is consequently
+   `(1+9s₀)/10`. Its row and column sums are 1, so `X = M/k` for a k-regular 0/1 matrix M, where
+   `k = 10/(1+9s₀)` is an integer between 2 and 9. Also
+
+       XX† = s₀I + (1−s₀)J/10,
+       (MM†)_ij = k(k−1)/9  for i ≠ j.
+
+   The last quantity counts common neighbours and must be integral. In 2 ≤ k ≤ 9 only k = 9 works, giving
+   s₀ = 1/81. The same holds for every pair, whose squared cosines would sum to 1/27 instead of 7/9. ∎
+
+For the explicit model in Section 2.2, s₀ = 1/3 on two pairs already gives the impossible degree k = 5/2.
+
+**Proposition 37 (uniform 30-event constraints and an unweighted obstruction).** Suppose all thirty events have
+probability 1/10. These statements do not assume dimension 19.
+
+* Each event's numbers of neighbours in the two other contexts belong to
+  **(2,4), (3,3), (3,4), (4,2), (4,3), (4,4)**. Indeed Lemma 14 becomes
+  `1/k + 1/l + 1/(10−k−l) ≤ 1`, with positive integer k,l and k+l < 10. The displayed list is exhaustive.
+  Types (2,4), (4,2), and (4,4) saturate the inequality and force overlap exactly 1/k toward a context containing
+  k neighbours, after positive-state rephasing. Thus an edge between two saturated vertices cannot have endpoint
+  cross-degrees 2 and 4: the two forced overlap values would disagree.
+* All events cannot have type (4,4), even with complex or unequal overlaps. Here the inequality is equality.
+  For the two orthogonal neighbourhood projectors P,Q and R = I−P−Q, Cauchy–Schwarz equality forces
+  `Pg_i = (√10/4)Pψ`, `Qg_i = (√10/4)Qψ`, `Rg_i = −(√10/2)Rψ`. It follows that
+  `Fg_i = (4/3)g_i + (√10/6)ψ` for every event, hence
+
+      F = (4/3)I + (5/3)|ψ⟩⟨ψ|.
+
+  Its trace 30 would require dimension 85/4, impossible.
+* **No regular unweighted Hoffman construction exists on 30 events.** Such a construction has r neighbours per other
+  context and Gram matrix `I+A/r`, with A the 0/1 adjacency matrix. The first item leaves r = 3 or 4; the second
+  excludes r = 4. For r = 3, suppose A is 6-regular, triangle-free and `I+A/3 ⪰ 0`. Then
+
+      P = (A+3I)(2A−3I)² = 4A³−27A+27I ⪰ 0.
+
+  Removing its uniform-eigenvector contribution gives `P−(729/30)J ⪰ 0` with diagonal 27/10. Thus
+  `108/5 ≤ P_ij ≤ 27` off the diagonal. Integrality forces `(A³)_ij = 13` on edges and 6 on nonedges:
+
+      A³ = 7A−6I+6J,    (A⁴)_ii = 78.
+
+  For a fixed vertex, its 23 nonneighbours therefore have integer common-neighbour counts μ_j with
+  `Σ μ_j = 30` and `Σ μ_j² = 78−36 = 42`. But `(μ−1)(μ−2) ≥ 0` for every integer μ, so
+  `Σ μ_j² ≥ 3·30−2·23 = 44`, a contradiction. This argument does not exclude graphs that need unequal edge weights.
+
+**A further necessary support condition in dimension 19.** The bipartite overlap support between each pair of
+contexts must be connected. For each connected component (X,Y), completeness of ψ in both context spans gives
+`Σ_{i∈X} √c_i g_i = Σ_{j∈Y} √c_j g_j ≠ 0`. Different components give orthogonal common vectors. But in the remaining
+generic case, `S_k ∩ S_l = span ψ`, so there can be only one component.
+
+**Scope and reproduction.** These exclusions leave the global bounds **n_min ∈ [30,33] and d_min ∈ [19,20]**
+unchanged. A dimension-19 realization must have only nontrivial principal angles, at least one non-isoclinic pair,
+connected pair supports, and probabilities strictly below 1/9. A 30-event construction in any dimension must go
+beyond the regular unweighted Hoffman ansatz. Exact algebra checks:
+
+```sh
+python search/tail_obstruction.py
+python search/construction30_isoclinic.py
+python search/event30_hoffman.py
+```
+
+**Targeted irregular search (bounded, not exhaustive).** `search/event30_uniform_search.py` combines SAT with an
+SDP fixing probabilities to 1/10 while allowing unequal real overlaps. It enforces the six degree pairs above,
+triangle-freeness, independence number 10, and connected pair supports. The last restriction targets dimension 19
+and is an additional construction choice when seeking arbitrary rank. The H36 positive control passes.
+A 165-second run examined 1115 SAT models and scored 463 graphs; its best numerical PSD margin was −0.282968.
+No realization was found. The best saved graph is also excluded without the uniform-probability restriction by the
+exact dual bound `θ ≤ 13761/5000 = 2.7522`. These are results about a bounded run and one saved graph, not a proof
+that uniform or irregular (10,10,10) examples do not exist.
+
+```sh
+python search/event30_uniform_search.py --verify --output search/event30_uniform_results.json
+```
+
 ---
 
 ## 3. Four-context Kochen–Specker sets
 
-**Update on the bounds.** Sections 2–2.1 now give n ≥ 30 and d ≥ 19 for three-context GHZ graphs (Corollaries 6, 22).
+**Update on the bounds.** Sections 2–2.1 now give n ≥ 30 and d ≥ 19 for three-context GHZ graphs (Corollaries 6, 30).
 In dimension 19 the positive support must have exactly 30 events in contexts (10,10,10) (Theorem 31). Some
 subsections below were written earlier and still say "≥ 28 rays" or "d ≥ 17" for the K4-free route (Route A). The
 improved values ≥ 30 and d ≥ 19 apply there. The condition "d ≤ 16" (then every ray lies in a K4) becomes d ≤ 18.
@@ -1923,11 +2121,21 @@ including Route B, remains open.
 * `search/bounds30.py`, `search/bounds30.log`: the exact spectral table of Corollary 6 (largest n for each d).
 * `search/affine_ghz.py`, `search/affine_ghz.log`: §1.8–1.9 (the H(q, r) family, PSD criterion, dimensions;
   qudit phase-space dictionary for q = 3, 5, 7).
+* `search/construction30_configurations.py`, `search/construction30_configurations_certificates.json`: §1.10,
+  exhaustive linear 10₃ classification and rational dual certificates excluding all ten identical-line-system graphs.
+* `search/construction30_mixed.py`, `search/construction30_mixed_results.json`: bounded construction search over
+  independently labelled line systems, with rational dual certificates for each run's best graph.
 * `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
   of the remark on H36 and H37).
 * `search/projection_bound.py`: symbolic checks for Lemma 29, Corollary 30 and Theorem 31 (d ≥ 19).
 * `search/projection_d19.py`: §2.1–2.2 numerical checks: H33's equality structure, the two dimension-19 shapes of
   Lemma 33, and (`--adversarial`) an adversarial test of Lemma 29.
+* `search/tail_obstruction.py`, `search/construction30_isoclinic.py`: exact algebra for Theorems 35–36, excluding
+  the rotated-tail case and all pairwise-isoclinic reduced context triples.
+* `search/event30_hoffman.py`: Proposition 37, uniform-probability degree constraints and the regular unweighted
+  Hoffman obstruction in all dimensions.
+* `search/event30_uniform_search.py`, `search/event30_uniform_results.json`: bounded SAT/SDP construction search
+  with uniform probabilities, irregular supports and free overlap weights; exact check of its best saved graph.
 * `search/gap_search.py`, `search/gap_search_results.json`: bounded searches of the four missing event-size
   partitions and exact dual checks of the best saved graphs.
 * `ks/skeleton_certificate.py`, `ks/skeleton_d6_certificate.json`, `ks/shrikhande_blowup_certificate.json`:
