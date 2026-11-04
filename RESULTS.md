@@ -915,6 +915,13 @@ Consequences:
   With the connectivity condition above, each pair support is connected and has a perfect matching.
   Moreover, for every event x, N_l(x) × N_m(x) is a zero block of the nonsingular (l, m) overlap matrix, so
   |N_l(x)| + |N_m(x)| ≤ 10.
+* *One isoclinic pair is already restrictive.* Suppose a single pair (B, C) has all nine cosines equal to t. Its
+  overlap matrix X then satisfies XX† = t²I + (1 − t²)pp†.
+  * For b ≠ b′, Σ_c X_bc X̄_b′c = (1 − t²)√(c_bc_b′) > 0. So every two B-events share a C-neighbour, and likewise
+    with B and C exchanged (the disjoint-support graph of Theorem 35 is empty).
+  * Counting pairs gives Σ_c C(k_c, 2) ≥ 45, so the pair has at least 36 edges (average degree ≥ 3.6). Most of its
+    neighbourhoods are therefore heavy (weight > 1/3).
+  * Theorem 36 needs all three pairs isoclinic; this constraint holds pair by pair.
 * *Transfer form of triangle-freeness.* Take the pair (A, B) and principal frames, with Y − pp† = R_A†DR_B and D
   the diagonal matrix of cosines. The compression through C is Z = Y_AC Y_CB. Then
   Z = pp† + Φ̃Y with Φ̃ = R_A† M D⁻¹ R_A, where M is the matrix of A_C between the principal frames.
