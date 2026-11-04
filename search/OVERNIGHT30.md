@@ -35,7 +35,8 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup, and Proposition 39 now gives the event-contraction obstruction.
+at campaign setup. Proposition 39 gives the event-contraction obstruction;
+Corollary 40 excludes the mixed C5 orbit family by exact orbit counting.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -45,6 +46,10 @@ Already excluded and not worth repeating as standalone searches:
 - Regular unweighted Hoffman constructions on thirty events (Proposition 37).
 - Identical copies of any linear 10_3 configuration (Theorem 38, exhaustive).
 - Regular tri-Cayley families over groups of order at most twelve (earlier work).
+- `c5_mixed`, with orbit patterns `(5,5)`, `(5,1,1,1,1,1)`, `(5,1,1,1,1,1)`
+  (Corollary 40). Five fixed vertices cannot have distinct neighborhoods that
+  are unions of only two orbits. SAT independently found the new constraints
+  unsatisfiable, but the exclusion rests on this counting proof.
 
 Search directions, allowing nonuniform event probabilities and unequal overlap
 weights unless a run explicitly records a narrower ansatz:
@@ -125,6 +130,11 @@ Hourly scheduled continuations are research work, not merely status reports:
    and Hall-deficiency cuts. Such dimension-specific cuts must not restrict the
    general event-number search. Initial best supports already had 95–122 edges;
    simply raising a minimum edge count did not reliably improve theta.
+   The intersection helper has now generated a C2 seed with theta about 2.87972;
+   the SAT worker loads it and mixes current-best neighborhood exploration with
+   unrestricted models. On the next supervisor configuration change, skip the
+   now-excluded `c5_mixed` family in selection while preserving the family-to-seed
+   numbering and the other families' resume chains.
 4. Keep original examples and exact witnesses. Store pools compactly, archive
    finished chunks when needed, and distinguish labelled graphs from proven
    nonisomorphic classes. A graph6 string is not a canonical isomorphism label.

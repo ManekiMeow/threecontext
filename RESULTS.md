@@ -340,6 +340,15 @@ nonempty. Each invariant block is a matching or K₂,₂. A K₂,₂ block, toge
 would contain a triangle. All three blocks are therefore matchings; their union is a six-cycle or two triangles,
 and triangle-freeness leaves only the six-cycle. ∎
 
+**Corollary 40 (orbit-counting obstruction).** Let K be a group of automorphisms preserving each context of a
+thirty-event GHZ graph. If K has r orbits on context A, then it fixes at most 2ʳ vertices in any other context B.
+In particular, no such graph admits a C₅ action with orbit decompositions **(5,5), (5,1,1,1,1,1),
+(5,1,1,1,1,1)** (`c5_mixed`), in any dimension.
+
+*Proof:* the A-neighborhood of a K-fixed vertex is a union of K-orbits. There are at most 2ʳ unions, and
+Proposition 39 makes these neighborhoods distinct for distinct B-vertices. The stated C₅ action would give
+five fixed B-vertices but only 2² = 4 possible neighborhoods. ∎
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
