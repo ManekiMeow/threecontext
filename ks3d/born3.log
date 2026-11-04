@@ -1,0 +1,19 @@
+| graph6 | degree-3 Born propagation |
+|---|---|
+| `I?qa``eeO`* | refuted: forced orthogonal: [(0, 6), (1, 7), (2, 4), (3, 5)]; 4-cycle (0, 1, 4, 6) after adding forced edges |
+| `ICOedPKL?`* | passes:  |
+| `` J?GX?dH`f_? `` | passes:  |
+| `` JsOH?`JH_i_ ``* | refuted: rays 0,4 forced equal |
+| `` J@`ICC[Gv_? ``* | refuted: forced orthogonal: [(0, 1)]; 4-cycle (0, 5, 1, 4) after adding forced edges |
+| `` J`hSA?hD_F_ ``* | passes:  |
+| `JRPCSGoAgJ_`* | refuted: forced orthogonal: [(0, 1)]; 4-cycle (0, 3, 1, 2) after adding forced edges |
+| `K_GTAQOP@KbK` | passes:  |
+| `K@QCAGdA_c~?`* | passes:  |
+| `` K_GP`GWBACoK `` | passes:  |
+| `KAICH@@DOT^?`* | passes:  |
+| `` Kko_GC`C?b`q ``* | refuted: rays 2,10 forced equal |
+| `` K`?KA@se_YCX ``* | refuted: rays 0,11 forced equal |
+| `Ks?I@?XDaTCi`* | passes:  |
+| `Kt?G?DKOoqCo` | passes:  |
+| `KqCaC?[I_J?Z`* | refuted: forced orthogonal: [(0, 8), (1, 10)]; 4-cycle (0, 3, 1, 8) after adding forced edges |
+| `` K`?LAQOP@KbK ``* | refuted: forced orthogonal: [(10, 11)]; 4-cycle (2, 11, 3, 10) after adding forced edges |

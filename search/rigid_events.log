@@ -1,0 +1,14 @@
+ r | max W (exact LP) | |B| >= 12 - 3W | MILP minimum of |B| (status 0 = optimal)
+ 1 |                1 |      9 ->  9   | 9 (status 0)
+ 2 |            11/12 |   37/4 -> 10   | 11 (status 0)
+ 3 |            11/12 |   37/4 -> 10   | 12 (status 0)
+ 4 |              5/6 |   19/2 -> 10   | 12 (status 0)
+ 5 |              1/2 |   21/2 -> 11   | 12 (status 0)
+ 6 |              1/4 |   45/4 -> 12   | 12 (status 0)
+ 7 |             1/12 |   47/4 -> 12   | 12 (status 0)
+ 8 |                0 |     12 -> 12   | 12 (status 0)
+ 9 |                0 |     12 -> 12   | 12 (status 0)
+H33 (r = 3): classes (rigid neighbours, number of B-lines) over all point triples: {(((0, 3), (1, 2), (1, 2), (1, 2), (2, 1), (2, 1), (2, 1)), 12), (((0, 2), (1, 3), (1, 3), (1, 3), (3, 1)), 12)}
+exact identity for X2 on non-rigid realizations:
+   H36: max |X2 - [(1/4)I + (3/4)vv* + (R+J)/2]| = 3.4e-16
+   H37: max |X2 - [(1/4)I + (3/4)vv* + (R+J)/2]| = 3.3e-16

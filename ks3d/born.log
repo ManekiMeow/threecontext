@@ -1,0 +1,19 @@
+| graph6 | n | edges | triangles | Hoffman | inertia | p=2 | theta(Gc) | Born slack | Born propagation |
+|---|---|---|---|---|---|---|---|---|---|
+| `I?qa``eeO`* | 10 | 16 | 4 | 2.618 | 2.250 | 2.365 | 3.000 | 0.750 | refuted: forced orthogonal: [(0, 6), (1, 7), (2, 4), (3, 5)]; 4-cycle (0, 1, 4, 6) after adding forced edges |
+| `ICOedPKL?`* | 10 | 15 | 3 | 2.500 | 2.500 | 2.319 | 3.000 | 0.750 | passes:  |
+| `` J?GX?dH`f_? `` | 11 | 16 | 0 | 2.358 | 2.200 | 2.097 | 2.421 | 0.925 | passes:  |
+| `` JsOH?`JH_i_ ``* | 11 | 18 | 4 | 2.517 | 2.200 | 2.306 | 3.000 | 0.500 | refuted: forced orthogonal: [(0, 5), (2, 4)]; 4-cycle (0, 4, 1, 2) after adding forced edges |
+| `` J@`ICC[Gv_? ``* | 11 | 17 | 3 | 2.498 | 2.200 | 2.227 | 3.000 | 0.750 | passes:  |
+| `` J`hSA?hD_F_ ``* | 11 | 18 | 4 | 2.493 | 2.200 | 2.297 | 3.000 | 0.634 | passes:  |
+| `JRPCSGoAgJ_`* | 11 | 18 | 4 | 2.460 | 2.200 | 2.302 | 3.000 | 0.500 | passes:  |
+| `K_GTAQOP@KbK` | 12 | 19 | 4 | 2.391 | 2.400 | 2.338 | 3.000 | 0.750 | passes:  |
+| `K@QCAGdA_c~?`* | 12 | 19 | 4 | 2.535 | 2.200 | 2.283 | 3.000 | 0.656 | passes:  |
+| `` K_GP`GWBACoK `` | 12 | 17 | 0 | 2.294 | 2.000 | 2.062 | 2.396 | 0.926 | passes:  |
+| `KAICH@@DOT^?`* | 12 | 19 | 3 | 2.472 | 2.000 | 2.185 | 3.000 | 0.750 | passes:  |
+| `` Kko_GC`C?b`q ``* | 12 | 19 | 4 | 2.461 | 2.000 | 2.303 | 3.000 | 0.750 | refuted: forced orthogonal: [(5, 10)]; 4-cycle (2, 10, 5, 8) after adding forced edges |
+| `` K`?KA@se_YCX ``* | 12 | 20 | 4 | 2.503 | 2.200 | 2.263 | 3.000 | 0.750 | refuted: forced orthogonal: [(0, 10), (2, 4)]; 4-cycle (0, 4, 9, 10) after adding forced edges |
+| `Ks?I@?XDaTCi`* | 12 | 20 | 4 | 2.626 | 2.000 | 2.232 | 3.000 | 0.692 | passes:  |
+| `Kt?G?DKOoqCo` | 12 | 18 | 3 | 2.303 | 2.400 | 2.307 | 3.000 | 0.750 | passes:  |
+| `KqCaC?[I_J?Z`* | 12 | 20 | 4 | 2.494 | 2.000 | 2.234 | 3.000 | 0.702 | passes:  |
+| `` K`?LAQOP@KbK ``* | 12 | 19 | 4 | 2.515 | 2.000 | 2.281 | 3.000 | 0.750 | passes:  |

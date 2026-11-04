@@ -1,0 +1,9 @@
+order 4: 0 graphs; {'embeddable': 0, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 5: 2 graphs; {'embeddable': 2, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 6: 3 graphs; {'embeddable': 3, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 7: 10 graphs; {'embeddable': 10, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 8: 28 graphs; {'embeddable': 28, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 9: 112 graphs; {'embeddable': 112, 'contains': 0, 'unembeddable': 0, 'unknown': 0}; minimal unembeddable: 0
+order 10: 533 graphs; {'embeddable': 531, 'contains': 0, 'unembeddable': 1, 'unknown': 1}; minimal unembeddable: 2
+   MUG I?qa``eeO  (Z3 unsat)
+   MUG ICOedPKL?  (Z3 timeout, see the hand proof in RESULTS.md)

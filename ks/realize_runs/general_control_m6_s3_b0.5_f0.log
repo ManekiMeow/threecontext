@@ -1,0 +1,6 @@
+seed 3 restart 0: objective 1.250e+00 after 648 iterations (4 s)
+seed 3 restart 1: objective 2.248e+00 after 813 iterations (5 s)
+seed 3 restart 2: objective 1.595e-15 after 359 iterations (2 s)
+done: best residual 3.994e-08
+check: ||G^2 - 4G|| = 1.11e-08, forbidden overlaps 7.03e-09
+*** solution saved ***

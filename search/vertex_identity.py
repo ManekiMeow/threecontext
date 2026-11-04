@@ -30,21 +30,22 @@ def check(name, V, E, Y, c):
     print(f"{name}: dim {d}, context sums {ctx}, max c_i = {p.max():.4f} (<= 1/9 = 0.1111), "
           f"max |(i) lhs - rhs| = {abs(lhs - rhs).max():.1e}, max c(1/a+1/b+1/r) = {worst:.4f} (<= 1)")
 
-from fractions import Fraction as Fr
-S36 = (((0, 0), (0, 3), (0, 4), (1, 4)), ((0, 0), (0, 3), (0, 4), (1, 4)), ((0, 1), (1, 0), (1, 1), (1, 3)))
-V, E = tricayley_z2z6(S36); check("H36", V, E, {e: Fr(1, 48) for e in E}, {v: Fr(1, 12) for v in V})
-V, E = tricayley(13, ((0, 1, 3, 9), (0, 1, 10), (1, 6, 8))); w = [Fr(1, 4), Fr(1, 3), Fr(1, 3)]
-check("H39", V, E, {(u, v): w[u[0]] * Fr(1, 13) for u, v in E}, {v: Fr(1, 13) for v in V})
-dj = json.load(open("shr_q13_1_0139_014_1257_cert.json"))
-V, E = tricayley(13, tuple(tuple(s) for s in dj["S"]), removed={(0, 5), (2, 11)})
-Y = {}
-for a, b, y in dj["edges"]:
-    a, b = tuple(a), tuple(b); Y[(a, b) if (a, b) in E else (b, a)] = Fr(y)
-check("H37", V, E, Y, {tuple(v): Fr(x) for v, x in zip(dj["nodes"], dj["c"])})
-import networkx as nx, itertools
-H = nx.read_graph6("h33.g6"); lab = lambda i: (0 if i < 9 else 1 if i < 21 else 2, i)
-V = [lab(i) for i in range(33)]; E = {(lab(u), lab(v)) for u, v in H.edges()}
-cv = {v: Fr(1, 9) if v[0] == 0 else Fr(1, 12) for v in V}
-# Y_uv = sqrt(c_u c_v) <g_u|g_v>: incidences sqrt(1/108)*sqrt(1/12)... use floats via the Gram matrix directly
-Yf = {(u, v): (np.sqrt(float(cv[u] * cv[v])) * (1 / np.sqrt(12) if 0 in (u[0], v[0]) else 0.5)) for u, v in E}
-check("H33", V, E, Yf, cv)
+if __name__ == "__main__":
+    from fractions import Fraction as Fr
+    S36 = (((0, 0), (0, 3), (0, 4), (1, 4)), ((0, 0), (0, 3), (0, 4), (1, 4)), ((0, 1), (1, 0), (1, 1), (1, 3)))
+    V, E = tricayley_z2z6(S36); check("H36", V, E, {e: Fr(1, 48) for e in E}, {v: Fr(1, 12) for v in V})
+    V, E = tricayley(13, ((0, 1, 3, 9), (0, 1, 10), (1, 6, 8))); w = [Fr(1, 4), Fr(1, 3), Fr(1, 3)]
+    check("H39", V, E, {(u, v): w[u[0]] * Fr(1, 13) for u, v in E}, {v: Fr(1, 13) for v in V})
+    dj = json.load(open("shr_q13_1_0139_014_1257_cert.json"))
+    V, E = tricayley(13, tuple(tuple(s) for s in dj["S"]), removed={(0, 5), (2, 11)})
+    Y = {}
+    for a, b, y in dj["edges"]:
+        a, b = tuple(a), tuple(b); Y[(a, b) if (a, b) in E else (b, a)] = Fr(y)
+    check("H37", V, E, Y, {tuple(v): Fr(x) for v, x in zip(dj["nodes"], dj["c"])})
+    import networkx as nx, itertools
+    H = nx.read_graph6("h33.g6"); lab = lambda i: (0 if i < 9 else 1 if i < 21 else 2, i)
+    V = [lab(i) for i in range(33)]; E = {(lab(u), lab(v)) for u, v in H.edges()}
+    cv = {v: Fr(1, 9) if v[0] == 0 else Fr(1, 12) for v in V}
+    # Y_uv = sqrt(c_u c_v) <g_u|g_v>: incidences sqrt(1/108)*sqrt(1/12)... use floats via the Gram matrix directly
+    Yf = {(u, v): (np.sqrt(float(cv[u] * cv[v])) * (1 / np.sqrt(12) if 0 in (u[0], v[0]) else 0.5)) for u, v in E}
+    check("H33", V, E, Yf, cv)

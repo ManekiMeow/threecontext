@@ -1,0 +1,58 @@
+
+## Combinatorial parameters of G (orthogonality graph)
+
+| set | n | edges | bases m | degree | KS | 3-colourable | alpha | alpha(G,w_T) | chi_f | clique cover = chi(Gc) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| KS 31 (height 2) | 31 | 71 | 17 | 3–8 | yes | no | 11 | 16 | 3.2000 | 13 |
+| KS 31 (height 3) | 31 | 71 | 17 | 3–8 | yes | no | 11 | 16 | 3.2000 | 13 |
+| KS 33 (Peres) | 33 | 72 | 16 | 4–8 | yes | no | 12 | 15 | 3.2500 | 12 |
+| Yu-Oh 13 (SI-C) | 13 | 24 | 4 | 3–4 | no | no | 5 | 4 | 3.1818 | 6 |
+| Yu-Oh closure 25 | 25 | 48 | 16 | 2–6 | no | no | 13 | 16 | 3.1818 | 13 |
+| KS 31 minus ray 0 | 30 | 65 | 14 | 3–7 | no | yes | 11 | 14 | 3.0000 | 13 |
+| KS 31 minus ray 10 | 30 | 67 | 16 | 2–8 | no | no | 11 | 16 | 3.2000 | 12 |
+| KS 31 minus ray 20 | 30 | 68 | 16 | 3–8 | no | no | 11 | 16 | 3.2000 | 12 |
+| KS 31 minus ray 30 | 30 | 67 | 16 | 2–8 | no | no | 11 | 16 | 3.2000 | 12 |
+
+## Spectral bounds on chi(G) (all must be <= xi_f(G) = 3 for rays in C^3)
+
+| set | lambda_1 | lambda_n | n+ / n0 / n- | Hoffman | inertia (p=0) | p=2 energy | theta(Gc) |
+|---|---|---|---|---|---|---|---|
+| KS 31 (height 2) | 4.9443 | -2.6458 | 15 / 0 / 16 | 2.8688 | 2.0667 | 2.2420 | 3.0000 |
+| KS 31 (height 3) | 4.9443 | -2.6458 | 15 / 0 / 16 | 2.8688 | 2.0667 | 2.2420 | 3.0000 |
+| KS 33 (Peres) | 4.7644 | -2.6458 | 18 / 0 / 15 | 2.8008 | 2.2000 | 2.1851 | 3.0000 |
+| Yu-Oh 13 (SI-C) | 3.7466 | -2.2015 | 7 / 0 / 6 | 2.7018 | 2.1667 | 2.1010 | 3.0000 |
+| Yu-Oh closure 25 | 4.5361 | -2.4142 | 10 / 3 / 12 | 2.8789 | 2.2000 | 2.4124 | 3.0000 |
+| KS 31 minus ray 0 | 4.6182 | -2.6458 | 14 / 0 / 16 | 2.7455 | 2.1429 | 2.2399 | 3.0000 |
+| KS 31 minus ray 10 | 4.8736 | -2.6458 | 14 / 0 / 16 | 2.8420 | 2.1429 | 2.2419 | 3.0000 |
+| KS 31 minus ray 20 | 4.8848 | -2.6458 | 15 / 0 / 15 | 2.8463 | 2.0000 | 2.2375 | 3.0000 |
+| KS 31 minus ray 30 | 4.8736 | -2.6458 | 14 / 0 / 16 | 2.8420 | 2.1429 | 2.2419 | 3.0000 |
+
+## The complement Gc (non-orthogonality graph) and the theta numbers of G
+
+| set | Gc: lambda_1 | Gc: lambda_n | Gc Hoffman (<= cover) | theta(G) | n/3 | theta(G,w_T) | theta'(G,w_T) | m | frame operator spectrum |
+|---|---|---|---|---|---|---|---|---|---|
+| KS 31 (height 2) | 25.4740 | -3.6458 | 7.9873 | 11.7129 | 10.333 | 17.0000 | 17.0000 | 17 | 9.667 9.667 11.667 |
+| KS 31 (height 3) | 25.4740 | -3.6458 | 7.9873 | 11.7129 | 10.333 | 17.0000 | 17.0000 | 17 | 9.667 9.667 11.667 |
+| KS 33 (Peres) | 27.6810 | -4.1326 | 7.6981 | 12.0000 | 11.000 | 16.0000 | 16.0000 | 16 | 11.000 11.000 11.000 |
+| Yu-Oh 13 (SI-C) | 8.3343 | -2.7321 | 4.0506 | 5.0000 | 4.333 | 4.0000 | 4.0000 | 4 | 4.333 4.333 4.333 |
+| Yu-Oh closure 25 | 20.3281 | -3.5616 | 6.7077 | 13.0000 | 8.333 | 16.0000 | 16.0000 | 16 | 8.333 8.333 8.333 |
+| KS 31 minus ray 0 | 24.7058 | -3.6458 | 7.7766 | 11.6739 | 10.000 | 14.0000 | 14.0000 | 14 | 9.667 9.667 10.667 |
+| KS 31 minus ray 10 | 24.5998 | -3.6458 | 7.7475 | 11.6288 | 10.000 | 16.0000 | 16.0000 | 16 | 8.782 9.667 11.551 |
+| KS 31 minus ray 20 | 24.5198 | -3.6458 | 7.7256 | 11.3301 | 10.000 | 16.0000 | 16.0000 | 16 | 9.360 9.667 10.973 |
+| KS 31 minus ray 30 | 24.5998 | -3.6458 | 7.7475 | 11.6288 | 10.000 | 16.0000 | 16.0000 | 16 | 8.782 9.667 11.551 |
+
+## Barrier checks
+
+KS 31 (height 2)         theta(G,w_T) - m = +1.33e-07   theta'(G,w_T) - m = +1.60e-07   alpha(G,w_T) = 16 (m = 17)   theta(Gc) - 3 = +4.1e-08
+KS 31 (height 3)         theta(G,w_T) - m = +1.33e-07   theta'(G,w_T) - m = +1.60e-07   alpha(G,w_T) = 16 (m = 17)   theta(Gc) - 3 = +4.1e-08
+KS 33 (Peres)            theta(G,w_T) - m = +2.52e-08   theta'(G,w_T) - m = +1.32e-07   alpha(G,w_T) = 15 (m = 16)   theta(Gc) - 3 = +6.9e-08
+Yu-Oh 13 (SI-C)          theta(G,w_T) - m = +3.84e-09   theta'(G,w_T) - m = +4.64e-08   alpha(G,w_T) = 4 (m = 4)   theta(Gc) - 3 = +1.8e-08
+Yu-Oh closure 25         theta(G,w_T) - m = +9.93e-08   theta'(G,w_T) - m = +2.88e-07   alpha(G,w_T) = 16 (m = 16)   theta(Gc) - 3 = +1.4e-08
+KS 31 minus ray 0        theta(G,w_T) - m = +7.95e-08   theta'(G,w_T) - m = +1.94e-07   alpha(G,w_T) = 14 (m = 14)   theta(Gc) - 3 = +7.2e-08
+KS 31 minus ray 10       theta(G,w_T) - m = +1.63e-07   theta'(G,w_T) - m = +1.41e-07   alpha(G,w_T) = 16 (m = 16)   theta(Gc) - 3 = +4.8e-08
+KS 31 minus ray 20       theta(G,w_T) - m = +7.90e-08   theta'(G,w_T) - m = +2.50e-07   alpha(G,w_T) = 16 (m = 16)   theta(Gc) - 3 = +2.5e-08
+KS 31 minus ray 30       theta(G,w_T) - m = +1.63e-07   theta'(G,w_T) - m = +1.41e-07   alpha(G,w_T) = 16 (m = 16)   theta(Gc) - 3 = +4.8e-08
+
+Random Hermitian edge weightings (2000 each): best bounds on chi(G)
+  KS 31 (height 2): hoffman 2.5758, energy0 2.2143, energy2 2.6502
+  KS 33 (Peres): hoffman 2.3558, energy0 2.2000, energy2 2.2507

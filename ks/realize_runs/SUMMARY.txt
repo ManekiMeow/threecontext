@@ -1,0 +1,16 @@
+flat_cayley4_candidate_p137_s1_b0.5_f0.log                   starts   30  best 63.95  median 64.1  worst 64.26
+flat_cayley4_candidate_p157_s1_b0.5_f0.log                   starts   10  best 69.09  median 69.14  worst 69.17
+flat_cayley4_candidate_p193a_s1_b0.5_f0.log                  starts    8  best 76.48  median 76.53  worst 76.64
+flat_cayley4_candidate_p193b_s1_b0.5_f0.log                  starts    8  best 77.06  median 77.13  worst 77.2
+flat_cayley4_candidate_p281_s1_b0.5_f0.log                   starts    3  best 90.33  median 90.36  worst 90.38
+flat_cayley4_candidate_p97_s1_b0.5_f0.log                    starts   30  best 53.39  median 53.46  worst 53.57
+general_cayley4_candidate_e5_p191_s1_b0.5_f0.log             starts   40  best 117.9  median 120  worst 121.1
+general_cayley4_candidate_e5_p211a_s1_b0.5_f0.log            starts   40  best 135.5  median 136.9  worst 138.4
+general_cayley4_candidate_p137_s1_b0.5_f0.log                starts  150  best 81.87  median 84.15  worst 85.29
+general_cayley4_candidate_p157_s1_b0.5_f0.log                starts   40  best 96.92  median 97.81  worst 98.57
+general_cayley4_candidate_p193b_s1_b0.5_f0.log               starts   30  best 119  median 120.1  worst 121.8
+general_cayley4_candidate_p97_s1_b0.5_f0.log                 starts  735  best 58.98  median 60.37  worst 61.45
+flat_control_m6_s1_b0.5_f0.log                               starts    1  best 0  median 0  worst 0
+general_control_m6_s1_b0.5_f0.log                            starts    3  best 1.048  median 2  worst 2.224
+general_control_m6_s2_b0.5_f0.log                            starts   40  best 5.629e-16  median 1.048  worst 3.381
+general_control_m6_s3_b0.5_f0.log                            starts    3  best 1.595e-15  median 1.25  worst 2.248

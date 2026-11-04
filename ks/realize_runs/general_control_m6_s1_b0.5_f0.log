@@ -1,0 +1,4 @@
+seed 1 restart 0: objective 1.048e+00 after 377 iterations (2 s)
+seed 1 restart 1: objective 2.000e+00 after 559 iterations (3 s)
+seed 1 restart 2: objective 2.224e+00 after 395 iterations (2 s)
+done: best residual 1.024e+00

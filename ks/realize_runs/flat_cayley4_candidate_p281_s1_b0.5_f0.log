@@ -1,0 +1,3 @@
+seed 1 restart 0: ||G^2 - 4G|| = 90.379418 after 4000 iterations (2521 s)
+seed 1 restart 1: ||G^2 - 4G|| = 90.358809 after 4000 iterations (2461 s)
+seed 1 restart 2: ||G^2 - 4G|| = 90.325898 after 4000 iterations (2462 s)
