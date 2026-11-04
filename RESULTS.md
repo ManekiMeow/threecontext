@@ -308,6 +308,15 @@ be nonadjacent vertices with identical neighbourhoods. In a primal theta Gram re
 orthogonal vectors by their sum. This preserves positivity, trace, objective and every prescribed zero, producing
 a triangle-free, three-colourable graph on 29 events with theta 3, contrary to Corollary 6.
 
+**Weak-symmetry construction campaign (4–5 Nov, in progress).** The next search allows eight C₂, C₃ and C₅
+actions with several orbits or fixed points, and a separate unrestricted asymmetric population search. Event
+probabilities and overlap weights are free. Exact recoloring witnesses, disconnected supports and false twins
+prune candidates; dimension-19 pair-connectivity and perfect-matching checks are recorded separately. A first
+asymmetric seed with numerical θ ≈ 2.9122785 is already excluded by an explicit proper coloring of sizes
+(9,10,11), and is retained only as a mutation seed. No new realization or global exclusion is claimed.
+See [`search/OVERNIGHT30.md`](search/OVERNIGHT30.md) for the deadline, checkpoint branches and continuation
+procedure, and [`search/overnight30_obstructions.md`](search/overnight30_obstructions.md) for the screening proofs.
+
 ---
 
 ## 2. Lower bounds (exact proofs)
@@ -2144,6 +2153,9 @@ including Route B, remains open.
   independently labelled line systems, with rational dual certificates for each run's best graph.
 * `search/construction30_nonlinear.py`, `search/construction30_nonlinear_results.json`: extension allowing repeated
   point pairs, with degree-preserving switches and exact certificates for the saved graphs.
+* `search/overnight30_symmetry.py`, `search/overnight30_asymmetric.py`: resumable weak-action SAT and asymmetric
+  population searches with unrestricted theta scoring. `search/overnight30_screen.py` verifies exact obstructions;
+  `search/overnight30_supervisor.py` bounds worker lifetimes and publishes experiment checkpoints.
 * `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
   of the remark on H36 and H37).
 * `search/projection_bound.py`: symbolic checks for Lemma 29, Corollary 30 and Theorem 31 (d ≥ 19).
