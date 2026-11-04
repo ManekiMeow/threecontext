@@ -376,6 +376,135 @@ The standard-library checker `python search/event30_orbits.py` verifies the cycl
 moving-block patterns for p = 2,3,5. For p = 5, it rejects 250 of the 1725 triangle-free labeled moving patterns
 by the displacement test. The remaining 1475 patterns are not claimed to extend to GHZ graphs.
 
+**Theorem 42 (large-orbit obstruction).** A thirty-event GHZ graph has no group of automorphisms preserving
+each context whose orbit pattern in every context is `(m,1,...,1)`, for **m = 7, 8 or 9**. The group need not
+be cyclic, and the realization need not inherit its symmetry. Consequently the group of context-preserving
+automorphisms has no element of order 7 or 9, and its order is not divisible by 7.
+
+*Proof:* all event probabilities satisfy `0 < c_i < 1/9` (Corollary 32). The pointwise Cauchy–Schwarz inequality
+gives, for neighborhood probability α in one other context,
+
+    c_i ≤ h(α) := α(1−α)/(1+3α).
+
+Indeed the other two terms have total denominator mass 1−α and reciprocal sum at least `4/(1−α)`.
+The function h increases up to α = 1/3 and decreases thereafter. A fixed vertex sees either all or none of
+each moving orbit; no averaging of a Gram matrix is used.
+
+* **m = 7.** Moving-orbit mass exceeds 2/3, so a fixed vertex touching one has probability below
+  `h(2/3) = 2/27`. The three fixed vertices in each context have total probability greater than 2/9, so at least
+  one is *heavy*, with probability greater than 2/27. Heavy vertices see only fixed vertices and need at least
+  two neighbors in each other fixed triple: a singleton neighborhood has mass below 1/9 and
+  `h(1/9) = 2/27`. Heavy vertices in different contexts cannot be adjacent, since their two-neighbor sets in
+  the third fixed triple intersect. There is therefore exactly one heavy vertex per context; two in one context
+  would leave a heavy vertex elsewhere at most one eligible neighbor. Its two neighborhood masses are each
+  at most 4/27. The pointwise bound is increasing in both masses on this rectangle (the residual is at least
+  19/27), so its probability is at most `1/(27/4+27/4+27/19) = 38/567 < 2/27`, a contradiction.
+* **m = 8.** The fixed pair in each context has mass greater than 1/9, so it contains a heavy vertex of
+  probability greater than 1/18. Touching a moving orbit bounds a fixed probability below
+  `h(7/9) = 7/135 < 1/18`. Each heavy vertex thus sees only fixed vertices, and must see a heavy vertex in each
+  other context: a sole nonheavy neighbor bounds its probability by `h(1/18) = 17/378 < 1/18`. A triangle-free
+  tripartite graph with at most two vertices per part and a neighbor of each other color at every vertex must
+  have two vertices in every part; a singleton part would force a triangle. All six fixed vertices are therefore
+  heavy and have no moving neighbors. The support is disconnected, contrary to the thirty-event lower bound.
+* **m = 9.** A fixed vertex's neighborhood in another context is either its moving orbit or its fixed singleton:
+  it is an invariant nonempty proper subset. Moving-to-moving blocks are nonempty by Proposition 39, so no
+  fixed vertex can touch both other moving orbits. The three fixed vertices consequently induce a triangle-free
+  graph of minimum degree one, hence a path. Write its center as a and endpoints as b,c. Vertex b has
+  neighborhood masses `c_a` and `1−c_c`, so its positive residual mass gives `c_a < c_c`. But c has a singleton
+  neighborhood `{a}`, giving `c_c ≤ h(c_a) < c_a`, a contradiction.
+
+Faithfulness on each context (Proposition 39) forces an order-7 or order-9 element to have the corresponding
+orbit pattern on all three ten-vertex contexts. Cauchy's theorem then excludes a group order divisible by 7. ∎
+
+**Theorem 43 (pair-component bridge constraints).** Let (X,Y) be a component of the support between two
+contexts, and let W consist of third-context vertices with neighbors in both X and Y. In any positive-event
+GHZ realization,
+
+    c(X) = c(Y) ≤ c(W).
+
+Every third-context event must bridge at least one such component. No pair-support component can be a complete
+bipartite graph. On thirty events, necessarily `|W| ≥ max(|X|,|Y|)`.
+
+*Proof:* put `x = Σ_X √c_i g_i`, `y = Σ_Y √c_j g_j`. The equality of the full context sums gives
+`x−y = −(Σ_{A\X} √c_i g_i − Σ_{B\Y} √c_j g_j)`. Pair-component orthogonality makes the two sides orthogonal,
+so x = y = v. Thus `m := ||v||² = c(X) = c(Y) > 0` and `⟨ψ,v⟩ = m`. Every third-context vector outside W
+is orthogonal to v, because it misses X or Y. Projection onto the third context, followed by Cauchy–Schwarz,
+gives `m² ≤ c(W)||Π_C v||² ≤ c(W)m`. This does not assume that v lies in the third context span.
+The component vectors sum to ψ, so a third-context event bridging none would have zero state probability.
+A complete bipartite component has W empty by triangle-freeness, which is impossible. Finally, for thirty
+events, `c(X) ≥ (|X|−1)/9`, whereas a nonempty W of size at most |X|−1 has `c(W) < |W|/9`; the empty case
+is already excluded. Exchange X,Y for the other cardinality bound. ∎
+
+**Theorem 44 (degree probability budget).** For each event let q≤r be its numbers of neighbors in the two
+other contexts. Under the necessary conditions q≥1 and q+r≤10, put `a=(r−1)/9`, `b=(q−1)/9` and
+
+    U(q,r) = 1/9,                                      if a ≤ 1/3;
+             a(1−a)/(1+3a),                            if a > 1/3 and b ≤ (1−a)/2;
+             1/(1/a + 1/b + 1/(1−a−b)),                otherwise.
+
+Every thirty-event GHZ graph satisfies **Σ_{i∈I_k} U(q_i,r_i) > 1** in each context, without any symmetry or
+uniform-probability assumption.
+
+*Proof:* a proper neighborhood of size r has probability greater than (r−1)/9, because its complement has
+10−r events, each below 1/9. Maximize the three-sector harmonic bound over the relaxed closed lower bounds
+α≥a, β≥b. Strict convexity of `1/α+1/β+1/(1−α−β)` gives the three cases above: equal thirds, then
+`(a,(1−a)/2,(1−a)/2)`, then `(a,b,1−a−b)`. In the first case Corollary 32 gives c_i<U. In the other cases an
+active lower bound is strictly exceeded by the actual neighborhood mass, so again c_i<U. Sum over a context. ∎
+
+This rejects the former screened asymmetric seed with numerical θ≈2.8876788: its A-context budget is exactly
+**313/315 < 1**. The current C₅-double leader passes. `search/event30_orbit_degree.py` verifies the exact rational
+bounds; summing over an automorphism orbit also yields necessary orbit-degree restrictions.
+
+**Theorem 45 (regular pair-support restrictions).** In a thirty-event GHZ graph, if the supports A–B and A–C
+are q- and r-regular bipartite graphs, then `(q,r)` is one of **(3,3), (3,4), (4,3)**. When all three pair supports are regular,
+their degree triple is `(3,3,3)` or a permutation of `(3,3,4)`. Probabilities and complex overlaps remain free.
+
+*Proof:* write `F(α,β,ρ)=1/(1/α+1/β+1/ρ)`. It is strictly concave on the positive probability simplex: the
+variational formula `F=min_{s+t+u=1}(αs²+βt²+ρu²)` gives concavity, and equality requires proportional sector
+vectors, hence identical vectors on the simplex. Regularity gives `Σ_A α=q`, `Σ_A β=r` and q+r<10, so Jensen yields
+`1 ≤ 10F(q/10,r/10,1−(q+r)/10)`. Integer enumeration leaves the six pairs of Proposition 37. For (2,4),
+(4,2) and (4,4), equality forces c_a=1/10 and sector masses q/10,r/10,1−(q+r)/10 at every A-event.
+
+It suffices to exclude (2,4) and (4,4). Put E=Π_B, G=Π_C, `ρ=1−(q+r)/10`, `s=1+(q/10)/ρ`,
+`t=1+(r/10)/ρ`, and L=sE+tG. Cauchy–Schwarz equality gives
+`Lg_a = g_a + ψ/(√10·ρ)`, hence L=I on the reduced A-space orthogonal to ψ.
+The projection identity
+
+    s(LE+EL) = L²−tL+s(s+t)E
+
+therefore makes the compression of E to that space the scalar `κ=(1−t)/(s(2−s−t))`: κ=4/9 for (2,4),
+and κ=1/6 for (4,4). Since Eψ=ψ, distinct A-events have `⟨g_a|E|g_a′⟩=(1−κ)/10`. Equality also forces
+`⟨g_a|g_b⟩=(√10/q)√c_b` on every A–B edge. Thus every pair of distinct A-events has common-B probability
+mass `(1−κ)q²/100`, respectively 1/45 or 2/15. They need at least one or two common neighbors, respectively,
+since each c_b<1/9. But the q-regular B-side supplies only `10·binom(q,2)` common-neighbor incidences:
+10<45 in the first case, and 60<90 in the second. Contradiction. ∎
+
+`python search/event30_regular_blocks.py` checks the operator identity using only projection idempotence,
+the exact fractions, the incidence contradictions and the remaining degree triples.
+
+**Proposition 46 (an excluded six-orbit quotient).** No thirty-event GHZ graph has a context-preserving symmetry
+group with two five-vertex orbits per context and the following quotient of neighbor counts, in order
+`A₀,A₁,B₀,B₁,C₀,C₁`, up to permuting contexts and their orbits:
+
+    Q = [0 0 1 3 1 2]
+        [0 0 1 1 3 1]
+        [1 1 0 0 1 3]
+        [3 1 0 0 1 1]
+        [1 3 1 1 0 0]
+        [2 1 3 1 0 0].
+
+*Proof:* average a state-weighted Gram matrix over the group. This preserves positivity, support zeros and
+context-completeness equations, although its rank may increase. Thus any realization would give one with
+per-event orbit probabilities `(x,1/5−x,y,1/5−y,z,1/5−z)`. The A-neighborhood mass at B₀ and C-neighborhood
+mass at B₁ are both 1/5. Since h(1/5)=1/10, both B-orbit probabilities are at most 1/10 and hence equal it.
+Equality requires the other neighborhood masses to be 2/5. These are `3/5−2z` at B₀ and `1/5+2x` at B₁,
+forcing x=y=z=1/10. An A₁–B₁ edge then joins saturated degree types (2,4) and (4,2); Proposition 37 requires
+its overlap to be both 1/2 and 1/4. Contradiction. This excludes all supports with this quotient, independently
+of their cyclic shifts. It does not assert that the original, unsymmetrized probabilities were uniform. ∎
+
+The 95-edge C₅-double numerical leader has this quotient, giving a second exact exclusion independent of its
+rational SDP dual. `python search/event30_c5_quotient.py` checks the quotient arithmetic and the saved leader.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
@@ -383,6 +512,8 @@ scores were skipped at the deadline. The best graph has 97 edges and numerical �
 the contraction and configured coloring screens, and its six moved vertices induce C₆. Its B–C support has five
 components, excluding dimension 19; no θ = 3 realization is claimed. The saved pool is in
 `search/overnight30_intersection_runs/prototype_seed1/`, and the continuing SAT worker uses its best graph as a seed.
+Theorem 43 subsequently excludes this graph in every dimension: its B–C support contains the isolated edges
+`[10]–[21]` and `[11]–[20]`, each a complete bipartite component with no possible third-context bridge.
 
 **22:00 checkpoint review (4 Nov, bounded).** The completed pools contain 69,112 scored records representing
 68,486 distinct labeled supports. Reviewing the top records and family leaders selected 89 labeled graphs;

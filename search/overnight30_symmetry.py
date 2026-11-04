@@ -47,6 +47,8 @@ FAMILIES = {
     "c3_onecycle": ((3, 1, 1, 1, 1, 1, 1, 1),)*3,
 }
 
+STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "degree_mass"}
+
 
 def generator(family):
     permutation = []
@@ -102,6 +104,15 @@ def build(family):
 
     for a, b, c in itertools.product(range(10), range(10, 20), range(20, 30)):
         clauses.append([-edge(a, b), -edge(a, c), -edge(b, c)])
+    # An isolated K1,1 pair component has no third-context bridge: a bridge
+    # would complete a triangle. Its positive common-state piece is impossible.
+    # This strengthens the bridge screen without allocating auxiliary variables.
+    for u, v in pairs:
+        variable = edge(u, v)
+        alternatives = {edge(u, w) for w in range(10*(v//10), 10*(v//10+1)) if w != v}
+        alternatives.update(edge(w, v) for w in range(10*(u//10), 10*(u//10+1)) if w != u)
+        if variable not in alternatives:  # otherwise the orbit clause is tautological
+            clauses.append([-variable]+sorted(alternatives))
     if family == "c2_onepair":
         # Proposition 39: the six moved vertices must induce C6. Each of the
         # three invariant 2x2 blocks is one matching; triangle clauses select
@@ -189,6 +200,32 @@ def dominance_clause(certificate, orbits):
     clause = [i for i, orbit in enumerate(orbits, 1) if not all(edge in edges for edge in orbit)]
     if not clause:
         raise ValueError("empty dual dominance clause")
+    return clause
+
+
+def replay_structural_dominance(cut, orbits):
+    """Reconstruct and verify a compact structural certificate using only stdlib."""
+    from overnight30_screen import verify_certificate
+    compact = cut["witness"]
+    if compact["method"] not in STRUCTURAL_OBSTRUCTIONS:
+        raise ValueError("unsupported global structural dominance method")
+    data = compact["graph6"].encode("ascii")
+    if len(data) != 74 or data[0] != 93 or any(x < 63 or x > 126 for x in data):
+        raise ValueError("expected a headerless 30-vertex graph6 record")
+    edges = []
+    for v in range(1, 30):
+        for u in range(v):
+            bit = v*(v-1)//2+u
+            if (data[1+bit//6]-63) & (1 << (5-bit % 6)):
+                edges.append([u, v])
+    graph = {"n": 30, "parts": [list(range(10*k, 10*k+10)) for k in range(3)],
+             "edges": sorted(edges)}
+    certificate = {"format": "overnight30-certificate-v1", "graph": graph,
+                   "method": compact["method"], "witness": compact["witness"]}
+    verify_certificate(certificate)
+    clause = dominance_clause(graph, orbits)
+    if cut["clause"] != clause:
+        raise ValueError("structural dominance clause does not match its certificate")
     return clause
 
 
@@ -443,6 +480,8 @@ def run(args):
                  "rejected_coloring": 0, "rejected_connectivity": 0, "rejected_twins": 0,
                  "rejected_contraction": 0,
                  "certified_dominance_cuts": 0,
+                 "rejected_pair_bridge": 0, "rejected_degree_mass": 0,
+                 "certified_structural_dominance_cuts": 0,
                  "duplicate_graphs": 0, "solver_errors": 0, "batches": 0,
                  "duplicate_labelled": 0, "duplicate_isomorphic": 0,
                  "numerical_representatives_admitted": 0,
@@ -477,6 +516,7 @@ def run(args):
         seen, buckets = set(), defaultdict(list)
         replayed = 0
         replayed_dominance = 0
+        replayed_structural = 0
         statuses = Counter()
         for source in sources:
             for record in records(source/"models.jsonl"):
@@ -513,11 +553,17 @@ def run(args):
                 elif cut["reason"] == "verified_theta_dual_dominance":
                     solver.add_clause(replay_dominance(source, cut, orbits))
                     replayed_dominance += 1
+                elif cut["reason"] == "verified_structural_dominance":
+                    solver.add_clause(replay_structural_dominance(cut, orbits))
+                    replayed_structural += 1
                 else:
                     assert all(1 <= literal <= num_orbits for literal in cut["clause"])
                     solver.add_clause(cut["clause"])
         state.update(models=replayed, scored=statuses["scored_numerically"],
                      certified_dominance_cuts=replayed_dominance,
+                     certified_structural_dominance_cuts=replayed_structural,
+                     rejected_pair_bridge=statuses["pair_bridge_obstruction"],
+                     rejected_degree_mass=statuses["degree_mass_obstruction"],
                      rejected_coloring=statuses["unbalanced_coloring"],
                      rejected_connectivity=statuses["disconnected"], rejected_twins=statuses["false_twins"],
                      rejected_contraction=statuses["same_context_merge"],
@@ -543,7 +589,7 @@ def run(args):
                          for source in sources if (source/"best.json").exists()]
         # New exact filters may invalidate an older numerical leader. Keep its
         # evidence explicitly, but report only currently surviving best graphs.
-        from overnight30_screen import screen_graph
+        from overnight30_screen import fast_screen, screen_graph
         admitted_bests, excluded_bests, checked_bests = [], [], set()
         for candidate in earlier_bests:
             if candidate["graph6"] in checked_bests:
@@ -653,6 +699,22 @@ def run(args):
                         record["status"] = "same_context_merge"
                         record["contraction_pair"] = list(merge_pair)
                         state["rejected_contraction"] += 1
+                    elif ((structural_screen := fast_screen(record))["status"] == "excluded"
+                          and structural_screen["certificate"]["method"] in STRUCTURAL_OBSTRUCTIONS):
+                        certificate = structural_screen["certificate"]
+                        witness = {"graph6": g6, "method": certificate["method"],
+                                   "witness": certificate["witness"]}
+                        cut = {"clause": dominance_clause(certificate["graph"], orbits),
+                               "reason": "verified_structural_dominance", "witness": witness}
+                        replay_structural_dominance(cut, orbits)
+                        learn(cut["clause"], cut["reason"], witness)
+                        if certificate["method"] == "degree_mass":
+                            record.update(status="degree_mass_obstruction", structural_method="degree_mass")
+                            state["rejected_degree_mass"] += 1
+                        else:
+                            record.update(status="pair_bridge_obstruction", structural_method=certificate["method"])
+                            state["rejected_pair_bridge"] += 1
+                        state["certified_structural_dominance_cuts"] += 1
                     else:
                         colors = bad_coloring(graph) if not args.no_color_prune else None
                         if colors is not None:

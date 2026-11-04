@@ -31,7 +31,21 @@
         "extension": 2,
         "order": "source_guided"
       },
-      "scope": "numerical construction seed; globally survives contraction/color screens; dimension19 pair-disconnected"
+      "scope": "Exactly excluded by bridge_shortage; retained only as a mutation guide.",
+      "exact_obstruction": {
+        "method": "bridge_shortage",
+        "witness": {
+          "pair": [
+            1,
+            2
+          ],
+          "component": [
+            10,
+            21
+          ],
+          "bridges": []
+        }
+      }
     }
   ]
 }

@@ -32,14 +32,96 @@ with a prescribed proper partition into three contexts of ten vertices.
 * **Unequal sides in a pair-support component.** Swapping the two colors on
   that component supplies an explicit unbalanced proper coloring. This is
   the cheap special case of the preceding SAT-discovered obstruction.
+* **Too few third-context bridges.** A balanced pair component with `r`
+  vertices on each side needs at least `r` third-context vertices adjacent
+  to both sides. A complete bipartite component has no such bridges by
+  triangle-freeness and is therefore excluded, including a single isolated
+  edge in a pair support.
+* **An event bridging no pair component.** Every event in the third context
+  must touch both sides of at least one component of the other two contexts.
+  Otherwise its state probability is zero, contradicting event minimality.
+* **Insufficient probability mass from cross-degrees.** The exact strict
+  probability bounds `U(q,r)` described below must sum to more than one in
+  each context. A sum of one or less is an exact global exclusion, with no
+  symmetry or uniform-probability assumption.
 * **Rational theta dual below three.** A saved rational symmetric matrix
   `D` has diagonal entries one and entries one on support edges. The verifier
   checks `t I - D` positive semidefinite over the rationals with `t < 3`.
   Thus `theta(complement(H)) <= t < 3` independently of all discovery solvers.
 
 These obstructions remain valid when an allowed edge becomes zero in the
-realization. A generic degree restriction does not have that property;
-therefore this screen does not exclude a graph solely from its degree.
+realization. The degree-mass argument uses the orthogonality of the two
+entire allowed neighborhoods, without requiring every allowed overlap to
+be nonzero.
+
+## Strict probability bounds from the two cross-degrees
+
+For cross-degrees `q,r`, let `a,b` be `(q-1)/9,(r-1)/9`, ordered so that
+`a >= b`. Positive probabilities, context sums one and `c_i < 1/9` imply
+that the two neighborhood masses strictly exceed their respective lower
+bounds. The relevant degree pairs have `1 <= q,r <= 9`; a missing neighbor
+context contradicts completeness, and a complete neighbor context leaves
+no positive third sector.
+
+Lemma 14 gives `c_i <= 1/(1/alpha + 1/beta + 1/rho)`, with
+`rho = 1-alpha-beta > 0`. Minimizing the strictly convex reciprocal sum
+over the relaxed closed bounds yields the exact upper bound
+
+* `U = 0` if `a+b >= 1`, indicating an impossible event;
+* `U = 1/9` if `a <= 1/3`;
+* `U = a(1-a)/(1+3a)` if `a > 1/3` and `b <= (1-a)/2`;
+* `U = 1/(1/a + 1/b + 1/(1-a-b))` otherwise.
+
+In the last two cases the unique relaxed optimizer has the larger
+neighborhood mass exactly `a`, while the actual mass is strictly larger.
+Thus `c_i < U`; in the `1/9` case Corollary 32 supplies the same strictness.
+Consequently each context necessarily has `sum_i U(q_i,r_i) > 1`.
+
+The `degree_mass` certificate stores the context index and exact rational
+sum. Its verifier recomputes every degree and bound with the pure-standard-
+Python `event30_orbit_degree.relaxed_event_upper` helper. It rejects the
+previously screened asymmetric seed because one context has upper sum
+`313/315 < 1`; the C5-double leader has upper sums `(10/9,10/9,10/9)` and
+passes. The built-in controls also check exclusion at exact equality:
+six bounds `5/54` plus four bounds `1/9` sum to one, which is insufficient.
+
+## Pair-component bridge inequality
+
+For a component with sides `X,Y`, let `u = sum_X f_i` and `v = sum_Y f_j`,
+where the orthogonal weighted Gram vectors in each context sum to the unit
+state `psi` and have squared norms `c_i`. There are no cross-support edges
+leaving this component. Hence `<u,v> = sum_X c_i = sum_Y c_j`, and
+`||u-v||^2 = 0`. Write their common vector as `v` and its squared norm as
+`m > 0`. In particular `<psi,v> = m`.
+
+Let `W` be the third-context vertices adjacent to both `X` and `Y`. A vertex
+outside `W` is orthogonal to at least one of the two equal expansions of
+`v`. Thus the projection `Pi_C v` is supported on the orthonormal rays in
+`W`. Since `psi` belongs to the third context's span, Cauchy-Schwarz gives
+
+`m^2 = |<psi,v>|^2 <= (sum_W c_i) ||Pi_C v||^2 <= (sum_W c_i) m`.
+
+Therefore `m <= sum_W c_i`. This argument does **not** assume that `v`
+belongs to the third context's span.
+
+The earlier Kempe condition makes `|X| = |Y| = r`. With ten events in each
+context and all `0 < c_i < 1/9`, one has `m >= (r-1)/9`; the inequality is
+strict when `r < 10`, while `m=1` when `r=10`. If `0 < |W| < r`, then
+`sum_W c_i < |W|/9 <= (r-1)/9 <= m`, a contradiction. The case `W` empty
+contradicts `m>0` directly. Consequently `|W| >= r`.
+
+Finally the common vectors of all pair components sum to `psi`. A third-
+context vertex outside every bridge set is orthogonal to every common
+vector, hence to `psi`, which would give zero probability. Thus the bridge
+sets must cover the entire third context.
+
+The exact certificate methods are `bridge_shortage`, storing the pair,
+component and recomputed bridge set, and `unbridged_vertex`, storing the
+pair and uncovered vertex. Their verifier uses standard Python only. The
+`pair_bridge_data` helper computes components and bridge sets without
+applying the thirty-event cardinality restriction. The isolated B-C edge
+`[10,21]` in the C2 prototype supplies a `bridge_shortage` control with empty
+bridge set; H33 supplies positive bridge-coverage controls.
 
 ## Additional conditions only in dimension 19
 

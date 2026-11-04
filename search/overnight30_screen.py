@@ -153,6 +153,40 @@ def certificate(graph, method, **witness):
             "method": method, "witness": witness}
 
 
+def pair_bridge_data(graph, pair, adj=None):
+    """Pair components and third-context vertices touching both component sides.
+
+    This computes support geometry only; the cardinality exclusion below is
+    specific to thirty events. In particular this helper also accepts H33.
+    """
+    if adj is None:
+        adj = adjacency(graph)
+    k, l = pair
+    left, right = set(graph["parts"][k]), set(graph["parts"][l])
+    third = graph["parts"][3-k-l]
+    records = []
+    for component in components(adj, left | right):
+        X, Y = set(component) & left, set(component) & right
+        bridges = [v for v in third if adj[v] & X and adj[v] & Y]
+        records.append({"component": component, "left": sorted(X), "right": sorted(Y),
+                        "bridges": sorted(bridges)})
+    return records
+
+
+def context_degree_mass(graph, context, adj=None):
+    """Exact sum of the strict event-probability upper bounds in a context."""
+    from event30_orbit_degree import relaxed_event_upper
+    if adj is None:
+        adj = adjacency(graph)
+    others = [set(part) for k, part in enumerate(graph["parts"]) if k != context]
+    total = Q(0)
+    for vertex in graph["parts"][context]:
+        q, r = (len(adj[vertex] & part) for part in others)
+        assert 1 <= q <= 9 and 1 <= r <= 9
+        total += relaxed_event_upper(q, r)
+    return total
+
+
 def fast_screen(record):
     """Cheap exact obstructions. 'not_excluded' never claims feasibility."""
     graph = normalize_graph(record)
@@ -201,6 +235,22 @@ def fast_screen(record):
                 result.update(status="excluded", reason="Kempe swap gives a context of at most nine events",
                               certificate=cert, pair_diagnostics=pair_diagnostics)
                 return result
+        bridge_data = pair_bridge_data(graph, [k, l], adj)
+        pair_diagnostics[-1]["bridge_sizes"] = [len(data["bridges"]) for data in bridge_data]
+        for data in bridge_data:
+            if len(data["bridges"]) < len(data["left"]):
+                cert = certificate(graph, "bridge_shortage", pair=[k, l],
+                                   component=data["component"], bridges=data["bridges"])
+                result.update(status="excluded", reason="a pair component has too few third-context bridges",
+                              certificate=cert, pair_diagnostics=pair_diagnostics)
+                return result
+        covered = set().union(*(set(data["bridges"]) for data in bridge_data))
+        missing = set(graph["parts"][3-k-l])-covered
+        if missing:
+            cert = certificate(graph, "unbridged_vertex", pair=[k, l], vertex=min(missing))
+            result.update(status="excluded", reason="a third-context event bridges no pair component",
+                          certificate=cert, pair_diagnostics=pair_diagnostics)
+            return result
         if len(cc) > 1 and "dimension19_certificate" not in result:
             result["dimension19_certificate"] = certificate(
                 graph, "pair_disconnected_d19", pair=[k, l], component=cc[0])
@@ -211,6 +261,17 @@ def fast_screen(record):
     result["dimension19_pair_connected"] = all(x["components"] == 1 for x in pair_diagnostics)
     result["dimension19_pair_perfect_matching"] = all(x["perfect_matching"] for x in pair_diagnostics)
     result["dimension19_eligible"] = "dimension19_certificate" not in result
+    # The balanced pair-component checks above exclude cross-degree zero.
+    # Triangle-freeness then excludes cross-degree ten: any neighbor in the
+    # third context would have cross-degree zero toward that complete side.
+    bounds = [context_degree_mass(graph, k, adj) for k in range(3)]
+    result["degree_mass_bounds"] = list(map(str, bounds))
+    for context, bound in enumerate(bounds):
+        if bound <= 1:
+            cert = certificate(graph, "degree_mass", context=context, bound=str(bound))
+            result.update(status="excluded", reason="strict degree probability bounds cannot sum to one in a context",
+                          certificate=cert)
+            return result
     return result
 
 
@@ -321,7 +382,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -339,6 +400,27 @@ def verify_certificate(cert):
             assert len(c) == 30 and all(k in (0, 1, 2) for k in c)
             assert all(c[u] != c[v] for u, v in graph["edges"])
             assert min(c.count(k) for k in range(3)) <= 9
+        elif method == "bridge_shortage":
+            k, l = witness["pair"]
+            assert 0 <= k < l < 3
+            matches = [data for data in pair_bridge_data(graph, [k, l], adj)
+                       if data["component"] == witness["component"]]
+            assert len(matches) == 1
+            data = matches[0]
+            assert data["bridges"] == witness["bridges"]
+            assert len(data["left"]) == len(data["right"]) > 0
+            assert len(data["bridges"]) < len(data["left"])
+        elif method == "unbridged_vertex":
+            k, l = witness["pair"]
+            assert 0 <= k < l < 3
+            vertex = witness["vertex"]
+            assert vertex in graph["parts"][3-k-l]
+            assert all(vertex not in data["bridges"] for data in pair_bridge_data(graph, [k, l], adj))
+        elif method == "degree_mass":
+            context = witness["context"]
+            assert type(context) is int and 0 <= context < 3
+            bound = context_degree_mass(graph, context, adj)
+            assert str(bound) == witness["bound"] and bound <= 1
         elif method == "pair_disconnected_d19":
             k, l = witness["pair"]
             assert 0 <= k < l < 3
@@ -545,6 +627,24 @@ def self_test():
     merged = fast_screen(path)
     assert merged["certificate"]["method"] == "same_context_merge"
     verify_certificate(merged["certificate"])
+    bridge = pair_bridge_data(path, [0, 1])[0]
+    assert bridge["left"] == [0] and bridge["right"] == [10] and not bridge["bridges"]
+    verify_certificate(certificate(path, "bridge_shortage", pair=[0, 1],
+                                   component=bridge["component"], bridges=[]))
+    verify_certificate(certificate(path, "unbridged_vertex", pair=[0, 1], vertex=20))
+    # A balanced blow-up of C6 has degree pair (5,5) at every vertex.
+    clusters = [list(range(offset, offset+5)) for offset in (0, 10, 20, 5, 15, 25)]
+    edges = [(u, v) for i in range(6) for u in clusters[i] for v in clusters[(i+1) % 6]]
+    degree_control = normalize_graph({"parts": parts, "edges": edges})
+    assert context_degree_mass(degree_control, 0) == Q(20, 27)
+    verify_certificate(certificate(degree_control, "degree_mass", context=0, bound="20/27"))
+    # Equality is also excluded because every event upper bound is strict.
+    edges = [(u, 10) for u in range(10)]
+    edges += [(u, v) for u in range(6) for v in range(20, 26)]
+    edges += [(u, 26) for u in range(6, 10)]
+    degree_equal = normalize_graph({"parts": parts, "edges": edges})
+    assert context_degree_mass(degree_equal, 0) == 1
+    verify_certificate(certificate(degree_equal, "degree_mass", context=0, bound="1"))
     coloring, status = unbalanced_coloring(path)
     assert status == "witness"
     verify_certificate(certificate(path, "unbalanced_coloring", coloring=coloring))
@@ -573,6 +673,10 @@ def self_test():
     graph = normalize_graph({"parts": [list(range(9)), list(range(9, 21)), list(range(21, 33))],
                              "edges": list(H.edges())})
     assert fast_screen(graph)["status"] == "out_of_scope"
+    for k, l in itertools.combinations(range(3), 2):
+        data = pair_bridge_data(graph, [k, l])
+        assert all(item["bridges"] for item in data)
+        assert set().union(*(set(item["bridges"]) for item in data)) == set(graph["parts"][3-k-l])
     weights = [str(Q(1, 9) if i < 9 else Q(1, 12)) for i in range(33)]
     values = [[u, v, str(Q(1, 36) if u < 9 or v < 9 else Q(1, 24))] for u, v in H.edges()]
     verify_certificate(certificate(graph, "theta_primal", weights=weights, edge_values=values))
@@ -583,7 +687,7 @@ def self_test():
     signs = [1, -1, 1, -1]
     free = [-signs[i]*signs[j] for i in range(4) for j in range(i+1, 4) if [i, j] not in small["edges"]]
     verify_certificate(certificate(small, "theta_dual", bound="2", denominator=1, free_numerators=free))
-    print("screen controls passed: false twins, same-context merge, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
+    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
 
 
 def main():

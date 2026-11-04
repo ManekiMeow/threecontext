@@ -35,8 +35,10 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. Proposition 39 gives the event-contraction obstruction;
-Corollary 40 excludes the mixed C5 orbit family by exact orbit counting.
+at campaign setup. The latest numbered result is now Proposition 46. Results
+39–46 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+pair-component bridges, degree probability budgets, regular pair supports and
+the excluded six-orbit quotient of the current C5 numerical leader.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -50,6 +52,14 @@ Already excluded and not worth repeating as standalone searches:
   (Corollary 40). Five fixed vertices cannot have distinct neighborhoods that
   are unions of only two orbits. SAT independently found the new constraints
   unsatisfiable, but the exclusion rests on this counting proof.
+- A common orbit pattern `(m,1,...,1)` in all three contexts for m=7,8,9,
+  for any context-preserving symmetry group (Theorem 42). No unitary symmetry
+  or averaging assumption is used. Order-7 and order-9 color-preserving
+  automorphisms are excluded. Mixed order-eight actions involving a two-cycle
+  are **not** excluded by that theorem.
+- The six-orbit quotient in Proposition 46, including all cyclic shifts of
+  the current 95-edge C5-double leader. The averaging argument there may
+  increase rank; it is an event-number exclusion in every dimension.
 
 Search directions, allowing nonuniform event probabilities and unequal overlap
 weights unless a run explicitly records a narrower ansatz:
@@ -69,6 +79,10 @@ weights unless a run explicitly records a narrower ansatz:
    path through the other contexts (Proposition 39). In the one-transposition
    per context family, the six moved vertices must induce C6. These are exact
    exclusions, not numerical score heuristics.
+   Theorem 43 additionally requires enough third-context bridges for every
+   pair component, and every event must bridge some component. Theorem 44
+   requires the strict rational degree-probability budget to exceed one in
+   every context. Both are now in the workers' exact screening/cut pipeline.
 4. Promote promising supports to full Lovasz SDP checks. Preserve candidates
    near theta=3 and their numerical matrices. Seek exact rational primal
    certificates; if a valid example is found, investigate its realization rank
@@ -80,6 +94,46 @@ event-minimality filter for all dimensions. Uniform-probability degree restricti
 must likewise not be applied to unrestricted candidates. For thirty positive
 events, the general bounds c_i<1/9 and neighbourhood orthogonality imply total
 degree at most ten; weak-symmetry workers may use this necessary pruning rule.
+Theorem 43 is a global restriction on disconnected pair supports, but does not
+require full pair connectivity. Its common component vector need not belong
+to the third context span; the proof uses its projection there.
+
+## 22:00 continuation findings and next priorities
+
+The immutable review is `search/overnight30_reviews/2026-11-04T2200/`: 69,112
+scored records, 68,486 distinct labeled supports, and 18 representatives after
+exact isomorphism checks within a selected set of 89. The C5-double leader
+has numerical theta 2.9134341612 and exact dual upper bound 1821/625. Proposition
+46 now also excludes its whole quotient class by forced averaged probabilities
+and inconsistent saturated-edge overlaps. No global bound has changed.
+
+The workers load `overnight30_shared_seeds.json` on every asymmetric chunk;
+injection history prevents repeats. Conflict-clearing switches replace the
+previously stalled two-edge switches. All seeds remain construction guides,
+including those with known individual exclusions. The earlier asymmetric
+2.8876788 seed is now excluded by the exact degree budget 313/315, and the C2
+2.8797224 seed by empty component bridges; their metadata records these facts.
+
+C5-double scoring uses the exact Fourier reduction in `overnight30_c5.py`.
+The worker learns at most 100 new rational-dual subgraph cuts per chunk, with
+gzip certificates verified on discovery and resume by `overnight30_fast_dual.py`.
+A 20-second smoke produced 397 scores and 90 certificates. Numerical failure
+never creates a cut. The full SDP remains a fallback.
+
+Next useful research steps, preserving the running supervisor:
+
+- Add a verified quotient-class SAT cut for Proposition 46 (including context
+  and orbit relabelings), stronger than excluding one support and its subgraphs.
+- Consider C3×C3 mixed actions with orbit types `R=(9,1)` and
+  `T=(3,3,3,1)`, using affine-plane translation actions on points and three
+  parallel classes of lines. The all-R case is excluded by Theorem 42;
+  RTT with shared sets of two or three quotient-kernel lines remains a useful
+  direction. Necessary reductions are recorded in `event30_regular_blocks.py`.
+- If changing runner configuration, skip `c5_mixed` without reassigning family
+  seeds, and consider favoring C5-double after reviewing progress. Preserve
+  diversity and the absolute deadline. Source commits capture dependency
+  versions; expanding per-job hashes to the Fourier/screen/seed dependencies
+  would improve provenance at the next runner restart.
 
 ## Operation and scheduled continuation
 
