@@ -35,12 +35,12 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Proposition 49. Results
-39–49 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 51. Results
+39–51 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
-by two-nine-orbit and affine-plane mixed-action exclusions and iterated
-probability budgets.
+by affine-plane mixed-action exclusions, iterated probability budgets, and
+the exclusion of a nine-vertex symmetry orbit in any single context.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -66,7 +66,15 @@ Already excluded and not worth repeating as standalone searches:
   (Theorem 47). This includes all C3×C3 RRT actions.
 - C3×C3 RTT actions with three distinct kernel lines in both T contexts
   (Theorem 48). An exact structural reduction leaves three canonical graphs,
-  all excluded by rational theta duals. Two-kernel RTT remains open.
+  all excluded by rational theta duals.
+- Both two-kernel RTT cases (Theorem 50). Opposed multiplicities reduce to
+  at most 27 canonical supports with exact duals. Aligned multiplicities have
+  a complete finite proof: 299 structural certificates, 65 assignments covered
+  by 14 rational duals, and an independently checked 222-step LRAT proof.
+- Any context-preserving group with a nine-vertex orbit in even one context
+  (Theorem 51). A transitive degree-nine group contains a regular C9 or C3²
+  subgroup; every resulting action is now excluded. This does not imply that
+  the full automorphism group has order indivisible by nine.
 
 Search directions, allowing nonuniform event probabilities and unequal overlap
 weights unless a run explicitly records a narrower ansatz:
@@ -147,27 +155,44 @@ preserved best/pool. The shared inbox has eight diverse mutation seeds.
 
 The exact probability propagation helper is `event30_probability_propagation.py`.
 Three rounds add 16 exclusions among the selected 125 representatives, including
-theta2.90776942 via budget993319/1000000. Proofs and timing controls are in
+theta 2.90776942 via budget 993319/1000000. Proofs and timing controls are in
 `overnight30_probability_reviews/2026-11-04T2300/`. Rounding is upward and all
 certificate replay uses rational arithmetic; no numerical bound is trusted.
 
 The C5 quotient review in `overnight30_quotient_reviews/2026-11-04T2300/`
-examines 150 of 5,273 published quotient classes and excludes126 with exact
+examines 150 of 5,273 published quotient classes and excludes 126 with exact
 orbit-probability Farkas certificates. `event30_probability_lp.py` separates
 numerical discovery from exact verification. `overnight30_quotient.py` verifies
-this catalog and Proposition46, and also checks regular pair supports from
-Theorem45. A separate saturation catalog in
+this catalog and Proposition 46, and also checks regular pair supports from
+Theorem 45. A separate saturation catalog in
 `overnight30_saturation_reviews/2026-11-04T2300/` supplies five exact equality
-transcripts, one reproducing Proposition46 and four excluding additional
-classes. The combined131/150 selected classes expand to5,756 forbidden
+transcripts, one reproducing Proposition 46 and four excluding additional
+classes. The combined 131/150 selected classes expand to 5,756 forbidden
 context/orbit signatures. `event30_quotient_saturation.py` uses exact affine
 elimination and saturated-edge consistency; nineteen selected classes remain
 unresolved. The asymmetric worker also applies this shared verified catalog.
-The60 new
-base auxiliaries preserve replay by rebasing legacy path cuts. The former
-C5leader is retired as a live best (historical evidence remains), and a
+The 60 new base auxiliaries preserve replay by rebasing legacy path cuts. The former
+C5 leader is retired as a live best (historical evidence remains), and a
 2.899889 guide outside the catalog is loaded. Numerical score reduction after
 retiring an excluded best is expected, not lost progress.
+
+The affine-plane investigation now completely excludes every C3² action with
+a regular nine-orbit in any context. Theorem 51 extends this to any transitive
+nine-orbit of any context-preserving group. The aligned proof bundle is
+`event30_c3square_aligned_certificates/`; run
+`python search/overnight30_c3square_search.py --verify-coverage search/event30_c3square_aligned_certificates`
+for standard-library replay, adding `--rebuild-base` in the research environment
+to regenerate the reviewed CNF with python-sat 1.9.dev20. Opposed and three-kernel
+proofs have their own helpers and exact duals. The global event and dimension
+bounds remain unchanged.
+
+The broader auxiliary two-kernel experiment (16,973 assignment records before
+the refined finite proof) is archived as a 1.7 MB tar.gz under active host chunk
+`00053_asymmetric/auxiliary_c3square_review/`. This immutable archive was handed
+to the existing supervisor publisher without changing its Git index or control
+state. It is auxiliary research data; do not count its records as new distinct
+labels without deduplication against the main pools. The host chunk's normal
+search remains separate and unchanged.
 
 Next useful research steps, preserving the running supervisor:
 
@@ -175,12 +200,10 @@ Next useful research steps, preserving the running supervisor:
   Cauchy-equality propagation. Preserve the actual group-action requirement
   and verify every new class certificate. Existing derivation formats and
   immutable proof catalogs must retain reproducible verification.
-- Consider C3×C3 mixed actions with orbit types `R=(9,1)` and
-  `T=(3,3,3,1)`, using affine-plane translation actions on points and three
-  parallel classes of lines. RRR and RRT are excluded, as is RTT with three
-  distinct kernel lines. RTT with two shared kernel lines and multiplicities
-  `(2,1)` in each T-context remains a useful direction. Necessary reductions
-  and complete proofs are in `event30_c3square.py`.
+- If pursuing C3² further, use only three-orbit/fixed-point actions:
+  `T=(3,3,3,1)` and `D=(3,3,1,1,1,1)` with faithful kernel-line sets. All actions
+  involving `R=(9,1)` are excluded. General asymmetric and weak C2/C3/C5
+  constructions remain the main search priority.
 - If changing runner configuration, skip `c5_mixed` without reassigning family
   seeds, and consider favoring C5-double after reviewing progress. Preserve
   diversity and the absolute deadline. Source commits capture dependency

@@ -559,7 +559,7 @@ phases, and exchanging the two T-contexts identifies the wide cases. Exactly thr
 All bounds are below three. The standard-library checker
 `python search/event30_c3square.py --verify-certificates` verifies all 48 linear coordinate changes, the 45
 local cyclic support triples, explicit global isomorphisms and the three rational dual certificates. The full
-structural reduction is recorded in that file. The two-distinct-kernel RTT family remains unresolved. ∎
+structural reduction is recorded in that file. The two-distinct-kernel case is treated in Theorem 50. ∎
 
 **Proposition 49 (iterated probability budgets).** Strict event upper bounds can be propagated without
 symmetry assumptions. Initially put U_i=1/9. For any proper nonempty neighborhood N in another context J,
@@ -616,6 +616,57 @@ Five saved transcripts reproduce Proposition 46 and exclude four additional clas
 derivations verify with `python search/overnight30_saturation_reviews/2026-11-04T2300/verify.py`.
 The combined worker catalog excludes **5,756** quotient signatures; the asymmetric worker also recognizes
 these verified exclusions when evaluating mutation guides.
+
+**Theorem 50 (two-kernel affine-plane actions).** No thirty-event GHZ graph admits a context-preserving
+C₃×C₃ action with orbit types `R=(9,1), T=(3,3,3,1), T=(3,3,3,1)` when the two T-contexts use two distinct
+kernel lines. This includes both aligned multiplicities `(X,X,Y)/(X,X,Y)` and opposed multiplicities
+`(X,X,Y)/(X,Y,Y)`, with X≠Y. Probabilities and complex overlap weights are unrestricted.
+
+*Proof, opposed multiplicities:* different-kernel moving blocks vanish because their regular-orbit cosets
+intersect. A fixed T-vertex seeing the regular nine-orbit would leave six events with only three distinct
+degree-two neighborhoods in the opposite singleton-kernel orbit. Thus ab=ac=1 and bc=0. The fixed point a
+selects one moving orbit in each T-context. Same-kernel selections leave an orbit without neighbors; selecting
+both singleton-kernel orbits gives a closed B–C set with side counts 6:4, incompatible with balanced components.
+Hence a selects an orbit in each repeated kernel. Their sole matching partners force degree-two cyclic blocks
+and singleton regular-to-orbit supports. Each remaining repeated-kernel orbit has three possible local size
+pairs `(1,2),(1,1),(2,1)`. The fixed edges to those remaining orbits are forced, and at least one of the two
+other fixed-to-moving edges is required by component balance. Fiber translations and independent x/y sign
+changes leave at most 27 canonical supports. All have exact dual bounds below three, the largest being
+5511/2000. `python search/event30_c3square_opposed.py` checks all certificates and 54 phase isomorphisms.
+
+*Proof, aligned multiplicities (finite certificate):* independent fiber translations normalize each of the
+six regular-to-orbit supports to `{0}` or `{1,2}` without restricting the other edge orbits. The complete group
+action has 54 cross-context edge orbits. Necessary triangle, degree, row-distinction and fixed-point conditions
+give a reviewed SAT encoding. Exact structural certificates exclude 299 generated supports and all their
+subgraphs. The other 65 assignments map explicitly to fourteen representatives, with rational dual bounds
+below three (largest 1714/625). A separately checked LRAT proof derives the empty clause from the base CNF
+and these 364 certified cuts, establishing complete coverage of the normalized family. No bounded-search
+failure or numerical infeasibility is used.
+
+The full proof bundle is `search/event30_c3square_aligned_certificates/`. Standard Python verifies all 313
+exact certificates, the group action, orbit partition, vertex maps, clause bindings and 222 RUP proof steps:
+`python search/overnight30_c3square_search.py --verify-coverage search/event30_c3square_aligned_certificates`.
+The optional `--rebuild-base` additionally regenerates the reviewed base CNF using python-sat. ∎
+
+**Theorem 51 (no nine-vertex symmetry orbit).** In a thirty-event GHZ graph, a group of automorphisms preserving
+each context cannot have an orbit of size nine in even one context. The other contexts' orbit structures are
+arbitrary. This does not exclude every group whose order is divisible by nine.
+
+*Proof:* first exclude a C₃×C₃ subgroup acting regularly on nine events of a context. Faithfulness on every
+context (Proposition 39) leaves only orbit types R=(9,1), T=(3,3,3,1), or D=(3,3,1,1,1,1), with distinct kernel
+lines as needed for faithfulness. A second R is excluded by Theorem 47; D has four fixed vertices but only two
+possible nonempty proper invariant neighborhoods in R, contradicting injectivity. Thus the other two contexts
+are T. Their kernel-line sets coincide by neighborhood injectivity; Theorems 48 and 50 exclude respectively
+three and two distinct lines.
+
+Now let G have a nine-orbit in one context. Its action there is faithful. A Sylow 3-subgroup P is transitive
+on that orbit: choose it to contain a Sylow 3-subgroup of a point stabilizer, and use the index nine. Conjugate
+P into a Sylow subgroup `C₃ wr C₃` of S₉. Its intersection B with the base F₃³ is nonzero and invariant under
+the cyclic block shift T. Since `(T−I)³=0`, B contains the nonzero diagonal shift z. A lift g of the block cycle
+either has order nine, excluded by Theorem 42, or has order three and commutes with z. In the latter case
+⟨g,z⟩ is a regular C₃×C₃ subgroup, already excluded. The exact checker
+`python search/event30_degree9_group.py` independently enumerates all thirteen transitive subgroups of this
+Sylow group and verifies the required regular subgroup in each. ∎
 
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
