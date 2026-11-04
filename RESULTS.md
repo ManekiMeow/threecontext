@@ -30,7 +30,7 @@ property, and the contradiction first shows at algebraic degree 4.
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains; H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
+| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains. In every dimension each event's deviation from the rigid H33-type overlaps is capped entrywise (Lemma 39), which forces near-covering of each context (Corollary 40). H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 19 (Corollary 30; the GHZ bound can never give more than 20, the dimension of H33). In dimension 19 the graph would be 76-vertex and 30-regular, with 10 neighbours per other basis (Theorem 31, §3.15). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. **Multiplier families (Sections 3.12–3.13):**
 * e = 2 and e = 3 give no example for any p (Theorem 24, Corollary 26).
 * e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
@@ -856,6 +856,91 @@ that uniform or irregular (10,10,10) examples do not exist.
 ```sh
 python search/event30_uniform_search.py --verify --output search/event30_uniform_results.json
 ```
+
+*Checked here (4 Nov, second pass).*
+* Theorems 35 and 36 and the connectivity condition were checked line by line, including:
+  * the row identities and the |N| ≤ 3 step;
+  * the bipartite D-graph and the RS = 1 contradiction;
+  * the odd-rank argument forcing W = −I;
+  * the design integrality k(k − 1)/9.
+* Proposition 37 was checked line by line, including the A³ = 7A − 6I + 6J counting.
+* `tail_obstruction.py`, `construction30_isoclinic.py`, `event30_hoffman.py` and both certificate checkers of §1.10
+  run cleanly.
+
+### 2.4 Near-rigidity budgets (new, 4 Nov)
+
+In H33 every event is "rigid" towards the others in a precise sense: Theorem 31's edge formula
+⟨g_x|g_y⟩ = 3√(c_xc_y) holds where E vanishes. The operator E = F − (3/2)(1 + |ψ⟩⟨ψ|) measures the deviation, and
+Lemma 3 caps it event by event. Writing the cap entrywise gives a budget that holds **in every dimension**.
+
+**Lemma 39 (E-budget).** For every event x of context k and every context l,
+
+    Σ_{y ∈ I_l} |⟨g_y|E|g_x⟩|² = ‖Π_l E g_x‖² ≤ ‖E g_x‖² = (1 − 9c_x)/4.
+
+With phases ⟨g|ψ⟩ = √c > 0 and m the remaining context, the entries are:
+* for y ∈ I_l with l ≠ k: ⟨g_y|E|g_x⟩ = ½⟨g_y|g_x⟩ + ⟨g_y|Π_m|g_x⟩ − (3/2)√(c_xc_y);
+* for y ∈ I_k, y ≠ x: ⟨g_y|E|g_x⟩ = ⟨g_y|Π_l|g_x⟩ + ⟨g_y|Π_m|g_x⟩ − (3/2)√(c_xc_y), with l, m the two other contexts.
+
+*Proof.* Π_k g_x = g_x, and ⟨g_y|Π_l|g_x⟩ = ⟨g_y|g_x⟩ when y ∈ I_l. Expand ⟨g_y|F|g_x⟩ and subtract
+(3/2)(⟨g_y|g_x⟩ + √(c_xc_y)). The bound is Bessel's inequality for the orthonormal set I_l, together with Lemma 3. ∎
+
+On an edge, triangle-freeness kills ⟨g_y|Π_m|g_x⟩, so the entry is ½⟨g_y|g_x⟩ − (3/2)√(c_xc_y). This is the edge
+formula with its error term. The rigid values are therefore:
+* 3√(c_xc_y) on edges;
+* (3/2)√(c_xc_y) for ⟨g_y|Π_m|g_x⟩ on non-edges;
+* (3/2)√(c_xc_y) for the common-neighbour overlaps ⟨g_y|Π_l + Π_m|g_x⟩ inside one context.
+
+Lemma 39 caps each event's total squared deviation from these values, separately for each context, by (1 − 9c_x)/4.
+
+**Corollary 40 (covering).** Put δ_x = 1/9 − c_x.
+* (a) Fix l ≠ k. Let B_0(x) be the events of I_l that are neither adjacent to x nor share a neighbour with x in
+  I_m. Then c_x · Σ_{y ∈ B_0(x)} c_y ≤ δ_x.
+* (b) Let D_2(x) be the other events of I_k that share no neighbour with x. Then c_x · Σ_{y ∈ D_2(x)} c_y ≤ δ_x.
+
+*Proof.* For such y both overlap terms vanish, so the entry is −(3/2)√(c_xc_y). Sum the squares and compare with
+Lemma 39. ∎
+
+Consequences:
+* A rigid event is adjacent to, or at distance 2 from, every event of the other contexts. It shares a neighbour with
+  every event of its own context.
+* H33 satisfies all of this (`search/ebudget_check.py`: max slack 8·10⁻¹⁶, entry formulas to 10⁻¹⁵, no
+  violation).
+* For (10,10,10), so in dimension 19, summing gives Σ_{x ∈ I_k} c_x c(B_0(x)) ≤ 1/9, and likewise for D_2.
+  With probabilities near 1/10, each event leaves **at most about one event** of each context uncovered. With
+  exactly uniform probabilities (all 1/10), |B_0(x)| ≤ 1 and |D_2(x)| ≤ 1.
+
+**Remark 41 (more structure in the generic shape).**
+* *Perfect matchings.* In shape (ii), the overlap matrix of every pair of contexts is nonsingular: its singular values
+  are 1 and the nine cosines, all positive. By the Frobenius–König theorem each pair support has a perfect matching.
+  With the connectivity condition above, each pair support is connected and has a perfect matching.
+  Moreover, for every event x, N_l(x) × N_m(x) is a zero block of the nonsingular (l, m) overlap matrix, so
+  |N_l(x)| + |N_m(x)| ≤ 10.
+* *Transfer form of triangle-freeness.* Take the pair (A, B) and principal frames, with Y − pp† = R_A†DR_B and D
+  the diagonal matrix of cosines. The compression through C is Z = Y_AC Y_CB. Then
+  Z = pp† + Φ̃Y with Φ̃ = R_A† M D⁻¹ R_A, where M is the matrix of A_C between the principal frames.
+  Triangle-freeness reads Φ̃Y = −pp† on the support of Y.
+  * Theorem 36 is the case Φ̃ ∝ I − pp†. There the edge entries all become proportional to √(c_ac_b), which leads to
+    the design contradiction.
+  * In the generic case Φ̃ mixes the rows.
+
+**Why this does not yet close dimension 19.** For spread patterns the budgets are not exhausted. Take probabilities
+near 1/10, so each budget is (9/4)(1/90) = 1/40 per context. By Cauchy–Schwarz on the row identities, a row needs
+at least:
+* about 0.0012 of its budget with three neighbours;
+* about 0.0042 with four neighbours;
+* exactly the whole budget with two neighbours (so equality is forced there).
+
+Integrality gaps of the Theorem 31/36 type (1/12 or 1/6 against sums of probabilities near 1/9) bite only with
+rigid or isoclinic structure, so the generic non-isoclinic case still needs one more idea. Two routes look viable:
+1. A design argument for the three transfer matrices Φ̃ simultaneously, generalising Theorem 36.
+2. A finite, isomorph-free enumeration of support graphs, followed by exact ϑ certificates. The pruning rules would
+   be:
+   * connected pair supports with perfect matchings;
+   * Proposition 37's degree pairs;
+   * Corollary 40.
+
+   With uniform probabilities all of these are purely combinatorial, so the search in `event30_uniform_search.py`
+   could be made exhaustive for that sub-case.
 
 ---
 
@@ -2151,6 +2236,7 @@ including Route B, remains open.
   Lemma 33, and (`--adversarial`) an adversarial test of Lemma 29.
 * `search/tail_obstruction.py`, `search/construction30_isoclinic.py`: exact algebra for Theorems 35–36, excluding
   the rotated-tail case and all pairwise-isoclinic reduced context triples.
+* `search/ebudget_check.py`: Lemma 39 and Corollary 40 (near-rigidity budgets and covering) on H33.
 * `search/event30_hoffman.py`: Proposition 37, uniform-probability degree constraints and the regular unweighted
   Hoffman obstruction in all dimensions.
 * `search/event30_uniform_search.py`, `search/event30_uniform_results.json`: bounded SAT/SDP construction search
