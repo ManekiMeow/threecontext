@@ -919,8 +919,8 @@ Consequences:
   overlap matrix X then satisfies XX† = t²I + (1 − t²)pp†.
   * For b ≠ b′, Σ_c X_bc X̄_b′c = (1 − t²)√(c_bc_b′) > 0. So every two B-events share a C-neighbour, and likewise
     with B and C exchanged (the disjoint-support graph of Theorem 35 is empty).
-  * Counting pairs gives Σ_c C(k_c, 2) ≥ 45, so the pair has at least 36 edges (average degree ≥ 3.6). Most of its
-    neighbourhoods are therefore heavy (weight > 1/3).
+  * Counting pairs gives Σ_c C(k_c, 2) ≥ 45, so the pair has at least 35 edges (average degree ≥ 3.5; 35 needs
+    five degrees 4 and five degrees 3). About half of its neighbourhoods are therefore heavy (weight > 1/3).
   * Theorem 36 needs all three pairs isoclinic; this constraint holds pair by pair.
 * *Transfer form of triangle-freeness.* Take the pair (A, B) and principal frames, with Y − pp† = R_A†DR_B and D
   the diagonal matrix of cosines. The compression through C is Z = Y_AC Y_CB. Then
