@@ -1148,6 +1148,24 @@ exists, not a proof.
   The E²-scalar sub-case is the natural next target. It has the exact weighted identity of Proposition 43.2, but the
   integrality that closed Proposition 37 is gone once the edge weights vary.
 
+  A first handle on that sub-case is the diagonal of Y⁴ = (7/9)Y² + (2/9)(2J − Y), i.e. (Y⁴)_xx = (7/9)r_x + 4/9,
+  where r_x is the squared norm of row x. Split the off-diagonal entries of row x of Y² into three groups:
+  * the 9 other events of x's context, with sum 2 − r_x;
+  * the 10 − d_l non-neighbours in context l, with sum 1 (the entries vanish on N_l(x));
+  * the 10 − d_m non-neighbours in context m, with sum 1.
+
+  Cauchy–Schwarz on each group gives, for every event,
+
+      (7/9) r_x + 4/9 − r_x² ≥ 1/(10 − d_l) + 1/(10 − d_m) + (2 − r_x)²/9,
+
+  with d_l, d_m the two neighbourhood sizes. Consequences:
+  * a (3,3) event has r_x ≤ 0.763 and a (3,4) event r_x ≤ 0.705;
+  * the saturated types (4,4) and (2,4) of Proposition 37 (r_x = 1/2 and 3/4) attain equality.
+
+  Their two-step rows are therefore flat. For a (4,4) event, every non-neighbour in another context receives 2-path
+  weight exactly 1/6, and every other event of its context exactly 1/6. These counts are consistent, so they do not
+  yet give a contradiction.
+
 ---
 
 ## 3. Four-context Kochen–Specker sets
