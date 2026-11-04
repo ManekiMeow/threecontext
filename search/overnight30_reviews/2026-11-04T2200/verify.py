@@ -16,6 +16,10 @@ for path in paths:
     verify_certificate(json.loads(path.read_text()))
 print(f'Verified {len(paths)} exact certificates and the immutable snapshot hash.')
 
+from overnight30_fast_dual import verify_certificate as verify_factor_certificate
+factor_bound = verify_factor_certificate(json.loads((directory/'fast_factor_c5_double.json').read_text()))
+print(f'Verified the alternative integer-factor certificate: theta <= {factor_bound}.')
+
 if '--isomorphism' in sys.argv:
     import networkx as nx
     representatives = {row['graph_id']: nx.from_graph6_bytes(row['g6'].encode())

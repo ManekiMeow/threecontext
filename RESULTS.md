@@ -340,14 +340,41 @@ nonempty. Each invariant block is a matching or K₂,₂. A K₂,₂ block, toge
 would contain a triangle. All three blocks are therefore matchings; their union is a six-cycle or two triangles,
 and triangle-freeness leaves only the six-cycle. ∎
 
-**Corollary 40 (orbit-counting obstruction).** Let K be a group of automorphisms preserving each context of a
-thirty-event GHZ graph. If K has r orbits on context A, then it fixes at most 2ʳ vertices in any other context B.
+**Corollary 40 (orbit-counting obstruction, strengthened at 22:00).** Let K be a group of automorphisms preserving
+each context of a thirty-event GHZ graph. If K has r orbits on context A, then it fixes at most **2ʳ−2** vertices
+in any other context B. More generally, B embeds equivariantly into the nonempty proper subsets of A.
 In particular, no such graph admits a C₅ action with orbit decompositions **(5,5), (5,1,1,1,1,1),
 (5,1,1,1,1,1)** (`c5_mixed`), in any dimension.
 
-*Proof:* the A-neighborhood of a K-fixed vertex is a union of K-orbits. There are at most 2ʳ unions, and
-Proposition 39 makes these neighborhoods distinct for distinct B-vertices. The stated C₅ action would give
-five fixed B-vertices but only 2² = 4 possible neighborhoods. ∎
+*Proof:* every event has a neighbor in each other context. Its A-neighborhood cannot equal all of A: a neighbor
+in the third context would then miss A entirely by triangle-freeness. The neighborhood map is therefore an
+equivariant map into nonempty proper subsets, and Proposition 39 makes it injective. A K-fixed vertex has a
+neighborhood that is a union of K-orbits, with only 2ʳ−2 nonempty proper choices. The stated C₅ action would
+give five fixed B-vertices but only two such neighborhoods. ∎
+
+For cyclic actions, the stronger equivariant injection also compares the numbers of subset orbits of each
+length. Exhausting the 42 cycle partitions of ten vertices leaves exactly four forbidden ordered type pairs
+among pairs of equal permutation order: `(10) → (5,2,2,1)`, `(10) → (5,2,1,1,1)`,
+`(6,4) → (4,3,1,1,1)`, and `(5,5) → (5,1,1,1,1,1)`. This enumerates obstructions from this particular
+neighborhood-injection test, not all impossible symmetry types.
+
+**Proposition 41 (one moving cycle per context).** Suppose an automorphism has exactly one p-cycle in each
+context and fixes the other vertices, where p is prime. Write the three cyclic moving-to-moving support sets
+as `S_AB,S_BC,S_CA ⊂ Z_p`, with the directions A→B→C→A, and put `T = S_AB+S_BC+S_CA`.
+Then `0 ∉ T` and `T ∪ (−T) = Z_p \ {0}`. For p = 3, the nine moved vertices induce either C₉ or K₃,₃ with a
+perfect matching subdivided. For p = 5, the three blocks cannot all be single matchings.
+
+*Proof:* distinct rows and columns require each moving block to be nonempty and proper, since fixed vertices
+cannot distinguish members of a moving orbit. A triangle corresponds precisely to a zero sum in T. A
+length-three path joining two vertices in the same moving orbit cannot use a fixed internal vertex, since
+invariance would close an original triangle. Its displacement is therefore in T or −T, proving the coverage
+condition by Proposition 39. For p = 3, two blocks of size two already force a triangle with any nonempty
+third block. Three single matchings give C₉; block sizes (2,1,1) give the subdivided-matching graph. For p = 5,
+three single matchings give only two possible nonzero displacements, whereas all four are required. ∎
+
+The standard-library checker `python search/event30_orbits.py` verifies the cycle-type enumeration and all
+moving-block patterns for p = 2,3,5. For p = 5, it rejects 250 of the 1725 triangle-free labeled moving patterns
+by the displacement test. The remaining 1475 patterns are not claimed to extend to GHZ graphs.
 
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
@@ -371,6 +398,16 @@ replaces stalled two-edge switches by moves that also remove third-context trian
 26 new exact certificates and 71 selected-set isomorphism claims are reproducible with
 `python search/overnight30_reviews/2026-11-04T2200/verify.py --isomorphism`; omit `--isomorphism` for verification
 using only standard Python. These results leave the global bounds unchanged.
+
+**Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
+of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
+event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within
+5.1×10⁻⁸, and every numerical result is checked after reconstructing the full primal matrix. A 20-second
+smoke run scored 397 supports and produced 90 rational dual certificates. Each bound below three also excludes
+every edge-deleted subgraph, allowing a stronger SAT clause than blocking one assignment. Saved certificates
+are checked by exact integer arithmetic, including on resume; failed numerical certification adds no such cut.
+The checks are `python search/overnight30_c5.py --self-test` and
+`python search/overnight30_fast_dual.py --self-test`.
 
 ---
 

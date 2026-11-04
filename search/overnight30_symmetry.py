@@ -181,6 +181,42 @@ def path_requirement(solver, edge_variables, pair):
                 aux_start=start, aux_end=start+len(terms)-1, clauses=clauses)
 
 
+def dominance_clause(certificate, orbits):
+    """Exclude every support contained in the exactly theta-bounded graph."""
+    if certificate["n"] != 30:
+        raise ValueError("dominance certificate must have 30 vertices")
+    edges = {tuple(edge) for edge in certificate["edges"]}
+    clause = [i for i, orbit in enumerate(orbits, 1) if not all(edge in edges for edge in orbit)]
+    if not clause:
+        raise ValueError("empty dual dominance clause")
+    return clause
+
+
+def replay_dominance(source, cut, orbits):
+    from overnight30_fast_dual import verify_certificate
+    import networkx as nx
+    witness = cut["witness"]
+    relative = Path(witness["certificate"])
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError("dominance certificate path must stay inside its chunk")
+    raw = gzip.decompress((source/relative).read_bytes())
+    if hashlib.sha256(raw).hexdigest() != witness["sha256"]:
+        raise ValueError("dominance certificate hash mismatch")
+    certificate = json.loads(raw)
+    bound = verify_certificate(certificate)
+    if str(bound) != witness["upper_bound"]:
+        raise ValueError("dominance bound mismatch")
+    graph = nx.Graph()
+    graph.add_nodes_from(range(30))
+    graph.add_edges_from(certificate["edges"])
+    if nx.to_graph6_bytes(graph, header=False).decode().strip() != witness["graph6"]:
+        raise ValueError("dominance certificate graph mismatch")
+    clause = dominance_clause(certificate, orbits)
+    if clause != cut["clause"]:
+        raise ValueError("dominance clause does not match its certificate")
+    return clause
+
+
 def bad_coloring(graph):
     """Return an independently checked proper coloring with a class <=9.
 
@@ -217,12 +253,27 @@ def theta_child(connection):
     import cvxpy as cp
     import numpy as np
     problems = {}
+    c5_solver = None
     while True:
         request = connection.recv()
         if request is None:
             return
         n, edges = request
         try:
+            reduction_fallback = None
+            if n == 30:
+                try:
+                    from overnight30_c5 import C5ThetaSolver, support_shifts
+                    if support_shifts(edges) is not None:
+                        if c5_solver is None:
+                            c5_solver = C5ThetaSolver()
+                        reduced = c5_solver.solve(edges)
+                        if "error" not in reduced:
+                            connection.send(reduced)
+                            continue
+                        reduction_fallback = reduced["error"]
+                except Exception as error:
+                    reduction_fallback = f"{type(error).__name__}: {error}"
             if n not in problems:
                 B = cp.Variable((n, n), symmetric=True)
                 mask = cp.Parameter((n, n))
@@ -266,7 +317,8 @@ def theta_child(connection):
                              "min_eigenvalue": float(spectrum[0]),
                              "primal_rank_numeric_1e-7": int(sum(spectrum > 1e-7)),
                              "primal_diagonal": matrix.diagonal().tolist(),
-                             "primal_matrix": matrix.tolist()})
+                             "primal_matrix": matrix.tolist(),
+                             "reduction_fallback_reason": reduction_fallback})
         except Exception as error:
             connection.send({"error": f"{type(error).__name__}: {error}"})
 
@@ -390,6 +442,7 @@ def run(args):
                  "color_prune": not args.no_color_prune, "models": 0, "scored": 0,
                  "rejected_coloring": 0, "rejected_connectivity": 0, "rejected_twins": 0,
                  "rejected_contraction": 0,
+                 "certified_dominance_cuts": 0,
                  "duplicate_graphs": 0, "solver_errors": 0, "batches": 0,
                  "duplicate_labelled": 0, "duplicate_isomorphic": 0,
                  "numerical_representatives_admitted": 0,
@@ -423,6 +476,7 @@ def run(args):
         # only result in extra SDP work, never an unsound exclusion.
         seen, buckets = set(), defaultdict(list)
         replayed = 0
+        replayed_dominance = 0
         statuses = Counter()
         for source in sources:
             for record in records(source/"models.jsonl"):
@@ -456,10 +510,14 @@ def run(args):
                     if regenerated["clauses"] != rebased:
                         raise ValueError("auxiliary path cut replay differs from saved CNF")
                     solver.append_formula(regenerated["clauses"])
+                elif cut["reason"] == "verified_theta_dual_dominance":
+                    solver.add_clause(replay_dominance(source, cut, orbits))
+                    replayed_dominance += 1
                 else:
                     assert all(1 <= literal <= num_orbits for literal in cut["clause"])
                     solver.add_clause(cut["clause"])
         state.update(models=replayed, scored=statuses["scored_numerically"],
+                     certified_dominance_cuts=replayed_dominance,
                      rejected_coloring=statuses["unbalanced_coloring"],
                      rejected_connectivity=statuses["disconnected"], rejected_twins=statuses["false_twins"],
                      rejected_contraction=statuses["same_context_merge"],
@@ -510,6 +568,10 @@ def run(args):
             best_path.unlink()  # the full excluded record was preserved above
         near_dir = output/"near3"
         near_dir.mkdir(exist_ok=True)
+        dual_dir = output/"dual_cuts"
+        dual_dir.mkdir(exist_ok=True)
+        batch_dominance = batch_dual_attempts = 0
+        dual_degree_signatures = set()
         with models_path.open("a", buffering=1) as model_stream, cuts_path.open("a", buffering=1) as cut_stream:
             def checkpoint():
                 state["batch_elapsed_seconds"] = time.monotonic()-start
@@ -518,6 +580,8 @@ def run(args):
                 state["distinct_labelled_supports"] = len(seen)
                 state["batch_models"] = state["models"]-initial_models
                 state["batch_scored"] = state["scored"]-initial_scored
+                state["batch_dominance_cuts"] = batch_dominance
+                state["batch_dual_attempts"] = batch_dual_attempts
                 atomic_json(state_path, state)
 
             def learn(clause, reason, witness):
@@ -632,10 +696,42 @@ def run(args):
                                     record.update({k: v for k, v in result.items()
                                                    if k in ("theta_numeric", "solver", "solver_status")})
                                     record["status"] = "scored_numerically"
+                                    signature = tuple(sorted(dict(graph.degree()).values()))
+                                    if (args.family == "c5_double" and batch_dominance < args.dual_cut_limit
+                                            and batch_dual_attempts < 3*args.dual_cut_limit
+                                            and "theta_dual_candidate_matrix" in result
+                                            and deadline-time.monotonic() > .1
+                                            and (batch_dual_attempts < 10 or best is None
+                                                 or result["theta_numeric"] >= best["theta_numeric"]-.015
+                                                 or signature not in dual_degree_signatures)):
+                                        batch_dual_attempts += 1
+                                        dual_degree_signatures.add(signature)
+                                        try:
+                                            from overnight30_fast_dual import certify_from_matrix, verify_certificate
+                                            certificate = certify_from_matrix(edges, result["theta_dual_candidate_matrix"],
+                                                                              result["theta_dual_upper_numeric"])
+                                            if certificate is not None:
+                                                bound = verify_certificate(certificate)
+                                                raw = json.dumps(certificate, sort_keys=True, separators=(",", ":")).encode()
+                                                digest = hashlib.sha256(raw).hexdigest()
+                                                certificate_file = dual_dir/f"{digest}.json.gz"
+                                                temporary = certificate_file.with_suffix(".tmp")
+                                                temporary.write_bytes(gzip.compress(raw, compresslevel=9, mtime=0))
+                                                temporary.replace(certificate_file)
+                                                witness = {"graph6": g6, "sha256": digest, "upper_bound": str(bound),
+                                                           "certificate": str(certificate_file.relative_to(output))}
+                                                learn(dominance_clause(certificate, orbits), "verified_theta_dual_dominance", witness)
+                                                batch_dominance += 1
+                                                state["certified_dominance_cuts"] += 1
+                                                record.update(exact_theta_upper=str(bound), dominance_certificate_sha256=digest)
+                                        except Exception as error:
+                                            record["dual_certification_error"] = f"{type(error).__name__}: {error}"
                                     full = dict(record, edges=sorted([list(e) for e in edges]),
                                                 parts=[list(range(10*k, 10*(k+1))) for k in range(3)],
                                                 certificate_status="numerical only; exact certification required")
                                     full.update(result)
+                                    if "exact_theta_upper" in record:
+                                        full["certificate_status"] = "exact dual upper bound below three; numerical leader retained as construction guide"
                                     if best is None or result["theta_numeric"] > best["theta_numeric"]:
                                         best = full
                                         best_bits = bits
@@ -671,6 +767,7 @@ def main():
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).with_name("overnight30")/"pools")
     parser.add_argument("--resume-from", type=Path, help="previous output-dir root for this family and seed; archived .jsonl.gz is supported")
     parser.add_argument("--seed-graphs", type=Path, help="family-indexed graph6 seed file; defaults to bundled construction seeds when present")
+    parser.add_argument("--dual-cut-limit", type=int, default=100, help="maximum new exact C5 dominance cuts per batch")
     parser.add_argument("--solve-timeout", type=float, default=15)
     parser.add_argument("--near-threshold", type=float, default=2.999)
     parser.add_argument("--no-color-prune", action="store_true")
@@ -683,8 +780,8 @@ def main():
     if args.controls:
         print(json.dumps(controls(), indent=2))
         return
-    if args.seconds <= 0 or args.solve_timeout <= 0:
-        parser.error("time budgets must be positive")
+    if args.seconds <= 0 or args.solve_timeout <= 0 or args.dual_cut_limit < 0:
+        parser.error("time budgets must be positive and the dual-cut limit nonnegative")
     run(args)
 
 
