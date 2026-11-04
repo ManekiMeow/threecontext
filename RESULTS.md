@@ -1178,6 +1178,11 @@ exists, not a proof.
   weight exactly 1/6, and every other event of its context exactly 1/6. These counts are consistent, so they do not
   yet give a contradiction.
 
+  In each block θ_{k,j} := |⟨t_j|ℓ_{k,j}⟩|² = 4/3 − 3·(squared cosine of the other two lines), where t_j is defined
+  below. Since 0 ≤ θ ≤ 1, **every squared cosine lies in [1/9, 4/9]**. Equivalently, every nontrivial singular value
+  of every Y_kl lies in [1/3, 2/3]. Applied to e_b − 1/10 this gives, for each event, a squared row norm at most 1/2
+  into each other context.
+
   The blocks give more. Let T be the +1/6 eigenprojection of E, so that 3Y² + 2Y − I − J/2 = W†TW =: q. This is 5/3
   times a rank-9 projection. In block j, T is the line of the unit Bloch vector n̂_j = 3(n_A + n_B + n_C). Call
   block j **k-special** if n_k = −n̂_j. Its squared cosines are then 1/6, 1/6 and 4/9 (the 4/9 for the pair not
