@@ -1,0 +1,187 @@
+{
+  "format": "ghz30-quotient-saturation-v1",
+  "quotient": [
+    [
+      0,
+      0,
+      1,
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2,
+      2,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      1,
+      3
+    ],
+    [
+      2,
+      2,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1,
+      0,
+      0
+    ]
+  ],
+  "sizes": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "parts": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "trace": [
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 2,
+      "neighbor_context": 0,
+      "mass": "1/5",
+      "upper": "1/10",
+      "strict": false
+    },
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 3,
+      "neighbor_context": 0,
+      "mass": "2/5",
+      "upper": "6/55",
+      "strict": false
+    },
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 3,
+      "neighbor_context": 2,
+      "mass": "1/5",
+      "upper": "1/10",
+      "strict": false
+    },
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 4,
+      "neighbor_context": 0,
+      "mass": "2/5",
+      "upper": "6/55",
+      "strict": false
+    },
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 4,
+      "neighbor_context": 1,
+      "mass": "1/5",
+      "upper": "1/10",
+      "strict": false
+    },
+    {
+      "rule": "constant_neighbor_bound",
+      "orbit": 5,
+      "neighbor_context": 0,
+      "mass": "1/5",
+      "upper": "1/10",
+      "strict": false
+    },
+    {
+      "rule": {
+        "kind": "context_budget_equality",
+        "context": 1,
+        "orbit_upper_bounds": [
+          "1/10",
+          "1/10"
+        ],
+        "strict_bounds": [
+          false,
+          false
+        ]
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "rhs": "1/10"
+    },
+    {
+      "rule": {
+        "kind": "context_budget_equality",
+        "context": 2,
+        "orbit_upper_bounds": [
+          "1/10",
+          "1/10"
+        ],
+        "strict_bounds": [
+          false,
+          false
+        ]
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "rhs": "1/10"
+    }
+  ],
+  "terminal": {
+    "kind": "saturated_edge_mismatch",
+    "orbits": [
+      2,
+      4
+    ],
+    "probabilities": [
+      "1/10",
+      "1/10"
+    ],
+    "neighbor_masses": [
+      "2/5",
+      "1/5"
+    ],
+    "quotient_edge_count": 1
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "source_summary": "search/overnight30_quotient_reviews/2026-11-04T2300/summary.json",
+  "source_summary_sha256": "c79ecb4bd34e1c76e328eb46b5353e3614ad9344236275907f519742b805350e",
+  "reviewed": 150,
+  "certified": 5,
+  "new_beyond_lp": 5,
+  "new_beyond_lp_and_proposition46": 4,
+  "combined_certified": 131,
+  "combined_unresolved": 19,
+  "scope": "Selected conditional quotient classes only. Actual group symmetry required; all cyclic phases allowed. No global nonexistence claim.",
+  "scan_seconds": 0.8506580600005691,
+  "all_saturation_exclusions": 88,
+  "all_terminal_kinds": {
+    "saturated_edge_mismatch": 8,
+    "constant_probability_outside_range": 38,
+    "constant_probability_exceeds_three_sector_bound": 22,
+    "constant_probability_exceeds_neighbor_bound": 4,
+    "context_upper_budget": 6,
+    "inconsistent_cauchy_equation": 10
+  },
+  "results": [
+    {
+      "source_index": 0,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "certificate": "quotient_000_certificate.json",
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "theta_numeric": 2.9134341612056254,
+      "terminal": {
+        "kind": "saturated_edge_mismatch",
+        "orbits": [
+          1,
+          3
+        ],
+        "probabilities": [
+          "1/10",
+          "1/10"
+        ],
+        "neighbor_masses": [
+          "1/5",
+          "2/5"
+        ],
+        "quotient_edge_count": 1
+      },
+      "already_covered_by_proposition46": true
+    },
+    {
+      "source_index": 5,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "certificate": "quotient_005_certificate.json",
+      "graph6": "]???????@?a_A__OGCC`_RCAe?Ae?@R?@dAOKgQ?q`GPd?Ood?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "theta_numeric": 2.895841606137077,
+      "terminal": {
+        "kind": "saturated_edge_mismatch",
+        "orbits": [
+          2,
+          4
+        ],
+        "probabilities": [
+          "1/10",
+          "1/10"
+        ],
+        "neighbor_masses": [
+          "2/5",
+          "1/5"
+        ],
+        "quotient_edge_count": 1
+      },
+      "already_covered_by_proposition46": false
+    },
+    {
+      "source_index": 6,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "certificate": "quotient_006_certificate.json",
+      "graph6": "]???????@?a_A__OGCC`_RCAe?Ae?@R?@dAOKgQ?q`GPd?Ood?OGDg_A`WG?SJ_?_Qi?@?lC??",
+      "theta_numeric": 2.8876144009422577,
+      "terminal": {
+        "kind": "saturated_edge_mismatch",
+        "orbits": [
+          2,
+          4
+        ],
+        "probabilities": [
+          "1/10",
+          "1/10"
+        ],
+        "neighbor_masses": [
+          "2/5",
+          "1/5"
+        ],
+        "quotient_edge_count": 1
+      },
+      "already_covered_by_proposition46": false
+    },
+    {
+      "source_index": 13,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "certificate": "quotient_013_certificate.json",
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?O_Dg_G`WG@CJ_?CQi??GlC??",
+      "theta_numeric": 2.8769632749390435,
+      "terminal": {
+        "kind": "saturated_edge_mismatch",
+        "orbits": [
+          0,
+          2
+        ],
+        "probabilities": [
+          "1/10",
+          "1/10"
+        ],
+        "neighbor_masses": [
+          "2/5",
+          "1/5"
+        ],
+        "quotient_edge_count": 1
+      },
+      "already_covered_by_proposition46": false
+    },
+    {
+      "source_index": 123,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "certificate": "quotient_123_certificate.json",
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??DiO?lQ?IdG?tGO?tGOgD__I_WG@SB_?cQI?@GkC??",
+      "theta_numeric": 2.834702474877309,
+      "terminal": {
+        "kind": "saturated_edge_mismatch",
+        "orbits": [
+          0,
+          2
+        ],
+        "probabilities": [
+          "1/10",
+          "1/10"
+        ],
+        "neighbor_masses": [
+          "2/5",
+          "1/5"
+        ],
+        "quotient_edge_count": 1
+      },
+      "already_covered_by_proposition46": false
+    }
+  ],
+  "remaining_unresolved": [
+    {
+      "index": 1,
+      "theta": 2.8998894283556553,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 3,
+      "theta": 2.8990339513116923,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 11,
+      "theta": 2.877045350758225,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 14,
+      "theta": 2.87631423957421,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 18,
+      "theta": 2.869984034233642,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 20,
+      "theta": 2.8685894064831716,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 25,
+      "theta": 2.8660255821500464,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 75,
+      "theta": 2.8465978409973913,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 94,
+      "theta": 2.840730953407773,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 97,
+      "theta": 2.8386872284006763,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 103,
+      "theta": 2.8380574322132563,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 104,
+      "theta": 2.8375144118435016,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 106,
+      "theta": 2.8373767462595585,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 107,
+      "theta": 2.83714664220044,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 112,
+      "theta": 2.8363554064706546,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 116,
+      "theta": 2.835795425422038,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 124,
+      "theta": 2.834115603258562,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 135,
+      "theta": 2.8312176885036666,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    },
+    {
+      "index": 147,
+      "theta": 2.829506546061962,
+      "lp_excluded": false,
+      "saturation_status": "not_excluded"
+    }
+  ]
+}

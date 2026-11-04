@@ -51,6 +51,7 @@ import networkx as nx
 import numpy as np
 
 from overnight30_screen import fast_screen, screen_graph
+from overnight30_quotient import find_obstruction, verify_certificate as verify_quotient_certificate
 
 
 N = 30
@@ -465,6 +466,11 @@ def screen_summary(result):
 
 def screened(adj, value=None, threshold=2.85, conflicts=2000):
     record = {"parts": PARTS, "edges": edges_of(adj)}
+    local = find_obstruction(record)
+    if local is not None:
+        verify_quotient_certificate(local)
+        return {"status": "excluded", "reason": "exact regular-pair or automorphism-quotient obstruction",
+                "graph": local["graph"], "certificate": local}
     if value is not None and value >= threshold:
         return screen_graph(record, sat_conflicts=conflicts)
     return fast_screen(record)

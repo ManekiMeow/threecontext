@@ -1,25 +1,28 @@
-"""Exact worker filters for Theorem45 and Proposition46.
+"""Exact worker filters for regular supports and verified orbit quotients.
 
 The quotient exclusion requires the actual simultaneous C5 automorphism on
 six consecutive five-vertex orbits, not just an equitable partition. Its SAT
 encoding defines exact block-count predicates, then excludes every context
-permutation and every within-context orbit swap of the proved template.
+permutation and every within-context orbit swap of Proposition46 and the
+independently verified probability/saturation certificate catalogs.
 
 Certificate recognition/verification uses only standard Python. The optional
 --self-test also checks the CNF with python-sat. No numerical theta is used.
 """
 import argparse
 from functools import lru_cache
+import hashlib
 import itertools
 import json
 from pathlib import Path
 
 from event30_c5_quotient import Q, check_arithmetic
 
-METHODS = {"regular_pair", "c5_quotient", "orbit_probability_quotient"}
+METHODS = {"regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation"}
 PAIRS = tuple((a, b) for a in range(6) for b in range(a+1, 6) if a//2 != b//2)
 ALLOWED_REGULAR_PAIRS = {(3, 3), (3, 4), (4, 3)}
 CATALOG = Path(__file__).with_name("overnight30_quotient_reviews")/"2026-11-04T2300"/"summary.json"
+SATURATION_CATALOG = Path(__file__).with_name("overnight30_saturation_reviews")/"2026-11-04T2300"/"summary.json"
 
 
 def require(condition, message):
@@ -59,11 +62,37 @@ def verified_catalog():
 
 
 @lru_cache(maxsize=1)
+def verified_saturation_catalog():
+    """Verify the separate saturation catalog without changing the frozen LP data."""
+    from event30_quotient_saturation import verify_certificate as verify_saturation
+    if not SATURATION_CATALOG.exists():
+        return ()
+    summary = json.loads(SATURATION_CATALOG.read_text())
+    source = Path(__file__).resolve().parent.parent/summary["source_summary"]
+    require(hashlib.sha256(source.read_bytes()).hexdigest() == summary["source_summary_sha256"],
+            "saturation catalog's source summary has changed")
+    result = []
+    for record in summary["results"]:
+        relative = Path(record["certificate"])
+        require(not relative.is_absolute() and ".." not in relative.parts, "invalid saturation certificate path")
+        certificate = json.loads((SATURATION_CATALOG.parent/relative).read_text())
+        terminal = verify_saturation(certificate)
+        require(certificate["sizes"] == [5]*6 and certificate["parts"] == [[0, 1], [2, 3], [4, 5]],
+                "saturation certificate does not have six equal C5 orbits")
+        require(certificate["quotient"] == record["quotient"] and terminal == record["terminal"],
+                "saturation catalog entry differs from its exact certificate")
+        result.append(certificate)
+    require(len(result) == summary["certified"], "saturation catalog certificate count differs")
+    return tuple(result)
+
+
+@lru_cache(maxsize=1)
 def pattern_catalog():
     check_arithmetic()
     result = {}
     # Static Proposition46 has priority when a later certificate overlaps it.
-    sources = [(Q, None)]+[(certificate["quotient"], certificate) for certificate in verified_catalog()]
+    sources = [(Q, None)]+[(certificate["quotient"], certificate)
+                          for certificate in verified_catalog()+verified_saturation_catalog()]
     for matrix, certificate in sources:
         for order in orbit_orders():
             pattern = tuple(matrix[order[a]][order[b]] for a, b in PAIRS)
@@ -183,12 +212,18 @@ def find_obstruction(record):
     if counts is not None:
         entry = pattern_catalog().get(tuple(counts[a][b] for a, b in PAIRS))
         if entry is not None:
-            order, probability = entry
+            order, proof = entry
             witness = {"orbit_order": list(order)}
-            if probability is not None:
-                witness["probability_certificate"] = probability
+            method = "c5_quotient"
+            if proof is not None and proof["format"] == "ghz30-orbit-probability-farkas-v1":
+                witness["probability_certificate"] = proof
+                method = "orbit_probability_quotient"
+            elif proof is not None:
+                require(proof["format"] == "ghz30-quotient-saturation-v1", "unknown quotient proof format")
+                witness["saturation_certificate"] = proof
+                method = "quotient_saturation"
             return {"format": "overnight30-worker-obstruction-v1", "graph": graph,
-                    "method": "orbit_probability_quotient" if probability is not None else "c5_quotient",
+                    "method": method,
                     "witness": witness}
     return None
 
@@ -207,17 +242,24 @@ def verify_certificate(certificate):
         pair = tuple(degrees[tuple(sorted((context, k)))] for k in others)
         require(None not in pair and list(pair) == witness["degrees"], "claimed pair supports are not regular")
         require(pair not in ALLOWED_REGULAR_PAIRS, "regular degrees are not excluded by Theorem45")
-    elif certificate["method"] in ("c5_quotient", "orbit_probability_quotient"):
+    elif certificate["method"] in ("c5_quotient", "orbit_probability_quotient", "quotient_saturation"):
         if certificate["method"] == "c5_quotient":
             check_arithmetic()
             template = Q
-        else:
+        elif certificate["method"] == "orbit_probability_quotient":
             from event30_probability_lp import verify_certificate as verify_probability
             probability = witness["probability_certificate"]
             verify_probability(probability)
             require(probability["sizes"] == [5]*6 and probability["parts"] == [[0, 1], [2, 3], [4, 5]],
                     "probability certificate does not describe six equal C5 orbits")
             template = probability["quotient"]
+        else:
+            from event30_quotient_saturation import verify_certificate as verify_saturation
+            saturation = witness["saturation_certificate"]
+            verify_saturation(saturation)
+            require(saturation["sizes"] == [5]*6 and saturation["parts"] == [[0, 1], [2, 3], [4, 5]],
+                    "saturation certificate does not describe six equal C5 orbits")
+            template = saturation["quotient"]
         order = tuple(witness["orbit_order"])
         require(order in orbit_orders(), "orbit ordering does not preserve the context partition")
         counts = quotient_counts(graph, adj)

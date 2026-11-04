@@ -155,8 +155,15 @@ The C5 quotient review in `overnight30_quotient_reviews/2026-11-04T2300/`
 examines 150 of 5,273 published quotient classes and excludes126 with exact
 orbit-probability Farkas certificates. `event30_probability_lp.py` separates
 numerical discovery from exact verification. `overnight30_quotient.py` verifies
-this catalog and Proposition46, compiles5,640 context/orbit-permuted forbidden
-signatures, and also checks regular pair supports from Theorem45. Its60 new
+this catalog and Proposition46, and also checks regular pair supports from
+Theorem45. A separate saturation catalog in
+`overnight30_saturation_reviews/2026-11-04T2300/` supplies five exact equality
+transcripts, one reproducing Proposition46 and four excluding additional
+classes. The combined131/150 selected classes expand to5,756 forbidden
+context/orbit signatures. `event30_quotient_saturation.py` uses exact affine
+elimination and saturated-edge consistency; nineteen selected classes remain
+unresolved. The asymmetric worker also applies this shared verified catalog.
+The60 new
 base auxiliaries preserve replay by rebasing legacy path cuts. The former
 C5leader is retired as a live best (historical evidence remains), and a
 2.899889 guide outside the catalog is loaded. Numerical score reduction after
@@ -164,9 +171,10 @@ retiring an excluded best is expected, not lost progress.
 
 Next useful research steps, preserving the running supervisor:
 
-- Extend quotient exclusions to forced Cauchy-equality/saturated-edge
-  contradictions when the probability relaxation is feasible. Preserve the
-  actual group-action requirement and verify every class certificate.
+- Explore the nineteen selected quotient classes left by probability and
+  Cauchy-equality propagation. Preserve the actual group-action requirement
+  and verify every new class certificate. Existing derivation formats and
+  immutable proof catalogs must retain reproducible verification.
 - Consider C3×C3 mixed actions with orbit types `R=(9,1)` and
   `T=(3,3,3,1)`, using affine-plane translation actions on points and three
   parallel classes of lines. RRR and RRT are excluded, as is RTT with three

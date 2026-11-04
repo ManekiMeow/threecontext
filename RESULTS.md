@@ -606,6 +606,17 @@ certificates produce 5,640 forbidden quotient signatures in the C₅ SAT worker.
 encoding and resumed cuts were checked independently. These are selected-class exclusions, not a proof
 against the entire C₅ family.
 
+Exact equality propagation adds four further quotient-class exclusions. A constant neighborhood mass α gives
+x_i≤h(α); equality of a context probability budget fixes both orbit probabilities. Attaining h(α) fixes the
+other sector mass, and attaining the full harmonic bound forces each incident overlap to be
+`√(x_i x_j)/α`. Adjacent saturated orbits must therefore have equal neighborhood masses toward one another.
+Rational affine elimination exposes contradictions even when some other orbit probabilities remain free.
+Five saved transcripts reproduce Proposition 46 and exclude four additional classes, bringing the total to
+**131 of the 150 selected classes**, with nineteen unresolved. Their actual C₅ graph fixtures and exact
+derivations verify with `python search/overnight30_saturation_reviews/2026-11-04T2300/verify.py`.
+The combined worker catalog excludes **5,756** quotient signatures; the asymmetric worker also recognizes
+these verified exclusions when evaluating mutation guides.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
