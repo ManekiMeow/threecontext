@@ -102,6 +102,13 @@ def build(family):
 
     for a, b, c in itertools.product(range(10), range(10, 20), range(20, 30)):
         clauses.append([-edge(a, b), -edge(a, c), -edge(b, c)])
+    if family == "c2_onepair":
+        # Proposition 39: the six moved vertices must induce C6. Each of the
+        # three invariant 2x2 blocks is one matching; triangle clauses select
+        # the parity yielding C6 instead of two triangles.
+        for k, l in itertools.combinations(range(3), 2):
+            a, b = edge(10*k, 10*l), edge(10*k, 10*l+1)
+            clauses.extend(([a, b], [-a, -b]))
     for u in range(30):
         incident = []
         for part in range(3):
@@ -114,19 +121,22 @@ def build(family):
         # counter. This is a weighted orbit-degree constraint, not orbit count.
         clauses.extend(CardEnc.atmost(incident, bound=10, vpool=pool,
                                      encoding=EncType.seqcounter).clauses)
-    # Two false twins in a context can be merged in the primal Gram matrix,
-    # preserving theta while dropping to 29 events (see RESULTS, Section 1.10).
-    # Encode unequal neighbourhoods directly, avoiding large trivial SAT pools.
+    # Equal neighbourhoods in either other context preclude a length-three
+    # path: any alleged path would complete a triangle at one endpoint.
+    # Proposition 39 therefore requires distinct rows in BOTH pair supports.
     for part in range(3):
         for u, v in itertools.combinations(range(10*part, 10*(part+1)), 2):
-            pairs = {tuple(sorted((edge(u, w), edge(v, w))))
-                     for w in range(30) if w//10 != part and edge(u, w) != edge(v, w)}
-            different = []
-            for a, b in sorted(pairs):
-                d = pool.id()
-                different.append(d)
-                clauses.extend(([-a, -b, -d], [a, b, -d], [a, -b, d], [-a, b, d]))
-            clauses.append(different)
+            for other in range(3):
+                if other == part:
+                    continue
+                pairs = {tuple(sorted((edge(u, w), edge(v, w))))
+                         for w in range(10*other, 10*other+10) if edge(u, w) != edge(v, w)}
+                different = []
+                for a, b in sorted(pairs):
+                    d = pool.id()
+                    different.append(d)
+                    clauses.extend(([-a, -b, -d], [a, b, -d], [a, -b, d], [-a, b, d]))
+                clauses.append(different)
     return Cadical153(bootstrap_with=clauses), edge_variables, orbits, permutation
 
 
@@ -140,6 +150,35 @@ def check_graph(graph, permutation):
         assert all(any(v//10 == part for v in graph[u])
                    for part in range(3) if part != u//10)
     assert all(graph.has_edge(permutation[u], permutation[v]) for u, v in graph.edges())
+
+
+def missing_three_path(graph):
+    """A missing same-context length-three path is an exact contraction obstruction."""
+    adj = [set(graph[v]) for v in range(30)]
+    for part in range(3):
+        for u, v in itertools.combinations(range(10*part, 10*part+10), 2):
+            if not any(adj[a] & adj[v] for a in adj[u]):
+                return u, v
+    return None
+
+
+def path_requirement(solver, edge_variables, pair):
+    """Existential CNF for one of the 200 length-three paths; no graph ansatz."""
+    u, v = pair
+    assert 0 <= u < v < 30 and u//10 == v//10
+    parts = [k for k in range(3) if k != u//10]
+    edge = lambda a, b: edge_variables[tuple(sorted((a, b)))]
+    terms = set()
+    for k, l in (parts, parts[::-1]):
+        for b, c in itertools.product(range(10*k, 10*k+10), range(10*l, 10*l+10)):
+            terms.add(tuple(sorted({edge(u, b), edge(b, c), edge(c, v)})))
+    start = solver.nof_vars()+1
+    clauses = []
+    for auxiliary, term in enumerate(sorted(terms), start):
+        clauses.extend([-auxiliary, literal] for literal in term)
+    clauses.append(list(range(start, start+len(terms))))
+    return dict(reason="same_context_pair_requires_length3_path", witness=list(pair),
+                aux_start=start, aux_end=start+len(terms)-1, clauses=clauses)
 
 
 def bad_coloring(graph):
@@ -350,6 +389,7 @@ def run(args):
                  "context_sizes": [10, 10, 10], "generator": permutation, "edge_orbits": num_orbits,
                  "color_prune": not args.no_color_prune, "models": 0, "scored": 0,
                  "rejected_coloring": 0, "rejected_connectivity": 0, "rejected_twins": 0,
+                 "rejected_contraction": 0,
                  "duplicate_graphs": 0, "solver_errors": 0, "batches": 0,
                  "duplicate_labelled": 0, "duplicate_isomorphic": 0,
                  "numerical_representatives_admitted": 0,
@@ -397,11 +437,32 @@ def run(args):
                 replayed += 1
                 statuses[record["status"]] += 1
             for cut in records(source/"cuts.jsonl"):
-                assert all(1 <= literal <= num_orbits for literal in cut["clause"])
-                solver.add_clause(cut["clause"])
+                if cut["reason"] == "same_context_pair_requires_length3_path":
+                    regenerated = path_requirement(solver, edge_variables, cut["witness"])
+                    # Base CNF improvements may change the first auxiliary ID.
+                    # A path cut uses only its own auxiliaries and edge-orbit
+                    # variables, so deterministic rebasing preserves the cut.
+                    shift = regenerated["aux_start"]-cut["aux_start"]
+                    rebased = []
+                    for clause in cut["clauses"]:
+                        converted = []
+                        for literal in clause:
+                            if abs(literal) <= num_orbits:
+                                converted.append(literal)
+                            else:
+                                assert cut["aux_start"] <= abs(literal) <= cut["aux_end"]
+                                converted.append((1 if literal > 0 else -1)*(abs(literal)+shift))
+                        rebased.append(converted)
+                    if regenerated["clauses"] != rebased:
+                        raise ValueError("auxiliary path cut replay differs from saved CNF")
+                    solver.append_formula(regenerated["clauses"])
+                else:
+                    assert all(1 <= literal <= num_orbits for literal in cut["clause"])
+                    solver.add_clause(cut["clause"])
         state.update(models=replayed, scored=statuses["scored_numerically"],
                      rejected_coloring=statuses["unbalanced_coloring"],
                      rejected_connectivity=statuses["disconnected"], rejected_twins=statuses["false_twins"],
+                     rejected_contraction=statuses["same_context_merge"],
                      duplicate_labelled=statuses["duplicate_labelled"],
                      duplicate_isomorphic=statuses["duplicate_isomorphic"],
                      duplicate_graphs=statuses["duplicate_labelled"]+statuses["duplicate_isomorphic"],
@@ -412,13 +473,41 @@ def run(args):
         state["termination"] = "running"
         rng = random.Random(args.seed+1000003*state["batches"])
         solver.set_phases([i if rng.random() < .8 else -i for i in range(1, num_orbits+1)])
+        seed_path = args.seed_graphs or Path(__file__).with_name("overnight30_symmetry_seeds.json")
+        seeds = json.loads(seed_path.read_text()).get(args.family, []) if seed_path.exists() else []
+        seed_bits = [orbit_bits_from_graph6(item["graph6"], positions) for item in seeds]
+        pending_seeds = [bits for bits, item in zip(seed_bits, seeds) if item["graph6"] not in seen]
+        state["construction_seed_graphs"] = len(seed_bits)
+        state["construction_seed_file"] = str(seed_path.resolve()) if seed_bits else None
         process = ThetaProcess()
         best_path = output/"best.json"
         earlier_bests = [json.loads((source/"best.json").read_text())
                          for source in sources if (source/"best.json").exists()]
-        best = max(earlier_bests, key=lambda item: item["theta_numeric"]) if earlier_bests else None
-        if best is not None and not best_path.exists():
+        # New exact filters may invalidate an older numerical leader. Keep its
+        # evidence explicitly, but report only currently surviving best graphs.
+        from overnight30_screen import screen_graph
+        admitted_bests, excluded_bests, checked_bests = [], [], set()
+        for candidate in earlier_bests:
+            if candidate["graph6"] in checked_bests:
+                continue
+            checked_bests.add(candidate["graph6"])
+            screening = screen_graph(candidate, sat_conflicts=2000)
+            if screening["status"] == "excluded":
+                excluded_bests.append(dict(candidate, screen=screening,
+                                           exclusion_status="excluded by updated exact structural screen"))
+            else:
+                admitted_bests.append(candidate)
+        if excluded_bests:
+            atomic_json(output/"legacy_best_excluded.json",
+                        {"scope": "historical numerical leaders excluded by current exact checks",
+                         "candidates": excluded_bests})
+        state["legacy_bests_excluded"] = len(excluded_bests)
+        best = max(admitted_bests, key=lambda item: item["theta_numeric"]) if admitted_bests else None
+        best_bits = orbit_bits_from_graph6(best["graph6"], positions) if best else None
+        if best is not None:
             atomic_json(best_path, best)
+        elif best_path.exists():
+            best_path.unlink()  # the full excluded record was preserved above
         near_dir = output/"near3"
         near_dir.mkdir(exist_ok=True)
         with models_path.open("a", buffering=1) as model_stream, cuts_path.open("a", buffering=1) as cut_stream:
@@ -438,6 +527,11 @@ def run(args):
                 solver.add_clause(clause)
                 cut_stream.write(json.dumps({"clause": clause, "reason": reason, "witness": witness})+"\n")
 
+            def learn_path(pair):
+                cut = path_requirement(solver, edge_variables, pair)
+                solver.append_formula(cut["clauses"])
+                cut_stream.write(json.dumps(cut, separators=(",", ":"))+"\n")
+
             checkpoint()
             try:
                 while time.monotonic() < deadline:
@@ -446,7 +540,19 @@ def run(args):
                         solver.set_phases([i if rng.random() < density_bias else -i
                                            for i in range(1, num_orbits+1)])
                     solver.conf_budget(2000)
-                    answer = solver.solve_limited()
+                    assumptions = []
+                    if pending_seeds:
+                        bits = pending_seeds.pop(0)
+                        assumptions = [i if bit == "1" else -i for i, bit in enumerate(bits, 1)]
+                    elif (seed_bits or best_bits) and rng.random() < .75:
+                        bits = best_bits if best_bits and (not seed_bits or rng.random() < .75) else rng.choice(seed_bits)
+                        assumptions = [i if bit == "1" else -i for i, bit in enumerate(bits, 1)
+                                       if rng.random() < .65]
+                        solver.set_phases([i if bit == "1" else -i for i, bit in enumerate(bits, 1)])
+                    answer = solver.solve_limited(assumptions=assumptions)
+                    if answer is False and assumptions:
+                        solver.conf_budget(2000)
+                        answer = solver.solve_limited()
                     if answer is None:
                         checkpoint()
                         continue
@@ -478,6 +584,11 @@ def run(args):
                         learn(clause, "connected_30_event_GHZ_required", sorted(component))
                         record["status"] = "disconnected"
                         state["rejected_connectivity"] += 1
+                    elif (merge_pair := missing_three_path(graph)) is not None:
+                        learn_path(merge_pair)
+                        record["status"] = "same_context_merge"
+                        record["contraction_pair"] = list(merge_pair)
+                        state["rejected_contraction"] += 1
                     else:
                         colors = bad_coloring(graph) if not args.no_color_prune else None
                         if colors is not None:
@@ -527,6 +638,7 @@ def run(args):
                                     full.update(result)
                                     if best is None or result["theta_numeric"] > best["theta_numeric"]:
                                         best = full
+                                        best_bits = bits
                                         atomic_json(best_path, best)
                                         print(args.family, "seed", args.seed, "best theta", best["theta_numeric"],
                                               "models", state["models"], "scored", state["scored"], flush=True)
@@ -558,6 +670,7 @@ def main():
     parser.add_argument("--seconds", type=float, default=300)
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).with_name("overnight30")/"pools")
     parser.add_argument("--resume-from", type=Path, help="previous output-dir root for this family and seed; archived .jsonl.gz is supported")
+    parser.add_argument("--seed-graphs", type=Path, help="family-indexed graph6 seed file; defaults to bundled construction seeds when present")
     parser.add_argument("--solve-timeout", type=float, default=15)
     parser.add_argument("--near-threshold", type=float, default=2.999)
     parser.add_argument("--no-color-prune", action="store_true")

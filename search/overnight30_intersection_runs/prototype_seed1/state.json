@@ -1,0 +1,26 @@
+{
+  "seed": 1,
+  "batches": 1,
+  "family": "c2_onepair",
+  "scope": "heuristic source-intersection and maximal-orbit-extension construction",
+  "sources": [
+    "/workspace/ghz30-overnight/search/overnight30_runs/2026-11-04/chunks/00005_asymmetric/asymmetric_seed20261104_best.json"
+  ],
+  "context_sizes": [
+    10,
+    10,
+    10
+  ],
+  "pair_triples_ranked": 91125,
+  "generated": 1915,
+  "scored": 678,
+  "screened_out": 1228,
+  "duplicate_labelled": 244,
+  "solver_errors": 9,
+  "elapsed_seconds": 100.01462052900024,
+  "updated_unix": 1793826651.7396145,
+  "distinct_labelled_supports": 1915,
+  "best_theta_numeric": 2.879722419199367,
+  "batch_generated": 1915,
+  "termination": "batch time budget"
+}

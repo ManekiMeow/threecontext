@@ -98,9 +98,27 @@ exclusion of the whole action. The three moving pairs are the opposite
 pairs of that cycle. The broader contraction test applies without symmetry
 and requires a length-three path for every same-context vertex pair.
 
+An immediate simpler corollary is that **each pair-context adjacency block
+has distinct rows and distinct columns**. If two vertices `u,v` in one
+context have identical neighborhoods in another context, any proposed
+length-three path between them uses one vertex of that other context.
+Its adjacency to both `u` and `v` closes an original triangle, contradicting
+triangle-freeness. Thus the required path cannot exist.
+
+Consequently the color-preserving automorphism group acts faithfully on
+each context. An automorphism fixing one context pointwise leaves every
+vertex's neighborhood in it unchanged. Distinct rows force every vertex
+in both remaining contexts to be fixed as well. In particular, the order
+of any color-preserving automorphism equals the order of its restriction
+to each of the three contexts.
+
 The cheap contraction test excludes seven of the eight initial weak-action
 family bests; only the `c5_double` best passes it. Those candidates already
 have independent rational theta exclusions, but the new witnesses avoid SDP.
+Six of those seven failures already have identical neighborhoods in just
+one other context. The `c3_fixed` best fails the full length-three-path test
+without any repeated row or column in any pair block, so the full test is
+strictly stronger on these samples.
 
 ## Initial checks and examples
 

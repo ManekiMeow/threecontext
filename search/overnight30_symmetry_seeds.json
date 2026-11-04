@@ -1,0 +1,37 @@
+{
+  "c2_onepair": [
+    {
+      "graph6": "]???????CxjeKCJk@K?D_@S?Y?EK?F@?AbC?Wq?Fy?_?i?gp_g?KCG_@KOOF@?W?sOS??Y?H??",
+      "context_sizes": [
+        10,
+        10,
+        10
+      ],
+      "theta_numeric": 2.879722419199367,
+      "edges_count": 97,
+      "provenance": {
+        "source": "/workspace/ghz30-overnight/search/overnight30_runs/2026-11-04/chunks/00005_asymmetric/asymmetric_seed20261104_best.json",
+        "pairs": [
+          [
+            1,
+            5
+          ],
+          [
+            17,
+            19
+          ],
+          [
+            25,
+            27
+          ]
+        ],
+        "iteration": 116,
+        "retained_edges": 89,
+        "method": "maximal_orbit_extension",
+        "extension": 2,
+        "order": "source_guided"
+      },
+      "scope": "numerical construction seed; globally survives contraction/color screens; dimension19 pair-disconnected"
+    }
+  ]
+}

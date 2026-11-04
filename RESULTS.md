@@ -320,8 +320,9 @@ procedure, and [`search/overnight30_obstructions.md`](search/overnight30_obstruc
 **Proposition 39 (event contraction and a weak involution).** In a thirty-event GHZ support graph, every two
 vertices in the same context are endpoints of a length-three path whose internal vertices lie in the other two
 contexts. More generally, no nontrivial identification of vertices within contexts can have a triangle-free
-quotient. If an automorphism exchanges exactly one pair in each context and fixes all other vertices, its six
-moved vertices must induce a **six-cycle**.
+quotient. Each pair-support adjacency matrix therefore has distinct rows and columns, and the group of
+automorphisms preserving each context acts faithfully on each context. If an automorphism exchanges exactly one pair
+in each context and fixes all other vertices, its six moved vertices must induce a **six-cycle**.
 
 *Proof:* use the state-weighted vectors `f_i = √c_i g_i`, whose sum in each context is ψ. Replace each identified
 group by the sum of its vectors. Within-context orthogonality preserves both the total squared norm and the
@@ -329,11 +330,23 @@ context sums, and an absent quotient edge still imposes orthogonality. Thus a tr
 a GHZ graph on fewer than thirty vertices, contrary to Corollary 6. Identifying just u,v can create a triangle
 only from a path `u–b–c–v` through the other contexts, proving the first assertion.
 
+If u,v have identical neighborhoods in either other context, either orientation of such a path would close an
+original triangle. This proves the row/column assertion. An automorphism fixing one context pointwise gives each
+vertex and its image the same neighbors there, so distinctness forces it to fix every vertex.
+
 For the stated involution, apply that assertion to each exchanged pair. Neither internal path vertex can be
 fixed: invariance would then give an original triangle. Hence all three blocks between the moved pairs are
 nonempty. Each invariant block is a matching or K₂,₂. A K₂,₂ block, together with the other two nonempty blocks,
 would contain a triangle. All three blocks are therefore matchings; their union is a six-cycle or two triangles,
 and triangle-freeness leaves only the six-cycle. ∎
+
+**Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
+transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
+choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
+scores were skipped at the deadline. The best graph has 97 edges and numerical θ ≈ **2.8797224192**. It passes
+the contraction and configured coloring screens, and its six moved vertices induce C₆. Its B–C support has five
+components, excluding dimension 19; no θ = 3 realization is claimed. The saved pool is in
+`search/overnight30_intersection_runs/prototype_seed1/`, and the continuing SAT worker uses its best graph as a seed.
 
 ---
 
@@ -2174,6 +2187,7 @@ including Route B, remains open.
 * `search/overnight30_symmetry.py`, `search/overnight30_asymmetric.py`: resumable weak-action SAT and asymmetric
   population searches with unrestricted theta scoring. `search/overnight30_screen.py` verifies exact obstructions;
   `search/overnight30_supervisor.py` bounds worker lifetimes and publishes experiment checkpoints.
+  `search/overnight30_symmetry_intersection.py` constructs weakly symmetric seeds from asymmetric supports.
 * `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
   of the remark on H36 and H37).
 * `search/projection_bound.py`: symbolic checks for Lemma 29, Corollary 30 and Theorem 31 (d ≥ 19).
