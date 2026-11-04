@@ -2,8 +2,10 @@
 
 Follow-up to *Exploring the boundary of quantum correlations with a time-domain optical processor*
 (arXiv:2208.07794; Sci. Adv. 2025). Everything numerical is reproducible from `search/`; every
-claim marked **(exact)** is checked in rational arithmetic by `search/verify_all.py`,
-`search/minimal37.py` or `search/dualcert.py`.
+graph certificate marked **(exact)** is checked in rational arithmetic by `search/verify_all.py`,
+`search/minimal37.py` or `search/dualcert.py`. Section 2.1 gives a new analytic projection bound,
+with symbolic checks in `search/projection_bound.py`; Section 3.12 has a solver-independent
+combinatorial certificate rejecting the historical four-context skeleton.
 
 Notation (following Theorem 1 of the paper). `H` is the graph whose vertices are the events and
 whose edges join **non-orthogonal** pairs. In the paper's figure this is the Perkel graph. The
@@ -25,8 +27,8 @@ covered by four cliques (four contexts). The separate question of the **smallest
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **Theorem: every three-context GHZ graph has at least 30 vertices, and every realization needs dimension at least 18** (exact proofs, Section 2, Corollary 6; earlier bounds 28 and 17). Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. So **n_min ∈ [30, 33] and d_min ∈ [18, 20]**. A smaller example would need contexts of sizes 10–12 only. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched (tri-Cayley graphs over all groups of order ≤ 12, all Cayley graphs of order 30 and 33) contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. |
-| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 18 (Corollary 6; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. The path forward is in Section 3.8. |
+| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.1). The new bound **n ≤ 2d − 7** rules out dimension 18; its equality case also rules out 31 positive-probability events in dimension 19. Thus **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. Every event has probability ≤ 1/9 (Lemma 3). A 9-event context forces at least 12 events in each other context and d ≥ 20 (Theorem 5); H33 is the only equality case with (9,12,12). The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36; H33 is not vertex-transitive and its contexts have unequal sizes. A new bounded search of all four size partitions below 33 is recorded in Section 2.1; it is not an exhaustive exclusion. |
+| (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 19 (Corollary 22; the GHZ bound can never give more than 20, the dimension of H33). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Section 3.12 certifies non-realizability of the historical SAT skeleton and Shrikhande blow-ups**, including a d = 20 example passing the size and degree bounds. In Route A, d = 19 now forces a 76-vertex, 30-regular graph with 10 neighbours per other basis. The general problem remains open. |
 
 ---
 
@@ -277,11 +279,12 @@ simple for d ≤ 33.) The convex envelope of `f(f−1)(f−2)` on [0, 3] is −f
 
 So d = 17 would need n ≤ 29, contradicting n ≥ 30. ∎
 
-**Where minimality stands.** **n_min ∈ [30, 33] and d_min ∈ [18, 20]**, and H33 attains both upper bounds.
+**Where minimality stands.** **n_min ∈ [30, 33] and d_min ∈ [19, 20]**, and H33 attains both upper bounds.
+The dimension lower bound and the sharper restrictions below use Section 2.1.
 
 * By Theorem 5, a graph with fewer than 33 vertices has every context of size 10, 11 or 12, with n ∈ {30, 31, 32}.
-* A realization in dimension 18 or 19 has no 9-event context (that needs d ≥ 20), so every context has ≥ 10 events,
-  and n ≤ 32 or n ≤ 34 respectively.
+* Dimension 18 is impossible. A realization in dimension 19, after deleting zero-probability events,
+  must have exactly 30 events, with context sizes (10,10,10).
 * By Lemma 3 such contexts are "near-rigid": `Σ_{i ∈ I_k} ||E g_i||² = (|I_k| − 9)/4 ≤ 3/4`.
 
 The natural next step is a quantitative version of steps 1–4 of Theorem 5 for contexts of 10–12 events. A plain
@@ -300,13 +303,117 @@ force its weight to 0.
 * No triangle-free graph on ≤ 11 vertices is rigid in this sense, and the rigid ones on 12–13 vertices have
   theta ≤ 2.5.
 
+### 2.1 A stronger dimension bound from three projections (new)
+
+All statements in this subsection hold over **ℂ**, with no assumption of uniform probabilities, symmetry,
+or uniqueness of the realization. Write d for the dimension of the span of the event vectors. The bound on n
+below holds even with zero-probability events; delete those events before applying the subsequent case analysis.
+
+**Lemma 21 (three-projection trace inequality).** For orthogonal projections A, B, C on a D-dimensional space,
+
+    8 Re tr(ABC) ≥ rank A + rank B + rank C − 2D.
+
+*Proof.* Put T = (BC + CB)/2. For fixed B,C, the minimum of `tr A(8T − I)` over projections A is the sum of the
+negative eigenvalues of `8T − I`. Use the standard two-projection decomposition of B,C:
+
+* On a one-dimensional joint eigenspace with eigenvalues b,c ∈ {0,1}, the contribution is at least
+  `min(0, 8bc − 1) ≥ b + c − 2`.
+* On a nontrivial two-dimensional block, B and C have rank one and overlap t ∈ (0,1). The eigenvalues of
+  `8T − I` are `λ± = 4t² ± 4t − 1`. Their negative-part sum is at least −2, since
+  `λ− + 2 = 4(t − 1/2)² ≥ 0` and `λ− + λ+ + 2 = 8t² ≥ 0`.
+  This is precisely the required `rank B + rank C − 2·2 = −2` on that block.
+
+Adding the blocks gives `tr A(8T − I) ≥ rank B + rank C − 2D`, proving the inequality. ∎
+
+**Equality structure.** Equality forces an orthogonal direct sum of:
+
+* two-dimensional blocks with three rank-one projections forming a trine: their sum is `(3/2)I` and
+  `tr ABC = −1/8`;
+* one-dimensional blocks on which exactly two of A,B,C are 1.
+
+Indeed, on a nontrivial block equality requires t = 1/2 and A the negative eigenspace of `8T − I`.
+On the joint eigenspaces, (b,c) = (0,0) cannot attain equality; the other cases force A = 1 − bc.
+These minimizing eigenspaces are unique (no zero eigenvalues at equality), so A cannot mix the blocks.
+
+**Corollary 22 (n ≤ 2d − 7, hence d ≥ 19).** Remove the common state ψ from the three context projections:
+on `ψ⊥`, let `A_k = Π_k − |ψ⟩⟨ψ|`. Their ranks are `|I_k| − 1`, the ambient dimension is d − 1, and
+
+    tr(A_1 A_2 A_3) = tr(Π_1 Π_2 Π_3) − 1 = −1.
+
+Lemma 21 gives `−8 ≥ (n − 3) − 2(d − 1)`, or **n ≤ 2d − 7**. Combining this with n ≥ 30 excludes d = 18.
+H33 attains equality, with n = 33 and d = 20. No assumption that the common state is unique is needed. ∎
+
+The same decomposition also gives **d ≥ max_k |I_k| + 8**: each nontrivial block of `(A_2A_3 + A_3A_2)/2`
+has one negative eigenvalue at least −1/8, so trace −1 needs at least eight blocks. Their number is at most
+`(d−1) − max(rank A_2, rank A_3)`. Permute the contexts. H33 attains this bound too.
+
+**Theorem 23 (31 positive-probability events in d = 19 are impossible).** Suppose such a realization exists,
+with all 31 probabilities positive.
+
+1. Equality in Lemma 21 gives exactly eight trine blocks, because their traces must add to −1. Together with ψ
+   they account for 17 dimensions and rank 9 in each context. The two remaining dimensions belong to pair-intersection
+   sectors. If their dimensions are x,y,z for pairs (1,2), (1,3), (2,3), then
+
+       x + y + z = 2,   (|I_1|,|I_2|,|I_3|) = (9+x+y, 9+x+z, 9+y+z).
+
+   A 9-event context would force n ≥ 33. Thus, up to permutation, (x,y,z) = (1,1,0), and the contexts have sizes
+   (11,10,10). Call the two size-10 contexts B,C; their pair-intersection sector is zero.
+
+2. Let Q project onto the two one-dimensional pair sectors. The frame operator is
+   `F = (3/2)I + (3/2)|ψ⟩⟨ψ| + (1/2)Q`.
+   Choose event phases with `⟨g_i|ψ⟩ = √c_i > 0`. For an edge b~c between B,C, triangle-freeness gives
+   `⟨g_b|F|g_c⟩ = 2⟨g_b|g_c⟩`, while `⟨g_b|Q|g_c⟩ = 0`. Consequently
+
+       ⟨g_b|g_c⟩ = 3√(c_b c_c),    Σ_{c∈N_C(b)} c_c = 1/3,
+
+   and likewise with B,C reversed. The B–C overlap matrix has rank 9: its nonzero singular values are
+   1 and eight copies of 1/2, from ψ and the eight trine blocks.
+
+3. In either size-10 context, the deficits `δ_i = 1/9 − c_i ≥ 0` sum to 1/9. A subset of probability 1/3
+   therefore contains either three events, all with δ_i = 0, or four events containing **all** events with δ_i > 0.
+   (For a subset of size k, its deficit is `(k − 3)/9`, between 0 and 1/9.)
+   Every deficient C-event has a neighbour in B, so all deficient C-events have identical B-neighbourhoods.
+   Their columns in the overlap matrix are proportional. Rank 9 permits at most two such columns; positivity and
+   total deficit 1/9 require at least two. Hence there are exactly two deficient events, of combined probability 1/9,
+   and eight saturated events of probability 1/9. The same holds in B.
+
+4. Choose two distinct saturated B-events b,b′. Lemma 3 gives Qg_b = Qg_b′ = 0. The trine decomposition then gives
+   `⟨g_b|Π_C|g_b′⟩ = (1/4)⟨g_b|g_b′⟩ + (3/4)√(c_b c_b′) = 1/12`.
+   On the other hand the edge formula in step 2 gives this entry as
+   `9√(c_b c_b′) Σ_{c∈N_C(b)∩N_C(b′)} c_c`, whose prefactor is 1.
+   The two deficient C-events are twins and occur together in this common neighbourhood. Its probability is
+   therefore an integer multiple of 1/9, which cannot equal 1/12. Contradiction. ∎
+
+**What remains.** After deleting zero-probability events, a dimension-19 example must have **n = 30 and contexts
+(10,10,10)**. The event-number question still has four possible partitions below H33:
+(10,10,10), (10,10,11), (10,10,12), and (10,11,11); all but the first require dimension at least 20.
+Thus a 31- or 32-event example would improve the event record without improving the dimension record.
+
+**Reproduction.** `python search/projection_bound.py` checks the block identities, equality shape enumeration, and
+rational contradiction. The arguments above provide the proofs; no numerical optimizer is used in them.
+`search/gap_search.py` performs a separate, bounded heuristic search over the four event-size partitions, starting
+from modifications of H33. Its saved graphs and numerical values are in `search/gap_search_results.json`.
+Three seeds and 150 mutations per seed were run for each partition (1800 mutations total):
+
+| context sizes | best numerical θ | exact upper bound for that saved graph |
+|---|---|---|
+| (10,10,10) | 2.869169 | 14351/5000 = 2.8702 |
+| (10,10,11) | 2.912789 | 14569/5000 = 2.9138 |
+| (10,10,12) | 2.922369 | 14617/5000 = 2.9234 |
+| (10,11,11) | 2.911353 | 7281/2500 = 2.9124 |
+
+The last column comes from rational dual certificates verified by `dualcert.exact_upper`, reproduced with
+`python search/gap_search.py --verify --output search/gap_search_results.json`. It excludes those four individual
+graphs. **Failure to find θ = 3 in these runs does not exclude any of the four size partitions.**
+
 ---
 
 ## 3. Four-context Kochen–Specker sets
 
-**Update on the bounds.** Section 2 now gives n ≥ 30 and d ≥ 18 for three-context GHZ graphs (Corollary 6). Some
+**Update on the bounds.** Sections 2–2.1 now give n ≥ 30 and d ≥ 19 for three-context GHZ graphs (Corollaries 6, 22).
+In dimension 19 the positive support must have exactly 30 events in contexts (10,10,10) (Theorem 23). Some
 subsections below were written earlier and still say "≥ 28 rays" or "d ≥ 17" for the K4-free route (Route A). The
-improved values ≥ 30 and d ≥ 18 apply there. The condition "d ≤ 16" (then every ray lies in a K4) becomes d ≤ 17.
+improved values ≥ 30 and d ≥ 19 apply there. The condition "d ≤ 16" (then every ray lies in a K4) becomes d ≤ 18.
 These bounds come from a three-context GHZ graph at every ray, so they cannot exceed d_min(GHZ) ≤ 20 (H33). They say
 nothing about Route B, where the best bound is d ≥ 6.
 
@@ -323,7 +430,7 @@ orthonormal, `w ∈ span N_k(w)` (since B_k is complete), and the non-orthogonal
 So `(w, N(w))` is a **three-context GHZ paradox with state w**. By Section 2:
 
 * every ray is non-orthogonal to **at least 30** rays of the other three bases (Corollary 6; 28 by Theorem 2);
-* `D ≥ 18` (Corollary 6; 17 by Theorem 1).
+* `D ≥ 19` (Corollary 22; 18 by Corollary 6).
 
 So a K4-free four-context KS set would contain a three-context GHZ graph at every vertex. This
 also recovers the paper's Theorem 4: shared vectors between bases are impossible in this setting.
@@ -703,7 +810,7 @@ the three ‖·w‖². By AM–GM the smallest of the three products is at most 
 | internal bases | irrelevant | blockers must meet ≥ 3 covering bases (Lemma 11) |
 | symmetry | allowed; covariant ⇒ KS iff one ray's neighbourhood is triangle-free | no group transitive on all four bases (Cor. 12a) |
 | each ray | neighbourhood is a 3-context GHZ graph with ≥ 30 rays, ≥ 9 in each other basis (≥ 12 in the other two if one has exactly 9); all cross overlaps ≤ 1/3 (Lemma 14) | lies in a K4 if d ≤ 17; p(w) ∉ STAB(G_w); pairs with overlap > 1/3 lie in a K4 |
-| dimension | d ≥ 18 (Corollary 6; this argument cannot give more than 20) | d ≥ 6 (Theorem 15, computer-assisted) |
+| dimension | d ≥ 19 (Corollary 22; at d = 19 every neighbourhood has shape (10,10,10)) | d ≥ 6 (Theorem 15, computer-assisted) |
 | Pauli eigenbases (Lagrangians) | impossible (Thm 13) | impossible (Thm 13) |
 | orthogonality graph | may be regular or vertex-transitive; never strongly regular (Thm 16) | never strongly regular, vertex-transitive (Thm 17) or doubly Hoffman-tight regular (Prop. 18) |
 
@@ -828,10 +935,11 @@ With sound symmetry breaking (double-lex on the B₁–B₂ block, column-lex on
 * d = 4, 5: **UNSAT** (instant). d = 6: **SAT**, a perfectly regular skeleton (4 neighbours per other basis).
 * With the full requirement n ≥ 28: d = 10 **UNSAT**; d = 17 **undecided** (CaDiCaL, 14000 s, no verdict). Deciding
   it needs a stronger encoding (e.g. lazy θ = 3 neighbourhood constraints, direction 1 below) rather than more time.
-  *Later:* d = 17 is now excluded analytically (Corollary 6 gives d ≥ 18), and (DEG) can be raised to ≥ 30 in total,
+  *Later:* d ≤ 18 is now excluded analytically (Corollary 22 gives d ≥ 19), and (DEG) can be raised to ≥ 30 in total,
   with ≥ 12 in the other two bases whenever one basis contributes exactly 9 (Theorem 5).
-* So the combinatorial conditions alone cannot give impossibility. Since d ≥ 18 analytically, the content is in
-  θ(H̄_w) = 3 for every neighbourhood. UNSAT at a given d ≥ 18 would still be a theorem for that d.
+* So these combinatorial conditions alone are insufficient to establish realizability. Since d ≥ 19 analytically,
+  the content is in θ(H̄_w) = 3 for every neighbourhood. Section 3.12 certifies that the reproduced d = 6 skeleton
+  fails this test, and supplies a d = 20 example passing the updated size bounds that still fails it.
 
 **Open directions.**
 1. *CEGAR skeleton search (finding and per-d impossibility).* SAT skeleton → SDP check θ(H̄_w) = 3 for every w → block
@@ -1018,6 +1126,58 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   * larger D, reusing the GHZ web of the orbit;
   * for Route A, only graphs whose cross overlaps are at most 1/3 (H36, H39, Perkel) remain usable.
 
+### 3.12 Exact rejection of combinatorial candidates; the remaining d = 19 case (new)
+
+**A local obstruction with no numerical tolerance.** If a vertex w of a four-partite non-orthogonality skeleton H
+has a bipartite neighbourhood, the prescribed zeros cannot be realized by four complete orthonormal bases.
+In state w, the rays in each of the other three parts have total Born weight 1. Thus N(w) has weight 3.
+But each of its two bipartition classes is an orthogonal set and has weight at most 1 by Bessel's inequality.
+Equivalently, `θ(complement(H[N(w)])) ≤ 2 < 3`. This argument also permits additional zero overlaps in a
+putative realization: rays omitted from N(w) are already prescribed orthogonal to w, and each colour class remains
+orthogonal when more zeros are added. It works over ℂ.
+
+**The historical d = 6 SAT skeleton is not realizable.** Running `skeleton_sat.py 6 12 4` reproduces a regular
+24-vertex graph with four neighbours in each other part. Its full graph and a bipartition of a 12-vertex
+neighbourhood are saved in `ks/skeleton_d6_certificate.json`. The independent checker confirms K4-freeness,
+C2, C4, and TRI, and verifies the obstruction above. This particular model also has an 8-clique in its
+orthogonality graph, already too large for d = 6. It is a combinatorial relaxation, not an unresolved quantum
+candidate. Its uniform blow-ups retain both obstructions.
+
+**A candidate passing the clique-size and updated degree bounds still fails.** Start instead with the Shrikhande
+graph on Z₄², with connection differences ±(1,0), ±(0,1), ±(1,1). Its four parity classes are independent sets of
+size 4. Replace every vertex by t independent clones, and every edge by a complete bipartite graph between clones.
+For t = 5 the resulting H has:
+
+* 80 vertices in four parts of size 20; its complement has a four-clique cover;
+* no K4, so the covering-basis constraints are KS-non-colourable;
+* independence number 20, so no prescribed orthogonal clique exceeds the target dimension;
+* 10 neighbours per other part, 30 in total, satisfying the current local event-count lower bounds;
+* C2, C4, and TRI satisfied (common-neighbour counts scale by t);
+* a neighbourhood that is a blow-up of C₆, hence bipartite, giving the exact impossibility certificate above.
+
+Thus increasing dimension and degree by cloning cannot repair this obstruction. The same argument excludes all
+uniform blow-ups of Shrikhande, including every t ≥ 5, where the displayed dimension and degree bounds hold.
+This extends the known local obstruction of §3.10 to explicit larger skeletons; it is not a general four-context
+impossibility theorem. Data: `ks/shrikhande_blowup_certificate.json` stores the base graph and the bipartition.
+
+**Solver-independent verification (standard Python only):**
+
+```sh
+python ks/skeleton_certificate.py verify ks/skeleton_d6_certificate.json
+python ks/skeleton_certificate.py verify ks/shrikhande_blowup_certificate.json --blowup 5
+```
+
+The checker verifies the skeleton constraints and computes the base graph's independence number exactly by
+bitset recursion; the clone extension follows from the recorded construction. Regeneration of the first graph
+requires python-sat, but verification of the saved witness does not.
+
+**Sharper target for Route A.** Corollary 22 raises its lower bound to **d ≥ 19**. If a K4-free four-basis example
+exists in d = 19, every ray's neighbourhood has exactly 30 events with context sizes (10,10,10), by Theorem 23
+and the GHZ lower bound. Hence H must have **76 vertices, be 30-regular, and have exactly 10 neighbours per other
+basis at every vertex**. Every transition support is a 10-regular 19×19 bipartite graph. Its local theta values
+must all equal 3; the certificates above show why degree and support-intersection conditions alone do not suffice.
+The general four-context problem, including Route B, remains open.
+
 ## Files
 
 * `search/verify_all.py`: exact verification of the 39- and 37-vertex examples (runs in under a second).
@@ -1025,6 +1185,11 @@ Moreover, no state passes this test iff there are weights λ_r with `Σ_{r∈T} 
   3-colourings, and the uniqueness step of Theorem 5.
 * `search/vertex_identity.py`, `search/vertex_identity.log`: Lemma 3's identity and inequality on H33, H36, H37, H39.
 * `search/bounds30.py`, `search/bounds30.log`: the exact spectral table of Corollary 6 (largest n for each d).
+* `search/projection_bound.py`: symbolic checks for Lemma 21, Corollary 22 and Theorem 23 (d ≥ 19).
+* `search/gap_search.py`, `search/gap_search_results.json`: bounded searches of the four missing event-size
+  partitions and exact dual checks of the best saved graphs.
+* `ks/skeleton_certificate.py`, `ks/skeleton_d6_certificate.json`, `ks/shrikhande_blowup_certificate.json`:
+  independent exact checks and non-realizability certificates for §3.12.
 * `search/minimal37.py`: exact dual certificates showing H37 is vertex-critical.
 * `search/ftheta.py`, `search/fsearch.py`, `search/tcount.py`: the Z_q tri-Cayley search.
 * `search/groupsearch.py`: tri-Cayley search over non-cyclic groups.
