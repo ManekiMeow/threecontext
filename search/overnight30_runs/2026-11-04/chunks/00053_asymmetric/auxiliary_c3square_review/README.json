@@ -1,0 +1,54 @@
+{
+  "scope": "Completed bounded auxiliary C3-square research, generated separately from this host chunk; excluded supports are construction/research data, not realizations. The host chunk only carries this immutable archive to the existing supervisor publisher.",
+  "archive": "ghz30-c3square-two-kernel-20261104T2320.tar.gz",
+  "sha256": "09a058af96a285cf1d91e8495436e9860cf88bd244ba3031e40ce97b4b506672",
+  "bytes": 1663252,
+  "host_chunk_id": 53,
+  "raw_summary": {
+    "scope": "bounded two-kernel C3 x C3 RTT search; no nonexistence conclusion",
+    "elapsed_seconds": 68.07033972199861,
+    "modes": [
+      {
+        "mode": "aligned",
+        "edge_orbits": 54,
+        "cnf_variables": 5004,
+        "cnf_clauses": 15214,
+        "termination": "time_budget",
+        "models": 8897,
+        "scope": "bounded SAT enumeration; solver exhaustion alone is not an exclusion proof",
+        "screen_counts": {
+          "probability_propagation": 124,
+          "bridge_shortage": 4846,
+          "unbalanced_coloring": 74,
+          "same_context_merge": 3355,
+          "degree_mass": 376,
+          "unbridged_vertex": 122
+        },
+        "final_cnf_sha256": "dd3026c17bea3744d768b214b0b6ce059f713389c3747fd2917d16bf2c687827"
+      },
+      {
+        "mode": "opposed",
+        "edge_orbits": 52,
+        "cnf_variables": 4936,
+        "cnf_clauses": 14950,
+        "termination": "time_budget",
+        "models": 8076,
+        "scope": "bounded SAT enumeration; solver exhaustion alone is not an exclusion proof",
+        "screen_counts": {
+          "same_context_merge": 3808,
+          "bridge_shortage": 2185,
+          "probability_propagation": 587,
+          "degree_mass": 731,
+          "unbalanced_coloring": 765
+        },
+        "final_cnf_sha256": "8e549d72453ac4ded94ae515797349fa26885a09ecbd9b6eed143ef092e28b72"
+      }
+    ],
+    "surviving_models": 0,
+    "controls": null,
+    "numerical": []
+  },
+  "generator_source_sha256": "d9067dcc559ebe2b3b9de4a2f45ad4524f9ebed5e023470fc7475c795b03cf2b",
+  "proof_source_directory": "search/event30_c3square_aligned_certificates",
+  "created_utc": "2026-11-04T23:31:56.478615+00:00"
+}
