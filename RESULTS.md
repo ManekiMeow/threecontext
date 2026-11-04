@@ -1127,8 +1127,17 @@ python3 search/transfer_d19.py
 **Search beyond symmetry (heuristic, not evidence of absence).**
 * Method: a dual-guided local search over maximal triangle-free tripartite supports, maximising ϑ(H̄). It adds the
   non-edge with the largest dual multiplier and removes the weaker edge of each triangle this creates.
-* (10,10,10), 30 events: best ϑ = 2.9375 after about 10⁴ supports. The best supports are irregular, with degree pairs
-  such as (2,5), (6,1) and (3,4).
+* (10,10,10), 30 events: best ϑ = 2.93747 after about 10⁴ supports, with exact upper bound 5877/2000 = 2.9385
+  (`search/best30_support.json`).
+  * It is a 94-edge irregular support.
+  * It passes the 3-path screen of the four-context branch (`research/ghz-gaps-four-context`, its new Proposition 39:
+    any two events of a context are joined by a path through the other two contexts).
+  * Its A–B support is disconnected, so it is not a dimension-19 candidate.
+  * For comparison, that branch's overnight campaign (about 7·10⁴ scored supports by 22:00) reports 2.9123 as its
+    best asymmetric value.
+* Z5-invariant supports (two orbits per context, a family containing every family of Theorem 45 and allowing two
+  probability values per context): two independent runs stop at ϑ = 2.913434. This matches, to all printed digits,
+  the best "C5-double" support of that campaign (2.9134341612, exact bound 1821/625).
 * Calibration at (12,12,12), where GHZ graphs exist: it reached ϑ = 2.999988 on a 130-edge graph. That graph is not
   itself a GHZ graph: two solvers agree that ϑ < 3, and all 36 weights are positive.
 * Calibration at (9,12,12), where H33 is the unique answer (Theorem 5): it stalled at 2.9451.
