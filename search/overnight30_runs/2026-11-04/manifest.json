@@ -68,14 +68,18 @@
       "state": "completed"
     },
     {
+      "archive_bytes": 68620,
       "code_commit": "a131be301f4641ce02cbf142318e86e3c0d4b3d3",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00003_c2_mixed",
+      "elapsed_seconds": 62.230235918999824,
       "family": "c2_mixed",
+      "finished_utc": "2026-11-04T21:05:34+00:00",
       "host": "4eb071b4d7f0",
       "id": 3,
       "kind": "symmetry",
       "pid": 5188,
       "resume_job": null,
+      "returncode": -15,
       "seconds_budget": 600.0,
       "seed": 20261107,
       "source_sha256": {
@@ -83,17 +87,22 @@
         "search/overnight30_symmetry.py": "6aeb9404bf7f0636b76a00730548d4f2644f9a3c22526ed1334ef44f6de5b83a"
       },
       "started_utc": "2026-11-04T21:04:31+00:00",
-      "state": "running"
+      "state": "failed",
+      "termination_reason": "signal_15"
     },
     {
+      "archive_bytes": 61123,
       "code_commit": "a131be301f4641ce02cbf142318e86e3c0d4b3d3",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00004_c3_fixed",
+      "elapsed_seconds": 62.22557731699999,
       "family": "c3_fixed",
+      "finished_utc": "2026-11-04T21:05:34+00:00",
       "host": "4eb071b4d7f0",
       "id": 4,
       "kind": "symmetry",
       "pid": 5190,
       "resume_job": null,
+      "returncode": -15,
       "seconds_budget": 600.0,
       "seed": 20261108,
       "source_sha256": {
@@ -101,17 +110,22 @@
         "search/overnight30_symmetry.py": "6aeb9404bf7f0636b76a00730548d4f2644f9a3c22526ed1334ef44f6de5b83a"
       },
       "started_utc": "2026-11-04T21:04:31+00:00",
-      "state": "running"
+      "state": "failed",
+      "termination_reason": "signal_15"
     },
     {
+      "archive_bytes": 47527,
       "code_commit": "a131be301f4641ce02cbf142318e86e3c0d4b3d3",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00005_asymmetric",
+      "elapsed_seconds": 60.095616849997896,
       "family": null,
+      "finished_utc": "2026-11-04T21:05:34+00:00",
       "host": "4eb071b4d7f0",
       "id": 5,
       "kind": "asymmetric",
       "pid": 5222,
       "resume_job": 0,
+      "returncode": -15,
       "seconds_budget": 600.0,
       "seed": 20261104,
       "source_sha256": {
@@ -119,7 +133,8 @@
         "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
       },
       "started_utc": "2026-11-04T21:04:34+00:00",
-      "state": "running"
+      "state": "failed",
+      "termination_reason": "signal_15"
     }
   ]
 }
