@@ -34,8 +34,9 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 ## Scientific baseline and priorities
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
-Keep Claude's theorem numbering in `RESULTS.md`; the last numbered result at
-campaign setup is Theorem 38. Read Sections 1.10 and 2.1–2.3 before adding claims.
+Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
+at campaign setup, and Proposition 39 now gives the event-contraction obstruction.
+Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
 
@@ -59,7 +60,10 @@ weights unless a run explicitly records a narrower ansatz:
 3. Apply exact combinatorial screens and mine surviving graph patterns for a
    new obstruction. In particular, a thirty-event GHZ graph must be connected,
    have no nonadjacent false twins, and every proper three-colouring must have
-   classes (10,10,10). An unbalanced colouring is an exact exclusion witness.
+   classes (10,10,10). Every same-context pair must also have a length-three
+   path through the other contexts (Proposition 39). In the one-transposition
+   per context family, the six moved vertices must induce C6. These are exact
+   exclusions, not numerical score heuristics.
 4. Promote promising supports to full Lovasz SDP checks. Preserve candidates
    near theta=3 and their numerical matrices. Seek exact rational primal
    certificates; if a valid example is found, investigate its realization rank

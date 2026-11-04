@@ -16,6 +16,12 @@ with a prescribed proper partition into three contexts of ten vertices.
   addition. Their squared norms add, the total vector sum is unchanged, and
   every required zero remains a zero because their neighborhoods coincide.
   The resulting graph is triangle-free and three-colorable on 29 vertices.
+* **A same-context pair without a length-three path.** This strictly
+  strengthens the false-twin test. Identifying two vertices in one context
+  can create a triangle only if their neighborhoods contain adjacent
+  vertices, equivalently if the original vertices are joined by a
+  length-three path through the other two contexts. If no such path exists,
+  the same Gram-vector merge produces a triangle-free 29-event graph.
 * **Any unbalanced proper three-coloring.** Equality in the three-color theta
   bound makes each color class a complete context for the GHZ state. No event
   can have zero probability, since deleting it would contradict the 30-event
@@ -54,6 +60,47 @@ and pi/2, and the full context spaces share exactly the state direction.
 The program stores these separately under `dimension19_certificate` and
 `dimension19_eligible`. They do **not** change the global status to `excluded`.
 Passing them does not prove any realization or rank bound.
+
+## Contraction lemma and a single-transposition action
+
+Let `f_i` be weighted Gram vectors for a theta-three realization, normalized
+so that the sum in each context is the same unit state `psi`. Within each
+context the vectors are orthogonal. Partition each context into arbitrary
+nonempty groups, and replace a group `O` by `F_O = sum_{i in O} f_i`.
+Orthogonality gives `||F_O||^2 = sum_{i in O} ||f_i||^2`, so total trace is
+unchanged. The three context sums and their total squared norm are also
+unchanged. The new Gram matrix is positive semidefinite and supported on
+the quotient graph, where two groups are adjacent when some original pair
+between them is adjacent. If this quotient is triangle-free, it is another
+three-context GHZ graph. Thus a quotient with fewer than thirty vertices is
+impossible. No averaging or projection onto a symmetry eigenspace is needed.
+
+In particular, suppose an involution swaps exactly one pair in each context
+and fixes the other twenty-four vertices (`c2_onepair`). Contract its three
+moving pairs. The quotient has twenty-seven vertices, so it must contain a
+triangle. A quotient triangle involving any fixed vertex lifts to a triangle
+in the original graph: adjacency to a moving pair is all-or-none, and any
+edge joining the other two quotient vertices then completes the lift.
+Consequently all three moving-pair quotient vertices must be mutually
+adjacent.
+
+Each invariant bipartite block between two moving pairs is empty, one of
+the two perfect matchings, or the full `K_{2,2}`. None is empty by the
+preceding paragraph. A full block, together with the other two nonempty
+invariant blocks, gives an original triangle: choose either vertex in the
+third moving pair and one of its neighbors in each endpoint pair. Therefore
+all three blocks are perfect matchings. Their union is either two triangles
+or one six-cycle; triangle-freeness forces the six-cycle.
+
+Hence **every possible `c2_onepair` realization must induce exactly `C6` on
+its six moved vertices**. This is a necessary support condition, not an
+exclusion of the whole action. The three moving pairs are the opposite
+pairs of that cycle. The broader contraction test applies without symmetry
+and requires a length-three path for every same-context vertex pair.
+
+The cheap contraction test excludes seven of the eight initial weak-action
+family bests; only the `c5_double` best passes it. Those candidates already
+have independent rational theta exclusions, but the new witnesses avoid SDP.
 
 ## Initial checks and examples
 

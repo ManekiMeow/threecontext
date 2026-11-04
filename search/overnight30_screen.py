@@ -178,6 +178,13 @@ def fast_screen(record):
                 result.update(status="excluded", reason="false twins collapse to 29 events",
                               certificate=cert)
                 return result
+    for part in graph["parts"]:
+        for u, v in itertools.combinations(part, 2):
+            if not any(adj[a] & adj[v] for a in adj[u]):
+                cert = certificate(graph, "same_context_merge", vertices=[u, v])
+                result.update(status="excluded", reason="a same-context pair has no length-three path and merges to 29 events",
+                              certificate=cert)
+                return result
     pair_diagnostics = []
     for k, l in itertools.combinations(range(3), 2):
         pair = graph["parts"][k] + graph["parts"][l]
@@ -314,7 +321,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "unbalanced_coloring", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -323,6 +330,10 @@ def verify_certificate(cert):
         elif method == "false_twins":
             u, v = witness["vertices"]
             assert u != v and colors[u] == colors[v] and adj[u] == adj[v]
+        elif method == "same_context_merge":
+            u, v = witness["vertices"]
+            assert u != v and colors[u] == colors[v]
+            assert not any(adj[a] & adj[v] for a in adj[u])
         elif method == "unbalanced_coloring":
             c = witness["coloring"]
             assert len(c) == 30 and all(k in (0, 1, 2) for k in c)
@@ -531,6 +542,9 @@ def self_test():
     # unbalanced proper two-coloring supplied by the independent SAT step.
     order = [10*k+i for i in range(10) for k in range(3)]
     path = normalize_graph({"parts": parts, "edges": list(zip(order, order[1:]))})
+    merged = fast_screen(path)
+    assert merged["certificate"]["method"] == "same_context_merge"
+    verify_certificate(merged["certificate"])
     coloring, status = unbalanced_coloring(path)
     assert status == "witness"
     verify_certificate(certificate(path, "unbalanced_coloring", coloring=coloring))
@@ -569,7 +583,7 @@ def self_test():
     signs = [1, -1, 1, -1]
     free = [-signs[i]*signs[j] for i in range(4) for j in range(i+1, 4) if [i, j] not in small["edges"]]
     verify_certificate(certificate(small, "theta_dual", bound="2", denominator=1, free_numerators=free))
-    print("screen controls passed: false twins, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
+    print("screen controls passed: false twins, same-context merge, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
 
 
 def main():

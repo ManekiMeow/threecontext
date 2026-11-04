@@ -317,6 +317,24 @@ asymmetric seed with numerical θ ≈ 2.9122785 is already excluded by an explic
 See [`search/OVERNIGHT30.md`](search/OVERNIGHT30.md) for the deadline, checkpoint branches and continuation
 procedure, and [`search/overnight30_obstructions.md`](search/overnight30_obstructions.md) for the screening proofs.
 
+**Proposition 39 (event contraction and a weak involution).** In a thirty-event GHZ support graph, every two
+vertices in the same context are endpoints of a length-three path whose internal vertices lie in the other two
+contexts. More generally, no nontrivial identification of vertices within contexts can have a triangle-free
+quotient. If an automorphism exchanges exactly one pair in each context and fixes all other vertices, its six
+moved vertices must induce a **six-cycle**.
+
+*Proof:* use the state-weighted vectors `f_i = √c_i g_i`, whose sum in each context is ψ. Replace each identified
+group by the sum of its vectors. Within-context orthogonality preserves both the total squared norm and the
+context sums, and an absent quotient edge still imposes orthogonality. Thus a triangle-free quotient would be
+a GHZ graph on fewer than thirty vertices, contrary to Corollary 6. Identifying just u,v can create a triangle
+only from a path `u–b–c–v` through the other contexts, proving the first assertion.
+
+For the stated involution, apply that assertion to each exchanged pair. Neither internal path vertex can be
+fixed: invariance would then give an original triangle. Hence all three blocks between the moved pairs are
+nonempty. Each invariant block is a matching or K₂,₂. A K₂,₂ block, together with the other two nonempty blocks,
+would contain a triangle. All three blocks are therefore matchings; their union is a six-cycle or two triangles,
+and triangle-freeness leaves only the six-cycle. ∎
+
 ---
 
 ## 2. Lower bounds (exact proofs)
