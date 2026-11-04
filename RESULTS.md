@@ -30,7 +30,7 @@ property, and the contradiction first shows at algebraic degree 4.
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains. In every dimension each event's deviation from the rigid H33-type overlaps is capped entrywise (Lemma 39), which forces near-covering of each context (Corollary 40). H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
+| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains. Section 2.5 (route 1) shows that the triple splits into two-dimensional blocks whenever E² commutes with the three projections, and that a uniform-probability realization of this aligned kind needs a four-element neighbourhood. It also certifies exactly that no 30-event support invariant under Z10, D5, A5, S5, F20 or Z2⁴⋊Z5 has ϑ = 3, in any dimension. In every dimension each event's deviation from the rigid H33-type overlaps is capped entrywise (Lemma 39), which forces near-covering of each context (Corollary 40). H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 19 (Corollary 30; the GHZ bound can never give more than 20, the dimension of H33). In dimension 19 the graph would be 76-vertex and 30-regular, with 10 neighbours per other basis (Theorem 31, §3.15). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. **Multiplier families (Sections 3.12–3.13):**
 * e = 2 and e = 3 give no example for any p (Theorem 24, Corollary 26).
 * e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
@@ -948,6 +948,205 @@ rigid or isoclinic structure, so the generic non-isoclinic case still needs one 
 
    With uniform probabilities all of these are purely combinatorial, so the search in `event30_uniform_search.py`
    could be made exhaustive for that sub-case.
+
+### 2.5 Route 1: transfer matrices, aligned triples and symmetric constructions (new, 4–5 Nov)
+
+This section follows route 1 above. It:
+* records the transfer structure behind Theorem 36 (Lemma 42);
+* characterizes the triples that split into two-dimensional blocks, which contain the most rigid non-isoclinic case,
+  E² scalar (Proposition 43);
+* constructs the natural examples of the remaining class, where a group acts transitively on each context, and
+  identifies why they fail (Proposition 44 and two examples);
+* shows that the supports of all these examples already fail rank-free (Theorem 45).
+
+**H33's dimension minimality is still open.** Every example we could construct in the remaining class fails, for an
+identified reason, but the general non-aligned case is not settled.
+
+**Lemma 42 (transfer form of triangle-freeness, d = 19).** In shape (ii), Y = Y_AB is invertible. Put
+Z = Y_AC Y_CB and Ω = Y⁻¹Z.
+1. Ω p_B = p_B. Ω is the matrix, in the B-event basis, of T_B = (Π_A|_{S_B})⁻¹ Π_AΠ_C on S_B. On ran A_B,
+   T_B = Q_B E − 1/2, where Q_B is the oblique projection onto ran A_B along (ran A_A)^⊥.
+2. For every a ∈ A, the principal submatrix Ω[N_B(a), N_B(a)] is singular, with left null vector
+   (Y_ab)_{b ∈ N_B(a)}. Columns of Ω_A = ZY⁻¹ behave the same way.
+3. If the three projections are simultaneously block diagonal with two-dimensional blocks (lines α_j, β_j, γ_j;
+   "aligned"), then Ω = U_B^† diag(1, λ_j) U_B is normal, with λ_j = conj(τ_j)/|⟨α_j|β_j⟩|² and τ_j the block's
+   triple product. If moreover all three pairs are isoclinic, the blocks are identical (Theorem 36, step 1) and
+   Ω = λ + (1 − λ) p_B p_B^†. Item 2 then gives Y_ab = (1 − 1/λ)√(c_a c_b) on every edge, the starting point of
+   Theorem 36.
+
+*Proof.*
+1. Invertibility of Y gives G_A^†Π_C G_B = G_A^†G_B Ω, i.e. Π_AΠ_C = Π_A (G_B Ω G_B^†) on S_B. T_B fixes ψ.
+2. For w ∈ ran A_B, Ew = A_A w + A_C w − w/2, so A_A A_C w = A_A (E − 1/2) w. Applying (A_A|_{ran A_B})⁻¹ gives
+   item 1's formula.
+3. Item 2 is the Hadamard condition Y ⊙ Z = 0 written as Z = YΩ: row a of Y vanishes off N_B(a), so
+   (Z_ab′)_{b′ ∈ N_B(a)} = (Y_ab)_{b ∈ N_B(a)} Ω[N_B(a), N_B(a)] = 0.
+4. In the aligned case Y = U_A^† diag(1, ⟨α_j|β_j⟩) U_B and Z = U_A^† diag(1, ⟨α_j|γ_j⟩⟨γ_j|β_j⟩) U_B. ∎
+
+So every B-neighbourhood is a singular set of one matrix, whose spectrum {1, λ_j} is fixed by the projection geometry.
+* Theorem 36 is the case of a single eigenvalue on p_B^⊥.
+* With two or more eigenvalues the edge overlaps are no longer proportional to √(c_a c_b), and integrality is lost.
+  The results below show what replaces it in the structured cases.
+
+**Proposition 43 (aligned triples).** Put J_k = 2A_k − 1 on W, so that 2E = J_A + J_B + J_C.
+1. *Criterion.* If E² commutes with A_A, A_B and A_C, then every anticommutator {J_k, J_l} is central in the algebra
+   generated by the three. In shape (ii), W therefore splits into nine two-dimensional blocks invariant under all
+   three projections, each A_k being a line in each block (the triple is aligned).
+
+   Conversely, an aligned triple has E² = ⊕_j ρ_j² 1₂ with ρ_j² = μ_j/4, where μ_j = 1 + 8 Re τ_j and Σ_j μ_j = 1.
+2. *E² scalar.* If E² is a multiple of the identity, then E² = 1/36 and all thirty probabilities equal 1/10. Every
+   block has Re τ_j = −1/9, and G = I + Y satisfies
+
+       Y³ = (7/9) Y + (2/9)(J − I),    Y_AB Y_BC Y_CA + Y_AC Y_CB Y_BA = (2/9)(J − I)  on each context block.
+
+   * So any two events of a context are joined by three-step paths through the other two contexts.
+   * Proposition 37's identity A³ = 7A − 6I + 6J is the unweighted case Y = A/3.
+   * Theorem 36's isoclinic triples are the case of nine congruent blocks.
+3. *Aligned counting.* An aligned triple has σ = Σ_{k<l} tr(A_kA_l) = 7, so Σ_{k<l} ‖Y_kl‖_F² = 10. Summed over
+   all thirty events, the row bound Σ_{y ∈ N_l(x)} |Y_xy|² ≥ c_x/f_l(x) then gives
+
+       Σ_x c_x (1/f_l(x) + 1/f_m(x)) ≤ 20.
+
+   Suppose the probabilities are uniform and every event has three neighbours in each other context. Then equality
+   holds, every row is flat, Y = A/3, and Proposition 37 excludes it. **So an aligned dimension-19 realization with
+   uniform probabilities (in particular any with E² scalar) has an event with four neighbours in some context.**
+4. *Design identities.* In the aligned case put P = Y_AB Y_BA, Q = Y_AC Y_CA and M = Y_AB Y_BC Y_CA on the A-events.
+   These matrices commute (all are diagonal in the A-event unitary U_A), M has zero diagonal, and
+
+       P Q (I + M + M^† − P − Q) = M M^†.
+
+   This is the vanishing Gram determinant of every block, written in event coordinates. The B and C versions hold
+   too. These identities are the aligned replacement for the isoclinic formulas behind Theorem 36. They constrain
+   the support and the weights together, but we have not turned them into a contradiction.
+
+*Proof.*
+1. Write K_kl = {J_k, J_l} and X = 2E, so X² = 3 + K_AB + K_AC + K_BC and {J_A, X} = X² − 1 − K_BC.
+   * Since X² commutes with J_A, 0 = [X², J_A] = [X, {J_A, X}] = −[X, K_BC].
+   * K_BC commutes with J_B and J_C (use J² = 1), hence with J_A = X − J_B − J_C. The same holds for K_AB and K_AC.
+   * In each irreducible block the J_k are Hermitian unitaries with scalar anticommutators 2c_kl. They therefore
+     represent a Clifford algebra of a positive semidefinite form, whose irreducible representations have dimension
+     at most 2.
+   * One-dimensional blocks, or two-dimensional ones on which some A_k is 0 or 1, would create one-dimensional
+     sectors of a pair. Lemma 33 excludes these in shape (ii).
+2. If E² = ρ², Lemma 3 gives ρ²(1 − c_x) = (1 − 9c_x)/4 for every event. Summing over a context gives 9ρ² = 1/4.
+   * The spectrum of G is {3, (5/3)⁹, (4/3)⁹, 0¹¹}, and Y1 = 2·1.
+   * So (Y − 2/3)(Y − 1/3)(Y + 1) = (2/9)J, which expands to the cubic identity.
+   * Its context blocks are the second identity (triangle-freeness kills the diagonal).
+3. In the aligned case each block's Gram determinant vanishes, |x_j|² + |y_j|² + |z_j|² = 1 + 2 Re τ_j. Sum over j.
+   * The row bound is Cauchy–Schwarz on Σ_{N_l(x)} Y_xy √c_y = √c_x.
+   * Count each pair twice, once by rows and once by columns.
+   * With c ≡ 1/10 and all degrees 3, the left side is 30 · 2/3 = 20. Equality in Cauchy–Schwarz makes
+     Y_xy = √(c_x c_y)/f_l(x) = 1/3 on every edge. ∎
+
+`search/aligned_d19.py` checks item 1 on random two-valued triples (commutant of dimension 9, central
+anticommutators) and the identities of item 2 on aligned data.
+
+Without alignment σ is not fixed. On random rank-9 triples with tr(A_AA_BA_C) = −1 and near-trine cosines it took
+values on both sides of 7, from 6.985 to 7.010. The counting of item 3 therefore holds only approximately in
+general.
+
+**Proposition 44 (covariant configurations).** Let a finite group Γ act unitarily on C^d, fix ψ up to a phase,
+preserve each context and act transitively on it.
+1. All events have the same probability (1/10 in (10,10,10)). After twisting by the character of ψ, each context
+   span is the permutation module Ind_{H_k}^Γ 1, by Frobenius reciprocity, since ⟨g_x|ψ⟩ ≠ 0.
+2. Let d = 19, and suppose the three contexts are the same Γ-set with module 1 ⊕ ρ_1 ⊕ … ⊕ ρ_r, multiplicity free.
+   * Then each ρ_i occurs in W exactly twice: W ≅ ran A_A ⊕ ran A_B.
+   * By Schur's lemma A_k = ⊕_i 1_{ρ_i} ⊗ |ℓ_{k,i}⟩⟨ℓ_{k,i}| with lines ℓ_{k,i} ∈ C², so the triple is aligned with r
+     block types.
+   * With E_i the primitive idempotents of the orbital (Bose–Mesner) algebra,
+
+         Y_kl = J/10 + Σ_i a_kl(i) E_i,   a_kl(i) = ⟨ℓ_{k,i}|ℓ_{l,i}⟩.
+
+   * The support of Y_kl is a union of orbitals. Each missing orbital is one linear equation on the a_kl(i), and each
+     block type needs a singular 3×3 Gram matrix of its three lines.
+3. If r = 1 (Γ is 2-transitive), all pairs are isoclinic and Theorem 36 applies. For r ≥ 2 the pairs are isoclinic
+   inside each block type only. The configuration then lies in the remaining non-isoclinic case unless all block
+   types happen to have the same overlaps.
+
+*Example (S5 on the 2-subsets of {1,…,5}: module 1 ⊕ V4 ⊕ V5, the Petersen scheme).*
+* With degrees 3–4, the only triangle-free orbital support is disjointness for all three pairs (the Petersen
+  relation). Every other union of orbitals has a degree outside {3, 4} or creates a triangle.
+* The vanishing of the "equal" and "meet" coefficients forces a(V4) = −2/3 and a(V5) = 1/3 for every pair, and
+  overlap 1/3 on every edge. This is a genuinely non-isoclinic candidate: its pair cosines are 2/3 four times and
+  1/3 five times.
+* It fails because the two block Gram matrices have determinants **−25/27 and 20/27** instead of 0. Three lines in
+  C² cannot have these overlaps.
+
+*Example (Z10 acting regularly: all nine nontrivial characters, r = 9).*
+* Write y_kl for the first row of Y_kl, a function on Z10 with sum 1, and x, y, z for the Fourier coefficients of
+  y_AB, y_BC, y_AC. Each χ ≠ 0 needs Φ_χ = 1 + 2 Re(x y z̄) − |x|² − |y|² − |z|² = 0.
+* Triangle-freeness (S_AB + S_BC disjoint from S_AC) gives the identity
+  Σ_χ Φ_χ = 10(1 − ‖y_AB‖² − ‖y_BC‖² − ‖y_AC‖²).
+* If all supports have size 3, the right side is ≤ 0, with equality only for flat y = 1/3. Then x(5), y(5),
+  z(5) ∈ {±1/3} (±1 would give coinciding lines), and Φ_5 = 2/3 ± 2/27 ≠ 0.
+* For the remaining support classes with degrees 3 and 4, a least-squares search finds no solution of the nine
+  equations. The smallest residual over 132 classes is 0.41, and Φ_χ < 0 dominates: the Gram matrices would have to
+  be indefinite.
+
+`search/covariant_d19.py` checks both examples (the first exactly). Theorem 45 makes the second rigorous and much
+stronger.
+
+**Theorem 45 (symmetric 30-event supports, exact).** Let Γ be one of the following, acting in the same way on the
+three contexts:
+* Z10 or D5, acting regularly (the tri-Cayley supports of Section 1.1);
+* A5 or S5 on the 2-subsets of {1,…,5};
+* F20 = AGL(1,5) on its ten cosets of an involution;
+* Z2⁴ ⋊ Z5 on Z5 × Z2 (translations and even sign changes).
+
+Then every Γ-invariant triangle-free (10,10,10) support H has ϑ(H̄) < 3. **No 30-event GHZ realization in any
+dimension, in particular none in dimension 19, has a support invariant under one of these groups.** Γ-covariant
+realizations are a special case.
+
+| Γ | maximal invariant supports | max ϑ(H̄) | largest certified bound |
+|---|---|---|---|
+| Z10 regular | 45 classes | 2.82847 | 2.8295 |
+| D5 regular | 18 classes | 2.76659 | 2.7676 |
+| A5 or S5 on 2-subsets | 19 | 2.77227 | 2.7733 |
+| F20 on 10 cosets | 522 | 2.86603 | 2.867 |
+| Z2⁴ ⋊ Z5 | 656 | 2.76659 | 2.7676 |
+
+*Proof.*
+* ϑ only grows when edges are added, so maximal triangle-free supports suffice.
+* Relabelling a context, automorphisms of Γ and permuting the contexts preserve ϑ.
+* Every listed bound is a rational dual matrix with an exact PSD check (`dualcert.exact_upper`).
+* Supports with an empty pair have ϑ ≤ 2: two contexts would then be mutually orthogonal and carry total
+  probability 2. ∎
+
+Section 1.1 had already scanned the regular cases numerically (tri-Cayley graphs over groups of order ≤ 12). The
+certificates make them exact, and the non-regular actions are new.
+
+```sh
+python3 search/symmetric_theta.py --certify     # about 5 minutes
+python3 search/covariant_d19.py
+python3 search/aligned_d19.py
+python3 search/transfer_d19.py
+```
+
+**Search beyond symmetry (heuristic, not evidence of absence).**
+* Method: a dual-guided local search over maximal triangle-free tripartite supports, maximising ϑ(H̄). It adds the
+  non-edge with the largest dual multiplier and removes the weaker edge of each triangle this creates.
+* (10,10,10), 30 events: best ϑ = 2.9375 after about 10⁴ supports. The best supports are irregular, with degree pairs
+  such as (2,5), (6,1) and (3,4).
+* Calibration at (12,12,12), where GHZ graphs exist: it reached ϑ = 2.999988 on a 130-edge graph. That graph is not
+  itself a GHZ graph: two solvers agree that ϑ < 3, and all 36 weights are positive.
+* Calibration at (9,12,12), where H33 is the unique answer (Theorem 5): it stalled at 2.9451.
+
+So the search does not find rare graphs. Its silence at 30 events is weak evidence that no 30-event GHZ graph
+exists, not a proof.
+
+**What this means for d_min = 20.**
+* Every construction in the remaining class that we could build fails, and its support already fails rank-free.
+  Theorem 31 puts every dimension-19 realization at exactly 30 events. So the strongest form of the question is
+  whether any (10,10,10) support has ϑ(H̄) = 3; a negative answer would give both n_min ≥ 31 and d_min = 20. By
+  SDP duality (a theorem of alternatives against the clique-cover dual 3I + J − 3·blockJ), ϑ(H̄) < 3 holds exactly
+  when some real symmetric X, supported on same-context pairs and cross non-edges, is negative definite on
+  {v : equal context sums}.
+* Within dimension 19, Proposition 43 settles the structure of the aligned family. The remaining gap is:
+  * aligned triples with non-uniform probabilities;
+  * aligned triples with uniform probabilities, as soon as some event has a four-element neighbourhood;
+  * all non-aligned triples, where E² does not commute with the projections.
+
+  The E²-scalar sub-case is the natural next target. It has the exact weighted identity of Proposition 43.2, but the
+  integrality that closed Proposition 37 is gone once the edge weights vary.
 
 ---
 

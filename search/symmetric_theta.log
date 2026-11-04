@@ -1,0 +1,7 @@
+Z10 regular        18192 maximal triples with 1 in S_AB, 45 classes: max theta 2.828472; exact upper bounds < 3 for all: True, largest 5659/2000 (38s)
+D5 regular         13072 maximal triples with 1 in S_AB, 18 classes: max theta 2.766588; exact upper bounds < 3 for all: True, largest 6919/2500 (43s)
+A5 on 2-subsets    order 60, rank 3, 19 maximal orbital supports: max theta 2.772266; exact upper bounds < 3 for all: True, largest 27733/10000 (47s)
+S5 on 2-subsets    order 120, rank 3, 19 maximal orbital supports: max theta 2.772266; exact upper bounds < 3 for all: True, largest 27733/10000 (52s)
+F20 on 10 cosets   order 20, rank 6, 522 maximal orbital supports: max theta 2.866025; exact upper bounds < 3 for all: True, largest 2867/1000 (199s)
+Z2^4:Z5            order 80, rank 6, 656 maximal orbital supports: max theta 2.766588; exact upper bounds < 3 for all: True, largest 6919/2500 (384s)
+ALL CERTIFIED
