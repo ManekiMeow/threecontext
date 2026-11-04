@@ -47,7 +47,7 @@ FAMILIES = {
     "c3_onecycle": ((3, 1, 1, 1, 1, 1, 1, 1),)*3,
 }
 
-STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "degree_mass"}
+STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "regular_pair", "c5_quotient", "orbit_probability_quotient"}
 
 
 def generator(family):
@@ -148,6 +148,10 @@ def build(family):
                     different.append(d)
                     clauses.extend(([-a, -b, -d], [a, b, -d], [a, -b, d], [-a, b, d]))
                 clauses.append(different)
+    if family == "c5_double":
+        from overnight30_quotient import quotient_exclusion_cnf
+        quotient_clauses, _ = quotient_exclusion_cnf(edge_variables, pool)
+        clauses.extend(quotient_clauses)
     return Cadical153(bootstrap_with=clauses), edge_variables, orbits, permutation
 
 
@@ -220,13 +224,28 @@ def replay_structural_dominance(cut, orbits):
                 edges.append([u, v])
     graph = {"n": 30, "parts": [list(range(10*k, 10*k+10)) for k in range(3)],
              "edges": sorted(edges)}
-    certificate = {"format": "overnight30-certificate-v1", "graph": graph,
+    local_method = compact["method"] in {"regular_pair", "c5_quotient", "orbit_probability_quotient"}
+    certificate = {"format": "overnight30-worker-obstruction-v1" if local_method else "overnight30-certificate-v1", "graph": graph,
                    "method": compact["method"], "witness": compact["witness"]}
-    verify_certificate(certificate)
+    if local_method:
+        from overnight30_quotient import verify_certificate as verify_worker_certificate
+        verify_worker_certificate(certificate)
+    else:
+        verify_certificate(certificate)
     clause = dominance_clause(graph, orbits)
     if cut["clause"] != clause:
         raise ValueError("structural dominance clause does not match its certificate")
     return clause
+
+
+def worker_structural_screen(record):
+    from overnight30_quotient import find_obstruction
+    from overnight30_screen import fast_screen
+    local = find_obstruction(record)
+    if local is not None:
+        return {"status": "excluded", "reason": "exact regular-pair or automorphism-quotient obstruction",
+                "certificate": local}
+    return fast_screen(record)
 
 
 def replay_dominance(source, cut, orbits):
@@ -481,6 +500,8 @@ def run(args):
                  "rejected_contraction": 0,
                  "certified_dominance_cuts": 0,
                  "rejected_pair_bridge": 0, "rejected_degree_mass": 0,
+                 "rejected_regular_pair": 0, "rejected_quotient": 0,
+                 "rejected_probability_propagation": 0,
                  "certified_structural_dominance_cuts": 0,
                  "duplicate_graphs": 0, "solver_errors": 0, "batches": 0,
                  "duplicate_labelled": 0, "duplicate_isomorphic": 0,
@@ -505,6 +526,13 @@ def run(args):
                 if saved[key] != state[key]:
                     raise ValueError(f"resume configuration differs: {key}")
             state.update(saved)
+        if args.family == "c5_double":
+            from overnight30_quotient import quotient_patterns, verified_catalog
+            patterns = quotient_patterns()
+            state["base_quotient_filter"] = {"static_theorem": "Proposition46",
+                                             "verified_farkas_certificates": len(verified_catalog()),
+                                             "distinct_permuted_patterns": len(patterns),
+                                             "count_predicate_values": sorted({value for pattern in patterns for value in pattern})}
         sources = [Path(path) for path in state["ancestor_dirs"]]+[output]
         if len({path.resolve() for path in sources}) != len(sources):
             raise ValueError("resume chain contains the same directory twice")
@@ -564,6 +592,9 @@ def run(args):
                      certified_structural_dominance_cuts=replayed_structural,
                      rejected_pair_bridge=statuses["pair_bridge_obstruction"],
                      rejected_degree_mass=statuses["degree_mass_obstruction"],
+                     rejected_regular_pair=statuses["regular_pair_obstruction"],
+                     rejected_quotient=statuses["quotient_obstruction"],
+                     rejected_probability_propagation=statuses["probability_propagation_obstruction"],
                      rejected_coloring=statuses["unbalanced_coloring"],
                      rejected_connectivity=statuses["disconnected"], rejected_twins=statuses["false_twins"],
                      rejected_contraction=statuses["same_context_merge"],
@@ -589,13 +620,16 @@ def run(args):
                          for source in sources if (source/"best.json").exists()]
         # New exact filters may invalidate an older numerical leader. Keep its
         # evidence explicitly, but report only currently surviving best graphs.
-        from overnight30_screen import fast_screen, screen_graph
+        from overnight30_screen import screen_graph
+        from overnight30_quotient import find_obstruction
         admitted_bests, excluded_bests, checked_bests = [], [], set()
         for candidate in earlier_bests:
             if candidate["graph6"] in checked_bests:
                 continue
             checked_bests.add(candidate["graph6"])
-            screening = screen_graph(candidate, sat_conflicts=2000)
+            local = find_obstruction(candidate)
+            screening = ({"status": "excluded", "reason": "exact regular-pair or automorphism-quotient obstruction",
+                          "certificate": local} if local is not None else screen_graph(candidate, sat_conflicts=2000))
             if screening["status"] == "excluded":
                 excluded_bests.append(dict(candidate, screen=screening,
                                            exclusion_status="excluded by updated exact structural screen"))
@@ -699,7 +733,7 @@ def run(args):
                         record["status"] = "same_context_merge"
                         record["contraction_pair"] = list(merge_pair)
                         state["rejected_contraction"] += 1
-                    elif ((structural_screen := fast_screen(record))["status"] == "excluded"
+                    elif ((structural_screen := worker_structural_screen(record))["status"] == "excluded"
                           and structural_screen["certificate"]["method"] in STRUCTURAL_OBSTRUCTIONS):
                         certificate = structural_screen["certificate"]
                         witness = {"graph6": g6, "method": certificate["method"],
@@ -711,6 +745,15 @@ def run(args):
                         if certificate["method"] == "degree_mass":
                             record.update(status="degree_mass_obstruction", structural_method="degree_mass")
                             state["rejected_degree_mass"] += 1
+                        elif certificate["method"] == "regular_pair":
+                            record.update(status="regular_pair_obstruction", structural_method="regular_pair")
+                            state["rejected_regular_pair"] += 1
+                        elif certificate["method"] == "probability_propagation":
+                            record.update(status="probability_propagation_obstruction", structural_method="probability_propagation")
+                            state["rejected_probability_propagation"] += 1
+                        elif certificate["method"] in {"c5_quotient", "orbit_probability_quotient"}:
+                            record.update(status="quotient_obstruction", structural_method=certificate["method"])
+                            state["rejected_quotient"] += 1
                         else:
                             record.update(status="pair_bridge_obstruction", structural_method=certificate["method"])
                             state["rejected_pair_bridge"] += 1

@@ -1,0 +1,131 @@
+{
+  "format": "ghz30-orbit-probability-farkas-v1",
+  "quotient": [
+    [
+      0,
+      0,
+      2,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      3,
+      1
+    ],
+    [
+      2,
+      1,
+      0,
+      0,
+      1,
+      3
+    ],
+    [
+      4,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      3,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1,
+      0,
+      0
+    ]
+  ],
+  "sizes": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "parts": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "inequalities": [
+    {
+      "constraint": {
+        "kind": "sector",
+        "orbit": 0,
+        "weights": [
+          "1/8",
+          "5/8",
+          "1/4"
+        ]
+      },
+      "multiplier": "1024/2465"
+    },
+    {
+      "constraint": {
+        "kind": "sector",
+        "orbit": 1,
+        "weights": [
+          "1/2",
+          "1/4",
+          "1/4"
+        ]
+      },
+      "multiplier": "1024/2465"
+    },
+    {
+      "constraint": {
+        "kind": "sector",
+        "orbit": 2,
+        "weights": [
+          "3/8",
+          "1/4",
+          "3/8"
+        ]
+      },
+      "multiplier": "96/2465"
+    },
+    {
+      "constraint": {
+        "kind": "sector",
+        "orbit": 5,
+        "weights": [
+          "1/2",
+          "1/4",
+          "1/4"
+        ]
+      },
+      "multiplier": "321/2465"
+    }
+  ],
+  "equalities": [
+    "-15421/197200",
+    "0",
+    "-3/4930"
+  ],
+  "contradiction_margin": "327/24650"
+}

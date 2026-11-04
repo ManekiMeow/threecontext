@@ -561,6 +561,51 @@ All bounds are below three. The standard-library checker
 local cyclic support triples, explicit global isomorphisms and the three rational dual certificates. The full
 structural reduction is recorded in that file. The two-distinct-kernel RTT family remains unresolved. ∎
 
+**Proposition 49 (iterated probability budgets).** Strict event upper bounds can be propagated without
+symmetry assumptions. Initially put U_i=1/9. For any proper nonempty neighborhood N in another context J,
+its probability mass lies in the strict interval
+
+    max(0, 1−Σ_{j∈J\N} U_j) < c(N) < min(1, Σ_{j∈N} U_j).
+
+For each event, maximize the three-sector harmonic bound over the closed rectangle defined by its two
+neighborhood intervals, intersected with α+β≤1. Replace U_i by the smaller of its old value and this maximum,
+optionally rounded upward to a rational grid. Every updated event bound remains strict. An empty strict
+sector domain or a context sum ΣU_i≤1 is therefore an exact obstruction.
+
+*Proof:* interval bounds follow from the strict event bounds and context normalization. The harmonic function
+has its only positive interior stationary point at `(α,β)=(1/3,1/3)`; on a rectangle edge its other coordinate
+is optimized by clamping half the remaining mass to the permitted interval. The simplex boundary has value
+zero. Thus all maxima are rational. A maximum below 1/9 activates a strict rectangle bound and cannot be
+attained; a maximum of 1/9 is strict by Corollary 32. Upward rounding and synchronous iteration preserve the
+strict inequalities. ∎
+
+Three rounds add sixteen exact exclusions among the 125 selected representatives from the 23:00 review.
+The strongest newly excluded support has numerical θ≈2.90776942: its second-round B-context budget is
+**993319/1000000 < 1**. In a deterministic sample of 96 archived supports, the test adds 46 exclusions to the
+previous fast screen in 0.92 seconds. Exact transcripts and their standard-library verifier are in
+`search/overnight30_probability_reviews/2026-11-04T2300/`; passing a bounded number of rounds proves nothing
+about realizability. Both workers now apply three rounds.
+
+**Exact orbit-probability certificates.** For actual automorphism orbits, average the state-weighted Gram
+matrix and let x_i be the per-event probability on orbit i of size m_i. For arbitrary rational s+t+u=1,
+the variational form of the harmonic bound gives the valid linear inequality
+
+    x_i ≤ s²α_i + t²β_i + u²(1−α_i−β_i).
+
+The neighborhood masses are linear forms determined by the quotient. Together with context normalization
+and `(m_i−1)/(9m_i) ≤ x_i ≤ 1/9`, these inequalities yield exact rational Farkas certificates. Numerical
+linear programming only discovers multipliers; verification checks the rational linear combination directly.
+An equitable partition without a supporting automorphism group does not justify this argument.
+
+The published C₅ pool contains 25,675 scored records and 5,273 quotient classes under context permutations
+and orbit swaps. Among the 150 highest-scoring quotient representatives, 126 have these exact exclusions;
+108 passed the preceding fast screen. Each certificate excludes every cyclic-phase choice with that quotient.
+The 150 representative graphs' actual automorphisms and all 126 proofs are checked by
+`python search/overnight30_quotient_reviews/2026-11-04T2300/verify.py`. Together with Proposition 46, the
+certificates produce 5,640 forbidden quotient signatures in the C₅ SAT worker. Its deterministic exact-count
+encoding and resumed cuts were checked independently. These are selected-class exclusions, not a proof
+against the entire C₅ family.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further

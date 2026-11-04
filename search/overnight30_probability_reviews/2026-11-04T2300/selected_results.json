@@ -1,0 +1,1877 @@
+[
+  {
+    "graph_id": "92ec0265e581d71f44b3",
+    "theta_numeric": 2.9130510891771215,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024761226995906327,
+    "budgets": [
+      "210109/200000",
+      "40623/40000",
+      "530049/500000"
+    ]
+  },
+  {
+    "graph_id": "5a97c0db0f72993b6cbd",
+    "theta_numeric": 2.9126443822275894,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.03099998900142964,
+    "budgets": [
+      "263127/250000",
+      "1017827/1000000",
+      "1059871/1000000"
+    ]
+  },
+  {
+    "graph_id": "f84f7b08457bd2b879b0",
+    "theta_numeric": 2.9124386816736383,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023882859997684136,
+    "budgets": [
+      "1051223/1000000",
+      "506671/500000",
+      "211593/200000"
+    ]
+  },
+  {
+    "graph_id": "5bf63cff4ecb0c736b10",
+    "theta_numeric": 2.912354784568734,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026308443004381843,
+    "budgets": [
+      "1047569/1000000",
+      "1008883/1000000",
+      "1047513/1000000"
+    ]
+  },
+  {
+    "graph_id": "9b6eb30a972c272a4e6a",
+    "theta_numeric": 2.91233711207302,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024344949997612275,
+    "budgets": [
+      "1062899/1000000",
+      "255467/250000",
+      "531231/500000"
+    ]
+  },
+  {
+    "graph_id": "f6ab38c0da4cd92cb160",
+    "theta_numeric": 2.9122647614235895,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023654668999370188,
+    "budgets": [
+      "65769/62500",
+      "1020157/1000000",
+      "26557/25000"
+    ]
+  },
+  {
+    "graph_id": "b1d967f3f5a4a7d5fa1a",
+    "theta_numeric": 2.912238873575343,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024355430003197398,
+    "budgets": [
+      "530933/500000",
+      "509031/500000",
+      "530607/500000"
+    ]
+  },
+  {
+    "graph_id": "18dd2adb91a019eac0c2",
+    "theta_numeric": 2.912221002079617,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.027327021001838148,
+    "budgets": [
+      "104951/100000",
+      "1013687/1000000",
+      "1049497/1000000"
+    ]
+  },
+  {
+    "graph_id": "822952bdd74557a704fc",
+    "theta_numeric": 2.9121484724590916,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026488420997338835,
+    "budgets": [
+      "524647/500000",
+      "1016037/1000000",
+      "525947/500000"
+    ]
+  },
+  {
+    "graph_id": "9859b336cec637e05311",
+    "theta_numeric": 2.9120497791787483,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024594579001131933,
+    "budgets": [
+      "265239/250000",
+      "1019661/1000000",
+      "212563/200000"
+    ]
+  },
+  {
+    "graph_id": "77694e971c35106d96ce",
+    "theta_numeric": 2.9120024036664693,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02510549200087553,
+    "budgets": [
+      "265917/250000",
+      "510119/500000",
+      "530377/500000"
+    ]
+  },
+  {
+    "graph_id": "e5b6be36ec87c24bf65b",
+    "theta_numeric": 2.9118929818745043,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.03247850799380103,
+    "budgets": [
+      "262473/250000",
+      "1011363/1000000",
+      "261787/250000"
+    ]
+  },
+  {
+    "graph_id": "72d96d71ed09d0f5e85b",
+    "theta_numeric": 2.911602031323939,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026197651997790672,
+    "budgets": [
+      "264981/250000",
+      "508929/500000",
+      "1052647/1000000"
+    ]
+  },
+  {
+    "graph_id": "b10a284c6370dc15c73e",
+    "theta_numeric": 2.911594488163963,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02329186600400135,
+    "budgets": [
+      "65653/62500",
+      "1018457/1000000",
+      "1062801/1000000"
+    ]
+  },
+  {
+    "graph_id": "c06f81280743c62a2e7f",
+    "theta_numeric": 2.911401733834443,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.027210659005504567,
+    "budgets": [
+      "1053041/1000000",
+      "203111/200000",
+      "528791/500000"
+    ]
+  },
+  {
+    "graph_id": "0666a4a342ac80c7c3e7",
+    "theta_numeric": 2.911265295924448,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.021992167996359058,
+    "budgets": [
+      "261739/250000",
+      "1011167/1000000",
+      "1049761/1000000"
+    ]
+  },
+  {
+    "graph_id": "7f4a74fe24afc4138065",
+    "theta_numeric": 2.9112580424867156,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023298471001908183,
+    "budgets": [
+      "1053847/1000000",
+      "508701/500000",
+      "1068263/1000000"
+    ]
+  },
+  {
+    "graph_id": "8468c2d2bdaa33698726",
+    "theta_numeric": 2.911008923358283,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026017757001682185,
+    "budgets": [
+      "529539/500000",
+      "252843/250000",
+      "1058601/1000000"
+    ]
+  },
+  {
+    "graph_id": "1788cc9d5c2ee1db0e5b",
+    "theta_numeric": 2.910972377325213,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024384584998188075,
+    "budgets": [
+      "1049383/1000000",
+      "126687/125000",
+      "1049313/1000000"
+    ]
+  },
+  {
+    "graph_id": "50b44f73061642b4c26c",
+    "theta_numeric": 2.9107708785637008,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.022444517999247182,
+    "budgets": [
+      "1050517/1000000",
+      "202507/200000",
+      "260383/250000"
+    ]
+  },
+  {
+    "graph_id": "d8334a25aae6a1eab739",
+    "theta_numeric": 2.910742620958735,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02247145200090017,
+    "budgets": [
+      "209403/200000",
+      "31599/31250",
+      "209941/200000"
+    ]
+  },
+  {
+    "graph_id": "528d7107588eae4a1a9f",
+    "theta_numeric": 2.910707171232449,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02359055299893953,
+    "budgets": [
+      "1050223/1000000",
+      "25447/25000",
+      "8499/8000"
+    ]
+  },
+  {
+    "graph_id": "ffd5654abb378fca6e88",
+    "theta_numeric": 2.910636173336532,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026827474997844547,
+    "budgets": [
+      "212123/200000",
+      "508877/500000",
+      "1071151/1000000"
+    ]
+  },
+  {
+    "graph_id": "04a400ef6225b7242fc9",
+    "theta_numeric": 2.9104833294712247,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024567540000134613,
+    "budgets": [
+      "263033/250000",
+      "506837/500000",
+      "1046789/1000000"
+    ]
+  },
+  {
+    "graph_id": "451811abcbbb3d7a2b3a",
+    "theta_numeric": 2.910472055800515,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02497670600132551,
+    "budgets": [
+      "534629/500000",
+      "1015607/1000000",
+      "530559/500000"
+    ]
+  },
+  {
+    "graph_id": "a2caeb0b4cc24118138e",
+    "theta_numeric": 2.9104631338233973,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024065849000180606,
+    "budgets": [
+      "1060151/1000000",
+      "12691/12500",
+      "1060151/1000000"
+    ]
+  },
+  {
+    "graph_id": "610d501ae3d5fad6ae75",
+    "theta_numeric": 2.910457807921212,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023061933999997564,
+    "budgets": [
+      "265247/250000",
+      "506781/500000",
+      "211643/200000"
+    ]
+  },
+  {
+    "graph_id": "a659da9a624843ea9755",
+    "theta_numeric": 2.9104547993370016,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02915676200063899,
+    "budgets": [
+      "264971/250000",
+      "508897/500000",
+      "526157/500000"
+    ]
+  },
+  {
+    "graph_id": "2cdcdd13ff8034f3dacb",
+    "theta_numeric": 2.9103667139898546,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02692944400041597,
+    "budgets": [
+      "131351/125000",
+      "1016051/1000000",
+      "265119/250000"
+    ]
+  },
+  {
+    "graph_id": "2bae8b885c79e0069c95",
+    "theta_numeric": 2.910129231584105,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025678619000245817,
+    "budgets": [
+      "32459/31250",
+      "63099/62500",
+      "32459/31250"
+    ]
+  },
+  {
+    "graph_id": "eca28785c7a9c902bc73",
+    "theta_numeric": 2.9098175793362966,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02764762000151677,
+    "budgets": [
+      "1050701/1000000",
+      "1015617/1000000",
+      "1060193/1000000"
+    ]
+  },
+  {
+    "graph_id": "9dd4a0d20419ea7488fc",
+    "theta_numeric": 2.909537744016105,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026228882001305465,
+    "budgets": [
+      "106093/100000",
+      "1023723/1000000",
+      "104609/100000"
+    ]
+  },
+  {
+    "graph_id": "7c5b02b32f898019f3fc",
+    "theta_numeric": 2.909517532599147,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.029036591004114598,
+    "budgets": [
+      "265433/250000",
+      "1015549/1000000",
+      "4277/4000"
+    ]
+  },
+  {
+    "graph_id": "1a1819e4ba57b37b90fc",
+    "theta_numeric": 2.9094476238206335,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.022428496995416936,
+    "budgets": [
+      "1057551/1000000",
+      "507757/500000",
+      "1052819/1000000"
+    ]
+  },
+  {
+    "graph_id": "d0f89b8dc00d37ee55a0",
+    "theta_numeric": 2.909085723437147,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024791354000626598,
+    "budgets": [
+      "106041/100000",
+      "253259/250000",
+      "1058101/1000000"
+    ]
+  },
+  {
+    "graph_id": "4bda70db70b704071ca0",
+    "theta_numeric": 2.908958343264957,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.022859821998281404,
+    "budgets": [
+      "1047167/1000000",
+      "512953/500000",
+      "1070849/1000000"
+    ]
+  },
+  {
+    "graph_id": "918db4aea7a1c5efed92",
+    "theta_numeric": 2.9087509084103855,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02412893199652899,
+    "budgets": [
+      "528999/500000",
+      "255199/250000",
+      "523017/500000"
+    ]
+  },
+  {
+    "graph_id": "4fc8e3211ae9c40cd0e8",
+    "theta_numeric": 2.9087417125499737,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023337179998634383,
+    "budgets": [
+      "1044827/1000000",
+      "511619/500000",
+      "1063059/1000000"
+    ]
+  },
+  {
+    "graph_id": "265b29e3a8c39f6cdf2f",
+    "theta_numeric": 2.908741653692191,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.027499053001520224,
+    "budgets": [
+      "1049333/1000000",
+      "31469/31250",
+      "1049333/1000000"
+    ]
+  },
+  {
+    "graph_id": "d9edab60408ecffac595",
+    "theta_numeric": 2.908670317804333,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02325664400268579,
+    "budgets": [
+      "210001/200000",
+      "253581/250000",
+      "1052071/1000000"
+    ]
+  },
+  {
+    "graph_id": "62e27e430f9ba1f66f99",
+    "theta_numeric": 2.90852513004148,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02183958000387065,
+    "budgets": [
+      "42167/40000",
+      "1025701/1000000",
+      "1071623/1000000"
+    ]
+  },
+  {
+    "graph_id": "964a95b4250d6af98855",
+    "theta_numeric": 2.908479246686616,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02436159600620158,
+    "budgets": [
+      "1060069/1000000",
+      "510151/500000",
+      "522343/500000"
+    ]
+  },
+  {
+    "graph_id": "d3079dbfcf82a071d303",
+    "theta_numeric": 2.908475049490465,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02423264599929098,
+    "budgets": [
+      "1059583/1000000",
+      "1008891/1000000",
+      "528099/500000"
+    ]
+  },
+  {
+    "graph_id": "4f9139c055aec5201a27",
+    "theta_numeric": 2.908383595384764,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023791992003680207,
+    "budgets": [
+      "267517/250000",
+      "1013853/1000000",
+      "211867/200000"
+    ]
+  },
+  {
+    "graph_id": "b5436420d1416b9ffecb",
+    "theta_numeric": 2.9083516088842547,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026660216004529502,
+    "budgets": [
+      "529151/500000",
+      "518559/500000",
+      "211847/200000"
+    ]
+  },
+  {
+    "graph_id": "508797f725309b5da8a7",
+    "theta_numeric": 2.908334005370366,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024180291999073233,
+    "budgets": [
+      "13231/12500",
+      "1011033/1000000",
+      "2117/2000"
+    ]
+  },
+  {
+    "graph_id": "0749629666b6936f760e",
+    "theta_numeric": 2.9083141509459667,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02151457199943252,
+    "budgets": [
+      "524129/500000",
+      "513011/500000",
+      "16581/15625"
+    ]
+  },
+  {
+    "graph_id": "df0ad41dd4ef9fee878a",
+    "theta_numeric": 2.9083098548303123,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025959881997550838,
+    "budgets": [
+      "1048919/1000000",
+      "41127/40000",
+      "535551/500000"
+    ]
+  },
+  {
+    "graph_id": "9ca4be6a9432104ac606",
+    "theta_numeric": 2.908190869122119,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02539173800323624,
+    "budgets": [
+      "53149/50000",
+      "1012763/1000000",
+      "132417/125000"
+    ]
+  },
+  {
+    "graph_id": "e2fb1abb68fd0a577d46",
+    "theta_numeric": 2.908107332944439,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.030847294998238795,
+    "budgets": [
+      "528317/500000",
+      "1008879/1000000",
+      "211813/200000"
+    ]
+  },
+  {
+    "graph_id": "7503530748a5174f8950",
+    "theta_numeric": 2.9080765450299686,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023595002996444236,
+    "budgets": [
+      "8369/8000",
+      "1023671/1000000",
+      "1060937/1000000"
+    ]
+  },
+  {
+    "graph_id": "addf12da08e9f090acef",
+    "theta_numeric": 2.908042845200721,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.022282265999820083,
+    "budgets": [
+      "130539/125000",
+      "255841/250000",
+      "1070649/1000000"
+    ]
+  },
+  {
+    "graph_id": "0db627a998a63137acca",
+    "theta_numeric": 2.908019842873663,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02272585200262256,
+    "budgets": [
+      "1047719/1000000",
+      "1028179/1000000",
+      "530993/500000"
+    ]
+  },
+  {
+    "graph_id": "409a4ca6a2b325ae9d81",
+    "theta_numeric": 2.9079975617461082,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02385451499867486,
+    "budgets": [
+      "535907/500000",
+      "203191/200000",
+      "1058713/1000000"
+    ]
+  },
+  {
+    "graph_id": "b758a5c03bb209c1e708",
+    "theta_numeric": 2.9078574692839867,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024952035004389472,
+    "budgets": [
+      "1080449/1000000",
+      "508463/500000",
+      "105401/100000"
+    ]
+  },
+  {
+    "graph_id": "7369b44fa32177a2ba9d",
+    "theta_numeric": 2.907827014332527,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02465447600116022,
+    "budgets": [
+      "104559/100000",
+      "205167/200000",
+      "1061731/1000000"
+    ]
+  },
+  {
+    "graph_id": "99d5a70ec8bd4a4acda4",
+    "theta_numeric": 2.907823913515005,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023757398004818242,
+    "budgets": [
+      "1051513/1000000",
+      "1021001/1000000",
+      "1049209/1000000"
+    ]
+  },
+  {
+    "graph_id": "030dfd047b4c311ff983",
+    "theta_numeric": 2.9077926090919886,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.027152153001225088,
+    "budgets": [
+      "1069069/1000000",
+      "506751/500000",
+      "1069069/1000000"
+    ]
+  },
+  {
+    "graph_id": "b8c6d77a2d5de9180e0a",
+    "theta_numeric": 2.9077694209115714,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.013165409000066575,
+    "budgets": [
+      "528411/500000",
+      "993319/1000000",
+      "524669/500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "993319/1000000"
+    }
+  },
+  {
+    "graph_id": "6c4e377133a204466cc0",
+    "theta_numeric": 2.9077492987289135,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025231681000150274,
+    "budgets": [
+      "211673/200000",
+      "1010879/1000000",
+      "132299/125000"
+    ]
+  },
+  {
+    "graph_id": "e25b07416662809e12ea",
+    "theta_numeric": 2.9077463619982873,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02396484700147994,
+    "budgets": [
+      "1069843/1000000",
+      "101271/100000",
+      "1051787/1000000"
+    ]
+  },
+  {
+    "graph_id": "1db30c3593891ea29a4c",
+    "theta_numeric": 2.90768485390653,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02705963399785105,
+    "budgets": [
+      "1057429/1000000",
+      "519499/500000",
+      "529869/500000"
+    ]
+  },
+  {
+    "graph_id": "00fd7528ad43e7f5282f",
+    "theta_numeric": 2.907590024287235,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.021942555002169684,
+    "budgets": [
+      "1060311/1000000",
+      "1012719/1000000",
+      "1057557/1000000"
+    ]
+  },
+  {
+    "graph_id": "b2ca8ada52d954286ec1",
+    "theta_numeric": 2.9075563202878096,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.01228677800099831,
+    "budgets": [
+      "523923/500000",
+      "247879/250000",
+      "529401/500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "247879/250000"
+    }
+  },
+  {
+    "graph_id": "8493f9f07f1acefe0864",
+    "theta_numeric": 2.907457185974998,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02317851299449103,
+    "budgets": [
+      "1049497/1000000",
+      "254947/250000",
+      "1040079/1000000"
+    ]
+  },
+  {
+    "graph_id": "8ca56c4d9aaa97d45d6e",
+    "theta_numeric": 2.9074377866609957,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02266788600536529,
+    "budgets": [
+      "65437/62500",
+      "512739/500000",
+      "53163/50000"
+    ]
+  },
+  {
+    "graph_id": "b0e780220876fb141fac",
+    "theta_numeric": 2.907407769690361,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023728878004476428,
+    "budgets": [
+      "1057501/1000000",
+      "1012709/1000000",
+      "212063/200000"
+    ]
+  },
+  {
+    "graph_id": "cad4aa9fd6ee579390e3",
+    "theta_numeric": 2.9073209158069218,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024039379000896588,
+    "budgets": [
+      "523129/500000",
+      "512083/500000",
+      "212187/200000"
+    ]
+  },
+  {
+    "graph_id": "72d21030079128e2bd61",
+    "theta_numeric": 2.9073167534267323,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024535142998502124,
+    "budgets": [
+      "1058331/1000000",
+      "1017479/1000000",
+      "262297/250000"
+    ]
+  },
+  {
+    "graph_id": "b66bfcec91bf72f0e5b0",
+    "theta_numeric": 2.907284004532041,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.010612908998155035,
+    "budgets": [
+      "33289/31250",
+      "992833/1000000",
+      "16544/15625"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "992833/1000000"
+    }
+  },
+  {
+    "graph_id": "d9e21e924241216c5d87",
+    "theta_numeric": 2.9072783313465544,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023347776994341984,
+    "budgets": [
+      "26391/25000",
+      "1011029/1000000",
+      "212267/200000"
+    ]
+  },
+  {
+    "graph_id": "5547ae7d7d263af27b82",
+    "theta_numeric": 2.9072616567467784,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.01305746599973645,
+    "budgets": [
+      "524591/500000",
+      "495047/500000",
+      "209363/200000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "495047/500000"
+    }
+  },
+  {
+    "graph_id": "408aa7223524e5835f10",
+    "theta_numeric": 2.907130509229867,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02264065499912249,
+    "budgets": [
+      "104941/100000",
+      "1011187/1000000",
+      "209391/200000"
+    ]
+  },
+  {
+    "graph_id": "2c9ad3514440215650d9",
+    "theta_numeric": 2.9070607876085606,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.029187576998083387,
+    "budgets": [
+      "1052573/1000000",
+      "203399/200000",
+      "212591/200000"
+    ]
+  },
+  {
+    "graph_id": "ea77c9dc3a8f11cfce19",
+    "theta_numeric": 2.9070408057319397,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023571258992888033,
+    "budgets": [
+      "525893/500000",
+      "1013683/1000000",
+      "1046801/1000000"
+    ]
+  },
+  {
+    "graph_id": "b0bcb367d33abcbf4ce1",
+    "theta_numeric": 2.9070197405469664,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.012291826998989563,
+    "budgets": [
+      "207291/200000",
+      "493229/500000",
+      "1040471/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "493229/500000"
+    }
+  },
+  {
+    "graph_id": "8061c5a47cf31772b7f0",
+    "theta_numeric": 2.90700899399881,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024499425999238156,
+    "budgets": [
+      "537007/500000",
+      "205461/200000",
+      "523757/500000"
+    ]
+  },
+  {
+    "graph_id": "564a2c8fb99f482b6ebc",
+    "theta_numeric": 2.906975280231343,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.012005598997347988,
+    "budgets": [
+      "1047683/1000000",
+      "986493/1000000",
+      "1047333/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "986493/1000000"
+    }
+  },
+  {
+    "graph_id": "f17bd5f2ff0843b92583",
+    "theta_numeric": 2.9069735422395535,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.01336339599947678,
+    "budgets": [
+      "523693/500000",
+      "495191/500000",
+      "1047127/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "495191/500000"
+    }
+  },
+  {
+    "graph_id": "273e6eb64cd56a9df0f9",
+    "theta_numeric": 2.90691460695077,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02770958399923984,
+    "budgets": [
+      "529201/500000",
+      "1010517/1000000",
+      "1057967/1000000"
+    ]
+  },
+  {
+    "graph_id": "cb160c8cacc9ca9016e0",
+    "theta_numeric": 2.9068910068286398,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.021585886002867483,
+    "budgets": [
+      "261031/250000",
+      "1021817/1000000",
+      "530399/500000"
+    ]
+  },
+  {
+    "graph_id": "fb55e19993ede3d1b8a8",
+    "theta_numeric": 2.9068766967113575,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023582241003168747,
+    "budgets": [
+      "519421/500000",
+      "1006933/1000000",
+      "207163/200000"
+    ]
+  },
+  {
+    "graph_id": "1be58533068b97236639",
+    "theta_numeric": 2.9068577168270577,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02585804899717914,
+    "budgets": [
+      "53019/50000",
+      "506221/500000",
+      "1061401/1000000"
+    ]
+  },
+  {
+    "graph_id": "24f0ac6080de60013cc4",
+    "theta_numeric": 2.9068085515860815,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025135747004242148,
+    "budgets": [
+      "52113/50000",
+      "1027411/1000000",
+      "132871/125000"
+    ]
+  },
+  {
+    "graph_id": "62092a66d91b86d53600",
+    "theta_numeric": 2.906797161181408,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02651818199956324,
+    "budgets": [
+      "262547/250000",
+      "511027/500000",
+      "1052347/1000000"
+    ]
+  },
+  {
+    "graph_id": "471ccc1b1c95ed82aa92",
+    "theta_numeric": 2.906792044096599,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.027648732997477055,
+    "budgets": [
+      "1062727/1000000",
+      "204741/200000",
+      "265287/250000"
+    ]
+  },
+  {
+    "graph_id": "9e41483b006d26ffd144",
+    "theta_numeric": 2.906696883254769,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.024003683000046294,
+    "budgets": [
+      "132711/125000",
+      "1020427/1000000",
+      "1063867/1000000"
+    ]
+  },
+  {
+    "graph_id": "95fa3b7afa1e9588f3ab",
+    "theta_numeric": 2.9066754566157105,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023331566000706516,
+    "budgets": [
+      "5311/5000",
+      "1025813/1000000",
+      "1063697/1000000"
+    ]
+  },
+  {
+    "graph_id": "24cfc4acd4fd0edf9ac8",
+    "theta_numeric": 2.906634731265388,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.026587797998217866,
+    "budgets": [
+      "1062357/1000000",
+      "202771/200000",
+      "534799/500000"
+    ]
+  },
+  {
+    "graph_id": "9b3f26fa8a6293547a16",
+    "theta_numeric": 2.906620141762676,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.012934860998939257,
+    "budgets": [
+      "521651/500000",
+      "983809/1000000",
+      "130669/125000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "983809/1000000"
+    }
+  },
+  {
+    "graph_id": "89eeebc288a4a7bcdcd0",
+    "theta_numeric": 2.90660702132537,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.029471060996002052,
+    "budgets": [
+      "1056583/1000000",
+      "1033811/1000000",
+      "1052569/1000000"
+    ]
+  },
+  {
+    "graph_id": "8ed6803d616bf04107ae",
+    "theta_numeric": 2.9065912136424386,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.022348287995555438,
+    "budgets": [
+      "527963/500000",
+      "515731/500000",
+      "1053129/1000000"
+    ]
+  },
+  {
+    "graph_id": "327a9c8e068311012dac",
+    "theta_numeric": 2.906585724504037,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02435191899712663,
+    "budgets": [
+      "1045029/1000000",
+      "102559/100000",
+      "1081063/1000000"
+    ]
+  },
+  {
+    "graph_id": "6940a4f432baa27ec16a",
+    "theta_numeric": 2.906561298892037,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.0127960850004456,
+    "budgets": [
+      "1049409/1000000",
+      "494177/500000",
+      "1045291/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "494177/500000"
+    }
+  },
+  {
+    "graph_id": "95ff743a8d9f536c02e4",
+    "theta_numeric": 2.906537730634569,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.011009351997927297,
+    "budgets": [
+      "1047161/1000000",
+      "495191/500000",
+      "523693/500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "495191/500000"
+    }
+  },
+  {
+    "graph_id": "8109d7e65d9f414b7e9d",
+    "theta_numeric": 2.906487802424629,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.012687215006735642,
+    "budgets": [
+      "1066149/1000000",
+      "198863/200000",
+      "1059011/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "198863/200000"
+    }
+  },
+  {
+    "graph_id": "7c654fb07ff845a01773",
+    "theta_numeric": 2.9064547262616984,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.028009774003294297,
+    "budgets": [
+      "522169/500000",
+      "256311/250000",
+      "212749/200000"
+    ]
+  },
+  {
+    "graph_id": "ea5317503c45cef67ebb",
+    "theta_numeric": 2.906434440167321,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.03027838400157634,
+    "budgets": [
+      "3272/3125",
+      "1011191/1000000",
+      "524669/500000"
+    ]
+  },
+  {
+    "graph_id": "1a20e35810e60dacd4b6",
+    "theta_numeric": 2.9064334240205,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.013409494000370614,
+    "budgets": [
+      "1054463/1000000",
+      "493499/500000",
+      "1058673/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "493499/500000"
+    }
+  },
+  {
+    "graph_id": "2668181c500ba126ccfd",
+    "theta_numeric": 2.9064276292811666,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02527748300053645,
+    "budgets": [
+      "65303/62500",
+      "5073/5000",
+      "66279/62500"
+    ]
+  },
+  {
+    "graph_id": "85de6aa2f953119a1921",
+    "theta_numeric": 2.906390429929849,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025648039001680445,
+    "budgets": [
+      "209007/200000",
+      "511853/500000",
+      "1063173/1000000"
+    ]
+  },
+  {
+    "graph_id": "bf71b9ade1437830a50c",
+    "theta_numeric": 2.906362362053513,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.028949436004040763,
+    "budgets": [
+      "1055329/1000000",
+      "205567/200000",
+      "1052267/1000000"
+    ]
+  },
+  {
+    "graph_id": "7269844d885c338ab8d8",
+    "theta_numeric": 2.906339796158848,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02965283400408225,
+    "budgets": [
+      "213377/200000",
+      "506589/500000",
+      "1061629/1000000"
+    ]
+  },
+  {
+    "graph_id": "54bfab9ffcdee249e523",
+    "theta_numeric": 2.9062318567314596,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.029013384999416303,
+    "budgets": [
+      "211711/200000",
+      "507379/500000",
+      "1071227/1000000"
+    ]
+  },
+  {
+    "graph_id": "e0be153d6285c82bc93a",
+    "theta_numeric": 2.9062254475701255,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.025055129000975285,
+    "budgets": [
+      "522987/500000",
+      "510269/500000",
+      "211563/200000"
+    ]
+  },
+  {
+    "graph_id": "3f9f0f597bc696c2e56e",
+    "theta_numeric": 2.906183135689341,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.028654030000325292,
+    "budgets": [
+      "1059711/1000000",
+      "63323/62500",
+      "534791/500000"
+    ]
+  },
+  {
+    "graph_id": "41ab21c43769ab122b74",
+    "theta_numeric": 2.9061702819940103,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.03066420799586922,
+    "budgets": [
+      "260851/250000",
+      "1022273/1000000",
+      "1048533/1000000"
+    ]
+  },
+  {
+    "graph_id": "611d85bc305d9d2993be",
+    "theta_numeric": 2.9061299295485927,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 3,
+    "seconds": 0.022550141999090556,
+    "budgets": [
+      "261177/250000",
+      "990709/1000000",
+      "261523/250000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "990709/1000000"
+    }
+  },
+  {
+    "graph_id": "da46d1f8e74b8514eb81",
+    "theta_numeric": 2.9060482274807864,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 3,
+    "seconds": 0.023524545998952817,
+    "budgets": [
+      "525421/500000",
+      "991371/1000000",
+      "1043023/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "991371/1000000"
+    }
+  },
+  {
+    "graph_id": "b56a7b86f307efcac6f1",
+    "theta_numeric": 2.9060208231200084,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.023828834004234523,
+    "budgets": [
+      "209331/200000",
+      "1015821/1000000",
+      "517353/500000"
+    ]
+  },
+  {
+    "graph_id": "cd1e3ae81a49f1816ec3",
+    "theta_numeric": 2.906013716392798,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02959388300223509,
+    "budgets": [
+      "105427/100000",
+      "6383/6250",
+      "66891/62500"
+    ]
+  },
+  {
+    "graph_id": "81ff6fc341d44a36268a",
+    "theta_numeric": 2.90597011253998,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.028275486001803074,
+    "budgets": [
+      "526581/500000",
+      "257107/250000",
+      "1052683/1000000"
+    ]
+  },
+  {
+    "graph_id": "6982011943a9b51b8edf",
+    "theta_numeric": 2.9059588823577407,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.018143897003028542,
+    "budgets": [
+      "1049169/1000000",
+      "198437/200000",
+      "1045241/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "198437/200000"
+    }
+  },
+  {
+    "graph_id": "7283be9cc08ee474bd4c",
+    "theta_numeric": 2.905942794703086,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02700516399636399,
+    "budgets": [
+      "105017/100000",
+      "1015491/1000000",
+      "1059819/1000000"
+    ]
+  },
+  {
+    "graph_id": "ba0b63da548c0e831ec8",
+    "theta_numeric": 2.9059023272027846,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "not_excluded",
+    "rounds": 8,
+    "seconds": 0.02946619800059125,
+    "budgets": [
+      "1045273/1000000",
+      "255337/250000",
+      "42421/40000"
+    ]
+  },
+  {
+    "graph_id": "c71e4f60f532cfc1afaf",
+    "theta_numeric": 2.9058858327003065,
+    "family": "asymmetric",
+    "baseline": "not_excluded",
+    "propagation": "excluded",
+    "rounds": 2,
+    "seconds": 0.010044855996966362,
+    "budgets": [
+      "16378/15625",
+      "991291/1000000",
+      "1054511/1000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "991291/1000000"
+    }
+  },
+  {
+    "graph_id": "6fe9f1eda456988f67d3",
+    "theta_numeric": 2.8797181097470204,
+    "family": "c2_onepair",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.005812068993691355,
+    "budgets": [
+      "1168963/1125000",
+      "234809/250000",
+      "470993/500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 1,
+      "bound": "234809/250000"
+    }
+  },
+  {
+    "graph_id": "841588e96fcb125e738d",
+    "theta_numeric": 2.829880019165136,
+    "family": "c2_fixed",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.005852936003066134,
+    "budgets": [
+      "837201/1000000",
+      "476477/562500",
+      "457237/450000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 0,
+      "bound": "837201/1000000"
+    }
+  },
+  {
+    "graph_id": "f0da79afa5216ad3d74d",
+    "theta_numeric": 2.804337713008553,
+    "family": "c3_fixed",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.007373098000243772,
+    "budgets": [
+      "469821/500000",
+      "123019/120000",
+      "4112897/4500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 0,
+      "bound": "469821/500000"
+    }
+  },
+  {
+    "graph_id": "408d77eb49fd794c13f9",
+    "theta_numeric": 2.801173038849476,
+    "family": "c3_onecycle",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.008911865996196866,
+    "budgets": [
+      "4342183/4500000",
+      "319421/360000",
+      "4199177/4500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 0,
+      "bound": "4342183/4500000"
+    }
+  },
+  {
+    "graph_id": "e7699be6e7324c0596cf",
+    "theta_numeric": 2.79927443316169,
+    "family": "c5_fixed",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.007828030997188762,
+    "budgets": [
+      "453463/450000",
+      "9321647/9000000",
+      "4083343/4500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 2,
+      "bound": "4083343/4500000"
+    }
+  },
+  {
+    "graph_id": "8f74affe0213dac42fef",
+    "theta_numeric": 2.7950565635945805,
+    "family": "c2_twopairs",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.007742786998278461,
+    "budgets": [
+      "8703361/9000000",
+      "4081793/4500000",
+      "8646187/9000000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 0,
+      "bound": "8703361/9000000"
+    }
+  },
+  {
+    "graph_id": "addd75e87b90fd2b9888",
+    "theta_numeric": 2.7701777758363137,
+    "family": "c2_pairs",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.006611231998249423,
+    "budgets": [
+      "194687/250000",
+      "322707/500000",
+      "366149/450000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 0,
+      "bound": "194687/250000"
+    }
+  },
+  {
+    "graph_id": "b4485bcc006b52a2b70e",
+    "theta_numeric": 2.7636444115444463,
+    "family": "c3_mixed",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.007835021999198943,
+    "budgets": [
+      "3183169/3000000",
+      "3128579/3000000",
+      "3848711/4500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 2,
+      "bound": "3848711/4500000"
+    }
+  },
+  {
+    "graph_id": "e48a133aab3072f1a5f4",
+    "theta_numeric": 2.7592369883195236,
+    "family": "c2_mixed",
+    "baseline": "excluded",
+    "propagation": "excluded",
+    "rounds": 1,
+    "seconds": 0.008670814000652172,
+    "budgets": [
+      "4952389/4500000",
+      "9033359/9000000",
+      "451791/500000"
+    ],
+    "witness": {
+      "kind": "context_budget",
+      "context": 2,
+      "bound": "451791/500000"
+    }
+  }
+]

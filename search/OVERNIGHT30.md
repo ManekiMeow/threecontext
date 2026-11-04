@@ -35,11 +35,12 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 48. Results
-39–48 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Proposition 49. Results
+39–49 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
-by two-nine-orbit and affine-plane mixed-action exclusions.
+by two-nine-orbit and affine-plane mixed-action exclusions and iterated
+probability budgets.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -88,7 +89,8 @@ weights unless a run explicitly records a narrower ansatz:
    Theorem 43 additionally requires enough third-context bridges for every
    pair component, and every event must bridge some component. Theorem 44
    requires the strict rational degree-probability budget to exceed one in
-   every context. Both are now in the workers' exact screening/cut pipeline.
+   every context. Proposition 49 propagates strict probability intervals for
+   three rounds. These are now in the workers' exact screening/cut pipeline.
 4. Promote promising supports to full Lovasz SDP checks. Preserve candidates
    near theta=3 and their numerical matrices. Seek exact rational primal
    certificates; if a valid example is found, investigate its realization rank
@@ -126,10 +128,45 @@ gzip certificates verified on discovery and resume by `overnight30_fast_dual.py`
 A 20-second smoke produced 397 scores and 90 certificates. Numerical failure
 never creates a cut. The full SDP remains a fallback.
 
+## 23:00 continuation findings and next priorities
+
+The immutable review `search/overnight30_reviews/2026-11-04T2300/` adds 107,777
+labeled supports, including 93,632 newly scored labels, against the preceding
+completed pool. Selected 169 labels give 125 representatives relative to this
+selection and previously selected classes. Thirty-three received exact
+exclusions. The strongest new selected support is asymmetric, theta about
+2.9130510892, with exact upper bound 29141/10000. The overall historical leader
+is unchanged. All 36 certificates, 44 isomorphism mappings and input hashes
+verify with the review's `verify.py --inputs`. Two substantive numerical
+failures were independently excluded; deadline endings remain ordinary bounded
+search outcomes. The global bounds are unchanged.
+
+Asymmetric chunks now use bounded, checkpointed hot excursions with clustered
+partial rewires; the resume control accepted four downhill transitions and
+preserved best/pool. The shared inbox has eight diverse mutation seeds.
+
+The exact probability propagation helper is `event30_probability_propagation.py`.
+Three rounds add 16 exclusions among the selected 125 representatives, including
+theta2.90776942 via budget993319/1000000. Proofs and timing controls are in
+`overnight30_probability_reviews/2026-11-04T2300/`. Rounding is upward and all
+certificate replay uses rational arithmetic; no numerical bound is trusted.
+
+The C5 quotient review in `overnight30_quotient_reviews/2026-11-04T2300/`
+examines 150 of 5,273 published quotient classes and excludes126 with exact
+orbit-probability Farkas certificates. `event30_probability_lp.py` separates
+numerical discovery from exact verification. `overnight30_quotient.py` verifies
+this catalog and Proposition46, compiles5,640 context/orbit-permuted forbidden
+signatures, and also checks regular pair supports from Theorem45. Its60 new
+base auxiliaries preserve replay by rebasing legacy path cuts. The former
+C5leader is retired as a live best (historical evidence remains), and a
+2.899889 guide outside the catalog is loaded. Numerical score reduction after
+retiring an excluded best is expected, not lost progress.
+
 Next useful research steps, preserving the running supervisor:
 
-- Add a verified quotient-class SAT cut for Proposition 46 (including context
-  and orbit relabelings), stronger than excluding one support and its subgraphs.
+- Extend quotient exclusions to forced Cauchy-equality/saturated-edge
+  contradictions when the probability relaxation is feasible. Preserve the
+  actual group-action requirement and verify every class certificate.
 - Consider C3×C3 mixed actions with orbit types `R=(9,1)` and
   `T=(3,3,3,1)`, using affine-plane translation actions on points and three
   parallel classes of lines. RRR and RRT are excluded, as is RTT with three

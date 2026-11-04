@@ -47,5 +47,23 @@
         }
       }
     }
+  ],
+  "c5_double": [
+    {
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??cbQCcYOYPgOT`OOT`OhCg_IpGG@UH_?cYa?@GtC??",
+      "context_sizes": [
+        10,
+        10,
+        10
+      ],
+      "theta_numeric": 2.8998894283556553,
+      "edges_count": 100,
+      "provenance": {
+        "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+        "catalog_summary": "search/overnight30_quotient_reviews/2026-11-04T2300/summary.json"
+      },
+      "scope": "Numerical construction and mutation guide only; not a GHZ realization or a dimension certificate.",
+      "screen_status": "Survives current exact support screens, Proposition46, and the verified 23:00 quotient catalog; absence of an exclusion is not feasibility."
+    }
   ]
 }

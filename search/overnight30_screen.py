@@ -272,6 +272,19 @@ def fast_screen(record):
             result.update(status="excluded", reason="strict degree probability bounds cannot sum to one in a context",
                           certificate=cert)
             return result
+    # Iterated strict neighborhood-mass bounds strengthen the one-step degree
+    # budget. Lazy import avoids a cycle with the standalone exact verifier.
+    from event30_probability_propagation import screen as propagate_probabilities
+    propagated = propagate_probabilities(graph, max_rounds=3)
+    result["probability_propagation_rounds"] = propagated["rounds"]
+    result["probability_propagation_budgets"] = propagated["context_budgets"]
+    if propagated["status"] == "excluded":
+        proof = propagated["certificate"]
+        cert = certificate(graph, "probability_propagation",
+                           rounding_denominator=proof["rounding_denominator"],
+                           rounds=proof["rounds"], terminal=proof["witness"])
+        result.update(status="excluded", reason="iterated strict probability bounds are inconsistent",
+                      certificate=cert)
     return result
 
 
@@ -382,7 +395,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -421,6 +434,11 @@ def verify_certificate(cert):
             assert type(context) is int and 0 <= context < 3
             bound = context_degree_mass(graph, context, adj)
             assert str(bound) == witness["bound"] and bound <= 1
+        elif method == "probability_propagation":
+            from event30_probability_propagation import verify_certificate as verify_propagation
+            verify_propagation({"format": "ghz30-probability-propagation-v1", "graph": graph,
+                                "rounding_denominator": witness["rounding_denominator"],
+                                "rounds": witness["rounds"], "witness": witness["terminal"]})
         elif method == "pair_disconnected_d19":
             k, l = witness["pair"]
             assert 0 <= k < l < 3
@@ -638,6 +656,11 @@ def self_test():
     degree_control = normalize_graph({"parts": parts, "edges": edges})
     assert context_degree_mass(degree_control, 0) == Q(20, 27)
     verify_certificate(certificate(degree_control, "degree_mass", context=0, bound="20/27"))
+    from event30_probability_propagation import screen as propagate_probabilities
+    propagated = propagate_probabilities(degree_control)["certificate"]
+    verify_certificate(certificate(degree_control, "probability_propagation",
+                                   rounding_denominator=propagated["rounding_denominator"],
+                                   rounds=propagated["rounds"], terminal=propagated["witness"]))
     # Equality is also excluded because every event upper bound is strict.
     edges = [(u, 10) for u in range(10)]
     edges += [(u, v) for u in range(6) for v in range(20, 26)]
@@ -687,7 +710,7 @@ def self_test():
     signs = [1, -1, 1, -1]
     free = [-signs[i]*signs[j] for i in range(4) for j in range(i+1, 4) if [i, j] not in small["edges"]]
     verify_certificate(certificate(small, "theta_dual", bound="2", denominator=1, free_numerators=free))
-    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
+    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, probability propagation, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
 
 
 def main():
