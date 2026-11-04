@@ -1037,8 +1037,11 @@ So every B-neighbourhood is a singular set of one matrix, whose spectrum {1, λ_
    * With c ≡ 1/10 and all degrees 3, the left side is 30 · 2/3 = 20. Equality in Cauchy–Schwarz makes
      Y_xy = √(c_x c_y)/f_l(x) = 1/3 on every edge. ∎
 
-`search/aligned_d19.py` checks item 1 on random two-valued triples (commutant of dimension 9, central
-anticommutators) and the identities of item 2 on aligned data.
+`search/aligned_d19.py` checks item 1 in two ways:
+* on random two-valued triples (commutant of dimension 9, central anticommutators);
+* on random solutions of [E², A_k] = 0 with tr(ABC) = −1 (always nine 2-dimensional blocks).
+
+It also checks the identities of items 2 and 4 on aligned data.
 
 Without alignment σ is not fixed. On random rank-9 triples with tr(A_AA_BA_C) = −1 and near-trine cosines it took
 values on both sides of 7, from 6.985 to 7.010. The counting of item 3 therefore holds only approximately in
@@ -1177,6 +1180,18 @@ exists, not a proof.
     contains saturated events of at most one of these kinds. There are at most nine special blocks, and therefore
     at most nine (4,4) events. Every other event, of any context, also needs weight on those special blocks; for a
     (4,4) event of A, each B-event needs weight ≥ 1/15 there.
+
+  **The E²-scalar case is a weighted-graph problem.** Conversely, let Y be a Hermitian weighting of a
+  triangle-free (10,10,10) support with:
+  * zero diagonal blocks;
+  * row sums 1 into each other context;
+  * Y³ = (7/9)Y + (2/9)(J − I).
+
+  Then I + Y ⪰ 0 is the Gram matrix of a GHZ realization with all probabilities 1/10 and E² = 1/36 (take ψ as the
+  normalised sum of one context). The traces tr Y = tr Y³ = 0 leave four multiplicity patterns. Their ranks are
+  21, 20, 19 and 18, and 18 is excluded by Corollary 30. So this single problem covers the E²-scalar case in
+  dimensions 19, 20 and 21. Proposition 37's excluded unweighted case is Y = A/3. Its integrality gap (Σμ² = 42
+  against the integer bound 44) disappears for weighted Y, so the weighted problem is open.
 
 ---
 

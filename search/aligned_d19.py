@@ -54,6 +54,39 @@ for trial in range(3):
     print(f"   residual {np.abs(s.fun).max():.1e}; commutant dimension {commutant_dim([A, B, C])}; "
           f"anticommutators central: {central}; tr(ABC) = {tr.real:.6f}{tr.imag:+.4f}i")
 
+print("1b. [E^2, A_k] = 0 with tr(ABC) = -1 (E^2 not necessarily scalar), random solutions: irreducible block sizes")
+
+
+def commute_residual(x):
+    Ps = projs(x)
+    E2 = (sum(Ps) - 1.5 * np.eye(D)) @ (sum(Ps) - 1.5 * np.eye(D))
+    out = [np.concatenate([(E2 @ P - P @ E2).real.ravel(), (E2 @ P - P @ E2).imag.ravel()]) for P in Ps]
+    t = np.trace(Ps[0] @ Ps[1] @ Ps[2])
+    return np.concatenate(out + [np.array([t.real + 1, t.imag]) * 10])
+
+
+def block_sizes(Ps):
+    I = np.eye(D)
+    M = np.vstack([np.kron(P, I) - np.kron(I, P.T) for P in Ps])
+    _, s, vh = np.linalg.svd(M)
+    null = vh[(s > 1e-7 * s.max()).sum():]
+    X = sum(rng.normal() * v.reshape(D, D) for v in null)
+    w = np.sort(np.linalg.eigvalsh(X + X.conj().T))
+    sizes, cnt = [], 1
+    for a, b in zip(w, w[1:]):
+        if abs(a - b) < 1e-6:
+            cnt += 1
+        else:
+            sizes.append(cnt); cnt = 1
+    return sorted(sizes + [cnt])
+
+
+for trial in range(2):
+    s = least_squares(commute_residual, rng.normal(size=3 * 2 * D * r), method="trf", max_nfev=600,
+                      xtol=1e-15, ftol=1e-15, gtol=1e-15)
+    if np.abs(s.fun).max() < 1e-9:
+        print(f"   residual {np.abs(s.fun).max():.1e}; block sizes {block_sizes(projs(s.x))}")
+
 print("2. aligned data with every block defect 1/9 (|n_A + n_B + n_C| = 1/3 on the Bloch sphere), uniform probabilities:")
 sig = [np.array([[0, 1], [1, 0]]), np.array([[0, -1j], [1j, 0]]), np.diag([1.0, -1.0])]
 
