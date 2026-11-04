@@ -1166,6 +1166,18 @@ exists, not a proof.
   weight exactly 1/6, and every other event of its context exactly 1/6. These counts are consistent, so they do not
   yet give a contradiction.
 
+  The blocks give more. Let T be the +1/6 eigenprojection of E, so that 3Y² + 2Y − I − J/2 = W†TW =: q. This is 5/3
+  times a rank-9 projection. In block j, T is the line of the unit Bloch vector n̂_j = 3(n_A + n_B + n_C). Call
+  block j **k-special** if n_k = −n̂_j. Its squared cosines are then 1/6, 1/6 and 4/9 (the 4/9 for the pair not
+  involving k), and τ_j = −1/9. A block is special for at most one context.
+  * A (4,4) event x has q_xx = 0. So Tw_x = 0, and its profile lives on the blocks special for its own context.
+  * For a (2,4) event x of context k, with four neighbours in context m, the flat rows give q_xz = 0 for every
+    z ∈ I_m. So A_m T w_x = 0, and the value q_xx = 3/4 forces x to live on the m-special blocks only.
+  * Two events of one context have ⟨w_x|w_x′⟩ = −1/10 ≠ 0, so their profiles share a block. Hence each context
+    contains saturated events of at most one of these kinds. There are at most nine special blocks, and therefore
+    at most nine (4,4) events. Every other event, of any context, also needs weight on those special blocks; for a
+    (4,4) event of A, each B-event needs weight ≥ 1/15 there.
+
 ---
 
 ## 3. Four-context Kochen–Specker sets
