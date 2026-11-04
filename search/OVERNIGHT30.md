@@ -187,10 +187,11 @@ proofs have their own helpers and exact duals. The global event and dimension
 bounds remain unchanged.
 
 The broader auxiliary two-kernel experiment (16,973 assignment records before
-the refined finite proof) is archived as a 1.7 MB tar.gz under active host chunk
+the refined finite proof) is archived as a 1.7 MB tar.gz under host chunk
 `00053_asymmetric/auxiliary_c3square_review/`. This immutable archive was handed
 to the existing supervisor publisher without changing its Git index or control
-state. It is auxiliary research data; do not count its records as new distinct
+state and was published on the experiment branch in commit `92f8064`.
+It is auxiliary research data; do not count its records as new distinct
 labels without deduplication against the main pools. The host chunk's normal
 search remains separate and unchanged.
 
