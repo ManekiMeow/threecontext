@@ -530,6 +530,22 @@ replaces stalled two-edge switches by moves that also remove third-context trian
 `python search/overnight30_reviews/2026-11-04T2200/verify.py --isomorphism`; omit `--isomorphism` for verification
 using only standard Python. These results leave the global bounds unchanged.
 
+**23:00 checkpoint review (4 Nov, bounded).** Twenty newly completed chunks add 107,777 labeled supports,
+including 93,632 with numerical scores, after deduplication against the previous completed pool. Selecting
+169 leading/family labels gives 125 representatives distinct within this selection and from the previously
+selected classes; this is not an isomorphism census of the full pool. Thirty-three selected representatives
+have exact exclusions. The strongest new selected support is asymmetric, with numerical θ ≈ **2.9130510892**
+and exact upper bound **29141/10000 = 2.9141 < 3**. It passes the existing combinatorial and dimension-19
+support tests. The overall C₅ leader remains unchanged. Both substantive numerical failures in these chunks
+were independently excluded; eleven routine end-of-budget records were not re-solved. Standard Python verifies
+the 36 certificates, 44 explicit isomorphism mappings and published input hashes:
+`python search/overnight30_reviews/2026-11-04T2300/verify.py --inputs`.
+
+The asymmetric worker now makes bounded excursions from diverse near-leading graphs, using clustered partial
+rewiring and temporarily higher temperature. A twenty-second resume check scored 121 new supports and accepted
+four downhill moves, preserved its historical best and pool, and passed the H₃₃/H₃₆ positive controls. Two
+improved family supports were added as explicitly excluded mutation seeds. No new realization is claimed.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

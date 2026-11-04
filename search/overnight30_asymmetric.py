@@ -17,6 +17,9 @@ Every successfully scored labelled support is written compactly as graph6 in a
 JSONL archive. Only new bests and numerical near-hits get full graph records.
 The bounded elite population removes exact colour-preserving isomorphs within
 WL hash buckets; the full archive still counts labelled supports, not classes.
+Short checkpointed excursions from near-leading elites use partial clustered
+rewires and higher temperature to explore temporary score losses. They preserve
+historical bests and the elite pool and return to ordinary search automatically.
 CLARABEL has an individual solve time limit; SCS is a bounded fallback. H33 and
 H36 are scored as positive controls on each invocation. Numerical near-hits are
 saved for subsequent exact certification and are NEVER called realizations here.
@@ -169,6 +172,30 @@ def kick_edges(current, rng):
     return fill(trial, rng)
 
 
+def cluster_rewire(current, rng):
+    """Partially rewire two or three adjacent vertices, retaining coverage."""
+    for _ in range(8):
+        root = rng.randrange(N)
+        neighbours = [v for v in range(N) if current[root] >> v & 1]
+        cluster = {root, *rng.sample(neighbours, min(len(neighbours), rng.choice((1, 2))))}
+        incident = [(u, v) for u, v in edges_of(current) if u in cluster or v in cluster]
+        rng.shuffle(incident)
+        trial = current[:]
+        budget = min(14, max(4, round(len(incident)*rng.uniform(0.35, 0.65))))
+        removed = 0
+        for u, v in incident:
+            if ((trial[u] & PART_MASKS[v//10]).bit_count() > 1
+                    and (trial[v] & PART_MASKS[u//10]).bit_count() > 1):
+                remove(trial, u, v)
+                removed += 1
+                if removed >= budget:
+                    break
+        trial = fill(trial, rng)
+        if trial != current and validate(trial):
+            return trial, "cluster_partial_rewire"
+    return kick_edges(current, rng), "cluster_rewire_fallback_edge_kick"
+
+
 def proposal(current, pool, rng, iteration, diagnostics=None):
     diagnostics = diagnostics if diagnostics is not None else {}
 
@@ -240,7 +267,9 @@ def proposal(current, pool, rng, iteration, diagnostics=None):
         trial = [a & b for a, b in zip(current, second)]
         union = [(u, v) for u, v in PAIRS if (current[u] | second[u]) >> v & 1]
         return fill(trial, rng, union), "population_crossover"
-    return fill([0]*N, rng), "fresh_restart"
+    # No empty-graph restarts were accepted after per-move counters were added;
+    # spend that mutation share near the current geometry instead.
+    return cluster_rewire(current, rng)
 
 
 class ThetaScorer:
@@ -501,6 +530,10 @@ def run(args):
     state.setdefault("move_accepted", {})
     state.setdefault("move_invalid", {})
     state.setdefault("proposal_diagnostics", {})
+    state.setdefault("excursions", {"remaining_evaluations": 0, "next_iteration": state["iterations"],
+                                   "started": 0, "completed": 0, "evaluated": 0,
+                                   "newly_scored": 0, "accepted": 0, "downhill_accepted": 0,
+                                   "maximum_anchor_drop": 0.0})
     old_screen_version = state.get("screen_version", 0)
     state.update({"screen_version": 1, "fast_rejected": state.get("fast_rejected", 0),
                   "sat_excluded": state.get("sat_excluded", 0),
@@ -598,17 +631,37 @@ def run(args):
     with archive.open("a", buffering=1) as stream:
         while time.monotonic() < deadline-0.3:
             state["iterations"] += 1
+            exploring = False
+            excursion = state["excursions"]
+            if excursion["remaining_evaluations"] and state["iterations"] >= excursion["stop_iteration"]:
+                excursion["remaining_evaluations"] = 0
+                excursion["completed"] += 1
             if state["pending_seeds"]:
                 trial = decode(state["pending_seeds"].pop())
                 move = "saved_seed"
             elif current is None:
                 trial, move = fill([0]*N, rng), "fresh_restart"
             else:
-                if pool and (state["iterations"] % 120 == 0 or state["iterations"]-last_improvement > 250):
+                if pool and not excursion["remaining_evaluations"] and state["iterations"] >= excursion["next_iteration"]:
+                    lead_score = max(map(search_score, pool))
+                    near_leaders = [entry for entry in pool if search_score(entry) >= lead_score-0.035]
+                    selected = rng.choice(near_leaders[:16])
+                    current, current_value = decode(selected["g6"]), selected["theta"]
+                    excursion.update({"remaining_evaluations": 50, "next_iteration": state["iterations"]+650,
+                                      "stop_iteration": state["iterations"]+240,
+                                      "anchor_g6": selected["g6"], "anchor_theta": selected["theta"],
+                                      "anchor_search_score": search_score(selected),
+                                      "started_iteration": state["iterations"]})
+                    excursion["started"] += 1
+                exploring = excursion["remaining_evaluations"] > 0
+                if not exploring and pool and (state["iterations"] % 120 == 0 or state["iterations"]-last_improvement > 250):
                     selected = rng.choice(pool[:max(4, len(pool)//2)])
                     current, current_value = decode(selected["g6"]), selected["theta"]
                     last_improvement = state["iterations"]
-                trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
+                if exploring and rng.random() < 0.6:
+                    trial, move = cluster_rewire(current, rng)
+                else:
+                    trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
             state["moves"][move] = state["moves"].get(move, 0)+1
             state["move_accepted"].setdefault(move, 0)
             state["move_invalid"].setdefault(move, 0)
@@ -649,7 +702,8 @@ def run(args):
                 screen_cache[code] = screen_summary(screening)
                 stream.write(json.dumps({"g6": code, "theta": value, "seed": args.seed,
                                          "iteration": state["iterations"], "move": move,
-                                         "status": result["status"], "screen": screen_summary(screening)}, separators=(",", ":"))+"\n")
+                                         "status": result["status"], "screen": screen_summary(screening),
+                                         **({"excursion": True} if exploring else {})}, separators=(",", ":"))+"\n")
             # Cached legacy scores must also receive the high-score SAT screen.
             if code not in screen_cache:
                 screening = screened(trial, value, args.sat_threshold, args.sat_conflicts)
@@ -693,12 +747,26 @@ def run(args):
             # a predeclared total iteration count.
             phase = state["iterations"] % 200
             temperature = 0.001 + 0.016*(1-phase/200)
+            if exploring:
+                temperature = 0.015 + 0.035*excursion["remaining_evaluations"]/50
             adjusted = value - (0.06 if excluded else 0)
             adjusted_current = current_value - (0.06 if current is not None and screen_cache[encode(current)]["status"] == "excluded" else 0) if current_value is not None else -math.inf
-            if current is None or adjusted >= adjusted_current or rng.random() < math.exp(min(0, (adjusted-adjusted_current)/temperature)):
+            within_excursion_band = not exploring or adjusted >= excursion["anchor_search_score"]-0.10
+            if within_excursion_band and (current is None or adjusted >= adjusted_current or rng.random() < math.exp(min(0, (adjusted-adjusted_current)/temperature))):
+                if exploring:
+                    excursion["accepted"] += 1
+                    excursion["downhill_accepted"] += int(adjusted < adjusted_current-1e-8)
+                    excursion["maximum_anchor_drop"] = max(excursion["maximum_anchor_drop"], excursion["anchor_search_score"]-adjusted)
                 current, current_value = trial, value
                 state["accepted"] += 1
                 state["move_accepted"][move] += 1
+            if exploring:
+                excursion["evaluated"] += 1
+                excursion["newly_scored"] += int(result is not None)
+                excursion["remaining_evaluations"] -= 1
+                if not excursion["remaining_evaluations"]:
+                    excursion["completed"] += 1
+                    last_improvement = state["iterations"]
             if time.monotonic()-last_saved >= 10:
                 save()
                 last_saved = time.monotonic()
