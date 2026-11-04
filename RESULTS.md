@@ -270,10 +270,12 @@ verified all 300 leading principal minors across the ten certificates.
 
 ```sh
 python search/construction30_configurations.py verify
+python search/construction30_configurations_audit.py
 ```
 
 This regenerates the complete classification, checks coverage by the saved representatives, and verifies all
-rational duals. It needs NetworkX, but no SDP solver. Data: `search/construction30_configurations_certificates.json`.
+rational duals. The first checker needs NetworkX; the independent audit also needs python-sat. Neither uses an SDP
+solver. Data: `search/construction30_configurations_certificates.json`.
 The `generate` mode additionally needs CVXPY/Clarabel to regenerate the rational witnesses.
 
 **Scope.** This is stronger than excluding the constant-overlap Gram matrix `I+A/3`: it excludes every quantum
@@ -292,6 +294,19 @@ python search/construction30_mixed.py verify
 
 Verification needs only standard Python and excludes the saved graphs without assumptions on their event
 probabilities or realization dimension.
+
+**Allowing repeated point pairs (bounded construction search).** A further extension drops linearity: B and C each
+still have ten distinct three-point lines and three lines through every point, but two lines may share two points.
+Starting from the best mixed-linear graph, `search/construction30_nonlinear.py` made 1200 degree-preserving incidence
+switch proposals over four seeds (344 accepted, 1167 SDP evaluations including the shared starting graph).
+It found no improvement; all four saved best graphs remain the starting graph, with exact theta upper bound 713/250.
+The nonlinear family is not exhausted or excluded. Its saved certificates can be checked with
+`python search/construction30_nonlinear.py verify`.
+
+Requiring distinct lines loses no 30-event GHZ example in this construction. Duplicate lines within B or C would
+be nonadjacent vertices with identical neighbourhoods. In a primal theta Gram representation, replace their two
+orthogonal vectors by their sum. This preserves positivity, trace, objective and every prescribed zero, producing
+a triangle-free, three-colourable graph on 29 events with theta 3, contrary to Corollary 6.
 
 ---
 
@@ -2123,8 +2138,12 @@ including Route B, remains open.
   qudit phase-space dictionary for q = 3, 5, 7).
 * `search/construction30_configurations.py`, `search/construction30_configurations_certificates.json`: §1.10,
   exhaustive linear 10₃ classification and rational dual certificates excluding all ten identical-line-system graphs.
+  `search/construction30_configurations_audit.py` independently checks the enumeration, SAT triangle covers and
+  certificates using integer Bareiss elimination.
 * `search/construction30_mixed.py`, `search/construction30_mixed_results.json`: bounded construction search over
   independently labelled line systems, with rational dual certificates for each run's best graph.
+* `search/construction30_nonlinear.py`, `search/construction30_nonlinear_results.json`: extension allowing repeated
+  point pairs, with degree-preserving switches and exact certificates for the saved graphs.
 * `search/rigid_events.py`, `search/rigid_events.log`: Theorem 21 (exact LP, MILP, sharpness in H33, the identity
   of the remark on H36 and H37).
 * `search/projection_bound.py`: symbolic checks for Lemma 29, Corollary 30 and Theorem 31 (d ≥ 19).
