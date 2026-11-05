@@ -3459,14 +3459,18 @@
       "state": "completed"
     },
     {
+      "archive_bytes": 0,
       "code_commit": "a7a1a03ee6ea34e285e41b1dc8c56a312ac50702",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00157_c2_twopairs",
+      "elapsed_seconds": 194.83749661199545,
       "family": "c2_twopairs",
+      "finished_utc": "2026-11-05T05:00:01+00:00",
       "host": "4eb071b4d7f0",
       "id": 157,
       "kind": "symmetry",
       "pid": 24842,
       "resume_job": 141,
+      "returncode": -15,
       "seconds_budget": 191.62693572044373,
       "seed": 20261114,
       "source_sha256": {
@@ -3474,17 +3478,22 @@
         "search/overnight30_symmetry.py": "8a7affc78c782896f7b8017254cd51f0573c22dbd53666b50949e6b6ceda1bb3"
       },
       "started_utc": "2026-11-05T04:56:46+00:00",
-      "state": "running"
+      "state": "failed",
+      "termination_reason": "deadline"
     },
     {
+      "archive_bytes": 0,
       "code_commit": "a7a1a03ee6ea34e285e41b1dc8c56a312ac50702",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00158_c3_onecycle",
+      "elapsed_seconds": 157.9838366890035,
       "family": "c3_onecycle",
+      "finished_utc": "2026-11-05T05:00:01+00:00",
       "host": "4eb071b4d7f0",
       "id": 158,
       "kind": "symmetry",
       "pid": 24871,
       "resume_job": 142,
+      "returncode": -15,
       "seconds_budget": 154.76720309257507,
       "seed": 20261115,
       "source_sha256": {
@@ -3492,7 +3501,8 @@
         "search/overnight30_symmetry.py": "8a7affc78c782896f7b8017254cd51f0573c22dbd53666b50949e6b6ceda1bb3"
       },
       "started_utc": "2026-11-05T04:57:23+00:00",
-      "state": "running"
+      "state": "failed",
+      "termination_reason": "deadline"
     },
     {
       "archive_bytes": 137036,
