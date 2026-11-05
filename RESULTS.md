@@ -1142,8 +1142,20 @@ python3 search/transfer_d19.py
   itself a GHZ graph: two solvers agree that ϑ < 3, and all 36 weights are positive.
 * Calibration at (9,12,12), where H33 is the unique answer (Theorem 5): it stalled at 2.9451.
 
-So the search does not find rare graphs. Its silence at 30 events is weak evidence that no 30-event GHZ graph
-exists, not a proof.
+Final values of the overnight runs (4–5 Nov). Each run was stopped at the end of the session, before its time budget.
+
+| run | supports | best |
+|---|---|---|
+| (10,10,10), long dual-guided run | ≈ 1.2·10⁴ moves | ϑ = 2.9202 (no improvement on 2.93747) |
+| (10,10,10), only dimension-19-eligible supports (every pair support connected, with a perfect matching) | ≈ 1.8·10³ moves | ϑ = 2.9084 |
+| (9,12,12) calibration, long run | ≈ 7·10³ moves | ϑ = 2.9429 |
+| (9,12,12) calibration with vertex-rewiring moves | ≈ 3·10³ moves | ϑ = 2.9355 |
+| E²-scalar cubic filter (`search/e2scalar_cubic.py`, seed 7) | ≥ 193 SAT-stream supports | smallest residual cost 0.938 (a weighting needs 0) |
+| uniform-probability SAT/SDP search (`event30_uniform_search.py`, seed 11) | 4113 scored graphs | best margin −0.2743 (a realization needs ≥ 0) |
+
+The rewiring moves did not rediscover H33 either. So the search does not find rare graphs, and its silence at 30
+events is weak evidence that no 30-event GHZ graph exists, not a proof. Restricting to dimension-19-eligible supports
+lowers the best value from 2.937 to 2.908.
 
 **What this means for d_min = 20.**
 * Every construction in the remaining class that we could build fails, and its support already fails rank-free.
