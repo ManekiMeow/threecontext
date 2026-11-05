@@ -1,0 +1,14 @@
+{
+  "best": {
+    "g6": "]???????@?a_A__oGSEc_x_?r?AQ?DP??daOCKq_WbGQt?OOt?OgDg_I`WG@PI_?EQI?B?mC??",
+    "theta_numeric": 2.9156526868614114,
+    "automorphisms_uncolored": 1,
+    "automorphisms_context_preserving": 1
+  },
+  "best_excluded": {
+    "g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+    "theta_numeric": 2.9166384145141824,
+    "automorphisms_uncolored": 2,
+    "automorphisms_context_preserving": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "exact_compact_cuts": 281,
+  "by_job": {
+    "93": 50,
+    "94": 225,
+    "96": 6
+  },
+  "closed_subset_sizes": {
+    "30": 40,
+    "28": 50,
+    "29": 23,
+    "26": 75,
+    "27": 51,
+    "23": 3,
+    "24": 5,
+    "25": 34
+  },
+  "scope": "Natural completed-worker cuts; exact certificates and dominance clauses, not independent isomorphism classes."
+}

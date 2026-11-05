@@ -1031,6 +1031,25 @@ ordinary proposals and uses the same screening and acceptance rules. All 118 rej
 50 saved isomorphism mappings and 32 deterministic repair controls replay exactly. The new graph is an
 excluded mutation guide, not a GHZ construction.
 
+**02:00 checkpoint review (5 Nov, bounded).** Nineteen further completed chunks add **270,430 labeled
+supports and 46,181 newly scored labels** against all earlier completed main-worker pools. Among 127
+selected leading/family labels, exact comparisons give 124 new representatives relative to this selection
+and previously reviewed classes, with three explicit isomorphism maps. Nineteen selected representatives
+have exact exclusions; this remains a selected-set review, not a full-pool isomorphism census.
+
+The strongest new support is fully asymmetric and has numerical θ ≈ **2.9156526869**, with exact upper
+bound **29167/10000 = 2.9167 < 3**. It passes the configured structural and dimension-19 support diagnostics
+and remains an excluded mutation guide. The historical maximum 2.9166384145 and its exact partition
+exclusion are preserved. Both substantive numerical failures in the new chunks are independently excluded;
+six deadline skips are normal budget endings.
+
+Corollary 57b has produced **281 verified dominance cuts** in natural symmetry runs. Of these, 241 use
+proper closed subsets of 23–29 vertices; forty use all thirty vertices. All saved witnesses and their SAT
+clauses replay exactly. The immutable review `search/overnight30_reviews/2026-11-05T0200/` is pinned to
+experiment commit `3536304`. Its standard-library verifier checks 21 local certificates, three isomorphism
+maps, two referenced proofs, all 281 closure cuts and immutable input bindings:
+`python search/overnight30_reviews/2026-11-05T0200/verify.py --inputs`. Global bounds remain unchanged.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

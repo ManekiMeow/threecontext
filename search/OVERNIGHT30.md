@@ -423,6 +423,26 @@ symmetric/asymmetric supports, and structural restrictions on nonuniform
 dimension-19 realizations. Inspect the repair move's natural performance
 before changing its cadence. Do not rerun the completed published-pool census.
 
+## 02:00 continuation findings (5 November)
+
+The immutable review `overnight30_reviews/2026-11-05T0200/`, pinned to experiment
+commit `3536304`, covers completed chunks 80–98. It adds 270,430 labeled supports
+and 46,181 newly scored labels against all prior completed main-worker pools.
+The bounded selection contains 127 labels and 124 new representatives relative
+to that selection and previously reviewed classes, with three explicit mappings.
+Nineteen selected representatives have exact exclusions. Standard Python
+`verify.py --inputs` checks 21 certificates, two referenced proofs, history,
+input bindings and all 281 natural closure-filter cuts.
+
+The active asymmetric guide improves to theta 2.9156526869, with exact upper
+bound 29167/10000. Both its full and context-preserving automorphism groups
+are trivial. The historical maximum remains 2.9166384145, already excluded by
+the 15/16 partition bound. Both substantive numerical failures in the new
+chunks are exactly excluded; six deadline skips are normal budget endings.
+Corollary 57b's 281 cuts include 241 proper closed subsets of 23–29 vertices,
+demonstrating use of the stronger closure criterion. These are cut counts,
+not independent isomorphism classes. Global bounds remain unchanged.
+
 ## Operation and scheduled continuation
 
 `overnight30_supervisor.py` runs bounded worker chunks, publishes checkpoints,
