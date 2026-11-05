@@ -35,15 +35,16 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 55. Results
-39–55 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 56. Results
+39–56 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
 by affine-plane mixed-action exclusions, iterated probability budgets, and
 the exclusion of a nine-vertex symmetry orbit in any single context, global
 pair-support matchings, disjoint-neighborhood probability budgets, and complete
 phase exclusions for nine specified C5 quotients, and the exclusion of even
-one isoclinic reduced pair in a uniform-probability dimension-19 realization.
+one isoclinic reduced pair in a uniform-probability dimension-19 realization,
+followed by strict weighted-degree bounds and one-sided regularity restrictions.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -266,8 +267,8 @@ rechecks active records against new filters, retiring newly excluded records
 while retaining historical graphs and scores. A targeted finite recombination
 of four asymmetric leaders scored twenty previously unscored labels; the best
 was about 2.91470491, below the current leader. The auxiliary archive is in
-active host chunk `00066_asymmetric/auxiliary_asymmetric_review/` and will be
-published with that chunk. It must not be counted as twenty globally new
+host chunk `00066_asymmetric/auxiliary_asymmetric_review/`, published in data
+commit `992cbf1`. It must not be counted as twenty globally new
 isomorphism classes. Numerical optimizer ranks are not realization dimensions.
 
 The remaining C3² actions using only T=(3,3,3,1) and D=(3,3,1,1,1,1) reduce to
@@ -285,6 +286,43 @@ K4 components. Both are impossible. The complete analytic proof and exact
 real/complex two-context positive controls are in `event30_isoclinic_uniform.py`.
 Independent proof review passed. This does not assume an actual graph symmetry,
 and it does not exclude nonuniform realizations with an isoclinic pair.
+
+Theorem 56 proves strict weighted degree between two and five in every
+oriented context pair. A side with constant degree must therefore have degree
+three or four; the opposite side need not be regular. Every pair support has
+at least twenty edges. `event30_one_sided_regular.py` verifies the Jensen,
+projection and common-neighbor arguments. The global certificate method
+`one_sided_regular` preserves the older `regular_pair` certificate format.
+
+The separate bounded expansion `overnight30_quotient_expansion/2026-11-05T0000/`
+uses four published C5 pools containing 5,503 quotient classes. In sixty seconds
+it reviews 3,560 further classes and exactly excludes 3,378 (502 sector LP,
+1,299 saturation, 1,577 disjoint-moment LP). Combined with the earlier 150,
+3,528 published classes are excluded; 182 reviewed classes remain inconclusive
+and 1,793 were not reached. Proofs and representative metadata are compressed
+JSONL, and all exact certificates and actual C5 actions replay in standard
+Python. This remains a published-pool review, not a full family classification.
+
+The expanded catalog has 163,348 permuted signatures and 72 exact-count
+auxiliaries. Startup benchmarks measured about four seconds for the new proof
+catalog and under one second for CNF generation/solver bootstrap. Replaying
+47,691 historical C5 models and 11,070 cuts took about 69 seconds and exhausted
+a short smoke budget before new models; this is setup cost, not a solver
+failure. A fresh twenty-second control generated 336 models and 81 scores.
+Its only error record was a deadline-before-solve skip, with no substantive
+solver failure. The raw fresh/resume controls and logs are archived under
+active chunk `00076_asymmetric/auxiliary_quotient_expansion_benchmarks/` for
+the supervisor to publish with that chunk; the source stores only proof and
+benchmark summaries.
+Legacy cut rebasing from the earlier 60 auxiliaries was verified. The refreshed
+2.8894779990 C5 guide has an unexcluded quotient, but its individual graph has
+an exact bound below three and is explicitly marked as a mutation guide.
+
+Next research priorities are the 182 analytically inconclusive reviewed
+quotients, the 1,793 unreviewed published quotients, and asymmetric supports
+outside these symmetry catalogs. The nonuniform dimension-19 case and the
+uniform case with all three pairs non-isoclinic remain open. Do not repeat the
+completed 150-class phase review or weaken the actual-group-action requirement.
 
 ## Operation and scheduled continuation
 

@@ -1,0 +1,16 @@
+{
+  "batch_elapsed_seconds": 68.55010693799704,
+  "models": 47691,
+  "scored": 31021,
+  "certified_structural_dominance_cuts": 11070,
+  "batch_models": 0,
+  "batch_scored": 0,
+  "legacy_bests_excluded": 3,
+  "termination": "batch time budget",
+  "requested_seconds": 14,
+  "scope": "Exact replay of the four published C5 chunk ancestors; budget expired during setup, so no new numerical search records.",
+  "reported_cumulative_solver_errors": 3,
+  "new_solver_failures": 0,
+  "error_scope": "All three reported errors are inherited checkpoint history; this control started no numerical solve.",
+  "raw_archive_directory": "search/overnight30_runs/2026-11-04/chunks/00076_asymmetric/auxiliary_quotient_expansion_benchmarks"
+}

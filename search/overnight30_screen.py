@@ -263,6 +263,13 @@ def fast_screen(record):
     result["dimension19_pair_connected"] = all(x["components"] == 1 for x in pair_diagnostics)
     result["dimension19_pair_perfect_matching"] = all(x["perfect_matching"] for x in pair_diagnostics)
     result["dimension19_eligible"] = "dimension19_certificate" not in result
+    from event30_one_sided_regular import find_obstruction as one_sided_obstruction
+    regular = one_sided_obstruction(graph)
+    if regular is not None:
+        cert = certificate(graph, "one_sided_regular", **regular["witness"])
+        result.update(status="excluded", reason="a one-sided regular context pair has degree outside three or four",
+                      certificate=cert)
+        return result
     # The balanced pair-component checks above exclude cross-degree zero.
     # Triangle-freeness then excludes cross-degree ten: any neighbor in the
     # third context would have cross-degree zero toward that complete side.
@@ -404,7 +411,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "disjoint_partition", "pair_hall", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "disjoint_partition", "one_sided_regular", "pair_hall", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -451,6 +458,10 @@ def verify_certificate(cert):
         elif method == "disjoint_partition":
             from event30_disjoint_partition import verify_certificate as verify_partition
             verify_partition(cert)
+        elif method == "one_sided_regular":
+            from event30_one_sided_regular import verify_certificate as verify_regular
+            verify_regular({"format": "ghz30-one-sided-regular-v1", "graph": graph,
+                            "witness": witness})
         elif method == "pair_disconnected_d19":
             k, l = witness["pair"]
             assert 0 <= k < l < 3
@@ -668,6 +679,8 @@ def self_test():
     degree_control = normalize_graph({"parts": parts, "edges": edges})
     assert context_degree_mass(degree_control, 0) == Q(20, 27)
     verify_certificate(certificate(degree_control, "degree_mass", context=0, bound="20/27"))
+    verify_certificate(certificate(degree_control, "one_sided_regular", event_context=0,
+                                   regular_context=1, regular_degree=5))
     from event30_probability_propagation import screen as propagate_probabilities
     propagated = propagate_probabilities(degree_control)["certificate"]
     verify_certificate(certificate(degree_control, "probability_propagation",
@@ -723,7 +736,7 @@ def self_test():
     signs = [1, -1, 1, -1]
     free = [-signs[i]*signs[j] for i in range(4) for j in range(i+1, 4) if [i, j] not in small["edges"]]
     verify_certificate(certificate(small, "theta_dual", bound="2", denominator=1, free_numerators=free))
-    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, probability propagation, unbalanced coloring, global Hall and legacy witness, graph6, gzip pool, H33 boundary primal, exact dual")
+    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, one-sided regularity, probability propagation, unbalanced coloring, global Hall and legacy witness, graph6, gzip pool, H33 boundary primal, exact dual")
 
 
 def main():

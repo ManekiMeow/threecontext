@@ -1,0 +1,17 @@
+{
+  "new_verified_classes": 3378,
+  "expansion_proof_seconds": 4.013530502998037,
+  "remaining_full_catalog_seconds": 4.566327149004792,
+  "total_patterns": 163348,
+  "cnf_seconds": 0.6171008450037334,
+  "solver_bootstrap_seconds": 0.10451889500109246,
+  "auxiliary_variables": 72,
+  "clauses": 165652,
+  "max_rss_kib": 224152,
+  "checked_methods": [
+    "orbit_probability_quotient",
+    "quotient_saturation",
+    "orbit_disjoint_probability_quotient"
+  ],
+  "new_guide_passed": true
+}

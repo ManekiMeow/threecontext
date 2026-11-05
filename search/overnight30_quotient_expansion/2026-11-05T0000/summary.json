@@ -1,0 +1,88 @@
+{
+  "published_commit": "bb92744f2b4fa70cb1a11b12ca4290bee9546f9e",
+  "source_files": [
+    "search/overnight30_runs/2026-11-04/chunks/00008_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz"
+  ],
+  "scored_records": 31021,
+  "published_quotient_classes": 5503,
+  "prior_selected_classes_skipped": 150,
+  "reviewed": 3560,
+  "certified": 3378,
+  "inconclusive_quotients": 182,
+  "discovery_seconds": 60.01705305199721,
+  "requested_seconds": 60,
+  "best_surviving_guide": {
+    "theta_numeric": 2.8894779990316155,
+    "graph6": "]???????@AacAc`OGSC?_P??a??a??P?@_bQKCYOwPgPP`OoP`OhCGoIpAG@UGo?cWb?@GpE??",
+    "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "index": 32565,
+    "quotient": [
+      [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0,
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        1,
+        2,
+        0,
+        0
+      ]
+    ],
+    "exact_quotient_excluded": false,
+    "representative_screen": "not_excluded",
+    "exact_theta_upper": "1445246758047/500000000000",
+    "dominance_certificate_sha256": "4a74dbf6313a329d17fdda90a57ce78c9f145216790df5957cf899e215db9c50",
+    "individual_certificate": "best_guide_individual_dual.json.gz",
+    "role": "mutation guide; support individually excluded, quotient unresolved by this analytic review"
+  },
+  "scope": "Bounded review of published scored C5 quotients, beyond the prior150selected classes. No claim of complete C5-family coverage; numerical scores and failed certificate discovery do not establish quantum feasibility or nonexistence.",
+  "proof_archive": "certificates.jsonl.gz",
+  "proof_count": 3378,
+  "proof_kind_counts": {
+    "probability": 502,
+    "saturation": 1299,
+    "disjoint_probability": 1577
+  },
+  "results_archive": "results.jsonl.gz"
+}

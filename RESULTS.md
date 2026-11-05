@@ -311,11 +311,14 @@ a triangle-free, three-colourable graph on 29 events with theta 3, contrary to C
 **Weak-symmetry construction campaign (4–5 Nov, in progress).** The next search allows eleven C₂, C₃ and C₅
 actions with several orbits or fixed points, and a separate unrestricted asymmetric population search. Event
 probabilities and overlap weights are free. Exact recoloring witnesses, disconnected supports and false twins
-prune candidates; dimension-19 pair-connectivity and perfect-matching checks are recorded separately. A first
+prune candidates; pair perfect matchings are now required globally by Theorem 52, while pair connectivity
+remains a separate dimension-19 restriction. A first
 asymmetric seed with numerical θ ≈ 2.9122785 is already excluded by an explicit proper coloring of sizes
 (9,10,11), and is retained only as a mutation seed. No new realization or global exclusion is claimed.
 See [`search/OVERNIGHT30.md`](search/OVERNIGHT30.md) for the deadline, checkpoint branches and continuation
 procedure, and [`search/overnight30_obstructions.md`](search/overnight30_obstructions.md) for the screening proofs.
+The saved graphs encode the allowed nonzero-overlap support H. The numerical theta scores and certificates
+in this campaign concern its exclusivity complement, `θ(complement(H))`; a GHZ realization requires value three.
 
 **Proposition 39 (event contraction and a weak involution).** In a thirty-event GHZ support graph, every two
 vertices in the same context are endpoints of a length-three path whose internal vertices lie in the other two
@@ -817,6 +820,39 @@ checks valid real and complex isoclinic **two-context** matrices on closed Peter
 of their neighborhoods. These controls distinguish feasible pair geometry from the impossible third-context
 extension. The proof and controls were independently reviewed; no numerical optimization is used.
 
+**Theorem 56 (strict weighted-degree bounds and one-sided regularity).** For every ordered pair of contexts
+A,B in a thirty-event GHZ graph,
+
+    2 < Σ_{b∈B} c_b |N_A(b)| < 5.
+
+Consequently, if all ten B vertices have the same A-degree q, then q is three or four. Neither the A-side
+degrees nor the other pair supports need be regular. Every bipartite pair support has at least twenty edges.
+These statements hold in every dimension and for complex realizations.
+
+*Proof:* put `α_i=Σ_{b∈N_B(i)}c_b` for i∈A and `d̄=Σ_i α_i=Σ_b c_b |N_A(b)|`. The sector bound gives
+`c_i≤h(α_i)`, where `h(a)=a(1−a)/(1+3a)` and `h″(a)=−8/(1+3a)³<0`. Jensen therefore gives
+`1≤Σ_i h(α_i)≤10h(d̄/10)`, equivalently `(d̄−2)(d̄−5)≤0`.
+
+At an endpoint q=2 or 5, equality forces every A probability to 1/10, every α_i=q/10, and the other two
+sector masses to `β=ρ=(1−α)/2`. Saturation forces each allowed A–B overlap to `√(c_i c_b)/α`.
+Expanding ψ in A then gives `√c_b=(|N_A(b)|/q)√c_b`; hence B is q-regular toward A.
+
+Let E,F project onto B,C and put `s=(1+α)/(1−α)`, `L=sE+2F`. Cauchy equality makes L act as identity on
+`span(A)∩ψ⊥`. The projection identity `s(LE+EL)=L²−2L+s(s+2)E` forces the compression of E there to be
+`κI`, with `κ=1/s²`. Since Eψ=ψ, its compression in the A event basis is `κI+(1−κ)J/10`.
+The saturated overlaps therefore force every pair of A events to have common-B probability mass
+`q²(1−κ)/100`: this is 1/45 for q=2 and 2/9 for q=5. The first case requires a common neighbor for all
+45 pairs, but ten degree-two B vertices supply only ten incidences. The second requires at least three
+common neighbors per pair because every c_b<1/9, but ten degree-five B vertices supply only 100 incidences,
+fewer than 135. Both endpoints are impossible. Allowed zero overlaps cause no problem: saturation itself
+forces every incident allowed overlap to be nonzero.
+
+For the edge bound, every B vertex has at least one A neighbor. If the degrees are constant, they are three
+or four. Otherwise let δ≥1 be their minimum and e their sum. Then
+`d̄=δ+Σ_b c_b(|N_A(b)|−δ)<δ+(e−10δ)/9=(e−δ)/9≤(e−1)/9`.
+Since d̄>2, e≥20. `python search/event30_one_sided_regular.py self-test` checks the exact equality-case
+arithmetic, projection identity and certificate controls. ∎
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
@@ -869,6 +905,14 @@ is independently excluded; eight deadline endings remain ordinary bounded-search
 review is pinned to experiment commit `5484ce3`. Standard Python verifies its 24 local certificates, 38 saved
 isomorphism mappings, 14 referenced proofs and published input hashes:
 `python search/overnight30_reviews/2026-11-05T0000/verify.py --inputs`.
+
+A separate sixty-second analytic expansion examines 3,560 additional published C₅ quotient classes and
+certifies 3,378: 502 by sector-probability inequalities, 1,299 by affine/Cauchy saturation, and 1,577 using
+the disjoint-neighborhood probability bounds. Together with the selected 150, this excludes **3,528 of 5,503
+published quotient classes**. Another 182 reviewed classes remain inconclusive and 1,793 were not reached.
+These are conditional quotient exclusions, not a complete classification of C₅ graphs. Compact proofs,
+representative bindings and a standard-library verifier are in
+`search/overnight30_quotient_expansion/2026-11-05T0000/`.
 
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary

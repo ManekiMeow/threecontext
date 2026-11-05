@@ -11,6 +11,7 @@ Certificate recognition/verification uses only standard Python. The optional
 """
 import argparse
 from functools import lru_cache
+import gzip
 import hashlib
 import itertools
 import json
@@ -26,6 +27,7 @@ SATURATION_CATALOG = Path(__file__).with_name("overnight30_saturation_reviews")/
 PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0000"/"summary.json"
 GENERAL_PHASE_CATALOG = Path(__file__).with_name("overnight30_general_phase_reviews")/"2026-11-05T0000"/"summary.json"
 DISJOINT_CATALOG = Path(__file__).with_name("overnight30_disjoint_reviews")/"2026-11-05T0000"/"summary.json"
+EXPANSION_CATALOG = Path(__file__).with_name("overnight30_quotient_expansion")/"2026-11-05T0000"/"summary.json"
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -168,12 +170,53 @@ def verified_disjoint_catalog():
 
 
 @lru_cache(maxsize=1)
+def verified_expansion_catalog():
+    """Replay every claimed proof in the separate compressed expansion catalog."""
+    from event30_disjoint_probability import verify_quotient_certificate as verify_disjoint
+    from event30_probability_lp import verify_certificate as verify_probability
+    from event30_quotient_saturation import verify_certificate as verify_saturation
+    if not EXPANSION_CATALOG.exists():
+        return ()
+    folder = EXPANSION_CATALOG.parent
+    summary = json.loads(EXPANSION_CATALOG.read_text())
+    hashes = json.loads((folder/"artifact_sha256.json").read_text())
+    names = (EXPANSION_CATALOG.name, summary["results_archive"], summary["proof_archive"])
+    for name in names:
+        relative = Path(name)
+        require(not relative.is_absolute() and ".." not in relative.parts, "invalid expansion artifact path")
+        require(hashlib.sha256((folder/relative).read_bytes()).hexdigest() == hashes[name],
+                "expansion artifact content hash differs")
+    with gzip.open(folder/summary["results_archive"], "rt") as stream:
+        records = [json.loads(line) for line in stream]
+    with gzip.open(folder/summary["proof_archive"], "rt") as stream:
+        proofs = [json.loads(line) for line in stream]
+    certificates = {item["name"]: item["certificate"] for item in proofs}
+    require(len(certificates) == len(proofs) == summary["proof_count"], "duplicate or missing expansion proofs")
+    require(len(records) == summary["reviewed"], "expansion review count differs")
+    verifiers = {"probability": verify_probability, "saturation": verify_saturation,
+                 "disjoint_probability": verify_disjoint}
+    result = []
+    for record in records:
+        if not record["exact_quotient_excluded"]:
+            continue
+        proof = certificates[record["certificate"]]
+        require(record["proof_kind"] in verifiers, "unknown expansion proof kind")
+        verifiers[record["proof_kind"]](proof)
+        require(proof["sizes"] == [5]*6 and proof["parts"] == [[0, 1], [2, 3], [4, 5]],
+                "expansion proof does not describe six equal C5 orbits")
+        require(proof["quotient"] == record["quotient"], "expansion record differs from exact proof")
+        result.append(proof)
+    require(len(result) == summary["certified"], "expansion certificate count differs")
+    return tuple(result)
+
+
+@lru_cache(maxsize=1)
 def pattern_catalog():
     check_arithmetic()
     result = {}
     # Static Proposition46 has priority when a later certificate overlaps it.
     sources = [(Q, None)]+[(certificate["quotient"], certificate)
-                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()]
+                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()+verified_expansion_catalog()]
     for matrix, certificate in sources:
         for order in orbit_orders():
             pattern = tuple(matrix[order[a]][order[b]] for a, b in PAIRS)

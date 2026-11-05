@@ -1,0 +1,17 @@
+{
+  "batch_elapsed_seconds": 19.99707461100479,
+  "batch_models": 336,
+  "batch_scored": 81,
+  "solver_errors": 1,
+  "best_theta_numeric": 2.889478179565926,
+  "termination": "batch time budget",
+  "requested_seconds": 20,
+  "solver_error_classification": {
+    "deadline_skips": 1,
+    "substantive_solver_failures": 0,
+    "record_index": 335,
+    "message": "deadline before numerical solve"
+  },
+  "raw_archive_directory": "search/overnight30_runs/2026-11-04/chunks/00076_asymmetric/auxiliary_quotient_expansion_benchmarks",
+  "raw_archive_sha256": "8dfcd228f6a510df21102bfa71eb2e779d843fb7391a37c90f8cda80d79505a5"
+}

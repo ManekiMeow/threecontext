@@ -47,7 +47,7 @@ FAMILIES = {
     "c3_onecycle": ((3, 1, 1, 1, 1, 1, 1, 1),)*3,
 }
 
-STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "pair_hall", "disjoint_partition", "degree_mass", "probability_propagation", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
+STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "pair_hall", "disjoint_partition", "degree_mass", "probability_propagation", "one_sided_regular", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
 
 
 def generator(family):
@@ -749,8 +749,8 @@ def run(args):
                         if certificate["method"] == "degree_mass":
                             record.update(status="degree_mass_obstruction", structural_method="degree_mass")
                             state["rejected_degree_mass"] += 1
-                        elif certificate["method"] == "regular_pair":
-                            record.update(status="regular_pair_obstruction", structural_method="regular_pair")
+                        elif certificate["method"] in {"regular_pair", "one_sided_regular"}:
+                            record.update(status="regular_pair_obstruction", structural_method=certificate["method"])
                             state["rejected_regular_pair"] += 1
                         elif certificate["method"] == "probability_propagation":
                             record.update(status="probability_propagation_obstruction", structural_method="probability_propagation")
