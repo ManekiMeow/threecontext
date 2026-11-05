@@ -47,7 +47,7 @@ FAMILIES = {
     "c3_onecycle": ((3, 1, 1, 1, 1, 1, 1, 1),)*3,
 }
 
-STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "pair_hall", "disjoint_partition", "degree_mass", "probability_propagation", "one_sided_regular", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
+STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "pair_hall", "disjoint_partition", "degree_mass", "probability_propagation", "one_sided_regular", "degree_two_closure", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
 
 
 def generator(family):
@@ -502,6 +502,7 @@ def run(args):
                  "rejected_pair_bridge": 0, "rejected_degree_mass": 0,
                  "rejected_regular_pair": 0, "rejected_quotient": 0,
                  "rejected_probability_propagation": 0,
+                 "rejected_degree_two_closure": 0,
                  "certified_structural_dominance_cuts": 0,
                  "duplicate_graphs": 0, "solver_errors": 0, "batches": 0,
                  "duplicate_labelled": 0, "duplicate_isomorphic": 0,
@@ -604,6 +605,7 @@ def run(args):
                      rejected_regular_pair=statuses["regular_pair_obstruction"],
                      rejected_quotient=statuses["quotient_obstruction"],
                      rejected_probability_propagation=statuses["probability_propagation_obstruction"],
+                     rejected_degree_two_closure=statuses["degree_two_closure_obstruction"],
                      rejected_coloring=statuses["unbalanced_coloring"],
                      rejected_connectivity=statuses["disconnected"], rejected_twins=statuses["false_twins"],
                      rejected_contraction=statuses["same_context_merge"],
@@ -760,6 +762,9 @@ def run(args):
                         elif certificate["method"] == "probability_propagation":
                             record.update(status="probability_propagation_obstruction", structural_method="probability_propagation")
                             state["rejected_probability_propagation"] += 1
+                        elif certificate["method"] == "degree_two_closure":
+                            record.update(status="degree_two_closure_obstruction", structural_method="degree_two_closure")
+                            state["rejected_degree_two_closure"] += 1
                         elif certificate["method"] in {"c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}:
                             record.update(status="quotient_obstruction", structural_method=certificate["method"])
                             state["rejected_quotient"] += 1

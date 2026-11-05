@@ -901,6 +901,34 @@ the argument. Any three closed P-neighborhoods cover at least eight vertices, by
 strict moment bound, probability-equality propagation and all 120 Petersen neighborhood triples. The main
 rectangle proof and Corollary 57a are analytic and do not depend on an SDP certificate or a dimension bound.
 
+**Corollary 57b (closed small neighborhoods, arbitrary probabilities).** Let S be a subset of the thirty
+events containing an entire context. Suppose each v∈S has at most two allowed neighbors in some other
+context, and that its whole allowed neighborhood in that context lies in S. Then the support has no GHZ
+realization, in any dimension and over complex vectors.
+
+*Proof:* let M be the largest probability among events of S. For an event attaining M, its specified
+neighbor mass is at most 2M. Since 0<M<1/9 and h is increasing through 2/9, the sector inequality gives
+`M≤h(2M)=2M(1−2M)/(1+6M)`, hence M≤1/10. The full context A contained in S must therefore be uniform.
+For each A event, equality forces its chosen small neighborhood to consist of exactly two events, each
+of probability 1/10, with sector masses (1/5,2/5,2/5). Probabilities elsewhere need not be uniform.
+
+Write I_B,I_C for the probability masses in intersections of two A events' B and C neighborhoods.
+The same Cauchy-equality expansion used in Theorem 57 gives `3I_small+I_large=1/5` for equal small-side
+orientations. Since I_small is a multiple of 1/10, it must vanish. Opposite orientations give
+`3I_B+4I_C=2/5` and `4I_B+3I_C=2/5`, hence I_B=I_C=2/35. Each intersection lies inside one of the
+two-element small neighborhoods, so its mass is a multiple of 1/10, a contradiction. Thus all ten A events
+have the same orientation and pairwise disjoint two-element neighborhoods in a ten-event context. Impossible. ∎
+
+Taking S to be all thirty events shows that **some event must have at least three allowed neighbors in
+each of the other two contexts**. Triangle-freeness then gives a 3×3 zero rectangle in at least one context
+pair, without any uniformity assumption. This does not force such a rectangle in each specified pair.
+The closed subset is found by repeatedly removing vertices with no eligible whole neighborhood inside the
+remaining set. Degrees are always measured in the original graph; deleting vertices never creates a new
+eligible neighborhood. The certificate records the subset, contained context and chosen neighborhoods.
+`python search/event30_degree_two_cover.py self-test` checks the exact arithmetic, full and proper closed
+subsets, altered graphs, false certificates and the H₃₃/H₃₆ rational primal controls. The global
+`degree_two_closure` method is used by both workers; symmetry cuts replay the same exact witness.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further

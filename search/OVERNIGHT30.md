@@ -35,7 +35,7 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 57 and Corollary 57a. Results
+at campaign setup. The latest numbered result is now Theorem 57 and Corollaries 57a–b. Results
 39–57 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
@@ -45,7 +45,8 @@ pair-support matchings, disjoint-neighborhood probability budgets, and complete
 phase exclusions for nine specified C5 quotients, and the exclusion of even
 one isoclinic reduced pair in a uniform-probability dimension-19 realization,
 followed by strict weighted-degree bounds, one-sided regularity restrictions,
-and zero rectangles forced by two uniform contexts in every dimension.
+and zero rectangles forced by two uniform contexts in every dimension, followed
+by a closed-small-neighborhood obstruction with arbitrary probabilities.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -312,9 +313,9 @@ a short smoke budget before new models; this is setup cost, not a solver
 failure. A fresh twenty-second control generated 336 models and 81 scores.
 Its only error record was a deadline-before-solve skip, with no substantive
 solver failure. The raw fresh/resume controls and logs are archived under
-active chunk `00076_asymmetric/auxiliary_quotient_expansion_benchmarks/` for
-the supervisor to publish with that chunk; the source stores only proof and
-benchmark summaries.
+chunk `00076_asymmetric/auxiliary_quotient_expansion_benchmarks/`, published
+in experiment commit `a40db76`; the source stores only proof and benchmark
+summaries.
 Legacy cut rebasing from the earlier 60 auxiliaries was verified. The refreshed
 2.8894779990 C5 guide has an unexcluded quotient, but its individual graph has
 an exact bound below three and is explicitly marked as a mutation guide.
@@ -359,6 +360,24 @@ theorem. `event30_uniform_rectangle.py` contains the reviewed proof and exact
 controls. These statements do not exclude arbitrary nonuniform graphs or
 arbitrary isoclinic pair supports, and no unrestricted worker filter was added.
 
+Corollary 57b does give a global filter without uniformity. A subset S containing
+an entire context is impossible if every vertex of S has a whole allowed
+neighborhood of size at most two, in another context, contained in S. The maximum
+probability in S obeys M≤h(2M), hence M≤1/10; the contained context becomes uniform
+and weighted saturation compatibility forces impossible disjoint pairs. A
+deterministic peeling procedure finds the maximal such subset. All degrees and
+neighborhoods refer to the ORIGINAL support, never the graph induced after
+peeling. In particular, every realization has an event with at least three
+neighbors in both other contexts, giving a 3-by-3 zero rectangle in at least one
+pair. This does not extend Theorem 57 to every specified nonuniform pair.
+The helper `event30_degree_two_cover.py` supplies exact `degree_two_closure`
+certificates in the existing global format. Both workers use the filter;
+symmetry runs also save and replay compact dominance cuts, with a separate
+rejection counter compatible with old checkpoints. Controls cover a full
+30-vertex closure, a proper 20-vertex closure, an altered graph with empty
+closure, false witnesses and exact H33/H36 positive primals. No new numerical
+search was needed to establish this obstruction.
+
 The new quotient expansion reviews all 1,879 previously unexamined classes in
 the pinned published pool: 34,721 scored records give 5,589 quotient classes.
 It certifies 1,843 additional exclusions (534 sector LP, 502 saturation,
@@ -395,8 +414,8 @@ controls passed; natural chunk 88 execution confirmed valid proposals and
 accepted moves. The source summary is `overnight30_asymmetric_reviews/2026-11-05T0100/`.
 Raw repair and phase logs are immutable auxiliary archives in chunk 88,
 `auxiliary_asymmetric_repair_0100/`, `auxiliary_asymmetric_repair_singleton_0100/`
-and `auxiliary_phase_review_0100/`, for normal supervisor publication. The
-singleton archive adds 32 controls for a real 5+4+1 partition certificate.
+and `auxiliary_phase_review_0100/`, published in experiment commit `434f719`.
+The singleton archive adds 32 controls for a real 5+4+1 partition certificate.
 Do not count auxiliary records as main-worker coverage.
 
 Next priorities are the 213 remaining published quotient classes, new weakly
