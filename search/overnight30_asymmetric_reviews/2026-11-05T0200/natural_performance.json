@@ -1,0 +1,798 @@
+{
+  "pinned_data_commit": "3536304a360437b6c54413602377c31438c719f0",
+  "scope": "Natural completed-worker observations, not a randomized move comparison.",
+  "label_novelty_scope": "Exact labels against earlier completed asymmetric main-worker scored pools only; no isomorphism or global-main-pool claim.",
+  "jobs": [
+    {
+      "job": 82,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00082_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T00:56:36+00:00",
+      "finished_utc": "2026-11-05T01:06:38+00:00",
+      "code_commit": "5a6ed2df2810274ca13487db7af21135e5833dd9",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "ed02ee70db7a916a9364c8b79a950ca6aeb1d286aceea0289a1e279e36a8f57d",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 8896,
+      "counter_deltas": {
+        "iterations": 10189,
+        "scored": 3612,
+        "invalid": 424,
+        "duplicate": 842,
+        "accepted": 1578,
+        "fast_rejected": 5311,
+        "sat_excluded": 0,
+        "solver_failures": 0,
+        "elapsed_seconds": 599.8833293460048
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 1997,
+          "invalid": 0,
+          "accepted": 101,
+          "scored_records": 459,
+          "new_scored_labels_against_asymmetric_history": 458,
+          "configured_screen_surviving_scores": 307,
+          "best_surviving_score": 2.904426530197457,
+          "best_surviving_g6": "]???????@?a_A__OGCE__P_?r?AQ?DP??daOKKq_WbGQt?OOt?O_Dj_I`WG@SJ_?eQI?@GlC??",
+          "scores_during_excursions": 369
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1297,
+          "invalid": 0,
+          "accepted": 18,
+          "scored_records": 467,
+          "new_scored_labels_against_asymmetric_history": 467,
+          "configured_screen_surviving_scores": 363,
+          "best_surviving_score": 2.8974840016167738,
+          "best_surviving_g6": "]???????@?q_a__OGCE__X_?r?Bq?DP??daOEKQCW`GOt?OOt?O@CxoI`WG@SJ_?eQI?@GlC??",
+          "scores_during_excursions": 37
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 3583,
+          "invalid": 0,
+          "accepted": 769,
+          "scored_records": 1512,
+          "new_scored_labels_against_asymmetric_history": 1457,
+          "configured_screen_surviving_scores": 1332,
+          "best_surviving_score": 2.9053729385321048,
+          "best_surviving_g6": "]???????@?a_A__OGCAo_P_?r?BY?DP?AdaOKKqCW`GQT?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 166
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1278,
+          "invalid": 2,
+          "accepted": 634,
+          "scored_records": 620,
+          "new_scored_labels_against_asymmetric_history": 565,
+          "configured_screen_surviving_scores": 594,
+          "best_surviving_score": 2.9067867131190055,
+          "best_surviving_g6": "]???????@?a_A__OGCEo_P_?r?BQ?DX??daOKKq?WbGQt?OOt?O_Lb_I@WG@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 82
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 2034,
+          "invalid": 422,
+          "accepted": 56,
+          "scored_records": 554,
+          "new_scored_labels_against_asymmetric_history": 548,
+          "configured_screen_surviving_scores": 405,
+          "best_surviving_score": 2.9006368184484237,
+          "best_surviving_g6": "]???????@?a_A__OGCAo_P_?r?BQ?DP?AdaOMKQ?WbGQt?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 50
+        }
+      ],
+      "excursion_deltas": {
+        "started": 15,
+        "completed": 16,
+        "evaluated": 785,
+        "newly_scored": 704,
+        "accepted": 318,
+        "downhill_accepted": 157
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 0,
+        "attempted": 0,
+        "proposed": 0,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 0,
+      "repair_logged_statuses": {},
+      "active_best_theta": 2.9073614218247865,
+      "active_best_g6": "]???????@?a_A__OGCEo_P_?r?BQ?DP??daOKKq?WbGQt?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+      "active_best_origin_move_in_this_chunk": null,
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 0
+    },
+    {
+      "job": 85,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00085_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T01:06:38+00:00",
+      "finished_utc": "2026-11-05T01:16:41+00:00",
+      "code_commit": "5a6ed2df2810274ca13487db7af21135e5833dd9",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "ed02ee70db7a916a9364c8b79a950ca6aeb1d286aceea0289a1e279e36a8f57d",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 8670,
+      "counter_deltas": {
+        "iterations": 9932,
+        "scored": 3344,
+        "invalid": 427,
+        "duplicate": 810,
+        "accepted": 1491,
+        "fast_rejected": 5350,
+        "sat_excluded": 0,
+        "solver_failures": 1,
+        "elapsed_seconds": 600.6710827489951
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 2134,
+          "invalid": 0,
+          "accepted": 84,
+          "scored_records": 442,
+          "new_scored_labels_against_asymmetric_history": 442,
+          "configured_screen_surviving_scores": 282,
+          "best_surviving_score": 2.8917549568031156,
+          "best_surviving_g6": "]???????@?q_A__OGCEo_P_@r?BQ?DP??daOKKq?WbGQt?OOt?O_Kb_I`WG@CJ_?eQI??GlK??",
+          "scores_during_excursions": 340
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1212,
+          "invalid": 0,
+          "accepted": 22,
+          "scored_records": 421,
+          "new_scored_labels_against_asymmetric_history": 421,
+          "configured_screen_surviving_scores": 339,
+          "best_surviving_score": 2.8986054339215848,
+          "best_surviving_g6": "]???????@?q_a__OGCEo_P_Ar?Bq?DP??daOKKq?WbGOt?OOt?O?Lr_I`WG@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 41
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 3446,
+          "invalid": 0,
+          "accepted": 731,
+          "scored_records": 1436,
+          "new_scored_labels_against_asymmetric_history": 1370,
+          "configured_screen_surviving_scores": 1259,
+          "best_surviving_score": 2.905551903176926,
+          "best_surviving_g6": "]???????@?a_A__OWCEo_P_?r?BQ?DX??daOKKq?WbGQt?OOt?O_Lb_I@WG@CJ_?EQI?@GlC??",
+          "scores_during_excursions": 121
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1221,
+          "invalid": 0,
+          "accepted": 611,
+          "scored_records": 596,
+          "new_scored_labels_against_asymmetric_history": 513,
+          "configured_screen_surviving_scores": 572,
+          "best_surviving_score": 2.9047252754839388,
+          "best_surviving_g6": "]???????@?a_A__OKSE__P_?r?BQ?DX??daOMKQ?WbGQt?OOt?O_Lb_I@WG@TI_?eQI?BGkC??",
+          "scores_during_excursions": 77
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 1919,
+          "invalid": 427,
+          "accepted": 43,
+          "scored_records": 449,
+          "new_scored_labels_against_asymmetric_history": 443,
+          "configured_screen_surviving_scores": 358,
+          "best_surviving_score": 2.9038257715068774,
+          "best_surviving_g6": "]???????@?a_Q__OGCE__P_?r?Bq?DP??daOKKqCW`GOt?OOt?O_Dj_A`[G@SJ_?eQI?@GlC??",
+          "scores_during_excursions": 37
+        }
+      ],
+      "excursion_deltas": {
+        "started": 15,
+        "completed": 15,
+        "evaluated": 730,
+        "newly_scored": 616,
+        "accepted": 327,
+        "downhill_accepted": 145
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 0,
+        "attempted": 0,
+        "proposed": 0,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 0,
+      "repair_logged_statuses": {},
+      "active_best_theta": 2.9073614218247865,
+      "active_best_g6": "]???????@?a_A__OGCEo_P_?r?BQ?DP??daOKKq?WbGQt?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+      "active_best_origin_move_in_this_chunk": null,
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 0
+    },
+    {
+      "job": 88,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T01:16:41+00:00",
+      "finished_utc": "2026-11-05T01:26:43+00:00",
+      "code_commit": "ed0f16760bf0faa48e283a5d7cb3353620b7cbb2",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "f5cec4624dc4b0f61b17e4f1420ce694e1f6de491e73178387fb3793818bbf96",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 9669,
+      "counter_deltas": {
+        "iterations": 10969,
+        "scored": 3663,
+        "invalid": 482,
+        "duplicate": 794,
+        "accepted": 1529,
+        "fast_rejected": 6030,
+        "sat_excluded": 0,
+        "solver_failures": 0,
+        "elapsed_seconds": 599.7144403190032
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 2508,
+          "invalid": 0,
+          "accepted": 95,
+          "scored_records": 503,
+          "new_scored_labels_against_asymmetric_history": 501,
+          "configured_screen_surviving_scores": 292,
+          "best_surviving_score": 2.896352518517096,
+          "best_surviving_g6": "]???????@?a_Q__OGCEo_P_?r?BQ?DX??daOKKq?WbGQt?OOt?O_Lb_A@\\W@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 414
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1363,
+          "invalid": 0,
+          "accepted": 27,
+          "scored_records": 468,
+          "new_scored_labels_against_asymmetric_history": 466,
+          "configured_screen_surviving_scores": 370,
+          "best_surviving_score": 2.8962007920478774,
+          "best_surviving_g6": "]???????@?a_A__OGCEo_P_?r?AR?DP??daOKKq?WbGQpCOOt?O_Dj_I`WG@CJc?eQI?@GlC??",
+          "scores_during_excursions": 37
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 3665,
+          "invalid": 0,
+          "accepted": 801,
+          "scored_records": 1475,
+          "new_scored_labels_against_asymmetric_history": 1417,
+          "configured_screen_surviving_scores": 1286,
+          "best_surviving_score": 2.9113269650168996,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@OJ_?eQI?B?mC??",
+          "scores_during_excursions": 144
+        },
+        {
+          "move": "partition_witness_repair",
+          "proposed": 57,
+          "invalid": 0,
+          "accepted": 18,
+          "scored_records": 23,
+          "new_scored_labels_against_asymmetric_history": 20,
+          "configured_screen_surviving_scores": 20,
+          "best_surviving_score": 2.9071821830035494,
+          "best_surviving_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daOCKq?GfMOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+          "scores_during_excursions": 0
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1218,
+          "invalid": 3,
+          "accepted": 533,
+          "scored_records": 647,
+          "new_scored_labels_against_asymmetric_history": 562,
+          "configured_screen_surviving_scores": 608,
+          "best_surviving_score": 2.9092320745410896,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@OJ_?eQI?BGkC??",
+          "scores_during_excursions": 80
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 2158,
+          "invalid": 479,
+          "accepted": 55,
+          "scored_records": 547,
+          "new_scored_labels_against_asymmetric_history": 541,
+          "configured_screen_surviving_scores": 428,
+          "best_surviving_score": 2.9022698209444124,
+          "best_surviving_g6": "]???????@Ga_A__OGCEo_P_?r?BY?DX??daOKKq?WbGQT?OOt?O_Dj_I@WG@CJ_?eQI?@GlC??",
+          "scores_during_excursions": 40
+        }
+      ],
+      "excursion_deltas": {
+        "started": 17,
+        "completed": 17,
+        "evaluated": 832,
+        "newly_scored": 715,
+        "accepted": 353,
+        "downhill_accepted": 155
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 7384,
+        "attempted": 57,
+        "proposed": 57,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 49,
+      "repair_logged_statuses": {
+        "not_excluded": 20,
+        "excluded": 29
+      },
+      "active_best_theta": 2.9113269650168996,
+      "active_best_g6": "]???????@?a_A__oGSEc_X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@OJ_?eQI?B?mC??",
+      "active_best_origin_move_in_this_chunk": "edge_kick",
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 0
+    },
+    {
+      "job": 92,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00092_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T01:26:43+00:00",
+      "finished_utc": "2026-11-05T01:36:44+00:00",
+      "code_commit": "d2a5ccdf77104c38d3609b703a87c42f70431153",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "5d59e7504692b89753c9450408542a193e6642615412b68d6d5ff5bd351da91c",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 12058,
+      "counter_deltas": {
+        "iterations": 13539,
+        "scored": 4293,
+        "invalid": 588,
+        "duplicate": 853,
+        "accepted": 1733,
+        "fast_rejected": 7805,
+        "sat_excluded": 0,
+        "solver_failures": 0,
+        "elapsed_seconds": 599.7011752940016
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 3205,
+          "invalid": 0,
+          "accepted": 115,
+          "scored_records": 587,
+          "new_scored_labels_against_asymmetric_history": 587,
+          "configured_screen_surviving_scores": 332,
+          "best_surviving_score": 2.911979246307637,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_x_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@PI_?EQI?B?mC??",
+          "scores_during_excursions": 480
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1600,
+          "invalid": 0,
+          "accepted": 27,
+          "scored_records": 511,
+          "new_scored_labels_against_asymmetric_history": 511,
+          "configured_screen_surviving_scores": 404,
+          "best_surviving_score": 2.8920974266963464,
+          "best_surviving_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daO?LrcW`GOt?OOt?OgDg_I`WG@SJ_?eQI?BKgC??",
+          "scores_during_excursions": 42
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 4449,
+          "invalid": 1,
+          "accepted": 903,
+          "scored_records": 1688,
+          "new_scored_labels_against_asymmetric_history": 1654,
+          "configured_screen_surviving_scores": 1449,
+          "best_surviving_score": 2.9136875325531637,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?Aq?DP??daOCKqAWbGOt?OOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+          "scores_during_excursions": 172
+        },
+        {
+          "move": "partition_witness_repair",
+          "proposed": 70,
+          "invalid": 0,
+          "accepted": 23,
+          "scored_records": 26,
+          "new_scored_labels_against_asymmetric_history": 18,
+          "configured_screen_surviving_scores": 25,
+          "best_surviving_score": 2.907182183003548,
+          "best_surviving_g6": "]???????@Aa_A__OGKE__Xo?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@SJ_?eAI?BGkC??",
+          "scores_during_excursions": 0
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1600,
+          "invalid": 1,
+          "accepted": 597,
+          "scored_records": 868,
+          "new_scored_labels_against_asymmetric_history": 823,
+          "configured_screen_surviving_scores": 812,
+          "best_surviving_score": 2.914187908043022,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?Aq?DP??daOCKqAWbGOt?OOt?OgDg_I`[G@PI_?eQI?B?mC??",
+          "scores_during_excursions": 92
+        },
+        {
+          "move": "saved_seed",
+          "proposed": 1,
+          "invalid": 0,
+          "accepted": 1,
+          "scored_records": 1,
+          "new_scored_labels_against_asymmetric_history": 1,
+          "configured_screen_surviving_scores": 1,
+          "best_surviving_score": 2.9092320745412685,
+          "best_surviving_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daO?Lr_WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+          "scores_during_excursions": 0
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 2614,
+          "invalid": 586,
+          "accepted": 67,
+          "scored_records": 612,
+          "new_scored_labels_against_asymmetric_history": 608,
+          "configured_screen_surviving_scores": 450,
+          "best_surviving_score": 2.9115451469351092,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?Aq?DP??daOCKqAXaGOt?OOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+          "scores_during_excursions": 64
+        }
+      ],
+      "excursion_deltas": {
+        "started": 21,
+        "completed": 21,
+        "evaluated": 1007,
+        "newly_scored": 850,
+        "accepted": 416,
+        "downhill_accepted": 173
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 8975,
+        "attempted": 70,
+        "proposed": 70,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 57,
+      "repair_logged_statuses": {
+        "excluded": 32,
+        "not_excluded": 25
+      },
+      "active_best_theta": 2.914187908043022,
+      "active_best_g6": "]???????@?a_A__o?SEc_X_?r?Aq?DP??daOCKqAWbGOt?OOt?OgDg_I`[G@PI_?eQI?B?mC??",
+      "active_best_origin_move_in_this_chunk": "population_crossover",
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 1
+    },
+    {
+      "job": 95,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00095_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T01:36:44+00:00",
+      "finished_utc": "2026-11-05T01:46:50+00:00",
+      "code_commit": "fd05e9b3d5b16f806795db0e5d98ad1e6acb1895",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "5d59e7504692b89753c9450408542a193e6642615412b68d6d5ff5bd351da91c",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 10518,
+      "counter_deltas": {
+        "iterations": 12122,
+        "scored": 3462,
+        "invalid": 522,
+        "duplicate": 1037,
+        "accepted": 1679,
+        "fast_rejected": 7101,
+        "sat_excluded": 0,
+        "solver_failures": 0,
+        "elapsed_seconds": 599.7667630249998
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 2657,
+          "invalid": 0,
+          "accepted": 92,
+          "scored_records": 554,
+          "new_scored_labels_against_asymmetric_history": 554,
+          "configured_screen_surviving_scores": 288,
+          "best_surviving_score": 2.9044718177332776,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?Ab?DP??daOCKqEW`GPp?OOt?OgDg_I`[G@PI_?eQI?B?mC??",
+          "scores_during_excursions": 452
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1469,
+          "invalid": 0,
+          "accepted": 21,
+          "scored_records": 413,
+          "new_scored_labels_against_asymmetric_history": 413,
+          "configured_screen_surviving_scores": 300,
+          "best_surviving_score": 2.90175725360983,
+          "best_surviving_g6": "]???????@@a_A__oGSEc_X_?r_BQ?DP??daOCKq_WbGQp?OOt?OgTg?I`WG@PI_?eQI?B?MC??",
+          "scores_during_excursions": 38
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 4144,
+          "invalid": 0,
+          "accepted": 862,
+          "scored_records": 1358,
+          "new_scored_labels_against_asymmetric_history": 1352,
+          "configured_screen_surviving_scores": 1127,
+          "best_surviving_score": 2.9134484564873095,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?AQ?DP??daOCKqeW`GQt?OOt?OgDg_I`[G@PI_?eQI?B?mC??",
+          "scores_during_excursions": 175
+        },
+        {
+          "move": "partition_witness_repair",
+          "proposed": 65,
+          "invalid": 0,
+          "accepted": 16,
+          "scored_records": 27,
+          "new_scored_labels_against_asymmetric_history": 16,
+          "configured_screen_surviving_scores": 23,
+          "best_surviving_score": 2.899311283076753,
+          "best_surviving_g6": "]???????@?a_A_aOGCEo_X_?r?Aq?DP??daOCKqCW`GOt?OOt?OgDg_I`WG@CJc?eQI?BGkC??",
+          "scores_during_excursions": 0
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1410,
+          "invalid": 3,
+          "accepted": 642,
+          "scored_records": 633,
+          "new_scored_labels_against_asymmetric_history": 617,
+          "configured_screen_surviving_scores": 574,
+          "best_surviving_score": 2.9147908751650586,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?Ar?DP??daOCKqAWbGOp?OOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+          "scores_during_excursions": 92
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 2377,
+          "invalid": 519,
+          "accepted": 46,
+          "scored_records": 477,
+          "new_scored_labels_against_asymmetric_history": 475,
+          "configured_screen_surviving_scores": 316,
+          "best_surviving_score": 2.9072599859760038,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?AQ?DP??daOcKaaWbGQt?OOt?OgDg_I`[G@PI_?eQI?B?mC??",
+          "scores_during_excursions": 45
+        }
+      ],
+      "excursion_deltas": {
+        "started": 19,
+        "completed": 19,
+        "evaluated": 939,
+        "newly_scored": 802,
+        "accepted": 380,
+        "downhill_accepted": 171
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 8294,
+        "attempted": 65,
+        "proposed": 65,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 56,
+      "repair_logged_statuses": {
+        "not_excluded": 23,
+        "excluded": 33
+      },
+      "active_best_theta": 2.9147908751650586,
+      "active_best_g6": "]???????@?a_A__o?SEc_X_?r?Ar?DP??daOCKqAWbGOp?OOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+      "active_best_origin_move_in_this_chunk": "population_crossover",
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 0
+    },
+    {
+      "job": 98,
+      "source": "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104",
+      "started_utc": "2026-11-05T01:46:50+00:00",
+      "finished_utc": "2026-11-05T01:56:52+00:00",
+      "code_commit": "fd05e9b3d5b16f806795db0e5d98ad1e6acb1895",
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "5d59e7504692b89753c9450408542a193e6642615412b68d6d5ff5bd351da91c",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "record_count": 10496,
+      "counter_deltas": {
+        "iterations": 12104,
+        "scored": 3560,
+        "invalid": 456,
+        "duplicate": 1107,
+        "accepted": 1666,
+        "fast_rejected": 6981,
+        "sat_excluded": 0,
+        "solver_failures": 0,
+        "elapsed_seconds": 599.7435997080029
+      },
+      "moves": [
+        {
+          "move": "cluster_partial_rewire",
+          "proposed": 2582,
+          "invalid": 0,
+          "accepted": 81,
+          "scored_records": 484,
+          "new_scored_labels_against_asymmetric_history": 482,
+          "configured_screen_surviving_scores": 269,
+          "best_surviving_score": 2.9066123189296444,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_Ar?Aq?DP??daOCKqAWbGOt?OOt?OgDg_I`[G@PI_?eQI?@?nC??",
+          "scores_during_excursions": 409
+        },
+        {
+          "move": "conflict_clearing_two_switch",
+          "proposed": 1478,
+          "invalid": 0,
+          "accepted": 17,
+          "scored_records": 440,
+          "new_scored_labels_against_asymmetric_history": 440,
+          "configured_screen_surviving_scores": 338,
+          "best_surviving_score": 2.898970967635604,
+          "best_surviving_g6": "]???????@?a_A__o?SEc_X_?r?AQ?DP??daOCKqeW`GQt?OOt?OgDg_I`[G@PI_?eQI?BCiC??",
+          "scores_during_excursions": 35
+        },
+        {
+          "move": "edge_kick",
+          "proposed": 4155,
+          "invalid": 0,
+          "accepted": 792,
+          "scored_records": 1466,
+          "new_scored_labels_against_asymmetric_history": 1419,
+          "configured_screen_surviving_scores": 1238,
+          "best_surviving_score": 2.912210553914348,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_X_?q?Aq?DP??dAoCKq?WbGOt?OOt?OgDg_I`WG@PI_?eQI?B@mC??",
+          "scores_during_excursions": 170
+        },
+        {
+          "move": "partition_witness_repair",
+          "proposed": 66,
+          "invalid": 0,
+          "accepted": 10,
+          "scored_records": 30,
+          "new_scored_labels_against_asymmetric_history": 17,
+          "configured_screen_surviving_scores": 28,
+          "best_surviving_score": 2.9092320745411864,
+          "best_surviving_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daO?Lr_WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+          "scores_during_excursions": 0
+        },
+        {
+          "move": "population_crossover",
+          "proposed": 1514,
+          "invalid": 0,
+          "accepted": 727,
+          "scored_records": 653,
+          "new_scored_labels_against_asymmetric_history": 620,
+          "configured_screen_surviving_scores": 608,
+          "best_surviving_score": 2.9156526868614114,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_x_?r?AQ?DP??daOCKq_WbGQt?OOt?OgDg_I`WG@PI_?EQI?B?mC??",
+          "scores_during_excursions": 89
+        },
+        {
+          "move": "vertex_rewire",
+          "proposed": 2309,
+          "invalid": 456,
+          "accepted": 39,
+          "scored_records": 487,
+          "new_scored_labels_against_asymmetric_history": 485,
+          "configured_screen_surviving_scores": 343,
+          "best_surviving_score": 2.910076249467828,
+          "best_surviving_g6": "]???????@?a_A__oGSEc_X_?q?Aq_DP??daOCKq?WbGOt?OOt?Og@g_I`WG@PI_?eQI?B@mC??",
+          "scores_during_excursions": 54
+        }
+      ],
+      "excursion_deltas": {
+        "started": 18,
+        "completed": 18,
+        "evaluated": 884,
+        "newly_scored": 757,
+        "accepted": 340,
+        "downhill_accepted": 154
+      },
+      "repair_deltas": {
+        "ordinary_proposals": 8379,
+        "attempted": 66,
+        "proposed": 66,
+        "fallbacks": 0
+      },
+      "repair_logged_records": 56,
+      "repair_logged_statuses": {
+        "excluded": 28,
+        "not_excluded": 28
+      },
+      "active_best_theta": 2.9156526868614114,
+      "active_best_g6": "]???????@?a_A__oGSEc_x_?r?AQ?DP??daOCKq_WbGQt?OOt?OgDg_I`WG@PI_?EQI?B?mC??",
+      "active_best_origin_move_in_this_chunk": "population_crossover",
+      "historical_best_theta": 2.9166384145141824,
+      "shared_seeds_added": 0
+    }
+  ],
+  "repair_totals": {
+    "ordinary_proposals": 33032,
+    "attempted": 258,
+    "proposed": 258,
+    "fallbacks": 0,
+    "logged_records": 218,
+    "distinct_logged_labels": 154,
+    "logged_screen_statuses": {
+      "not_excluded": 96,
+      "excluded": 122
+    },
+    "accepted": 67,
+    "invalid": 0,
+    "scored_records": 106,
+    "new_scored_labels_against_asymmetric_history": 71,
+    "configured_screen_surviving_scores": 96,
+    "highest_direct_score": 2.9092320745411864
+  },
+  "cost_limitation": "Per-move solver times and complete parent ancestry were not logged. Worker elapsed-time deltas cannot isolate a move cost or causal contribution.",
+  "recommendation": "Keep the 128-proposal cadence and excursion settings; direct repair scores have not exceeded the injected guide. The paired-block variant is assessed separately by the matched combinatorial control.",
+  "inputs_sha256": {
+    "search/overnight30_runs/2026-11-04/manifest.json": "e431a3457ae290c1a500d02a8383b29d16b69ee5581b947872635050c3612614",
+    "search/overnight30_runs/2026-11-04/chunks/00000_asymmetric/asymmetric_seed20261104.json": "9298368f2a9475f25abbbb9484105807a6e2b1ebf8e6978c137cd2f59b7623d0",
+    "search/overnight30_runs/2026-11-04/chunks/00000_asymmetric/asymmetric_seed20261104.jsonl.gz": "ebfc9bffbce315864472eb8ff7d59ea21201a8b94604dd4319489b8abbe9904a",
+    "search/overnight30_runs/2026-11-04/chunks/00006_asymmetric/asymmetric_seed20261104.json": "13fa656131de8c0a8053ac4b2202e70417dcf1c8cdad75f1d5a9399b71ea7988",
+    "search/overnight30_runs/2026-11-04/chunks/00006_asymmetric/asymmetric_seed20261104.jsonl.gz": "52d6346dac16d691f1f5fdd35d61b530f31b21b5e60cd913d0610bca93318d81",
+    "search/overnight30_runs/2026-11-04/chunks/00011_asymmetric/asymmetric_seed20261104.json": "703be975f0838e5426d464ced92c4f96a97726b79bdeecea21d5aab48d036483",
+    "search/overnight30_runs/2026-11-04/chunks/00011_asymmetric/asymmetric_seed20261104.jsonl.gz": "66a635c7292f5625f15c69b4caee204a26e08b6faa409610ecffcdf9ba7b434d",
+    "search/overnight30_runs/2026-11-04/chunks/00015_asymmetric/asymmetric_seed20261104.json": "bf564e46fffcc7ae9824ccd7d5517fde8c310c20a7851590cc11986fd291a3ea",
+    "search/overnight30_runs/2026-11-04/chunks/00015_asymmetric/asymmetric_seed20261104.jsonl.gz": "eff8fef42aaa24495545cb979d452c4e68274a95f8bd3fb9493ac048d0850fad",
+    "search/overnight30_runs/2026-11-04/chunks/00018_asymmetric/asymmetric_seed20261104.json": "7a0dd8885a9cdcd18b0326b317996631cd8c1c0ba4d6ab74e2e3c7373de0b420",
+    "search/overnight30_runs/2026-11-04/chunks/00018_asymmetric/asymmetric_seed20261104.jsonl.gz": "590822435611a71134fb3ef01cbd002270ed044729c4cdd30b1a57de95fc2d04",
+    "search/overnight30_runs/2026-11-04/chunks/00021_asymmetric/asymmetric_seed20261104.json": "bd7d6461ea83e93cbba805b027a8de5bbf02536e380f00ff3cd4ba6123e9fada",
+    "search/overnight30_runs/2026-11-04/chunks/00021_asymmetric/asymmetric_seed20261104.jsonl.gz": "876f1cc5128e42a9a52609d06070fee64c6a0b7eac5c3750412bb5213f4aef35",
+    "search/overnight30_runs/2026-11-04/chunks/00024_asymmetric/asymmetric_seed20261104.json": "85973109c4f8e1b12ea3ab70dbe8897d4d7c6bb6f34338a5c22e28d5bd21c22d",
+    "search/overnight30_runs/2026-11-04/chunks/00024_asymmetric/asymmetric_seed20261104.jsonl.gz": "a342b2202fd2ff9a7ae86cdf480598813d1fdd0c30ac5ea719a4066178b82de4",
+    "search/overnight30_runs/2026-11-04/chunks/00028_asymmetric/asymmetric_seed20261104.json": "c362d829210a64470ea7587e6ff577fe30e91a03c26642febeeacc5594beaae2",
+    "search/overnight30_runs/2026-11-04/chunks/00028_asymmetric/asymmetric_seed20261104.jsonl.gz": "b226822ce6feea00da7f200f1bb8bce0725ca7bbc79d88adab24fde096d2cf46",
+    "search/overnight30_runs/2026-11-04/chunks/00031_asymmetric/asymmetric_seed20261104.json": "4db148ca6efe2951ea92056adec1d6adb35dc2204b893e1253221d5427118ea0",
+    "search/overnight30_runs/2026-11-04/chunks/00031_asymmetric/asymmetric_seed20261104.jsonl.gz": "8da13cc18abb3b2204769a2abc88715089b8ddf72749296c4b5b113edddbd1e7",
+    "search/overnight30_runs/2026-11-04/chunks/00034_asymmetric/asymmetric_seed20261104.json": "6cf8f05ec9c7835f2e7f876bd50e37559590dd05e191b87362181df7d942261d",
+    "search/overnight30_runs/2026-11-04/chunks/00034_asymmetric/asymmetric_seed20261104.jsonl.gz": "6df9747036d22aa782f92ebe83a9fc141c4ce999d8f5eae49a28f2496c6bc955",
+    "search/overnight30_runs/2026-11-04/chunks/00037_asymmetric/asymmetric_seed20261104.json": "f5455d3619a84b1cabf8a22920ec33864c55b0e22d0eb3bb90ae37bec792c803",
+    "search/overnight30_runs/2026-11-04/chunks/00037_asymmetric/asymmetric_seed20261104.jsonl.gz": "51490cada7f4704a026c3cc33f823fc157c9d212b168947364a0e667cb4a097a",
+    "search/overnight30_runs/2026-11-04/chunks/00040_asymmetric/asymmetric_seed20261104.json": "cceeb4b946b33dd293c55fa648ee802bc1d8c90a6afc0536cfb1ca9b0982d49f",
+    "search/overnight30_runs/2026-11-04/chunks/00040_asymmetric/asymmetric_seed20261104.jsonl.gz": "397414ccf735ee7721fe1ca15a99d43485baeb7c6f0f4dc4ca7721419a3bc282",
+    "search/overnight30_runs/2026-11-04/chunks/00044_asymmetric/asymmetric_seed20261104.json": "d7846874e3bc16a06aa504e8dff07e68b3c42d69eec115094e733ee95d6d8935",
+    "search/overnight30_runs/2026-11-04/chunks/00044_asymmetric/asymmetric_seed20261104.jsonl.gz": "6226291a93d08ff23e1601b8587ad20b880e6c65d29a77a168964197ecd0d7a8",
+    "search/overnight30_runs/2026-11-04/chunks/00047_asymmetric/asymmetric_seed20261104.json": "2d7cc9eb906af066dfa3996725ca09abaaecd48c3e3fb58ccd3cdadf72789124",
+    "search/overnight30_runs/2026-11-04/chunks/00047_asymmetric/asymmetric_seed20261104.jsonl.gz": "f47f6589d8f43f5276a85584576dd3bbdeb677c29bfdaeb2f91c5578c6056451",
+    "search/overnight30_runs/2026-11-04/chunks/00050_asymmetric/asymmetric_seed20261104.json": "299c5c3a12760d8e62e89bc8c86b8db9044ad7a53b9c62fc885768d19feb15ce",
+    "search/overnight30_runs/2026-11-04/chunks/00050_asymmetric/asymmetric_seed20261104.jsonl.gz": "1436e189804d0351ce9b44ed1d291e3322c64b61ad2a5c7d012053f52a38a307",
+    "search/overnight30_runs/2026-11-04/chunks/00053_asymmetric/asymmetric_seed20261104.json": "cb36dc63d82aeb83eb5454d78d1878ff3296384c0e6e25c9f57bf3fefafb7508",
+    "search/overnight30_runs/2026-11-04/chunks/00053_asymmetric/asymmetric_seed20261104.jsonl.gz": "934d21f5daa861b8560ee11a50defc527a864554411e4c59c9fb919d9e04bf56",
+    "search/overnight30_runs/2026-11-04/chunks/00056_asymmetric/asymmetric_seed20261104.json": "a6a81d56266ec67f3b41bca604779c6de008ae5e90be9363f5d98676494d2ead",
+    "search/overnight30_runs/2026-11-04/chunks/00056_asymmetric/asymmetric_seed20261104.jsonl.gz": "dd50b7c4ed6c9938e3b752e1af699fc977fa681e92c54ecc715e6694e89d6687",
+    "search/overnight30_runs/2026-11-04/chunks/00060_asymmetric/asymmetric_seed20261104.json": "db619caf9c5b646faba5e7efe41e02dad4b22089811547e7e2b3f0d07a981c69",
+    "search/overnight30_runs/2026-11-04/chunks/00060_asymmetric/asymmetric_seed20261104.jsonl.gz": "eb9bf49c84c5eb79ef4f41816a0594be6293e7ef7373c4d3c193641488f487a6",
+    "search/overnight30_runs/2026-11-04/chunks/00063_asymmetric/asymmetric_seed20261104.json": "2c81df421e3586dcb96af1db26f33b61fd0b0d5c59cc216d0916632c00285276",
+    "search/overnight30_runs/2026-11-04/chunks/00063_asymmetric/asymmetric_seed20261104.jsonl.gz": "90ddc8e50d82f7325ab97482a491559cf708d668b43ee15720d109dc3b88b8bc",
+    "search/overnight30_runs/2026-11-04/chunks/00066_asymmetric/asymmetric_seed20261104.json": "b6e01b7663f8a6172354289da82390247f7e8545e8c2e10f2bf48f7eadd4ff29",
+    "search/overnight30_runs/2026-11-04/chunks/00066_asymmetric/asymmetric_seed20261104.jsonl.gz": "f70afa9ef52beb67ff16c9ec279d22a16685a0990b9c0eaa4c27704bcbbbf6e5",
+    "search/overnight30_runs/2026-11-04/chunks/00069_asymmetric/asymmetric_seed20261104.json": "ca1faae870581dbb74e2117a3cb10e2b9f7c6f2808a4ff42344ded8f8141683f",
+    "search/overnight30_runs/2026-11-04/chunks/00069_asymmetric/asymmetric_seed20261104.jsonl.gz": "2f4d7522afbe76e109b6ea2a03dfdb6a4c8a5ae644d6272462777dadfa24fc55",
+    "search/overnight30_runs/2026-11-04/chunks/00072_asymmetric/asymmetric_seed20261104.json": "884e988a5a33de1d39325552a596df849c164ab7fe3f4fe11d70abb7cf0a3535",
+    "search/overnight30_runs/2026-11-04/chunks/00072_asymmetric/asymmetric_seed20261104.jsonl.gz": "16014415814368fddaad6fd2aae7f942ddd3ca24ca5e7c6f7318b6ae16d44f52",
+    "search/overnight30_runs/2026-11-04/chunks/00076_asymmetric/asymmetric_seed20261104.json": "5c93ca6e32339b38fefdf4b1f0afe11b985a9a51b669908bf45a95609b336281",
+    "search/overnight30_runs/2026-11-04/chunks/00076_asymmetric/asymmetric_seed20261104.jsonl.gz": "8d13093dfa93f4ba4a89dead472ed4e7f9f7f28e8390df88be38a2b26cc5fa0f",
+    "search/overnight30_runs/2026-11-04/chunks/00079_asymmetric/asymmetric_seed20261104.json": "f6089d871400eb5c19aa3f756e39230dcf26b15110d32775ece7cdb0277180fa",
+    "search/overnight30_runs/2026-11-04/chunks/00079_asymmetric/asymmetric_seed20261104.jsonl.gz": "72455ca3599b7c243e9a7e69d1e61711ae836910eaa944ac7aea6d559fe0d650",
+    "search/overnight30_runs/2026-11-04/chunks/00082_asymmetric/asymmetric_seed20261104.json": "2dc4c4d0cbdb7b60093822fec38ebed35a5077c90861f618cab304430eb24279",
+    "search/overnight30_runs/2026-11-04/chunks/00082_asymmetric/asymmetric_seed20261104.jsonl.gz": "c9c04eee388a83d70f8c48c3507e884bbc091e723a3349bf6bb4a046ed3ca440",
+    "search/overnight30_runs/2026-11-04/chunks/00085_asymmetric/asymmetric_seed20261104.json": "630557f5f24f23b960ae844fd66c013c33189625fa1e6622e45b5d8254693d3e",
+    "search/overnight30_runs/2026-11-04/chunks/00085_asymmetric/asymmetric_seed20261104.jsonl.gz": "27e8cee6bb5f7b77256325fe05f4a7700a2a3b63adb31f0cb877cdcff1daa0ce",
+    "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/asymmetric_seed20261104.json": "caa0cc04e58dfc2fd1faf58e773ec7047751b4490aff31ddfed77c626dd87d11",
+    "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/asymmetric_seed20261104.jsonl.gz": "3103794250754c7642e7760ded5b0ee27cd8ec0d178d628a046fca492caf91ae",
+    "search/overnight30_runs/2026-11-04/chunks/00092_asymmetric/asymmetric_seed20261104.json": "af41ce2eaeb1ee95330b8c2ac13dbb927e973071b356ff48dcf520f8ea97484b",
+    "search/overnight30_runs/2026-11-04/chunks/00092_asymmetric/asymmetric_seed20261104.jsonl.gz": "2322581d5cd123629b36dce408c0b64f7b7442c6e747039f75f49d6ce899131b",
+    "search/overnight30_runs/2026-11-04/chunks/00095_asymmetric/asymmetric_seed20261104.json": "89e45ea600672fca7e079b57c164084f19d047bda11d077619dcd2b364784fa3",
+    "search/overnight30_runs/2026-11-04/chunks/00095_asymmetric/asymmetric_seed20261104.jsonl.gz": "9e0da9ab2eb86fc6c908a05ebf24858175d5298cff706c5adc501413f76fb424",
+    "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104.json": "c3c19142df59df1fefa0707ed1a0115370e680d42be80466b9b3ad00fa6cb184",
+    "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104.jsonl.gz": "4b11a98e1abb3ec51e02fdc7f19d471d3341cf354b6aa93efae285c6198c3050"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "archive_path": "search/overnight30_runs/2026-11-04/chunks/00104_asymmetric/auxiliary_phase_review_0200/raw_auxiliary.tar.gz",
+  "archive_sha256": "457cb214b337b962ba191c3f3ab725a4198ed8e224cf65ced7b5ac3456c4118a",
+  "carrier_job": 104,
+  "supervisor_heartbeat": "2026-11-05T02:14:06+00:00",
+  "scope": "Raw discovery logs and candidate diagnostics only. Proof manifests and verifiers are committed on the source branch. Not additional main-worker coverage."
+}

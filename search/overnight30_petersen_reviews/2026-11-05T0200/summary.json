@@ -1,0 +1,99 @@
+{
+  "scope": "Finite template reduction and two bounded combinatorial pilots; no family-wide exclusion and no quantum realization claim.",
+  "pilots": [
+    {
+      "archive_path": "search/overnight30_runs/2026-11-04/chunks/00104_asymmetric/auxiliary_petersen_template_0200/petersen_template_pilot.tar.gz",
+      "archive_sha256": "2de5b45201c28b886fceacc5c0b53771bb2801f7af5dd7d06cd09891fcc83144",
+      "carrier_job": 104,
+      "summary": {
+        "variables": 5129,
+        "clauses": 10546,
+        "templates": 110,
+        "incompatible_template_pairs": 0,
+        "controls": {
+          "maximal_templates": 110,
+          "type_counts": {
+            "(1, 6)": 10,
+            "(2, 3)": 30,
+            "(2, 4)": 15,
+            "(3, 2)": 30,
+            "(4, 2)": 15,
+            "(6, 1)": 10
+          },
+          "explicit_template_automorphisms": 240,
+          "single_singleton_budget": "136/135",
+          "two_singleton_budget": "44/45"
+        },
+        "seconds_requested": 18.0,
+        "seconds_elapsed": 18.04412118300388,
+        "representatives": 469,
+        "selected_subsets_blocked": 112320,
+        "survivors": 0,
+        "exclusion_methods": {
+          "pair_hall": 302,
+          "probability_propagation": 167
+        },
+        "limited_sat_unknown": false,
+        "numerical_solves": 0,
+        "scope": "Bounded representatives under the explicit240-element action, not full graph-isomorphism classes or a family exclusion."
+      },
+      "verification": {
+        "records_verified": 469,
+        "exact_certificates_verified": 469,
+        "explicit_action_orbits_verified": 469,
+        "blocked_selected_subsets": 112320,
+        "numerical_solves": 0
+      }
+    },
+    {
+      "archive_path": "search/overnight30_runs/2026-11-04/chunks/00104_asymmetric/auxiliary_petersen_matching_0200/petersen_matching_pilot.tar.gz",
+      "archive_sha256": "181b0fdbdd2021716c49aef902a9db57065d52474bd8bd22ac9acf9b821cdaa8",
+      "carrier_job": 104,
+      "summary": {
+        "variables": 6659,
+        "clauses": 13876,
+        "templates": 110,
+        "incompatible_template_pairs": 0,
+        "perfect_matching_constraints": true,
+        "controls": {
+          "maximal_templates": 110,
+          "type_counts": {
+            "(1, 6)": 10,
+            "(2, 3)": 30,
+            "(2, 4)": 15,
+            "(3, 2)": 30,
+            "(4, 2)": 15,
+            "(6, 1)": 10
+          },
+          "explicit_template_automorphisms": 240,
+          "single_singleton_budget": "136/135",
+          "two_singleton_budget": "44/45"
+        },
+        "seconds_requested": 28.0,
+        "seconds_elapsed": 28.089180103997933,
+        "representatives": 280,
+        "selected_subsets_blocked": 67200,
+        "survivors": 0,
+        "exclusion_methods": {
+          "probability_propagation": 216,
+          "bridge_shortage": 64
+        },
+        "limited_sat_unknown": false,
+        "numerical_solves": 0,
+        "scope": "Bounded representatives under the explicit240-element action, not full graph-isomorphism classes or a family exclusion."
+      },
+      "verification": {
+        "records_verified": 280,
+        "exact_certificates_verified": 280,
+        "explicit_action_orbits_verified": 280,
+        "blocked_selected_subsets": 67200,
+        "numerical_solves": 0
+      }
+    }
+  ],
+  "combined_generated_representatives": 749,
+  "cross_pilot_explicit_action_overlap": 0,
+  "combined_explicit_action_orbits": 749,
+  "all_generated_representatives_exactly_excluded": true,
+  "numerical_solves": 0
+}

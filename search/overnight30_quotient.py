@@ -27,6 +27,7 @@ SATURATION_CATALOG = Path(__file__).with_name("overnight30_saturation_reviews")/
 PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0000"/"summary.json"
 GENERAL_PHASE_CATALOG = Path(__file__).with_name("overnight30_general_phase_reviews")/"2026-11-05T0000"/"summary.json"
 FURTHER_PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0100"/"summary.json"
+LATEST_PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0200"/"summary.json"
 DISJOINT_CATALOG = Path(__file__).with_name("overnight30_disjoint_reviews")/"2026-11-05T0000"/"summary.json"
 EXPANSION_CATALOG = Path(__file__).with_name("overnight30_quotient_expansion")/"2026-11-05T0000"/"summary.json"
 FURTHER_EXPANSION_CATALOG = Path(__file__).with_name("overnight30_quotient_expansion")/"2026-11-05T0100"/"summary.json"
@@ -218,7 +219,7 @@ def pattern_catalog():
     result = {}
     # Static Proposition46 has priority when a later certificate overlaps it.
     sources = [(Q, None)]+[(certificate["quotient"], certificate)
-                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()+verified_expansion_catalog()+verified_general_phase_catalog(FURTHER_PHASE_CATALOG)+verified_expansion_catalog(FURTHER_EXPANSION_CATALOG)]
+                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()+verified_expansion_catalog()+verified_general_phase_catalog(FURTHER_PHASE_CATALOG)+verified_expansion_catalog(FURTHER_EXPANSION_CATALOG)+verified_general_phase_catalog(LATEST_PHASE_CATALOG)]
     for matrix, certificate in sources:
         for order in orbit_orders():
             pattern = tuple(matrix[order[a]][order[b]] for a, b in PAIRS)

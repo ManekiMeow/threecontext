@@ -1,0 +1,16 @@
+{
+  "patterns": 249390,
+  "clauses": 251694,
+  "auxiliary_variables": 72,
+  "new_phase_relabel_sat_replay_checks": 528,
+  "tamper_checks": 11,
+  "catalog_seconds": 30.79441935900104,
+  "cnf_seconds": 2.2559129430010216,
+  "total_seconds": 35.51512739500322,
+  "retired_seeds": 1,
+  "next_guide_theta": 2.8549236047562845,
+  "next_guide_source": "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+  "next_guide_index": 50212,
+  "next_guide_line_number_zero_based": 2521,
+  "next_guide_exact_upper": "57298781491/20000000000"
+}

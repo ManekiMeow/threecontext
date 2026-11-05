@@ -1,0 +1,155 @@
+{
+  "saved_records": 6532,
+  "top": [
+    {
+      "theta_numeric": 2.8998893051684678,
+      "exact_theta_upper": "725128645927/250000000000",
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__A@cpOMe@GiWAoSoAqOoocs?KgL?@dPG?EV?_AKe@??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0000/index_001/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8990340018413585,
+      "exact_theta_upper": "579826603527/200000000000",
+      "graph6": "]???????C@gaH_Co@KCw?q_B`?B`?@o_?FGB?xCOBco?eH_@cH_WA[?E@d??o[G?a@o_B?B`??",
+      "manifest": "search/overnight30_general_phase_reviews/2026-11-05T0000/index_003/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8894779791113443,
+      "exact_theta_upper": "722377013729/250000000000",
+      "graph6": "]???????CAgcGcDO@SCG?O_?`??`??O_?sGhEbDCQKSWCWgWC[_Ra@_SW_WAbCa?IKU?ASOk??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_000/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.877430182822281,
+      "exact_theta_upper": "92252147651/31250000000",
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__A@cpOMe@GiWAoSoAqOoKm@?Bi_OC\\CA?osS?@d_g??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_001/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8770453912161194,
+      "exact_theta_upper": "2877076947253/1000000000000",
+      "graph6": "]???????CAgcGcDO@SCW?o_@`?@`??o_?EgD?tC_JCQ?UI_@SI_SAk?D@h?C_LG?QAo_A_D`??",
+      "manifest": "search/overnight30_general_phase_reviews/2026-11-05T0000/index_011/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.876314239560813,
+      "exact_theta_upper": "287653889411/100000000000",
+      "graph6": "]???????CGGOGOCG@A?w?a_B@?B@?@__@Jg@g\\CAhcODqG_doG__cs_GgLG@DPg?CVA_?KeD??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0000/index_014/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8753199389558364,
+      "exact_theta_upper": "1437785413689/500000000000",
+      "graph6": "]???????CDgiHgCs@kCG?O_?`??`??O_AACbOQcP@IoAAT_BAP_LQAOBSa_CQcS?pGPO@aOq??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_002/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.872224571469513,
+      "exact_theta_upper": "1436185633533/500000000000",
+      "graph6": "]???????C@gaH_Co@KCG?O_?`??`??O_AACbOQcP@IoAAT_BAP_LQAOBSa_CQcS?pGPO@aOq??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_003/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.866025469107463,
+      "exact_theta_upper": "2866089290867/1000000000000",
+      "graph6": "]????????D_i@g?s?kCo?q?B_?B_?@o?@cHOK`I?qSGPCgOoCgO`Q?oGSaG@Aco?DGR??IOe??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_004/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.859623718760134,
+      "exact_theta_upper": "2859776051919/1000000000000",
+      "graph6": "]???????CGGOGOCG@A?w?a_B@?B@?@__?ZWAbX?UDc_KiH?LgH?_o[_GLDG@@wg?DDa_?MBD??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0000/index_014/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8521658197304296,
+      "exact_theta_upper": "1426132177113/500000000000",
+      "graph6": "]???????CWWOWOKGBAAg?I_AP?AP?D?_AB@qOYIP@wgAapOB_pOKe?_Bg_GCTC_?oSQ?@c_c??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    },
+    {
+      "theta_numeric": 2.8521658197299886,
+      "exact_theta_upper": "1426187358303/500000000000",
+      "graph6": "]???????CWWOWOKGBAAg?I_AP?AP?D?_AD@iOiHPAwcAcpGAct?SMA?Da__CkCC?QoOOA`_o??",
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json",
+      "screen_status": "not_excluded",
+      "screen_method": null,
+      "screen_reason": null
+    }
+  ],
+  "largest_all_exact_bound_record": {
+    "theta_numeric": 2.7328728688365365,
+    "exact_theta_upper": "2991515946933/1000000000000",
+    "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AAapOUU@HHWAROoBPOoocs?KgL?@dPG?EV?_AKe@??",
+    "manifest": "search/overnight30_phase_reviews/2026-11-05T0000/index_001/manifest.json"
+  },
+  "largest_0200_exact_bound_record": {
+    "theta_numeric": 2.649453172130634,
+    "exact_theta_upper": "2970481016859/1000000000000",
+    "graph6": "]???????CWWOWOKGBA?w?a_B@?B@?@__AE@bOqKPBWoAEp_BCp_SUA?Dc__CccC?ROOOAa_o??",
+    "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json"
+  },
+  "source_manifest_sha256": {
+    "search/overnight30_general_phase_reviews/2026-11-05T0000/index_003/manifest.json": "668c3221b3c28cc195aab0fb8db83d85c01b37b99169839680a4c207669aa431",
+    "search/overnight30_general_phase_reviews/2026-11-05T0000/index_011/manifest.json": "1fb3fc3aef98bf93d84ec50d97e32fe9b9d4f23229a7af3a4de75dcb97bea8a8",
+    "search/overnight30_general_phase_reviews/2026-11-05T0000/index_103/manifest.json": "a3631f7a9a9b355a188576efde056d4cbc60d9912759d3b1b805cb777dbbdbfa",
+    "search/overnight30_general_phase_reviews/2026-11-05T0000/index_147/manifest.json": "cb06a2bc7f143cbeab70f5609c933fec78c52667e25319e0eea5b51b949f6c8f",
+    "search/overnight30_phase_reviews/2026-11-05T0000/index_001/manifest.json": "448bb0ad05f1cea90e4d448a4bc4d2413e2175da8ac9ce1905d07dc2659378f5",
+    "search/overnight30_phase_reviews/2026-11-05T0000/index_014/manifest.json": "e1ce93dfb5149718d0ca340bae2f5ccad95d019ab5368de48688bc9f18d020ec",
+    "search/overnight30_phase_reviews/2026-11-05T0000/index_075/manifest.json": "3bd111b64c8b1c7755f7c7e92adeeab1818f2e1df3cd8dedf6c59e20583aaed6",
+    "search/overnight30_phase_reviews/2026-11-05T0000/index_107/manifest.json": "2095cf5c4cf4fc85a09b856c7d3c3459f1d5207e648d6d51c0fa82b44a94cb5d",
+    "search/overnight30_phase_reviews/2026-11-05T0000/index_124/manifest.json": "c33a1553aa9890a0494c8dd33279658549b0e1ab415e25f254e7d475f748a59b",
+    "search/overnight30_phase_reviews/2026-11-05T0100/target_000/manifest.json": "bfabea9568a5f1f29ac6373b13c639f9d3063f60f0483911478080af08e56ad5",
+    "search/overnight30_phase_reviews/2026-11-05T0100/target_001/manifest.json": "78a9bb671e2f1fb37142f0566dd9ca79a00b75c9cce761ca5ee83a8f8ae5d0aa",
+    "search/overnight30_phase_reviews/2026-11-05T0100/target_002/manifest.json": "a0f594558418be594d6b9c4255b6ac266eb6daa2e41bf72ea25c22ffd4464b1a",
+    "search/overnight30_phase_reviews/2026-11-05T0100/target_003/manifest.json": "118ecc46ff81235bf6d0d173ebda6e443a77a86fd809429e5d13b253bf2f65ac",
+    "search/overnight30_phase_reviews/2026-11-05T0100/target_004/manifest.json": "72d2061b1270962337cf3d712c10aa9fbbf25e8061ffb66fb3bb393f4968ae55",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json": "436fd0bb6765782ae51f4fe391cced6b5a9fee9e142415808485a94da2b29953",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_001/manifest.json": "a3d7779d62aa466bc1384f97da68c5353ec494c207ab72c4ed4e2ebb305c1ea7",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_002/manifest.json": "ec57bfee9916a01a0a8826d27ad236a46d9e760be6e1f3f9aac0cd995d929ba6",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_003/manifest.json": "088f7f9a448716863c2013ddf6a61ccd48540100dd7f22943fac5bd04f9cc6b7",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_004/manifest.json": "4b2121cc9c4cc780cc48aa76dc35b66eb9d3da817ad1863e16ed22cf37bc699f",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_005/manifest.json": "d33eff852fd0238580e4becf2abc6e11c5523d00fdcfe52f297b19ba559776f2",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_006/manifest.json": "899083f4b9e2915809c12839b964a6067d61197f8c913e610f22bdf176ddac51",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_009/manifest.json": "99ac83c9740be400864087731f1a169688284a389641e923f2f06f774713aabf",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_010/manifest.json": "e7e5828e83883091e62b4273688d8ccfee52018eaeb4749514b3f9f2d049dc9f",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_011/manifest.json": "0c06c7f193e76de637f7ca9ea4540661275bf44ac7223dce2335dd1f9f230492",
+    "search/overnight30_phase_reviews/2026-11-05T0200/target_012/manifest.json": "062bd1c845cc38a81ce0367d91254c484d8e7f5a49fed50c5b38c1d4b8714bee"
+  },
+  "scope": "Derived comparison of exact certificate upper bounds against their saved numerical optima, plus exact fast support screens. Loose upper bounds are not near-GHZ scores. No new numerical search or seed injection.",
+  "fast_screen_source_sha256": "09fcf3bbae604a16dffc23c8479b7a842a5f7565d4ec748b0ed241766097e521",
+  "screen_scope": "Historical support-screen observations at review time; later filters may strengthen them. Certificate replay does not require an old non-exclusion to remain a non-exclusion."
+}

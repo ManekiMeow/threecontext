@@ -242,10 +242,103 @@
         "record_index": 45891,
         "line_number_zero_based": 18183,
         "published_commit": "5a2b45478d066d5180d1364259e1c7b1d233fc33",
-        "review": "Highest-scoring published representative among the 213 quotient classes remaining after the 01:00 analytic and complete-phase reviews."
+        "review": "Previously selected from stored residual-review representatives; now every cyclic phase is exactly excluded. The full published-pool representative ranking can differ from that review list."
       },
-      "scope": "Numerical mutation guide only; no quantum feasibility or exact theta claim.",
-      "screen_status": "Survives current exact combinatorial support screens and all verified quotient-class catalogs; its full cyclic phase family remains unresolved."
+      "scope": "Exactly excluded by complete C5 phase enumeration; retained only as a historical mutation guide.",
+      "screen_status": "Excluded by all-phase exact theta certificates for this quotient, recorded in the 02:00 phase review.",
+      "exact_obstruction": {
+        "method": "c5_phase_quotient",
+        "witness": {
+          "orbit_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phase_certificate": {
+            "format": "ghz30-c5-general-phase-catalog-entry-v1",
+            "quotient": [
+              [
+                0,
+                0,
+                2,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                1,
+                2,
+                2
+              ],
+              [
+                2,
+                1,
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                2,
+                1,
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                1,
+                2,
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                2,
+                2,
+                1,
+                1,
+                0,
+                0
+              ]
+            ],
+            "source_index": 0,
+            "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json",
+            "manifest_sha256": "436fd0bb6765782ae51f4fe391cced6b5a9fee9e142415808485a94da2b29953",
+            "uniform_exact_upper": "2970481016859/1000000000000"
+          }
+        }
+      }
+    },
+    {
+      "graph6": "]???????@?a_A__OGCC`_RCAe?Ae?@R??_fICCxOWRcOPdGORd?hCg_IpGG@UH_?cYa?@GtC??",
+      "context_sizes": [
+        10,
+        10,
+        10
+      ],
+      "theta_numeric": 2.8549236047562845,
+      "edges_count": 100,
+      "provenance": {
+        "source": "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+        "record_index": 50212,
+        "line_number_zero_based": 2521,
+        "published_commit": "3536304a360437b6c54413602377c31438c719f0",
+        "source_sha256": "7016e27b1cc4b09723b73de06ad3627c47c28ad28ad3cdfa8b7e6a04c87aa5c0",
+        "review": "Highest-scoring published quotient representative after updating the full pinned pool and applying all verified catalogs plus support/coloring screens."
+      },
+      "scope": "Numerical mutation guide; the individual support is exactly excluded, while its whole cyclic phase family is unresolved.",
+      "screen_status": "Survives current exact combinatorial support screens and verified quotient-class catalogs.",
+      "individual_exact_theta_upper": "57298781491/20000000000",
+      "individual_exact_certificate": "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/dual_cuts/9034f6faaee78eee39fb2edc0b018bca2ea58a3140ea889b23e8ceb16fce032f.json.gz",
+      "individual_exact_certificate_sha256": "9034f6faaee78eee39fb2edc0b018bca2ea58a3140ea889b23e8ceb16fce032f"
     }
   ]
 }

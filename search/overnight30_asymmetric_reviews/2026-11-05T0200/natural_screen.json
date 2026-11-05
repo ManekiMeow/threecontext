@@ -1,0 +1,24 @@
+{
+  "data_commit": "3536304a360437b6c54413602377c31438c719f0",
+  "distinct_logged_repair_labels": 154,
+  "counts": {
+    "disjoint_partition": 80,
+    "not_excluded": 73,
+    "probability_propagation": 1
+  },
+  "all_disjoint_partitions_have_sizes": [
+    1,
+    4,
+    5
+  ],
+  "all_disjoint_partition_budgets": "1411/1440",
+  "certificate_archive": "natural_certificates.jsonl.gz",
+  "certificate_archive_sha256": "815626f26b8e7582fe807bd3a35e2eeb1ba59940db6ea4704f416907bcbd4219",
+  "inputs_sha256": {
+    "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/asymmetric_seed20261104.jsonl.gz": "3103794250754c7642e7760ded5b0ee27cd8ec0d178d628a046fca492caf91ae",
+    "search/overnight30_runs/2026-11-04/chunks/00092_asymmetric/asymmetric_seed20261104.jsonl.gz": "2322581d5cd123629b36dce408c0b64f7b7442c6e747039f75f49d6ce899131b",
+    "search/overnight30_runs/2026-11-04/chunks/00095_asymmetric/asymmetric_seed20261104.jsonl.gz": "9e0da9ab2eb86fc6c908a05ebf24858175d5298cff706c5adc501413f76fb424",
+    "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104.jsonl.gz": "4b11a98e1abb3ec51e02fdc7f19d471d3341cf354b6aa93efae285c6198c3050"
+  },
+  "scope": "Exact exclusions of recorded repair labels; surviving scalar/combinatorial screens do not establish quantum feasibility."
+}

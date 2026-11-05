@@ -1,0 +1,32 @@
+{
+  "code_commit": "fd05e9b3d5b16f806795db0e5d98ad1e6acb1895",
+  "data_commit": "3536304a360437b6c54413602377c31438c719f0",
+  "parent": "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104_best_excluded.json",
+  "matched_seeds_per_mode": 128,
+  "inputs_sha256": {
+    "search/overnight30_screen.py": "09fcf3bbae604a16dffc23c8479b7a842a5f7565d4ec748b0ed241766097e521",
+    "search/overnight30_asymmetric.py": "5d59e7504692b89753c9450408542a193e6642615412b68d6d5ff5bd351da91c",
+    "search/overnight30_runs/2026-11-04/chunks/00098_asymmetric/asymmetric_seed20261104_best_excluded.json": "6c940d064d9487fe29a7773cd71965a57309a433be738ac924822ab5deccdd8a"
+  },
+  "statistics": {
+    "single": {
+      "counts": {
+        "disjoint_partition": 73,
+        "valid": 128,
+        "not_excluded": 55
+      },
+      "distinct_labels": 91,
+      "elapsed_seconds": 4.531786448998901
+    },
+    "paired": {
+      "counts": {
+        "not_excluded": 119,
+        "valid": 128,
+        "probability_propagation": 9
+      },
+      "distinct_labels": 127,
+      "elapsed_seconds": 4.200640222996299
+    }
+  },
+  "scope": "Combinatorial proposal comparison only; no numerical scoring, feasibility or graph-isomorphism claim."
+}

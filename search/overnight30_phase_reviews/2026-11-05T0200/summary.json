@@ -1,0 +1,642 @@
+{
+  "format": "ghz30-c5-general-phase-catalog-v1",
+  "certified": 11,
+  "source_targets": "search/overnight30_phase_reviews/2026-11-05T0200/targets.json",
+  "scope": "All cyclic phases of selected classes from213 residual classes in the fixed01:00 published quotient pool; no whole-family exclusion.",
+  "normalized_assignments": 11730,
+  "certified_representatives": 2935,
+  "batch_elapsed_seconds": 104.59970451600384,
+  "fixed_pool_classes": 5589,
+  "fixed_pool_previously_excluded": 5376,
+  "fixed_pool_now_excluded": 5387,
+  "fixed_pool_remaining": 202,
+  "results": [
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 0,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_000/manifest.json",
+      "manifest_sha256": "436fd0bb6765782ae51f4fe391cced6b5a9fee9e142415808485a94da2b29953",
+      "uniform_exact_upper": "2970481016859/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 1,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_001/manifest.json",
+      "manifest_sha256": "a3d7779d62aa466bc1384f97da68c5353ec494c207ab72c4ed4e2ebb305c1ea7",
+      "uniform_exact_upper": "2849042154913/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 2,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_002/manifest.json",
+      "manifest_sha256": "ec57bfee9916a01a0a8826d27ad236a46d9e760be6e1f3f9aac0cd995d929ba6",
+      "uniform_exact_upper": "739168347673/250000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 3,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_003/manifest.json",
+      "manifest_sha256": "088f7f9a448716863c2013ddf6a61ccd48540100dd7f22943fac5bd04f9cc6b7",
+      "uniform_exact_upper": "1430143582057/500000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 4,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_004/manifest.json",
+      "manifest_sha256": "4b2121cc9c4cc780cc48aa76dc35b66eb9d3da817ad1863e16ed22cf37bc699f",
+      "uniform_exact_upper": "2960137384731/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "source_index": 6,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_006/manifest.json",
+      "manifest_sha256": "899083f4b9e2915809c12839b964a6067d61197f8c913e610f22bdf176ddac51",
+      "uniform_exact_upper": "2949100968581/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 9,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_009/manifest.json",
+      "manifest_sha256": "99ac83c9740be400864087731f1a169688284a389641e923f2f06f774713aabf",
+      "uniform_exact_upper": "1414018822703/500000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 10,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_010/manifest.json",
+      "manifest_sha256": "e7e5828e83883091e62b4273688d8ccfee52018eaeb4749514b3f9f2d049dc9f",
+      "uniform_exact_upper": "2824291745289/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 11,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_011/manifest.json",
+      "manifest_sha256": "0c06c7f193e76de637f7ca9ea4540661275bf44ac7223dce2335dd1f9f230492",
+      "uniform_exact_upper": "2821806718979/1000000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "source_index": 12,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_012/manifest.json",
+      "manifest_sha256": "062bd1c845cc38a81ce0367d91254c484d8e7f5a49fed50c5b38c1d4b8714bee",
+      "uniform_exact_upper": "564220428159/200000000000"
+    },
+    {
+      "format": "ghz30-c5-general-phase-catalog-entry-v1",
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "source_index": 5,
+      "manifest": "search/overnight30_phase_reviews/2026-11-05T0200/target_005/manifest.json",
+      "manifest_sha256": "d33eff852fd0238580e4becf2abc6e11c5523d00fdcfe52f297b19ba559776f2",
+      "uniform_exact_upper": "587830416027/200000000000"
+    }
+  ]
+}

@@ -461,6 +461,72 @@ spectral traces a,b,r satisfy a+b+r=9 and
 and exact controls. No numerical search or unrestricted graph filter is added;
 the general nonuniform isoclinic case remains open.
 
+The new `event30_vertex_probability_lp.py` uses thirty singleton orbits and
+therefore needs no symmetry. Its exact Farkas checker combines sector,
+weighted-degree, disjoint-subset and closed-subset bounds. Singleton lower
+bounds are zero, never the five-orbit value 4/45. A 35.56-second bounded trial
+processes all 124 selected representatives: three already fail fast screens,
+93 of 121 LP attempts produce exact scalar certificates, and 28 are inconclusive.
+Eleven certificates overlap the earlier audit, adding 82 exclusions and giving
+101/124 certified selected representatives. The proofs actually use sector,
+disjoint-subset and 1/9 rows. They are postprocessing, not a new automatic LP
+worker filter. The frozen bundle is `overnight30_probability_reviews/2026-11-05T0200/`.
+
+Eleven further complete C5 phase classes cover 11,730 normalized assignments
+and 2,935 exact duals. Independent fixed-order enumeration and 528 catalog/SAT
+replays pass, with eleven false-artifact controls rejected. The fixed earlier
+5,589-class pool now has 5,387 exclusions and 202 residuals. Incremental chunk
+87 adds 34 new quotient classes, so the current pinned published pool has
+5,623 classes, 5,387 excluded and 236 unresolved. The new 34 classes have not
+received the previous analytic review. See `overnight30_phase_reviews/2026-11-05T0200/`
+and its separate `verify_pool.py`. The catalog now has 249,390 permuted
+signatures, 251,694 clauses and the same 72 auxiliaries.
+
+The new C5 guide is the highest surviving representative in the complete pinned
+pool, theta 2.8549236048 from chunk 71, index 50212 (source line 2521), with
+verified individual upper bound 57298781491/20000000000. Earlier residual lists
+did not refresh representatives of already-reviewed quotients, so the previous
+2.8521658155 guide was not the full-pool maximum. This correction changes no
+certificate or class count. Do not rank candidates by their exact upper bounds:
+the largest current phase bound 2.970481016859 belongs to numerical theta about
+2.64945, and the older bound 2.991515946933 belongs to about 2.73287. The highest
+numerical phase score inspected across 6,532 records is only 2.8998893052.
+
+Natural asymmetric repairs made 258 valid proposals and 67 acceptances across
+four completed chunks, with 106 scored records and 71 labels new to the earlier
+asymmetric scored pools. The improved leaders were directly logged as edge
+kicks/crossovers, so do not attribute their ancestry to repair without evidence.
+Eighty distinct repairs retain a 5+4+1 obstruction of budget 1411/1440. This
+motivated matched nonnumerical single/paired repair controls: 55 versus 119
+screen admissions and 91 versus 127 distinct labels from 128 proposals each.
+The worker alternates single and paired attempts at the same 128 cadence,
+protects sharing edges, bounds retries and preserves old checkpoint/RNG behavior.
+No fitness improvement was claimed or measured. The frozen review and controls
+are `overnight30_asymmetric_reviews/2026-11-05T0200/`.
+
+For fixed A–B closed-Petersen support, `event30_petersen_templates.py` verifies
+110 maximal C-neighborhood templates: ten each of (1,6)/(6,1), fifteen each of
+(2,4)/(4,2), and thirty each of (2,3)/(3,2). Selecting ten distinct templates
+covers every possible extension. The valid relaxed scalar cap for (2,4) is
+14/135, not 4/39; two singleton templates are excluded by budget 44/45, but one
+is not. A bounded support pilot gives 469 representatives; a separate pilot
+with explicit perfect matchings gives 280. All 749 are individually excluded
+and distinct under the declared 240-element action, with no family-exhaustion
+or arbitrary-isomorphism claim. The source bundle is
+`overnight30_petersen_reviews/2026-11-05T0200/`.
+
+Raw paired-repair, phase and both Petersen pilot archives were handed to the
+supervisor in chunk 104 under `auxiliary_asymmetric_paired_control_0200/`,
+`auxiliary_phase_review_0200/`, `auxiliary_petersen_template_0200/` and
+`auxiliary_petersen_matching_0200/`. They are auxiliary records, not part of the
+main-worker coverage counts. Check publication before resuming from another host.
+
+Next priorities are the 236 residual published quotients (including 34 new
+classes), exact certificate reuse for nearby asymmetric mutations, natural
+paired-repair outcomes, and the nonuniform isoclinic/generic dimension-19 gaps.
+Avoid repeating the completed phase classes or bounded template pilots without
+a stronger constraint or a new construction move.
+
 ## Operation and scheduled continuation
 
 `overnight30_supervisor.py` runs bounded worker chunks, publishes checkpoints,

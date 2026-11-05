@@ -1,0 +1,592 @@
+[
+  {
+    "target_index": 0,
+    "theta_numeric": 2.852165815533051,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "raw_phase_assignments": 31250000000,
+      "gauge_phase_assignments": 10000000,
+      "normal_triangle_free_assignments": 2784,
+      "representatives": 697,
+      "raw_triangle_free_assignments": 8700000,
+      "unit_orbit_sizes": {
+        "2": 2,
+        "4": 695
+      },
+      "prefixes_visited": 4243,
+      "representatives_sha256": "c5918f85ab97e511b8765890a73f4cfaa2efa6cd040a2752e50d306dbcf39278"
+    },
+    "seconds": 0.22845130100176902
+  },
+  {
+    "target_index": 1,
+    "theta_numeric": 2.8489797216766233,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 31250000000,
+      "gauge_phase_assignments": 10000000,
+      "normal_triangle_free_assignments": 926,
+      "representatives": 232,
+      "raw_triangle_free_assignments": 2893750,
+      "unit_orbit_sizes": {
+        "2": 1,
+        "4": 231
+      },
+      "prefixes_visited": 2859,
+      "representatives_sha256": "c995db92f6474a6abbedfb02378ee3694ad1d155abce289fce918b6764701256"
+    },
+    "seconds": 0.1772897170012584
+  },
+  {
+    "target_index": 2,
+    "theta_numeric": 2.8471320052239006,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 15625000000,
+      "gauge_phase_assignments": 5000000,
+      "normal_triangle_free_assignments": 1224,
+      "representatives": 306,
+      "raw_triangle_free_assignments": 3825000,
+      "unit_orbit_sizes": {
+        "4": 306
+      },
+      "prefixes_visited": 2025,
+      "representatives_sha256": "5bee07dc761f43a50b856a5463a4b3b6048c492b00cd96aebcd082585cbb91fc"
+    },
+    "seconds": 0.13964370699977735
+  },
+  {
+    "target_index": 3,
+    "theta_numeric": 2.841436299867397,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 31250000000,
+      "gauge_phase_assignments": 10000000,
+      "normal_triangle_free_assignments": 330,
+      "representatives": 83,
+      "raw_triangle_free_assignments": 1031250,
+      "unit_orbit_sizes": {
+        "2": 1,
+        "4": 82
+      },
+      "prefixes_visited": 607,
+      "representatives_sha256": "28790b24875d8eee06a66eb3c237987e05ef730b10cffd73daeccff1e145e834"
+    },
+    "seconds": 0.05030139599693939
+  },
+  {
+    "target_index": 4,
+    "theta_numeric": 2.8373962810480284,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 15625000000,
+      "gauge_phase_assignments": 5000000,
+      "normal_triangle_free_assignments": 408,
+      "representatives": 102,
+      "raw_triangle_free_assignments": 1275000,
+      "unit_orbit_sizes": {
+        "4": 102
+      },
+      "prefixes_visited": 2021,
+      "representatives_sha256": "7e9b19e77e99bec90ac19ba9b40904adcde84a032adb75332e2e2622ba0f7d16"
+    },
+    "seconds": 0.09750067900313297
+  },
+  {
+    "target_index": 5,
+    "theta_numeric": 2.8373259381361775,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "raw_phase_assignments": 15625000000,
+      "gauge_phase_assignments": 5000000,
+      "normal_triangle_free_assignments": 3576,
+      "representatives": 894,
+      "raw_triangle_free_assignments": 11175000,
+      "unit_orbit_sizes": {
+        "4": 894
+      },
+      "prefixes_visited": 6485,
+      "representatives_sha256": "7889ebf2e323b65cb50d7fc3a2b2f7ff108e1ee54fd5cef2c9287b73cd4cb6fb"
+    },
+    "seconds": 0.44109055399894714
+  },
+  {
+    "target_index": 6,
+    "theta_numeric": 2.828538276627195,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 7812500000,
+      "gauge_phase_assignments": 2500000,
+      "normal_triangle_free_assignments": 1056,
+      "representatives": 264,
+      "raw_triangle_free_assignments": 3300000,
+      "unit_orbit_sizes": {
+        "4": 264
+      },
+      "prefixes_visited": 5909,
+      "representatives_sha256": "7976cde6a725df6fbeb3190260d7cbe5dc30a9c6f84dc28fb824d4f3f01be8d5"
+    },
+    "seconds": 0.2486078220026684
+  },
+  {
+    "target_index": 7,
+    "theta_numeric": 2.827843498027638,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "raw_phase_assignments": 15625000000,
+      "gauge_phase_assignments": 5000000,
+      "normal_triangle_free_assignments": 2388,
+      "representatives": 597,
+      "raw_triangle_free_assignments": 7462500,
+      "unit_orbit_sizes": {
+        "4": 597
+      },
+      "prefixes_visited": 5303,
+      "representatives_sha256": "05981c38bf48121a4055cda724a29543e5b5e385df3aac2fe0508d202e8acfd9"
+    },
+    "seconds": 0.3589498250003089
+  },
+  {
+    "target_index": 8,
+    "theta_numeric": 2.8277222434115816,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "raw_phase_assignments": 15625000000,
+      "gauge_phase_assignments": 5000000,
+      "normal_triangle_free_assignments": 1788,
+      "representatives": 448,
+      "raw_triangle_free_assignments": 5587500,
+      "unit_orbit_sizes": {
+        "2": 2,
+        "4": 446
+      },
+      "prefixes_visited": 10002,
+      "representatives_sha256": "03c594d72a3ba26102cf818eb1b3d3775a789483153f7fd2bd1a8d4089d71d7a"
+    },
+    "seconds": 0.3526819250037079
+  },
+  {
+    "target_index": 9,
+    "theta_numeric": 2.8256556064878415,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "raw_phase_assignments": 7812500000,
+      "gauge_phase_assignments": 2500000,
+      "normal_triangle_free_assignments": 240,
+      "representatives": 60,
+      "raw_triangle_free_assignments": 750000,
+      "unit_orbit_sizes": {
+        "4": 60
+      },
+      "prefixes_visited": 1157,
+      "representatives_sha256": "4307c9820adafc759ff0bcdefaf973e67a4ecc442d3f33c025206731ae8be6af"
+    },
+    "seconds": 0.03936550099751912
+  },
+  {
+    "target_index": 10,
+    "theta_numeric": 2.8238970811107906,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 7812500000,
+      "gauge_phase_assignments": 2500000,
+      "normal_triangle_free_assignments": 120,
+      "representatives": 30,
+      "raw_triangle_free_assignments": 375000,
+      "unit_orbit_sizes": {
+        "4": 30
+      },
+      "prefixes_visited": 301,
+      "representatives_sha256": "927b9f4624b5543cb658fe28f89e65578fadf5112b5709e743e38d4ee0b3944f"
+    },
+    "seconds": 0.01837924400024349
+  },
+  {
+    "target_index": 11,
+    "theta_numeric": 2.8217551075277445,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 7812500000,
+      "gauge_phase_assignments": 2500000,
+      "normal_triangle_free_assignments": 1056,
+      "representatives": 264,
+      "raw_triangle_free_assignments": 3300000,
+      "unit_orbit_sizes": {
+        "4": 264
+      },
+      "prefixes_visited": 1973,
+      "representatives_sha256": "51fc0d37ebd239f020ffbeed3df362f30111cb09173d8c058e39d73cf7d0a17e"
+    },
+    "seconds": 0.14475135300017428
+  },
+  {
+    "target_index": 12,
+    "theta_numeric": 2.820940925968464,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "raw_phase_assignments": 312500000,
+      "gauge_phase_assignments": 100000,
+      "normal_triangle_free_assignments": 10,
+      "representatives": 3,
+      "raw_triangle_free_assignments": 31250,
+      "unit_orbit_sizes": {
+        "2": 1,
+        "4": 2
+      },
+      "prefixes_visited": 21,
+      "representatives_sha256": "7594c7e30ef2c38bb0c4a5d9ba0194d527a01ff11a6b75dcf4d73f4e28771eff"
+    },
+    "seconds": 0.0010691259958548471
+  },
+  {
+    "target_index": 13,
+    "theta_numeric": 2.819652486552531,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_phase_assignments": 7812500000,
+      "gauge_phase_assignments": 2500000,
+      "normal_triangle_free_assignments": 4704,
+      "representatives": 1176,
+      "raw_triangle_free_assignments": 14700000,
+      "unit_orbit_sizes": {
+        "4": 1176
+      },
+      "prefixes_visited": 8565,
+      "representatives_sha256": "d0c3df5fb2536ee44289273d73a9b6d9af725a35364b79630c38410d843a3be8"
+    },
+    "seconds": 0.6058039929994266
+  },
+  {
+    "target_index": 14,
+    "theta_numeric": 2.816642792670372,
+    "coverage": {
+      "gauge_tree": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "raw_phase_assignments": 31250000000,
+      "gauge_phase_assignments": 10000000,
+      "normal_triangle_free_assignments": 1324,
+      "representatives": 331,
+      "raw_triangle_free_assignments": 4137500,
+      "unit_orbit_sizes": {
+        "4": 331
+      },
+      "prefixes_visited": 2783,
+      "representatives_sha256": "4a217d8b08ad13f9a438c7c9fd646dba3b93dd0ac78a86f552bbdf03ec343f1d"
+    },
+    "seconds": 0.20615618499869015
+  }
+]

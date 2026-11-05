@@ -1,0 +1,35 @@
+{
+  "scope": "Bounded exact probability relaxation on selected supports; no feasibility claims.",
+  "published_cutoff": "3536304a360437b6c54413602377c31438c719f0",
+  "selected_source": "search/overnight30_reviews/2026-11-05T0200/selected_representatives.jsonl",
+  "selected_source_sha256": "717d78451dbee2404e7f358e9135e7282eb2996c7139e94a5469bf087ca72c7a",
+  "selected_input_count": 124,
+  "reviewed": 124,
+  "existing_structural_exclusions": 3,
+  "lp_attempted": 121,
+  "new_exact_exclusions": 93,
+  "unreached": 0,
+  "requested_seconds": 60.0,
+  "elapsed_seconds": 35.558363572003145,
+  "constraint_kinds_used": {
+    "sector": 976,
+    "disjoint_subset": 524,
+    "upper": 223
+  },
+  "controls": {
+    "strict_zero_margin_control": true,
+    "singleton_lower_bound": "0",
+    "moment_negative_margin_control": "1/32",
+    "closed_subset_nonstrict_cap": "1/10",
+    "false_certificates_rejected": 8
+  },
+  "results_archive": "results.jsonl.gz",
+  "proof_archive": "certificates.jsonl.gz",
+  "prior_selected_exclusion_source": "search/overnight30_reviews/2026-11-05T0200/strongest_candidates.jsonl",
+  "prior_selected_exclusion_source_sha256": "b2fcaa2657305f4e3d2a61f1e58412b9126a20f504f242d280fb3118216053ad",
+  "additional_scalar_certificates": 93,
+  "overlap_with_prior_selected_exclusions": 11,
+  "newly_excluded_selected_representatives": 82,
+  "combined_selected_exclusions": 101,
+  "unresolved_selected_representatives": 23
+}

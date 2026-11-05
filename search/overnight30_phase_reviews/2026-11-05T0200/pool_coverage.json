@@ -1,0 +1,15 @@
+{
+  "published_commit": "3536304a360437b6c54413602377c31438c719f0",
+  "source": "search/overnight30_runs/2026-11-04/chunks/00087_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+  "source_sha256": "19bf675499c16e6e9d213a813a03a8d8cd43e5a7e01e9bd1201047014ba7182d",
+  "scored_records": 2540,
+  "quotient_classes": 149,
+  "new_quotient_classes": 34,
+  "previous_pool_classes": 5589,
+  "updated_pool_classes": 5623,
+  "previous_pool": "search/overnight30_quotient_expansion/2026-11-05T0100/published_pool.jsonl.gz",
+  "previous_pool_sha256": "627589e49a5386a2476cd0a17ad75fb6681010d7220ba18ec1fcad25bf33de4b",
+  "known_excluded_quotient_classes": 5387,
+  "updated_pool_remaining": 236,
+  "scope": "Incremental source census only. Complete class proofs are in the referenced phase and earlier analytic catalogs; these counts do not classify all possible C5 supports."
+}

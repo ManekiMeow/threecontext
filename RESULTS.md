@@ -1087,6 +1087,38 @@ experiment commit `3536304`. Its standard-library verifier checks 21 local certi
 maps, two referenced proofs, all 281 closure cuts and immutable input bindings:
 `python search/overnight30_reviews/2026-11-05T0200/verify.py --inputs`. Global bounds remain unchanged.
 
+An additional per-vertex probability relaxation needs no symmetry or uniformity. It combines sector
+inequalities, disjoint-subset bounds and exact context normalization; weighted-degree and closed-subset
+constraints are also available. Of 121 attempted selected representatives that passed the fast screens,
+**93 receive exact rational scalar certificates**. Eleven overlap the audit's earlier exclusions, so the
+combined review excludes **101 of 124 selected representatives**. The 28 LP inconclusions are not feasibility
+claims. The new format and independent controls are in `search/event30_vertex_probability_lp.py` and
+`search/overnight30_probability_reviews/2026-11-05T0200/`. No automatic per-candidate LP filter is added.
+
+Complete phase enumeration excludes **eleven more C₅ quotient classes**, covering **11,730 normalized
+assignments and 2,935 exact graph-bound duals**. The largest certified upper bound is 2.970481016859.
+These bounds can be loose: that value belongs to a numerical score about 2.64945, not a near-three
+candidate. An incremental published-pool census adds 34 quotient classes, giving **5,623 classes in total,
+of which 5,387 are excluded and 236 remain unresolved**. Of those residuals, 34 are newly published and
+have not received the earlier analytic review. The phase bundle independently verifies finite coverage,
+pool bindings and worker integration. The refreshed C₅ guide scores 2.8549236048 and has exact individual
+upper bound `57298781491/20000000000<3`.
+
+Natural repair logs show that a single broken five-event block often leaves an exact **5+4+1** obstruction,
+with probability budget **1411/1440<1**. Matched deterministic controls on the same excluded parent compare
+128 single-block and 128 paired-block repairs: the latter improve fast-screen admission from **55 to 119**
+and distinct labels from **91 to 127**, with no numerical scoring. The worker now alternates these repairs
+at its unchanged 128-proposal cadence, preserving both sharing pairs and falling back safely. This is an
+admission/diversity result for one parent, not a numerical fitness guarantee. Exact natural-certificate,
+protected-edge and checkpoint/RNG controls are in `search/overnight30_asymmetric_reviews/2026-11-05T0200/`.
+
+Finally, an exact finite reduction for fixed closed-Petersen A–B support gives **110 maximal third-context
+neighborhood templates**. Two bounded SAT pilots construct **749 representatives under an explicit
+240-element action**; all have individual Hall, probability-propagation or bridge exclusions, with zero
+SDP solves. They are not an arbitrary-isomorphism census, and neither pilot exhausts the family.
+`search/event30_petersen_templates.py` and `search/overnight30_petersen_reviews/2026-11-05T0200/` verify the
+reduction and saved certificates. Closed-Petersen support without isoclinicity remains open.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

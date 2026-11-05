@@ -1,0 +1,17 @@
+{
+  "paired_proposals": 64,
+  "checkpoint_rng_replays": 64,
+  "prototype_matches": 64,
+  "unchanged_single_controls": 8,
+  "real_singleton_partition_control": [
+    5,
+    4,
+    1
+  ],
+  "input_records_unmodified": true,
+  "mismatched_certificate_rejected": true,
+  "actual_selector_json_replays": 2,
+  "actual_paired_to_single_fallback": true,
+  "source_sha256": "d6bed427e2853f014dbec49856ee90fa5e9f656ecee4b113f73fdb1720be7dc7",
+  "scope": "Exact combinatorial and checkpoint controls; no numerical solves."
+}

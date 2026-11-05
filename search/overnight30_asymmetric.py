@@ -20,8 +20,9 @@ WL hash buckets; the full archive still counts labelled supports, not classes.
 Short checkpointed excursions from near-leading elites use partial clustered
 rewires and higher temperature to explore temporary score losses. They preserve
 historical bests and the elite pool and return to ordinary search automatically.
-Every 128 ordinary proposals, a retained disjoint-partition witness guides a
-shared-neighbor addition with minimal triangle-conflict clearing. Such repairs
+Every 128 ordinary proposals, a retained disjoint-partition witness guides
+shared-neighbor additions with minimal triangle-conflict clearing. Single-block
+and paired-block attempts alternate, with a single-block fallback. Such repairs
 undergo the same exact screens and acceptance rules as every other proposal.
 CLARABEL has an individual solve time limit; SCS is a bounded fallback. H33 and
 H36 are scored as positive controls on each invocation. Numerical near-hits are
@@ -250,6 +251,69 @@ def partition_witness_repair(record, rng):
                        "certificate_block": block, "added_edge": [u, b],
                        "sharing_pair": [u, v], "shared_neighbor": b,
                        "removed_conflicts": cleared,
+                       "edge_difference": len(set(edges_of(parent)) ^ set(edges_of(trial)))}
+    return None
+
+
+def paired_partition_witness_repair(record, rng):
+    """Break two witness blocks, preserving both new sharing pairs.
+
+    A lone broken five-block can leave a strict 5+4+1 partition obstruction.
+    Repairing two distinct blocks avoids that particular residual witness,
+    without asserting feasibility or a higher numerical score.
+    """
+    if not record or (record.get("certificate") or {}).get("method") != "disjoint_partition":
+        return None
+    cert = record["certificate"]
+    verify_certificate(cert)
+    parent = decode(record["g6"])
+    if (cert["graph"]["parts"] != PARTS
+            or from_edges(cert["graph"]["edges"]) != parent
+            or not validate(parent)):
+        raise ValueError("partition repair certificate is not bound to its guide")
+    blocks = [block for block in cert["witness"]["blocks"] if len(block["vertices"]) >= 2]
+    if len(blocks) < 2:
+        return None
+    for _ in range(8):
+        targets = []
+        for block in rng.sample(blocks, 2):
+            vertices, other = block["vertices"], block["other_context"]
+            choices = [(u, v, b) for u in vertices for v in vertices if u != v
+                       for b in PARTS[other]
+                       if parent[v] >> b & 1 and not parent[u] >> b & 1]
+            if not choices:
+                break
+            targets.append((*rng.choice(choices), block))
+        if len(targets) != 2:
+            continue
+        protected = {tuple(sorted(edge)) for u, v, b, _ in targets for edge in ((u, b), (v, b))}
+        trial, repairs = parent[:], []
+        for u, v, b, block in targets:
+            cleared, blocked = [], False
+            for c in range(N):
+                if (trial[u] & trial[b]) >> c & 1:
+                    choices = [edge for edge in ((u, c), (b, c))
+                               if tuple(sorted(edge)) not in protected]
+                    if not choices:
+                        blocked = True
+                        break
+                    edge = rng.choice(choices)
+                    remove(trial, *edge)
+                    cleared.append(list(edge))
+            if blocked or not addable(trial, u, b):
+                break
+            add(trial, u, b)
+            repairs.append({"certificate_block": block, "added_edge": [u, b],
+                            "sharing_pair": [u, v], "shared_neighbor": b,
+                            "removed_conflicts": cleared})
+        if len(repairs) != 2:
+            continue
+        fill(trial, rng)
+        if not all(trial[u] >> v & 1 for u, v in protected) or not validate(trial):
+            continue
+        return trial, {"parent_g6": record["g6"], "certificate_method": "disjoint_partition",
+                       "certificate_context": cert["witness"]["context"], "repair_mode": "paired",
+                       "repairs": repairs,
                        "edge_difference": len(set(edges_of(parent)) ^ set(edges_of(trial)))}
     return None
 
@@ -710,6 +774,8 @@ def run(args):
     state.setdefault("proposal_diagnostics", {})
     state.setdefault("partition_repair", {"ordinary_proposals": 0, "attempted": 0,
                                           "proposed": 0, "fallbacks": 0})
+    for key in ("paired_attempted", "paired_proposed", "paired_fallbacks"):
+        state["partition_repair"].setdefault(key, 0)
     state.setdefault("excursions", {"remaining_evaluations": 0, "next_iteration": state["iterations"],
                                    "started": 0, "completed": 0, "evaluated": 0,
                                    "newly_scored": 0, "accepted": 0, "downhill_accepted": 0,
@@ -854,12 +920,18 @@ def run(args):
                         repair_state["ordinary_proposals"] += 1
                         if repair_state["ordinary_proposals"] % 128 == 0:
                             repair_state["attempted"] += 1
-                            repaired = partition_witness_repair(
-                                state["best_records"].get("best_excluded_theta"), rng)
+                            repair_parent = state["best_records"].get("best_excluded_theta")
+                            if repair_state["attempted"] % 2 == 0:
+                                repair_state["paired_attempted"] += 1
+                                repaired = paired_partition_witness_repair(repair_parent, rng)
+                                repair_state["paired_proposed" if repaired else "paired_fallbacks"] += 1
+                            if repaired is None:
+                                repaired = partition_witness_repair(repair_parent, rng)
                             repair_state["proposed" if repaired else "fallbacks"] += 1
                     if repaired:
                         trial, provenance = repaired
-                        move = "partition_witness_repair"
+                        move = ("partition_witness_repair_paired" if provenance.get("repair_mode") == "paired"
+                                else "partition_witness_repair")
                     else:
                         trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
             proposal_metadata = {"partition_repair": provenance} if provenance else {}
