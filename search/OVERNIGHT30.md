@@ -35,8 +35,8 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 56. Results
-39–56 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 57 and Corollary 57a. Results
+39–57 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
 by affine-plane mixed-action exclusions, iterated probability budgets, and
@@ -44,7 +44,8 @@ the exclusion of a nine-vertex symmetry orbit in any single context, global
 pair-support matchings, disjoint-neighborhood probability budgets, and complete
 phase exclusions for nine specified C5 quotients, and the exclusion of even
 one isoclinic reduced pair in a uniform-probability dimension-19 realization,
-followed by strict weighted-degree bounds and one-sided regularity restrictions.
+followed by strict weighted-degree bounds, one-sided regularity restrictions,
+and zero rectangles forced by two uniform contexts in every dimension.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -342,6 +343,22 @@ and has an individual exact theta upper bound 2.9084. The worker correctly
 retired the historical graph without losing its graph, score or certificate.
 One substantive numerical timeout is exactly excluded; seven deadline skips
 are ordinary budget endings. No global event or dimension bound changed.
+
+Theorem 57 proves that two uniform ten-event contexts must have a 3-by-3 zero
+rectangle in their allowed pair support, in every dimension. Otherwise the
+third context becomes uniform with saturated degree types (2,4)/(4,2).
+Opposite types have impossible integer intersection equations; one type alone
+would require too many disjoint two-element neighborhoods. This proof is
+analytic and needs no moment certificate. Related uniform restrictions allow
+only one saturated type per context, at most one (4,4) event, and at most three
+degree-two events (the latter uses Theorem 53's strict four-event bound).
+
+Corollary 57a excludes an isoclinic pair with allowed closed-Petersen support
+in every dimension, initially allowing nonuniform probabilities. The pair's
+Gram identities force both contexts uniform, contradicting the zero-rectangle
+theorem. `event30_uniform_rectangle.py` contains the reviewed proof and exact
+controls. These statements do not exclude arbitrary nonuniform graphs or
+arbitrary isoclinic pair supports, and no unrestricted worker filter was added.
 
 ## Operation and scheduled continuation
 

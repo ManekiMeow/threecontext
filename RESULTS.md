@@ -853,6 +853,54 @@ or four. Otherwise let δ≥1 be their minimum and e their sum. Then
 Since d̄>2, e≥20. `python search/event30_one_sided_regular.py self-test` checks the exact equality-case
 arithmetic, projection identity and certificate controls. ∎
 
+**Theorem 57 (uniform contexts force zero rectangles).** In a thirty-event three-context GHZ realization,
+if every event in contexts A and B has probability 1/10, some three A events and three B events have no
+allowed cross-edge. Equivalently, the allowed A–B support has a 3×3 zero rectangle. This holds in every
+dimension, for complex realizations, and even when some allowed edges have zero actual overlap.
+
+*Proof:* if there is no such rectangle, triangle-freeness forces every C event to have at most two allowed
+neighbors in A or in B. Its corresponding neighbor mass α is at most 1/5. The sector bound
+`c≤h(α)=α(1−α)/(1+3α)`, with h increasing on [0,1/5], gives c≤1/10. Normalization of the ten C events forces
+equality everywhere: C is uniform, and every event has saturated degree type (2,4) or (4,2) toward A,B.
+
+For a type (2,4) event with neighbor sets S,T, Cauchy equality gives, after positive-state rephasing,
+
+    g_c = (3/4) Σ_{a∈S} g_a + (1/2) Σ_{b∈T} g_b − (1/4) Σ_{a∈A} g_a.
+
+Its incident overlaps are 1/2 toward A and 1/4 toward B. For two events of the same type, orthogonality gives
+`3|S∩S′|+|T∩T′|=2`, so their two-element neighborhoods are disjoint. For two opposite types, writing
+`s=|N_A(c)∩N_A(d)|`, `t=|N_B(c)∩N_B(d)|`, the two equality expansions give
+`3s+4t=4` and `4s+3t=4`. Thus s=t=4/7, impossible for integers. All ten C events must have the same type,
+but at most five pairwise disjoint two-element sets fit in a ten-event context. Contradiction. ∎
+
+**Uniform saturation consequences.** In a fully uniform thirty-event realization, saturated events in one
+context all have type (2,4), all have type (4,2), or consist of a single (4,4) event. Indeed two (4,4) events
+would require `3(s+t)=8`; a (2,4) event and a (4,4) event would require `6s+3t=8`, also impossible, and the
+reflected case is identical. The degree-two events have disjoint neighborhoods on their small side. Four
+would have total probability 2/5, contradicting Theorem 53's strict four-event bound. Thus each context has
+at most three degree-two events in total. These are conditional uniform-probability restrictions.
+
+**Corollary 57a (isoclinic closed-Petersen pairs, every dimension).** A thirty-event GHZ realization cannot
+have an isoclinic reduced pair whose allowed pair support is `I+P`, with P having Petersen parameters
+(10,3,0,1), even with initially nonuniform probabilities.
+
+*Proof:* write `p_i=√c_i`, `q_j=√d_j` and x=u² for the pair cosine. The overlap matrix obeys
+`XX†=xI+(1−x)pp†` and `X†X=xI+(1−x)qq†`. The case u=0 gives full nonzero support; u=1 identifies the two
+context spans, contradicting triangle-free orthogonality of their projections of a positive-probability
+C event. Thus 0<u<1.
+
+In column j, its three off-diagonal allowed rows are mutually nonadjacent in P and intersect only at j.
+The row Gram identities force `X_ij=√(1−x)p_i η_j` on these entries, with |η_j|=1. Applying the column Gram
+identities to the three off-diagonal columns of row i gives `c_i=√(d_j d_k)` for each of their three pairs.
+Their probabilities therefore all equal c_i. The six-regular complement of P is connected, so all A and B
+probabilities become 1/10. The entries used here are forced nonzero; allowed diagonal zeros do not affect
+the argument. Any three closed P-neighborhoods cover at least eight vertices, by the intersection parameters
+(as in Theorem 55). Thus `I+P` has no 3×3 zero rectangle, contradicting Theorem 57. ∎
+
+`python search/event30_uniform_rectangle.py` checks every saturated-type compatibility case, the optional
+strict moment bound, probability-equality propagation and all 120 Petersen neighborhood triples. The main
+rectangle proof and Corollary 57a are analytic and do not depend on an SDP certificate or a dimension bound.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
