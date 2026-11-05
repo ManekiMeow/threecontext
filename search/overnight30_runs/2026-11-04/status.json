@@ -15,22 +15,22 @@
       "pid": 15211
     },
     {
-      "directory": "search/overnight30_runs/2026-11-04/chunks/00074_c5_mixed",
-      "family": "c5_mixed",
-      "id": 74,
+      "directory": "search/overnight30_runs/2026-11-04/chunks/00075_c2_onepair",
+      "family": "c2_onepair",
+      "id": 75,
       "kind": "symmetry",
-      "pid": 15246
+      "pid": 15274
     }
   ],
   "branch": "experiments/ghz30-20261104",
   "deadline_utc": "2026-11-05T05:00:00Z",
   "finished_utc": "2026-11-04T21:05:35+00:00",
-  "heartbeat_utc": "2026-11-05T00:36:27+00:00",
+  "heartbeat_utc": "2026-11-05T00:36:30+00:00",
   "host": "4eb071b4d7f0",
-  "jobs_finished": 72,
-  "jobs_started": 75,
-  "last_published_utc": "2026-11-05T00:36:19+00:00",
-  "last_pushed_commit": "51c66f8bac8f0ff08e6fde51ff786caa325be6d1",
+  "jobs_finished": 73,
+  "jobs_started": 76,
+  "last_published_utc": "2026-11-05T00:36:29+00:00",
+  "last_pushed_commit": "4cd800285f62ddfbc5ee79618c6fdb5837bcf79c",
   "publication_error": null,
   "publishing_enabled": true,
   "started_utc": "2026-11-04T21:06:00+00:00",
