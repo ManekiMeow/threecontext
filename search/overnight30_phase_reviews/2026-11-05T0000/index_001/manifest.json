@@ -1,0 +1,1840 @@
+{
+  "format": "ghz30-c5-phase-enumeration-v1",
+  "quotient": [
+    [
+      0,
+      0,
+      1,
+      3,
+      1,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      2,
+      2
+    ],
+    [
+      3,
+      1,
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      2,
+      1,
+      0,
+      0
+    ]
+  ],
+  "source_index": 1,
+  "source_summary": "search/overnight30_quotient_reviews/2026-11-04T2300/summary.json",
+  "source_summary_sha256": "c79ecb4bd34e1c76e328eb46b5353e3614ad9344236275907f519742b805350e",
+  "coverage": {
+    "gauge_tree": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "raw_phase_assignments": 31250000000,
+    "gauge_phase_assignments": 10000000,
+    "normal_triangle_free_assignments": 330,
+    "representatives": 83,
+    "raw_triangle_free_assignments": 1031250,
+    "unit_orbit_sizes": {
+      "2": 1,
+      "4": 82
+    },
+    "prefixes_visited": 679,
+    "representatives_sha256": "658a5e4fc9a2a69f053050e3a41d9b482ae248baaaffe05cc0b9a85b58fa917b"
+  },
+  "records": [
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        10,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.6682426777766444,
+      "exact_theta_upper": "533690501351/200000000000",
+      "certificate": "certificates/4b4407de674f31d6ab9ff42aa3a07f479600253022db2d92805021a4d0d27ec4.json.gz",
+      "certificate_sha256": "4b4407de674f31d6ab9ff42aa3a07f479600253022db2d92805021a4d0d27ec4"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        10,
+        18,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.658286850876041,
+      "exact_theta_upper": "531671892781/200000000000",
+      "certificate": "certificates/2578bdc5f23702ad088958be51c8d880625c662a7464ef1e44d771c34288940c.json.gz",
+      "certificate_sha256": "2578bdc5f23702ad088958be51c8d880625c662a7464ef1e44d771c34288940c"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        10,
+        20,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.652498865643323,
+      "exact_theta_upper": "1326281697147/500000000000",
+      "certificate": "certificates/e3abf90376f86bed52d59c506bc681c00dedabe4f7db8dbc2b551eb37cd1e490.json.gz",
+      "certificate_sha256": "e3abf90376f86bed52d59c506bc681c00dedabe4f7db8dbc2b551eb37cd1e490"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        12,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.6245366494205467,
+      "exact_theta_upper": "262468783337/100000000000",
+      "certificate": "certificates/07f7a77de2131b1183bcb460c6ea09c33944ce2056d9b49b1d8b3b43fbafc672.json.gz",
+      "certificate_sha256": "07f7a77de2131b1183bcb460c6ea09c33944ce2056d9b49b1d8b3b43fbafc672"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        12,
+        18,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.6946567148426626,
+      "exact_theta_upper": "538948645057/200000000000",
+      "certificate": "certificates/edf20cc84f6c05984cdc9805dd5bbd48b43ce8ef5c395087e95f74d150a1cde9.json.gz",
+      "certificate_sha256": "edf20cc84f6c05984cdc9805dd5bbd48b43ce8ef5c395087e95f74d150a1cde9"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        12,
+        20,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.685708342448164,
+      "exact_theta_upper": "671455582591/250000000000",
+      "certificate": "certificates/e0ca446866e9acb4b352ffe9f494c2d27c0cb9db7e25496114730dca03c96632.json.gz",
+      "certificate_sha256": "e0ca446866e9acb4b352ffe9f494c2d27c0cb9db7e25496114730dca03c96632"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        18,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.6838819660575597,
+      "exact_theta_upper": "2684096905407/1000000000000",
+      "certificate": "certificates/cf86f9c4429a536e8f3c403bac6e8e5e62c50abe1ce694f895d39719c22b9e8a.json.gz",
+      "certificate_sha256": "cf86f9c4429a536e8f3c403bac6e8e5e62c50abe1ce694f895d39719c22b9e8a"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        18,
+        18,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.6490604971754057,
+      "exact_theta_upper": "2649162064379/1000000000000",
+      "certificate": "certificates/c7fd423be821a04e419b57786dd6c1ea4fab787df1081c3973917b9d891969f6.json.gz",
+      "certificate_sha256": "c7fd423be821a04e419b57786dd6c1ea4fab787df1081c3973917b9d891969f6"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        18,
+        20,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.6582868508791875,
+      "exact_theta_upper": "332305802047/125000000000",
+      "certificate": "certificates/51070d5bb17cc099ab70c770f94a67ad85af2ce37f8d8484030b8d1dbca3597d.json.gz",
+      "certificate_sha256": "51070d5bb17cc099ab70c770f94a67ad85af2ce37f8d8484030b8d1dbca3597d"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        20,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.678084193420439,
+      "exact_theta_upper": "2813864237783/1000000000000",
+      "certificate": "certificates/e2e1ca34d6a276f3c8d63bbb9af3ef41051dd4721422519ece3942c218329d54.json.gz",
+      "certificate_sha256": "e2e1ca34d6a276f3c8d63bbb9af3ef41051dd4721422519ece3942c218329d54"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        20,
+        18,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.7523387801374617,
+      "exact_theta_upper": "137622673603/50000000000",
+      "certificate": "certificates/3922b79bb3e33486a5e07efbccfca9b467eb722cf3f1d90e0d65eb509f819458.json.gz",
+      "certificate_sha256": "3922b79bb3e33486a5e07efbccfca9b467eb722cf3f1d90e0d65eb509f819458"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        20,
+        20,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.6855719029266,
+      "exact_theta_upper": "2685831458407/1000000000000",
+      "certificate": "certificates/def127cb1f7f330c2c692d58b1a2e570b1f0c5a8b5645c951931b3a0054b7ea9.json.gz",
+      "certificate_sha256": "def127cb1f7f330c2c692d58b1a2e570b1f0c5a8b5645c951931b3a0054b7ea9"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.6429268362762146,
+      "exact_theta_upper": "2643004958841/1000000000000",
+      "certificate": "certificates/9ec4f9562e92f96687699f4e7027d73658bf0b48d82b8ad66ca1b3608d23ab5a.json.gz",
+      "certificate_sha256": "9ec4f9562e92f96687699f4e7027d73658bf0b48d82b8ad66ca1b3608d23ab5a"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6640950866620194,
+      "exact_theta_upper": "2664350782231/1000000000000",
+      "certificate": "certificates/c50fbf9c5fa611042ff7d58e99160d2f9b1f064d49eb953b77aa400df13ea5d2.json.gz",
+      "certificate_sha256": "c50fbf9c5fa611042ff7d58e99160d2f9b1f064d49eb953b77aa400df13ea5d2"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        6,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AD@bOiKPAwoAcp_Acp_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.676463078733569,
+      "exact_theta_upper": "2676540585727/1000000000000",
+      "certificate": "certificates/a2f18548adf1a3dea7b681400b8819b26a0d7e440c329cf02e5a6016292bf5ae.json.gz",
+      "certificate_sha256": "a2f18548adf1a3dea7b681400b8819b26a0d7e440c329cf02e5a6016292bf5ae"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        18,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.7325015508782253,
+      "exact_theta_upper": "1366304104369/500000000000",
+      "certificate": "certificates/de27586c881301d3116094f75111d9493d741c5fbef532c13ac425c4d9a32f57.json.gz",
+      "certificate_sha256": "de27586c881301d3116094f75111d9493d741c5fbef532c13ac425c4d9a32f57"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        18,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6838819660557194,
+      "exact_theta_upper": "335517958411/125000000000",
+      "certificate": "certificates/52f8ba282ee19871f4b52800eb33fa1e10d1f5bd1b9ed988d6df4b29f840e8f0.json.gz",
+      "certificate_sha256": "52f8ba282ee19871f4b52800eb33fa1e10d1f5bd1b9ed988d6df4b29f840e8f0"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        18,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADCbOicPAioAcT_AeP_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.7376744500764354,
+      "exact_theta_upper": "342219812093/125000000000",
+      "certificate": "certificates/fcdd7f10b72dac8d20f9740fdbcb611422830a4fb9ecb1745f2640ff4f8c21ca.json.gz",
+      "certificate_sha256": "fcdd7f10b72dac8d20f9740fdbcb611422830a4fb9ecb1745f2640ff4f8c21ca"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        20,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.7136204933620296,
+      "exact_theta_upper": "1356907031607/500000000000",
+      "certificate": "certificates/48579b301b20b0df89fcfc805ec5ed3bf40894eeb39a373324e46fbffc4ee001.json.gz",
+      "certificate_sha256": "48579b301b20b0df89fcfc805ec5ed3bf40894eeb39a373324e46fbffc4ee001"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        20,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6682426777778434,
+      "exact_theta_upper": "2668388291949/1000000000000",
+      "certificate": "certificates/bf71c76eb8c89a2ca8b10973df5c7a029325660c1136c4bec0b2241488598aaa.json.gz",
+      "certificate_sha256": "bf71c76eb8c89a2ca8b10973df5c7a029325660c1136c4bec0b2241488598aaa"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        9,
+        24,
+        20,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_ADDBOgkPAqoAcd_Ae`_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.709073129587875,
+      "exact_theta_upper": "13546035127/5000000000",
+      "certificate": "certificates/30f68fd8c040d275ae153c4ba6e6a97f24722d6541c24fbc884d1f41b9706fa6.json.gz",
+      "certificate_sha256": "30f68fd8c040d275ae153c4ba6e6a97f24722d6541c24fbc884d1f41b9706fa6"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        10,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.7136204933743784,
+      "exact_theta_upper": "2713855839607/1000000000000",
+      "certificate": "certificates/60797b3b6b29801c0ec5b4579f4e0bc42d187890372d81db649b1d2a75d945e7.json.gz",
+      "certificate_sha256": "60797b3b6b29801c0ec5b4579f4e0bc42d187890372d81db649b1d2a75d945e7"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        10,
+        10,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.685571902928894,
+      "exact_theta_upper": "2685990292437/1000000000000",
+      "certificate": "certificates/575839f306df48ee8694ab1b1ac07eefc7ee23ea506bbfd9174a9fcb4e2b3141.json.gz",
+      "certificate_sha256": "575839f306df48ee8694ab1b1ac07eefc7ee23ea506bbfd9174a9fcb4e2b3141"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        10,
+        12,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.68570830111012,
+      "exact_theta_upper": "1342867870397/500000000000",
+      "certificate": "certificates/7870cd7e777d97b3455f71a5593e505302f414bf3aa221ca2e060261c1600876.json.gz",
+      "certificate_sha256": "7870cd7e777d97b3455f71a5593e505302f414bf3aa221ca2e060261c1600876"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        12,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.596614606947872,
+      "exact_theta_upper": "2596712321119/1000000000000",
+      "certificate": "certificates/361639a44e17f56d9f49baa38629f113b66510f2c1d987fb680d464dfd9ecaf6.json.gz",
+      "certificate_sha256": "361639a44e17f56d9f49baa38629f113b66510f2c1d987fb680d464dfd9ecaf6"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        12,
+        10,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.629289714288592,
+      "exact_theta_upper": "2631869439293/1000000000000",
+      "certificate": "certificates/dafa50a1d510763be3c21892c4bb585ad246af1ad7cf24ac5ba0a04c7d04b0a4.json.gz",
+      "certificate_sha256": "dafa50a1d510763be3c21892c4bb585ad246af1ad7cf24ac5ba0a04c7d04b0a4"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        12,
+        12,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.5371365380741313,
+      "exact_theta_upper": "2537183370811/1000000000000",
+      "certificate": "certificates/d61eda05159a94d65e5fd74255751f25fa9ef43ba2e68f293ed491fcb28d00c6.json.gz",
+      "certificate_sha256": "d61eda05159a94d65e5fd74255751f25fa9ef43ba2e68f293ed491fcb28d00c6"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        18,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.732501550878113,
+      "exact_theta_upper": "546513153409/200000000000",
+      "certificate": "certificates/943b8c3b09dd88ca8f8187a754c360381356421dd470fd788ffc43a05efa2846.json.gz",
+      "certificate_sha256": "943b8c3b09dd88ca8f8187a754c360381356421dd470fd788ffc43a05efa2846"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        18,
+        10,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.752338780132306,
+      "exact_theta_upper": "110104415437/40000000000",
+      "certificate": "certificates/4ba5e2291de915eb1e2a23693aeafbc88c97ac2afeaad6ae5e24a81636890d3b.json.gz",
+      "certificate_sha256": "4ba5e2291de915eb1e2a23693aeafbc88c97ac2afeaad6ae5e24a81636890d3b"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        18,
+        12,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.6946567148422296,
+      "exact_theta_upper": "538944422821/200000000000",
+      "certificate": "certificates/918d90f2a8fa7ff1ccc5bbe9c2167458047f96c48e36872894ecd419b3454b93.json.gz",
+      "certificate_sha256": "918d90f2a8fa7ff1ccc5bbe9c2167458047f96c48e36872894ecd419b3454b93"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        20,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.6453205015809793,
+      "exact_theta_upper": "662180713643/250000000000",
+      "certificate": "certificates/5b96e115f10857a0030f559517c5f7de4bef592e097842264ad74a4a8e1cae37.json.gz",
+      "certificate_sha256": "5b96e115f10857a0030f559517c5f7de4bef592e097842264ad74a4a8e1cae37"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        20,
+        10,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.684091416041809,
+      "exact_theta_upper": "537081131859/200000000000",
+      "certificate": "certificates/87222982d2be070a7592a956e007ca48db977fb72d30f416c6693a3b7f12ce3b.json.gz",
+      "certificate_sha256": "87222982d2be070a7592a956e007ca48db977fb72d30f416c6693a3b7f12ce3b"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        20,
+        12,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.62928971432441,
+      "exact_theta_upper": "2629435180613/1000000000000",
+      "certificate": "certificates/a8f7f59b744e25ce878d2eb50983693daca61aabc608ba5896022c2fa4b3f464.json.gz",
+      "certificate_sha256": "a8f7f59b744e25ce878d2eb50983693daca61aabc608ba5896022c2fa4b3f464"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.5675008716684866,
+      "exact_theta_upper": "641889130623/250000000000",
+      "certificate": "certificates/12db0da7745818b42fe215c8d8f569742282c9f7ca705f0aee60131c6e0d6026.json.gz",
+      "certificate_sha256": "12db0da7745818b42fe215c8d8f569742282c9f7ca705f0aee60131c6e0d6026"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6429268362787894,
+      "exact_theta_upper": "330371622303/125000000000",
+      "certificate": "certificates/b8a22b57290ac4b2609038a8343a679c3ced4a7c5cb60b7c4c8b8f9aa82bfef7.json.gz",
+      "certificate_sha256": "b8a22b57290ac4b2609038a8343a679c3ced4a7c5cb60b7c4c8b8f9aa82bfef7"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        6,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AE@bOqKPBWoAEp_BCp_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.64254663514178,
+      "exact_theta_upper": "1321377267599/500000000000",
+      "certificate": "certificates/cd0381415e98df25988c58a99baf434be43d7318b05c2917c7dfe2d158ac607a.json.gz",
+      "certificate_sha256": "cd0381415e98df25988c58a99baf434be43d7318b05c2917c7dfe2d158ac607a"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        10,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.6453205012986865,
+      "exact_theta_upper": "529637488387/200000000000",
+      "certificate": "certificates/85449021c760b8e6ebf104d5e36c7a03fb024464288a7c9f79cc78076d180ae3.json.gz",
+      "certificate_sha256": "85449021c760b8e6ebf104d5e36c7a03fb024464288a7c9f79cc78076d180ae3"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        10,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6780842093923702,
+      "exact_theta_upper": "535656537217/200000000000",
+      "certificate": "certificates/cc93549d66175737526857ec196e1b953ecdb0863ca2321b1e46cf5e57426e80.json.gz",
+      "certificate_sha256": "cc93549d66175737526857ec196e1b953ecdb0863ca2321b1e46cf5e57426e80"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        10,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEAbOqSPBHoAFP_BDP_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.6593909476920556,
+      "exact_theta_upper": "336774991659/125000000000",
+      "certificate": "certificates/e4473d18316baf2a62324f80d0ac826fce983093ec2330f9f73ed4e442a73c4f.json.gz",
+      "certificate_sha256": "e4473d18316baf2a62324f80d0ac826fce983093ec2330f9f73ed4e442a73c4f"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        12,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.596614606952903,
+      "exact_theta_upper": "1298384570797/500000000000",
+      "certificate": "certificates/08b2c9a030dac80e44706346597896783c54c7d988ec7a47e89fe69be0168431.json.gz",
+      "certificate_sha256": "08b2c9a030dac80e44706346597896783c54c7d988ec7a47e89fe69be0168431"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        12,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.62453664970896,
+      "exact_theta_upper": "656251145099/250000000000",
+      "certificate": "certificates/cd9bdd81f6f6e164d69dd080ae0a345cd0958f9ff446849f53124548e59ee9a1.json.gz",
+      "certificate_sha256": "cd9bdd81f6f6e164d69dd080ae0a345cd0958f9ff446849f53124548e59ee9a1"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        17,
+        24,
+        12,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AEBBOo[PBPoAF`_BD`_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.543404600999655,
+      "exact_theta_upper": "317932991367/125000000000",
+      "certificate": "certificates/aceedc27e3a359a483b95caa182ed742b0ee4266e455d36d00f48690122b356a.json.gz",
+      "certificate_sha256": "aceedc27e3a359a483b95caa182ed742b0ee4266e455d36d00f48690122b356a"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        10,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WUS?Ecd??ssG?bPO_BAa`??",
+      "theta_numeric": 2.7090731295877823,
+      "exact_theta_upper": "2709154914983/1000000000000",
+      "certificate": "certificates/06106c2e5734b3c8d547c0caaf9e030e26e5eab7b357f979836b480e39d4a4df.json.gz",
+      "certificate_sha256": "06106c2e5734b3c8d547c0caaf9e030e26e5eab7b357f979836b480e39d4a4df"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        12,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WYK?EF`??wkG?b_o_BB@`??",
+      "theta_numeric": 2.543404600866675,
+      "exact_theta_upper": "2543526416203/1000000000000",
+      "certificate": "certificates/4cbf584e5711c71ad3a8113eb16f0d6e3cea1bd063f1405ec2c7c2075b9bdf19.json.gz",
+      "certificate_sha256": "4cbf584e5711c71ad3a8113eb16f0d6e3cea1bd063f1405ec2c7c2075b9bdf19"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        18,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WeS?Egd??tSG?aTO_BCa`??",
+      "theta_numeric": 2.7376744500761605,
+      "exact_theta_upper": "2737784576741/1000000000000",
+      "certificate": "certificates/b249d9def46bdd556cf02d20227bb30f75306abd629684056161700ce33ad90e.json.gz",
+      "certificate_sha256": "b249d9def46bdd556cf02d20227bb30f75306abd629684056161700ce33ad90e"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        20,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WiK?EJ`??xKG?aco_BD@`??",
+      "theta_numeric": 2.6593909609923108,
+      "exact_theta_upper": "166224515649/62500000000",
+      "certificate": "certificates/a6850341094214d7d6eac93ccfcdd82c0d294d876bee7e5eadc1e447cf6fc525.json.gz",
+      "certificate_sha256": "a6850341094214d7d6eac93ccfcdd82c0d294d876bee7e5eadc1e447cf6fc525"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        24,
+        6,
+        3,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WqK?EL`??pkG?bCo_BE@`??",
+      "theta_numeric": 2.6425466351419775,
+      "exact_theta_upper": "132134382193/50000000000",
+      "certificate": "certificates/dc63d8137d3e47bda6b8a8ca985bc3ba72dd6517739da78c7c80dbb80f96f93c.json.gz",
+      "certificate_sha256": "dc63d8137d3e47bda6b8a8ca985bc3ba72dd6517739da78c7c80dbb80f96f93c"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        24,
+        6,
+        5,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_WqS?EKd??psG?bDO_BEA`??",
+      "theta_numeric": 2.6764630787332204,
+      "exact_theta_upper": "2676521715069/1000000000000",
+      "certificate": "certificates/1e52b76700dde6a3b357b178c50634493b332ff6c98bbb90dc6b56ef3628e4a5.json.gz",
+      "certificate_sha256": "1e52b76700dde6a3b357b178c50634493b332ff6c98bbb90dc6b56ef3628e4a5"
+    },
+    {
+      "phase_masks": [
+        1,
+        7,
+        1,
+        24,
+        1,
+        1,
+        24,
+        24,
+        6,
+        6,
+        6,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ACw?q_B`?B`?@o_AB@bOYKP@woAap_B_p_Wo[?ELD??pwG?bD__BEB@??",
+      "theta_numeric": 2.672734548495512,
+      "exact_theta_upper": "2672846966047/1000000000000",
+      "certificate": "certificates/d2cc38c0d33338a2ff39d67c581a04cdcf5843e3773f1e2f2494801dc2c0f558.json.gz",
+      "certificate_sha256": "d2cc38c0d33338a2ff39d67c581a04cdcf5843e3773f1e2f2494801dc2c0f558"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        6,
+        10,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_QMc?Sah?AkDG?IqO_APc`??",
+      "theta_numeric": 2.6737492564769316,
+      "exact_theta_upper": "1336908316127/500000000000",
+      "certificate": "certificates/67b1e4f9ceaf7284411da4a06f2016e06fafe775ddf9676660c33bb810ce9c09.json.gz",
+      "certificate_sha256": "67b1e4f9ceaf7284411da4a06f2016e06fafe775ddf9676660c33bb810ce9c09"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        6,
+        18,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_QMc?Sah?AkDG?IqO_APc`??",
+      "theta_numeric": 2.6337252131502096,
+      "exact_theta_upper": "2633838944367/1000000000000",
+      "certificate": "certificates/e953ca56511acaafc9bba46cf38d2d81e8c2eb633e61f55c1701cde688c77600.json.gz",
+      "certificate_sha256": "e953ca56511acaafc9bba46cf38d2d81e8c2eb633e61f55c1701cde688c77600"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        6,
+        24,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_QMc?Sah?AkDG?IqO_APc`??",
+      "theta_numeric": 2.6684135174814743,
+      "exact_theta_upper": "1334278994531/500000000000",
+      "certificate": "certificates/15e171bc74490f8e3cfb2c0a1876151d7dfd298e07f2c2e7d29db2ac40466dc2.json.gz",
+      "certificate_sha256": "15e171bc74490f8e3cfb2c0a1876151d7dfd298e07f2c2e7d29db2ac40466dc2"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        10,
+        10,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_QUS?Scd?AcsG?JPO_AQa`??",
+      "theta_numeric": 2.6227009716344796,
+      "exact_theta_upper": "1311404993969/500000000000",
+      "certificate": "certificates/eab14c6c163f251aaefd30a28c9eeca8081c8a2fe9873a237eac4bcac94d53af.json.gz",
+      "certificate_sha256": "eab14c6c163f251aaefd30a28c9eeca8081c8a2fe9873a237eac4bcac94d53af"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        10,
+        18,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_QUS?Scd?AcsG?JPO_AQa`??",
+      "theta_numeric": 2.543707646566947,
+      "exact_theta_upper": "2544048694037/1000000000000",
+      "certificate": "certificates/3a02762801fa857d70b7dc544b6f7abd06709d6c7ced87532859ff79583158a5.json.gz",
+      "certificate_sha256": "3a02762801fa857d70b7dc544b6f7abd06709d6c7ced87532859ff79583158a5"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        10,
+        24,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_QUS?Scd?AcsG?JPO_AQa`??",
+      "theta_numeric": 2.6503835231174215,
+      "exact_theta_upper": "2650502939763/1000000000000",
+      "certificate": "certificates/6df252c260941a5d900bdd2e2009b7eb49243f1c897c117e47aab95bdd5f9efd.json.gz",
+      "certificate_sha256": "6df252c260941a5d900bdd2e2009b7eb49243f1c897c117e47aab95bdd5f9efd"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        10,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_QeS?Sgd?AdSG?ITO_ASa`??",
+      "theta_numeric": 2.5437076465700987,
+      "exact_theta_upper": "2543861548163/1000000000000",
+      "certificate": "certificates/d7964b1baf75b5a7ffef9cbde740a5ce45ce053f5486ac455d1c9d2a79fb8fe9.json.gz",
+      "certificate_sha256": "d7964b1baf75b5a7ffef9cbde740a5ce45ce053f5486ac455d1c9d2a79fb8fe9"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        10,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_Qec?Sgh?AdDG?IUO_ASc`??",
+      "theta_numeric": 2.6298046488983666,
+      "exact_theta_upper": "262984397221/100000000000",
+      "certificate": "certificates/e397cf2f6d57425d30c5f04c88c392c8118d538bc6621e82ce2fd4347002e492.json.gz",
+      "certificate_sha256": "e397cf2f6d57425d30c5f04c88c392c8118d538bc6621e82ce2fd4347002e492"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        10,
+        12,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_Qcs?SgL?AdPG?IV?_ASe@??",
+      "theta_numeric": 2.643110796428236,
+      "exact_theta_upper": "52863979733/20000000000",
+      "certificate": "certificates/9af1218357c19c847aa957d5b8ec464214d53aca14efc2d8ba64a44e714cd646.json.gz",
+      "certificate_sha256": "9af1218357c19c847aa957d5b8ec464214d53aca14efc2d8ba64a44e714cd646"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        18,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_QeS?Sgd?AdSG?ITO_ASa`??",
+      "theta_numeric": 2.5856107920505984,
+      "exact_theta_upper": "80804184401/31250000000",
+      "certificate": "certificates/37182a2357ef330a27ddd3abaf65a5c8813dfe9513fdd992b402fb24489baeef.json.gz",
+      "certificate_sha256": "37182a2357ef330a27ddd3abaf65a5c8813dfe9513fdd992b402fb24489baeef"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        18,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_Qec?Sgh?AdDG?IUO_ASc`??",
+      "theta_numeric": 2.5375184077141633,
+      "exact_theta_upper": "507525853649/200000000000",
+      "certificate": "certificates/146f1ebe8d104cc090dc09ff2d2b501592d69ec528f8fc648e2621c4b18847f9.json.gz",
+      "certificate_sha256": "146f1ebe8d104cc090dc09ff2d2b501592d69ec528f8fc648e2621c4b18847f9"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        18,
+        12,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_Qcs?SgL?AdPG?IV?_ASe@??",
+      "theta_numeric": 2.6318469325563743,
+      "exact_theta_upper": "526384889971/200000000000",
+      "certificate": "certificates/a54501b9397f9d1b84f3045678651e4444bf3581d62f01f3262814d23544f252.json.gz",
+      "certificate_sha256": "a54501b9397f9d1b84f3045678651e4444bf3581d62f01f3262814d23544f252"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        24,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_QeS?Sgd?AdSG?ITO_ASa`??",
+      "theta_numeric": 2.6324343370913894,
+      "exact_theta_upper": "658180698817/250000000000",
+      "certificate": "certificates/a635f12165825d02a2b654260aa97358f8cea7db05582077b87d2bd220e557a3.json.gz",
+      "certificate_sha256": "a635f12165825d02a2b654260aa97358f8cea7db05582077b87d2bd220e557a3"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        24,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_Qec?Sgh?AdDG?IUO_ASc`??",
+      "theta_numeric": 2.633725213155504,
+      "exact_theta_upper": "2633922312017/1000000000000",
+      "certificate": "certificates/65f8a5ec4a10716066759449e93b0e6b8c5b79dd717775a3ae97a3177cfa7194.json.gz",
+      "certificate_sha256": "65f8a5ec4a10716066759449e93b0e6b8c5b79dd717775a3ae97a3177cfa7194"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        18,
+        24,
+        12,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_Qcs?SgL?AdPG?IV?_ASe@??",
+      "theta_numeric": 2.6759296606657124,
+      "exact_theta_upper": "267644607287/100000000000",
+      "certificate": "certificates/7008915892287a9811fc7d2f2d0a369db098616c40c7fc286ac49a2bb5fddb14.json.gz",
+      "certificate_sha256": "7008915892287a9811fc7d2f2d0a369db098616c40c7fc286ac49a2bb5fddb14"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        20,
+        10,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_Qic?SIh?AhDG?IeO_ATC`??",
+      "theta_numeric": 2.6718978113290164,
+      "exact_theta_upper": "106877706601/40000000000",
+      "certificate": "certificates/d70feb8d352b6af5f60134010dc6eff63be4b66db2114cf1f25e107062a6d81a.json.gz",
+      "certificate_sha256": "d70feb8d352b6af5f60134010dc6eff63be4b66db2114cf1f25e107062a6d81a"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        20,
+        18,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_Qic?SIh?AhDG?IeO_ATC`??",
+      "theta_numeric": 2.6298046488984737,
+      "exact_theta_upper": "328732180761/125000000000",
+      "certificate": "certificates/926a12d20edd0cab70b635b0a1ec95e9e69b01a7ffea3b8d8011417fd9407a8a.json.gz",
+      "certificate_sha256": "926a12d20edd0cab70b635b0a1ec95e9e69b01a7ffea3b8d8011417fd9407a8a"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        20,
+        24,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_Qic?SIh?AhDG?IeO_ATC`??",
+      "theta_numeric": 2.6737492564769583,
+      "exact_theta_upper": "1336899406527/500000000000",
+      "certificate": "certificates/8e5847a084c627e6e0cb987fd8abdf36b08e38b83100fc65db7dad82413d9457.json.gz",
+      "certificate_sha256": "8e5847a084c627e6e0cb987fd8abdf36b08e38b83100fc65db7dad82413d9457"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        24,
+        10,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACahOeT@IHSATOgATS_QqS?SKd?A`sG?JDO_AUA`??",
+      "theta_numeric": 2.650383523122302,
+      "exact_theta_upper": "530122602287/200000000000",
+      "certificate": "certificates/d068b011210b4df0e284f9dc482f418d20264a7dbb1d2f071606add219543ba5.json.gz",
+      "certificate_sha256": "d068b011210b4df0e284f9dc482f418d20264a7dbb1d2f071606add219543ba5"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        24,
+        18,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACchOed@IISASSgAUS_QqS?SKd?A`sG?JDO_AUA`??",
+      "theta_numeric": 2.6324343370917704,
+      "exact_theta_upper": "2632609527139/1000000000000",
+      "certificate": "certificates/d9d94e310955477901d20d6288d3b07ce8b6534305d3299b6d55b9b41bd9697d.json.gz",
+      "certificate_sha256": "d9d94e310955477901d20d6288d3b07ce8b6534305d3299b6d55b9b41bd9697d"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        5,
+        24,
+        24,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_ACeHOct@IBSATCgAVC_QqS?SKd?A`sG?JDO_AUA`??",
+      "theta_numeric": 2.68533911247165,
+      "exact_theta_upper": "2685442773653/1000000000000",
+      "certificate": "certificates/8e2c0cd41990a11ba88745ec92f659ed27db4a2d2ebf59802eb5aa1f93f85e77.json.gz",
+      "certificate_sha256": "8e2c0cd41990a11ba88745ec92f659ed27db4a2d2ebf59802eb5aa1f93f85e77"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        12,
+        6,
+        18,
+        9,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_A@chOMd@GiSAoSgAqS_QMc?Sah?AkDG?IqO_APc`??",
+      "theta_numeric": 2.6759296606663656,
+      "exact_theta_upper": "267619829197/100000000000",
+      "certificate": "certificates/a5a192fc8c157fce966cf1a90b35d6db1f662f81ab10dfa0c49918aab9ea4198.json.gz",
+      "certificate_sha256": "a5a192fc8c157fce966cf1a90b35d6db1f662f81ab10dfa0c49918aab9ea4198"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        12,
+        10,
+        18,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_A@chOMd@GiSAoSgAqS_QUS?Scd?AcsG?JPO_AQa`??",
+      "theta_numeric": 2.6431107964262828,
+      "exact_theta_upper": "528657164263/200000000000",
+      "certificate": "certificates/6257bd3b86f911101e177a85e188a4cc9b5386ec005fd077ab3afb24fbc3dccb.json.gz",
+      "certificate_sha256": "6257bd3b86f911101e177a85e188a4cc9b5386ec005fd077ab3afb24fbc3dccb"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        12,
+        18,
+        18,
+        5,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_A@chOMd@GiSAoSgAqS_QeS?Sgd?AdSG?ITO_ASa`??",
+      "theta_numeric": 2.6318469325402782,
+      "exact_theta_upper": "1315982616163/500000000000",
+      "certificate": "certificates/a1dd1d37931bf822fdaad2cc4bd69d18902b402d35b74a242d81c549eafafea3.json.gz",
+      "certificate_sha256": "a1dd1d37931bf822fdaad2cc4bd69d18902b402d35b74a242d81c549eafafea3"
+    },
+    {
+      "phase_masks": [
+        1,
+        13,
+        1,
+        18,
+        1,
+        1,
+        12,
+        18,
+        18,
+        12,
+        18,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@ADg?U_Ah?E`?BO_A@chOMd@GiSAoSgAqS_Qcs?SgL?AdPG?IV?_ASe@??",
+      "theta_numeric": 2.710659505759752,
+      "exact_theta_upper": "2710791940519/1000000000000",
+      "certificate": "certificates/25cb99371f872ab37900b74750f13c9cb83af9ff5189fbf1a43a1e2f8448878b.json.gz",
+      "certificate_sha256": "25cb99371f872ab37900b74750f13c9cb83af9ff5189fbf1a43a1e2f8448878b"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        12,
+        18,
+        18,
+        12,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__A@cpOMe@GiWAoSoAqOoocs?KgL?@dPG?EV?_AKe@??",
+      "theta_numeric": 2.8998893051684678,
+      "exact_theta_upper": "725128645927/250000000000",
+      "certificate": "certificates/e5358e9ae6cdca4349e5eeb3877f05f20927e3daff2fc5c17924227e715cb4e1.json.gz",
+      "certificate_sha256": "e5358e9ae6cdca4349e5eeb3877f05f20927e3daff2fc5c17924227e715cb4e1"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        12,
+        20,
+        18,
+        10,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__A@cpOMe@GiWAoSoAqOoogk?KJH?@hHG?Ee__ALD@??",
+      "theta_numeric": 2.7328729363478264,
+      "exact_theta_upper": "683244114607/250000000000",
+      "certificate": "certificates/e26386e9d782605a55cfca931f9c98ad0ec78636e4cac1bef3629398c9ce12ec.json.gz",
+      "certificate_sha256": "e26386e9d782605a55cfca931f9c98ad0ec78636e4cac1bef3629398c9ce12ec"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        12,
+        24,
+        18,
+        6,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__A@cpOMe@GiWAoSoAqOooo[?KLD?@`wG?FD__AMB@??",
+      "theta_numeric": 2.8120376768133566,
+      "exact_theta_upper": "2812223982367/1000000000000",
+      "certificate": "certificates/f44327a954c0d440eda181b5733753df8cddd8ebf272d984962f9da83358cf58.json.gz",
+      "certificate_sha256": "f44327a954c0d440eda181b5733753df8cddd8ebf272d984962f9da83358cf58"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        20,
+        18,
+        10,
+        12,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AAapOUU@HHWAROoBPOoocs?KgL?@dPG?EV?_AKe@??",
+      "theta_numeric": 2.7328728688365365,
+      "exact_theta_upper": "2991515946933/1000000000000",
+      "certificate": "certificates/27eaf2046a98b600d7606b052583295379451ac7ea659ceddfe299a1c5fbcfce.json.gz",
+      "certificate_sha256": "27eaf2046a98b600d7606b052583295379451ac7ea659ceddfe299a1c5fbcfce"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        20,
+        20,
+        10,
+        10,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AAapOUU@HHWAROoBPOoogk?KJH?@hHG?Ee__ALD@??",
+      "theta_numeric": 2.6665955268476655,
+      "exact_theta_upper": "20833782819/7812500000",
+      "certificate": "certificates/c1cb47285ed757642e08a9a1f95a9261b2b30c54d113b93f2157fea6a60f3388.json.gz",
+      "certificate_sha256": "c1cb47285ed757642e08a9a1f95a9261b2b30c54d113b93f2157fea6a60f3388"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        20,
+        24,
+        10,
+        6,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AAapOUU@HHWAROoBPOooo[?KLD?@`wG?FD__AMB@??",
+      "theta_numeric": 2.7245442604612307,
+      "exact_theta_upper": "340574883051/125000000000",
+      "certificate": "certificates/44ac92c3be55e6220f4e6419cf2d73c4c845496a0ce0a33c227d5f9384fc99d7.json.gz",
+      "certificate_sha256": "44ac92c3be55e6220f4e6419cf2d73c4c845496a0ce0a33c227d5f9384fc99d7"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        24,
+        18,
+        6,
+        12,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AB@pOYM@@wWAaooB_ooocs?KgL?@dPG?EV?_AKe@??",
+      "theta_numeric": 2.8120376768027193,
+      "exact_theta_upper": "2812307890893/1000000000000",
+      "certificate": "certificates/b210bd6d770e1ecf6ef14f45b0374246855055ffd9de02c029f0a7bf21304324.json.gz",
+      "certificate_sha256": "b210bd6d770e1ecf6ef14f45b0374246855055ffd9de02c029f0a7bf21304324"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        24,
+        20,
+        6,
+        10,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AB@pOYM@@wWAaooB_ooogk?KJH?@hHG?Ee__ALD@??",
+      "theta_numeric": 2.7245442604614927,
+      "exact_theta_upper": "85143507221/31250000000",
+      "certificate": "certificates/e1ea5f37543f8c50f08deead71c575fd913a7f118e5ca6cfcfeaef5a987299c3.json.gz",
+      "certificate_sha256": "e1ea5f37543f8c50f08deead71c575fd913a7f118e5ca6cfcfeaef5a987299c3"
+    },
+    {
+      "phase_masks": [
+        1,
+        14,
+        1,
+        17,
+        1,
+        1,
+        24,
+        24,
+        6,
+        6,
+        3,
+        1
+      ],
+      "graph6": "]???????CGGOGOCG@A@w?e_BH?F@?B__AB@pOYM@@wWAaooB_oooo[?KLD?@`wG?FD__AMB@??",
+      "theta_numeric": 2.567398243517353,
+      "exact_theta_upper": "2567528006651/1000000000000",
+      "certificate": "certificates/bee0f385a3bc742c8db7ad6789a15e012150b6dd465af329afa3440fa21817dd.json.gz",
+      "certificate_sha256": "bee0f385a3bc742c8db7ad6789a15e012150b6dd465af329afa3440fa21817dd"
+    }
+  ],
+  "complete_exact_exclusion": true,
+  "scope": "all C5 phases of this fixed quotient; representatives modulo fiber translations and common units",
+  "last_discovery_seconds": 2.7546312699996633,
+  "unresolved_attempts": []
+}

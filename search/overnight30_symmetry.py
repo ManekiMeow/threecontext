@@ -47,7 +47,7 @@ FAMILIES = {
     "c3_onecycle": ((3, 1, 1, 1, 1, 1, 1, 1),)*3,
 }
 
-STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation"}
+STRUCTURAL_OBSTRUCTIONS = {"bridge_shortage", "unbridged_vertex", "pair_hall", "disjoint_partition", "degree_mass", "probability_propagation", "regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
 
 
 def generator(family):
@@ -224,7 +224,7 @@ def replay_structural_dominance(cut, orbits):
                 edges.append([u, v])
     graph = {"n": 30, "parts": [list(range(10*k, 10*k+10)) for k in range(3)],
              "edges": sorted(edges)}
-    local_method = compact["method"] in {"regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation"}
+    local_method = compact["method"] in {"regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
     certificate = {"format": "overnight30-worker-obstruction-v1" if local_method else "overnight30-certificate-v1", "graph": graph,
                    "method": compact["method"], "witness": compact["witness"]}
     if local_method:
@@ -527,11 +527,14 @@ def run(args):
                     raise ValueError(f"resume configuration differs: {key}")
             state.update(saved)
         if args.family == "c5_double":
-            from overnight30_quotient import quotient_patterns, verified_catalog, verified_saturation_catalog
+            from overnight30_quotient import quotient_patterns, verified_catalog, verified_saturation_catalog, verified_phase_catalog, verified_disjoint_catalog, verified_general_phase_catalog
             patterns = quotient_patterns()
             state["base_quotient_filter"] = {"static_theorem": "Proposition46",
                                              "verified_farkas_certificates": len(verified_catalog()),
                                              "verified_saturation_certificates": len(verified_saturation_catalog()),
+                                             "verified_phase_classes": len(verified_phase_catalog()),
+                                             "verified_general_phase_classes": len(verified_general_phase_catalog()),
+                                             "verified_disjoint_farkas_certificates": len(verified_disjoint_catalog()),
                                              "distinct_permuted_patterns": len(patterns),
                                              "count_predicate_values": sorted({value for pattern in patterns for value in pattern})}
         sources = [Path(path) for path in state["ancestor_dirs"]]+[output]
@@ -752,7 +755,7 @@ def run(args):
                         elif certificate["method"] == "probability_propagation":
                             record.update(status="probability_propagation_obstruction", structural_method="probability_propagation")
                             state["rejected_probability_propagation"] += 1
-                        elif certificate["method"] in {"c5_quotient", "orbit_probability_quotient", "quotient_saturation"}:
+                        elif certificate["method"] in {"c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}:
                             record.update(status="quotient_obstruction", structural_method=certificate["method"])
                             state["rejected_quotient"] += 1
                         else:

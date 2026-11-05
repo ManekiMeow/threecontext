@@ -251,12 +251,14 @@ def fast_screen(record):
             result.update(status="excluded", reason="a third-context event bridges no pair component",
                           certificate=cert, pair_diagnostics=pair_diagnostics)
             return result
+        if hall is not None:
+            cert = certificate(graph, "pair_hall", pair=[k, l], deficient_subset=hall)
+            result.update(status="excluded", reason="two-context support violates the global probability Hall bound",
+                          certificate=cert, pair_diagnostics=pair_diagnostics)
+            return result
         if len(cc) > 1 and "dimension19_certificate" not in result:
             result["dimension19_certificate"] = certificate(
                 graph, "pair_disconnected_d19", pair=[k, l], component=cc[0])
-        if hall is not None and "dimension19_certificate" not in result:
-            result["dimension19_certificate"] = certificate(
-                graph, "pair_hall_d19", pair=[k, l], deficient_subset=hall)
     result["pair_diagnostics"] = pair_diagnostics
     result["dimension19_pair_connected"] = all(x["components"] == 1 for x in pair_diagnostics)
     result["dimension19_pair_perfect_matching"] = all(x["perfect_matching"] for x in pair_diagnostics)
@@ -285,6 +287,13 @@ def fast_screen(record):
                            rounds=proof["rounds"], terminal=proof["witness"])
         result.update(status="excluded", reason="iterated strict probability bounds are inconsistent",
                       certificate=cert)
+        return result
+    from event30_disjoint_partition import screen as partition_probabilities
+    partitioned = partition_probabilities(graph)
+    result["disjoint_partition_budgets"] = partitioned["context_budgets"]
+    if partitioned["status"] == "excluded":
+        result.update(status="excluded", reason="disjoint-neighborhood partition bounds cannot sum to one",
+                      certificate=partitioned["certificate"])
     return result
 
 
@@ -395,7 +404,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "disjoint_partition", "pair_hall", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -439,6 +448,9 @@ def verify_certificate(cert):
             verify_propagation({"format": "ghz30-probability-propagation-v1", "graph": graph,
                                 "rounding_denominator": witness["rounding_denominator"],
                                 "rounds": witness["rounds"], "witness": witness["terminal"]})
+        elif method == "disjoint_partition":
+            from event30_disjoint_partition import verify_certificate as verify_partition
+            verify_partition(cert)
         elif method == "pair_disconnected_d19":
             k, l = witness["pair"]
             assert 0 <= k < l < 3
@@ -671,11 +683,12 @@ def self_test():
     coloring, status = unbalanced_coloring(path)
     assert status == "witness"
     verify_certificate(certificate(path, "unbalanced_coloring", coloring=coloring))
-    # A Hall witness has dimension-only scope, even when another obstruction
-    # could also exclude this deliberately simple control graph.
+    # Hall witnesses exclude every dimension at thirty events. Keep checking
+    # the historical dimension19 method name for saved-certificate compatibility.
     adj = adjacency(path)
     deficient = hall_deficiency(adj, parts[0], parts[2])
     assert deficient is not None
+    verify_certificate(certificate(path, "pair_hall", pair=[0, 2], deficient_subset=deficient))
     verify_certificate(certificate(path, "pair_hall_d19", pair=[0, 2], deficient_subset=deficient))
     control = nx.Graph()
     control.add_nodes_from(range(30))
@@ -710,7 +723,7 @@ def self_test():
     signs = [1, -1, 1, -1]
     free = [-signs[i]*signs[j] for i in range(4) for j in range(i+1, 4) if [i, j] not in small["edges"]]
     verify_certificate(certificate(small, "theta_dual", bound="2", denominator=1, free_numerators=free))
-    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, probability propagation, unbalanced coloring, dimension19 Hall witness, graph6, gzip pool, H33 boundary primal, exact dual")
+    print("screen controls passed: false twins, same-context merge, pair bridges, strict degree mass, probability propagation, unbalanced coloring, global Hall and legacy witness, graph6, gzip pool, H33 boundary primal, exact dual")
 
 
 def main():

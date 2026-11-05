@@ -1,0 +1,65 @@
+[
+  {
+    "subset_size": 2,
+    "mean_upper": "7/64",
+    "total_upper": "7/32",
+    "forbidden_at30": false,
+    "certificate": "disjoint_02_mean_bound.json"
+  },
+  {
+    "subset_size": 3,
+    "mean_upper": "5/48",
+    "total_upper": "5/16",
+    "forbidden_at30": false,
+    "certificate": "disjoint_03_mean_bound.json"
+  },
+  {
+    "subset_size": 4,
+    "mean_upper": "1/10",
+    "total_upper": "2/5",
+    "forbidden_at30": false,
+    "certificate": "disjoint_04_mean_bound.json"
+  },
+  {
+    "subset_size": 5,
+    "mean_upper": "3/32",
+    "total_upper": "15/32",
+    "forbidden_at30": false,
+    "certificate": "disjoint_05_mean_bound.json"
+  },
+  {
+    "subset_size": 6,
+    "mean_upper": "7/80",
+    "total_upper": "21/40",
+    "forbidden_at30": true,
+    "certificate": "disjoint_06_mean_bound.json"
+  },
+  {
+    "subset_size": 7,
+    "mean_upper": "23/280",
+    "total_upper": "23/40",
+    "forbidden_at30": true,
+    "certificate": "disjoint_07_mean_bound.json"
+  },
+  {
+    "subset_size": 8,
+    "mean_upper": "49/640",
+    "total_upper": "49/80",
+    "forbidden_at30": true,
+    "certificate": "disjoint_08_mean_bound.json"
+  },
+  {
+    "subset_size": 9,
+    "mean_upper": "13/180",
+    "total_upper": "13/20",
+    "forbidden_at30": true,
+    "certificate": "disjoint_09_mean_bound.json"
+  },
+  {
+    "subset_size": 10,
+    "mean_upper": "27/400",
+    "total_upper": "27/40",
+    "forbidden_at30": true,
+    "certificate": "disjoint_10_mean_bound.json"
+  }
+]

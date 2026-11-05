@@ -481,6 +481,121 @@ def search_score(entry):
     return entry["theta"] - (0.06 if entry.get("screen", {}).get("status") == "excluded" else 0)
 
 
+def recover_best_records(state, source, prefix, screen_function=None):
+    """Keep historical best graphs with their counters across chunk resumes.
+
+    Legacy checkpoints retained the scalar maximum but initialized each new
+    chunk's best file from its current pool, potentially a much weaker graph.
+    Recover a matching immutable record once; future checkpoints carry it.
+    Recheck active records against current exact screens before restoring them.
+    Retired records and the historical maximum remain available separately.
+    """
+    records = state.setdefault("best_records", {})
+    screen_function = screen_function or screened
+    recovery, discovered = {}, {}
+    old_active = state.get("best_theta")
+    old_excluded = state.get("best_excluded_theta")
+    historical = [value for value in (state.get("historical_best_theta"), old_active) if value is not None]
+    state["historical_best_theta"] = max(historical) if historical else None
+    for field, suffix in (("best_theta", "_best.json"),
+                          ("best_excluded_theta", "_best_excluded.json")):
+        candidates = [records[field]] if field in records else []
+
+        def read_candidate(path):
+            if not path.exists():
+                return
+            try:
+                record = json.loads(path.read_text())
+                adj = decode(record["g6"])
+                if not math.isfinite(record["theta_numeric"]) or not validate(adj):
+                    return
+                if {tuple(sorted(edge)) for edge in record["edges"]} != set(edges_of(adj)):
+                    return
+                record.setdefault("record_recovered_from", str(path))
+                candidates.append(record)
+            except (ValueError, KeyError, TypeError, nx.NetworkXError):
+                return
+
+        read_candidate(prefix.with_name(prefix.name+suffix))
+        if field == "best_theta":
+            read_candidate(prefix.with_name(prefix.name+"_legacy_best_unscreened.json"))
+        if source is not None:
+            read_candidate(source.with_name(source.stem+suffix))
+            if field == "best_theta":
+                read_candidate(source.with_name(source.stem+"_legacy_best_unscreened.json"))
+        target = state.get(field)
+        available = max((record["theta_numeric"] for record in candidates), default=-math.inf)
+        if source is not None and target is not None and available < target-1e-8:
+            # Only inspect sibling checkpoint best records when migrating an
+            # older scalar-only maximum. Never scan full model archives.
+            paths = sorted(source.parent.parent.glob("*/"+source.stem+suffix), reverse=True)
+            for path in paths[:256]:
+                read_candidate(path)
+                if candidates and max(record["theta_numeric"] for record in candidates) >= target-1e-8:
+                    break
+        recovery[field] = "historical records recovered" if candidates else "no historical graph available"
+        for record in candidates:
+            entry = discovered.setdefault(record["g6"], {"record": record, "fields": set(), "excluded_record": None})
+            entry["fields"].add(field)
+            if record["theta_numeric"] > entry["record"]["theta_numeric"]:
+                entry["record"] = record
+            if field == "best_excluded_theta" or record.get("screen", {}).get("status") == "excluded":
+                entry["excluded_record"] = record
+    active, excluded = [], []
+    retired = state.setdefault("retired_best_records", [])
+    for code, entry in discovered.items():
+        original = entry["record"]
+        record = dict(original)
+        screening = screen_function(decode(code), record["theta_numeric"])
+        assert screening["status"] in ("excluded", "not_excluded")
+        if screening["status"] == "excluded":
+            record.update({"screen": screen_summary(screening), "certificate": screening.get("certificate"),
+                           "scope": "excluded mutation seed"})
+        elif entry["excluded_record"] is not None:
+            # A previous exact certificate remains valid even if the current
+            # bounded screen does not rediscover its obstruction.
+            old = entry["excluded_record"]
+            record.update({"screen": old["screen"], "certificate": old.get("certificate"),
+                           "scope": "excluded mutation seed"})
+        else:
+            record.update({"screen": screen_summary(screening), "certificate": None})
+        is_excluded = record["screen"]["status"] == "excluded"
+        (excluded if is_excluded else active).append(record)
+        if "best_theta" in entry["fields"]:
+            state["historical_best_theta"] = max(state["historical_best_theta"] or -math.inf, original["theta_numeric"])
+            historical_record = state.get("historical_best_record")
+            if historical_record is None or original["theta_numeric"] > historical_record["theta_numeric"]:
+                state["historical_best_record"] = dict(original)
+            if is_excluded and not any(previous["g6"] == code for previous in retired):
+                retired.append({**record, "retired_utc": utc_now()})
+                recovery["best_theta"] = "newly excluded active record retired; historical maximum preserved"
+    records.clear()
+    state["best_theta"] = None
+    if active:
+        records["best_theta"] = max(active, key=lambda record: record["theta_numeric"])
+        state["best_theta"] = records["best_theta"]["theta_numeric"]
+    if excluded:
+        records["best_excluded_theta"] = max(excluded, key=lambda record: record["theta_numeric"])
+        state["best_excluded_theta"] = max(old_excluded or -math.inf, records["best_excluded_theta"]["theta_numeric"])
+    if state["best_theta"] is not None:
+        state["historical_best_theta"] = max(state["historical_best_theta"] or -math.inf, state["best_theta"])
+    state["best_record_recovery"] = recovery
+
+
+def persist_best_records(state, prefix):
+    for field, suffix in (("best_theta", "_best.json"),
+                          ("best_excluded_theta", "_best_excluded.json")):
+        record = state.get("best_records", {}).get(field)
+        path = prefix.with_name(prefix.name+suffix)
+        if record is not None and record["theta_numeric"] >= state[field]-1e-8:
+            atomic_json(path, record)
+        elif field == "best_theta" and path.exists():
+            # Preserve the old graph while removing its stale active label.
+            raw = path.read_bytes()
+            digest = hashlib.sha256(raw).hexdigest()[:12]
+            path.replace(prefix.with_name(prefix.name+"_retired_best_"+digest+".json"))
+
+
 def run(args):
     args.output_dir.mkdir(parents=True, exist_ok=True)
     prefix = args.output_dir / f"asymmetric_seed{args.seed}"
@@ -614,25 +729,31 @@ def run(args):
         screen_cache[encode(current)] = screen_summary(screened(current, current_value, args.sat_threshold, args.sat_conflicts))
     state["pool_deduplication"] = "exact isomorphism preserving the three labelled contexts"
     if not old_screen_version:
-        state["best_theta"] = None
         old_best_path = prefix.with_name(prefix.name+"_best.json")
         if old_best_path.exists():
             os.replace(old_best_path, prefix.with_name(prefix.name+"_legacy_best_unscreened.json"))
+    recover_best_records(state, source, prefix,
+                         lambda adj, value: screened(adj, value, args.sat_threshold, args.sat_conflicts))
     for excluded in (False, True):
         eligible = [entry for entry in pool if (entry["screen"]["status"] == "excluded") == excluded]
         if eligible:
             leader = max(eligible, key=lambda entry: entry["theta"])
             field = "best_excluded_theta" if excluded else "best_theta"
-            state[field] = max(state[field] or -math.inf, leader["theta"])
-            best_path = prefix.with_name(prefix.name+("_best_excluded.json" if excluded else "_best.json"))
-            if not best_path.exists():
+            if state[field] is None or leader["theta"] > state[field]+1e-8 or field not in state["best_records"]:
                 screening = screened(decode(leader["g6"]), leader["theta"], args.sat_threshold, args.sat_conflicts)
-                atomic_json(best_path, {"scope": "excluded mutation seed" if excluded else "numerical candidate, not a certified realization",
+                record = {"scope": "excluded mutation seed" if excluded else "numerical candidate, not a certified realization",
                                         "theta_numeric": leader["theta"], "g6": leader["g6"],
                                         "parts": PARTS, "edges": edges_of(decode(leader["g6"])),
                                         "screen": screen_summary(screening), "certificate": screening.get("certificate"),
                                         "seed": args.seed, "source_checkpoint": str(source),
-                                        "updated_utc": utc_now()})
+                                         "updated_utc": utc_now()}
+                if state[field] is None or record["theta_numeric"] >= state[field]-1e-8:
+                    state["best_records"][field] = record
+                    state[field] = max(state[field] or -math.inf, record["theta_numeric"])
+    if state["best_theta"] is not None and state["best_theta"] > (state.get("historical_best_theta") or -math.inf):
+        state["historical_best_theta"] = state["best_theta"]
+        state["historical_best_record"] = state["best_records"]["best_theta"]
+    persist_best_records(state, prefix)
     save()
     with archive.open("a", buffering=1) as stream:
         while time.monotonic() < deadline-0.3:
@@ -732,6 +853,10 @@ def run(args):
                     best["solver"] = result["solver"]
                     best["diagnostics"] = result["diagnostics"]
                     best["diagonal_times_three"] = (3*np.diag(result["B"])).tolist()
+                state["best_records"][field] = best
+                if not excluded and value > (state.get("historical_best_theta") or -math.inf):
+                    state["historical_best_theta"] = value
+                    state["historical_best_record"] = best
                 atomic_json(prefix.with_name(prefix.name+("_best_excluded.json" if excluded else "_best.json")), best)
                 print(json.dumps({"seed": args.seed, field: value,
                                   "scored": state["scored"], "move": move}), flush=True)

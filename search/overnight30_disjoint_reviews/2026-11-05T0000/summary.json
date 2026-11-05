@@ -1,0 +1,1250 @@
+{
+  "source_quotient_summary": "search/overnight30_quotient_reviews/2026-11-04T2300/summary.json",
+  "source_quotient_sha256": "c79ecb4bd34e1c76e328eb46b5353e3614ad9344236275907f519742b805350e",
+  "source_saturation_summary": "search/overnight30_saturation_reviews/2026-11-04T2300/summary.json",
+  "source_saturation_sha256": "6e73f4ab1f5e13f77657cf4ae34911cce7fc59c36418291e889126c61d0991ff",
+  "reviewed": 19,
+  "certified": 10,
+  "combined_probability_certified": 141,
+  "remaining_probability_unresolved": 9,
+  "scope": "Nine universal disjoint-neighborhood moment bounds; ten conditional group-orbit quotient exclusions. Counts refer only to the150 previously selectedquotients. No global GHZ nonexistence claim.",
+  "bounds": [
+    {
+      "subset_size": 2,
+      "mean_upper": "7/64",
+      "total_upper": "7/32",
+      "forbidden_at30": false,
+      "certificate": "disjoint_02_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 3,
+      "mean_upper": "5/48",
+      "total_upper": "5/16",
+      "forbidden_at30": false,
+      "certificate": "disjoint_03_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 4,
+      "mean_upper": "1/10",
+      "total_upper": "2/5",
+      "forbidden_at30": false,
+      "certificate": "disjoint_04_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 5,
+      "mean_upper": "3/32",
+      "total_upper": "15/32",
+      "forbidden_at30": false,
+      "certificate": "disjoint_05_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 6,
+      "mean_upper": "7/80",
+      "total_upper": "21/40",
+      "forbidden_at30": true,
+      "certificate": "disjoint_06_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 7,
+      "mean_upper": "23/280",
+      "total_upper": "23/40",
+      "forbidden_at30": true,
+      "certificate": "disjoint_07_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 8,
+      "mean_upper": "49/640",
+      "total_upper": "49/80",
+      "forbidden_at30": true,
+      "certificate": "disjoint_08_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 9,
+      "mean_upper": "13/180",
+      "total_upper": "13/20",
+      "forbidden_at30": true,
+      "certificate": "disjoint_09_mean_bound.json",
+      "strict": true
+    },
+    {
+      "subset_size": 10,
+      "mean_upper": "27/400",
+      "total_upper": "27/40",
+      "forbidden_at30": true,
+      "certificate": "disjoint_10_mean_bound.json",
+      "strict": true
+    }
+  ],
+  "results": [
+    {
+      "source_index": 18,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]????????A_c?c@O?SE__Z?Aq?Aq?DP??laOckQAY`GSt?OSt?OgDW_I`SG@SY_?cPi?@GjC??",
+      "theta_numeric": 2.869984034233642,
+      "certificate": "quotient_018_certificate.json",
+      "margin": "2939/3201760",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 20,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?Og@g_I@WG@OJ_?cAi?@GLC??",
+      "theta_numeric": 2.8685894064831716,
+      "certificate": "quotient_020_certificate.json",
+      "margin": "2939/3201760",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 25,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??DiO?lQ?IdG?tGO?tGOg@__I?WG@OB_?cAI?@GKC??",
+      "theta_numeric": 2.8660255821500464,
+      "certificate": "quotient_025_certificate.json",
+      "margin": "1/160",
+      "disjoint_contexts": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "source_index": 94,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P?@dAOKgQ?q`GPd?Ood?OgLa_IaWg@[Bc?cqIO@HkS??",
+      "theta_numeric": 2.840730953407773,
+      "certificate": "quotient_094_certificate.json",
+      "margin": "1/320",
+      "disjoint_contexts": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 97,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@AacAc`OGSEC_XO?q_?q_CX??taOEkQCY`GWt?OWt?Og@g_I@WG@OJ_?cAi?@GLC??",
+      "theta_numeric": 2.8386872284006763,
+      "certificate": "quotient_097_certificate.json",
+      "margin": "7/6080",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 104,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@AacAc`OGSEC_XO?q_?q_CX??daOCkQ?Y`GOt?OOt?Og@g_I@WG@OJ_?cAi?@GLC??",
+      "theta_numeric": 2.8375144118435016,
+      "certificate": "quotient_104_certificate.json",
+      "margin": "7/6080",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 106,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??taOEkQCY`GWt?OWt?Og@g_I@WG@OJ_?cAi?@GLC??",
+      "theta_numeric": 2.8373767462595585,
+      "certificate": "quotient_106_certificate.json",
+      "margin": "7/6080",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 112,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??DaS?kQ_I`I?tAO?tAOgD__I_WG@SB_?cQI?@GkC??",
+      "theta_numeric": 2.8363554064706546,
+      "certificate": "quotient_112_certificate.json",
+      "margin": "7/6080",
+      "disjoint_contexts": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 116,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@AacAc`OGSEc_ZOAq_Aq_DX??daOCkQ?Y`GOt?OOt?Og@__I?WG@OB_?cAI?@GKC??",
+      "theta_numeric": 2.835795425422038,
+      "certificate": "quotient_116_certificate.json",
+      "margin": "8129/7931040",
+      "disjoint_contexts": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "source_index": 135,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "graph6": "]???????@?a_A__OGCEC?WO?o_?o_CW??daQCkQOY`gOt@OOt@OgDg?I`W?@SJ??cQg?@Gl???",
+      "theta_numeric": 2.8312176885036666,
+      "certificate": "quotient_135_certificate.json",
+      "margin": "8129/7931040",
+      "disjoint_contexts": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    }
+  ],
+  "remaining_unresolved": [
+    {
+      "source_index": 1,
+      "theta_numeric": 2.8998894283556553,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 3,
+      "theta_numeric": 2.8990339513116923,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 11,
+      "theta_numeric": 2.877045350758225,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 14,
+      "theta_numeric": 2.87631423957421,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 75,
+      "theta_numeric": 2.8465978409973913,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 103,
+      "theta_numeric": 2.8380574322132563,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 107,
+      "theta_numeric": 2.83714664220044,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 124,
+      "theta_numeric": 2.834115603258562,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "source_index": 147,
+      "theta_numeric": 2.829506546061962,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "discovery_seconds": 1.0249393339981907
+}

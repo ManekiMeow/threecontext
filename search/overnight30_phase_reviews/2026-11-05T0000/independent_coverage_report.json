@@ -1,0 +1,72 @@
+{
+  "method": "independent fixed-order residue-set DFS; all exact duals replayed",
+  "classes": [
+    {
+      "source_index": 1,
+      "manifest_sha256": "448bb0ad05f1cea90e4d448a4bc4d2413e2175da8ac9ce1905d07dc2659378f5",
+      "fixed_order_prefixes": 27731,
+      "normal_triangle_free_assignments": 330,
+      "unit_representatives": 83,
+      "unit_orbit_sizes": {
+        "2": 1,
+        "4": 82
+      },
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 83,
+      "uniform_exact_upper": "2991515946933/1000000000000"
+    },
+    {
+      "source_index": 14,
+      "manifest_sha256": "e1ce93dfb5149718d0ca340bae2f5ccad95d019ab5368de48688bc9f18d020ec",
+      "fixed_order_prefixes": 74631,
+      "normal_triangle_free_assignments": 2448,
+      "unit_representatives": 612,
+      "unit_orbit_sizes": {
+        "4": 612
+      },
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 612,
+      "uniform_exact_upper": "579998681849/200000000000"
+    },
+    {
+      "source_index": 75,
+      "manifest_sha256": "3bd111b64c8b1c7755f7c7e92adeeab1818f2e1df3cd8dedf6c59e20583aaed6",
+      "fixed_order_prefixes": 54111,
+      "normal_triangle_free_assignments": 408,
+      "unit_representatives": 102,
+      "unit_orbit_sizes": {
+        "4": 102
+      },
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 102,
+      "uniform_exact_upper": "177916739719/62500000000"
+    },
+    {
+      "source_index": 107,
+      "manifest_sha256": "2095cf5c4cf4fc85a09b856c7d3c3459f1d5207e648d6d51c0fa82b44a94cb5d",
+      "fixed_order_prefixes": 37391,
+      "normal_triangle_free_assignments": 96,
+      "unit_representatives": 24,
+      "unit_orbit_sizes": {
+        "4": 24
+      },
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 24,
+      "uniform_exact_upper": "2837622201683/1000000000000"
+    },
+    {
+      "source_index": 124,
+      "manifest_sha256": "c33a1553aa9890a0494c8dd33279658549b0e1ab415e25f254e7d475f748a59b",
+      "fixed_order_prefixes": 78231,
+      "normal_triangle_free_assignments": 816,
+      "unit_representatives": 204,
+      "unit_orbit_sizes": {
+        "4": 204
+      },
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 204,
+      "uniform_exact_upper": "115348376959/40000000000"
+    }
+  ],
+  "total_certificates": 1025
+}

@@ -1,0 +1,50 @@
+{
+  "method": "independent fixed-order residue sets; normalized unit group action and exact duals",
+  "classes": [
+    {
+      "source_index": 3,
+      "manifest_sha256": "668c3221b3c28cc195aab0fb8db83d85c01b37b99169839680a4c207669aa431",
+      "fixed_order_prefixes": 10626,
+      "normal_triangle_free_assignments": 20,
+      "unit_representatives": 6,
+      "unit_compositions_checked": 320,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 6,
+      "uniform_exact_upper": "579826603527/200000000000"
+    },
+    {
+      "source_index": 11,
+      "manifest_sha256": "1fb3fc3aef98bf93d84ec50d97e32fe9b9d4f23229a7af3a4de75dcb97bea8a8",
+      "fixed_order_prefixes": 10626,
+      "normal_triangle_free_assignments": 60,
+      "unit_representatives": 16,
+      "unit_compositions_checked": 960,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 16,
+      "uniform_exact_upper": "2877076947253/1000000000000"
+    },
+    {
+      "source_index": 103,
+      "manifest_sha256": "a3631f7a9a9b355a188576efde056d4cbc60d9912759d3b1b805cb777dbbdbfa",
+      "fixed_order_prefixes": 132802,
+      "normal_triangle_free_assignments": 960,
+      "unit_representatives": 240,
+      "unit_compositions_checked": 15360,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 240,
+      "uniform_exact_upper": "2911162685863/1000000000000"
+    },
+    {
+      "source_index": 147,
+      "manifest_sha256": "cb06a2bc7f143cbeab70f5609c933fec78c52667e25319e0eea5b51b949f6c8f",
+      "fixed_order_prefixes": 96786,
+      "normal_triangle_free_assignments": 162,
+      "unit_representatives": 41,
+      "unit_compositions_checked": 2592,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 41,
+      "uniform_exact_upper": "2833038240961/1000000000000"
+    }
+  ],
+  "total_certificates": 303
+}

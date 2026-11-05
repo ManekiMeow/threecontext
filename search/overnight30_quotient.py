@@ -4,7 +4,7 @@ The quotient exclusion requires the actual simultaneous C5 automorphism on
 six consecutive five-vertex orbits, not just an equitable partition. Its SAT
 encoding defines exact block-count predicates, then excludes every context
 permutation and every within-context orbit swap of Proposition46 and the
-independently verified probability/saturation certificate catalogs.
+independently verified probability, saturation, moment, and finite-phase catalogs.
 
 Certificate recognition/verification uses only standard Python. The optional
 --self-test also checks the CNF with python-sat. No numerical theta is used.
@@ -18,11 +18,15 @@ from pathlib import Path
 
 from event30_c5_quotient import Q, check_arithmetic
 
-METHODS = {"regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation"}
+METHODS = {"regular_pair", "c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"}
 PAIRS = tuple((a, b) for a in range(6) for b in range(a+1, 6) if a//2 != b//2)
 ALLOWED_REGULAR_PAIRS = {(3, 3), (3, 4), (4, 3)}
 CATALOG = Path(__file__).with_name("overnight30_quotient_reviews")/"2026-11-04T2300"/"summary.json"
 SATURATION_CATALOG = Path(__file__).with_name("overnight30_saturation_reviews")/"2026-11-04T2300"/"summary.json"
+PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0000"/"summary.json"
+GENERAL_PHASE_CATALOG = Path(__file__).with_name("overnight30_general_phase_reviews")/"2026-11-05T0000"/"summary.json"
+DISJOINT_CATALOG = Path(__file__).with_name("overnight30_disjoint_reviews")/"2026-11-05T0000"/"summary.json"
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def require(condition, message):
@@ -86,13 +90,90 @@ def verified_saturation_catalog():
     return tuple(result)
 
 
+@lru_cache(maxsize=None)
+def verified_phase_manifest(relative_path, digest):
+    """Check every finite-phase proof once; the content hash binds its artifact."""
+    relative = Path(relative_path)
+    require(not relative.is_absolute() and ".." not in relative.parts, "invalid phase manifest path")
+    path = ROOT/relative
+    raw = path.read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == digest, "phase manifest content hash differs")
+    manifest = json.loads(raw)
+    if manifest["format"] == "ghz30-c5-phase-enumeration-v1":
+        from event30_c5_phases import verify as verify_phases
+    else:
+        require(manifest["format"] == "ghz30-c5-general-phase-enumeration-v1", "unknown phase enumeration format")
+        from event30_c5_general_phases import verify as verify_phases
+    report = verify_phases(path.parent)
+    require(report["complete_exact_exclusion"], "incomplete phases do not exclude a quotient")
+    return manifest["quotient"], report["uniform_exact_upper"], manifest["format"]
+
+
+def verify_phase_reference(proof):
+    formats = {"ghz30-c5-phase-catalog-entry-v1": "ghz30-c5-phase-enumeration-v1",
+               "ghz30-c5-general-phase-catalog-entry-v1": "ghz30-c5-general-phase-enumeration-v1"}
+    require(proof.get("format") in formats, "unknown phase reference")
+    quotient, bound, kind = verified_phase_manifest(proof["manifest"], proof["manifest_sha256"])
+    require(formats[proof["format"]] == kind, "phase reference names another enumeration method")
+    require(proof["quotient"] == quotient and proof["uniform_exact_upper"] == bound,
+            "phase reference differs from the verified complete proof")
+    return quotient
+
+
+@lru_cache(maxsize=1)
+def verified_phase_catalog():
+    if not PHASE_CATALOG.exists():
+        return ()
+    summary = json.loads(PHASE_CATALOG.read_text())
+    result = []
+    for proof in summary["results"]:
+        verify_phase_reference(proof)
+        result.append(proof)
+    require(len(result) == summary["certified"], "phase catalog certificate count differs")
+    return tuple(result)
+
+
+@lru_cache(maxsize=1)
+def verified_general_phase_catalog():
+    if not GENERAL_PHASE_CATALOG.exists():
+        return ()
+    summary = json.loads(GENERAL_PHASE_CATALOG.read_text())
+    result = []
+    for proof in summary["results"]:
+        verify_phase_reference(proof)
+        result.append(proof)
+    require(len(result) == summary["certified"], "general phase catalog certificate count differs")
+    return tuple(result)
+
+
+@lru_cache(maxsize=1)
+def verified_disjoint_catalog():
+    from event30_disjoint_probability import verify_quotient_certificate
+    if not DISJOINT_CATALOG.exists():
+        return ()
+    summary = json.loads(DISJOINT_CATALOG.read_text())
+    result = []
+    for record in summary["results"]:
+        relative = Path(record["certificate"])
+        require(not relative.is_absolute() and ".." not in relative.parts, "invalid disjoint certificate path")
+        proof = json.loads((DISJOINT_CATALOG.parent/relative).read_text())
+        margin = verify_quotient_certificate(proof)
+        require(proof["sizes"] == [5]*6 and proof["parts"] == [[0, 1], [2, 3], [4, 5]],
+                "disjoint probability proof does not describe six equal C5 orbits")
+        require(proof["quotient"] == record["quotient"] and str(margin) == record["margin"],
+                "disjoint catalog differs from exact proof")
+        result.append(proof)
+    require(len(result) == summary["certified"], "disjoint catalog certificate count differs")
+    return tuple(result)
+
+
 @lru_cache(maxsize=1)
 def pattern_catalog():
     check_arithmetic()
     result = {}
     # Static Proposition46 has priority when a later certificate overlaps it.
     sources = [(Q, None)]+[(certificate["quotient"], certificate)
-                          for certificate in verified_catalog()+verified_saturation_catalog()]
+                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()]
     for matrix, certificate in sources:
         for order in orbit_orders():
             pattern = tuple(matrix[order[a]][order[b]] for a, b in PAIRS)
@@ -218,10 +299,16 @@ def find_obstruction(record):
             if proof is not None and proof["format"] == "ghz30-orbit-probability-farkas-v1":
                 witness["probability_certificate"] = proof
                 method = "orbit_probability_quotient"
-            elif proof is not None:
-                require(proof["format"] == "ghz30-quotient-saturation-v1", "unknown quotient proof format")
+            elif proof is not None and proof["format"] == "ghz30-quotient-saturation-v1":
                 witness["saturation_certificate"] = proof
                 method = "quotient_saturation"
+            elif proof is not None and proof["format"] == "ghz30-disjoint-orbit-probability-farkas-v1":
+                witness["disjoint_probability_certificate"] = proof
+                method = "orbit_disjoint_probability_quotient"
+            elif proof is not None:
+                require(proof["format"] in {"ghz30-c5-phase-catalog-entry-v1", "ghz30-c5-general-phase-catalog-entry-v1"}, "unknown quotient proof format")
+                witness["phase_certificate"] = proof
+                method = "c5_phase_quotient"
             return {"format": "overnight30-worker-obstruction-v1", "graph": graph,
                     "method": method,
                     "witness": witness}
@@ -242,7 +329,7 @@ def verify_certificate(certificate):
         pair = tuple(degrees[tuple(sorted((context, k)))] for k in others)
         require(None not in pair and list(pair) == witness["degrees"], "claimed pair supports are not regular")
         require(pair not in ALLOWED_REGULAR_PAIRS, "regular degrees are not excluded by Theorem45")
-    elif certificate["method"] in ("c5_quotient", "orbit_probability_quotient", "quotient_saturation"):
+    elif certificate["method"] in ("c5_quotient", "orbit_probability_quotient", "quotient_saturation", "c5_phase_quotient", "orbit_disjoint_probability_quotient"):
         if certificate["method"] == "c5_quotient":
             check_arithmetic()
             template = Q
@@ -253,13 +340,22 @@ def verify_certificate(certificate):
             require(probability["sizes"] == [5]*6 and probability["parts"] == [[0, 1], [2, 3], [4, 5]],
                     "probability certificate does not describe six equal C5 orbits")
             template = probability["quotient"]
-        else:
+        elif certificate["method"] == "quotient_saturation":
             from event30_quotient_saturation import verify_certificate as verify_saturation
             saturation = witness["saturation_certificate"]
             verify_saturation(saturation)
             require(saturation["sizes"] == [5]*6 and saturation["parts"] == [[0, 1], [2, 3], [4, 5]],
                     "saturation certificate does not describe six equal C5 orbits")
             template = saturation["quotient"]
+        elif certificate["method"] == "orbit_disjoint_probability_quotient":
+            from event30_disjoint_probability import verify_quotient_certificate
+            disjoint = witness["disjoint_probability_certificate"]
+            verify_quotient_certificate(disjoint)
+            require(disjoint["sizes"] == [5]*6 and disjoint["parts"] == [[0, 1], [2, 3], [4, 5]],
+                    "disjoint probability proof does not describe six equal C5 orbits")
+            template = disjoint["quotient"]
+        else:
+            template = verify_phase_reference(witness["phase_certificate"])
         order = tuple(witness["orbit_order"])
         require(order in orbit_orders(), "orbit ordering does not preserve the context partition")
         counts = quotient_counts(graph, adj)

@@ -1,0 +1,91 @@
+{
+  "certificates": [
+    {
+      "m": 2,
+      "mean_upper": "7/64",
+      "total_upper": "7/32",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": false
+    },
+    {
+      "m": 3,
+      "mean_upper": "5/48",
+      "total_upper": "5/16",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": false
+    },
+    {
+      "m": 4,
+      "mean_upper": "1/10",
+      "total_upper": "2/5",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": false
+    },
+    {
+      "m": 5,
+      "mean_upper": "3/32",
+      "total_upper": "15/32",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": false
+    },
+    {
+      "m": 6,
+      "mean_upper": "7/80",
+      "total_upper": "21/40",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": true
+    },
+    {
+      "m": 7,
+      "mean_upper": "23/280",
+      "total_upper": "23/40",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": true
+    },
+    {
+      "m": 8,
+      "mean_upper": "49/640",
+      "total_upper": "49/80",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": true
+    },
+    {
+      "m": 9,
+      "mean_upper": "13/180",
+      "total_upper": "13/20",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": true
+    },
+    {
+      "m": 10,
+      "mean_upper": "27/400",
+      "total_upper": "27/40",
+      "standard_principal_minors_nonnegative": 7,
+      "trivial_principal_minors_positive": 15,
+      "strict": true,
+      "forbidden_n30": true
+    }
+  ],
+  "partition_strict_upper_bounds": {
+    "5+5": "15/16",
+    "5+4+1": "1411/1440",
+    "5+3+2": "1"
+  },
+  "proof": "All nine trivial duals are positive definite by every principal minor; T00=1 makes every moment bound strict."
+}

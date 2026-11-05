@@ -35,12 +35,14 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 51. Results
-39–51 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 54. Results
+39–54 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
 by affine-plane mixed-action exclusions, iterated probability budgets, and
-the exclusion of a nine-vertex symmetry orbit in any single context.
+the exclusion of a nine-vertex symmetry orbit in any single context, global
+pair-support matchings, disjoint-neighborhood probability budgets, and complete
+phase exclusions for nine specified C5 quotients.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -75,6 +77,10 @@ Already excluded and not worth repeating as standalone searches:
   (Theorem 51). A transitive degree-nine group contains a regular C9 or C3²
   subgroup; every resulting action is now excluded. This does not imply that
   the full automorphism group has order indivisible by nine.
+- The 150 C5 quotient classes selected in the 23:00 review, now all exactly
+  excluded. This does not exhaust the C5-double family. Theorem 53 adds ten
+  probability certificates; Theorem 54 covers every phase of the final nine
+  quotients with 1,328 exact graph certificates.
 
 Search directions, allowing nonuniform event probabilities and unequal overlap
 weights unless a run explicitly records a narrower ansatz:
@@ -98,7 +104,10 @@ weights unless a run explicitly records a narrower ansatz:
    pair component, and every event must bridge some component. Theorem 44
    requires the strict rational degree-probability budget to exceed one in
    every context. Proposition 49 propagates strict probability intervals for
-   three rounds. These are now in the workers' exact screening/cut pipeline.
+   three rounds. Theorem 52 makes Hall-deficient pair supports globally
+   impossible. Theorem 53 adds exact budgets for partitions into subsets whose
+   cross-neighborhoods are pairwise disjoint. These are in the workers' exact
+   screening/cut pipeline.
 4. Promote promising supports to full Lovasz SDP checks. Preserve candidates
    near theta=3 and their numerical matrices. Seek exact rational primal
    certificates; if a valid example is found, investigate its realization rank
@@ -197,10 +206,11 @@ search remains separate and unchanged.
 
 Next useful research steps, preserving the running supervisor:
 
-- Explore the nineteen selected quotient classes left by probability and
-  Cauchy-equality propagation. Preserve the actual group-action requirement
-  and verify every new class certificate. Existing derivation formats and
-  immutable proof catalogs must retain reproducible verification.
+- The nineteen residual selected quotients are now excluded by Theorems 53–54.
+  Explore further published quotients or unclassified asymmetric supports.
+  Preserve the actual group-action requirement and verify every new class
+  certificate. Existing derivation formats and immutable proof catalogs must
+  retain reproducible verification.
 - If pursuing C3² further, use only three-orbit/fixed-point actions:
   `T=(3,3,3,1)` and `D=(3,3,1,1,1,1)` with faithful kernel-line sets. All actions
   involving `R=(9,1)` are excluded. General asymmetric and weak C2/C3/C5
@@ -219,11 +229,48 @@ Among 130 selected leaders, 92 are new representatives relative to this
 selection and earlier reviewed classes; 38 explicit mappings identify the
 others. Twenty-two selected representatives have exact exclusions. The new
 asymmetric leader has theta about 2.9162207091 and exact upper bound 2.9173.
-Its four strongest selected peers have trivial context-preserving automorphism
+The four strongest selected supports have trivial context-preserving automorphism
 groups. The review verifies 24 local certificates, 14 referenced proofs,
 isomorphism mappings and immutable input hashes with `verify.py --inputs`.
 One numerical timeout is exactly excluded; eight deadline endings are ordinary
 bounded outcomes. Global event and dimension bounds remain unchanged.
+
+Theorem 52 upgrades the pair Hall condition to every dimension. Its certificate
+method is `pair_hall`; historical `pair_hall_d19` certificates still replay.
+Pair disconnection remains dimension-specific. `event30_hall.py` checks the
+new filter, a genuine 8-to-7 witness, boundary cases and dominance-cut replay.
+
+Theorem 53 uses a 3-by-3 and 4-by-4 moment relaxation to bound total probability
+on subsets with disjoint neighborhoods in another context. The certificates
+are rational and their trivial dual matrices are positive definite, so the
+bounds are strict. In particular, five events have total mass below 15/32.
+`event30_disjoint_partition.py` searches context partitions by an integer
+subset DP; equality budgets are accepted only with independently verified
+strictness. The ten additional quotient Farkas certificates and independent
+principal-minor audit are in `overnight30_disjoint_reviews/2026-11-05T0000/`.
+
+Theorem 54 completely covers the other nine selected quotient classes.
+Singleton-tree and general proper-subset-tree translation gauges reduce their
+phase constructions to 5,300 normalized assignments and 1,328 representatives
+under common units. Every representative has an exact theta upper bound below
+three. Proof bundles and independent gauge/enumeration checks are in
+`overnight30_phase_reviews/2026-11-05T0000/` and
+`overnight30_general_phase_reviews/2026-11-05T0000/`. All 150 selected classes
+are now excluded; this is not an exhaustive classification of C5-double graphs.
+
+The asymmetric worker preserves full best records across chunk resumes and
+rechecks active records against new filters, retiring newly excluded records
+while retaining historical graphs and scores. A targeted finite recombination
+of four asymmetric leaders scored twenty previously unscored labels; the best
+was about 2.91470491, below the current leader. The auxiliary archive is in
+active host chunk `00066_asymmetric/auxiliary_asymmetric_review/` and will be
+published with that chunk. It must not be counted as twenty globally new
+isomorphism classes. Numerical optimizer ranks are not realization dimensions.
+
+The remaining C3² actions using only T=(3,3,3,1) and D=(3,3,1,1,1,1) reduce to
+seven action types, checked by `event30_td_actions.py`. The saved 99-edge DDD
+prism passes the earlier local screens but has exact theta bound 6383/2500.
+It is an excluded individual control, not a family-wide DDD obstruction.
 
 ## Operation and scheduled continuation
 
@@ -271,8 +318,8 @@ Hourly scheduled continuations are research work, not merely status reports:
    choice from a necessary condition. Push source/proof changes immediately.
    Useful next experiments include symmetry-preserving extensions and mutations
    of the best supports, and a separate dimension-19 mode learning pair-component
-   and Hall-deficiency cuts. Such dimension-specific cuts must not restrict the
-   general event-number search. Initial best supports already had 95–122 edges;
+   cuts. Hall-deficiency cuts are global by Theorem 52; pair-disconnection cuts
+   must not restrict the general event-number search. Initial best supports already had 95–122 edges;
    simply raising a minimum edge count did not reliably improve theta.
    The intersection helper has now generated a C2 seed with theta about 2.87972;
    the SAT worker loads it and mixes current-best neighborhood exploration with

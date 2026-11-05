@@ -668,6 +668,91 @@ either has order nine, excluded by Theorem 42, or has order three and commutes w
 `python search/event30_degree9_group.py` independently enumerates all thirteen transitive subgroups of this
 Sylow group and verifies the required regular subgroup in each. ∎
 
+**Theorem 52 (perfect matchings in every pair support).** Every bipartite pair support of a thirty-event GHZ
+graph has a perfect matching, in every realization dimension.
+
+*Proof:* let S be a nonempty subset of context A, and let N(S) be its allowed neighbors in context B.
+Write P_S and P_N for the projections onto these orthonormal subsets. Since ψ belongs to the span of B and S
+is orthogonal to B\\N(S), `P_S ψ = P_S P_N ψ`, hence `c(S) ≤ c(N(S))`. Suppose `|N(S)| ≤ |S|−1`.
+For `1 ≤ |S| ≤ 9`, normalization and Corollary 32 give
+`c(S) > (|S|−1)/9 ≥ c(N(S))`. If `|S|=10`, then `c(S)=1` while `c(N(S))<1`. Both are contradictions.
+Hall's theorem supplies a perfect matching. This argument permits allowed edges with zero actual overlap
+and complex realizations. It does not imply that the pair support is connected; connectivity remains a
+dimension-19 restriction. `python search/event30_hall.py` checks the certificate and boundary cases. ∎
+
+**Theorem 53 (probability bounds for disjoint neighborhoods).** Let U be m events in one context of any
+three-context GHZ realization. If their neighborhoods in another context are pairwise disjoint, their total
+probability is strictly less than the following rational bound:
+
+| m | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|
+| bound | 7/32 | 5/16 | 2/5 | 15/32 | 21/40 | 23/40 | 49/80 | 13/20 | 27/40 |
+
+These bounds allow unequal event probabilities, complex vectors and arbitrary realization dimension.
+In particular, a thirty-event support cannot contain six such events. It also cannot partition a context
+into such subsets of sizes (5,5), (5,4,1), or (5,3,2), allowing a different other context for each subset.
+Singletons use the strict bound 1/9 from Corollary 32.
+
+*Proof:* choose event phases with positive state overlaps and put `X_i=√c_i g_i`, `P_i=E X_i`, `Q_i=F X_i`,
+where E,F project onto the other two context spans. Their Gram matrix together with ψ is positive semidefinite.
+The X–X block is diagonal; disjoint neighborhoods make P–P diagonal. Projection idempotence gives X–P=P–P
+and X–Q=Q–Q, while triangle-freeness makes every diagonal P–Q entry zero. Each state coupling is c_i.
+Take the real part and average simultaneous permutations of the m indices. This preserves necessary linear
+Gram conditions and does not assume any automorphism of the graph. Write c for mean probability, p,q for
+mean P,Q squared norms, and r,t for mean off-diagonal Q–Q and P–Q entries. The standard and trivial
+permutation subspaces give the positive semidefinite matrices
+
+    S = [[c,p,q−r], [p,p,−t], [q−r,−t,q−r]],
+    T = [[1,c,c,c],
+         [c,c/m,p/m,(q+(m−1)r)/m],
+         [c,p/m,p/m,(m−1)t/m],
+         [c,(q+(m−1)r)/m,(m−1)t/m,(q+(m−1)r)/m]].
+
+For each displayed m, the saved rational matrices Z_S,Z_T satisfy `Z_S ⪰ 0`, `Z_T ≻ 0` and the exact
+coefficient identity `b_m/m − c = Tr(Z_S S)+Tr(Z_T T)`. Since T₀₀=1, the right side is strictly positive.
+All identities and positivity checks use rational arithmetic in `search/event30_disjoint_probability.py`;
+certificates are in `search/overnight30_disjoint_reviews/2026-11-05T0000/`.
+Six events in a ten-event context have mass greater than 5/9, contradicting 21/40. Summing the bounds
+over the stated context partitions gives respectively 15/16, 1411/1440, and 1, with strict inequality. ∎
+
+**Theorem 54 (complete phase exclusions for nine C₅ quotients).** No thirty-event GHZ support has the standard
+C₅ action with two five-orbits per context and any of the nine quotients indexed below in the immutable
+`search/overnight30_quotient_reviews/2026-11-04T2300/summary.json` catalog. All cyclic phase choices are covered;
+no symmetry or uniformity of the realizing vectors is assumed.
+
+| Quotient index | Triangle-free assignments after translation normalization | Representatives after common units |
+|---|---:|---:|
+| 1 | 330 | 83 |
+| 3 | 20 | 6 |
+| 11 | 60 | 16 |
+| 14 | 2448 | 612 |
+| 75 | 408 | 102 |
+| 103 | 960 | 240 |
+| 107 | 96 | 24 |
+| 124 | 816 | 204 |
+| 147 | 162 | 41 |
+
+*Proof:* label each five-orbit by ℤ₅. A cross-block is specified by a shift subset D_ab of size Q_ab.
+For every triple of orbit nodes in different contexts, triangle-freeness is exactly
+`(D_ab+D_bc) ∩ D_ac = ∅`. Choose a spanning tree of nonempty proper cross-blocks. Translation acts freely
+on every nonempty proper subset of ℤ₅, so its least translate uniquely fixes each tree-edge phase and thus
+all five relative orbit translations. Five of the quotients admit singleton-block trees; the other four use
+arbitrary proper subsets. Enumerate the normalized shift subsets, pruning only completed triangle constraints,
+then identify common nonzero multipliers, renormalizing the tree after multiplication. These transformations
+are graph isomorphisms. Independent residue-set enumerations reproduce all **5300** normalized assignments
+and **1328** representatives; these counts do not assert pairwise graph nonisomorphism.
+
+Every representative has an exact rational theta-dual certificate. The largest certified upper bound is
+`2991515946933/10^12 = 2.991515946933 < 3`. Thus all phases of all nine displayed quotients are excluded.
+The complete manifests, source-catalog hash bindings, graph-bound certificates and independent coverage
+checks are in `search/overnight30_phase_reviews/2026-11-05T0000/` and
+`search/overnight30_general_phase_reviews/2026-11-05T0000/`; their helpers are
+`event30_c5_phases.py` and `event30_c5_general_phases.py`. ∎
+
+Combining these nine finite exclusions with the earlier 131 quotient exclusions and ten new rational
+orbit-probability certificates from Theorem 53 excludes **all 150 previously selected C₅ quotient classes**.
+This is a complete result for that selected catalog, not for all C₅ supports or all (10,10,10) graphs.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further

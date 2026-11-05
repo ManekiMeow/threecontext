@@ -472,8 +472,8 @@ def verify_coverage(root, rebuild_base=False):
         if entry["certificate"] not in verified:
             cert = json.loads(path.read_text())
             assert cert["method"] in {"theta_dual", "disconnected", "false_twins", "same_context_merge",
-                                       "unbalanced_coloring", "bridge_shortage", "unbridged_vertex",
-                                       "degree_mass", "probability_propagation"}
+                                       "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "pair_hall",
+                                       "degree_mass", "probability_propagation", "disjoint_partition"}
             assert verify_certificate(cert)
             verified[entry["certificate"]] = cert
         cert = verified[entry["certificate"]]
