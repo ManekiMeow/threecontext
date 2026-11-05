@@ -981,6 +981,28 @@ isomorphism mappings, five referenced proofs, input hashes and the saved histori
 The sole numerical timeout is independently excluded; seven deadline skips remain ordinary budget endings.
 No global bound has changed.
 
+The completed published-pool quotient review contains **5,589 classes from 34,721 scored C₅ records**.
+Reviewing all 1,879 previously unexamined classes yields 1,843 further exact exclusions: 534 sector-probability
+certificates, 502 affine/Cauchy saturation certificates and 807 disjoint-neighborhood moment certificates.
+Complete finite-phase enumeration then excludes five residual classes, covering **9,062 normalized phase
+assignments and 2,269 unit representatives**, with largest exact theta upper bound **2.967026795602 < 3**.
+The combined catalogs exclude **5,376 of these 5,589 published quotient classes**, leaving **213 unresolved**.
+These are quotient and phase counts, not graph-isomorphism counts or a classification of the whole C₅ family.
+Independent enumeration, graph-bound integer dual checks, catalog relabeling/SAT tests and false-certificate
+controls pass. The immutable bundles are `search/overnight30_quotient_expansion/2026-11-05T0100/` and
+`search/overnight30_phase_reviews/2026-11-05T0100/`. A separate strict-probability LP trial on the 218 classes
+left before the phase work produces no further certificates; this is inconclusive, not evidence of feasibility.
+
+A bounded construction batch repairs the historical leader's disjoint-neighborhood obstruction by adding
+shared neighbors and clearing the resulting triangles. It processes **223 previously unscored labels**:
+118 have exact pre-score exclusions and 105 receive numerical scores, representing 55 isomorphism classes
+within this batch. The best fully asymmetric guide has θ ≈ **2.9092320745** and exact upper bound
+**29103/10000 = 2.9103 < 3**. Its exact proof and construction summary are in
+`search/overnight30_asymmetric_reviews/2026-11-05T0100/`. The live worker now tries this repair every 128
+ordinary proposals and uses the same screening and acceptance rules. All 118 rejection certificates,
+50 saved isomorphism mappings and 32 deterministic repair controls replay exactly. The new graph is an
+excluded mutation guide, not a GHZ construction.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

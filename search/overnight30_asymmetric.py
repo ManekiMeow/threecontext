@@ -20,6 +20,9 @@ WL hash buckets; the full archive still counts labelled supports, not classes.
 Short checkpointed excursions from near-leading elites use partial clustered
 rewires and higher temperature to explore temporary score losses. They preserve
 historical bests and the elite pool and return to ordinary search automatically.
+Every 128 ordinary proposals, a retained disjoint-partition witness guides a
+shared-neighbor addition with minimal triangle-conflict clearing. Such repairs
+undergo the same exact screens and acceptance rules as every other proposal.
 CLARABEL has an individual solve time limit; SCS is a bounded fallback. H33 and
 H36 are scored as positive controls on each invocation. Numerical near-hits are
 saved for subsequent exact certification and are NEVER called realizations here.
@@ -50,7 +53,7 @@ import cvxpy as cp
 import networkx as nx
 import numpy as np
 
-from overnight30_screen import fast_screen, screen_graph
+from overnight30_screen import fast_screen, screen_graph, verify_certificate
 from overnight30_quotient import find_obstruction, verify_certificate as verify_quotient_certificate
 
 
@@ -195,6 +198,60 @@ def cluster_rewire(current, rng):
         if trial != current and validate(trial):
             return trial, "cluster_partial_rewire"
     return kick_edges(current, rng), "cluster_rewire_fallback_edge_kick"
+
+
+def partition_witness_repair(record, rng):
+    """Break one certified disjoint-neighborhood block of a retired guide.
+
+    Edge deletion alone preserves this obstruction. Add a shared-neighbor edge,
+    removing exactly one edge per triangle it would create, then complete the
+    support. Breaking this witness is only a proposal, never a feasibility claim.
+    """
+    if not record or (record.get("certificate") or {}).get("method") != "disjoint_partition":
+        return None
+    cert = record["certificate"]
+    verify_certificate(cert)
+    parent = decode(record["g6"])
+    if (cert["graph"]["parts"] != PARTS
+            or from_edges(cert["graph"]["edges"]) != parent
+            or not validate(parent)):
+        raise ValueError("partition repair certificate is not bound to its guide")
+    targets = []
+    for block in cert["witness"]["blocks"]:
+        vertices, other = block["vertices"], block["other_context"]
+        # Singleton probability caps have no target context and no disjoint pair.
+        if len(vertices) < 2:
+            continue
+        for u in vertices:
+            for v in vertices:
+                if u == v:
+                    continue
+                for b in PARTS[other]:
+                    if parent[v] >> b & 1 and not parent[u] >> b & 1:
+                        targets.append((u, v, b, block))
+    rng.shuffle(targets)
+    for u, v, b, block in targets[:8]:
+        trial, cleared = parent[:], []
+        for c in range(N):
+            if (parent[u] & parent[b]) >> c & 1:
+                edge = rng.choice(((u, c), (b, c)))
+                remove(trial, *edge)
+                cleared.append(list(edge))
+        if not addable(trial, u, b):
+            continue
+        add(trial, u, b)
+        fill(trial, rng)
+        # The original v--b edge must survive too: otherwise no witness breaks.
+        if not (trial[u] >> b & 1 and trial[v] >> b & 1) or not validate(trial):
+            continue
+        return trial, {"parent_g6": record["g6"],
+                       "certificate_method": "disjoint_partition",
+                       "certificate_context": cert["witness"]["context"],
+                       "certificate_block": block, "added_edge": [u, b],
+                       "sharing_pair": [u, v], "shared_neighbor": b,
+                       "removed_conflicts": cleared,
+                       "edge_difference": len(set(edges_of(parent)) ^ set(edges_of(trial)))}
+    return None
 
 
 def proposal(current, pool, rng, iteration, diagnostics=None):
@@ -651,6 +708,8 @@ def run(args):
     state.setdefault("move_accepted", {})
     state.setdefault("move_invalid", {})
     state.setdefault("proposal_diagnostics", {})
+    state.setdefault("partition_repair", {"ordinary_proposals": 0, "attempted": 0,
+                                          "proposed": 0, "fallbacks": 0})
     state.setdefault("excursions", {"remaining_evaluations": 0, "next_iteration": state["iterations"],
                                    "started": 0, "completed": 0, "evaluated": 0,
                                    "newly_scored": 0, "accepted": 0, "downhill_accepted": 0,
@@ -758,6 +817,7 @@ def run(args):
     with archive.open("a", buffering=1) as stream:
         while time.monotonic() < deadline-0.3:
             state["iterations"] += 1
+            provenance = {}
             exploring = False
             excursion = state["excursions"]
             if excursion["remaining_evaluations"] and state["iterations"] >= excursion["stop_iteration"]:
@@ -788,7 +848,24 @@ def run(args):
                 if exploring and rng.random() < 0.6:
                     trial, move = cluster_rewire(current, rng)
                 else:
-                    trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
+                    repaired = None
+                    if not exploring:
+                        repair_state = state["partition_repair"]
+                        repair_state["ordinary_proposals"] += 1
+                        if repair_state["ordinary_proposals"] % 128 == 0:
+                            repair_state["attempted"] += 1
+                            repaired = partition_witness_repair(
+                                state["best_records"].get("best_excluded_theta"), rng)
+                            repair_state["proposed" if repaired else "fallbacks"] += 1
+                    if repaired:
+                        trial, provenance = repaired
+                        move = "partition_witness_repair"
+                    else:
+                        trial, move = proposal(current, pool, rng, state["iterations"], state["proposal_diagnostics"])
+            proposal_metadata = {"partition_repair": provenance} if provenance else {}
+            if provenance:
+                state["partition_repair"]["last_proposal"] = {
+                    "iteration": state["iterations"], "g6": encode(trial), **provenance}
             state["moves"][move] = state["moves"].get(move, 0)+1
             state["move_accepted"].setdefault(move, 0)
             state["move_invalid"].setdefault(move, 0)
@@ -803,7 +880,8 @@ def run(args):
                 if code not in screen_cache:
                     screen_cache[code] = screen_summary(screening)
                     stream.write(json.dumps({"g6": code, "seed": args.seed, "iteration": state["iterations"],
-                                             "screen": screen_summary(screening)}, separators=(",", ":"))+"\n")
+                                             "screen": screen_summary(screening),
+                                             **proposal_metadata}, separators=(",", ":"))+"\n")
                 continue
             if code in cache:
                 state["duplicate"] += 1
@@ -817,7 +895,8 @@ def run(args):
                 if "error" in result:
                     state["solver_failures"] += 1
                     stream.write(json.dumps({"g6": code, "error": result["error"],
-                                             "iteration": state["iterations"]}, separators=(",", ":"))+"\n")
+                                             "iteration": state["iterations"],
+                                             **proposal_metadata}, separators=(",", ":"))+"\n")
                     continue
                 value = result["theta"]
                 cache[code] = value
@@ -830,6 +909,7 @@ def run(args):
                 stream.write(json.dumps({"g6": code, "theta": value, "seed": args.seed,
                                          "iteration": state["iterations"], "move": move,
                                          "status": result["status"], "screen": screen_summary(screening),
+                                         **proposal_metadata,
                                          **({"excursion": True} if exploring else {})}, separators=(",", ":"))+"\n")
             # Cached legacy scores must also receive the high-score SAT screen.
             if code not in screen_cache:
@@ -848,6 +928,7 @@ def run(args):
                         "theta_numeric": value, "g6": code, "parts": PARTS,
                         "edges": edges_of(trial), "seed": args.seed,
                         "iteration": state["iterations"], "updated_utc": utc_now(),
+                        **proposal_metadata,
                         "screen": screen_summary(screening), "certificate": screening.get("certificate")}
                 if result:
                     best["solver"] = result["solver"]

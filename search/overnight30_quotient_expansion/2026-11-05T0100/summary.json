@@ -1,0 +1,98 @@
+{
+  "published_commit": "5a2b45478d066d5180d1364259e1c7b1d233fc33",
+  "source_files": [
+    "search/overnight30_runs/2026-11-04/chunks/00008_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/models.jsonl.gz"
+  ],
+  "scored_records": 34721,
+  "published_quotient_classes": 5589,
+  "prior_reviewed_classes_skipped": 3710,
+  "reviewed": 1879,
+  "certified": 1843,
+  "inconclusive_quotients": 36,
+  "discovery_seconds": 31.60619793600199,
+  "requested_seconds": 90.0,
+  "best_surviving_guide": {
+    "theta_numeric": 2.784234991327758,
+    "graph6": "]????????A_c?c@O?SC`?QCAc?Ac?@Q?A_bISCXPWPcQP`GQPd?aTG_WdOGBCi_?LOi??YhC??",
+    "source": "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+    "index": 57770,
+    "quotient": [
+      [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        0,
+        0,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        1,
+        0,
+        0
+      ]
+    ],
+    "exact_quotient_excluded": false,
+    "representative_screen": "not_excluded"
+  },
+  "scope": "Bounded review of published scored C5 quotients, excluding the prior150selected plus3560reviewed classes. No claim of complete C5-family coverage; numerical scores and failed certificate discovery do not establish quantum feasibility or nonexistence.",
+  "proof_archive": "certificates.jsonl.gz",
+  "proof_count": 1843,
+  "proof_kind_counts": {
+    "probability": 534,
+    "saturation": 502,
+    "disjoint_probability": 807
+  },
+  "results_archive": "results.jsonl.gz",
+  "previous_selected_catalog": "search/overnight30_quotient_reviews/2026-11-04T2300/summary.json",
+  "previous_expansion_catalog": "search/overnight30_quotient_expansion/2026-11-05T0000/summary.json",
+  "published_pool_archive": "published_pool.jsonl.gz",
+  "published_pool_exactly_covered_by_reviews": true,
+  "combined_certified_before_new_phase_proofs": 5371,
+  "combined_residual_before_new_phase_proofs": 218,
+  "source_sha256": {
+    "search/overnight30_runs/2026-11-04/chunks/00008_c5_double/c5_double/seed_20261110/models.jsonl.gz": "c68792fa308e874f26197de163f406c24a3e66c02517bdf4a048c42104f1957d",
+    "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz": "43888425621a78251f26897462bc1726978a54921ccb988a07dae4b9d9de3d1c",
+    "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz": "214b578818da084703c0100d3fc7dd838893f1da22561efdd9dfe5c6d7a1f7d7",
+    "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz": "acfe3befc1d64ec1b7e1541dc9961d1afed20d945e8a14b18bfa234ce298e285",
+    "search/overnight30_runs/2026-11-04/chunks/00071_c5_double/c5_double/seed_20261110/models.jsonl.gz": "7016e27b1cc4b09723b73de06ad3627c47c28ad28ad3cdfa8b7e6a04c87aa5c0"
+  }
+}

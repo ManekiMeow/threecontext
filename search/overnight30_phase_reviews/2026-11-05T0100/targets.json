@@ -1,0 +1,10758 @@
+{
+  "format": "ghz30-published-residual-phase-targets-v1",
+  "source_archive": "search/overnight30_quotient_expansion/2026-11-05T0000/results.jsonl.gz",
+  "source_archive_sha256": "16626e621803096ba20b9174d5c722de666fca74b63097547397d9ee5ce91f2b",
+  "scope": "Previously analytically inconclusive published quotient classes; inclusion is not a feasibility claim.",
+  "results": [
+    {
+      "theta_numeric": 2.8894779990316155,
+      "graph6": "]???????@AacAc`OGSC?_P??a??a??P?@_bQKCYOwPgPP`OoP`OhCGoIpAG@UGo?cWb?@GpE??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 32565,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "1445246758047/500000000000",
+      "dominance_certificate_sha256": "4a74dbf6313a329d17fdda90a57ce78c9f145216790df5957cf899e215db9c50",
+      "expansion_index": 1
+    },
+    {
+      "theta_numeric": 2.8774300835044153,
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??cbQCcYOYPgOT`OOT`OhcG_Ix?G@VG_?c[a?@KpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27729,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "2878448962151/1000000000000",
+      "dominance_certificate_sha256": "331e953af204da8980dd8868d6a8283ee790a44e57660d52249c24ce596d8d82",
+      "expansion_index": 3
+    },
+    {
+      "theta_numeric": 2.8753199388513195,
+      "graph6": "]???????@BaeBc`oG[C?_P??a??a??P??_bQCCYOWPgOP`OOP`OhCGoIpAG@UGo?cWb?@GpE??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28540,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 4
+    },
+    {
+      "theta_numeric": 2.8722245711773366,
+      "graph6": "]???????@AacAc`OGSC?_P??a??a??P??_bQCCYOWPgOP`OOP`OhCGoIpAG@UGo?cWb?@GpE??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29866,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 5
+    },
+    {
+      "theta_numeric": 2.866025469111857,
+      "graph6": "]????????B_e@c@o?[E_?Y?Ao?Ao?DO?A_bASCWPWP_QP`?QP`?`CI_Gp?g@EGc?CWaO?GpS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39904,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 10
+    },
+    {
+      "theta_numeric": 2.852165815533051,
+      "graph6": "]???????B?e_E_aOWCC__R?Aa?Aa?@P??cbQCcYOYPgOT`OOT`OJCG_Qp?GAUG_?gWa?@OpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 45891,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 12
+    },
+    {
+      "theta_numeric": 2.8489797216766233,
+      "graph6": "]???????@Oq_Q_gOICE?_X??q??q?CP??caQCcQOY@gOT@OOT@OhCg_IpGG@UH_?cYa?@GtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29461,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 13
+    },
+    {
+      "theta_numeric": 2.8471320052239006,
+      "graph6": "]???????@AACAC`?GOA__J?AQ?AQ?D@??abQCSYOXPgOR`OPP`OlCG_Jp?GDUG_?sWa?@gpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 35985,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 14
+    },
+    {
+      "theta_numeric": 2.841436299867397,
+      "graph6": "]???????@QqcQchOISE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@OhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31525,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 18
+    },
+    {
+      "theta_numeric": 2.8373962810480284,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??_bQCCYOWPgOP`OOP`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28107,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 21
+    },
+    {
+      "theta_numeric": 2.8373259381361775,
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??_bQCCYOWPgOP`OOP`OHCGoApAG?UGo?_Wb?@?pE??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28064,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 22
+    },
+    {
+      "theta_numeric": 2.828538276627195,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P??daOCkQ?Y`GOt?OOt?OgDa_I_Wg@SBc?cQIO@GkS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 6689,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 32
+    },
+    {
+      "theta_numeric": 2.827843498027638,
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??obOECYCWPGWP_OWP_Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 40128,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 35
+    },
+    {
+      "theta_numeric": 2.8277222434115816,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P?@dAOKgQ?q`GPd?Ood?OgDa_I_Wg@SBc?cQIO@GkS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 12998,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 36
+    },
+    {
+      "theta_numeric": 2.8256556064878415,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?OgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 5090,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 46
+    },
+    {
+      "theta_numeric": 2.8238970811107906,
+      "graph6": "]???????@?a_A__OGCEc?YOAo_Ao_DW??daQCkQOY`gOt@OOt@Og`G_IHOG@PI_?cCi?@KHC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26568,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 61
+    },
+    {
+      "theta_numeric": 2.8217551075277445,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??_bOCCY?WPGOP_OOP_Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28165,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 78
+    },
+    {
+      "theta_numeric": 2.820940925968464,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??doQDkAO]_gO{@OO{@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19805,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 86
+    },
+    {
+      "theta_numeric": 2.819652486552531,
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??_bOCCY?WPGOP_OOP_Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29437,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 90
+    },
+    {
+      "theta_numeric": 2.816642792670372,
+      "graph6": "]???????@?a_A__OGCC`_RCAe?Ae?@R??cBqCaYOQXgODpOODpOhCg_IpGG@UH_?cYa?@GtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33374,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          3,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 129
+    },
+    {
+      "theta_numeric": 2.815923153726472,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??e`QCsIOZOgOU`OPS`OhCg_IpGG@UH_?cYa?@GtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 30358,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 133
+    },
+    {
+      "theta_numeric": 2.815460131621254,
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??cbQCcYOYPgOT`OOT`Og?g_I@GG@OH_?cAa?@GDC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29871,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 139
+    },
+    {
+      "theta_numeric": 2.8106327131468807,
+      "graph6": "]???????@CagAg_SGcC__R?Aa?Aa?@P?@`AOKGQ?o`GP`?Oo`?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 17139,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 175
+    },
+    {
+      "theta_numeric": 2.806960593854964,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??caUCcQoY@iOTBOOTBOlCg_JpGGDUH_?sYa?@gtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39423,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 203
+    },
+    {
+      "theta_numeric": 2.8067490648285727,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??LgS_lAaIcICsIOCsIOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 16294,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 207
+    },
+    {
+      "theta_numeric": 2.8061398661163457,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??e`QCsIOZOgOU`OPS`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33686,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 215
+    },
+    {
+      "theta_numeric": 2.803833405208845,
+      "graph6": "]???????@Oq_Q_gOICE?_X??q??q?CP??_aQCCQOW@gOP@OOP@OhCg_IpGG@UH_?cYa?@GtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 35975,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 235
+    },
+    {
+      "theta_numeric": 2.8026733064005986,
+      "graph6": "]???????@AacAc`OGSA__J?AQ?AQ?D@??daSCkQ_Y`IOtAOOtAOg@k_I@XG@OJg?cAi_@GLD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 10133,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 250
+    },
+    {
+      "theta_numeric": 2.8018577494703365,
+      "graph6": "]???????@CagAg_SGcAo_j?BQ?BQ?D`??dASCgQ_Q`IOdAOOdAOgDg?I`W?@SJ??cQg?@Gl???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15364,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 263
+    },
+    {
+      "theta_numeric": 2.801148313743527,
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??LgS_lAaIcICsIOCsIOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9025,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 272
+    },
+    {
+      "theta_numeric": 2.8008498036419427,
+      "graph6": "]????????B_e@c@o?[Ea_ZGAqOAy?DT??_bQCCYOWPgOP`OOP`OgCW_I`CG@SW_?cPa?@GbC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29043,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 277
+    },
+    {
+      "theta_numeric": 2.8005091738071464,
+      "graph6": "]???????@BaeBc`oG[E_?Y?Ao?Ao?DO??_pQDCIO[OgOW`OOW`OhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28183,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 283
+    },
+    {
+      "theta_numeric": 2.798964037228009,
+      "graph6": "]???????BBeeFcboW[E_?Y?Ao?Ao?DO??_bOCCY?WPGOP_OOP_OHCK_Ap@G?UGg?_Wa_@?pD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33087,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 305
+    },
+    {
+      "theta_numeric": 2.797892168016318,
+      "graph6": "]???????@Oq_Q_gOICA__J?AQ?AQ?D@??caUCcQoY@iOTBOOTBOhCg_IpGG@UH_?cYa?@GtC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31541,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 320
+    },
+    {
+      "theta_numeric": 2.7964202346597995,
+      "graph6": "]????????B_e@c@o?[E_?Y?Ao?Ao?DO?A_bASCWPWP_QP`?QP`?hCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28446,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 329
+    },
+    {
+      "theta_numeric": 2.795814163270216,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??DaS?kQ_I`I?tAO?tAOwD__M_WG@sB_?eQI?BGkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 14938,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 338
+    },
+    {
+      "theta_numeric": 2.7943665766243964,
+      "graph6": "]???????@BaeBc`oG[E??W??o??o?CO??obPEC]CWPWWP_oWP_ohCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36438,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 348
+    },
+    {
+      "theta_numeric": 2.7941227646603,
+      "graph6": "]???????@?a_A__OGCCC_PO?a_?a_?X??cbQCcYOYPgOT`OOT`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29214,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 353
+    },
+    {
+      "theta_numeric": 2.793377075627462,
+      "graph6": "]???????@Oq_Q_gOICC__R?Aa?Aa?@P??daOCkQ?Y`GOt?OOt?OgCi_I`Gg@SHc?cQaO@GdS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9397,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 359
+    },
+    {
+      "theta_numeric": 2.7929750772570934,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??d_QCkAOY_gOs@OOs@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9160,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 366
+    },
+    {
+      "theta_numeric": 2.7922694602521467,
+      "graph6": "]????????B_e@c@o?[E_?Y?Ao?Ao?DO?A_bASCWPWP_QP`?QP`?`CG_Gp?G@EG_?CWa??GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28448,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 374
+    },
+    {
+      "theta_numeric": 2.791677170485803,
+      "graph6": "]???????@?a_A__OGCAG_H_?R??R?C@_?`eOCKq?WbGOpCOOr?OgDh_I`WW@SJa?cQm?@GlK??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 23072,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 380
+    },
+    {
+      "theta_numeric": 2.7913636962342503,
+      "graph6": "]???????DAicIcdOHSE?_X??q??q?CP??DaS?kQ_I`I?tAO?tAOgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15166,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 384
+    },
+    {
+      "theta_numeric": 2.7913297445682783,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??cbUCcYoYPiOTbOOTbOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 10051,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 385
+    },
+    {
+      "theta_numeric": 2.7911256180965727,
+      "graph6": "]???????@AacAc`OGSE_?Y?Ao?Ao?DO??daQCkQOY`gOt@OOt@OgPg_IDWG@Oj_?dAi?@ILC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9910,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 387
+    },
+    {
+      "theta_numeric": 2.790762886901761,
+      "graph6": "]???????@CagAg_SGcA__J?AQ?AQ?D@??`_SCKA_W_IOoAOOoAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 12377,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 390
+    },
+    {
+      "theta_numeric": 2.790662877630032,
+      "graph6": "]???????D?i_I_cOHCEc_ZOAq_Aq_DX??DiO?lQ?IdG?tGO?tGOg@G_I@OG@OI_?c?i?@GHC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26486,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 394
+    },
+    {
+      "theta_numeric": 2.789689184178879,
+      "graph6": "]???????@Oq_Q_gOICEc_ZOAq_Aq_DX??caQCcQOY@gOT@OOT@OhCg?IpG?@UH??cY_?@Gt???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 41790,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 407
+    },
+    {
+      "theta_numeric": 2.789669117827052,
+      "graph6": "]???????@?a_A__OGCEc?YOAo_Ao_DW??daQCkQOY`gOt@OOt@Og@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8162,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 408
+    },
+    {
+      "theta_numeric": 2.7895925421208583,
+      "graph6": "]???????@Oq_Q_gOICEa_ZGAqOAy?DT??CbO?cY?IPG?T_O?T_OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 35244,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 410
+    },
+    {
+      "theta_numeric": 2.7876346931570026,
+      "graph6": "]????????B?E@C@_?WE__Z?Aq?Aq?DP??_bqCEYOWXgOPpOOPpOhEG_Ip_G@UK_?cWq?@Gpc??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29581,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          3,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 441
+    },
+    {
+      "theta_numeric": 2.787312913603646,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??cAQC_QOQ@gOD@OOD@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9600,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 445
+    },
+    {
+      "theta_numeric": 2.7866410451115464,
+      "graph6": "]????????A_c?c@O?SE_?Y?Ao?Ao?DO??ahQCTIOXSgOQhOPOhOhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 43393,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 453
+    },
+    {
+      "theta_numeric": 2.7865142102733333,
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??DaS?kQ_I`I?tAO?tAOg@G_I@OG@OI_?c?i?@GHC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26095,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 457
+    },
+    {
+      "theta_numeric": 2.7864912458497617,
+      "graph6": "]???????@IasAs`WGUE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@Og@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9710,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 458
+    },
+    {
+      "theta_numeric": 2.78530102550493,
+      "graph6": "]???????@GaoAo_WGEEc_ZOAq_Aq_DX??caQCcQOY@gOT@OOT@Og@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9706,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "111452768447/40000000000",
+      "dominance_certificate_sha256": "5c7fd0e5717c02edb1eae5ededbd1da9b67026a6a2771787ac1c55e35357d4e0",
+      "expansion_index": 477
+    },
+    {
+      "theta_numeric": 2.7852157501212993,
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??c`QCcIOYOgOS`OOS`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27977,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 480
+    },
+    {
+      "theta_numeric": 2.7851462442574517,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??tApEiUCQhWWdOoWdOogdG_IhOG@TI_?cSi?@KhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 20903,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 482
+    },
+    {
+      "theta_numeric": 2.7848093753532117,
+      "graph6": "]???????@GaoAo_WGEE__Z?Aq?Aq?DP??e_QCsAOZ?gOU@OPS@Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 47526,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 490
+    },
+    {
+      "theta_numeric": 2.7845776420531942,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??DaS?kQ_I`I?tAO?tAOgCG_I`?G@SG_?cOa?@G`C??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19699,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 497
+    },
+    {
+      "theta_numeric": 2.784184573542341,
+      "graph6": "]???????@Oq_Q_gOICE?_X??q??q?CP??caQCcQOY@gOT@OOT@OhCg?IpG?@UH??cY_?@Gt???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33969,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 501
+    },
+    {
+      "theta_numeric": 2.7832531093637876,
+      "graph6": "]???????@AacAc`OGSC__R?Aa?Aa?@P??daOCkQ?Y`GOt?OOt?OiDG_Y`OGBSI_?kOi?@WhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8938,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 513
+    },
+    {
+      "theta_numeric": 2.782950026361291,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??DaS?kQ_I`I?tAO?tAOg@g?I@W?@OJ??cAg?@GL???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15785,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 522
+    },
+    {
+      "theta_numeric": 2.7828181122465754,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@OgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9805,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 523
+    },
+    {
+      "theta_numeric": 2.782247720973142,
+      "graph6": "]???????@CagAg_SGcE`?YCAs?As?DQ??dAQCgQOQ`gOd@OOd@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8405,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 531
+    },
+    {
+      "theta_numeric": 2.781759731598216,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??c`UCcIoYOiOSbOOSbOhCg?IpG?@UH??cY_?@Gt???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36614,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 536
+    },
+    {
+      "theta_numeric": 2.7806840684961847,
+      "graph6": "]????????B_e@c@o?[E?_X??q??q?CP??obOECYCWPGWP_OWP_OxCG_Mp?G@uG_?eWa?BGpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39606,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          2,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 552
+    },
+    {
+      "theta_numeric": 2.780408493362696,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??DAP?gU?A`W?d?o?d?ogD__I_WG@SB_?cQI?@GkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8470,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 556
+    },
+    {
+      "theta_numeric": 2.7798776940203016,
+      "graph6": "]???????@AacAc`OGSA__J?AQ?AQ?D@??`aSCKQ_W`IOpAOOpAOg@k_I@XG@OJg?cAi_@GLD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 25688,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 569
+    },
+    {
+      "theta_numeric": 2.7789819889866707,
+      "graph6": "]???????@?a_A__OGCCg_R_Ab?Ab?@P_@`eOKKq?wbGPpCOor?OgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 23049,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 580
+    },
+    {
+      "theta_numeric": 2.778639795143309,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??dAQCgQOQ`gOd@OOd@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 5387,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 586
+    },
+    {
+      "theta_numeric": 2.7776342698370726,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??DIS?hQ_AdI?dIO?dIOgD__I_WG@SB_?cQI?@GkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 22912,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 608
+    },
+    {
+      "theta_numeric": 2.7772633043814157,
+      "graph6": "]???????@AacAc`OGSE?_X??q??q?CP??caQCcQOY@gOT@OOT@OgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15972,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 612
+    },
+    {
+      "theta_numeric": 2.775133082558789,
+      "graph6": "]???????@BaeBc`oG[E??W??o??o?CO??_bQCCYOWPgOP`OOP`O`CJ_Gp?w@EGe?CWeO?Gp[??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 34742,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          3,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 648
+    },
+    {
+      "theta_numeric": 2.774783131067201,
+      "graph6": "]???????@?a_A__OGCEG_X_?r??r?CP_?@iW?LR?GdK?pGW?pKOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 22871,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 654
+    },
+    {
+      "theta_numeric": 2.7744985471966204,
+      "graph6": "]???????@PqaR_goIKE__Z?Aq?Aq?DP??c_QCcAOY?gOS@OOS@OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31214,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 659
+    },
+    {
+      "theta_numeric": 2.7744129472867005,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??DIO?hQ?AdG?dGO?dGOgD__I_WG@SB_?cQI?@GkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8885,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 663
+    },
+    {
+      "theta_numeric": 2.7743055569241926,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??dAOCgQ?Q`GOd?OOd?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 5371,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 666
+    },
+    {
+      "theta_numeric": 2.7742288329087974,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??daSCkQ_Y`IOtAOOtAOg@k_I@XG@OJg?cAi_@GLD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 6636,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 667
+    },
+    {
+      "theta_numeric": 2.7741924028941414,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??d_SCkA_Y_IOsAOOsAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 6855,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 669
+    },
+    {
+      "theta_numeric": 2.774013546470797,
+      "graph6": "]???????@PqaR_goIKE?_X??q??q?CP??c_QCcAOY?gOS@OOS@OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 41763,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 674
+    },
+    {
+      "theta_numeric": 2.773327044419256,
+      "graph6": "]???????@@aaB__oGKE__Z?Aq?Aq?DP??_fQCCyOWRgOPdOOR`OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29977,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          3,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 688
+    },
+    {
+      "theta_numeric": 2.773311939050054,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P??dAoCiQ?QhGOdOOOdOOgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 7707,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 690
+    },
+    {
+      "theta_numeric": 2.7729888446062207,
+      "graph6": "]???????@AacAc`OGSEa_ZGAqOAy?DT??_aQCCQOW@gOP@OOP@OgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 24130,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 699
+    },
+    {
+      "theta_numeric": 2.7725573903572,
+      "graph6": "]???????@CagAg_SGcC__R?Aa?Aa?@P??dAOCgQ?Q`GOd?OOd?OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 4991,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 703
+    },
+    {
+      "theta_numeric": 2.771586867676397,
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??c`QCcIOYOgOS`OOS`O`?g_GPGG@AH_?CIa??GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33670,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 717
+    },
+    {
+      "theta_numeric": 2.7715449480138012,
+      "graph6": "]????????C_g?g?S?cE__Z?Aq?Aq?DP??DgS?lA_IcI?sIO?sIOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 24553,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 719
+    },
+    {
+      "theta_numeric": 2.7713448884541636,
+      "graph6": "]???????@?a_A__OGCAc_JOAQ_AQ_DH??cbQCcYOYPgOT`OOT`Ol_G_JX?GDRG_?sKa?@kPC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27727,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "1386180928163/500000000000",
+      "dominance_certificate_sha256": "f92376a67813ffc47f0398651d40798432bf085e4d9c9abe88320a81604fd57d",
+      "expansion_index": 723
+    },
+    {
+      "theta_numeric": 2.7700289651360204,
+      "graph6": "]???????@?a_A__OGCCc_ROAa_Aa_@X??cbQCcYOYPgOT`OOT`Oj?G_YP?GBQG_?kGa?@WPC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27925,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 740
+    },
+    {
+      "theta_numeric": 2.7692586671301194,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??_aQCCQOW@gOP@OOP@OgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 24123,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 745
+    },
+    {
+      "theta_numeric": 2.768747079778946,
+      "graph6": "]???????@?a_A__OGCEA_XG?qO?y?CT??CaS?cQ_I@I?TAO?TAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 6278,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 752
+    },
+    {
+      "theta_numeric": 2.7686647868208283,
+      "graph6": "]???????@AacAc`OGSE`_ZCAu?Au?DR??dAoCiQ?QhGOdOOOdOOgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8977,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 754
+    },
+    {
+      "theta_numeric": 2.768659739454891,
+      "graph6": "]????????@_a@_?o?KC__R?Aa?Aa?@P??c`QCcIOYOgOS`OOS`OaCg_W`GGBCH_?KQa??WdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 38131,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 756
+    },
+    {
+      "theta_numeric": 2.768644093368304,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??caQCcQOY@gOT@OOT@OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 12836,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 757
+    },
+    {
+      "theta_numeric": 2.768051505734438,
+      "graph6": "]???????@DaiBg_sGkE__Z?Aq?Aq?DP??c`QCcIOYOgOS`OOS`OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33550,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 772
+    },
+    {
+      "theta_numeric": 2.7651870061638233,
+      "graph6": "]????????B_e@c@o?[E?_X??q??q?CP??gbOcCYAWPGSP_OSP_OHCG_Ap?G?UG_?_Wa?@?pC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29971,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 830
+    },
+    {
+      "theta_numeric": 2.764826196233913,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??c_QCcAOY?gOS@OOS@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15614,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 835
+    },
+    {
+      "theta_numeric": 2.763569075105972,
+      "graph6": "]???????@AacAc`OGSC_?Q?A_?A_?@O??daWCkR?Y`KOt?WOtCOg@i_I@Wg@OJc?cAiO@GLS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 21902,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 857
+    },
+    {
+      "theta_numeric": 2.763399296894514,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P?@`eOKKq?wbGPpCOor?OgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 10522,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 863
+    },
+    {
+      "theta_numeric": 2.762961715687408,
+      "graph6": "]????????C_g?g?S?cE__Z?Aq?Aq?DP??DAP?gU?A`W?d?o?d?ogDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 21155,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 879
+    },
+    {
+      "theta_numeric": 2.7626878740190817,
+      "graph6": "]???????@BAEBC`_GWE_?Y?Ao?Ao?DO??`bQCKYOWpgOp`OOp`OhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28182,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 885
+    },
+    {
+      "theta_numeric": 2.76219330174375,
+      "graph6": "]???????@IasAs`WGUE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@Og@__I?WG@OB_?cAI?@GKC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26163,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 899
+    },
+    {
+      "theta_numeric": 2.7620856707016666,
+      "graph6": "]???????D?i_I_cOHCE`_ZCAu?Au?DR??NGO_xAABcGCeGODcGOgDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9815,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 901
+    },
+    {
+      "theta_numeric": 2.7609872881184723,
+      "graph6": "]????????@_a@_?o?KE_?Y?Ao?Ao?DO??_rQDCYO[PgOX`OOX`OhCW_IpCG@UW_?cXa?@GrC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 44418,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 922
+    },
+    {
+      "theta_numeric": 2.7605309788188337,
+      "graph6": "]???????B?e_E_aOWCE`_ZCAu?Au?DR??cBQC_YOQPgOD`OOD`OHCg_ApGG?UH_?_Ya?@?tC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 38367,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 930
+    },
+    {
+      "theta_numeric": 2.7595633182612866,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P?@DiSGlQ_idI@tIO_tIOgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 6740,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 942
+    },
+    {
+      "theta_numeric": 2.7595619810586802,
+      "graph6": "]???????@QqcQchOISE__Z?Aq?Aq?DP??daOCkQ?Y`GOt?OOt?Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8715,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 943
+    },
+    {
+      "theta_numeric": 2.7586456467063636,
+      "graph6": "]???????@AacAc`OGSE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@Og@__I?WG@OB_?cAI?@GKC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26161,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 966
+    },
+    {
+      "theta_numeric": 2.7567543098405385,
+      "graph6": "]???????@BAEBC`_GWE_?Y?Ao?Ao?DO??`bOCKY?WpGOp_OOp_OhKG_Ir?G@]G_?cwa?@HpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 44337,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 994
+    },
+    {
+      "theta_numeric": 2.7560008198064256,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P?@`eOKKq?wbGPpCOor?OgDa_I_Wg@SBc?cQIO@GkS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 12480,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1008
+    },
+    {
+      "theta_numeric": 2.7538608362247308,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??d_QCkAOY_gOs@OOs@OgD__I_WG@SB_?cQI?@GkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 24565,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1040
+    },
+    {
+      "theta_numeric": 2.753567952640632,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??daSCkQ_Y`IOtAOOtAOg`K_IHPG@PIg?cCi_@KHD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9949,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1048
+    },
+    {
+      "theta_numeric": 2.753234167871031,
+      "graph6": "]???????@AacAc`OGSA__J?AQ?AQ?D@??daSCkQ_Y`IOtAOOtAOg@g?I@W?@OJ??cAg?@GL???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15854,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1050
+    },
+    {
+      "theta_numeric": 2.7528967061138045,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??cbQCcYOYPgOT`OOT`OLCw_BpKGCUX_?oZa?@_vC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 37384,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1062
+    },
+    {
+      "theta_numeric": 2.7525093446868487,
+      "graph6": "]????????@_a@_?o?KE_?Y?Ao?Ao?DO??_qQDCQO[@gOX@OOX@OhCW_IpCG@UW_?cXa?@GrC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 46155,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1071
+    },
+    {
+      "theta_numeric": 2.751154499093989,
+      "graph6": "]???????@?a_A__OGCCG_P_?b??b??P_?paWEKRCW`KWp?WWpCOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26438,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1104
+    },
+    {
+      "theta_numeric": 2.7510397350910405,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??c_UCcAoY?iOSBOOSBOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 24671,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1108
+    },
+    {
+      "theta_numeric": 2.7504990513224676,
+      "graph6": "]????????B_e@c@o?[E`_ZCAu?Au?DR??_bACCWOWP_OP`?OP`?gCW_I`CG@SW_?cPa?@GbC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36787,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1116
+    },
+    {
+      "theta_numeric": 2.750008770674554,
+      "graph6": "]???????@WQOQOgGIA@C?CO?G_C?_AG?AQy@RTSDLDOIZG_JXG_SYC_DE`GCgcg?R_Q_Ab?d??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29109,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1127
+    },
+    {
+      "theta_numeric": 2.7488594060693714,
+      "graph6": "]???????@Oq_Q_gOICEg_Z_Ar?Ar?DP_?`eOCKq?WbGOpCOOr?OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19329,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1145
+    },
+    {
+      "theta_numeric": 2.746555752514248,
+      "graph6": "]???????@AacAc`OGSEc_ZOAq_Aq_DX??daOCkQ?Y`GOt?OOt?Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15212,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1199
+    },
+    {
+      "theta_numeric": 2.7463389719979503,
+      "graph6": "]???????@?a_A__OGCCg_R_Ab?Ab?@P_?`aWCKR?W`KOp?WOpCOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 8158,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1206
+    },
+    {
+      "theta_numeric": 2.7443364854329517,
+      "graph6": "]???????DBIEJCd_HWE?_X??q??q?CP??_`QCCIOWOgOO`OOO`Oh@G_IPOG@QI_?cGi?@GXC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 42892,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1247
+    },
+    {
+      "theta_numeric": 2.744236557197117,
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??c`QCcIOYOgOS`OOS`Og?g_I@GG@OH_?cAa?@GDC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39279,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1249
+    },
+    {
+      "theta_numeric": 2.7420900673526427,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??D?T?gE_A_Y?cAo?cAogDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 21047,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1287
+    },
+    {
+      "theta_numeric": 2.7413009347267803,
+      "graph6": "]???????@EakAk`SGsA__J?AQ?AQ?D@??dASCgQ_Q`IOdAOOdAOg@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 22129,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1305
+    },
+    {
+      "theta_numeric": 2.7405664832347822,
+      "graph6": "]????????b`e`cPoC[E_?Y?Ao?Ao?DO??_aQCCQOW@gOP@OOP@O`CI_Gp?g@EGc?CWaO?GpS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 43963,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1326
+    },
+    {
+      "theta_numeric": 2.7405507510946014,
+      "graph6": "]???????@CagAg_SGcE__Z?Aq?Aq?DP??D?S?gA_A_I?cAO?cAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 21046,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1328
+    },
+    {
+      "theta_numeric": 2.740500149725138,
+      "graph6": "]????????B_e@c@o?[E__Z?Aq?Aq?DP?A_bASCWPWP_QP`?QP`?gCW_I`CG@SW_?cPa?@GbC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29645,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1330
+    },
+    {
+      "theta_numeric": 2.7397607986183345,
+      "graph6": "]???????@AacAc`OGSE_?Y?Ao?Ao?DO??_bOCCY?WPGOP_OOP_OhOg_ITGG@Qh_?dIa?@ITC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33851,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1346
+    },
+    {
+      "theta_numeric": 2.7394077839599857,
+      "graph6": "]???????@AacAc`OGSE_?Y?Ao?Ao?DO??_`QCCIOWOgOO`OOO`OhOg_ITGG@Qh_?dIa?@ITC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 40068,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1358
+    },
+    {
+      "theta_numeric": 2.7367989509359356,
+      "graph6": "]???????@BaeBc`oG[A__J?AQ?AQ?D@??`aSCKQ_W`IOpAOOpAOhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36460,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1418
+    },
+    {
+      "theta_numeric": 2.735734214226709,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??tAPEgUCQ`WWd?oWd?ogdG_IhOG@TI_?cSi?@KhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 14649,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1439
+    },
+    {
+      "theta_numeric": 2.734955827857183,
+      "graph6": "]???????@?a_A__OGCA__J?AQ?AQ?D@??daSCkQ_Y`IOtAOOtAOg@c_I?XG@OBg?cAI_@GKD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19182,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1461
+    },
+    {
+      "theta_numeric": 2.7343263521735004,
+      "graph6": "]????????C_g?g?S?cE__Z?Aq?Aq?DP??D_S?kA_I_I?sAO?sAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19740,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1474
+    },
+    {
+      "theta_numeric": 2.734158376148269,
+      "graph6": "]???????@GaoAo_WGEE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@OgL__IaWG@[B_?cqI?@HkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26164,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1479
+    },
+    {
+      "theta_numeric": 2.733374392942485,
+      "graph6": "]???????@WqoQogWIEE__Z?Aq?Aq?DP??caQCcQOY@gOT@OOT@Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 41882,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1503
+    },
+    {
+      "theta_numeric": 2.7332867722272733,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??c_QCcAOY?gOS@OOS@OgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 7613,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1511
+    },
+    {
+      "theta_numeric": 2.7319196995974555,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P??caQCcQOY@gOT@OOT@OgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 11275,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1536
+    },
+    {
+      "theta_numeric": 2.7313467855623803,
+      "graph6": "]???????@CagAg_SGcE?_X??q??q?CP??dAPCgU?Q`WOd?oOd?ogdG_IhOG@TI_?cSi?@KhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 9063,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1548
+    },
+    {
+      "theta_numeric": 2.730865246149575,
+      "graph6": "]???????B?e_E_aOWCEc_ZOAq_Aq_DX??cbQCcYOYPgOT`OOT`Oh?__IOGG@Q@_?cIA?@GSC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36533,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1558
+    },
+    {
+      "theta_numeric": 2.7305081714282053,
+      "graph6": "]???????@CagAg_SGcE?_X??q??q?CP??tAPEgUCQ`WWd?oWd?og@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 12136,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1564
+    },
+    {
+      "theta_numeric": 2.7289911726039984,
+      "graph6": "]???????@?a_A__OGCCG_P_?b??b??P_?`aWCKR?W`KOp?WOpCOgDi_I`Wg@SJc?cQiO@GlS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 23282,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1605
+    },
+    {
+      "theta_numeric": 2.7245663705961496,
+      "graph6": "]???????@@aaB__oGKE_?Y?Ao?Ao?DO??_rODCY?[PGOX_OOX_OhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 29116,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1713
+    },
+    {
+      "theta_numeric": 2.724046620779757,
+      "graph6": "]????????B_e@c@o?[A__J?AQ?AQ?D@??`aSCKQ_W`IOpAOOpAOhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 43520,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1728
+    },
+    {
+      "theta_numeric": 2.7228161713226973,
+      "graph6": "]????????B_e@c@o?[E_?Y?Ao?Ao?DO??`aQCKQOW`gOp@OOp@O`CI_Gp?g@EGc?CWaO?GpS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 42840,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1773
+    },
+    {
+      "theta_numeric": 2.7226052355690666,
+      "graph6": "]???????@AacAc`OGSC__R?Aa?Aa?@P??daOCkQ?Y`GOt?OOt?OgCI_I`?g@SGc?cOaO@G`S??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26687,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1782
+    },
+    {
+      "theta_numeric": 2.7220064145139924,
+      "graph6": "]????????B_e@c@o?[E_?Y?Ao?Ao?DO?A_bASCWPWP_QP`?QP`?gCG_I`?G@SG_?cOa?@G`C??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28452,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1793
+    },
+    {
+      "theta_numeric": 2.719815252892866,
+      "graph6": "]???????@BAEBC`_GWEg_Z_Ar?Ar?DP_?`bOCKY?WpGOp_OOp_OhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31872,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1842
+    },
+    {
+      "theta_numeric": 2.7179259792407247,
+      "graph6": "]????????@_a@_?o?KE__Z?Aq?Aq?DP??c`QCcIOYOgOS`OOS`OiCg?Y`G?BSH??kQ_?@Wd???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 34210,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1882
+    },
+    {
+      "theta_numeric": 2.7167865194853142,
+      "graph6": "]???????@BaeBc`oG[Ag_J_AR?AR?D@_?g`ScCIaWOISOaOSOaOhCG_Ip?G@UG_?cWa?@GpC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 45915,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          2,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1904
+    },
+    {
+      "theta_numeric": 2.7144028271824916,
+      "graph6": "]???????@BAEBC`_GWE_?Y?Ao?Ao?DO??`bQCKYOWpgOp`OOp`OgCG_I`?G@SG_?cOa?@G`C??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 28263,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1962
+    },
+    {
+      "theta_numeric": 2.714398110573093,
+      "graph6": "]???????@BAEBC`_GWE??W??o??o?CO??`bQCKYOWpgOp`OOp`OgCG_I`?G@SG_?cOa?@G`C??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39960,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1963
+    },
+    {
+      "theta_numeric": 2.714343610252431,
+      "graph6": "]????????B_e@c@o?[A_?I?AO?AO?D???_bOCCY?WPGOP_OOP_OhCK_Ip@G@UGg?cWa_@GpD??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31491,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1965
+    },
+    {
+      "theta_numeric": 2.7140039094501995,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??tApEiUCQhWWdOoWdOogDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00023_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 5339,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 1973
+    },
+    {
+      "theta_numeric": 2.709371212634803,
+      "graph6": "]????????@_a@_?o?KE__Z?Aq?Aq?DP??c`QCcIOYOgOS`OOS`OhCW_IpCG@UW_?cXa?@GrC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 33721,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2109
+    },
+    {
+      "theta_numeric": 2.708688624332958,
+      "graph6": "]???????@?a_A__OGCCc_ROAa_Aa_@X??k`QccIQYOgSS`OSS`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 42603,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2128
+    },
+    {
+      "theta_numeric": 2.7085822061351834,
+      "graph6": "]???????@CagAg_SGcA__J?AQ?AQ?D@??dASCgQ_Q`IOdAOOdAOg@g?I@W?@OJ??cAg?@GL???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15359,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2131
+    },
+    {
+      "theta_numeric": 2.7072379708562773,
+      "graph6": "]???????@@aaB__oGKE_?Y?Ao?Ao?DO??c`QCcIOYOgOS`OOS`OkCg?J`G?DSH??sQ_?@gd???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 41617,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2169
+    },
+    {
+      "theta_numeric": 2.706983768206111,
+      "graph6": "]???????@GaoAo_WGEA__J?AQ?AQ?D@??d_SCkA_Y_IOsAOOsAOgL__IaWG@[B_?cqI?@HkC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 25045,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2177
+    },
+    {
+      "theta_numeric": 2.70666584438159,
+      "graph6": "]???????@?a_A__OGCE`?YCAs?As?DQ??dAqCiQOQhgOdPOOdPOgTg_IdWG@Sj_?dQi?@IlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27137,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2187
+    },
+    {
+      "theta_numeric": 2.7064401089465484,
+      "graph6": "]???????@?a_A__OGCCC_PO?a_?a_?X??c`QCcIOYOgOS`OOS`Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 32332,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2193
+    },
+    {
+      "theta_numeric": 2.705515231977371,
+      "graph6": "]???????@?a_A__OGC?g_B_AB?AB?@@_?`eWCKr?WbKOpCWOrCOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 25469,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2220
+    },
+    {
+      "theta_numeric": 2.7040747027023,
+      "graph6": "]???????@?a_A__OGCC__R?Aa?Aa?@P??cbQCcYOYPgOT`OOT`OgCI_I`?g@SGc?cOaO@G`S??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 31539,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2271
+    },
+    {
+      "theta_numeric": 2.7036872497851,
+      "graph6": "]???????@Oq_Q_gOICC__R?Aa?Aa?@P??dAOCgQ?Q`GOd?OOd?OgCi_I`Gg@SHc?cQaO@GdS??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 17225,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2284
+    },
+    {
+      "theta_numeric": 2.702228546837636,
+      "graph6": "]???????@bBEbCp_KWAB_HK?UO?]?CF?BGGKw@@b_CEF?IGe?M?AKW?ObC?AKW??Gp_??Pb???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00008_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 2902,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2332
+    },
+    {
+      "theta_numeric": 2.70116151427647,
+      "graph6": "]???????B?e_E_aOWCAa_JGAQOAY?DD??_bUCCYoWPiOPbOOPbOKcW_BhCGCTW_?oTa?@cbC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 27721,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "675319672389/250000000000",
+      "dominance_certificate_sha256": "7899940d76b2a37c303c06dade547ebd2088f2f4ddef7716b0d45d6f35b4b1bc",
+      "expansion_index": 2363
+    },
+    {
+      "theta_numeric": 2.700675744700962,
+      "graph6": "]???????@AacAc`OGSA_?I?AO?AO?D???daSCkQ_Y`IOtAOOtAOg@g?I@W?@OJ??cAg?@GL???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 25965,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2373
+    },
+    {
+      "theta_numeric": 2.6991819744404695,
+      "graph6": "]???????@Oq_Q_gOICEc_ZOAq_Aq_DX??caQCcQOY@gOT@OOT@Oh?g_IPGG@QH_?cIa?@GTC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 39871,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "exact_theta_upper": "541839972241/200000000000",
+      "dominance_certificate_sha256": "2c424ff74a57f9e03136daf4de7e866c539ec82e2309b799f8d9b207c7929a7a",
+      "expansion_index": 2414
+    },
+    {
+      "theta_numeric": 2.698529604151805,
+      "graph6": "]???????@Oq_Q_gOICE?_X??q??q?CP??dApCiU?QhWOdOoOdOogCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 26123,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2431
+    },
+    {
+      "theta_numeric": 2.6982347719685733,
+      "graph6": "]???????@?a_A__OGCEC_XO?q_?q_CX??cbQCcYOYPgOT`OOT`OhG__IQGG@Y@_?ciA?@HSC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 46247,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2444
+    },
+    {
+      "theta_numeric": 2.697197881896847,
+      "graph6": "]???????@?a_A__OGCE`?YCAs?As?DQ??dAQCgQOQ`gOd@OOd@OgTg_IdWG@Sj_?dQi?@IlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 10580,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2478
+    },
+    {
+      "theta_numeric": 2.69397041712046,
+      "graph6": "]???????@CagAg_SGcE_?Y?Ao?Ao?DO??DAS?gQ_A`I?dAO?dAOgDg_I`WG@SJ_?cQi?@GlC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 15116,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2560
+    },
+    {
+      "theta_numeric": 2.69390541569084,
+      "graph6": "]???????@?a_A__OGCE?_X??q??q?CP??tApEiUCQhWWdOoWdOogDG_I`OG@SI_?cOi?@GhC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 19986,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2561
+    },
+    {
+      "theta_numeric": 2.692429494452955,
+      "graph6": "]???????@?a_A__OGCE__Z?Aq?Aq?DP??L_S_kAaI_ICsAOCsAOg@g_I@WG@OJ_?cAi?@GLC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 17379,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2597
+    },
+    {
+      "theta_numeric": 2.6918415490713117,
+      "graph6": "]???????@Oq_Q_gOICEc_ZOAq_Aq_DX??CbQ?cYOIPg?T`O?T`OhCg?IpG?@UH??cY_?@Gt???",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 44464,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2618
+    },
+    {
+      "theta_numeric": 2.689018864258819,
+      "graph6": "]????????ROEPCH_AWE__Z?Aq?Aq?DP??_aQCCQOW@gOP@OOP@OhEG_Ip_G@UK_?cWq?@Gpc??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 36378,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2726
+    },
+    {
+      "theta_numeric": 2.6869060327579213,
+      "graph6": "]????????@_a@_?o?KE__Z?Aq?Aq?DP??c_QCcAOY?gOS@OOS@OhCW_IpCG@UW_?cXa?@GrC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 44678,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 2790
+    },
+    {
+      "theta_numeric": 2.6761676018808505,
+      "graph6": "]???????@@aaB__oGKE_?Y?Ao?Ao?DO??`eOCKq?WbGOpCOOr?OgCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00039_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 17584,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 3102
+    },
+    {
+      "theta_numeric": 2.6684710913304293,
+      "graph6": "]????????B_e@c@o?[E__Z?Aq?Aq?DP??a_QCSAOX?gOQ@OPO@OgCW_I`CG@SW_?cPa?@GbC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 43298,
+      "quotient": [
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 3341
+    },
+    {
+      "theta_numeric": 2.667456798476351,
+      "graph6": "]????????{PWoWWKEaCO?o?@_?@_??o?@`gPKLE?wcWPoGoooGoAoZ_OLCwA@we?HDeO?UB[??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00008_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 1814,
+      "quotient": [
+        [
+          0,
+          0,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          3,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 3378
+    },
+    {
+      "theta_numeric": 2.6647775671699736,
+      "graph6": "]???????@@aaB__oGKE??W??o??o?CO??c_RCcEOY?wOS@oOS@ogCg_I`GG@SH_?cQa?@GdC??",
+      "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+      "index": 35684,
+      "quotient": [
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_quotient_excluded": false,
+      "representative_screen": "not_excluded",
+      "expansion_index": 3446
+    }
+  ]
+}

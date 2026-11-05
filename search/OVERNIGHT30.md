@@ -319,9 +319,8 @@ Legacy cut rebasing from the earlier 60 auxiliaries was verified. The refreshed
 2.8894779990 C5 guide has an unexcluded quotient, but its individual graph has
 an exact bound below three and is explicitly marked as a mutation guide.
 
-Next research priorities are the 182 analytically inconclusive reviewed
-quotients, the 1,793 unreviewed published quotients, and asymmetric supports
-outside these symmetry catalogs. The nonuniform dimension-19 case and the
+The 01:00 continuation below completes this published quotient census and
+supersedes these residual counts. The nonuniform dimension-19 case and the
 uniform case with all three pairs non-isoclinic remain open. Do not repeat the
 completed 150-class phase review or weaken the actual-group-action requirement.
 
@@ -359,6 +358,51 @@ Gram identities force both contexts uniform, contradicting the zero-rectangle
 theorem. `event30_uniform_rectangle.py` contains the reviewed proof and exact
 controls. These statements do not exclude arbitrary nonuniform graphs or
 arbitrary isoclinic pair supports, and no unrestricted worker filter was added.
+
+The new quotient expansion reviews all 1,879 previously unexamined classes in
+the pinned published pool: 34,721 scored records give 5,589 quotient classes.
+It certifies 1,843 additional exclusions (534 sector LP, 502 saturation,
+807 disjoint-moment LP), leaving 218 combined residual classes. The five
+highest-scoring residual classes selected from the midnight expansion are
+then excluded by complete phase enumeration: 9,062 normalized assignments,
+2,269 unit representatives, largest exact upper bound 2.967026795602. The
+combined catalogs exclude 5,376 of 5,589 classes, leaving 213 unresolved.
+Every published class was reviewed; the full C5-double family was not enumerated.
+The new immutable catalogs are `overnight30_quotient_expansion/2026-11-05T0100/`
+and `overnight30_phase_reviews/2026-11-05T0100/`. Their verifiers check input
+bindings, exact certificates and independent fixed-order phase coverage.
+
+The worker catalog now has 248,946 permuted signatures, 251,250 SAT clauses
+and 72 count auxiliaries. Cold verification measured 17.7 seconds and CNF
+construction 3.3 seconds. The old 2.889477999 C5 guide's entire quotient is
+now excluded. The replacement guide scores 2.8521658155 and comes from pinned
+chunk 55, record 45891; it passes current screens but is numerical only.
+The separate `event30_strict_probability_lp.py` checks exact strict Farkas
+identities, including zero-margin contradictions. A bounded trial on all 218
+pre-phase residuals produced no new certificates. Keep this as research
+infrastructure; no feasibility conclusion follows from its failure to certify.
+
+A witness-guided asymmetric repair batch adds shared neighbors to break the
+retired leader's disjoint-partition certificate, minimally clearing each new
+triangle. It processes 223 previously unscored labels: 118 exact pre-score
+exclusions and 105 scores, with 55 isomorphism classes within this batch and
+50 explicit mappings. The best graph is fully asymmetric, theta 2.9092320745,
+with exact individual upper bound 29103/10000. It is injected once as an
+excluded mutation guide. The worker attempts a retained partition-witness
+repair every 128 ordinary proposals, without changing other proposal weights,
+screening or acceptance. Exact rejection replay and 32 deterministic repair
+controls passed; natural chunk 88 execution confirmed valid proposals and
+accepted moves. The source summary is `overnight30_asymmetric_reviews/2026-11-05T0100/`.
+Raw repair and phase logs are immutable auxiliary archives in chunk 88,
+`auxiliary_asymmetric_repair_0100/`, `auxiliary_asymmetric_repair_singleton_0100/`
+and `auxiliary_phase_review_0100/`, for normal supervisor publication. The
+singleton archive adds 32 controls for a real 5+4+1 partition certificate.
+Do not count auxiliary records as main-worker coverage.
+
+Next priorities are the 213 remaining published quotient classes, new weakly
+symmetric/asymmetric supports, and structural restrictions on nonuniform
+dimension-19 realizations. Inspect the repair move's natural performance
+before changing its cadence. Do not rerun the completed published-pool census.
 
 ## Operation and scheduled continuation
 

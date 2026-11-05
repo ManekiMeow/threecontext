@@ -527,13 +527,18 @@ def run(args):
                     raise ValueError(f"resume configuration differs: {key}")
             state.update(saved)
         if args.family == "c5_double":
-            from overnight30_quotient import quotient_patterns, verified_catalog, verified_saturation_catalog, verified_phase_catalog, verified_disjoint_catalog, verified_general_phase_catalog
+            from overnight30_quotient import (quotient_patterns, verified_catalog, verified_saturation_catalog,
+                                              verified_phase_catalog, verified_disjoint_catalog,
+                                              verified_general_phase_catalog, verified_expansion_catalog,
+                                              FURTHER_PHASE_CATALOG, FURTHER_EXPANSION_CATALOG)
             patterns = quotient_patterns()
             state["base_quotient_filter"] = {"static_theorem": "Proposition46",
                                              "verified_farkas_certificates": len(verified_catalog()),
                                              "verified_saturation_certificates": len(verified_saturation_catalog()),
                                              "verified_phase_classes": len(verified_phase_catalog()),
                                              "verified_general_phase_classes": len(verified_general_phase_catalog()),
+                                             "verified_further_phase_classes": len(verified_general_phase_catalog(FURTHER_PHASE_CATALOG)),
+                                             "verified_expansion_certificates": len(verified_expansion_catalog())+len(verified_expansion_catalog(FURTHER_EXPANSION_CATALOG)),
                                              "verified_disjoint_farkas_certificates": len(verified_disjoint_catalog()),
                                              "distinct_permuted_patterns": len(patterns),
                                              "count_predicate_values": sorted({value for pattern in patterns for value in pattern})}

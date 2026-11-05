@@ -1,0 +1,10 @@
+{
+  "reviewed": 218,
+  "certified": 0,
+  "zero_margin": 0,
+  "seconds": 5.328453556998284,
+  "requested_seconds": 25,
+  "results_archive": "results.jsonl.gz",
+  "proof_archive": "certificates.jsonl.gz",
+  "scope": "All218 residual published C5 quotients after prior exact catalogs; strict orbit bounds, sector inequalities, verified moment bounds and Theorem56 weighted degrees."
+}

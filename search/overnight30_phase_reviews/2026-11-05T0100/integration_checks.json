@@ -1,0 +1,13 @@
+{
+  "patterns": 248946,
+  "clauses": 251250,
+  "auxiliary_variables": 72,
+  "new_phase_relabel_sat_replay_checks": 240,
+  "tamper_checks": 5,
+  "catalog_seconds": 17.695620500999212,
+  "cnf_seconds": 3.260691116003727,
+  "total_seconds": 22.303638172998035,
+  "next_guide_theta": 2.852165815533051,
+  "next_guide_source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+  "next_guide_index": 45891
+}

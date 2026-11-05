@@ -1,0 +1,223 @@
+{
+  "format": "ghz30-c5-general-phase-enumeration-v1",
+  "quotient": [
+    [
+      0,
+      0,
+      0,
+      3,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      1,
+      2,
+      0,
+      0
+    ]
+  ],
+  "source_index": 4,
+  "source_summary": "search/overnight30_phase_reviews/2026-11-05T0100/targets.json",
+  "source_summary_sha256": "40f9cd30dba098c1a6ba29f7948925663edf3bb9ef611b2e32b148517b90a73e",
+  "coverage": {
+    "gauge_tree": [
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "raw_phase_assignments": 625000000,
+    "gauge_phase_assignments": 200000,
+    "normal_triangle_free_assignments": 20,
+    "representatives": 6,
+    "raw_triangle_free_assignments": 62500,
+    "unit_orbit_sizes": {
+      "2": 2,
+      "4": 4
+    },
+    "prefixes_visited": 67,
+    "representatives_sha256": "aee5326b2c9e8fb98e743a0f7c611cd77a5831f967c67e607a0112fe8a8aea0e"
+  },
+  "records": [
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        7,
+        0,
+        1,
+        24,
+        6,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????H_q@o?w?MCo?q?B_?B_?@o?@c@oKaI?qWGPCoOoCoO_q?oGKaG@@co?DCR??M?e??",
+      "theta_numeric": 2.745717845243114,
+      "exact_theta_upper": "2745902867751/1000000000000",
+      "certificate": "certificates/90920cd29a92d9645f3f31338c405f41a1478cc78da21fe635906aa4aee15a8f.json.gz",
+      "certificate_sha256": "90920cd29a92d9645f3f31338c405f41a1478cc78da21fe635906aa4aee15a8f"
+    },
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        11,
+        0,
+        1,
+        20,
+        10,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????I_s?s@W?UCo?q?B_?B_?@o?@cAoKaQ?qHGPDOOoDOO_i?oGIaG@HCo?CcR??L?e??",
+      "theta_numeric": 2.6862738414632337,
+      "exact_theta_upper": "268646435307/100000000000",
+      "certificate": "certificates/dff14b7ace2d349888f64f5a2d61c0400a2cf5dee6c390b4c377bf3f488c6489.json.gz",
+      "certificate_sha256": "dff14b7ace2d349888f64f5a2d61c0400a2cf5dee6c390b4c377bf3f488c6489"
+    },
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        19,
+        0,
+        1,
+        12,
+        12,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????K_w?w?[?eCo?q?B_?B_?@o?@cBOK_Y?qPGPD_OoD_O_Y?oGEaG@Gco?D_R??J?e??",
+      "theta_numeric": 2.6114153291025186,
+      "exact_theta_upper": "1305727969277/500000000000",
+      "certificate": "certificates/ad12636930813746b2af52b7b283f3b044106ea2bf82c7c0571db72de1ed3d12.json.gz",
+      "certificate_sha256": "ad12636930813746b2af52b7b283f3b044106ea2bf82c7c0571db72de1ed3d12"
+    },
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        21,
+        0,
+        1,
+        10,
+        20,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????L?Y@W?k?iCo?q?B_?B_?@o?@cDOK_i?qQGPCcOoE_O_U?oGcaG@Cco?DOR??I_e??",
+      "theta_numeric": 2.6862738414117944,
+      "exact_theta_upper": "167908767593/62500000000",
+      "certificate": "certificates/00492466028959ca3d5491df13b6112de294332deb2236e432e19cbabd19ca36.json.gz",
+      "certificate_sha256": "00492466028959ca3d5491df13b6112de294332deb2236e432e19cbabd19ca36"
+    },
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        22,
+        0,
+        1,
+        9,
+        5,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????D_i@g?s?kCo?q?B_?B_?@o?@cHOK`I?qSGPCgOoCgO`Q?oGSaG@Aco?DGR??IOe??",
+      "theta_numeric": 2.866025469107463,
+      "exact_theta_upper": "2866089290867/1000000000000",
+      "certificate": "certificates/f5f76cda00019caf62833193a2f45a41670ed341e4da37c59f02e2bca0f3ef83.json.gz",
+      "certificate_sha256": "f5f76cda00019caf62833193a2f45a41670ed341e4da37c59f02e2bca0f3ef83"
+    },
+    {
+      "phase_masks": [
+        0,
+        7,
+        24,
+        1,
+        25,
+        0,
+        1,
+        6,
+        24,
+        1,
+        1,
+        6
+      ],
+      "graph6": "]????????M?[?[@K?qCo?q?B_?B_?@o?@cEOK_q?qBGPDCOoF?O_M?oGaaG@KCo?CoR??H_e??",
+      "theta_numeric": 2.5275230836163742,
+      "exact_theta_upper": "2527639547447/1000000000000",
+      "certificate": "certificates/550f6333e5d7d31b3bf1dc049aa0fcede2fb41d5382fd96c40f0aee88ec59c1d.json.gz",
+      "certificate_sha256": "550f6333e5d7d31b3bf1dc049aa0fcede2fb41d5382fd96c40f0aee88ec59c1d"
+    }
+  ],
+  "complete_exact_exclusion": true,
+  "scope": "all C5 phases of this fixed quotient; proper-subset tree translations and common units",
+  "last_discovery_seconds": 1.308715722996567,
+  "unresolved_attempts": []
+}

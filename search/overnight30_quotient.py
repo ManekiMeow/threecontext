@@ -26,8 +26,10 @@ CATALOG = Path(__file__).with_name("overnight30_quotient_reviews")/"2026-11-04T2
 SATURATION_CATALOG = Path(__file__).with_name("overnight30_saturation_reviews")/"2026-11-04T2300"/"summary.json"
 PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0000"/"summary.json"
 GENERAL_PHASE_CATALOG = Path(__file__).with_name("overnight30_general_phase_reviews")/"2026-11-05T0000"/"summary.json"
+FURTHER_PHASE_CATALOG = Path(__file__).with_name("overnight30_phase_reviews")/"2026-11-05T0100"/"summary.json"
 DISJOINT_CATALOG = Path(__file__).with_name("overnight30_disjoint_reviews")/"2026-11-05T0000"/"summary.json"
 EXPANSION_CATALOG = Path(__file__).with_name("overnight30_quotient_expansion")/"2026-11-05T0000"/"summary.json"
+FURTHER_EXPANSION_CATALOG = Path(__file__).with_name("overnight30_quotient_expansion")/"2026-11-05T0100"/"summary.json"
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -135,11 +137,11 @@ def verified_phase_catalog():
     return tuple(result)
 
 
-@lru_cache(maxsize=1)
-def verified_general_phase_catalog():
-    if not GENERAL_PHASE_CATALOG.exists():
+@lru_cache(maxsize=None)
+def verified_general_phase_catalog(catalog=GENERAL_PHASE_CATALOG):
+    if not catalog.exists():
         return ()
-    summary = json.loads(GENERAL_PHASE_CATALOG.read_text())
+    summary = json.loads(catalog.read_text())
     result = []
     for proof in summary["results"]:
         verify_phase_reference(proof)
@@ -169,18 +171,18 @@ def verified_disjoint_catalog():
     return tuple(result)
 
 
-@lru_cache(maxsize=1)
-def verified_expansion_catalog():
+@lru_cache(maxsize=None)
+def verified_expansion_catalog(catalog=EXPANSION_CATALOG):
     """Replay every claimed proof in the separate compressed expansion catalog."""
     from event30_disjoint_probability import verify_quotient_certificate as verify_disjoint
     from event30_probability_lp import verify_certificate as verify_probability
     from event30_quotient_saturation import verify_certificate as verify_saturation
-    if not EXPANSION_CATALOG.exists():
+    if not catalog.exists():
         return ()
-    folder = EXPANSION_CATALOG.parent
-    summary = json.loads(EXPANSION_CATALOG.read_text())
+    folder = catalog.parent
+    summary = json.loads(catalog.read_text())
     hashes = json.loads((folder/"artifact_sha256.json").read_text())
-    names = (EXPANSION_CATALOG.name, summary["results_archive"], summary["proof_archive"])
+    names = (catalog.name, summary["results_archive"], summary["proof_archive"])
     for name in names:
         relative = Path(name)
         require(not relative.is_absolute() and ".." not in relative.parts, "invalid expansion artifact path")
@@ -216,7 +218,7 @@ def pattern_catalog():
     result = {}
     # Static Proposition46 has priority when a later certificate overlaps it.
     sources = [(Q, None)]+[(certificate["quotient"], certificate)
-                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()+verified_expansion_catalog()]
+                          for certificate in verified_catalog()+verified_saturation_catalog()+verified_phase_catalog()+verified_disjoint_catalog()+verified_general_phase_catalog()+verified_expansion_catalog()+verified_general_phase_catalog(FURTHER_PHASE_CATALOG)+verified_expansion_catalog(FURTHER_EXPANSION_CATALOG)]
     for matrix, certificate in sources:
         for order in orbit_orders():
             pattern = tuple(matrix[order[a]][order[b]] for a, b in PAIRS)

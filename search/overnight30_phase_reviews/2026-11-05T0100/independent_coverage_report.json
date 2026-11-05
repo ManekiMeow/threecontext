@@ -1,0 +1,63 @@
+{
+  "method": "independent fixed-order residue sets, unit composition, translations, exact duals",
+  "audit_implementation": "search/overnight30_general_phase_reviews/2026-11-05T0000/independent_coverage.py",
+  "audit_implementation_sha256": "05f9dc3c7c3891b1d92f18fab379a5537753b153d67635e3f7aec2ac691c9537",
+  "classes": [
+    {
+      "source_index": 0,
+      "manifest_sha256": "bfabea9568a5f1f29ac6373b13c639f9d3063f60f0483911478080af08e56ad5",
+      "fixed_order_prefixes": 167473,
+      "normal_triangle_free_assignments": 2778,
+      "unit_representatives": 695,
+      "unit_compositions_checked": 44448,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 695,
+      "uniform_exact_upper": "722377013729/250000000000"
+    },
+    {
+      "source_index": 1,
+      "manifest_sha256": "78a9bb671e2f1fb37142f0566dd9ca79a00b75c9cce761ca5ee83a8f8ae5d0aa",
+      "fixed_order_prefixes": 179002,
+      "normal_triangle_free_assignments": 288,
+      "unit_representatives": 72,
+      "unit_compositions_checked": 4608,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 72,
+      "uniform_exact_upper": "92252147651/31250000000"
+    },
+    {
+      "source_index": 2,
+      "manifest_sha256": "a0f594558418be594d6b9c4255b6ac266eb6daa2e41bf72ea25c22ffd4464b1a",
+      "fixed_order_prefixes": 66994,
+      "normal_triangle_free_assignments": 612,
+      "unit_representatives": 154,
+      "unit_compositions_checked": 9792,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 154,
+      "uniform_exact_upper": "582133481299/200000000000"
+    },
+    {
+      "source_index": 3,
+      "manifest_sha256": "118ecc46ff81235bf6d0d173ebda6e443a77a86fd809429e5d13b253bf2f65ac",
+      "fixed_order_prefixes": 139234,
+      "normal_triangle_free_assignments": 5364,
+      "unit_representatives": 1342,
+      "unit_compositions_checked": 85824,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 1342,
+      "uniform_exact_upper": "1483513397801/500000000000"
+    },
+    {
+      "source_index": 4,
+      "manifest_sha256": "72d2061b1270962337cf3d712c10aa9fbbf25e8061ffb66fb3bb393f4968ae55",
+      "fixed_order_prefixes": 25044,
+      "normal_triangle_free_assignments": 20,
+      "unit_representatives": 6,
+      "unit_compositions_checked": 320,
+      "relative_translations_checked": 3125,
+      "exact_certificates_verified": 6,
+      "uniform_exact_upper": "2866089290867/1000000000000"
+    }
+  ],
+  "total_certificates": 2269
+}

@@ -1,0 +1,152 @@
+{
+  "scope": "Bounded witness-guided construction, not an exhaustive local or global exclusion.",
+  "published_cutoff": "5a2b45478d066d5180d1364259e1c7b1d233fc33",
+  "parent_path": "search/overnight30_runs/2026-11-04/chunks/00079_asymmetric/asymmetric_seed20261104_best_excluded.json",
+  "parent_sha256": "6c940d064d9487fe29a7773cd71965a57309a433be738ac924822ab5deccdd8a",
+  "parent_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+  "parent_theta_numeric": 2.9166384145141824,
+  "parent_obstruction": "disjoint_partition",
+  "parent_obstruction_budget": "15/16",
+  "counts": {
+    "target_added_edges": 80,
+    "minimal_conflict_choices": 276,
+    "completion_attempts": 552,
+    "duplicate_candidates": 249,
+    "already_scored_labels": 80,
+    "new_candidates": 223,
+    "processed_candidates": 223,
+    "scored": 105,
+    "numerical_failures": 0
+  },
+  "screen_method_counts": {
+    "disjoint_partition": 114,
+    "not_excluded": 105,
+    "probability_propagation": 4
+  },
+  "search_seconds": 19.63366060199769,
+  "requested_seconds": 20.0,
+  "positive_controls": {
+    "H33": {
+      "theta": 3.0000000069444726,
+      "diagnostics": {
+        "minimum_eigenvalue": -1.838932059632508e-10,
+        "trace_error": 3.9968028886505635e-15,
+        "zero_error": 4.45340622975136e-13
+      }
+    },
+    "H36": {
+      "theta": 3.0000000027912748,
+      "diagnostics": {
+        "minimum_eigenvalue": -3.877664744392697e-11,
+        "trace_error": 3.3306690738754696e-15,
+        "zero_error": 6.958326312888333e-16
+      }
+    }
+  },
+  "deduplication": "Only exact graph6 labels against scored records in completed main-worker archives; not an isomorphism census.",
+  "best": {
+    "g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daO?Lr_WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+    "theta_numeric": 2.9092320745412685,
+    "added_target": [
+      17,
+      21
+    ],
+    "sharing_pair": [
+      16,
+      17
+    ],
+    "shared_neighbor": 21,
+    "removed_conflicts": [
+      [
+        3,
+        21
+      ]
+    ],
+    "edge_difference": 4,
+    "completion_seed": 17210299,
+    "screen_status": "not_excluded",
+    "screen_method": null,
+    "known_exact_upper": "29103/10000",
+    "full_automorphism_group_order": 1,
+    "scope": "individually excluded construction guide"
+  },
+  "isomorphism_census": {
+    "scored_labels": 105,
+    "selected_nonisomorphic_representatives": 55,
+    "saved_isomorphism_maps": 50,
+    "scope": "Exact uncolored isomorphism only within this105-label repair batch, not the full published pool.",
+    "best_automorphisms_uncolored": 1,
+    "best_automorphisms_context_preserving": 1,
+    "best_g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daO?Lr_WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??"
+  },
+  "verification": {
+    "pre_score_certificates": 118,
+    "worker_repair_controls": 32,
+    "deterministic_replays": 32,
+    "distinct_control_labels": 30,
+    "input_record_unmodified": true,
+    "mismatched_certificate_rejected": true,
+    "verified_batch_maps": 50,
+    "pairwise_nonisomorphic_batch_representatives": 55,
+    "best_full_automorphism_order": 1,
+    "exact_best_upper": "29103/10000",
+    "scope": "Exact replay and combinatorial controls; no new numerical solves.",
+    "singleton_compatibility": {
+      "singleton_partition_sizes": [
+        5,
+        4,
+        1
+      ],
+      "singleton_other_context": null,
+      "exact_partition_budget": "1411/1440",
+      "certificate_verified": true,
+      "repair_proposals": 32,
+      "deterministic_replays": 32,
+      "all_selected_blocks_nonsingleton": true,
+      "input_record_unmodified": true,
+      "source_graph_id": "4c1f39a97ef002e02c6f",
+      "scope": "Nonnumerical regression on an actual certified 01:00 review representative."
+    }
+  },
+  "raw_data": {
+    "archive_path": "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/auxiliary_asymmetric_repair_0100/asymmetric_repair_0100.tar.gz",
+    "archive_sha256": "c473903d6ce20cc592b83d9d5a4095769e48f344b1af3eee6f6937651e52c0b4",
+    "carrier_job": 88,
+    "supervisor_heartbeat": "2026-11-05T01:17:43+00:00"
+  },
+  "worker_move": {
+    "name": "partition_witness_repair",
+    "every_ordinary_proposals": 128,
+    "target_attempts": 8,
+    "parent": "best_records.best_excluded_theta when certified by disjoint_partition",
+    "existing_proposal_weights_unchanged": true,
+    "existing_screening_and_acceptance_unchanged": true
+  },
+  "additional_controls": [
+    {
+      "purpose": "explicit singleton skipping and real 5+4+1 coverage; the original distinct-pair loop already skipped singleton blocks",
+      "raw_data": {
+        "archive_path": "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric/auxiliary_asymmetric_repair_singleton_0100/asymmetric_repair_singleton_0100.tar.gz",
+        "archive_sha256": "9c2d586c8d0a779f0a60488182dcedf41bc8e9ff8f9da46a2dbe9ee0df188b05",
+        "carrier_job": 88,
+        "supervisor_heartbeat": "2026-11-05T01:24:14+00:00"
+      },
+      "verification": {
+        "singleton_partition_sizes": [
+          5,
+          4,
+          1
+        ],
+        "singleton_other_context": null,
+        "exact_partition_budget": "1411/1440",
+        "certificate_verified": true,
+        "repair_proposals": 32,
+        "deterministic_replays": 32,
+        "all_selected_blocks_nonsingleton": true,
+        "input_record_unmodified": true,
+        "source_graph_id": "4c1f39a97ef002e02c6f",
+        "scope": "Nonnumerical regression on an actual certified 01:00 review representative."
+      }
+    }
+  ]
+}

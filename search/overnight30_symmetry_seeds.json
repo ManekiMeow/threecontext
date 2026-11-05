@@ -149,13 +149,103 @@
         "record_index": 32565,
         "line_number_zero_based": 4857,
         "published_commit": "bb92744f2b4fa70cb1a11b12ca4290bee9546f9e",
-        "review": "New quotient outside all150 selected classes; bounded LP, saturation, and disjoint-probability certificate attempts found no class exclusion."
+        "review": "Initially an inconclusive quotient; now every cyclic phase has an exact theta upper bound below three."
       },
-      "scope": "Mutation guide only: this individual graph has an exact theta upper bound below three, while its quotient class is not excluded by current catalogs.",
-      "screen_status": "Survives current exact combinatorial support screens and all verified quotient-class catalogs, including Theorem54.",
+      "scope": "Exactly excluded by complete C5 phase enumeration; retained only as a historical mutation guide.",
+      "screen_status": "Excluded by all-phase exact theta certificates for this quotient, recorded in the 01:00 phase review.",
       "individual_exact_theta_upper": "1445246758047/500000000000",
       "individual_exact_certificate": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/dual_cuts/4a74dbf6313a329d17fdda90a57ce78c9f145216790df5957cf899e215db9c50.json.gz",
-      "individual_exact_certificate_sha256": "4a74dbf6313a329d17fdda90a57ce78c9f145216790df5957cf899e215db9c50"
+      "individual_exact_certificate_sha256": "4a74dbf6313a329d17fdda90a57ce78c9f145216790df5957cf899e215db9c50",
+      "exact_obstruction": {
+        "method": "c5_phase_quotient",
+        "witness": {
+          "orbit_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phase_certificate": {
+            "format": "ghz30-c5-general-phase-catalog-entry-v1",
+            "quotient": [
+              [
+                0,
+                0,
+                1,
+                1,
+                2,
+                2
+              ],
+              [
+                0,
+                0,
+                2,
+                1,
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                1,
+                1,
+                0,
+                0,
+                2,
+                2
+              ],
+              [
+                2,
+                1,
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                2,
+                2,
+                1,
+                2,
+                0,
+                0
+              ]
+            ],
+            "source_index": 0,
+            "source_expansion_index": 1,
+            "manifest": "search/overnight30_phase_reviews/2026-11-05T0100/target_000/manifest.json",
+            "manifest_sha256": "bfabea9568a5f1f29ac6373b13c639f9d3063f60f0483911478080af08e56ad5",
+            "uniform_exact_upper": "722377013729/250000000000"
+          }
+        }
+      }
+    },
+    {
+      "graph6": "]???????B?e_E_aOWCC__R?Aa?Aa?@P??cbQCcYOYPgOT`OOT`OJCG_Qp?GAUG_?gWa?@OpC??",
+      "context_sizes": [
+        10,
+        10,
+        10
+      ],
+      "theta_numeric": 2.852165815533051,
+      "edges_count": 95,
+      "provenance": {
+        "source": "search/overnight30_runs/2026-11-04/chunks/00055_c5_double/c5_double/seed_20261110/models.jsonl.gz",
+        "record_index": 45891,
+        "line_number_zero_based": 18183,
+        "published_commit": "5a2b45478d066d5180d1364259e1c7b1d233fc33",
+        "review": "Highest-scoring published representative among the 213 quotient classes remaining after the 01:00 analytic and complete-phase reviews."
+      },
+      "scope": "Numerical mutation guide only; no quantum feasibility or exact theta claim.",
+      "screen_status": "Survives current exact combinatorial support screens and all verified quotient-class catalogs; its full cyclic phase family remains unresolved."
     }
   ]
 }

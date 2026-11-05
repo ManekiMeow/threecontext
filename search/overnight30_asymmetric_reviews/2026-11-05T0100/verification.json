@@ -1,0 +1,29 @@
+{
+  "pre_score_certificates": 118,
+  "worker_repair_controls": 32,
+  "deterministic_replays": 32,
+  "distinct_control_labels": 30,
+  "input_record_unmodified": true,
+  "mismatched_certificate_rejected": true,
+  "verified_batch_maps": 50,
+  "pairwise_nonisomorphic_batch_representatives": 55,
+  "best_full_automorphism_order": 1,
+  "exact_best_upper": "29103/10000",
+  "scope": "Exact replay and combinatorial controls; no new numerical solves.",
+  "singleton_compatibility": {
+    "singleton_partition_sizes": [
+      5,
+      4,
+      1
+    ],
+    "singleton_other_context": null,
+    "exact_partition_budget": "1411/1440",
+    "certificate_verified": true,
+    "repair_proposals": 32,
+    "deterministic_replays": 32,
+    "all_selected_blocks_nonsingleton": true,
+    "input_record_unmodified": true,
+    "source_graph_id": "4c1f39a97ef002e02c6f",
+    "scope": "Nonnumerical regression on an actual certified 01:00 review representative."
+  }
+}
