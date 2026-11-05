@@ -1,0 +1,16 @@
+{
+  "best": {
+    "theta": 2.9073614218247865,
+    "g6": "]???????@?a_A__OGCEo_P_?r?BQ?DP??daOKKq?WbGQt?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+    "automorphisms_uncolored": 1,
+    "automorphisms_context_preserving": 1,
+    "seconds": 0.015501529996981844
+  },
+  "best_excluded": {
+    "theta": 2.9166384145141824,
+    "g6": "]???????@?a_A__OGCE__X_?r?Aq?DP??daOCKq?WbGOt?OOt?OgDg_I`WG@SJ_?eQI?BGkC??",
+    "automorphisms_uncolored": 2,
+    "automorphisms_context_preserving": 1,
+    "seconds": 0.030195040999387857
+  }
+}

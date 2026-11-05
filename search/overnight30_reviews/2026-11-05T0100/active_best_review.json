@@ -1,0 +1,66 @@
+{
+  "scope": "supplemental review of current active asymmetric guide, separate from top-score selected set",
+  "source": "snapshot_asymmetric_job79_best.json",
+  "g6": "]???????@?a_A__OGCEo_P_?r?BQ?DP??daOKKq?WbGQt?OOt?O_Lb_I`WG@CJ_?eQI?@GlC??",
+  "theta_numeric": 2.9073614218247865,
+  "seconds": 1.801044482002908,
+  "graph_id": "1a41a2ad0d88e6f018bc",
+  "status": "excluded",
+  "pair_diagnostics": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    }
+  ],
+  "dimension19_pair_connected": true,
+  "dimension19_pair_perfect_matching": true,
+  "dimension19_eligible": true,
+  "degree_mass_bounds": [
+    "209/189",
+    "208/189",
+    "208/189"
+  ],
+  "probability_propagation_rounds": 3,
+  "probability_propagation_budgets": [
+    "53699/50000",
+    "257907/250000",
+    "33061/31250"
+  ],
+  "disjoint_partition_budgets": [
+    "1501/1440",
+    "289/288",
+    "251/240"
+  ],
+  "theta_dual_numeric": 2.9073614503998177,
+  "reason": "exact rational theta upper bound below three",
+  "certificate": "1a41a2ad0d88e6f018bc_certificate.json"
+}

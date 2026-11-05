@@ -324,6 +324,25 @@ outside these symmetry catalogs. The nonuniform dimension-19 case and the
 uniform case with all three pairs non-isoclinic remain open. Do not repeat the
 completed 150-class phase review or weaken the actual-group-action requirement.
 
+## 01:00 continuation findings (5 November)
+
+The immutable review `overnight30_reviews/2026-11-05T0100/` is pinned to data
+commit `5a2b454` and adds 421,977 labeled supports and 46,053 newly scored
+labels. Among 128 selected leaders, 111 are new representatives relative to
+that selection and previously reviewed classes, with seventeen explicit
+isomorphism mappings. Twenty selected representatives have exact exclusions.
+The verifier checks twenty-three certificates including supplemental checks,
+five referenced proofs, input hashes and the persisted historical graph.
+
+The historical numerical leader improved to 2.9166384145, but is now directly
+excluded by a disjoint-neighborhood partition budget 15/16. Its full
+automorphism group has order two; only the context-preserving group is trivial.
+The active guide at this cutoff is fully asymmetric, theta about 2.9073614218,
+and has an individual exact theta upper bound 2.9084. The worker correctly
+retired the historical graph without losing its graph, score or certificate.
+One substantive numerical timeout is exactly excluded; seven deadline skips
+are ordinary budget endings. No global event or dimension bound changed.
+
 ## Operation and scheduled continuation
 
 `overnight30_supervisor.py` runs bounded worker chunks, publishes checkpoints,

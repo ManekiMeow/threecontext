@@ -914,6 +914,25 @@ These are conditional quotient exclusions, not a complete classification of C₅
 representative bindings and a standard-library verifier are in
 `search/overnight30_quotient_expansion/2026-11-05T0000/`.
 
+**01:00 checkpoint review (5 Nov, bounded).** Nineteen completed chunks add **421,977 labeled supports** and
+**46,053 newly scored labels** against the earlier completed pools. Selecting 128 leading/family labels yields
+111 new representatives relative to this selection and previously reviewed classes, with 17 explicit
+isomorphism mappings. Twenty selected representatives have exact exclusions; these selected-set counts are
+not a full-pool isomorphism census.
+
+The population search's historical leader improved to numerical θ ≈ **2.9166384145**, but Theorem 53 excludes
+it directly: context B splits into two five-event sets, one with disjoint A-neighborhoods and the other with
+disjoint C-neighborhoods, giving total probability at most **15/16 < 1**. The worker retired it and retained its
+full graph and certificate. Its full automorphism group has order two, while its context-preserving group is
+trivial. The active guide at the cutoff is fully asymmetric, θ ≈ **2.9073614218**, with a separately verified
+upper bound **7271/2500 = 2.9084 < 3**. The lower active score reflects stronger filtering.
+
+The immutable review is pinned to experiment commit `5a2b454`. Its verifier checks 23 certificates, 17 saved
+isomorphism mappings, five referenced proofs, input hashes and the saved historical record:
+`python search/overnight30_reviews/2026-11-05T0100/verify.py --inputs`.
+The sole numerical timeout is independently excluded; seven deadline skips remain ordinary budget endings.
+No global bound has changed.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within
