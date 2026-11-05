@@ -30,7 +30,7 @@ property, and the contradiction first shows at algebraic degree 4.
 | question | result |
 |---|---|
 | (1) smaller graph than Perkel (57 vertices) | **33 vertices, dimension 20** (exact, new; Section 1.7): H33, built from the affine plane AG(2,3), with the 9 points as one context and two copies of the 12 lines as the other two. Its realization is unique and has dimension 20, the smallest known. It was found from the equality case of Theorem 5, not by search. It is the smallest member of a family built from affine planes and nets (Section 1.8), and the operator lift of the qutrit Hesse configuration (Section 1.9). Previous record: **36 vertices** (exact), an 8-regular, vertex-transitive tri-Cayley graph over Z2×Z6 with integer spectrum {8, 2^16, 0^9, −4^10}. It is certified by the **unweighted** Hoffman bound and has a real realization in dimension 26 in which every overlap is ±1/4 and every event has probability 1/12. Also found: a 37-vertex graph that has realizations of rank 32 (and approximately 24), and a 39-vertex graph over Z13. See Section 1.6 on dimensions. |
-| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains. Section 2.5 (route 1) shows that the triple splits into two-dimensional blocks whenever E² commutes with the three projections, and that a uniform-probability realization of this aligned kind needs a four-element neighbourhood. It also certifies exactly that no 30-event support invariant under Z10, D5, A5, S5, F20 or Z2⁴⋊Z5 has ϑ = 3, in any dimension. In every dimension each event's deviation from the rigid H33-type overlaps is capped entrywise (Lemma 39), which forces near-covering of each context (Corollary 40). H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
+| (2) minimality | **n_min ∈ [30, 33] and d_min ∈ [19, 20]** (exact proofs, Sections 2–2.3). Every three-context GHZ graph has at least 30 vertices (Corollary 6). The projection bound **n ≤ 2d − 7** (Corollary 30, from the three-projection trace inequality, Lemma 29) rules out dimension 18. Its equality case rules out 31 events in dimension 19 (Theorem 31), so **dimension 19 requires exactly 30 positive-probability events, in contexts (10,10,10)**. No event has probability exactly 1/9. **The rotated-tail shape is now excluded (Theorem 35), and so are all pairwise-isoclinic reduced context triples (Theorem 36).** Only the generic case with at least one non-isoclinic pair remains. Section 2.5 (route 1) shows that the triple splits into two-dimensional blocks whenever E² commutes with the three projections, and that a uniform-probability realization of this aligned kind needs a four-element neighbourhood. It also certifies exactly that no 30-event support invariant under Z10, D5, A5, S5, F20 or Z2⁴⋊Z5 has ϑ = 3, in any dimension. **Section 2.6 (Theorem 47) excludes every 30-event GHZ graph whose context-preserving automorphism group is transitive on some context**, in any dimension. The remaining symmetric candidates must be intransitive on every context, and the richest open family is C5-double (two 5-cycles per context). In every dimension each event's deviation from the rigid H33-type overlaps is capped entrywise (Lemma 39), which forces near-covering of each context (Corollary 40). H33's dimension minimality is not yet proved. Every event has probability ≤ 1/9 (Lemma 3). A context with exactly 9 events forces at least 12 in each other context and dimension ≥ 20 (Theorem 5); H33 is the only equality case. Two events of probability exactly 1/9 in one context force ≥ 11 events in each other context, and three force ≥ 12 (Theorem 21). For contexts (10,10,10), (10,10,11) or (10,10,12), no event has probability 1/9 at all (Corollary 32). H33 attains both n = 2d − 7 and d = max_k |I_k| + 8. The 33-, 36- and 37-vertex graphs are vertex-critical (exact). The symmetric families searched contain nothing below 36: tri-Cayley graphs over all groups of order ≤ 12, and all Cayley graphs of order 30 and 33. A bounded search of the four size partitions below 33 (Section 2.1) found nothing either. **All ten balanced linear-incidence generalizations of H33 are excluded in every dimension by exact theta certificates (Theorem 38, Section 1.10); regular unweighted Hoffman constructions on 30 events are also impossible (Proposition 37).** H33 is not vertex-transitive and its contexts have unequal sizes. Lemma 29 to Theorem 31 and §3.15 come from the branch `research/ghz-gaps-four-context` (4 Nov) and were checked here. |
 | (3) four-context KS set | Not found. Sufficient criterion: four orthonormal bases whose non-orthogonality graph is K4-free. Consequences in that setting: every ray is non-orthogonal to at least 30 rays in the other bases, and the dimension must be at least 19 (Corollary 30; the GHZ bound can never give more than 20, the dimension of H33). In dimension 19 the graph would be 76-vertex and 30-regular, with 10 neighbours per other basis (Theorem 31, §3.15). The K4-free case is the only one in which this bound applies. Numerical searches found nothing. **Reductions (Section 3.7):** rays outside every basis are redundant, so the problem is exactly "four disjoint orthonormal bases with a KS union". Only internal bases meeting ≥ 3 of the four can block a K4. A symmetry group transitive on all four bases forces the K4-free case. Four Pauli eigenbases are never KS. In the K4-free case every cross overlap is at most 1/3. **Computer-assisted: no example exists in d ≤ 5, so d ≥ 6** (Section 3.8, Theorem 15). **The orthogonality graph is never strongly regular, and a vertex-transitive one forces the K4-free case** (Section 3.10). **H33 cannot be used in the K4-free route** (two of its contexts have overlap 1/2 > 1/3; Theorem 19). Attempts to build a KS set on H33 in d = 20 all fail, and the structure behind this (four 5-dimensional class blocks, a duality W, a 10000-ray orbit of GHZ states) is in Section 3.11. **Symmetric families (Section 3.12, computer-assisted):** Cayley skeletons over Z_p that are invariant under the e-th powers are empty for 56 pairs (p, e) with p ≤ 151, including every e = 2, 3. **Multiplier families (Sections 3.12–3.13):**
 * e = 2 and e = 3 give no example for any p (Theorem 24, Corollary 26).
 * e = 4 gives exactly ten skeletons passing every necessary condition we have (Theorem 28; p = 97 to 457, 388 to 1828 rays).
@@ -1137,7 +1137,8 @@ python3 search/transfer_d19.py
     best asymmetric value.
 * Z5-invariant supports (two orbits per context, a family containing every family of Theorem 45 and allowing two
   probability values per context): two independent runs stop at ϑ = 2.913434. This matches, to all printed digits,
-  the best "C5-double" support of that campaign (2.9134341612, exact bound 1821/625).
+  the best "C5-double" support of that campaign (2.9134341612, exact bound 1821/625). It is not the family maximum,
+  however: the exhaustive F20 screen of Section 2.6 finds a C5-double support with ϑ = 2.91609 (exact bound 2.9171).
 * Calibration at (12,12,12), where GHZ graphs exist: it reached ϑ = 2.999988 on a 130-edge graph. That graph is not
   itself a GHZ graph: two solvers agree that ϑ < 3, and all 36 weights are positive.
 * Calibration at (9,12,12), where H33 is the unique answer (Theorem 5): it stalled at 2.9451.
@@ -1218,6 +1219,111 @@ lowers the best value from 2.937 to 2.908.
   21, 20, 19 and 18, and 18 is excluded by Corollary 30. So this single problem covers the E²-scalar case in
   dimensions 19, 20 and 21. Proposition 37's excluded unweighted case is Y = A/3. Its integrality gap (Σμ² = 42
   against the integer bound 44) disappears for weighted Y, so the weighted problem is open.
+
+### 2.6 Which symmetries can a 30-event GHZ graph have? (new, 5 Nov)
+
+Dimension 19 forces exactly 30 events in contexts (10,10,10) (Theorem 31). Every statement in this section is about
+the support graph alone, so it holds in every dimension, and in particular in dimension 19. Let K be the group of
+automorphisms of H that map each context to itself. Two facts from the four-context branch
+(`research/ghz-gaps-four-context`, its Proposition 39 and Corollary 40, checked here) drive everything:
+* (F1) K acts faithfully on each context. An automorphism fixing a context pointwise is the identity.
+* (F2) For contexts A ≠ B, b ↦ N_A(b) is a K-equivariant injection of B into the nonempty proper subsets of A. In
+  particular, if K has r orbits on A, it fixes at most 2^r − 2 vertices of B.
+
+**Lemma 46 (minimal transitive groups of degree 10).** Every transitive permutation group of degree 10 contains a
+transitive subgroup permutation-isomorphic to one of six groups:
+* C10 or D5, acting regularly;
+* F20 = AGL(1,5), on its ten cosets of an involution;
+* A5, on the ten 2-subsets of {1,…,5};
+* 2⁴:5, on Z5 × Z2: translations and even sign changes;
+* 5²:8, on two blocks of five points: the two block rotations σ1, σ2 together with t of order 8, where
+  tσ1t⁻¹ = σ2 and tσ2t⁻¹ = σ1², so that t² multiplies both blocks by 2.
+
+*Proof.* Let T be a minimal transitive subgroup.
+1. *Primitive.* The nine primitive groups of degree 10 are A5, S5, A6, PGL(2,9), M10, S6, PΓL(2,9), A10 and S10.
+   * A5 and S5 act on the 2-subsets of five points.
+   * The other seven contain A6, acting on the ten splittings of six points into two triples.
+   * A point stabiliser A5 of A6 acts on these splittings as on 2-subsets.
+2. *Blocks of size 2.* T has an element σ of order 5. It is a 5-cycle on the five blocks and has two point orbits.
+   * Suppose T contains a nontrivial sign change k.
+     * The σ-module generated by k is ⟨11111⟩, the even-weight code, or everything.
+     * T therefore contains C10 or 2⁴:5.
+   * Otherwise T embeds into the transitive subgroups of S5 of order divisible by 10.
+     * D5 gives the regular D5.
+     * F20 gives the coset action of F20.
+     * S5 contains a transitive F20.
+     * A5 is impossible: its block stabiliser A4 has no subgroup of index 2.
+3. *Two blocks of size 5.* Let P be a Sylow 5-subgroup.
+   * If |P| = 5, then P = ⟨σ⟩ acts with two 5-cycles. The Frattini argument gives a block-swapping 2-element t
+     normalising P. According as t centralises, inverts or acts with order 4 on P, ⟨σ, t⟩ is C10, D5 or F20.
+   * If |P| = 25 and some block-swapping t fixes a line through σ1^aσ2^b (a, b ≠ 0), the same argument applies to
+     that line.
+   * Otherwise t acts on P = F5² with L² = cI, c a non-square. Then t has order 8 and T = P⋊⟨t⟩ = 5²:8. It is
+     minimal because no subgroup of order 5 is normalised by a block-swapping element. ∎
+
+**Theorem 47 (no transitive symmetry).** No 30-event GHZ graph, in any dimension, has a context-preserving
+automorphism group that is transitive on one of its contexts.
+
+*Proof.* Suppose K is transitive on A. Let M ≤ K be minimal transitive on A; by Lemma 46 it is one of the six groups.
+1. By (F1) and (F2) with r = 1, M acts faithfully and without fixed points on B and on C.
+2. The orbit sizes of each group leave only these actions on ten points:
+   * C10: regular only (the 5+5 and 2+2+2+2+2 actions are not faithful);
+   * D5, F20, A5: the transitive action, or two copies of the natural action on five points;
+   * 2⁴:5 and 5²:8: a transitive action with one of three point-stabiliser classes.
+3. For every such triple of M-sets, the table lists all maximal triangle-free M-invariant supports.
+   * Every one has ϑ(H̄) < 3.
+   * One representative of every class (classes as defined below the table) carries a rational dual certificate
+     with an exact PSD check.
+4. ϑ is monotone, so every M-invariant support has ϑ(H̄) < 3. ∎
+
+| minimal group M | actions on (A, B, C) | maximal invariant supports | classes | max ϑ(H̄) | largest certified bound |
+|---|---|---|---|---|---|
+| C10 | (10, 10, 10) | 50829 | 200 | 2.82847 | 5659/2000 |
+| D5 | (10, 10, 10) | 35729 | 74 | 2.76659 | 6919/2500 |
+| D5 | (10, 10, 5+5) | 20877 | 97 | 2.80754 | 5617/2000 |
+| D5 | (10, 5+5, 5+5) | 24353 | 451 | 2.84853 | 5699/2000 |
+| F20 | (10, 10, 10) | 519 | 83 | 2.86603 | 2867/1000 |
+| F20 | (10, 10, 5+5) | 223 | 223 | 2.89072 | 28917/10000 |
+| F20 | (10, 5+5, 5+5) | 287 | 287 | **2.91609** | 29171/10000 |
+| A5 | (10, 10, 10) | 16 | 16 | 2.77227 | 27733/10000 |
+| A5 | (10, 10, 5+5) | 19 | 19 | 2.68825 | 6723/2500 |
+| A5 | (10, 5+5, 5+5) | 62 | 62 | 2.67517 | 13381/5000 |
+| 2⁴:5 | one stabiliser class on all three (3 cases) | 653 each | 130 each | 2.76659 | 6919/2500 |
+| 2⁴:5 | mixed stabiliser classes (15 cases) | 425 each | 221 each | 2.52102 | 1261/500 |
+| 5²:8 | one stabiliser class on all three (3 cases) | 13 each | 13 each | 2.66644 | 13337/5000 |
+| 5²:8 | mixed stabiliser classes (15 cases) | 4 each | 4 each | 2 | 2 |
+
+Here "10" is a transitive action and "5+5" two copies of the natural action on five points. "Classes" counts
+supports up to the relabellings induced by automorphisms of M and of the three M-sets. A computer check confirms
+that 5²:8 has exactly three conjugacy classes of subgroups of index 10, all with faithful coset actions.
+
+`python3 search/transitive_symmetry.py --certify` reproduces the table.
+
+**Consequences.**
+* *Vertex-transitive graphs.* §1.1 checked only the Cayley ones. Suppose the full automorphism group preserves the
+  context partition and is transitive on all 30 vertices.
+  * The stabiliser of A is transitive on A, and K has index at most 2 in it.
+  * So K has orbits (10) or (5,5) on A, and Theorem 47 excludes (10).
+  * In the (5,5) case K contains an element of order 5 with two 5-cycles on A. By (F2) it then has two 5-cycles on
+    every context.
+* *Elements of order 5.* An element of order 5 acts with two 5-cycles on all three contexts ("C5-double") or with a
+  single 5-cycle on all three. By (F2), two 5-cycles on A allow at most two fixed points on B.
+
+**What symmetry can remain.** A 30-event GHZ graph, and so any dimension-19 realization, has one of the following:
+1. No context-preserving symmetry.
+2. Context-preserving symmetry that is intransitive on every context. The richest family is **C5-double**.
+   * It contains every remaining vertex-transitive candidate, and every action of D5, F20 or A5 by two natural
+     5-point copies on each context.
+   * Two independent heuristic searches (Section 2.5 and the four-context branch) stopped at ϑ = 2.913434. The
+     exhaustive screens behind Theorem 47 contain C5-double supports with ϑ = 2.91609 (F20 acting by two natural
+     copies on two contexts). So both searches missed better supports, and the family is not settled.
+   * Every other surviving symmetry has smaller orbits (for example C2, C3, C4, C7, C9, or a single 5-cycle per
+     context). All of these are constrained by (F2):
+     * one-pair involutions must induce a 6-cycle;
+     * single p-cycles per context obey Proposition 41 of the branch.
+
+     The branch's campaign searched C2 and C3 actions heuristically, reaching best ϑ 2.88 and 2.82.
+3. Automorphisms that permute the contexts, together with a context-preserving group of type 1 or 2.
 
 ---
 
