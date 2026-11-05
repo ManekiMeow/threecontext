@@ -35,20 +35,23 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 54. Results
-39–54 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 55. Results
+39–55 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
 by affine-plane mixed-action exclusions, iterated probability budgets, and
 the exclusion of a nine-vertex symmetry orbit in any single context, global
 pair-support matchings, disjoint-neighborhood probability budgets, and complete
-phase exclusions for nine specified C5 quotients.
+phase exclusions for nine specified C5 quotients, and the exclusion of even
+one isoclinic reduced pair in a uniform-probability dimension-19 realization.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
 
 - The rotated-tail dimension-19 case (Theorem 35).
 - Three pairwise-isoclinic reduced context spaces (Theorem 36).
+- Even one isoclinic reduced pair in dimension 19 when all thirty event
+  probabilities are 1/10 (Theorem 55). The nonuniform case is not covered.
 - Regular unweighted Hoffman constructions on thirty events (Proposition 37).
 - Identical copies of any linear 10_3 configuration (Theorem 38, exhaustive).
 - Regular tri-Cayley families over groups of order at most twelve (earlier work).
@@ -271,6 +274,17 @@ The remaining C3² actions using only T=(3,3,3,1) and D=(3,3,1,1,1,1) reduce to
 seven action types, checked by `event30_td_actions.py`. The saved 99-edge DDD
 prism passes the earlier local screens but has exact theta bound 6383/2500.
 It is an excluded individual control, not a family-wide DDD obstruction.
+
+Theorem 55 strengthens the dimension-19 exclusion under uniform probabilities:
+even one reduced isoclinic pair is impossible. Its overlap matrix would have
+only three or four entries per row/column. Counting single intersections and
+using exact norm identities forces four-regular support of one of two types.
+One type has Petersen intersection parameters and no required 3-by-3 zero
+rectangle; the other forces a cubic graph on ten vertices to decompose into
+K4 components. Both are impossible. The complete analytic proof and exact
+real/complex two-context positive controls are in `event30_isoclinic_uniform.py`.
+Independent proof review passed. This does not assume an actual graph symmetry,
+and it does not exclude nonuniform realizations with an isoclinic pair.
 
 ## Operation and scheduled continuation
 

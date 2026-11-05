@@ -753,6 +753,70 @@ Combining these nine finite exclusions with the earlier 131 quotient exclusions 
 orbit-probability certificates from Theorem 53 excludes **all 150 previously selected C₅ quotient classes**.
 This is a complete result for that selected catalog, not for all C₅ supports or all (10,10,10) graphs.
 
+**Theorem 55 (no isoclinic pair with uniform probabilities in dimension 19).** If every event has probability
+1/10 in a dimension-19 three-context GHZ realization, none of its three pairs of reduced context spaces is
+isoclinic. This strengthens Theorem 36 under the additional uniform-probability assumption. It does not exclude
+nonuniform realizations with one or two isoclinic pairs.
+
+*Proof:* use the actual nonzero-overlap support throughout, deleting allowed zero-overlap edges if necessary.
+Suppose A–B is isoclinic with principal cosine u. The nine negative eigenvalues of `Re(P_A P_B)` are
+`(u²−u)/2`; the triple trace −1 therefore gives `1/3 ≤ u ≤ 2/3`. At either endpoint the third reduced space
+must be exactly the negative eigenspace, making all three pairs isoclinic, contrary to Theorem 36. Thus the
+inequalities are strict. This angle restriction itself does not require uniform probabilities.
+
+1. Under uniform probabilities the overlap matrix X has every row and column sum one, and
+   `XX†=X†X=u²I+(1−u²)J/10`. Proposition 37 allows only cross-degree types (2,4), (3,3), (3,4), (4,2), (4,3),
+   and (4,4). Its row norms are below 1/2, so Cauchy–Schwarz forces every A–B degree to be three or four.
+   The same inequality gives `u²≥1/6`; equality would force `X=M/4` with M a four-regular 0/1 matrix and
+   nonintegral common-neighbor counts 4/3. Hence `u²>1/6`.
+   For the full context projections E_A,E_B, the isoclinic identity is
+   `E_AE_B+E_BE_A=E_A+E_B−(1−u²)I+(1−u²)|ψ⟩⟨ψ|`.
+   Its expectation in any C event is zero by triangle-freeness. A saturated C degree type (2,4) or (4,2)
+   would therefore give `3/4=(1−u²)9/10`, forcing the excluded value `u²=1/6`. Every C event consequently
+   has at least three neighbors in each of A and B.
+
+2. Put `κ=(1−u²)/10>0`. For each column j of X form a graph L_j on its incident rows, joining pairs whose
+   supports intersect only in that column. An edge forces `X_ij conjugate(X_lj)=κ`. In a connected component,
+   entries have a common phase and alternating positive magnitudes R,S with RS=κ; an odd cycle forces all
+   magnitudes to equal √κ. A three-entry column cannot have a triangular L_j: its sum forces κ=1/9,
+   contradicting its squared norm `1−9κ`. For a four-entry column, a connected odd L_j similarly forces
+   κ=1/16 with inconsistent norm. A connected balanced bipartite L_j gives `2(R+S)=1` and norm `1/2−4κ`;
+   equality to `1−9κ` forces κ=1/10, impossible since RS≤1/16. Thus a three-entry column has at most two
+   L_j edges, and a four-entry column at most three; equality in the latter case means a star or a triangle
+   plus an isolated vertex.
+
+3. Let a count three-entry columns. All 45 row pairs intersect because their Gram entries equal κ. Their
+   total incidences are `60−3a`, so at least `30+3a` pairs intersect only once. Summing the local bounds gives
+   at most `30−a` such pairs. Hence a=0: all rows and columns have degree four, every L_j has three edges,
+   and there are exactly 30 single and 15 double intersections. The transpose has the same properties.
+
+4. A star column's sum and norm force κ=2/25 and entries (2/5,1/5,1/5,1/5). A triangle column has entries
+   (z,z,z,w), with `w=1−3z`, `|z|²=κ` and `Re z=7κ/2`. At κ=2/25 these are
+   `z=(7±i)/25`, `w=(4∓3i)/25`, all nonreal. The transpose classification therefore prevents a row from
+   meeting columns of both types. The support is connected, so all columns have the same type.
+
+5. If all columns are triangles plus isolated vertices, each row is isolated in exactly one column: its six
+   single intersections come from its three triangle memberships. Put isolated entries on the diagonal.
+   The remaining support is a three-regular 0/1 matrix M. Its 30 directed arcs lie on the 15 double-intersection
+   pairs, so each pair has both arcs and M is symmetric. Adjacent vertices have no common neighbor and
+   nonadjacent vertices have exactly one. Any three closed neighborhoods therefore cover at least eight
+   vertices: their union is `9−e+t`, where e is their induced edge count and t their triple intersection;
+   triangle-freeness gives e≤2, and e=2 gives t≥1. Thus X has no 3×3 zero submatrix, contrary to the
+   neighborhoods of a C event established in step 1.
+
+6. If all columns are stars, each row is a center exactly once, since `3h+(4−h)=6` forces h=1. Aligning
+   centers gives `X=(2I+M)/5`, where M has three ones in every row and column. Both Gram identities give
+   `MM†+2(M+M†)=M†M+2(M+M†)=I+2J`. There are no opposite arcs. The nonadjacency graph with matrix
+   `J−I−M−M†` is cubic; each of M's ten in-neighborhood triples is a triangle in it. These triangles are
+   distinct, since repeated triples would give a column intersection of at least three. Ten triangles in
+   a cubic graph on ten vertices force every vertex into three triangles, hence every component is K₄.
+   Ten is not divisible by four, a contradiction. ∎
+
+`python search/event30_isoclinic_uniform.py` checks the rational identities and combinatorial counts. It also
+checks valid real and complex isoclinic **two-context** matrices on closed Petersen support, and all 120 triples
+of their neighborhoods. These controls distinguish feasible pair geometry from the impossible third-context
+extension. The proof and controls were independently reviewed; no numerical optimization is used.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
@@ -1201,6 +1265,8 @@ one of the following holds.
 * Shape (i), including every rotated tail line, is now excluded by Theorem 35 below.
 * Shape (ii) remains, but its three pairs cannot all be isoclinic (Theorem 36). At least one pair of reduced
   context spaces must have unequal principal angles.
+* If all thirty probabilities are 1/10, every pair must have unequal principal angles: Theorem 55 excludes even
+  one isoclinic reduced pair. Nonuniform realizations with one or two isoclinic pairs remain open.
 
 Every remaining event has probability strictly below 1/9. Shape (ii) is not empty at the level of projections.
 For example, in each of nine blocks take three real lines:
