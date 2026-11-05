@@ -1941,14 +1941,18 @@
       "state": "completed"
     },
     {
+      "archive_bytes": 407246,
       "code_commit": "ed0f16760bf0faa48e283a5d7cb3353620b7cbb2",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00088_asymmetric",
+      "elapsed_seconds": 602.1367079850024,
       "family": null,
+      "finished_utc": "2026-11-05T01:26:43+00:00",
       "host": "4eb071b4d7f0",
       "id": 88,
       "kind": "asymmetric",
       "pid": 17280,
       "resume_job": 85,
+      "returncode": 0,
       "seconds_budget": 600.0,
       "seed": 20261104,
       "source_sha256": {
@@ -1956,7 +1960,7 @@
         "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
       },
       "started_utc": "2026-11-05T01:16:41+00:00",
-      "state": "running"
+      "state": "completed"
     },
     {
       "code_commit": "d2a5ccdf77104c38d3609b703a87c42f70431153",
@@ -2014,6 +2018,24 @@
         "search/overnight30_symmetry.py": "80c638ccaec75ac75dcec33e5f2b987701e328a7f865d5806b3e187cdb7ee01c"
       },
       "started_utc": "2026-11-05T01:26:38+00:00",
+      "state": "running"
+    },
+    {
+      "code_commit": "d2a5ccdf77104c38d3609b703a87c42f70431153",
+      "directory": "search/overnight30_runs/2026-11-04/chunks/00092_asymmetric",
+      "family": null,
+      "host": "4eb071b4d7f0",
+      "id": 92,
+      "kind": "asymmetric",
+      "pid": 18208,
+      "resume_job": 88,
+      "seconds_budget": 600.0,
+      "seed": 20261104,
+      "source_sha256": {
+        "search/overnight30_asymmetric.py": "5d59e7504692b89753c9450408542a193e6642615412b68d6d5ff5bd351da91c",
+        "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
+      },
+      "started_utc": "2026-11-05T01:26:43+00:00",
       "state": "running"
     }
   ]
