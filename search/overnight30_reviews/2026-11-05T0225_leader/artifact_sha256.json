@@ -1,0 +1,11 @@
+{
+  "097316a813a1e997f5f6_certificate.json": "8946199276a7e7d8e8f8317de5b7f21e0bfdf578fe473fc7de14aa8ebe55987a",
+  "README.md": "3211226f8e3fa4d599963ae9695fe8954aa5bfb393428b3cd2d8133ff63a4338",
+  "automorphism_audit.json": "5c8045ff52ff14b9939ad00b902e076037b58284750b5d1d4c305d717273898a",
+  "candidate_review.json": "f00d92fe5c96ad1a93d06c657d940cd5ce095f6ec92ad1614384cc96eda5ad35",
+  "check_automorphisms.py": "8f3a8cdd57a39a127fb483078b03dffcb53b5449941fd05e4cb7e99136de51df",
+  "live_best_snapshot.json": "9f73975591fee714317c72b2876ff49c8f4c36348e1436590d71556cf67fac2c",
+  "published_provenance.json": "493e3d6ddad788093cfe33f1e1caf8e397675249bf14b70e147af632da26fb6d",
+  "snapshot_source.json": "6d7f611ae65d0f0017f127efb72f632c25cc75a8451d9fcea3d6176f906fa1b7",
+  "verify.py": "6b260ea7938d162535b482a5f629ed0909102f999a9cd127e422b4f9b1587289"
+}

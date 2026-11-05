@@ -518,12 +518,42 @@ or arbitrary-isomorphism claim. The source bundle is
 Raw paired-repair, phase and both Petersen pilot archives were handed to the
 supervisor in chunk 104 under `auxiliary_asymmetric_paired_control_0200/`,
 `auxiliary_phase_review_0200/`, `auxiliary_petersen_template_0200/` and
-`auxiliary_petersen_matching_0200/`. They are auxiliary records, not part of the
-main-worker coverage counts. Check publication before resuming from another host.
+`auxiliary_petersen_matching_0200/`. All four were published in experiment commit
+`7dcd1a9`. They are auxiliary records, not part of the main-worker coverage counts.
+
+The separate `overnight30_probability_transfer/2026-11-05T0200/` freezes a
+120-label sample from chunk 98, excluding all earlier saved review labels.
+Six already fail structural checks; exact transfer of 48 prior coefficient
+templates excludes 52 of the remaining 114 labels, with eight nonzero residual
+corrections. Four previous LP-inconclusive controls stay unresolved. Transfer
+uses context normalization and strict 1/9 bounds to cancel new residual
+coefficients, then replays each resulting ordinary Farkas proof exactly.
+The full trial takes 1.794 seconds without LP/SDP calls. An independent timing
+replay measures about 2.8 ms incremental exact work per fast-screen survivor.
+
+`event30_probability_transfer.py` supplies an asymmetric-only cached prefilter.
+It hashes and verifies the immutable source catalog once per process, uses no
+numerical solver, and verifies every emitted target proof. The new global
+`vertex_probability` wrapper checks the exact inner/outer graph binding and
+replays without the catalog. Existing symmetry discovery is unchanged. The
+asymmetric worker retains the highest partition-witness parent separately,
+including through older checkpoint recovery, so a higher score with another
+exclusion method cannot disable single/paired repairs. Proposal cadence and
+acceptance rules are preserved; checkpoint/RNG replay remains deterministic.
+
+A later published checkpoint improves the population leader to theta
+2.920238739653219, graph `097316a813a1e997f5f6`, with exact upper 29213/10000.
+Both automorphism groups are trivial. It comes from chunk 101, iteration
+287180, source line 6874, direct move `population_crossover`, and is bound to
+experiment commit `d35f5ef`. The snapshot carried by active chunk 108 is byte
+identical. The template filter does not exclude it; its individual theta dual
+does. The immutable supplemental review is `overnight30_reviews/2026-11-05T0225_leader/`.
+Do not attribute this improvement to paired repairs. Its numerical discovery
+was already published; only one 3.52-second bounded dual certification was added.
 
 Next priorities are the 236 residual published quotients (including 34 new
-classes), exact certificate reuse for nearby asymmetric mutations, natural
-paired-repair outcomes, and the nonuniform isoclinic/generic dimension-19 gaps.
+classes), natural performance of exact template reuse and paired repairs,
+and the nonuniform isoclinic/generic dimension-19 gaps.
 Avoid repeating the completed phase classes or bounded template pilots without
 a stronger constraint or a new construction move.
 

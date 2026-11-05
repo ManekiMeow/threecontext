@@ -1119,6 +1119,29 @@ SDP solves. They are not an arbitrary-isomorphism census, and neither pilot exha
 `search/event30_petersen_templates.py` and `search/overnight30_petersen_reviews/2026-11-05T0200/` verify the
 reduction and saved certificates. Closed-Petersen support without isoclinicity remains open.
 
+**Exact certificate transfer and a later leader.** The 93 scalar proofs contain 48 distinct coefficient
+templates. For another support, retain only a template whose sector/subset descriptors are valid, recompute
+its residual coefficient vector r, and in each context choose `λ=max_i r_i`. Subtract λ times context
+normalization and add `(λ−r_i)` times `c_i<1/9`. This cancels every residual coefficient and changes the
+right side by `(λ−Σ_i r_i)/9`. Renormalizing gives an ordinary, independently checkable Farkas certificate
+whenever the resulting sign and strictness prove a contradiction.
+
+On a frozen sample of 120 previously unreviewed chunk-98 labels, six already fail structural checks and
+**52 of the other 114 receive exact transferred certificates**. Eight require a nonzero residual correction.
+Four earlier LP-inconclusive controls remain unresolved. These are label counts, not new isomorphism
+classes. The trial takes 1.794 seconds with no numerical solver. Separate timing puts incremental exact
+transfer and proof replay at about 2.8 milliseconds per surviving sample graph. The asymmetric worker
+now uses the cached templates after its existing checks; every emitted proof is verified exactly and
+replays independently of the template catalog. Symmetry-worker discovery is unchanged.
+
+The later population leader is fully asymmetric, with **θ≈2.9202387397** and exact upper bound
+**29213/10000=2.9213<3**. Its original published record is a population crossover in chunk 101, iteration
+287180; it is not a paired-repair result. It passes the current template filter. The supplementary proof
+and immutable source binding are in `search/overnight30_reviews/2026-11-05T0225_leader/`; the transfer
+bundle is `search/overnight30_probability_transfer/2026-11-05T0200/`. Historical records and the strongest
+retained partition witness remain available even when a different exclusion becomes the largest excluded
+score. No GHZ realization or improvement of the global event/dimension bounds is claimed.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

@@ -1,0 +1,27 @@
+{
+  "scope": "Exact-only bounded certificate transfer; no numerical solver and no worker integration.",
+  "requested_seconds": 15,
+  "elapsed_seconds": 1.7941028109999024,
+  "templates": 48,
+  "template_self_controls": 48,
+  "sets": {
+    "control": {
+      "selected": 4,
+      "processed": 4,
+      "existing_structural_exclusions": 0,
+      "transferred_exact_exclusions": 0,
+      "template_attempts": 192,
+      "complete_unsuccessful_attempts": 4,
+      "unreached": 0
+    },
+    "new_sample": {
+      "selected": 120,
+      "processed": 120,
+      "existing_structural_exclusions": 6,
+      "transferred_exact_exclusions": 52,
+      "template_attempts": 3275,
+      "complete_unsuccessful_attempts": 62,
+      "unreached": 0
+    }
+  }
+}

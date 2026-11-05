@@ -592,9 +592,33 @@ def screened(adj, value=None, threshold=2.85, conflicts=2000):
         verify_quotient_certificate(local)
         return {"status": "excluded", "reason": "exact regular-pair or automorphism-quotient obstruction",
                 "graph": local["graph"], "certificate": local}
-    if value is not None and value >= threshold:
-        return screen_graph(record, sat_conflicts=conflicts)
-    return fast_screen(record)
+    result = (screen_graph(record, sat_conflicts=conflicts)
+              if value is not None and value >= threshold else fast_screen(record))
+    if result["status"] != "excluded":
+        from event30_probability_transfer import find_transfer
+        transferred = find_transfer(record)
+        if transferred is not None:
+            result.update(status="excluded", reason="exact transferred vertex-probability certificate",
+                          certificate=transferred)
+    return result
+
+
+def partition_repair_parent(state, extra_records=()):
+    """Retain the strongest partition witness even if another exclusion leads."""
+    candidates = [state.get("partition_repair_parent")]
+    candidates += list(state.get("best_records", {}).values())
+    candidates += state.get("retired_best_records", [])
+    candidates += list(extra_records)
+    eligible = [record for record in candidates if isinstance(record, dict)
+                and isinstance(record.get("certificate"), dict)
+                and record["certificate"].get("method") == "disjoint_partition"]
+    if not eligible:
+        return None
+    selected = max(eligible, key=lambda record: (record.get("theta_numeric", -math.inf), record["g6"]))
+    # Repair helpers independently verify the certificate and clone adjacency;
+    # retaining this record consumes no RNG and changes no proposal cadence.
+    state["partition_repair_parent"] = dict(selected)
+    return state["partition_repair_parent"]
 
 
 def search_score(entry):
@@ -612,6 +636,7 @@ def recover_best_records(state, source, prefix, screen_function=None):
     Retired records and the historical maximum remain available separately.
     """
     records = state.setdefault("best_records", {})
+    partition_repair_parent(state)
     screen_function = screen_function or screened
     recovery, discovered = {}, {}
     old_active = state.get("best_theta")
@@ -666,6 +691,7 @@ def recover_best_records(state, source, prefix, screen_function=None):
     retired = state.setdefault("retired_best_records", [])
     for code, entry in discovered.items():
         original = entry["record"]
+        partition_repair_parent(state, (original,))
         record = dict(original)
         screening = screen_function(decode(code), record["theta_numeric"])
         assert screening["status"] in ("excluded", "not_excluded")
@@ -681,6 +707,7 @@ def recover_best_records(state, source, prefix, screen_function=None):
         else:
             record.update({"screen": screen_summary(screening), "certificate": None})
         is_excluded = record["screen"]["status"] == "excluded"
+        partition_repair_parent(state, (record,))
         (excluded if is_excluded else active).append(record)
         if "best_theta" in entry["fields"]:
             state["historical_best_theta"] = max(state["historical_best_theta"] or -math.inf, original["theta_numeric"])
@@ -920,7 +947,7 @@ def run(args):
                         repair_state["ordinary_proposals"] += 1
                         if repair_state["ordinary_proposals"] % 128 == 0:
                             repair_state["attempted"] += 1
-                            repair_parent = state["best_records"].get("best_excluded_theta")
+                            repair_parent = partition_repair_parent(state)
                             if repair_state["attempted"] % 2 == 0:
                                 repair_state["paired_attempted"] += 1
                                 repaired = paired_partition_witness_repair(repair_parent, rng)
@@ -1006,6 +1033,7 @@ def run(args):
                     best["solver"] = result["solver"]
                     best["diagnostics"] = result["diagnostics"]
                     best["diagonal_times_three"] = (3*np.diag(result["B"])).tolist()
+                partition_repair_parent(state, (best,))
                 state["best_records"][field] = best
                 if not excluded and value > (state.get("historical_best_theta") or -math.inf):
                     state["historical_best_theta"] = value

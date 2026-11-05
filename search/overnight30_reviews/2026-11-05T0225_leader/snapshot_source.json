@@ -1,0 +1,11 @@
+{
+  "scope": "Live carried checkpoint snapshot; numerical discovery time is separate from snapshot time.",
+  "snapshot_utc": "2026-11-05T02:26:19.595727+00:00",
+  "live_source": "search/overnight30_runs/2026-11-04/chunks/00108_asymmetric/asymmetric_seed20261104_best.json",
+  "source_sha256": "9f73975591fee714317c72b2876ff49c8f4c36348e1436590d71556cf67fac2c",
+  "source_bytes": 1981,
+  "published_commit": "d35f5efae769ed72ff6a575a807fd9a4a37e032c",
+  "published_source": "search/overnight30_runs/2026-11-04/chunks/00101_asymmetric/asymmetric_seed20261104_best.json",
+  "published_source_sha256": "9f73975591fee714317c72b2876ff49c8f4c36348e1436590d71556cf67fac2c",
+  "same_as_published_best_bytes": true
+}

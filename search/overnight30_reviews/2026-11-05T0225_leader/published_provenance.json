@@ -1,0 +1,22 @@
+[
+  {
+    "published_commit": "d35f5efae769ed72ff6a575a807fd9a4a37e032c",
+    "source": "search/overnight30_runs/2026-11-04/chunks/00101_asymmetric/asymmetric_seed20261104.jsonl.gz",
+    "source_sha256": "86d3f99b5bcd0a0856e62ee015ea83385746be830dcbef9b4c1ee191c7969a9b",
+    "source_line": 6874,
+    "job": 101,
+    "record": {
+      "g6": "]???????@?a_A__O?SEc_X_?r?Ar?DP??daOCKqEW`G?pGWOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+      "theta": 2.920238739653219,
+      "seed": 20261104,
+      "iteration": 287180,
+      "move": "population_crossover",
+      "status": "optimal",
+      "screen": {
+        "status": "not_excluded",
+        "dimension19_eligible": true,
+        "coloring_search": "no_unbalanced_coloring_found"
+      }
+    }
+  }
+]

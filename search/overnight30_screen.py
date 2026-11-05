@@ -417,7 +417,7 @@ def verify_certificate(cert):
         raise ValueError("graph is not normalized")
     n, adj = graph["n"], adjacency(graph)
     method, witness = cert["method"], cert["witness"]
-    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "disjoint_partition", "one_sided_regular", "degree_two_closure", "pair_hall", "pair_disconnected_d19", "pair_hall_d19"):
+    if method in ("disconnected", "false_twins", "same_context_merge", "unbalanced_coloring", "bridge_shortage", "unbridged_vertex", "degree_mass", "probability_propagation", "disjoint_partition", "one_sided_regular", "degree_two_closure", "vertex_probability", "pair_hall", "pair_disconnected_d19", "pair_hall_d19"):
         adj, colors = base_validation(graph)
         if method == "disconnected":
             S = set(witness["component"])
@@ -471,6 +471,11 @@ def verify_certificate(cert):
         elif method == "degree_two_closure":
             from event30_degree_two_cover import verify_certificate as verify_closure
             verify_closure(cert)
+        elif method == "vertex_probability":
+            from event30_vertex_probability_lp import verify_certificate as verify_probability
+            inner=witness['certificate']
+            assert inner['graph']==graph
+            verify_probability(inner)
         elif method == "pair_disconnected_d19":
             k, l = witness["pair"]
             assert 0 <= k < l < 3

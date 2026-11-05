@@ -1,0 +1,66 @@
+{
+  "graph_id": "097316a813a1e997f5f6",
+  "status": "excluded",
+  "pair_diagnostics": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "components": 1,
+      "perfect_matching": true,
+      "bridge_sizes": [
+        10
+      ]
+    }
+  ],
+  "dimension19_pair_connected": true,
+  "dimension19_pair_perfect_matching": true,
+  "dimension19_eligible": true,
+  "degree_mass_bounds": [
+    "209/189",
+    "206/189",
+    "208/189"
+  ],
+  "probability_propagation_rounds": 3,
+  "probability_propagation_budgets": [
+    "267883/250000",
+    "51079/50000",
+    "1047673/1000000"
+  ],
+  "disjoint_partition_budgets": [
+    "307/288",
+    "46/45",
+    "17/16"
+  ],
+  "coloring_search": "no_unbalanced_coloring_found",
+  "theta_dual_numeric": 2.9202387447352827,
+  "reason": "exact rational theta upper bound below three",
+  "certificate": "097316a813a1e997f5f6_certificate.json",
+  "g6": "]???????@?a_A__O?SEc_X_?r?Ar?DP??daOCKqEW`G?pGWOt?OgDg_I`[G@OJ_?eQI?B?mC??",
+  "theta_numeric": 2.920238739653219,
+  "check_seconds": 3.5216533139973762,
+  "numerical_process_limit_seconds": 5
+}

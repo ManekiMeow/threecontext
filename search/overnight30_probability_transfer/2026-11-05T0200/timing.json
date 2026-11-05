@@ -1,0 +1,15 @@
+{
+  "scope": "Replay timing only; no additional targets or new certificates.",
+  "processed_targets": 124,
+  "existing_fast_exclusions": 6,
+  "template_attempts": 3467,
+  "final_exact_proofs_verified": 52,
+  "cold_catalog_hash_and_exact_validation_seconds": 0.31901404800009914,
+  "fast_screen_seconds": 1.4022268689950579,
+  "target_geometry_seconds": 0.020549297019897494,
+  "transfer_inclusive_seconds": 0.30853702312742826,
+  "final_exact_certificate_replay_seconds": 0.18693429396807915,
+  "transfer_without_final_replay_seconds": 0.12160272915934911,
+  "full_replay_seconds": 1.7429118410000228,
+  "cache_scope": "Prepared source templates may be cached after exact validation; every emitted target certificate is still independently verified."
+}

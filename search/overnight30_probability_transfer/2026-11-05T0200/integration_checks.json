@@ -1,0 +1,17 @@
+{
+  "frozen_target_wrappers_verified": 52,
+  "source_catalog_cache_maxsize": 1,
+  "self_contained_replay_without_catalog": true,
+  "wrapper_tampers_rejected": 2,
+  "source_hash_tampers_rejected": 2,
+  "exact_positive_primal_scope_controls": 2,
+  "discovery_imports_numerical_libraries": false,
+  "numerical_solves": 0,
+  "latest_guide_theta": 2.920238739653219,
+  "latest_guide_transferred": false,
+  "higher_nonpartition_parent_fallback": true,
+  "checkpoint_parent_persistence": true,
+  "single_and_paired_rng_replays": 2,
+  "external_record_reclassification_preserves_partition": true,
+  "historical_graph_score_and_current_score_preserved": true
+}
