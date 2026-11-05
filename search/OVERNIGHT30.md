@@ -35,8 +35,8 @@ documentation conflicts, verify and push. Do not discard unrelated user edits.
 
 The current global bounds remain `30 <= n_min <= 33`, `19 <= d_min <= 20`.
 Keep Claude's theorem numbering in `RESULTS.md`; Theorem 38 was the last result
-at campaign setup. The latest numbered result is now Theorem 57 and Corollaries 57a–b. Results
-39–57 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
+at campaign setup. The latest numbered result is now Theorem 58. Results
+39–58 cover contraction, orbit counting, moving cycles, large-orbit exclusions,
 pair-component bridges, degree probability budgets, regular pair supports and
 the excluded six-orbit quotient of the current C5 numerical leader, followed
 by affine-plane mixed-action exclusions, iterated probability budgets, and
@@ -46,7 +46,8 @@ phase exclusions for nine specified C5 quotients, and the exclusion of even
 one isoclinic reduced pair in a uniform-probability dimension-19 realization,
 followed by strict weighted-degree bounds, one-sided regularity restrictions,
 and zero rectangles forced by two uniform contexts in every dimension, followed
-by a closed-small-neighborhood obstruction with arbitrary probabilities.
+by a closed-small-neighborhood obstruction with arbitrary probabilities and
+angle-dependent probability/concentration bounds for one isoclinic pair.
 Read Sections 1.10 and 2.1–2.3 before adding claims.
 
 Already excluded and not worth repeating as standalone searches:
@@ -442,6 +443,23 @@ chunks are exactly excluded; six deadline skips are normal budget endings.
 Corollary 57b's 281 cuts include 241 proper closed subsets of 23–29 vertices,
 demonstrating use of the stronger closure criterion. These are cut counts,
 not independent isomorphism classes. Global bounds remain unchanged.
+
+Theorem 58 supplies necessary conditions for one nonuniform isoclinic reduced
+pair in every ambient dimension. With cosine u, t=u(1−u), q=t/(2+t), every
+opposite-context probability satisfies 1−9q<c≤q and 1/3<u<2/3. The upper bound
+is strict at u=1/2 by Corollary 32. The angle interval was already established
+in dimension 19; its arbitrary-dimension extension and individual bounds are
+new. At either endpoint, spectral equality puts the entire realization in
+dimension 19 with three isoclinic pairs, contradicting Theorem 36.
+
+For the reduced third-context projection, its negative/positive/extra-zero
+spectral traces a,b,r satisfy a+b+r=9 and
+`b+(1−u)r/2=9(1−u)/2−1/u`. Consequently b≤9/2−3√2, r≤1 and a≥8. In dimension
+19, r=0, giving an exact positive trace and squared Frobenius distance at most
+9−6√2 from the negative eigenspace. These are not rank bounds. The helper
+`event30_isoclinic_probability.py` contains the independently reviewed proof
+and exact controls. No numerical search or unrestricted graph filter is added;
+the general nonuniform isoclinic case remains open.
 
 ## Operation and scheduled continuation
 

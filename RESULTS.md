@@ -929,6 +929,43 @@ eligible neighborhood. The certificate records the subset, contained context and
 subsets, altered graphs, false certificates and the H₃₃/H₃₆ rational primal controls. The global
 `degree_two_closure` method is used by both workers; symmetry cuts replay the same exact witness.
 
+**Theorem 58 (probabilities and concentration for one isoclinic pair).** Suppose a thirty-event GHZ
+realization has an isoclinic reduced A–B pair with principal cosine u. In any ambient dimension, put
+`t=u(1−u)` and `q=t/(2+t)`. Then
+
+    1/3 < u < 2/3,       1−9q < c ≤ q
+
+for every probability c in the opposite context C. The upper bound is strict when u=1/2 by Corollary 32.
+No uniformity or real-overlap assumption is made. For example, u=3/5 requires `1/28<c≤3/28`.
+
+*Proof:* for the full context projections, `T=(E_AE_B+E_BE_A)/2` has eigenvalue 1 on ψ, eigenvalues
+`λ₋=−t/2` and `λ₊=u(1+u)/2`, each ninefold, and zero on the complement of the A–B span. The cases u=0,1
+are immediately impossible by triangle-free neighborhood orthogonality. For 0<u<1 that same orthogonality
+gives `⟨g_c,Tg_c⟩=0`, hence `0≥c−t(1−c)/2`, proving c≤q. Equality confines the reduced event vector to
+the negative eigenspace Q₋. Summing the ten bounds gives 1/3≤u≤2/3. At either endpoint C is uniform and
+its entire reduced space equals Q₋, whose cosines with both other spaces are `√((1−u)/2)`. The whole
+realization then lies in dimension 19 with three isoclinic pairs, contrary to Theorem 36.
+
+Normalization gives c≥1−9q. Equality would put the other nine reduced C vectors in Q₋. They are independent:
+their Gram matrix is `I−ww†`, with determinant equal to the omitted positive probability c. Thus the entire
+reduced C space would equal Q₋, all ten probabilities would attain q, and an excluded endpoint would follow.
+This proves the strict lower bound. The strict angle interval was already known in dimension 19; the
+argument here extends it to every dimension and supplies the individual probability bounds.
+
+There is also a quantitative subspace restriction. Let `R_C=E_C−|ψ⟩⟨ψ|`, and write
+`a=tr(Q₋R_C)`, `b=tr(Q₊R_C)`, `r=tr(Q₀R_C)` for the negative, positive and extra zero eigenspaces on ψ⊥.
+Then `a+b+r=9`, and summing the zero expectations gives
+
+    b+(1−u)r/2 = s(u) := 9(1−u)/2−1/u,
+    0≤b≤s(u)≤9/2−3√2,     0≤r≤9−2/t≤1,     a≥2/t≥8.
+
+The first universal bound follows from AM–GM; the others follow from
+`1−ta/2+u(1+u)b/2=0`. In dimension 19, r=0 and b=s(u) exactly, so
+`‖R_C−Q₋‖²_F=2b≤9−6√2`. These are projection trace bounds, not rank bounds. ∎
+
+`python search/event30_isoclinic_probability.py` verifies the rational identities, spectral blocks,
+endpoint arithmetic and exact example bounds. The general nonuniform isoclinic case remains open.
+
 **Constructing weak symmetry from asymmetric seeds (bounded run).** Intersect a graph with its image under one
 transposition per context, then add compatible complete edge orbits. A 100-second prototype ranked all 45³
 choices of the three transpositions and generated 1915 distinct labeled supports, scoring 678; nine further
