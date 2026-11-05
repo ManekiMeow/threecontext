@@ -3495,14 +3495,18 @@
       "state": "running"
     },
     {
+      "archive_bytes": 137036,
       "code_commit": "a7a1a03ee6ea34e285e41b1dc8c56a312ac50702",
       "directory": "search/overnight30_runs/2026-11-04/chunks/00159_asymmetric",
+      "elapsed_seconds": 152.54761829400377,
       "family": null,
+      "finished_utc": "2026-11-05T04:59:59+00:00",
       "host": "4eb071b4d7f0",
       "id": 159,
       "kind": "asymmetric",
       "pid": 24900,
       "resume_job": 156,
+      "returncode": 0,
       "seconds_budget": 151.51995825767517,
       "seed": 20261104,
       "source_sha256": {
@@ -3510,7 +3514,7 @@
         "search/overnight30_supervisor.py": "33ca7870d7a81c4c642be80bef74514b5d4b80820690ee3290d5fc5b93ba1729"
       },
       "started_utc": "2026-11-05T04:57:26+00:00",
-      "state": "running"
+      "state": "completed"
     }
   ]
 }

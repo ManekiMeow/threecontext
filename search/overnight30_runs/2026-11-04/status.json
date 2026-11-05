@@ -13,24 +13,17 @@
       "id": 158,
       "kind": "symmetry",
       "pid": 24871
-    },
-    {
-      "directory": "search/overnight30_runs/2026-11-04/chunks/00159_asymmetric",
-      "family": null,
-      "id": 159,
-      "kind": "asymmetric",
-      "pid": 24900
     }
   ],
   "branch": "experiments/ghz30-20261104",
   "deadline_utc": "2026-11-05T05:00:00Z",
   "finished_utc": "2026-11-04T21:05:35+00:00",
-  "heartbeat_utc": "2026-11-05T04:57:26+00:00",
+  "heartbeat_utc": "2026-11-05T04:59:59+00:00",
   "host": "4eb071b4d7f0",
-  "jobs_finished": 157,
+  "jobs_finished": 158,
   "jobs_started": 160,
-  "last_published_utc": "2026-11-05T04:57:25+00:00",
-  "last_pushed_commit": "d5466f51b28ccc7aa423c2269af700c7567932b1",
+  "last_published_utc": "2026-11-05T04:57:28+00:00",
+  "last_pushed_commit": "30455cf60f5e4a088b426b6d32614ac8ed2f2777",
   "publication_error": null,
   "publishing_enabled": true,
   "started_utc": "2026-11-04T21:06:00+00:00",
