@@ -1,13 +1,6 @@
 {
   "active": [
     {
-      "directory": "search/overnight30_runs/2026-11-04/chunks/00104_asymmetric",
-      "family": null,
-      "id": 104,
-      "kind": "asymmetric",
-      "pid": 20072
-    },
-    {
       "directory": "search/overnight30_runs/2026-11-04/chunks/00105_c5_fixed",
       "family": "c5_fixed",
       "id": 105,
@@ -20,17 +13,24 @@
       "id": 107,
       "kind": "symmetry",
       "pid": 21423
+    },
+    {
+      "directory": "search/overnight30_runs/2026-11-04/chunks/00108_asymmetric",
+      "family": null,
+      "id": 108,
+      "kind": "asymmetric",
+      "pid": 21468
     }
   ],
   "branch": "experiments/ghz30-20261104",
   "deadline_utc": "2026-11-05T05:00:00Z",
   "finished_utc": "2026-11-04T21:05:35+00:00",
-  "heartbeat_utc": "2026-11-05T02:16:52+00:00",
+  "heartbeat_utc": "2026-11-05T02:16:55+00:00",
   "host": "4eb071b4d7f0",
-  "jobs_finished": 105,
-  "jobs_started": 108,
-  "last_published_utc": "2026-11-05T02:16:51+00:00",
-  "last_pushed_commit": "2482f766d13d636b98009017effa4293131049c7",
+  "jobs_finished": 106,
+  "jobs_started": 109,
+  "last_published_utc": "2026-11-05T02:16:53+00:00",
+  "last_pushed_commit": "6db113302d1deca1ce9aa4e68e40d890bc9fde4a",
   "publication_error": null,
   "publishing_enabled": true,
   "started_utc": "2026-11-04T21:06:00+00:00",
