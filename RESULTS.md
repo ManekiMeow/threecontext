@@ -709,6 +709,18 @@ rewiring and temporarily higher temperature. A twenty-second resume check scored
 four downhill moves, preserved its historical best and pool, and passed the H₃₃/H₃₆ positive controls. Two
 improved family supports were added as explicitly excluded mutation seeds. No new realization is claimed.
 
+**00:00 checkpoint review (5 Nov, bounded).** Nineteen newly completed chunks add **311,477 labeled supports**,
+including **60,905 newly scored labels**, against the preceding completed pool. Selecting 130 leading/family
+labels yields 92 new representatives relative to this selection and the previously reviewed classes, with 38
+explicit isomorphism mappings; this is not a full-pool isomorphism census. Twenty-two selected representatives
+have exact exclusions. The new asymmetric leader has numerical θ ≈ **2.9162207091** and exact upper bound
+**29173/10000 = 2.9173 < 3**. It passes the current structural and dimension-19 support diagnostics. Each of the
+four strongest selected graphs has trivial context-preserving automorphism group. The sole numerical timeout
+is independently excluded; eight deadline endings remain ordinary bounded-search outcomes. The immutable
+review is pinned to experiment commit `5484ce3`. Standard Python verifies its 24 local certificates, 38 saved
+isomorphism mappings, 14 referenced proofs and published input hashes:
+`python search/overnight30_reviews/2026-11-05T0000/verify.py --inputs`.
+
 **Faster C₅ scoring and certified subgraph cuts.** The C₅-double worker now uses an exact Fourier reduction
 of the full theta SDP to one real 6×6 and two complex 6×6 positive-semidefinite blocks. This retains arbitrary
 event probabilities and overlap weights. Five independent comparisons with full 30×30 SDPs agree within

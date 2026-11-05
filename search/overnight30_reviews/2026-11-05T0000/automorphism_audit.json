@@ -1,0 +1,30 @@
+[
+  {
+    "graph_id": "5e8f40b8d72c15cfd969",
+    "theta_numeric": 2.916220709092425,
+    "context_preserving_automorphism_order": 1,
+    "seconds": 0.004368063004221767,
+    "uncolored_automorphism_order": 1
+  },
+  {
+    "graph_id": "2f290839c0a70e778c8a",
+    "theta_numeric": 2.9158136529516536,
+    "context_preserving_automorphism_order": 1,
+    "seconds": 0.001977100000658538,
+    "uncolored_automorphism_order": 1
+  },
+  {
+    "graph_id": "90ed924eba2d67ae2e74",
+    "theta_numeric": 2.915597147008968,
+    "context_preserving_automorphism_order": 1,
+    "seconds": 0.0034442619944456965,
+    "uncolored_automorphism_order": 1
+  },
+  {
+    "graph_id": "e3e13c31ef6174b72b19",
+    "theta_numeric": 2.9155562687917334,
+    "context_preserving_automorphism_order": 1,
+    "seconds": 0.004634217002603691,
+    "uncolored_automorphism_order": 1
+  }
+]

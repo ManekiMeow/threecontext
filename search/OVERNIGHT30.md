@@ -211,6 +211,20 @@ Next useful research steps, preserving the running supervisor:
   versions; expanding per-job hashes to the Fourier/screen/seed dependencies
   would improve provenance at the next runner restart.
 
+## 00:00 continuation findings (5 November)
+
+The immutable review `overnight30_reviews/2026-11-05T0000/`, pinned to data
+commit `5484ce3`, adds 311,477 labeled supports and 60,905 newly scored labels.
+Among 130 selected leaders, 92 are new representatives relative to this
+selection and earlier reviewed classes; 38 explicit mappings identify the
+others. Twenty-two selected representatives have exact exclusions. The new
+asymmetric leader has theta about 2.9162207091 and exact upper bound 2.9173.
+Its four strongest selected peers have trivial context-preserving automorphism
+groups. The review verifies 24 local certificates, 14 referenced proofs,
+isomorphism mappings and immutable input hashes with `verify.py --inputs`.
+One numerical timeout is exactly excluded; eight deadline endings are ordinary
+bounded outcomes. Global event and dimension bounds remain unchanged.
+
 ## Operation and scheduled continuation
 
 `overnight30_supervisor.py` runs bounded worker chunks, publishes checkpoints,
